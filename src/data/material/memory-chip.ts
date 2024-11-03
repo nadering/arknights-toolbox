@@ -1,6 +1,9 @@
 import Material from "./material";
 
 // 메모리 칩 계열
+//
+/* eslint-disable prefer-const */
+// 상호 참조를 해결하기 위해 const로 선언하지 않고 let으로 변수를 먼저 선언 후 할당
 
 /** 칩 첨가제 */
 export const chipCatalyst: Material = {
@@ -10,7 +13,7 @@ export const chipCatalyst: Material = {
   tier: 4,
 };
 
-// 칩 (상호 참조를 해결하기 위해, const가 아닌 let으로 선언 후 위로 올림)
+// 칩
 /** 뱅가드 칩 */
 export let vanguardChip: Material | undefined;
 

@@ -84,7 +84,12 @@ export default function Home() {
 
   useEffect(() => {
     setUserDepotWithJSON(JSONString);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <></>;
+  return (
+    <div>
+      <p>{userDepot.Upgrade.at(0)?.material.name}</p>
+    </div>
+  );
 }
