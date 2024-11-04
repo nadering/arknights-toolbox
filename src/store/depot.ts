@@ -8,6 +8,7 @@ import {
   skillSummaryList,
   memoryChipList,
   moduleMaterialList,
+  LMD,
 } from "@/data/material";
 
 /** 사용자의 재료 보유량 및 필요량을 나타내는 타입 */
@@ -18,6 +19,7 @@ export type Depot = {
 /**
  * Material[] 타입을 받아, 개수가 0으로 설정되어 있는 CountableMaterial[] 타입으로 반환
  * @param materialList 재료 아이템 리스트
+ * @returns 개수가 0으로 설정되어 있는 재료 아이템 리스트
  */
 const makeCountableMaterialList = (materialList: Material[]) => {
   const result: CountableMaterial[] = [];
@@ -39,14 +41,15 @@ const makeCountableMaterialList = (materialList: Material[]) => {
 export const makeEmptyDepot = () => {
   return {
     Upgrade: makeCountableMaterialList(upgradeList),
-    BattleRecord: makeCountableMaterialList(battleRecordList),
-    SkillSummary: makeCountableMaterialList(skillSummaryList),
-    MemoryChip: makeCountableMaterialList(memoryChipList),
+    "Battle-Record": makeCountableMaterialList(battleRecordList),
+    "Skill-Summary": makeCountableMaterialList(skillSummaryList),
+    "Memory-Chip": makeCountableMaterialList(memoryChipList),
     Module: makeCountableMaterialList(moduleMaterialList),
+    LMD: [{ material: LMD, count: 0 }],
   } as Depot;
-}
+};
 
-/** 사용자가 보유한 재료의 양을 저장하는 아톰 */
+/** 사용자가 창고에 보유 중인 재료의 양을 저장하는 아톰 */
 export const userDepotAtom = atom<Depot>(makeEmptyDepot());
 
 /** 사용자가 필요한 재료의 양을 저장하는 아톰 */

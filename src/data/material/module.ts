@@ -6,6 +6,7 @@ import Material from "./material";
 export const moduleDataBlock: Material = {
   id: "mod_unlock_token",
   name: "모듈 데이터 칩",
+  imageFilename: "module-data-block",
   type: "Module",
   tier: 5,
 };
@@ -14,6 +15,7 @@ export const moduleDataBlock: Material = {
 export const dataSupplementStick: Material = {
   id: "mod_update_token_1",
   name: "데이터 리더기",
+  imageFilename: "data-supplement-stick",
   type: "Module",
   tier: 4,
 };
@@ -22,6 +24,7 @@ export const dataSupplementStick: Material = {
 export const dataSupplementInstrument: Material = {
   id: "mod_update_token_2",
   name: "데이터 메모리",
+  imageFilename: "data-supplement-instrument",
   type: "Module",
   tier: 5,
 };

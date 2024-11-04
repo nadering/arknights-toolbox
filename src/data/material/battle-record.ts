@@ -6,7 +6,8 @@ import Material from "./material";
 export const drillBattleRecord: Material = {
   id: "2001",
   name: "기초작전기록",
-  type: "BattleRecord",
+  imageFilename: "drill-battle-record",
+  type: "Battle-Record",
   tier: 2,
 };
 
@@ -14,7 +15,8 @@ export const drillBattleRecord: Material = {
 export const frontlineBattleRecord: Material = {
   id: "2002",
   name: "초급작전기록",
-  type: "BattleRecord",
+  imageFilename: "frontline-battle-record",
+  type: "Battle-Record",
   tier: 3,
 };
 
@@ -22,7 +24,8 @@ export const frontlineBattleRecord: Material = {
 export const tacticalBattleRecord: Material = {
   id: "2003",
   name: "중급작전기록",
-  type: "BattleRecord",
+  imageFilename: "tactical-battle-record",
+  type: "Battle-Record",
   tier: 4,
 };
 
@@ -30,7 +33,8 @@ export const tacticalBattleRecord: Material = {
 export const strategicBattleRecord: Material = {
   id: "2004",
   name: "고급작전기록",
-  type: "BattleRecord",
+  imageFilename: "strategic-battle-record",
+  type: "Battle-Record",
   tier: 5,
 };
 
