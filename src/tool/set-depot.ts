@@ -59,7 +59,7 @@ export const makeDepotWithJSON = (JSONString: string) => {
     // 설정된 창고를 반환함
     return result;
   } catch (error) {
-    // 에러 발생 시 디버그 용도로 콘솔에 출력하며, 빈 창고를 반환함
+    // 에러 발생 시 디버그 용도로 콘솔에 출력하며, 창고 데이터 대신 null을 반환함
     console.log(error);
     return null;
   }
