@@ -8,6 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        pretendard: ["var(--font-pretendard)"],
+      },
+      keyframes: {
+        "fade-out-left": {
+          "0%": { opacity: "1", transform: "translateX(0%)" },
+          "100%": { opacity: "0", transform: "translateX(-20%)" },
+        },
+        "fade-in-left": {
+          "0%": { opacity: "0", transform: "translateX(20%)" },
+          "100%": { opacity: "1", transform: "translateX(0%)" },
+        },
+        "fade-out-right": {
+          "0%": { opacity: "1", transform: "translateX(0%)" },
+          "100%": { opacity: "0", transform: "translateX(20%)" },
+        },
+      },
       colors: {
         transparent: "transparent",
         // 기본 색상
@@ -50,6 +67,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;

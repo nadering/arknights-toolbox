@@ -131,7 +131,7 @@ export const Myrtle: Vanguard = {
       ],
     },
   },
-  moduleList: ["BEA-X"],
+  moduleList: [{ type: "BEA-X", name: `'개인소장'` }],
   moduleMaterials: {
     "BEA-X": {
       1: [
@@ -142,8 +142,8 @@ export const Myrtle: Vanguard = {
       2: [
         { material: moduleDataBlock, count: 1 },
         { material: dataSupplementStick, count: 15 },
-        { material: LMD, count: 25000 },
         { material: polyesterPack, count: 5 },
+        { material: LMD, count: 25000 },
       ],
       3: [
         { material: moduleDataBlock, count: 1 },
@@ -154,3 +154,6 @@ export const Myrtle: Vanguard = {
     },
   },
 };
+
+/** 뱅가드 오퍼레이터 리스트 */
+export const vanguardList: Vanguard[] = [Myrtle];

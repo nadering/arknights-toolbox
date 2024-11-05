@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${pretendard.variable} antialiased`}>
+      <body className={`${pretendard.variable} font-pretendard antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,4 +1,4 @@
-// 오퍼레이터 인터페이스
+// 오퍼레이터 인터페이스 및 오퍼레이터 관련 설정
 
 import { CountableMaterial } from "@/data/material";
 
@@ -26,9 +26,17 @@ interface MaterialsWithNumberAndName {
   [key: string]: MaterialsWithNumber;
 }
 
+/** 모듈 인터페이스 */
+interface ModuleInfo {
+  /** 모듈 타입 (X, Y, 델타 등) */
+  type: string;
+  /** 모듈 이름 */
+  name: string;
+}
+
 /** 모듈 업그레이드 시, 일반적으로 추천되는 모듈의 이름 및 레벨 인터페이스 */
 interface PreferModuleInfo {
-  module: string;
+  module: ModuleInfo;
   level: number;
 }
 
@@ -38,6 +46,8 @@ export default interface Operator {
   id: number;
   /** 이름 */
   name: string;
+  /** 별명 목록 */
+  nicknameList?: string[];
   /** 이미지 파일 이름 */
   imageFilename?: string;
   /** 포지션 */
@@ -50,7 +60,7 @@ export default interface Operator {
   eliteMaterials: MaterialsWithNumber;
   /** 스킬 목록 */
   skillList: string[];
-  /** 
+  /**
    * 스킬 업그레이드 시 일반적으로 추천되는 스킬들로,
    * 명일방주 채널의 청문회 기준 스킬 마스터리 추천도 65% 이상을 만족해야 하며,
    * 청문회에 스킬 마스터리 투표가 존재하지 않을 경우 여론을 감안하지만 주관적인 판단으로 추가할 예정
@@ -59,8 +69,8 @@ export default interface Operator {
   /** 스킬 업그레이드 재료 */
   skillUpgradeMaterials: MaterialsWithNumberAndName;
   /** 모듈 목록 */
-  moduleList?: string[];
-  /** 
+  moduleList?: ModuleInfo[];
+  /**
    * 모듈 업그레이드 시 일반적으로 추천되는 모듈들로,
    * 명일방주 채널의 청문회 기준 "필수" ~ "특성 강화" 항목의 합이 80% 이상을 만족해야 하며, 해당 투표에서 가장 높은 추천도를 선택할 예정이고,
    * 청문회에 모듈 투표가 존재하지 않을 경우 마찬가지로 여론을 감안하지만 주관적인 판단으로 추가할 예정
@@ -69,3 +79,49 @@ export default interface Operator {
   /** 모듈 업그레이드 재료 */
   moduleMaterials?: MaterialsWithNumberAndName;
 }
+
+/** 레벨 상한 */
+export const maxLevelTable = {
+  6: {
+    0: 50,
+    1: 80,
+    2: 90,
+  },
+  5: {
+    0: 50,
+    1: 70,
+    2: 80,
+  },
+  4: {
+    0: 45,
+    1: 60,
+    2: 70,
+  },
+  3: {
+    0: 40,
+    1: 55,
+  },
+  2: {
+    0: 30,
+  },
+  1: {
+    0: 30,
+  },
+};
+
+/** 레벨 업에 필요한 경험치 및 용문폐 테이블 */
+export const levelUpTable = {
+  0: {
+    2: {
+      exp: 100,
+      lmd: 30,
+    },
+  },
+};
+
+/** 모듈 레벨 조건 */
+export const moduleLevelRequired = {
+  6: 60,
+  5: 50,
+  4: 40,
+};
