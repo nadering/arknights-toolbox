@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { userSelectAtom, userDepotAtom } from "@/store";
 import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
 
-/** JSON 입력창 컴포넌트 */
+/** JSON 및 용문폐 입력창 컴포넌트 */
 export default function JsonInput() {
   // 입력받은 용문폐
   const [lmdString, setLmdString] = useState("");
@@ -106,7 +106,7 @@ export default function JsonInput() {
 
   return (
     <div
-      className="w-full flex flex-col gap-4 items-center p-4 rounded-xl sm:w-[52.5%] sm:justify-between"
+      className="w-full flex flex-col gap-4 items-center p-4 rounded-xl sm:w-[52.5%]"
       ref={divRef}
     >
       <div className="w-full flex flex-col gap-2">

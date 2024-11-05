@@ -39,7 +39,7 @@ export default function SetUserDepot() {
 
   // relative 클래스가 포함된 div의 원래 border: border-dashed border-2 border-gray-500
   return (
-    <div className="flex flex-col p-4 min-h-[448px] gap-2 sm:gap-0">
+    <div className="flex flex-col p-4 min-h-[392px] gap-2 sm:gap-0">
       <p className="font-bold text-3xl text-white pl-1">현재 보유량 설정</p>
       <div className="relative grow flex flex-col justify-between p-2 border-none rounded-xl sm:flex-row">
         <JsonImportButton />
