@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, ChangeEvent } from "react";
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { userSelectAtom, userDepotAtom } from "@/store";
 import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
 
@@ -16,8 +16,8 @@ export default function JsonInput() {
   // 사용자가 선택한 데이터 입력 방법
   const [userSelect, setUserSelect] = useAtom(userSelectAtom);
 
-  // 사용자 창고 데이터
-  const [userDepot, setUserDepot] = useAtom(userDepotAtom);
+  // 사용자 창고 데이터 설정
+  const setUserDepot = useSetAtom(userDepotAtom);
 
   /** 애니메이션을 위해 Div 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
