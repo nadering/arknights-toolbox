@@ -76,7 +76,7 @@ export default function JsonInput() {
   };
 
   /** 용문폐 문자열 설정 */
-  const handleLmdStringValue = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleLmdStringValue = (event: ChangeEvent<HTMLInputElement>) => {
     setLmdString(event.target.value);
   };
 
@@ -92,7 +92,7 @@ export default function JsonInput() {
     if (result) {
       // 용문폐 문자열로 새로운 창고에 용문폐 데이터를 추가로 설정
       const lmdQuantity = parseInt(lmdString, 10);
-      if (!isNaN(lmdQuantity)) {
+      if (!isNaN(lmdQuantity) && lmdQuantity >= 0) {
         setDepotMaterialById("lmd", lmdQuantity, result);
       }
 
@@ -110,32 +110,42 @@ export default function JsonInput() {
       ref={divRef}
     >
       <div className="w-full flex flex-col gap-2">
-        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">JSON</p>
-        <textarea
-          className="
-        w-full min-h-20 p-4 rounded-lg resize-none
-        outline-solid outline-1 outline-gray-400
-        bg-dark-800 text-gray-200 selection:bg-gray-800 
-        [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-track]:rounded-r-lg
-        [&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-thumb]:rounded-r-lg"
-          placeholder={`"Arkntools으로 내보내기"로 복사한 JSON을 입력해주세요.`}
-          value={jsonString}
-          onChange={(event) => handleJsonStringValue(event)}
-        ></textarea>
+        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          JSON
+        </p>
+        <form id="json">
+          <textarea
+            className="
+              w-full min-h-20 px-4 py-3 rounded-lg resize-none
+              outline-solid outline-1 outline-gray-400
+              bg-dark-800 text-gray-200 selection:bg-gray-800 
+              [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-track]:rounded-r-lg
+              [&::-webkit-scrollbar-thumb]:cursor-default [&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-thumb]:rounded-r-lg"
+            id="json"
+            placeholder={`"Arkntools으로 내보내기"로 복사한 JSON을 입력해주세요.`}
+            value={jsonString}
+            onChange={(event) => handleJsonStringValue(event)}
+          ></textarea>
+        </form>
       </div>
       <div className="w-full flex flex-col gap-2">
-        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">용문폐</p>
-        <textarea
-          className="
-        w-full min-h-20 p-4 rounded-lg resize-none
-        outline-solid outline-1 outline-gray-400
-        bg-dark-800 text-gray-200 selection:bg-gray-800 
-        [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-track]:rounded-r-lg
-        [&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-thumb]:rounded-r-lg"
-          placeholder={`용문폐 보유량을 입력해주세요.`}
-          value={lmdString}
-          onChange={(event) => handleLmdStringValue(event)}
-        ></textarea>
+        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          용문폐
+        </p>
+        <form id="lmd">
+          <input
+            className="
+              w-full min-h-12 px-4 py-3 rounded-lg resize-none
+              outline-solid outline-1 outline-gray-400
+              bg-dark-800 text-gray-200 selection:bg-gray-800 
+              [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            id="lmd"
+            type="number"
+            placeholder={`용문폐 보유량을 입력해주세요.`}
+            value={lmdString}
+            onChange={(event) => handleLmdStringValue(event)}
+          ></input>
+        </form>
       </div>
 
       <div className="w-full flex flex-row-reverse gap-2">

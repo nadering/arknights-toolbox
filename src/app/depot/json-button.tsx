@@ -20,7 +20,7 @@ export default function JsonImportButton() {
     >
       <Image
         className="rotate-90 [filter:brightness(100%)_invert(100%)]"
-        src={`/images/others/import.png`}
+        src="/images/others/import.png"
         alt="import-json"
         width={128}
         height={128}

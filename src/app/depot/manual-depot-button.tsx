@@ -70,7 +70,6 @@ export default function ManualDepotButton() {
         alt="keyboard-typing"
         width={128}
         height={128}
-        priority
       />
       <div className="flex flex-col items-center gap-y-3">
         <p className="leading-none font-semibold text-2xl text-white text-center break-keep">
