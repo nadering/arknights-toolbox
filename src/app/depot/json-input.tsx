@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, ChangeEvent } from "react";
+import { useState, useEffect, useRef, ChangeEvent, KeyboardEvent } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import { userSelectAtom, userDepotAtom } from "@/store";
 import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
@@ -80,6 +80,20 @@ export default function JsonInput() {
     setLmdString(event.target.value);
   };
 
+  /** 사용자로부터 숫자를 입력받을 때, 지수 표기법에 사용되는 기호를 제외 */
+  const handleExponentialNotation = (event: KeyboardEvent<HTMLInputElement>) => {
+    /**
+     * 지수 표기법에 사용되는 기호 목록으로,
+     * 해당 기호들은 <input type="number" /> 여도 작성할 수 있어 별도로 처리해야 함
+     */
+    const exponentialNotations = ["e", "E", "-", "+"];
+
+    // 기호가 포함되어 있다면, 반영하지 않음
+    if (exponentialNotations.includes(event.key)) {
+      event.preventDefault();
+    }
+  }
+
   /** 이전으로 돌아가기 */
   const goBack = () => {
     setUserSelect("BackToMain");
@@ -145,6 +159,7 @@ export default function JsonInput() {
             placeholder={`용문폐 보유량을 입력해주세요.`}
             value={lmdString}
             onChange={(event) => handleLmdStringValue(event)}
+            onKeyDown={(event) => handleExponentialNotation(event)}
           ></input>
         </form>
       </div>
