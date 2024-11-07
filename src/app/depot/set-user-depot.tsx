@@ -25,7 +25,7 @@ export default function SetUserDepot() {
       setTimeout(() => {
         setActivateJsonInput(true);
       }, 220);
-    } else if (userSelect == "Back") {
+    } else if (userSelect == "BackToMain") {
       /**
        * JSON 입력 창을 닫으면,
        * 200ms 동안 JsonInput의 Fade-out 애니메이션을 실행하고,

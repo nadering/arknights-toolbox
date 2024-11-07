@@ -38,7 +38,7 @@ export default function OrText() {
     const animateClass = "animate-[fade-in-left_0.2s_ease-in-out]";
 
     if (
-      userSelect == "Back" &&
+      userSelect == "BackToMain" &&
       !divRef.current?.classList.contains(animateClass)
     ) {
       /**

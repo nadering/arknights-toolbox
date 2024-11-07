@@ -54,7 +54,7 @@ export default function JsonInput() {
     const animateClass = "animate-[fade-out-right_0.2s_ease-in-out]";
 
     if (
-      userSelect == "Back" &&
+      userSelect == "BackToMain" &&
       !divRef.current?.classList.contains(animateClass)
     ) {
       /**
@@ -82,7 +82,7 @@ export default function JsonInput() {
 
   /** 이전으로 돌아가기 */
   const goBack = () => {
-    setUserSelect("Back");
+    setUserSelect("BackToMain");
   };
 
   /** JSON 문자열 및 용문폐 문자열로 사용자 창고 설정 */
@@ -125,6 +125,7 @@ export default function JsonInput() {
             placeholder={`"Arkntools으로 내보내기"로 복사한 JSON을 입력해주세요.`}
             value={jsonString}
             onChange={(event) => handleJsonStringValue(event)}
+            autoFocus
           ></textarea>
         </form>
       </div>

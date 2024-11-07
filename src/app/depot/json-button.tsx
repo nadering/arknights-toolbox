@@ -18,14 +18,15 @@ export default function JsonImportButton() {
       }`}
       onClick={() => setUserSelect("JSON")}
     >
-      <Image
-        className="rotate-90 [filter:brightness(100%)_invert(100%)]"
-        src="/images/others/import.png"
-        alt="import-json"
-        width={128}
-        height={128}
-        priority
-      />
+      <div className="relative w-32 aspect-square">
+        <Image
+          className="rotate-90 [filter:brightness(100%)_invert(100%)]"
+          src="/images/others/import.png"
+          alt="import-json"
+          fill
+          priority
+        />
+      </div>
       <div className="flex flex-col items-center gap-y-3">
         <p className="leading-none font-semibold text-2xl text-white text-center break-keep">
           JSON 가져오기

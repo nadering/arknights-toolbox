@@ -39,7 +39,7 @@ export default function ManualDepotButton() {
     const animateClass = "animate-[fade-in-left_0.2s_ease-in-out]";
 
     if (
-      userSelect == "Back" &&
+      userSelect == "BackToMain" &&
       !buttonRef.current?.classList.contains(animateClass)
     ) {
       /**
@@ -64,13 +64,15 @@ export default function ManualDepotButton() {
       onClick={() => setUserSelect("Manual")}
       ref={buttonRef}
     >
-      <Image
-        className="translate-y-[-12px] [filter:brightness(100%)_invert(100%)]"
-        src={`/images/others/keyboard.png`}
-        alt="keyboard-typing"
-        width={128}
-        height={128}
-      />
+      <div className="relative w-32 aspect-square">
+        <Image
+          className="translate-y-[-12px] [filter:brightness(100%)_invert(100%)]"
+          src={`/images/others/keyboard.png`}
+          alt="manual-typing"
+          fill
+        />
+      </div>
+
       <div className="flex flex-col items-center gap-y-3">
         <p className="leading-none font-semibold text-2xl text-white text-center break-keep">
           직접 입력하기
