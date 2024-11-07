@@ -24,6 +24,7 @@ export default function JsonImportButton() {
           src="/images/others/import.png"
           alt="import-json"
           fill
+          sizes="25vw"
           priority
         />
       </div>

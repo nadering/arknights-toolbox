@@ -70,6 +70,7 @@ export default function ManualDepotButton() {
           src={`/images/others/keyboard.png`}
           alt="manual-typing"
           fill
+          sizes="25vw"
         />
       </div>
 

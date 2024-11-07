@@ -1,17 +1,24 @@
 "use client";
 
-import { useState, useEffect, useRef, ChangeEvent, KeyboardEvent } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  ChangeEvent,
+  FormEvent,
+  KeyboardEvent,
+} from "react";
 import { useAtom, useSetAtom } from "jotai";
 import { userSelectAtom, userDepotAtom } from "@/store";
 import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
 
 /** JSON 및 용문폐 입력창 컴포넌트 */
 export default function JsonInput() {
-  // 입력받은 용문폐
-  const [lmdString, setLmdString] = useState("");
-
   // 입력받은 JSON 문자열
   const [jsonString, setJsonString] = useState("");
+
+  // 입력받은 용문폐
+  const [lmdString, setLmdString] = useState("");
 
   // 사용자가 선택한 데이터 입력 방법
   const [userSelect, setUserSelect] = useAtom(userSelectAtom);
@@ -76,23 +83,33 @@ export default function JsonInput() {
   };
 
   /** 용문폐 문자열 설정 */
-  const handleLmdStringValue = (event: ChangeEvent<HTMLInputElement>) => {
-    setLmdString(event.target.value);
+  const handleLmdStringValue = (event: FormEvent<HTMLInputElement>) => {
+    let value = event.currentTarget.value;
+
+    // 0으로 시작하고 문자열 길이가 1을 초과한다면 (00, 01 등), 가장 왼쪽의 0을 제거함
+    const startsWithZeroPattern = /^0+/;
+    if (value.length > 1) {
+      value = value.replace(startsWithZeroPattern, "");
+      if (value.length == 0) {
+        value = "0";
+      }
+    }
+
+    // 그 후, 용문폐 문자열을 설정
+    setLmdString(value);
   };
 
-  /** 사용자로부터 숫자를 입력받을 때, 지수 표기법에 사용되는 기호를 제외 */
-  const handleExponentialNotation = (event: KeyboardEvent<HTMLInputElement>) => {
-    /**
-     * 지수 표기법에 사용되는 기호 목록으로,
-     * 해당 기호들은 <input type="number" /> 여도 작성할 수 있어 별도로 처리해야 함
-     */
-    const exponentialNotations = ["e", "E", "-", "+"];
+  /** 지수 표현식 기호를 입력할 수 없도록 설정 */
+  const handleExponentialNotation = (
+    event: KeyboardEvent<HTMLInputElement>
+  ) => {
+    // 지수 표현식 기호 목록
+    const exponentialNotationList = ["e", "E", "-", "+", "."];
 
-    // 기호가 포함되어 있다면, 반영하지 않음
-    if (exponentialNotations.includes(event.key)) {
+    if (exponentialNotationList.includes(event.key)) {
       event.preventDefault();
     }
-  }
+  };
 
   /** 이전으로 돌아가기 */
   const goBack = () => {
@@ -158,7 +175,7 @@ export default function JsonInput() {
             type="number"
             placeholder={`용문폐 보유량을 입력해주세요.`}
             value={lmdString}
-            onChange={(event) => handleLmdStringValue(event)}
+            onInput={(event) => handleLmdStringValue(event)}
             onKeyDown={(event) => handleExponentialNotation(event)}
           ></input>
         </form>
