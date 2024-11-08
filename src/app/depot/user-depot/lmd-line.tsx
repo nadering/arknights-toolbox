@@ -1,6 +1,6 @@
 "use client";
 
-import { SingleMaterial } from "@/app/depot/common";
+import { SingleMaterial } from "@/app/common/depot";
 import { CountableMaterial } from "@/data/material";
 
 /** 창고의 용문폐 */

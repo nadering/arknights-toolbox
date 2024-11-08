@@ -10,10 +10,12 @@ import { userDepotAtom } from "@/store";
 /** 창고에 있는 재료 하나를 표현하는 컴포넌트 */
 export default function SingleMaterial({
   countableMaterial,
-  isLmd,
+  isLmd = false,
+  readonly = false,
 }: {
   countableMaterial: CountableMaterial;
   isLmd?: boolean;
+  readonly?: boolean;
 }) {
   // 사용자의 창고 데이터
   const [userDepot, setUserDepot] = useAtom(userDepotAtom);
@@ -148,16 +150,17 @@ export default function SingleMaterial({
       <input
         className={`
           ${countLengthWhenMobile} h-6 px-2 py-3 resize-none rounded-xl
-          outline-none bg-dark-800 text-gray-200 text-center selection:bg-gray-800 
+          outline-none ${readonly ? "bg-black cursor-default" : "bg-dark-800"} text-gray-200 text-center selection:bg-gray-800 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
           sm:w-full sm:px-4 sm:rounded-none`}
-        id="count"
+        id={countableMaterial.material.id}
         type="number"
         min={0}
         step={1}
         value={countString}
         onInput={(event) => handleCountStringValue(event)}
         onKeyDown={(event) => handleExponentialNotation(event)}
+        readOnly={readonly}
       ></input>
     </div>
   );

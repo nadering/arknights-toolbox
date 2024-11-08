@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Header } from "@/app/common";
 import { Providers } from "./providers";
 import "./globals.css";
 
@@ -25,7 +26,14 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${pretendard.variable} font-pretendard antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="w-screen h-full min-h-screen bg-dark">
+            <Header />
+            <div className="flex flex-col w-screen max-w-3xl h-full min-h-screen bg-dark py-12 mx-auto">
+              {children}
+            </div>
+          </div>
+        </Providers>
       </body>
     </html>
   );

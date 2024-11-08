@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { SingleMaterial } from "@/app/depot/common";
+import { SingleMaterial } from "@/app/common/depot";
 import { CountableMaterial, TierType } from "@/data/material";
-
 
 /** 창고의 정예화 재료 목록 */
 export default function UpgradeLine({ list }: { list: CountableMaterial[] }) {

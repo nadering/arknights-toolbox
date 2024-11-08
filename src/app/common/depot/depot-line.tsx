@@ -3,12 +3,15 @@
 import { CountableMaterial } from "@/data/material";
 import SingleMaterial from "./single-material";
 
+/** 창고 데이터의 한 종류 전체를 담당하는 컴포넌트 */
 export default function DepotLine({
   title,
   list,
+  readonly = false,
 }: {
   title: string;
   list: CountableMaterial[];
+  readonly?: boolean;
 }) {
   return (
     <div className="flex flex-col items-start gap-1">
@@ -21,6 +24,7 @@ export default function DepotLine({
             <SingleMaterial
               key={countableMaterial.material.id}
               countableMaterial={countableMaterial}
+              readonly={readonly}
             />
           );
         })}

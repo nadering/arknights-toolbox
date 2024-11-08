@@ -12,25 +12,31 @@ const config: Config = {
         pretendard: ["var(--font-pretendard)"],
       },
       keyframes: {
+        "vibration-down-8px": {
+          "0%": { transform: "translateY(8px) rotate(0deg)" },
+          "33%": { transform: "translateY(8px) rotate(-1deg)" },
+          "67%": { transform: "translateY(8px) rotate(1deg)" },
+          "100%": { transform: "translateY(8px) rotate(0deg)" },
+        },
         "fade-in-left": {
-          "0%": { opacity: "0", transform: "translateX(20%)" },
-          "100%": { opacity: "1", transform: "translateX(0%)" },
+          "0%": { opacity: "0", transform: "translateX(20px)" },
+          "100%": { opacity: "1", transform: "translateX(0px)" },
         },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(5%)" },
-          "100%": { opacity: "1", transform: "translateY(0%)" },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0px)" },
         },
         "fade-out-left": {
-          "0%": { opacity: "1", transform: "translateX(0%)" },
-          "100%": { opacity: "0", transform: "translateX(-20%)" },
+          "0%": { opacity: "1", transform: "translateX(0px)" },
+          "100%": { opacity: "0", transform: "translateX(-20px)" },
         },
         "fade-out-right": {
-          "0%": { opacity: "1", transform: "translateX(0%)" },
-          "100%": { opacity: "0", transform: "translateX(20%)" },
+          "0%": { opacity: "1", transform: "translateX(0px)" },
+          "100%": { opacity: "0", transform: "translateX(20px)" },
         },
-        "fade-out-bottom": {
-          "0%": { opacity: "1", transform: "translateY(0%)" },
-          "100%": { opacity: "0", transform: "translateY(20%)" },
+        "fade-out-down": {
+          "0%": { opacity: "1", transform: "translateY(0px)" },
+          "100%": { opacity: "0", transform: "translateY(20px)" },
         },
       },
       colors: {

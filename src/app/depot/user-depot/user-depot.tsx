@@ -3,10 +3,11 @@
 import { useEffect, useRef } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { userDepotAtom, userDepotInitializedAtom } from "@/store";
-import { DepotLine } from "@/app/depot/common";
+import { DepotLine } from "@/app/common/depot";
 import UpgradeLine from "./upgrade-line";
 import LMDLine from "./lmd-line";
 
+/** 사용자 현재 보유량 (창고 데이터) */
 export default function UserDepot() {
   const userDepot = useAtomValue(userDepotAtom);
   const setUserDepotInitialized = useSetAtom(userDepotInitializedAtom);

@@ -22,7 +22,7 @@ export default function DepotGuide({
 
   // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-out으로 사라짐)
   useEffect(() => {
-    const animateClass = "animate-[fade-out-bottom_0.2s_ease-in-out]";
+    const animateClass = "animate-[fade-out-down_0.2s_ease-in-out]";
 
     if (
       userSelect == "Depot" &&

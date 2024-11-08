@@ -10,4 +10,7 @@ html, body {
 주석 처리해둔 필터
 - white: [filter:brightness(100%)_invert(100%)]
 - gray-200: [filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]
+- gray-400: [filter:invert(80%)_sepia(0%)_saturate(28%)_hue-rotate(223deg)_brightness(90%)_contrast(92%)]
+- gray-600: [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+- gray-800: [filter:invert(43%)_sepia(0%)_saturate(0%)_hue-rotate(348deg)_brightness(92%)_contrast(93%)]
 */
