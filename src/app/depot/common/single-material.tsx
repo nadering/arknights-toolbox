@@ -43,7 +43,7 @@ export default function SingleMaterial({
     2: "border-tier-2",
     1: "border-tier-1",
   };
-  
+
   /** 현재 재료가 용문폐라면, 화면 크기가 640px 이하일 때 보유량 길이 증가 */
   const countLengthWhenMobile = isLmd ? "w-28" : "w-16";
 
@@ -108,7 +108,7 @@ export default function SingleMaterial({
    *   - Shift: 보유량 10 증가
    * - 우클릭: 보유량 1 감소
    *   - Shift: 보유량 10 감소
-   */ 
+   */
   return (
     <div
       className={`relative w-full flex flex-row justify-between items-center px-4 gap-4 border ${
@@ -145,20 +145,20 @@ export default function SingleMaterial({
           {countableMaterial.material.name}
         </p>
       </div>
-      <form id="count">
-        <input
-          className={`
-              ${countLengthWhenMobile} h-6 px-2 py-3 resize-none rounded-xl
-              outline-none bg-dark-800 text-gray-200 text-center selection:bg-gray-800 
-              [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
-              sm:w-full sm:px-4 sm:rounded-none`}
-          id="count"
-          type="number"
-          value={countString}
-          onInput={(event) => handleCountStringValue(event)}
-          onKeyDown={(event) => handleExponentialNotation(event)}
-        ></input>
-      </form>
+      <input
+        className={`
+          ${countLengthWhenMobile} h-6 px-2 py-3 resize-none rounded-xl
+          outline-none bg-dark-800 text-gray-200 text-center selection:bg-gray-800 
+          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
+          sm:w-full sm:px-4 sm:rounded-none`}
+        id="count"
+        type="number"
+        min={0}
+        step={1}
+        value={countString}
+        onInput={(event) => handleCountStringValue(event)}
+        onKeyDown={(event) => handleExponentialNotation(event)}
+      ></input>
     </div>
   );
 }
