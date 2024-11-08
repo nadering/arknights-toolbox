@@ -26,8 +26,9 @@ export default function JsonInput() {
   // 사용자 창고 데이터 설정
   const setUserDepot = useSetAtom(userDepotAtom);
 
-  /** 애니메이션을 위해 Div 노드를 참조하는 Ref */
+  /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
+  const jsonRef = useRef<HTMLTextAreaElement>(null);
 
   // 애니메이션 1 (JSON이 선택될 경우, 왼쪽으로 이동하며 Fade-in으로 나타남)
   useEffect(() => {
@@ -48,9 +49,10 @@ export default function JsonInput() {
       }
       divRef.current?.classList.add(animateClass);
 
-      // 200ms 동안 애니메이션 실행
+      // 200ms 동안 애니메이션 실행 후, JSON 문자열 입력창을 포커스함
       setTimeout(() => {
         divRef.current?.classList.remove(animateClass);
+        jsonRef.current?.focus();
       }, 200);
     }
   }, [userSelect]);
@@ -99,11 +101,11 @@ export default function JsonInput() {
     setLmdString(value);
   };
 
-  /** 지수 표현식 기호를 입력할 수 없도록 설정 */
+  /** 지수 표기법 기호를 입력할 수 없도록 설정 */
   const handleExponentialNotation = (
     event: KeyboardEvent<HTMLInputElement>
   ) => {
-    // 지수 표현식 기호 목록
+    // 지수 표기법 기호 목록
     const exponentialNotationList = ["e", "E", "-", "+", "."];
 
     if (exponentialNotationList.includes(event.key)) {
@@ -156,7 +158,7 @@ export default function JsonInput() {
             placeholder={`"Arkntools으로 내보내기"로 복사한 JSON을 입력해주세요.`}
             value={jsonString}
             onChange={(event) => handleJsonStringValue(event)}
-            autoFocus
+            ref={jsonRef}
           ></textarea>
         </form>
       </div>
