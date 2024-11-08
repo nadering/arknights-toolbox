@@ -342,7 +342,7 @@ export const supporterDualchip: Material = {
 
 /** 스페셜리스트 듀얼 칩 */
 export const specialistDualchip: Material = {
-  id: "3223",
+  id: "3283",
   name: "스페셜리스트 듀얼 칩",
   imageFilename: "specialist-dualchip",
   type: "Memory-Chip",

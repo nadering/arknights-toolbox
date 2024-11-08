@@ -9,6 +9,8 @@ export type MaterialType =
   | "Module"
   | "LMD";
 
+export type TierType = 1 | 2 | 3 | 4 | 5;
+
 /** 재료 인터페이스 */
 export default interface Material {
   /** 재료 아이디 속성으로, MAA나 Arkntools 같은 외부 도구/사이트에서 사용되는 아이디를 그대로 사용 */
@@ -20,7 +22,7 @@ export default interface Material {
   /** 재료 타입 */
   type: MaterialType;
   /** 재료 티어로, 1티어 ~ 6티어까지 있으며 숫자가 클 수록 높은 티어를 의미함 */
-  tier: number;
+  tier: TierType;
   /** 아이템 메인 설명 */
   description?: string;
   /** 아이템 부가 설명 (게임 내에서 이탤릭체로 작성되어 있음) */

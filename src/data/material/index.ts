@@ -1,4 +1,4 @@
-export type { default as Material, CountableMaterial, MaterialType } from "./material";
+export type { default as Material, CountableMaterial, MaterialType, TierType } from "./material";
 export * from "./upgrade";
 export * from "./battle-record";
 export * from "./skill-summary";

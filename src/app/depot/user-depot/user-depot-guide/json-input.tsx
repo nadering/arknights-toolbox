@@ -9,7 +9,11 @@ import {
   KeyboardEvent,
 } from "react";
 import { useAtom, useSetAtom } from "jotai";
-import { userSelectAtom, userDepotAtom } from "@/store";
+import {
+  userSelectAtom,
+  userDepotAtom,
+  userDepotInitializedAtom,
+} from "@/store";
 import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
 
 /** JSON 및 용문폐 입력창 컴포넌트 */
@@ -25,6 +29,7 @@ export default function JsonInput() {
 
   // 사용자 창고 데이터 설정
   const setUserDepot = useSetAtom(userDepotAtom);
+  const setUserDepotInitialized = useSetAtom(userDepotInitializedAtom);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
@@ -129,8 +134,10 @@ export default function JsonInput() {
         setDepotMaterialById("lmd", lmdQuantity, result);
       }
 
-      // 새로운 창고 데이터를 사용자의 창고로 설정
+      // 새로운 창고 데이터를 사용자의 창고로 설정 후, 창고 데이터를 보여줌
       setUserDepot(result);
+      setUserDepotInitialized(true);
+      setUserSelect("Depot");
     }
 
     // 데이터 확인을 위해 콘솔에 임시로 출력
@@ -166,7 +173,13 @@ export default function JsonInput() {
         <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
           용문폐
         </p>
-        <form id="lmd">
+        <form
+          id="lmd"
+          onSubmit={(event) => {
+            event.preventDefault();
+            setUserDepotWithJSON();
+          }}
+        >
           <input
             className="
               w-full min-h-12 px-4 py-3 rounded-lg resize-none

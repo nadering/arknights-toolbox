@@ -17,8 +17,8 @@ const config: Config = {
           "100%": { opacity: "1", transform: "translateX(0%)" },
         },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(20%)" },
-          "100%": { opacity: "1", transform: "translateX(0%)" },
+          "0%": { opacity: "0", transform: "translateY(5%)" },
+          "100%": { opacity: "1", transform: "translateY(0%)" },
         },
         "fade-out-left": {
           "0%": { opacity: "1", transform: "translateX(0%)" },
@@ -30,7 +30,7 @@ const config: Config = {
         },
         "fade-out-bottom": {
           "0%": { opacity: "1", transform: "translateY(0%)" },
-          "100%": { opacity: "0", transform: "translateX(20%)" },
+          "100%": { opacity: "0", transform: "translateY(20%)" },
         },
       },
       colors: {

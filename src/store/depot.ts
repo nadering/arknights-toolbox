@@ -52,5 +52,8 @@ export const makeEmptyDepot = () => {
 /** 사용자가 창고에 보유 중인 재료의 양을 저장하는 아톰 */
 export const userDepotAtom = atom<Depot>(makeEmptyDepot());
 
+/** 사용자가 창고 데이터를 입력했는지 여부를 저장하는 아톰 */
+export const userDepotInitializedAtom = atom<boolean>(false);
+
 /** 사용자가 필요한 재료의 양을 저장하는 아톰 */
 export const userNeedMaterialAtom = atom<Depot>(makeEmptyDepot());

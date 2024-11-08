@@ -6,11 +6,11 @@ import { userSelectAtom } from "@/store";
 
 /** JSON을 통해 데이터를 가져오는 선택지와, 직접 데이터를 입력하는 선택지를 구분하는 컴포넌트 */
 export default function OrText() {
-  /** 애니메이션을 위해 Div 노드를 참조하는 Ref */
-  const divRef = useRef<HTMLDivElement>(null);
-
   /** 사용자가 선택한 데이터 입력 방법 */
   const userSelect = useAtomValue(userSelectAtom);
+
+  /** 애니메이션을 위해 Div 노드를 참조하는 Ref */
+  const divRef = useRef<HTMLDivElement>(null);
 
   // 애니메이션 1 (JSON이 선택될 경우, 오른쪽으로 이동하며 Fade-out으로 사라짐)
   useEffect(() => {
@@ -54,6 +54,27 @@ export default function OrText() {
       setTimeout(() => {
         divRef.current?.classList.remove(animateClass);
       }, 200);
+    }
+  }, [userSelect]);
+
+   // 애니메이션 3 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-out으로 사라짐)
+   useEffect(() => {
+    const animateClass = "animate-[fade-out-bottom_0.2s_ease-in-out]";
+
+    if (
+      userSelect == "Depot" &&
+      !divRef.current?.classList.contains(animateClass)
+    ) {
+      /**
+       * 사용자의 창고를 보여줘야 할 경우,
+       * Fade-out 애니메이션을 실행한 후, 현재 컴포넌트를 숨김
+       */
+      divRef.current?.classList.add(animateClass);
+
+      setTimeout(() => {
+        divRef.current?.classList.remove(animateClass);
+        divRef.current?.classList.add("hidden");
+      }, 180);
     }
   }, [userSelect]);
 
