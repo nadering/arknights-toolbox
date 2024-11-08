@@ -68,7 +68,7 @@ export default function UserDepotSetter() {
         <p className="pl-1 font-bold text-3xl text-white break-keep">
           현재 보유량 설정
         </p>
-        <div className="flex flex-row justify-start items-center gap-1 translate-y-[2px]">
+        <div className="flex flex-row justify-start items-center gap-1 translate-y-[4px]">
           <button
             className="group relative w-7 aspect-square"
             onClick={() => {
