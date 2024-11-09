@@ -21,6 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@data/*": ["./src/data/*"],
+      "@depot/*": ["./src/app/depot/*"],
+      "@common/*": ["./src/app/_common/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

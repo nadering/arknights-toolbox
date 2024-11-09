@@ -150,7 +150,7 @@ export default function SingleMaterial({
       <input
         className={`
           ${countLengthWhenMobile} h-6 px-2 py-3 resize-none rounded-xl
-          outline-none ${readonly ? "bg-black cursor-default" : "bg-dark-800"} text-gray-200 text-center selection:bg-gray-800 
+          outline-none ${readonly ? "bg-black selection:bg-transparent cursor-default" : "bg-dark-800 selection:bg-gray-800"} text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
           sm:w-full sm:px-4 sm:rounded-none`}
         id={countableMaterial.material.id}

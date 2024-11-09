@@ -22,3 +22,6 @@ export interface Guard extends Operator {
   /** 세부 직군 */
   branch: GuardBranch;
 }
+
+/** 가드 오퍼레이터 리스트 */
+export const guardList: Guard[] = [];

@@ -9,11 +9,7 @@ import {
   KeyboardEvent,
 } from "react";
 import { useAtom, useSetAtom } from "jotai";
-import {
-  userSelectAtom,
-  userDepotAtom,
-  userDepotInitializedAtom,
-} from "@/store";
+import { userSelectAtom, userDepotAtom } from "@/store";
 import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
 
 /** JSON 및 용문폐 입력창 컴포넌트 */
@@ -29,7 +25,6 @@ export default function JsonInput() {
 
   // 사용자 창고 데이터 설정
   const setUserDepot = useSetAtom(userDepotAtom);
-  const setUserDepotInitialized = useSetAtom(userDepotInitializedAtom);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
@@ -136,7 +131,6 @@ export default function JsonInput() {
 
       // 새로운 창고 데이터를 사용자의 창고로 설정 후, 창고 데이터를 보여줌
       setUserDepot(result);
-      setUserDepotInitialized(true);
       setUserSelect("Depot");
     }
 
@@ -188,6 +182,8 @@ export default function JsonInput() {
               [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             id="lmd"
             type="number"
+            min={0}
+            step={1}
             placeholder={`용문폐 보유량을 입력해주세요.`}
             value={lmdString}
             onInput={(event) => handleLmdStringValue(event)}

@@ -20,3 +20,6 @@ export interface Specialist extends Operator {
   /** 세부 직군 */
   branch: SpecialistBranch;
 }
+
+/** 스페셜리스트 오퍼레이터 리스트 */
+export const specialistList: Specialist[] = [];

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Header } from "@/app/common";
+import { Header } from "@/app/_common";
 import { Providers } from "./providers";
 import "./globals.css";
 
 /** Next.js에서 제공하는 localFont 기능으로, 폰트는 Pretendard 사용 */
 const pretendard = localFont({
-  src: "./fonts/PretendardVariable.woff2",
+  src: "./_fonts/PretendardVariable.woff2",
   display: "swap",
   weight: "45 920",
   variable: "--font-pretendard",

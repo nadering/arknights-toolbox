@@ -56,4 +56,7 @@ export const userDepotAtom = atom<Depot>(makeEmptyDepot());
 export const userDepotInitializedAtom = atom<boolean>(false);
 
 /** 사용자가 필요한 재료의 양을 저장하는 아톰 */
-export const userNeedMaterialAtom = atom<Depot>(makeEmptyDepot());
+export const userNeedAtom = atom<Depot>(makeEmptyDepot());
+
+/** 사용자가 필요한 재료를 입력했는지 여부를 저장하는 아톰 */
+export const userNeedInitializedAtom = atom<boolean>(false);

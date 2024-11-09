@@ -2,13 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
+import { DepotLine, LMDLine, UpgradeLine } from "@common/depot";
 import { userDepotAtom, userDepotInitializedAtom } from "@/store";
-import { DepotLine } from "@/app/common/depot";
-import UpgradeLine from "./upgrade-line";
-import LMDLine from "./lmd-line";
 
 /** 사용자 현재 보유량 (창고 데이터) */
 export default function UserDepot() {
+  // 사용자 창고 설정
   const userDepot = useAtomValue(userDepotAtom);
   const setUserDepotInitialized = useSetAtom(userDepotInitializedAtom);
 
@@ -21,16 +20,13 @@ export default function UserDepot() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 애니메이션 (창고를 보여줄 경우, 위쪽으로 이동하며 Fade-in으로 나타남)
+  // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
   useEffect(() => {
     /** 애니메이션을 나타내는 클래스 */
-    const animateClass = "animate-[fade-in-up_0.2s_ease-in-out]";
+    const animateClass = "animate-[fade-in-down_0.2s_ease-in-out]";
 
-    if (
-      !divRef.current?.classList.contains(animateClass)
-    ) {
+    if (!divRef.current?.classList.contains(animateClass)) {
       /**
-       * 사용자의 데이터 입력 방법으로 JSON이 선택되면,
        * 숨겨두었던 컴포넌트를 다시 활성화시키고,
        * Fade-in 애니메이션을 실행함
        */
@@ -47,7 +43,7 @@ export default function UserDepot() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col gap-8 hidden" ref={divRef}>
+    <div className="hidden w-full flex flex-col gap-8" ref={divRef}>
       <LMDLine list={userDepot["LMD"]} />
       <DepotLine title="작전개론" list={userDepot["Battle-Record"]} />
       <UpgradeLine list={userDepot["Upgrade"]} />

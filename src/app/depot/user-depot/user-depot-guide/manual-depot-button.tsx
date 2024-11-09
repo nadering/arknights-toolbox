@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { useAtom, useSetAtom } from "jotai";
-import { userSelectAtom, userDepotAtom, userDepotInitializedAtom, makeEmptyDepot } from "@/store";
+import { userSelectAtom, userDepotAtom, makeEmptyDepot } from "@/store";
 
 /** 직접 재료를 입력받는 선택지 버튼 */
 export default function ManualDepotButton() {
@@ -12,7 +12,6 @@ export default function ManualDepotButton() {
 
   // 사용자 창고 데이터 설정
   const setUserDepot = useSetAtom(userDepotAtom);
-  const setUserDepotInitialized = useSetAtom(userDepotInitializedAtom);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -20,7 +19,6 @@ export default function ManualDepotButton() {
   /** 사용자가 창고 데이터를 입력할 수 있도록 이동 */
   const goDepot = () => {
     setUserDepot(makeEmptyDepot());
-    setUserDepotInitialized(true);
     setUserSelect("Depot");
   }
 

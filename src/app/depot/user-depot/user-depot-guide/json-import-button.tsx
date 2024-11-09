@@ -25,7 +25,6 @@ export default function JsonImportButton() {
           alt="import-json"
           fill
           sizes="25vw"
-          priority
         />
       </div>
       <div className="flex flex-col items-center gap-y-3">

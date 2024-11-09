@@ -16,3 +16,6 @@ export interface Medic extends Operator {
   /** 세부 직군 */
   branch: MedicBranch;
 }
+
+/** 메딕 오퍼레이터 리스트 */
+export const medicList: Medic[] = [];

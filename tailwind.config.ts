@@ -19,24 +19,28 @@ const config: Config = {
           "100%": { transform: "translateY(8px) rotate(0deg)" },
         },
         "fade-in-left": {
-          "0%": { opacity: "0", transform: "translateX(20px)" },
+          "0%": { opacity: "0", transform: "translateX(10px)" },
           "100%": { opacity: "1", transform: "translateX(0px)" },
         },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0px)" },
+        },
+        "fade-in-down": {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
           "100%": { opacity: "1", transform: "translateY(0px)" },
         },
         "fade-out-left": {
           "0%": { opacity: "1", transform: "translateX(0px)" },
-          "100%": { opacity: "0", transform: "translateX(-20px)" },
+          "100%": { opacity: "0", transform: "translateX(-10px)" },
         },
         "fade-out-right": {
           "0%": { opacity: "1", transform: "translateX(0px)" },
-          "100%": { opacity: "0", transform: "translateX(20px)" },
+          "100%": { opacity: "0", transform: "translateX(10px)" },
         },
         "fade-out-down": {
           "0%": { opacity: "1", transform: "translateY(0px)" },
-          "100%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" },
         },
       },
       colors: {

@@ -1,3 +1,4 @@
+import Operator from "./operator";
 import {
   casterChip,
   casterDualchip,
@@ -29,8 +30,7 @@ import {
   sugarPack,
   sugarSubstitute,
   whiteHorseKohl,
-} from "../material";
-import Operator from "./operator";
+} from "@/data/material";
 
 // 캐스터
 

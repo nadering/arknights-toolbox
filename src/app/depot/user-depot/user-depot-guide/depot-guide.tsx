@@ -20,7 +20,32 @@ export default function DepotGuide({
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
 
-  // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-out으로 사라짐)
+  // 애니메이션 1 (처음 마운트될 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
+  useEffect(() => {
+    const animateClass = "animate-[fade-in-down_0.2s_ease-in-out]";
+
+    if (
+      userSelect == "Main" &&
+      !divRef.current?.classList.contains(animateClass)
+    ) {
+      /**
+       * 현재 보유량 설정 페이지로 들아오면,
+       * 숨겨두었던 컴포넌트를 다시 활성화시키고,
+       * Fade-in 애니메이션을 실행함
+       */
+      if (divRef.current?.classList.contains("hidden")) {
+        divRef.current.classList.remove("hidden");
+      }
+      divRef.current?.classList.add(animateClass);
+
+      // 200ms 동안 애니메이션 실행
+      setTimeout(() => {
+        divRef.current?.classList.remove(animateClass);
+      }, 200);
+    }
+  }, [userSelect]);
+
+  // 애니메이션 2 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-out으로 사라짐)
   useEffect(() => {
     const animateClass = "animate-[fade-out-down_0.2s_ease-in-out]";
 
@@ -43,7 +68,7 @@ export default function DepotGuide({
 
   return (
     <div
-      className="relative w-full flex flex-col justify-between min-h-[283px] sm:flex-row"
+      className="hidden relative w-full flex flex-col justify-between min-h-[283px] sm:flex-row"
       ref={divRef}
     >
       <JsonImportButton />

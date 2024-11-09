@@ -8,12 +8,14 @@ import { Depot, makeEmptyDepot } from "@/store";
  * @param id 재료 ID
  * @param quantity 재료 수량
  * @param depot 변경하고자 하는 Depot 객체
+ * @param isAdd true일 경우, 재료 수량을 재설정하지 않고 재료 수량만큼 추가
  * @throws SyntaxError
  */
 export const setDepotMaterialById = (
   id: string,
   quantity: number,
-  depot: Depot
+  depot: Depot,
+  isAdd: boolean = false
 ) => {
   // 재료 ID에 해당하는 재료를 미리 매핑해둔 맵에서 가져옴
   const material = materialMap.get(id);
@@ -22,7 +24,11 @@ export const setDepotMaterialById = (
     // 해당 재료가 속하는 타입의 리스트에서, 해당 재료를 찾아 수량을 설정함
     depot[material.type].forEach((depotCountableMaterial) => {
       if (depotCountableMaterial.material.id == id) {
-        depotCountableMaterial.count = quantity;
+        if (isAdd) {
+          depotCountableMaterial.count += quantity;
+        } else {
+          depotCountableMaterial.count = quantity;
+        }
         return;
       }
     });

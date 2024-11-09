@@ -18,3 +18,6 @@ export interface Defender extends Operator {
   /** 세부 직군 */
   branch: DefenderBranch;
 }
+
+/** 디펜더 오퍼레이터 리스트 */
+export const defenderList: Defender[] = [];
