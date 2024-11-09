@@ -17,6 +17,7 @@ export default function Header() {
         onClick={() => {
           setUserSelect("Main");
         }}
+        draggable={false}
       >
         Arknights-Toolbox
       </Link>

@@ -18,7 +18,7 @@ export const operatorList: Operator[] = [
   ...medicList,
   ...supporterList,
   ...specialistList,
-].toSorted((a, b) => {
+].sort((a, b) => {
   // ID 내림차순으로 정렬
   return b.id - a.id;
 });

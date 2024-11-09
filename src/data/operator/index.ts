@@ -7,3 +7,5 @@ export * from "./caster";
 export * from "./medic";
 export * from "./supporter";
 export * from "./specialist";
+export * from "./mapping";
+export * from "./table";

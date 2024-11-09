@@ -34,7 +34,7 @@ export default function DepotLine({
       <p className="leading-tight font-semibold text-2xl text-white break-keep">
         {title}
       </p>
-      <div className="flex flex-row flex-wrap gap-2">
+      <div className="w-full flex flex-row flex-wrap gap-2">
         {list.map((countableMaterial) => {
           if (!skipZero || countableMaterial.count > 0) {
             return (

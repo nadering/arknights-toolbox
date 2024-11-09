@@ -55,7 +55,6 @@ export const Myrtle: Vanguard = {
   class: "Vanguard",
   branch: "Standard-Bearer",
   rarity: 4,
-  maxElite: 2,
   eliteMaterials: {
     1: [
       { material: vanguardChip!, count: 3 },

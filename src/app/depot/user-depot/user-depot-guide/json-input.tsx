@@ -6,11 +6,10 @@ import {
   useRef,
   ChangeEvent,
   FormEvent,
-  KeyboardEvent,
 } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import { userSelectAtom, userDepotAtom } from "@/store";
-import { makeDepotWithJSON, setDepotMaterialById } from "@/tool";
+import { handleExponentialNotation, makeDepotWithJSON, setDepotMaterialById } from "@/tool";
 
 /** JSON 및 용문폐 입력창 컴포넌트 */
 export default function JsonInput() {
@@ -99,18 +98,6 @@ export default function JsonInput() {
 
     // 그 후, 용문폐 문자열을 설정
     setLmdString(value);
-  };
-
-  /** 지수 표기법 기호를 입력할 수 없도록 설정 */
-  const handleExponentialNotation = (
-    event: KeyboardEvent<HTMLInputElement>
-  ) => {
-    // 지수 표기법 기호 목록
-    const exponentialNotationList = ["e", "E", "-", "+", "."];
-
-    if (exponentialNotationList.includes(event.key)) {
-      event.preventDefault();
-    }
   };
 
   /** 이전으로 돌아가기 */

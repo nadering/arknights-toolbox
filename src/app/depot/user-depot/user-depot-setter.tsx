@@ -86,10 +86,11 @@ export default function UserDepotSetter() {
               alt="clear-data"
               fill
               sizes="10vw"
+              draggable={false}
             />
             <p
-              className="hidden absolute inset-x-auto bottom-0 z-10 px-3 py-[2px] bg-gray-700 bg-opacity-25 text-gray-300 text-center text-nowrap
-                rounded-lg translate-x-[-21px] translate-y-[33px] group-hover:block"
+              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-21px] translate-y-[-36px] group-hover:block"
             >
               초기화
             </p>

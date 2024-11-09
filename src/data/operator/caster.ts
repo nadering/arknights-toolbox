@@ -60,7 +60,6 @@ export const Logos: Caster = {
   class: "Caster",
   branch: "Core",
   rarity: 6,
-  maxElite: 2,
   eliteMaterials: {
     1: [
       { material: casterChip!, count: 5 },

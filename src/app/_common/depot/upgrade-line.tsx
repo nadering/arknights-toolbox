@@ -53,6 +53,11 @@ export default function UpgradeLine({
     };
     list.forEach((upgrade) => {
       materialByTier.current[upgrade.material.tier].push(upgrade);
+      if (skipZero && upgrade.count > 0) {
+        // 재료 존재 여부를 확인 후 설정
+        materialExists.current = true;
+        materialExistsByTier.current[upgrade.material.tier] = true;
+      }
     });
 
     // 티어별 재료에 맞게 JSX 엘리먼트를 생성
@@ -80,8 +85,6 @@ export default function UpgradeLine({
               <div className="flex flex-row flex-wrap gap-2">
                 {value.map((upgrade) => {
                   if (!skipZero || upgrade.count > 0) {
-                    materialExists.current = true;
-                    materialExistsByTier.current[upgrade.material.tier] = true;
                     return (
                       <SingleMaterial
                         key={upgrade.material.id}
@@ -111,7 +114,7 @@ export default function UpgradeLine({
       <p className="leading-tight font-semibold text-2xl text-white break-keep">
         정예화 재료
       </p>
-      <div className="flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4">
         {tierLines.map((tierLine) => tierLine)}
       </div>
     </div>

@@ -61,7 +61,6 @@ export const CivilightEterna: Supporter = {
   class: "Supporter",
   branch: "Bard",
   rarity: 6,
-  maxElite: 2,
   eliteMaterials: {
     1: [
       { material: supporterChip!, count: 5 },

@@ -7,8 +7,9 @@ export default function DepotLinkButton() {
     <Link
       className="grow flex flex-row justify-center items-center gap-6 p-4 rounded-xl sm:flex-col sm:gap-4 hover:bg-gray-800 hover:bg-opacity-15"
       href="/depot"
+      draggable={false}
     >
-      <div className="relative w-16 aspect-square sm:w-24">
+      <div className="relative w-16 selection:bg-transparent aspect-square sm:w-24">
         <Image
           className="[filter:brightness(100%)_invert(100%)]"
           src="/images/others/depot.png"
@@ -16,6 +17,7 @@ export default function DepotLinkButton() {
           fill
           sizes="20vw"
           priority
+          draggable={false}
         />
       </div>
       <div className="w-[180px] flex flex-col items-center gap-1 translate-y-[4px]">

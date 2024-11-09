@@ -80,6 +80,7 @@ export default function ManualDepotButton() {
           alt="manual-typing"
           fill
           sizes="25vw"
+          draggable={false}
         />
       </div>
 

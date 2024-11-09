@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState, FormEvent, KeyboardEvent } from "react";
+import { useState, FormEvent } from "react";
 import { useAtom } from "jotai";
 import { CountableMaterial, TierType } from "@/data/material";
-import { setDepotMaterialById } from "@/tool";
+import { handleExponentialNotation, setDepotMaterialById } from "@/tool";
 import { userDepotAtom } from "@/store";
 
 /** 창고에 있는 재료 하나를 표현하는 컴포넌트 */
@@ -92,18 +92,6 @@ export default function SingleMaterial({
     setUserDepot(userDepot);
   };
 
-  /** 지수 표기법 기호를 입력할 수 없도록 설정 */
-  const handleExponentialNotation = (
-    event: KeyboardEvent<HTMLInputElement>
-  ) => {
-    // 지수 표기법 기호 목록
-    const exponentialNotationList = ["e", "E", "-", "+", "."];
-
-    if (exponentialNotationList.includes(event.key)) {
-      event.preventDefault();
-    }
-  };
-
   /**
    * 마우스 기능:
    * - 좌클릭: 보유량 1 증가
@@ -141,6 +129,7 @@ export default function SingleMaterial({
             alt={countableMaterial.material.name}
             fill
             sizes="20vw"
+            draggable={false}
           />
         </div>
         <p className="flex justify-center items-center px-1 leading-tight h-12 text-base text-gray-200 text-center select-none">
