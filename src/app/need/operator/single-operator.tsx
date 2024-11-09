@@ -36,7 +36,7 @@ const SingleSkill = ({
   return (
     <div className="w-full flex flex-row gap-4">
       <div className="w-full flex flex-col items-start">
-        <p className="leading-tight font-medium text-gray-600 break-keep">
+        <p className="leading-tight text-gray-600 break-keep">
           스킬 {index + 1}
         </p>
         <p className="pl-1 leading-tight font-medium text-gray-200 break-keep">
@@ -267,13 +267,13 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
             draggable={false}
           />
         </div>
-        <p className="h-[40px] flex items-center leading-tight text-base text-gray-200 text-center break-keep select-none">
+        <p className="h-[40px] flex items-center leading-tight font-medium text-base text-gray-200 text-center break-keep select-none">
           {operator.name}
         </p>
       </div>
       {/* 정예화 */}
       <div className="w-full flex items-center px-1 py-2">
-        <p className="w-full leading-tight font-semibold text-gray-200 break-keep">
+        <p className="w-full leading-tight font-medium text-gray-200 break-keep">
           정예화
         </p>
         <div className="flex flex-row items-center gap-[6px]">
