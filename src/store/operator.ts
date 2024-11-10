@@ -5,9 +5,7 @@ import {
   MaterialsWithNumberAndName,
   ModuleLevel,
   Operator,
-  Shu,
   SkillLevel,
-  Wisadel,
 } from "@/data/operator";
 
 /** 오퍼레이터 목표치 */
@@ -42,7 +40,5 @@ export interface OperatorMaterial {
 }
 
 /** 사용자가 선택한 오퍼레이터 목록 */
-export const selectedOperatorsAtom = atom<Operator[]>([
-  Shu
-]);
+export const selectedOperatorsAtom = atom<Operator[]>([]);
 export const selectedOperatorsMaterialAtom = atom<OperatorMaterial[]>([]);
