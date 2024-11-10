@@ -109,6 +109,10 @@ type LevelUpTable = {
 /** 레벨 업에 필요한 경험치 및 용문폐, 정예화별 누적 테이블 */
 export const levelUpStackedTable: LevelUpTable = {
   0: {
+    0: {
+      exp: 0,
+      lmd: 0,
+    },
     1: {
       exp: 0,
       lmd: 0,
@@ -311,6 +315,10 @@ export const levelUpStackedTable: LevelUpTable = {
     },
   },
   1: {
+    0: {
+      exp: 0,
+      lmd: 0,
+    },
     1: {
       exp: 0,
       lmd: 0,
@@ -633,6 +641,10 @@ export const levelUpStackedTable: LevelUpTable = {
     },
   },
   2: {
+    0: {
+      exp: 0,
+      lmd: 0,
+    },
     1: {
       exp: 0,
       lmd: 0,
@@ -990,7 +1002,7 @@ export const levelUpStackedTable: LevelUpTable = {
       lmd: 707210,
     },
     90: {
-      exp: 756602,
+      exp: 750000,
       lmd: 744955,
     },
   },

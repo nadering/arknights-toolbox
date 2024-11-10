@@ -168,7 +168,13 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         currentElite,
         valueNumber as EliteNumber
       );
-      handleLevelRange(currentElite, valueNumber as EliteNumber, true);
+
+      /**
+       * 현재 정예화 단계가 목표 정예화 단계보다 낮아서 목표 정예화 단계를 낮췄거나,
+       * 목표 정예화 단계를 상승시켰다면, 목표 레벨이 최대가 되도록 설정
+       * - 현재 정예화 단계가 목표 정예화 단계와 똑같다면, 현재 목표 레벨을 유지
+       */
+      handleLevelRange(currentElite, valueNumber as EliteNumber, valueNumber != targetElite);
     }
 
     // 정예화에 따른 스킬 레벨 변경을 반영
@@ -189,36 +195,28 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       value = value.replace(startsWithZeroPattern, "");
     }
 
-    // 0을 제거한 문자열의 길이가 0이라면, 0으로 재설정 (00 등)
-    if (value.length == 0) {
-      value = "0";
-    }
-
     // 값을 숫자로 변환
     const elite = type == "current" ? currentElite : targetElite;
-    let valueNumber = Math.min(
+    const valueNumber = Math.min(
       parseInt(value, 10),
       maxLevelTable[operator.rarity][elite]
     );
 
     if (type == "current") {
-      if (currentElite == targetElite && valueNumber > targetLevel) {
-        // 같은 정예화 단계일 때, 목표 레벨은 현재 레벨보다 낮아질 수 없음
+      // 현재 레벨을 변경
+      if (
+        !isNaN(valueNumber) &&
+        currentElite == targetElite &&
+        valueNumber > targetLevel
+      ) {
+        // 같은 정예화 단계에서, 현재 레벨이 목표 레벨보다 높아지면 목표 레벨이 현재 레벨을 따라가도록 변경
         setTargetLevel(valueNumber);
       }
-      // 현재 레벨을 변경
       setCurrentLevel(valueNumber);
     } else {
-      if (currentElite == targetElite && valueNumber < currentLevel) {
-        // 같은 정예화 단계일 때, 목표 레벨은 현재 레벨보다 낮아질 수 없음
-        valueNumber = currentLevel;
-      }
       // 목표 정예화를 변경하고 스킬 범위를 재설정
       setTargetLevel(valueNumber);
     }
-
-    // 정예화에 따른 스킬 레벨 변경을 반영
-    setSkillLevels([...skillLevels]);
   };
 
   /** 레벨이 범위 내에 들어오도록 조정 */
@@ -232,6 +230,15 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       setTargetLevel(maxLevelTable[operator.rarity][targetElite]);
     }
 
+    if (currentLevel < 1) {
+      // 최소 1레벨이 되도록 설정
+      setCurrentLevel(1);
+    }
+    if (targetLevel < 1) {
+      // 최소 1레벨이 되도록 설정
+      setTargetLevel(1);
+    }
+
     if (currentLevel > maxLevelTable[operator.rarity][currentElite]) {
       // 최대 레벨을 초과하지 않도록 설정
       setCurrentLevel(maxLevelTable[operator.rarity][currentElite]);
@@ -240,6 +247,29 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       // 최대 레벨을 초과하지 않도록 설정
       setTargetLevel(maxLevelTable[operator.rarity][targetElite]);
     }
+
+    if (currentElite == targetElite) {
+      if (currentLevel > targetLevel) {
+        // 같은 정예화 단계에서, 현재 레벨이 목표 레벨보다 높아지면 목표 레벨이 현재 레벨을 따라가도록 변경
+        setTargetLevel(currentLevel);
+      }
+    }
+  };
+
+  /** 레벨이 비어있지 않도록 설정 */
+  const handleLevelNaN = (type: "current" | "target") => {
+    if (type == "current") {
+      if (isNaN(currentLevel)) {
+        setCurrentLevel(1);
+      }
+    } else {
+      if (isNaN(targetLevel)) {
+        setTargetLevel(currentLevel);
+      }
+    }
+
+    // 레벨이 범위 내에 들어오도록 조정
+    handleLevelRange(currentElite, targetElite);
   };
 
   /** 스킬 레벨 변경을 담당 */
@@ -259,7 +289,10 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     }
 
     // 값을 숫자로 변환
-    const valueNumber = parseInt(value, 10);
+    let valueNumber = parseInt(value, 10);
+    if (valueNumber == 0) {
+      valueNumber = 1;
+    }
 
     // 스킬 레벨 변경
     prev[index][type] = valueNumber;
@@ -316,12 +349,20 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       const changeLevel = skillLevels[index][type];
       for (let i = 0; i < skillLevels.length; i++) {
         skillLevels[i][type] = changeLevel;
+        if (type == "current" && skillLevels[i].target < 7) {
+          // 현재 스킬 레벨이 변경되었다면, 목표 스킬 레벨도 변경되어야 함
+          skillLevels[i].target = changeLevel;
+        }
       }
     } else {
       // 7레벨 이상이면, 7레벨 미만인 모든 스킬의 레벨을 7로 변경
       for (let i = 0; i < skillLevels.length; i++) {
         if (skillLevels[i][type] < 7) {
           skillLevels[i][type] = 7;
+          if (type == "current" && skillLevels[i].target < 7) {
+            // 현재 스킬 레벨이 변경되었다면, 목표 스킬 레벨도 변경되어야 함
+            skillLevels[i].target = 7;
+          }
         }
       }
     }
@@ -397,10 +438,19 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     setTargetEliteString(targetElite.toString());
   }, [currentElite, targetElite]);
 
-  // 레벨 문자열 설정
+  // 레벨 문자열 설정 (NaN일 때는 빈 문자열이 되도록 설정)
   useEffect(() => {
-    setCurrentLevelString(currentLevel.toString());
-    setTargetLevelString(targetLevel.toString());
+    if (isNaN(currentLevel)) {
+      setCurrentLevelString("");
+    } else {
+      setCurrentLevelString(currentLevel.toString());
+    }
+
+    if (isNaN(targetLevel)) {
+      setTargetLevelString("");
+    } else {
+      setTargetLevelString(targetLevel.toString());
+    }
   }, [currentLevel, targetLevel]);
 
   // 현재 오퍼레이터의 육성 단계가 설정되어 있다면, 해당 단계에 맞게 설정
@@ -410,6 +460,8 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         if (operatorMaterial.id == operator.id) {
           setCurrentElite(operatorMaterial.target.currentElite);
           setTargetElite(operatorMaterial.target.targetElite);
+          setCurrentLevel(operatorMaterial.target.currentLevel);
+          setTargetLevel(operatorMaterial.target.targetLevel);
           setSkillLevels([...operatorMaterial.target.skillLevels]);
           setModuleLevels([...operatorMaterial.target.moduleLevels]);
         }
@@ -420,6 +472,21 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   // 현재 오퍼레이터의 육성 재화를 추가
   useEffect(() => {
+    // 레벨 관련 변수 처리(NaN, 한 프레임 늦은 렌더 등)
+    let currentLevelData: number = currentLevel;
+    if (isNaN(currentLevel)) {
+      currentLevelData = 1;
+    }
+
+    let targetLevelData: number = targetLevel;
+    if (isNaN(targetLevel)) {
+      targetLevelData = 1;
+    } else {
+      if (currentElite == targetElite && currentLevel > targetLevel) {
+        targetLevelData = currentLevel;
+      }
+    }
+
     // 오퍼레이터 육성 재화 설정
     const currentOperatorMaterial: OperatorMaterial = {
       id: operator.id,
@@ -427,8 +494,8 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       target: {
         currentElite,
         targetElite,
-        currentLevel,
-        targetLevel,
+        currentLevel: currentLevelData,
+        targetLevel: targetLevelData,
         skillLevels,
         moduleLevels,
       },
@@ -563,6 +630,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 handleLevelChange(event, "current");
               }}
               onKeyDown={(event) => handleExponentialNotation(event)}
+              onBlur={() => handleLevelNaN("current")}
             ></input>
             <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
               ▶
@@ -581,6 +649,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 handleLevelChange(event, "target");
               }}
               onKeyDown={(event) => handleExponentialNotation(event)}
+              onBlur={() => handleLevelNaN("target")}
             ></input>
           </div>
         </div>

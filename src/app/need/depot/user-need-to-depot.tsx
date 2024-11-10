@@ -85,15 +85,30 @@ export default function UserNeedToDepot() {
         ) {
           // 현재 정예화 단계가 목표 정예화 단계보다 아래라면, 테이블을 여러 번 더해야 함
           if (eliteNum != target.targetElite) {
-            // 목표 정예화 단계 전이라면, 최대 레벨의 경험치 및 용문폐를 더해야 함
-            const maxLevel = maxLevelTable[operatorMaterial.rarity][eliteNum];
-            newExp += levelUpStackedTable[eliteNum][maxLevel].exp;
-            setDepotMaterialById(
-              LMD.id,
-              levelUpStackedTable[eliteNum][maxLevel].lmd,
-              newUserNeed,
-              true
-            );
+            if (eliteNum == target.currentElite) {
+              // 현재 인덱스가 현재 정예화 단계면, 최대 레벨에서 현재 레벨의 수치를 뺀 만큼 더하면 됨
+              const maxLevel = maxLevelTable[operatorMaterial.rarity][eliteNum];
+              newExp +=
+                levelUpStackedTable[eliteNum][maxLevel].exp -
+                levelUpStackedTable[eliteNum][target.currentLevel].exp;
+              setDepotMaterialById(
+                LMD.id,
+                levelUpStackedTable[eliteNum][maxLevel].lmd -
+                  levelUpStackedTable[eliteNum][target.currentLevel].lmd,
+                newUserNeed,
+                true
+              );
+            } else {
+              // 현재 인덱스가 현재 정예화 단계도 아니고, 목표 정예화 단계도 아니라면 최대 레벨의 수치를 더하면 됨
+              const maxLevel = maxLevelTable[operatorMaterial.rarity][eliteNum];
+              newExp += levelUpStackedTable[eliteNum][maxLevel].exp;
+              setDepotMaterialById(
+                LMD.id,
+                levelUpStackedTable[eliteNum][maxLevel].lmd,
+                newUserNeed,
+                true
+              );
+            }
           } else {
             // 목표 정예화 단계와 동일하다면, 같은 테이블 안에서 경험치 및 용문폐를 계산
             // 이 경우, 현재 레벨은 1레벨 기준으로 계산해도 됨
@@ -179,7 +194,7 @@ export default function UserNeedToDepot() {
     // 오퍼레이터의 육성 재료 추가가 끝나면 새로운 창고 및 경험치를 사용자 필요 재료의 창고화된 데이터로 설정
     setUserNeed(newUserNeed);
     setExp({ material: EXP, count: newExp });
-  }, [selectedOperatorsMaterial]);
+  }, [setExp, setUserNeed, selectedOperatorsMaterial]);
 
   // 오퍼레이터가 변경되면, 새로 재료를 설정
   useEffect(() => {

@@ -53,6 +53,7 @@ export default function OperatorAdder() {
   // 검색 문자열이 변경될 때마다, 검색 데이터를 갱신
   useEffect(() => {
     setSearchedData(searchOperatorData());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   return (
