@@ -1,6 +1,6 @@
 // 오퍼레이터 인터페이스 및 오퍼레이터 관련 설정
 
-import { MaterialsWithElite, MaterialsWithNumber, MaterialsWithNumberAndName, ModuleInfo, PreferModuleInfo, RarityNumber } from "./table";
+import { MaterialsWithElite,MaterialsWithNumberAndName, ModuleInfo, PreferModuleInfo, RarityNumber } from "./table";
 
 /** 오퍼레이터 포지션(클래스) */
 export type OperatorClass =
