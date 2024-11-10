@@ -68,6 +68,7 @@ export const Wisadel: Sniper = {
   branch: "Flinger",
   rarity: 6,
   eliteMaterials: {
+    0: [],
     1: [
       { material: sniperChip!, count: 5 },
       { material: sugar, count: 9 },

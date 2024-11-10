@@ -13,6 +13,11 @@ export interface MaterialsWithNumber {
   [key: string]: CountableMaterial[];
 }
 
+/** 정예화 타입 숫자와 필요한 재료 매핑 */
+export type MaterialsWithElite = {
+  [key in EliteNumber]: CountableMaterial[];
+};
+
 /**
  * 스킬 혹은 모듈 같이 이름이 있고 업그레이드가 가능한 경우, 이름과 "숫자와 필요한 재료 매핑"된 부분을 매핑하여,
  * 이름으로 접근한 후 숫자로 추가로 접근할 수 있도록 함
@@ -20,6 +25,19 @@ export interface MaterialsWithNumber {
 export interface MaterialsWithNumberAndName {
   [key: string]: MaterialsWithNumber;
 }
+
+/** 스킬 레벨 타입 */
+export interface SkillLevel {
+  name: string;
+  current: number;
+  target: number;
+}
+
+/** 모듈 활성화 정예화 */
+export const ModuleActiveElite = 2;
+
+/** 모듈 최대 레벨 */
+export const ModuleMaxLevel = 3;
 
 /** 모듈 인터페이스 */
 export interface ModuleInfo {
@@ -33,6 +51,14 @@ export interface ModuleInfo {
 export interface PreferModuleInfo {
   module: ModuleInfo;
   level: number;
+}
+
+/** 모듈 레벨 타입 */
+export interface ModuleLevel {
+  type: string;
+  name: string;
+  current: number;
+  target: number;
 }
 
 /** 레벨 상한 타입 */

@@ -1,24 +1,132 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { DepotLine, LMDLine, UpgradeLine } from "@common/depot";
-import { userNeedAtom, userNeedInitializedAtom } from "@/store";
+import {
+  makeEmptyDepot,
+  selectedOperatorsMaterialAtom,
+  userNeedAtom,
+} from "@/store";
+import { setDepotMaterialById } from "@/tool";
+import { CountableMaterial } from "@/data/material";
+import { ModuleActiveElite } from "@/data/operator";
 
 /** 사용자 필요 재료의 창고화된 데이터 */
 export default function UserNeedToDepot() {
   // 사용자 필요 재료
-  const userNeed = useAtomValue(userNeedAtom);
-  const setUserNeedInitialized = useSetAtom(userNeedInitializedAtom);
+  const [userNeed, setUserNeed] = useAtom(userNeedAtom);
+
+  // 오퍼레이터 총 육성 재화
+  const selectedOperatorsMaterial = useAtomValue(selectedOperatorsMaterialAtom);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
 
-  // 사용자 필요 재료의 창고화된 데이터를 보여주는 순간, 창고가 초기화되었다고 설정
+  /** 오퍼레이터 총 육성 재화를 창고 데이터로 반영 */
+  const setUserNeedWithSelectedOperator = () => {
+    // 새로운 빈 창고 데이터를 생성
+    const newUserNeed = makeEmptyDepot();
+
+    for (const operatorMaterial of selectedOperatorsMaterial) {
+      // 각각의 오퍼레이터의 육성 재화를 창고 데이터에 추가
+      const target = operatorMaterial.target;
+
+      // 정예화
+      for (
+        let eliteNum = target.elite;
+        eliteNum < target.targetElite;
+        eliteNum++
+      ) {
+        // 정예화 재료를 구해서,
+        const eliteMaterial: CountableMaterial[] =
+          operatorMaterial.eliteMaterials[eliteNum + 1];
+
+        // 창고 데이터에 추가
+        for (const countableMaterial of eliteMaterial) {
+          setDepotMaterialById(
+            countableMaterial.material.id,
+            countableMaterial.count,
+            newUserNeed,
+            true
+          );
+        }
+      }
+
+      // 스킬 마스터리
+      const commonAdded = [false, false, false, false, false, false, false];
+      for (const skill of target.skillLevels) {
+        const skillName = skill.name;
+        for (
+          let skillNum = skill.current;
+          skillNum < skill.target;
+          skillNum++
+        ) {
+          // 스킬 레벨에 따라 재료 추가
+          let skillMaterial: CountableMaterial[];
+
+          if (skillNum < 7) {
+            // 1 ~ 7레벨 구간의 공통 재료는 1번만 더함
+            if (commonAdded[skillNum]) continue;
+
+            skillMaterial =
+              operatorMaterial.skillUpgradeMaterials["common"][skillNum + 1];
+            commonAdded[skillNum] = true;
+          } else {
+            // 마스터리 (8 ~ 10레벨)
+            skillMaterial =
+              operatorMaterial.skillUpgradeMaterials[skillName][skillNum + 1];
+          }
+
+          // 창고 데이터에 추가
+          for (const countableMaterial of skillMaterial) {
+            setDepotMaterialById(
+              countableMaterial.material.id,
+              countableMaterial.count,
+              newUserNeed,
+              true
+            );
+          }
+        }
+      }
+
+      // 모듈
+      if (target.targetElite >= ModuleActiveElite) {
+        // 모듈이 활성화되어 있는 경우에만 추가
+        for (const moduleInfo of target.moduleLevels) {
+          const moduleType = moduleInfo.type;
+          for (
+            let moduleNum = moduleInfo.current;
+            moduleNum < moduleInfo.target;
+            moduleNum++
+          ) {
+            // 모듈 레벨에 따라 재료 추가
+            const moduleMaterial: CountableMaterial[] =
+              operatorMaterial.moduleMaterials[moduleType][moduleNum + 1];
+
+            // 창고 데이터에 추가
+            for (const countableMaterial of moduleMaterial) {
+              setDepotMaterialById(
+                countableMaterial.material.id,
+                countableMaterial.count,
+                newUserNeed,
+                true
+              );
+            }
+          }
+        }
+      }
+    }
+
+    // 추가가 끝나면 새로운 창고를, 사용자 필요 재료의 창고화된 데이터로 설정
+    setUserNeed(newUserNeed);
+  };
+
+  // 오퍼레이터가 변경되면, 새로 재료를 설정
   useEffect(() => {
-    setUserNeedInitialized(true);
+    setUserNeedWithSelectedOperator();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [selectedOperatorsMaterial]);
 
   // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
   useEffect(() => {

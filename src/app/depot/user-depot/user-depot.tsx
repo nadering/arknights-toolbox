@@ -44,12 +44,24 @@ export default function UserDepot() {
 
   return (
     <div className="hidden w-full flex flex-col gap-8" ref={divRef}>
-      <LMDLine list={userDepot["LMD"]} />
-      <DepotLine title="작전개론" list={userDepot["Battle-Record"]} />
-      <UpgradeLine list={userDepot["Upgrade"]} />
-      <DepotLine title="스킬개론" list={userDepot["Skill-Summary"]} />
-      <DepotLine title="모듈" list={userDepot["Module"]} />
-      <DepotLine title="데이터 칩" list={userDepot["Memory-Chip"]} />
+      <LMDLine list={userDepot["LMD"]} userDepotUse />
+      <DepotLine
+        title="작전개론"
+        list={userDepot["Battle-Record"]}
+        userDepotUse
+      />
+      <UpgradeLine list={userDepot["Upgrade"]} userDepotUse />
+      <DepotLine
+        title="스킬개론"
+        list={userDepot["Skill-Summary"]}
+        userDepotUse
+      />
+      <DepotLine title="모듈" list={userDepot["Module"]} userDepotUse />
+      <DepotLine
+        title="데이터 칩"
+        list={userDepot["Memory-Chip"]}
+        userDepotUse
+      />
     </div>
   );
 }

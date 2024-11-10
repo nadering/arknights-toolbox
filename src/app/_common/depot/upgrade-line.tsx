@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { SingleMaterial } from "@common/depot";
 import { CountableMaterial, TierType } from "@data/material";
 
@@ -9,28 +9,21 @@ export default function UpgradeLine({
   list,
   skipZero = false,
   readonly = false,
+  userDepotUse = false,
 }: {
   list: CountableMaterial[];
   skipZero?: boolean;
   readonly?: boolean;
+  userDepotUse?: boolean;
 }) {
   /** 티어별 재료 타입 */
   type MaterialByTierType = {
     [key in TierType]: CountableMaterial[];
   };
 
-  /** 티어별 재료 */
-  const materialByTier = useRef<MaterialByTierType>({
-    5: [],
-    4: [],
-    3: [],
-    2: [],
-    1: [],
-  });
-
   /** 티어별 재료의 존재 여부 */
-  const materialExists = useRef<boolean>(false);
-  const materialExistsByTier = useRef<boolean[]>([
+  const [materialExists, setMaterialExists] = useState<boolean>(false);
+  const [materialExistsByTier, setMaterialExistsByTier] = useState<boolean[]>([
     false,
     false,
     false,
@@ -43,8 +36,12 @@ export default function UpgradeLine({
 
   // 티어별 재료를 설정
   useEffect(() => {
+    // 티어별 재료가 없다고 가정
+    setMaterialExists(false);
+    const newMaterialExistsByTier = materialExistsByTier.map(() => false);
+
     // 티어별 재료를 초기화 및 재설정
-    materialByTier.current = {
+    const materialByTier: MaterialByTierType = {
       5: [],
       4: [],
       3: [],
@@ -52,16 +49,17 @@ export default function UpgradeLine({
       1: [],
     };
     list.forEach((upgrade) => {
-      materialByTier.current[upgrade.material.tier].push(upgrade);
+      materialByTier[upgrade.material.tier].push(upgrade);
       if (skipZero && upgrade.count > 0) {
-        // 재료 존재 여부를 확인 후 설정
-        materialExists.current = true;
-        materialExistsByTier.current[upgrade.material.tier] = true;
+        // 티어별 재료 존재 여부를 확인 후 설정
+        setMaterialExists(true);
+        newMaterialExistsByTier[upgrade.material.tier] = true;
       }
     });
+    setMaterialExistsByTier(newMaterialExistsByTier);
 
     // 티어별 재료에 맞게 JSX 엘리먼트를 생성
-    const upgradeTierLines = Object.entries(materialByTier.current)
+    const upgradeTierLines = Object.entries(materialByTier)
       .reverse()
       .map((materials) => {
         // Key(티어), Value(티어별 재료 리스트)
@@ -75,7 +73,7 @@ export default function UpgradeLine({
               key={key}
               className={`${
                 skipZero &&
-                !materialExistsByTier.current[parseInt(key, 10)] &&
+                !newMaterialExistsByTier[parseInt(key, 10)] &&
                 "hidden"
               } flex flex-col gap-[2px]`}
             >
@@ -90,6 +88,7 @@ export default function UpgradeLine({
                         key={upgrade.material.id}
                         countableMaterial={upgrade}
                         readonly={readonly}
+                        userDepotUse={userDepotUse}
                       />
                     );
                   }
@@ -103,12 +102,13 @@ export default function UpgradeLine({
       });
 
     setTierLines(upgradeTierLines);
-  }, [list, skipZero, readonly]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [list, skipZero, readonly, userDepotUse]);
 
   return (
     <div
       className={`${
-        skipZero && !materialExists.current && "hidden"
+        skipZero && !materialExists && "hidden"
       } flex flex-col items-start`}
     >
       <p className="leading-tight font-semibold text-2xl text-white break-keep">

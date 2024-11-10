@@ -1,11 +1,16 @@
 "use client";
 
+import { Logos } from "@/data/operator";
+import { selectedOperatorsAtom } from "@/store";
+import { useSetAtom } from "jotai";
 import Image from "next/image";
 import { useState } from "react";
 
 /** 오퍼레이터 한 명을 추가하는 컴포넌트 */
 export default function OperatorAdder() {
   const [inputText, setInputText] = useState("");
+
+  const setSelectedOperators = useSetAtom(selectedOperatorsAtom);
 
   return (
     <div className="flex justify-center items-center">
@@ -19,7 +24,10 @@ export default function OperatorAdder() {
           type="search"
           placeholder="원하는 오퍼레이터 이름을 입력해주세요."
           value={inputText}
-          onChange={(event) => setInputText(event.target.value)}
+          onChange={(event) => {
+            setInputText(event.target.value);
+            setSelectedOperators((prev) => [...prev, Logos]);
+          }}
         ></input>
         <div className="absolute right-4 w-6 selection:bg-transparent aspect-square">
           <Image

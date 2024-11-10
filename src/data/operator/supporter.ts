@@ -62,6 +62,7 @@ export const CivilightEterna: Supporter = {
   branch: "Bard",
   rarity: 6,
   eliteMaterials: {
+    0: [],
     1: [
       { material: supporterChip!, count: 5 },
       { material: oriron, count: 7 },

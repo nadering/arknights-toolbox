@@ -9,12 +9,10 @@ export default function SelectedOperators() {
   const selectedOperators = useAtomValue(selectedOperatorsAtom);
 
   return (
-    <div className="flex flex-col items-start gap-1">
-      <div className="w-full flex flex-row flex-wrap gap-2">
-        {selectedOperators.map((operator) => {
-          return <SingleOperator key={operator.id} operator={operator} />;
-        })}
-      </div>
+    <div className="w-full flex flex-row flex-wrap items-start gap-2">
+      {selectedOperators.map((operator) => {
+        return <SingleOperator key={operator.id} operator={operator} />;
+      })}
     </div>
   );
 }

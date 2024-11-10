@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
 import { useAtom } from "jotai";
 import { CountableMaterial, TierType } from "@/data/material";
 import { handleExponentialNotation, setDepotMaterialById } from "@/tool";
@@ -12,13 +12,19 @@ export default function SingleMaterial({
   countableMaterial,
   isLmd = false,
   readonly = false,
+  userDepotUse = false,
 }: {
   countableMaterial: CountableMaterial;
   isLmd?: boolean;
   readonly?: boolean;
+  userDepotUse?: boolean;
 }) {
   // 사용자의 창고 데이터
   const [userDepot, setUserDepot] = useAtom(userDepotAtom);
+
+  // 재료 데이터
+  const [countableMaterialData, setCountableMaterialData] =
+    useState(countableMaterial);
 
   // 사용자로부터 입력받은 재료 보유량
   const [countString, setCountString] = useState(
@@ -26,11 +32,11 @@ export default function SingleMaterial({
   );
 
   /** 이미지 경로 */
-  const imageSrc = `/images/material/${countableMaterial.material.type.toLowerCase()}/${
-    countableMaterial.material.type == "Upgrade"
-      ? `${countableMaterial.material.tier}/`
+  const imageSrc = `/images/material/${countableMaterialData.material.type.toLowerCase()}/${
+    countableMaterialData.material.type == "Upgrade"
+      ? `${countableMaterialData.material.tier}/`
       : ""
-  }${countableMaterial.material.imageFilename}.png`;
+  }${countableMaterialData.material.imageFilename}.png`;
 
   /** 테두리 색상 타입 */
   type BorderColors = {
@@ -47,7 +53,7 @@ export default function SingleMaterial({
   };
 
   /** 현재 재료가 용문폐라면, 화면 크기가 640px 이하일 때 보유량 길이 증가 */
-  const countLengthWhenMobile = isLmd ? "w-28" : "w-16";
+  const countLengthWhenMobile = isLmd ? "w-[108px]" : "w-16";
 
   /** 문자열을 입력하지 않고, (마우스 클릭을 통해) 현재 보유량 수정 */
   const addCount = (value: number) => {
@@ -57,14 +63,26 @@ export default function SingleMaterial({
       return;
     }
 
+    if (readonly) {
+      // 읽기 전용일 때는 보유량을 수정하지 않음
+      return;
+    }
+
     // 보유량을 계산한 후,
     const currentCount = parseInt(countString, 10);
     const newCount = Math.max(currentCount + value, 0);
 
     // 보유량을 반영
     setCountString(newCount.toString());
-    setDepotMaterialById(countableMaterial.material.id, newCount, userDepot);
-    setUserDepot(userDepot);
+
+    // 사용자 창고를 설정하는 경우
+    if (userDepotUse) {
+      setDepotMaterialById(
+        countableMaterialData.material.id,
+        newCount,
+        userDepot
+      );
+    }
   };
 
   /** 현재 보유량 문자열 설정 */
@@ -84,13 +102,23 @@ export default function SingleMaterial({
 
     // 그 후, 보유량 문자열을 설정하고 보유량을 갱신
     setCountString(value);
-    setDepotMaterialById(
-      countableMaterial.material.id,
-      parseInt(value, 10),
-      userDepot
-    );
-    setUserDepot(userDepot);
+
+    // 사용자 창고를 설정하는 경우
+    if (userDepotUse) {
+      setDepotMaterialById(
+        countableMaterialData.material.id,
+        parseInt(value, 10),
+        userDepot
+      );
+      setUserDepot(userDepot);
+    }
   };
+
+  // Re-render를 위한 useEffect 추가
+  useEffect(() => {
+    setCountableMaterialData(countableMaterial);
+    setCountString(countableMaterial.count.toString());
+  }, [countableMaterial]);
 
   /**
    * 마우스 기능:
@@ -102,7 +130,7 @@ export default function SingleMaterial({
   return (
     <div
       className={`relative w-full flex flex-row justify-between items-center px-4 gap-4 border ${
-        borderColorByTier[countableMaterial.material.tier]
+        borderColorByTier[countableMaterialData.material.tier]
       }  rounded-lg sm:w-28 sm:min-w-28 sm:flex-col sm:justify-center sm:gap-0 sm:px-0 sm:py-2 sm:border-2`}
     >
       <div
@@ -126,23 +154,27 @@ export default function SingleMaterial({
         <div className="relative w-10 min-w-10 aspect-square select-none sm:w-20 sm:min-w-20">
           <Image
             src={imageSrc}
-            alt={countableMaterial.material.name}
+            alt={countableMaterialData.material.name}
             fill
             sizes="20vw"
             draggable={false}
           />
         </div>
         <p className="flex justify-center items-center px-1 leading-tight h-12 text-base text-gray-200 text-center select-none">
-          {countableMaterial.material.name}
+          {countableMaterialData.material.name}
         </p>
       </div>
       <input
         className={`
           ${countLengthWhenMobile} h-6 px-2 py-3 resize-none rounded-xl
-          outline-none ${readonly ? "bg-black selection:bg-transparent cursor-default" : "bg-dark-800 selection:bg-gray-800"} text-gray-200 text-center 
+          outline-none ${
+            readonly
+              ? "bg-black selection:bg-transparent cursor-default"
+              : "bg-dark-800 selection:bg-gray-800"
+          } text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
           sm:w-full sm:px-4 sm:rounded-none`}
-        id={countableMaterial.material.id}
+        id={countableMaterialData.material.id}
         type="number"
         min={0}
         step={1}

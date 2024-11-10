@@ -1,60 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
 import { useAtom, useSetAtom } from "jotai";
 import {
   makeEmptyDepot,
   selectedOperatorsAtom,
+  selectedOperatorsMaterialAtom,
   userNeedAtom,
   userNeedInitializedAtom,
 } from "@/store";
-import {
-  crystallineElectronicUnit,
-  LMD,
-  manganeseTrihydrate,
-  moduleDataBlock,
-  orirock,
-  skillSummary3,
-} from "@/data/material";
-import { setDepotMaterialById } from "@/tool";
 import OperatorAdder from "./operator-adder";
 import SelectedOperators from "./selected-operators";
 
 /** 육성할 오퍼레이터 설정 */
 export default function OperatorSetter() {
   // 사용자의 필요 재료 설정
-  const [userNeed, setUserNeed] = useAtom(userNeedAtom);
+  const setUserNeed = useSetAtom(userNeedAtom);
   const [userNeedInitialized, setUserNeedInitialized] = useAtom(
     userNeedInitializedAtom
   );
 
-  // 사용자가 선택한 오퍼레이터
+  // 사용자가 선택한 오퍼레이터 및 재화
   const setSelectedOperators = useSetAtom(selectedOperatorsAtom);
+  const setSelectedOperatorsMaterial = useSetAtom(selectedOperatorsMaterialAtom);
 
   /** 필요 재료 설정 초기화 */
   const resetNeed = () => {
     setSelectedOperators([]);
+    setSelectedOperatorsMaterial([]);
     setUserNeed(makeEmptyDepot());
     setUserNeedInitialized(false);
   };
-
-  useEffect(() => {
-    console.log("SET TEST");
-    const value = userNeed;
-
-    setDepotMaterialById(LMD.id, 5, value);
-    setDepotMaterialById(crystallineElectronicUnit.id, 5, value);
-    setDepotMaterialById(manganeseTrihydrate.id, 10, value);
-    setDepotMaterialById(skillSummary3.id, 15, value);
-    setDepotMaterialById(crystallineElectronicUnit.id, 5, value, true);
-    setDepotMaterialById(orirock.id, 132, value, true);
-    setDepotMaterialById(moduleDataBlock.id, 12345, value);
-
-    setUserNeed(value);
-    setUserNeedInitialized(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="flex flex-col p-4">
