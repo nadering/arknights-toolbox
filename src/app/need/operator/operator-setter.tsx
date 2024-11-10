@@ -91,10 +91,12 @@ export default function OperatorSetter() {
               draggable={false}
             />
             <p
-              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-            rounded-lg translate-x-[-90px] translate-y-[-36px] group-hover:block"
+              className={`hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+            rounded-lg ${operatorCollapsed ? "translate-x-[-75px]" : 'translate-x-[-67px]'} translate-y-[-36px] group-hover:block`}
             >
-              오퍼레이터 정보 펼치기/접기
+              {operatorCollapsed
+                ? "오퍼레이터 정보 펼치기"
+                : "오퍼레이터 정보 접기"}
             </p>
           </button>
         </div>
