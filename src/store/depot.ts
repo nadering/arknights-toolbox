@@ -9,6 +9,7 @@ import {
   memoryChipList,
   moduleMaterialList,
   LMD,
+  EXP,
 } from "@/data/material";
 
 /** 사용자의 재료 보유량 및 필요량을 나타내는 타입 */
@@ -60,3 +61,9 @@ export const userNeedAtom = atom<Depot>(makeEmptyDepot());
 
 /** 사용자가 필요한 재료를 입력했는지 여부를 저장하는 아톰 */
 export const userNeedInitializedAtom = atom<boolean>(false);
+
+/** 총 경험치를 저장하는 아톰 */
+export const expAtom = atom<CountableMaterial>({
+  material: EXP,
+  count: 0,
+});

@@ -7,7 +7,8 @@ export type MaterialType =
   | "Skill-Summary"
   | "Memory-Chip"
   | "Module"
-  | "LMD";
+  | "LMD"
+  | "Exp";
 
 export type TierType = 1 | 2 | 3 | 4 | 5;
 
@@ -28,7 +29,7 @@ export default interface Material {
   /** 아이템 부가 설명 (게임 내에서 이탤릭체로 작성되어 있음) */
   subDescription?: string;
   /**
-   * 제작될 때 몇 개 제작되는지 나타내는 속성으로, 
+   * 제작될 때 몇 개 제작되는지 나타내는 속성으로,
    * 해당 속성이 없다면 기본적으로 1개 제작되며, 있다면 해당 개수만큼 제작됨
    */
   craftingUnit?: number;

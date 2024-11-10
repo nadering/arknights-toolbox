@@ -1,32 +1,42 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { useAtom, useAtomValue } from "jotai";
-import { DepotLine, LMDLine, UpgradeLine } from "@common/depot";
+import { useRef, useEffect, useCallback } from "react";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { DepotLine, LMDExpLine, UpgradeLine } from "@common/depot";
 import {
+  expAtom,
   makeEmptyDepot,
   selectedOperatorsMaterialAtom,
   userNeedAtom,
 } from "@/store";
 import { setDepotMaterialById } from "@/tool";
-import { CountableMaterial } from "@/data/material";
-import { ModuleActiveElite } from "@/data/operator";
+import { CountableMaterial, EXP, LMD } from "@/data/material";
+import {
+  levelUpStackedTable,
+  maxLevelTable,
+  moduleActiveElite,
+  moduleLevelRequired,
+} from "@/data/operator";
 
 /** 사용자 필요 재료의 창고화된 데이터 */
 export default function UserNeedToDepot() {
   // 사용자 필요 재료
   const [userNeed, setUserNeed] = useAtom(userNeedAtom);
 
-  // 오퍼레이터 총 육성 재화
+  /** 오퍼레이터 총 육성 재화 */
   const selectedOperatorsMaterial = useAtomValue(selectedOperatorsMaterialAtom);
+
+  /** 오퍼레이터 육성 경험치 */
+  const setExp = useSetAtom(expAtom);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
 
   /** 오퍼레이터 총 육성 재화를 창고 데이터로 반영 */
-  const setUserNeedWithSelectedOperator = () => {
+  const setUserNeedWithSelectedOperator = useCallback(() => {
     // 새로운 빈 창고 데이터를 생성
     const newUserNeed = makeEmptyDepot();
+    let newExp = 0;
 
     for (const operatorMaterial of selectedOperatorsMaterial) {
       // 각각의 오퍼레이터의 육성 재화를 창고 데이터에 추가
@@ -34,7 +44,7 @@ export default function UserNeedToDepot() {
 
       // 정예화
       for (
-        let eliteNum = target.elite;
+        let eliteNum = target.currentElite;
         eliteNum < target.targetElite;
         eliteNum++
       ) {
@@ -50,6 +60,51 @@ export default function UserNeedToDepot() {
             newUserNeed,
             true
           );
+        }
+      }
+
+      // 레벨
+      if (target.currentElite == target.targetElite) {
+        // 같은 정예화 단계면, 같은 테이블 안에서 경험치 및 용문폐를 계산
+        newExp +=
+          levelUpStackedTable[target.currentElite][target.targetLevel].exp -
+          levelUpStackedTable[target.currentElite][target.currentLevel].exp;
+
+        setDepotMaterialById(
+          LMD.id,
+          levelUpStackedTable[target.currentElite][target.targetLevel].lmd -
+            levelUpStackedTable[target.currentElite][target.currentLevel].lmd,
+          newUserNeed,
+          true
+        );
+      } else {
+        for (
+          let eliteNum = target.currentElite;
+          eliteNum <= target.targetElite;
+          eliteNum++
+        ) {
+          // 현재 정예화 단계가 목표 정예화 단계보다 아래라면, 테이블을 여러 번 더해야 함
+          if (eliteNum != target.targetElite) {
+            // 목표 정예화 단계 전이라면, 최대 레벨의 경험치 및 용문폐를 더해야 함
+            const maxLevel = maxLevelTable[operatorMaterial.rarity][eliteNum];
+            newExp += levelUpStackedTable[eliteNum][maxLevel].exp;
+            setDepotMaterialById(
+              LMD.id,
+              levelUpStackedTable[eliteNum][maxLevel].lmd,
+              newUserNeed,
+              true
+            );
+          } else {
+            // 목표 정예화 단계와 동일하다면, 같은 테이블 안에서 경험치 및 용문폐를 계산
+            // 이 경우, 현재 레벨은 1레벨 기준으로 계산해도 됨
+            newExp += levelUpStackedTable[eliteNum][target.targetLevel].exp;
+            setDepotMaterialById(
+              LMD.id,
+              levelUpStackedTable[eliteNum][target.targetLevel].lmd,
+              newUserNeed,
+              true
+            );
+          }
         }
       }
 
@@ -91,7 +146,10 @@ export default function UserNeedToDepot() {
       }
 
       // 모듈
-      if (target.targetElite >= ModuleActiveElite) {
+      if (
+        target.targetElite >= moduleActiveElite &&
+        target.targetLevel >= moduleLevelRequired[operatorMaterial.rarity]
+      ) {
         // 모듈이 활성화되어 있는 경우에만 추가
         for (const moduleInfo of target.moduleLevels) {
           const moduleType = moduleInfo.type;
@@ -118,9 +176,10 @@ export default function UserNeedToDepot() {
       }
     }
 
-    // 추가가 끝나면 새로운 창고를, 사용자 필요 재료의 창고화된 데이터로 설정
+    // 오퍼레이터의 육성 재료 추가가 끝나면 새로운 창고 및 경험치를 사용자 필요 재료의 창고화된 데이터로 설정
     setUserNeed(newUserNeed);
-  };
+    setExp({ material: EXP, count: newExp });
+  }, [selectedOperatorsMaterial]);
 
   // 오퍼레이터가 변경되면, 새로 재료를 설정
   useEffect(() => {
@@ -158,7 +217,7 @@ export default function UserNeedToDepot() {
         </p>
       </div>
       <div className="grow w-full flex flex-col gap-8 p-2 border-none rounded-xl">
-        <LMDLine list={userNeed["LMD"]} skipZero readonly />
+        <LMDExpLine list={userNeed["LMD"]} skipZero readonly />
         <DepotLine
           title="작전개론"
           list={userNeed["Battle-Record"]}

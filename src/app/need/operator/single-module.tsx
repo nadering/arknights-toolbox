@@ -1,18 +1,31 @@
 import { FormEvent, useEffect, useState } from "react";
-import { EliteNumber, ModuleLevel, ModuleMaxLevel } from "@/data/operator";
+import {
+  EliteNumber,
+  moduleActiveElite,
+  ModuleLevel,
+  moduleLevelRequired,
+  moduleMaxLevel,
+  RarityNumber,
+} from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 
 /** 오퍼레이터의 단일 모듈 */
 export default function SingleModule({
   index,
-  elite,
+  rarity,
+  currentElite,
   targetElite,
+  currentLevel,
+  targetLevel,
   moduleLevels,
   handleModuleLevelChange,
 }: {
   index: number;
-  elite: EliteNumber;
+  rarity: RarityNumber;
+  currentElite: EliteNumber;
   targetElite: EliteNumber;
+  currentLevel: number;
+  targetLevel: number;
   moduleLevels: ModuleLevel[];
   handleModuleLevelChange: (
     event: FormEvent<HTMLInputElement>,
@@ -21,10 +34,12 @@ export default function SingleModule({
   ) => void;
 }) {
   // 현재 정예화에 따른 모듈 현재 입력창 색상 설정 여부
-  const isAbleAtCurrentElite = elite >= 2;
+  const isAbleAtCurrentElite =
+    currentElite >= moduleActiveElite && currentLevel >= moduleLevelRequired[rarity];
 
   // 목표 정예화에 따른 모듈 활성화 여부
-  const isActive = targetElite >= 2;
+  const isActive =
+    targetElite >= moduleActiveElite && targetLevel >= moduleLevelRequired[rarity];
 
   // 스킬 문자열 설정
   const [currentModuleString, setCurrentModuleString] = useState(
@@ -57,7 +72,7 @@ export default function SingleModule({
       </div>
       <div className="flex flex-row items-center gap-[6px]">
         <input
-          className={`w-8 h-6 px-2 py-3 resize-none rounded-lg
+          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 ${
             isAbleAtCurrentElite ? "text-gray-200" : "text-gray-600"
           } text-center 
@@ -65,7 +80,7 @@ export default function SingleModule({
           id={`${moduleLevels[index].type}-current`}
           type={isActive ? "number" : "hidden"}
           min={0}
-          max={ModuleMaxLevel}
+          max={moduleMaxLevel}
           step={1}
           value={currentModuleString}
           disabled={!isAbleAtCurrentElite}
@@ -80,13 +95,13 @@ export default function SingleModule({
           ▶
         </p>
         <input
-          className={`w-8 h-6 px-2 py-3 resize-none rounded-lg
+          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
           id={`${moduleLevels[index].type}-target`}
           type={isActive ? "number" : "hidden"}
           min={0}
-          max={ModuleMaxLevel}
+          max={moduleMaxLevel}
           step={1}
           value={targetModuleString}
           disabled={!isActive}

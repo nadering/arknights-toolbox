@@ -5,12 +5,13 @@ import { useAtom, useAtomValue } from "jotai";
 import Image from "next/image";
 import {
   ModuleLevel,
-  ModuleMaxLevel,
+  moduleMaxLevel,
   Operator,
   SkillLevel,
   EliteNumber,
   maxEliteTable,
   skillMaxLevelTable,
+  maxLevelTable,
 } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 import {
@@ -40,15 +41,31 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   );
 
   // 정예화 설정
-  const [elite, setElite] = useState<EliteNumber>(0);
+  const [currentElite, setCurrentElite] = useState<EliteNumber>(0);
   const [targetElite, setTargetElite] = useState<EliteNumber>(
     maxEliteTable[operator.rarity]
   );
 
   // 정예화 문자열 설정
-  const [eliteString, setEliteString] = useState(elite.toString());
+  const [currentEliteString, setCurrentEliteString] = useState(
+    currentElite.toString()
+  );
   const [targetEliteString, setTargetEliteString] = useState(
     targetElite.toString()
+  );
+
+  // 레벨 설정
+  const [currentLevel, setCurrentLevel] = useState(1);
+  const [targetLevel, setTargetLevel] = useState(
+    maxLevelTable[operator.rarity][targetElite]
+  );
+
+  // 레벨 문자열 설정
+  const [currentLevelString, setCurrentLevelString] = useState(
+    currentLevel.toString()
+  );
+  const [targetLevelString, setTargetLevelString] = useState(
+    targetLevel.toString()
   );
 
   // 스킬 레벨 설정
@@ -99,7 +116,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
 
-  /** 정예화 수치 변경을 담당 */
+  /** 정예화 단계 변경을 담당 */
   const handleEliteChange = (
     event: FormEvent<HTMLInputElement>,
     type: "current" | "target"
@@ -126,61 +143,102 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
     if (type == "current") {
       if (valueNumber > targetElite) {
-        // 목표 정예화는, 현재 정예화 수치보다 낮아질 수 없음
+        // 목표 정예화는, 현재 정예화 단계보다 낮아질 수 없음
         setTargetElite(valueNumber as EliteNumber);
       }
 
-      // 현재 정예화를 변경하고 스킬 범위를 재설정
-      setElite(valueNumber as EliteNumber);
+      // 현재 정예화를 변경하고 스킬 및 레벨 범위를 재설정
+      setCurrentElite(valueNumber as EliteNumber);
       handleSkillLevelRange(
         skillLevels,
         valueNumber as EliteNumber,
         targetElite
       );
+      handleLevelRange(valueNumber as EliteNumber, targetElite);
     } else {
-      if (valueNumber < elite) {
-        // 목표 정예화는, 현재 정예화 수치보다 낮아질 수 없음
-        valueNumber = elite;
+      if (valueNumber < currentElite) {
+        // 목표 정예화는, 현재 정예화 단계보다 낮아질 수 없음
+        valueNumber = currentElite;
       }
 
       // 목표 정예화를 변경하고 스킬 범위를 재설정
       setTargetElite(valueNumber as EliteNumber);
-      handleSkillLevelRange(skillLevels, elite, valueNumber as EliteNumber);
+      handleSkillLevelRange(
+        skillLevels,
+        currentElite,
+        valueNumber as EliteNumber
+      );
+      handleLevelRange(currentElite, valueNumber as EliteNumber, true);
     }
 
     // 정예화에 따른 스킬 레벨 변경을 반영
     setSkillLevels([...skillLevels]);
   };
 
-  /** 스킬 레벨이 범위 내에 들어오도록 조정 */
-  const handleSkillLevelRange = (
-    skillLevels: SkillLevel[],
-    elite: EliteNumber,
+  /** 레벨 변경을 담당 */
+  const handleLevelChange = (
+    event: FormEvent<HTMLInputElement>,
+    type: "current" | "target"
+  ) => {
+    // 값을 얻어온 후,
+    // 0으로 시작하고 문자열 길이가 1을 초과한다면 (00, 01 등), 가장 왼쪽의 0을 제거함
+    let value = event.currentTarget.value;
+
+    const startsWithZeroPattern = /^0+/;
+    if (value.length > 1) {
+      value = value.replace(startsWithZeroPattern, "");
+    }
+
+    // 0을 제거한 문자열의 길이가 0이라면, 0으로 재설정 (00 등)
+    if (value.length == 0) {
+      value = "0";
+    }
+
+    // 값을 숫자로 변환
+    const elite = type == "current" ? currentElite : targetElite;
+    let valueNumber = Math.min(
+      parseInt(value, 10),
+      maxLevelTable[operator.rarity][elite]
+    );
+
+    if (type == "current") {
+      if (currentElite == targetElite && valueNumber > targetLevel) {
+        // 같은 정예화 단계일 때, 목표 레벨은 현재 레벨보다 낮아질 수 없음
+        setTargetLevel(valueNumber);
+      }
+      // 현재 레벨을 변경
+      setCurrentLevel(valueNumber);
+    } else {
+      if (currentElite == targetElite && valueNumber < currentLevel) {
+        // 같은 정예화 단계일 때, 목표 레벨은 현재 레벨보다 낮아질 수 없음
+        valueNumber = currentLevel;
+      }
+      // 목표 정예화를 변경하고 스킬 범위를 재설정
+      setTargetLevel(valueNumber);
+    }
+
+    // 정예화에 따른 스킬 레벨 변경을 반영
+    setSkillLevels([...skillLevels]);
+  };
+
+  /** 레벨이 범위 내에 들어오도록 조정 */
+  const handleLevelRange = (
+    currentElite: EliteNumber,
     targetElite: EliteNumber,
     targetEliteChanged: boolean = false
   ) => {
-    for (let i = 0; i < skillLevels.length; i++) {
-      // 스킬이 가능한 최대 레벨을 초과할 경우, 최대 레벨로 조정
-      skillLevels[i].current = Math.min(
-        skillLevels[i].current,
-        skillMaxLevelTable[elite]
-      );
-      skillLevels[i].target = Math.min(
-        skillLevels[i].target,
-        skillMaxLevelTable[targetElite]
-      );
+    if (targetEliteChanged) {
+      // 목표 정예화 단계가 변경되면, 해당 단계의 최대 레벨로 설정
+      setTargetLevel(maxLevelTable[operator.rarity][targetElite]);
+    }
 
-      if (!targetEliteChanged) {
-        // 현재 레벨이 최대 레벨을 초과할 경우, 현재 레벨을 최대 레벨로 조정
-        if (skillLevels[i].current > skillMaxLevelTable[elite]) {
-          skillLevels[i].current = skillMaxLevelTable[elite];
-        }
-      }
-
-      // 목표 레벨이 현재 레벨보다 낮아지지 않도록 설정
-      if (skillLevels[i].current > skillLevels[i].target) {
-        skillLevels[i].target = skillLevels[i].current;
-      }
+    if (currentLevel > maxLevelTable[operator.rarity][currentElite]) {
+      // 최대 레벨을 초과하지 않도록 설정
+      setCurrentLevel(maxLevelTable[operator.rarity][currentElite]);
+    }
+    if (targetLevel > maxLevelTable[operator.rarity][targetElite]) {
+      // 최대 레벨을 초과하지 않도록 설정
+      setTargetLevel(maxLevelTable[operator.rarity][targetElite]);
     }
   };
 
@@ -207,8 +265,40 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     prev[index][type] = valueNumber;
 
     // 스킬 레벨 범위를 조정 후, 스킬 레벨 변경을 반영
-    handleSkillLevelRange(prev, elite, targetElite, type == "target");
+    handleSkillLevelRange(prev, currentElite, targetElite, type == "target");
     setSkillLevels([...prev]);
+  };
+
+  /** 스킬 레벨이 범위 내에 들어오도록 조정 */
+  const handleSkillLevelRange = (
+    skillLevels: SkillLevel[],
+    currentElite: EliteNumber,
+    targetElite: EliteNumber,
+    targetEliteChanged: boolean = false
+  ) => {
+    for (let i = 0; i < skillLevels.length; i++) {
+      // 스킬이 가능한 최대 레벨을 초과할 경우, 최대 레벨로 조정
+      skillLevels[i].current = Math.min(
+        skillLevels[i].current,
+        skillMaxLevelTable[currentElite]
+      );
+      skillLevels[i].target = Math.min(
+        skillLevels[i].target,
+        skillMaxLevelTable[targetElite]
+      );
+
+      if (!targetEliteChanged) {
+        // 현재 레벨이 최대 레벨을 초과할 경우, 현재 레벨을 최대 레벨로 조정
+        if (skillLevels[i].current > skillMaxLevelTable[currentElite]) {
+          skillLevels[i].current = skillMaxLevelTable[currentElite];
+        }
+      }
+
+      // 목표 레벨이 현재 레벨보다 낮아지지 않도록 설정
+      if (skillLevels[i].current > skillLevels[i].target) {
+        skillLevels[i].target = skillLevels[i].current;
+      }
+    }
   };
 
   /** 스킬 레벨이 7레벨까지 공통으로 변경되는 부분 설정 */
@@ -264,9 +354,9 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     // 값을 숫자로 변환
     let valueNumber = parseInt(value, 10);
 
-    if (valueNumber > ModuleMaxLevel) {
+    if (valueNumber > moduleMaxLevel) {
       // 모듈 최대 레벨을 초과하지 않게 설정
-      valueNumber = ModuleMaxLevel;
+      valueNumber = moduleMaxLevel;
     }
 
     prev[index][type] = valueNumber;
@@ -303,16 +393,22 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   // 정예화 문자열 설정
   useEffect(() => {
-    setEliteString(elite.toString());
+    setCurrentEliteString(currentElite.toString());
     setTargetEliteString(targetElite.toString());
-  }, [elite, targetElite]);
+  }, [currentElite, targetElite]);
+
+  // 레벨 문자열 설정
+  useEffect(() => {
+    setCurrentLevelString(currentLevel.toString());
+    setTargetLevelString(targetLevel.toString());
+  }, [currentLevel, targetLevel]);
 
   // 현재 오퍼레이터의 육성 단계가 설정되어 있다면, 해당 단계에 맞게 설정
   useEffect(() => {
     if (userNeedInitialized) {
       for (const operatorMaterial of selectedOperatorsMaterial) {
         if (operatorMaterial.id == operator.id) {
-          setElite(operatorMaterial.target.elite);
+          setCurrentElite(operatorMaterial.target.currentElite);
           setTargetElite(operatorMaterial.target.targetElite);
           setSkillLevels([...operatorMaterial.target.skillLevels]);
           setModuleLevels([...operatorMaterial.target.moduleLevels]);
@@ -327,9 +423,12 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     // 오퍼레이터 육성 재화 설정
     const currentOperatorMaterial: OperatorMaterial = {
       id: operator.id,
+      rarity: operator.rarity,
       target: {
-        elite,
+        currentElite,
         targetElite,
+        currentLevel,
+        targetLevel,
         skillLevels,
         moduleLevels,
       },
@@ -367,8 +466,10 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     operator.eliteMaterials,
     operator.moduleMaterials,
     operator.skillUpgradeMaterials,
-    elite,
+    currentElite,
     targetElite,
+    currentLevel,
+    targetLevel,
     skillLevels,
     moduleLevels,
   ]);
@@ -395,7 +496,12 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
           {operator.name}
         </p>
       </div>
-      <div className={`${operatorCollapsed ? "hidden" : ""} w-full flex flex-col gap-6`}>
+      {/* 오퍼레이터 정보 */}
+      <div
+        className={`${
+          operatorCollapsed ? "hidden" : ""
+        } w-full flex flex-col gap-4`}
+      >
         {/* 정예화 */}
         <div className="w-full flex items-center px-1">
           <p className="w-full leading-tight font-medium text-gray-200 break-keep">
@@ -403,15 +509,15 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
           </p>
           <div className="flex flex-row items-center gap-[6px]">
             <input
-              className="w-8 h-6 px-2 py-3 resize-none rounded-lg
-          outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
-          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              id={`${operator.name}-current-elite`}
+              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+                outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
+                [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              id={`${operator.id}-current-elite`}
               type="number"
               min={0}
               max={maxEliteTable[operator.rarity]}
               step={1}
-              value={eliteString}
+              value={currentEliteString}
               onInput={(event) => {
                 handleEliteChange(event, "current");
               }}
@@ -421,10 +527,10 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
               ▶
             </p>
             <input
-              className="w-8 h-6 px-2 py-3 resize-none rounded-lg
+              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              id={`${operator.name}-target-elite`}
+              id={`${operator.id}-target-elite`}
               type="number"
               min={0}
               max={maxEliteTable[operator.rarity]}
@@ -432,6 +538,47 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
               value={targetEliteString}
               onInput={(event) => {
                 handleEliteChange(event, "target");
+              }}
+              onKeyDown={(event) => handleExponentialNotation(event)}
+            ></input>
+          </div>
+        </div>
+        {/* 레벨 */}
+        <div className="w-full flex items-center px-1">
+          <p className="w-full leading-tight font-medium text-gray-200 break-keep">
+            레벨
+          </p>
+          <div className="flex flex-row items-center gap-[6px]">
+            <input
+              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+          outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
+          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              id={`${operator.id}-current-level`}
+              type="number"
+              min={1}
+              max={maxLevelTable[operator.rarity][currentElite]}
+              step={1}
+              value={currentLevelString}
+              onInput={(event) => {
+                handleLevelChange(event, "current");
+              }}
+              onKeyDown={(event) => handleExponentialNotation(event)}
+            ></input>
+            <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
+              ▶
+            </p>
+            <input
+              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+                outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
+                [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              id={`${operator.id}-target-level`}
+              type="number"
+              min={1}
+              max={maxLevelTable[operator.rarity][targetElite]}
+              step={1}
+              value={targetLevelString}
+              onInput={(event) => {
+                handleLevelChange(event, "target");
               }}
               onKeyDown={(event) => handleExponentialNotation(event)}
             ></input>
@@ -445,7 +592,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 key={skill}
                 skill={skill}
                 index={index}
-                elite={elite}
+                currentElite={currentElite}
                 targetElite={targetElite}
                 skillLevels={skillLevels}
                 handleSkillLevelChange={handleSkillLevelChange}
@@ -465,8 +612,11 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
               <SingleModule
                 key={module.type}
                 index={index}
-                elite={elite}
+                rarity={operator.rarity}
+                currentElite={currentElite}
                 targetElite={targetElite}
+                currentLevel={currentLevel}
+                targetLevel={targetLevel}
                 moduleLevels={moduleLevels}
                 handleModuleLevelChange={handleModuleLevelChange}
               />

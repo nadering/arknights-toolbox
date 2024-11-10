@@ -60,6 +60,7 @@ export default function OperatorAdder() {
           placeholder="원하는 오퍼레이터 이름을 입력해주세요."
           value={searchText}
           autoComplete="off"
+          autoFocus
           onChange={(event) => {
             setSearchText(event.target.value);
           }}

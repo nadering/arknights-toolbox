@@ -6,7 +6,7 @@ import { handleExponentialNotation } from "@/tool";
 export default function SingleSkill({
   skill,
   index,
-  elite,
+  currentElite,
   targetElite,
   skillLevels,
   handleSkillLevelChange,
@@ -14,7 +14,7 @@ export default function SingleSkill({
 }: {
   skill: string;
   index: number;
-  elite: EliteNumber;
+  currentElite: EliteNumber;
   targetElite: EliteNumber;
   skillLevels: SkillLevel[];
   handleSkillLevelChange: (
@@ -28,7 +28,7 @@ export default function SingleSkill({
   ) => void;
 }) {
   // 현재 정예화에 따른 스킬 입력창 색상 설정 여부
-  const isAbleAtCurrentElite = elite >= index;
+  const isAbleAtCurrentElite = currentElite >= index;
 
   // 목표 정예화에 따른 스킬 활성화 여부
   const isActive = targetElite >= index;
@@ -73,7 +73,7 @@ export default function SingleSkill({
       </div>
       <div className="flex flex-row items-center gap-[6px]">
         <input
-          className={`w-8 h-6 px-2 py-3 resize-none rounded-lg
+          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 ${
             isAbleAtCurrentElite ? "text-gray-200" : "text-gray-600"
           } text-center 
@@ -99,7 +99,7 @@ export default function SingleSkill({
           ▶
         </p>
         <input
-          className={`w-8 h-6 px-2 py-3 resize-none rounded-lg
+          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
           id={`${skill}-target`}

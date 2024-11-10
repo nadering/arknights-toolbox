@@ -28,7 +28,9 @@ export default function OperatorSetter() {
   );
 
   // 오퍼레이터 정보 접기/펼치기 여부
-  const setOperatorCollapsed = useSetAtom(operatorCollapsedAtom);
+  const [operatorCollapsed, setOperatorCollapsed] = useAtom(
+    operatorCollapsedAtom
+  );
 
   /** 필요 재료 설정 초기화 */
   const resetNeed = () => {
@@ -78,7 +80,11 @@ export default function OperatorSetter() {
             <Image
               className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
             hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
-              src="/images/others/collapse.png"
+              src={
+                operatorCollapsed
+                  ? "/images/others/expand.png"
+                  : "/images/others/collapse.png"
+              }
               alt="collapse-operator-data"
               fill
               sizes="10vw"
