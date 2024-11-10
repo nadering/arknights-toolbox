@@ -19,7 +19,16 @@ export default function OperatorAdder() {
 
   /** 검색 문자열에 해당되는 오퍼레이터 리스트를 반환 */
   const searchOperatorData = () => {
+    // 현재 및 최대 데이터 수
+    let currentDataCount = 0;
+    const maxDataCount = 5;
+
     return operatorList.filter((operator) => {
+      if (currentDataCount >= maxDataCount) {
+        // 최대 데이터 수를 초과하면, 검색하여 추가하지 않음
+        return;
+      }
+
       if (
         searchText &&
         operator.name.startsWith(searchText.at(0)!) &&
@@ -28,6 +37,7 @@ export default function OperatorAdder() {
         // 문자열 탐색 후, 현재 검색 문자열에 오퍼레이터가 해당된다고 파악되면 추가
         // 단, 이미 선택된 오퍼레이터는 추가하지 않음
         if (!selectedOperators || !selectedOperators.includes(operator)) {
+          currentDataCount += 1;
           return operator;
         }
       }
