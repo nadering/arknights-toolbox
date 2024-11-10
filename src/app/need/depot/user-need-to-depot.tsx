@@ -100,9 +100,9 @@ export default function UserNeedToDepot() {
             moduleNum < moduleInfo.target;
             moduleNum++
           ) {
-            // 모듈 레벨에 따라 재료 추가
+            // 모듈 레벨에 따라 재료 추가 (이 분기에는 반드시 모듈 재료가 있음)
             const moduleMaterial: CountableMaterial[] =
-              operatorMaterial.moduleMaterials[moduleType][moduleNum + 1];
+              operatorMaterial.moduleMaterials![moduleType][moduleNum + 1];
 
             // 창고 데이터에 추가
             for (const countableMaterial of moduleMaterial) {

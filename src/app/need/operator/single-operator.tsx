@@ -1,7 +1,7 @@
 "use client;";
 
 import { useState, useRef, useEffect, FormEvent } from "react";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import Image from "next/image";
 import {
   ModuleLevel,
@@ -14,6 +14,7 @@ import {
 } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 import {
+  operatorCollapsedAtom,
   OperatorMaterial,
   selectedOperatorsMaterialAtom,
   userNeedInitializedAtom,
@@ -23,6 +24,11 @@ import SingleModule from "./single-module";
 
 /** 육성하려는 오퍼레이터 한 명을 표현하는 컴포넌트 */
 export default function SingleOperator({ operator }: { operator: Operator }) {
+  /** 오퍼레이터 이미지 */
+  const operatorImageSrc = `/images/operator/list/${operator.class.toLowerCase()}/${
+    operator.imageFilename
+  }.png`;
+
   // 오퍼레이터 육성 재료 설정
   const [selectedOperatorsMaterial, setSelectedOperatorsMaterial] = useAtom(
     selectedOperatorsMaterialAtom
@@ -32,11 +38,6 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   const [userNeedInitialized, setUserNeedInitialized] = useAtom(
     userNeedInitializedAtom
   );
-
-  /** 오퍼레이터 이미지 */
-  const operatorImageSrc = `/images/operator/list/${operator.class.toLowerCase()}/${
-    operator.imageFilename
-  }.png`;
 
   // 정예화 설정
   const [elite, setElite] = useState<EliteNumber>(0);
@@ -91,6 +92,9 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       return { type: module.type, name: module.name, current: 0, target: 0 };
     })
   );
+
+  /** 오퍼레이터 정보 접기/펼치기를 설정 */
+  const operatorCollapsed = useAtomValue(operatorCollapsedAtom);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
@@ -208,22 +212,26 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   };
 
   /** 스킬 레벨이 7레벨까지 공통으로 변경되는 부분 설정 */
-  const handleCommonSkillLevels = (type: "current" | "target", index: number) => {
-    if (skillLevels[index][type] < 7) {
-      // 새로 입력된 스킬 레벨이 7레벨 미만이라면, 해당 레벨로 모든 스킬의 레벨을 변경
+  const handleCommonSkillLevels = (
+    type: "current" | "target",
+    index: number
+  ) => {
+    if (isNaN(skillLevels[index][type])) {
+      // 새로 입력된 스킬 레벨이 NaN이라면, 모든 스킬의 레벨을 1로 변경
       for (let i = 0; i < skillLevels.length; i++) {
-        skillLevels[i][type] = skillLevels[index][type];
+        skillLevels[i][type] = 1;
+      }
+    } else if (skillLevels[index][type] < 7) {
+      // 새로 입력된 스킬 레벨이 7레벨 미만이라면, 해당 레벨로 모든 스킬의 레벨을 변경
+      const changeLevel = skillLevels[index][type];
+      for (let i = 0; i < skillLevels.length; i++) {
+        skillLevels[i][type] = changeLevel;
       }
     } else {
       // 7레벨 이상이면, 7레벨 미만인 모든 스킬의 레벨을 7로 변경
-      // 단, 새로 입력된 스킬 레벨이 NaN이라면 1로 변경
       for (let i = 0; i < skillLevels.length; i++) {
-        if (isNaN(skillLevels[index][type])) {
-          skillLevels[i][type] = 1;
-        } else {
-          if (skillLevels[i][type] < 7) {
-            skillLevels[i][type] = 7;
-          }
+        if (skillLevels[i][type] < 7) {
+          skillLevels[i][type] = 7;
         }
       }
     }
@@ -387,78 +395,84 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
           {operator.name}
         </p>
       </div>
-      {/* 정예화 */}
-      <div className="w-full flex items-center px-1">
-        <p className="w-full leading-tight font-medium text-gray-200 break-keep">
-          정예화
-        </p>
-        <div className="flex flex-row items-center gap-[6px]">
-          <input
-            className="w-8 h-6 px-2 py-3 resize-none rounded-lg
-          outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
-          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-            id={`${operator.name}-current-elite`}
-            type="number"
-            min={0}
-            max={maxEliteTable[operator.rarity]}
-            step={1}
-            value={eliteString}
-            onInput={(event) => {
-              handleEliteChange(event, "current");
-            }}
-            onKeyDown={(event) => handleExponentialNotation(event)}
-          ></input>
-          <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
-            ▶
+      <div className={`${operatorCollapsed ? "hidden" : ""} w-full flex flex-col gap-6`}>
+        {/* 정예화 */}
+        <div className="w-full flex items-center px-1">
+          <p className="w-full leading-tight font-medium text-gray-200 break-keep">
+            정예화
           </p>
-          <input
-            className="w-8 h-6 px-2 py-3 resize-none rounded-lg
+          <div className="flex flex-row items-center gap-[6px]">
+            <input
+              className="w-8 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-            id={`${operator.name}-target-elite`}
-            type="number"
-            min={0}
-            max={maxEliteTable[operator.rarity]}
-            step={1}
-            value={targetEliteString}
-            onInput={(event) => {
-              handleEliteChange(event, "target");
-            }}
-            onKeyDown={(event) => handleExponentialNotation(event)}
-          ></input>
+              id={`${operator.name}-current-elite`}
+              type="number"
+              min={0}
+              max={maxEliteTable[operator.rarity]}
+              step={1}
+              value={eliteString}
+              onInput={(event) => {
+                handleEliteChange(event, "current");
+              }}
+              onKeyDown={(event) => handleExponentialNotation(event)}
+            ></input>
+            <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
+              ▶
+            </p>
+            <input
+              className="w-8 h-6 px-2 py-3 resize-none rounded-lg
+          outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
+          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              id={`${operator.name}-target-elite`}
+              type="number"
+              min={0}
+              max={maxEliteTable[operator.rarity]}
+              step={1}
+              value={targetEliteString}
+              onInput={(event) => {
+                handleEliteChange(event, "target");
+              }}
+              onKeyDown={(event) => handleExponentialNotation(event)}
+            ></input>
+          </div>
         </div>
-      </div>
-      {/* 스킬 */}
-      <div className="w-full flex flex-col gap-2 px-1">
-        {operator.skillList.map((skill, index) => {
-          return (
-            <SingleSkill
-              key={skill}
-              skill={skill}
-              index={index}
-              elite={elite}
-              targetElite={targetElite}
-              skillLevels={skillLevels}
-              handleSkillLevelChange={handleSkillLevelChange}
-              handleCommonSkillLevels={handleCommonSkillLevels}
-            />
-          );
-        })}
-      </div>
-      {/* 모듈 */}
-      <div className="w-full flex flex-col gap-2 px-1">
-        {operator.moduleList.map((module, index) => {
-          return (
-            <SingleModule
-              key={module.type}
-              index={index}
-              elite={elite}
-              targetElite={targetElite}
-              moduleLevels={moduleLevels}
-              handleModuleLevelChange={handleModuleLevelChange}
-            />
-          );
-        })}
+        {/* 스킬 */}
+        <div className="w-full flex flex-col gap-2 px-1">
+          {operator.skillList.map((skill, index) => {
+            return (
+              <SingleSkill
+                key={skill}
+                skill={skill}
+                index={index}
+                elite={elite}
+                targetElite={targetElite}
+                skillLevels={skillLevels}
+                handleSkillLevelChange={handleSkillLevelChange}
+                handleCommonSkillLevels={handleCommonSkillLevels}
+              />
+            );
+          })}
+        </div>
+        {/* 모듈 */}
+        <div
+          className={`${
+            operator.moduleList.length == 0 ? "hidden" : ""
+          } w-full flex flex-col gap-2 px-1`}
+        >
+          {operator.moduleList.map((module, index) => {
+            return (
+              <SingleModule
+                key={module.type}
+                index={index}
+                elite={elite}
+                targetElite={targetElite}
+                moduleLevels={moduleLevels}
+                handleModuleLevelChange={handleModuleLevelChange}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

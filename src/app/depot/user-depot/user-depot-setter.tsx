@@ -68,7 +68,7 @@ export default function UserDepotSetter() {
 
   return (
     <div className="flex flex-col p-4">
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-5">
         <p className="pl-1 font-bold text-3xl text-white break-keep">
           현재 보유량 설정
         </p>

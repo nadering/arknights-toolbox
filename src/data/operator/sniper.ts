@@ -61,7 +61,7 @@ export interface Sniper extends Operator {
 // 6성
 /** 위셔델 */
 export const Wisadel: Sniper = {
-  id: 329,
+  id: 328,
   name: "위셔델",
   imageFilename: "wisadel",
   class: "Sniper",

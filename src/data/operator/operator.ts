@@ -48,7 +48,7 @@ export default interface Operator {
    */
   preferModuleList?: PreferModuleInfo[];
   /** 모듈 업그레이드 재료 */
-  moduleMaterials: MaterialsWithNumberAndName;
+  moduleMaterials: MaterialsWithNumberAndName | null;
 }
 
 

@@ -55,7 +55,7 @@ export interface Supporter extends Operator {
 
 // 6성
 export const CivilightEterna: Supporter = {
-  id: 327,
+  id: 326,
   name: "시빌라이트 에테르나",
   imageFilename: "civilight-eterna",
   class: "Supporter",

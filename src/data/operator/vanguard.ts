@@ -49,7 +49,7 @@ export interface Vanguard extends Operator {
 // 4성
 /** 머틀 */
 export const Myrtle: Vanguard = {
-  id: 99,
+  id: 101,
   name: "머틀",
   imageFilename: "myrtle",
   class: "Vanguard",

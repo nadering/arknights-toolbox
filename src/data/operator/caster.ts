@@ -54,7 +54,7 @@ export interface Caster extends Operator {
 // 6성
 /** 로고스 */
 export const Logos: Caster = {
-  id: 328,
+  id: 327,
   name: "로고스",
   imageFilename: "logos",
   class: "Caster",

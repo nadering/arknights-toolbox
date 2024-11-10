@@ -10,7 +10,7 @@ export default function SelectedOperators() {
 
   return (
     <div className="w-full flex flex-row flex-wrap items-start gap-2">
-      {selectedOperators.map((operator) => {
+      {selectedOperators.reverse().map((operator) => {
         return <SingleOperator key={operator.id} operator={operator} />;
       })}
     </div>
