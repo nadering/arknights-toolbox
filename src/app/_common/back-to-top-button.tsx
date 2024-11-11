@@ -34,10 +34,9 @@ export default function BackToTopButton() {
     <>
       {isVisible ? (
         <Image
-          className="fixed z-50 bottom-8 right-5 cursor-pointer [transition:filter_0s]
-          [filter:invert(43%)_sepia(0%)_saturate(0%)_hue-rotate(348deg)_brightness(92%)_contrast(93%)]
-          hover:[filter:invert(80%)_sepia(0%)_saturate(28%)_hue-rotate(223deg)_brightness(90%)_contrast(92%)]
-          "
+          className="fixed z-50 bottom-5 right-5 opacity-60 cursor-pointer [transition:filter_0s]
+          [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+          hover:opacity-100 hover:[filter:invert(80%)_sepia(0%)_saturate(28%)_hue-rotate(223deg)_brightness(90%)_contrast(92%)]"
           src="/images/others/uparrow.png"
           alt="back-to-top-button"
           width={48}
