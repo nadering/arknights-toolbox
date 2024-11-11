@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Header, BackToTopButton } from "@/app/_common";
+import { Header, BackToTopButton, BackToMainButton, GoToBottomButton } from "@/app/_common";
 import { Providers } from "./providers";
 import "./globals.css";
 
@@ -33,6 +33,8 @@ export default function RootLayout({
               {children}
             </div>
             <BackToTopButton />
+            <GoToBottomButton />
+            <BackToMainButton />
           </div>
         </Providers>
       </body>
