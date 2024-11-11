@@ -9,7 +9,7 @@ export default function Header() {
   const setUserSelect = useSetAtom(userSelectAtom);
 
   return (
-    <header className="absolute top-0 left-0 right-0 h-12 flex flex-row justify-between items-center px-4">
+    <header className="absolute top-0 left-0 right-0 h-12 flex flex-row justify-between items-center px-4 selection:bg-transparent">
       <Link
         href="/"
         className="leading-none font-semibold text-2xl text-gray-400 text-center break-keep px-1 translate-y-2

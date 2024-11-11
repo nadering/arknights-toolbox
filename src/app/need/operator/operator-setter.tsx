@@ -41,7 +41,7 @@ export default function OperatorSetter() {
   };
 
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col p-4 selection:bg-gray-800">
       <div className="flex flex-row gap-5">
         <p className="pl-1 font-bold text-3xl text-white break-keep">
           필요 재료 설정

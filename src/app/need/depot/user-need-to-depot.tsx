@@ -225,7 +225,7 @@ export default function UserNeedToDepot() {
   }, []);
 
   return (
-    <div className="hidden flex flex-col p-4" ref={divRef}>
+    <div className="hidden flex flex-col p-4 selection:bg-gray-800" ref={divRef}>
       <div className="flex flex-row gap-4">
         <p className="font-bold text-3xl text-white break-keep">
           필요 재료 확인

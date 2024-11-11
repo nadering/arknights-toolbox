@@ -17,6 +17,7 @@ import { handleExponentialNotation } from "@/tool";
 import {
   operatorCollapsedAtom,
   OperatorMaterial,
+  selectedOperatorsAtom,
   selectedOperatorsMaterialAtom,
   userNeedInitializedAtom,
 } from "@/store";
@@ -29,6 +30,11 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   const operatorImageSrc = `/images/operator/list/${operator.class.toLowerCase()}/${
     operator.imageFilename
   }.png`;
+
+  // 선택된 오퍼레이터
+  const [selectedOperators, setSelectedOperators] = useAtom(
+    selectedOperatorsAtom
+  );
 
   // 오퍼레이터 육성 재료 설정
   const [selectedOperatorsMaterial, setSelectedOperatorsMaterial] = useAtom(
@@ -111,7 +117,12 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   );
 
   /** 오퍼레이터 정보 접기/펼치기를 설정 */
-  const operatorCollapsed = useAtomValue(operatorCollapsedAtom);
+  // 전체 오퍼레이터
+  const allOperatorCollapsed = useAtomValue(operatorCollapsedAtom);
+
+  // 현재 오퍼레이터 단일
+  const [singleOperatorCollapsed, setSingleOperatorCollapsed] =
+    useState(allOperatorCollapsed);
 
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
@@ -174,7 +185,11 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
        * 목표 정예화 단계를 상승시켰다면, 목표 레벨이 최대가 되도록 설정
        * - 현재 정예화 단계가 목표 정예화 단계와 똑같다면, 현재 목표 레벨을 유지
        */
-      handleLevelRange(currentElite, valueNumber as EliteNumber, valueNumber != targetElite);
+      handleLevelRange(
+        currentElite,
+        valueNumber as EliteNumber,
+        valueNumber != targetElite
+      );
     }
 
     // 정예화에 따른 스킬 레벨 변경을 반영
@@ -264,7 +279,11 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       }
     } else {
       if (isNaN(targetLevel)) {
-        setTargetLevel(currentLevel);
+        if (currentElite == targetElite) {
+          setTargetLevel(currentLevel);
+        } else {
+          setTargetLevel(1);
+        }
       }
     }
 
@@ -349,8 +368,8 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       const changeLevel = skillLevels[index][type];
       for (let i = 0; i < skillLevels.length; i++) {
         skillLevels[i][type] = changeLevel;
-        if (type == "current" && skillLevels[i].target < 7) {
-          // 현재 스킬 레벨이 변경되었다면, 목표 스킬 레벨도 변경되어야 함
+        if (type == "current" && changeLevel > skillLevels[i].target) {
+          // 변경된 현재 스킬 레벨이 목표 스킬 레벨보다 높다면, 목표 스킬 레벨도 변경되어야 함
           skillLevels[i].target = changeLevel;
         }
       }
@@ -410,6 +429,29 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     setModuleLevels([...prev]);
   };
 
+  /** 선택된 오퍼레이터에서 제거 */
+  const removeSelf = () => {
+    const newSelectedOperators: Operator[] = [];
+    const newSelectedOperatorsMaterial: OperatorMaterial[] = [];
+    for (let i = 0; i < selectedOperators.length; i++) {
+      // 현재 오퍼레이터가 아닌 경우에만 추가
+      if (selectedOperators[i].id != operator.id) {
+        newSelectedOperators.push(selectedOperators[i]);
+      }
+      if (selectedOperatorsMaterial[i].id != operator.id) {
+        newSelectedOperatorsMaterial.push(selectedOperatorsMaterial[i]);
+      }
+    }
+
+    // 자신을 제외한 오퍼레이터 목록을 반영
+    setSelectedOperators(newSelectedOperators);
+    setSelectedOperatorsMaterial(newSelectedOperatorsMaterial);
+    if (newSelectedOperators.length == 0) {
+      // 오퍼레이터가 남지 않았다면, 사용자가 핑료 재료 및 오퍼레이터를 설정하지 않은 상태
+      setUserNeedInitialized(false);
+    }
+  };
+
   // 애니메이션 (오퍼레이터가 추가될 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
   useEffect(() => {
     /** 애니메이션을 나타내는 클래스 */
@@ -452,6 +494,11 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       setTargetLevelString(targetLevel.toString());
     }
   }, [currentLevel, targetLevel]);
+
+  // 오퍼레이터 정보 펼치기/접기 관련 설정
+  useEffect(() => {
+    setSingleOperatorCollapsed(allOperatorCollapsed);
+  }, [allOperatorCollapsed]);
 
   // 현재 오퍼레이터의 육성 단계가 설정되어 있다면, 해당 단계에 맞게 설정
   useEffect(() => {
@@ -543,12 +590,18 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   return (
     <div
-      className="hidden relative w-[234px] min-w-[234px] flex flex-col justify-between items-center p-2 gap-6 border-2 border-gray-800 rounded-lg
-        transition-all hover:border-white"
+      className="hidden relative w-[234px] min-w-[234px] flex flex-col justify-between items-center gap-4 border-2 border-gray-800 rounded-lg
+        transition-all selection:bg-gray-800 hover:border-white"
       ref={divRef}
     >
       {/* 오퍼레이터 이미지 및 이름 */}
-      <div className="w-full flex flex-row justify-center items-center gap-3">
+      <div
+        className="w-full flex flex-row justify-center items-center gap-3 p-2 cursor-pointer"
+        onClick={() => {
+          // 현재 오퍼레이터의 정보 펼치기/접기를 설정
+          setSingleOperatorCollapsed((prev) => !prev);
+        }}
+      >
         <div className="relative w-10 min-w-10 aspect-square select-none">
           <Image
             className="rounded-2xl"
@@ -566,12 +619,12 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       {/* 오퍼레이터 정보 */}
       <div
         className={`${
-          operatorCollapsed ? "hidden" : ""
-        } w-full flex flex-col gap-4`}
+          singleOperatorCollapsed ? "hidden" : ""
+        } w-full flex flex-col gap-4 px-2`}
       >
         {/* 정예화 */}
         <div className="w-full flex items-center px-1">
-          <p className="w-full leading-tight font-medium text-gray-200 break-keep">
+          <p className="pl-1 w-full leading-tight font-medium text-gray-200 break-keep">
             정예화
           </p>
           <div className="flex flex-row items-center gap-[6px]">
@@ -612,7 +665,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         </div>
         {/* 레벨 */}
         <div className="w-full flex items-center px-1">
-          <p className="w-full leading-tight font-medium text-gray-200 break-keep">
+          <p className="pl-1 w-full leading-tight font-medium text-gray-200 break-keep">
             레벨
           </p>
           <div className="flex flex-row items-center gap-[6px]">
@@ -692,6 +745,33 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
             );
           })}
         </div>
+      </div>
+      {/* 버튼 */}
+      <div
+        className={`${
+          singleOperatorCollapsed ? "hidden" : ""
+        } w-full flex flex-row justify-center items-center  px-2 pb-2`}
+      >
+        <button
+          className={`group relative w-6 selection:bg-transparent aspect-square`}
+          onClick={() => removeSelf()}
+        >
+          <Image
+            className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+            hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+            src="/images/others/erase.png"
+            alt="remove-operator"
+            fill
+            sizes="10vw"
+            draggable={false}
+          />
+          <p
+            className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+            rounded-lg translate-x-[-13px] translate-y-[-33px] group-hover:block"
+          >
+            삭제
+          </p>
+        </button>
       </div>
     </div>
   );
