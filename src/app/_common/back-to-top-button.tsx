@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function BackToTopButton() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
+  /** 스크롤에 따라 버튼 표시 여부 설정 */
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
@@ -16,6 +17,7 @@ export default function BackToTopButton() {
     }
   };
 
+  /** 스크롤 최상단으로 이동 */
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -23,6 +25,7 @@ export default function BackToTopButton() {
     });
   };
 
+  // 이벤트 리스너 등록
   useEffect(() => {
     window.addEventListener("scroll", toggleVisible);
     return () => {

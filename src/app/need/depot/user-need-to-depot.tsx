@@ -225,21 +225,15 @@ export default function UserNeedToDepot() {
   }, []);
 
   return (
-    <div className="hidden flex flex-col p-4 selection:bg-gray-800" ref={divRef}>
+    <div className="hidden flex flex-col p-4" ref={divRef}>
       <div className="flex flex-row gap-4">
         <p className="font-bold text-3xl text-white break-keep">
           필요 재료 확인
         </p>
       </div>
       <div className="grow w-full flex flex-col gap-8 p-2 border-none rounded-xl">
-        <LMDExpLine list={userNeed["LMD"]} skipZero readonly />
-        <DepotLine
-          title="작전개론"
-          list={userNeed["Battle-Record"]}
-          skipZero
-          readonly
-        />
         <UpgradeLine list={userNeed["Upgrade"]} skipZero readonly />
+        <LMDExpLine list={userNeed["LMD"]} skipZero readonly />
         <DepotLine
           title="스킬개론"
           list={userNeed["Skill-Summary"]}

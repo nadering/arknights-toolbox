@@ -590,8 +590,13 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   return (
     <div
-      className="hidden relative w-[234px] min-w-[234px] flex flex-col justify-between items-center gap-4 border-2 border-gray-800 rounded-lg
-        transition-all selection:bg-gray-800 hover:border-white"
+      className="hidden relative w-[234px] min-w-[234px] flex flex-col justify-between items-center gap-4 border-2 border-gray-800 
+        rounded-lg transition-all hover:border-white"
+      onContextMenu={(event) => {
+        // 우클릭 시 현재 오퍼레이터 삭제
+        event.preventDefault();
+        removeSelf();
+      }}
       ref={divRef}
     >
       {/* 오퍼레이터 이미지 및 이름 */}
@@ -602,7 +607,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
           setSingleOperatorCollapsed((prev) => !prev);
         }}
       >
-        <div className="relative w-10 min-w-10 aspect-square select-none">
+        <div className="relative w-10 min-w-10 aspect-square select-none selection:bg-transparent">
           <Image
             className="rounded-2xl"
             src={operatorImageSrc}
@@ -620,92 +625,95 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       <div
         className={`${
           singleOperatorCollapsed ? "hidden" : ""
-        } w-full flex flex-col gap-4 px-2`}
+        } w-full flex flex-col gap-6 px-2`}
       >
-        {/* 정예화 */}
-        <div className="w-full flex items-center px-1">
-          <p className="pl-1 w-full leading-tight font-medium text-gray-200 break-keep">
-            정예화
-          </p>
-          <div className="flex flex-row items-center gap-[6px]">
-            <input
-              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+        <div className="w-full flex flex-col gap-4">
+          {/* 정예화 */}
+          <div className="w-full flex items-center px-1">
+            <p className="pl-1 w-full leading-tight font-medium text-gray-200 break-keep">
+              정예화
+            </p>
+            <div className="flex flex-row items-center gap-[6px]">
+              <input
+                className="w-9 h-6 px-2 py-3 resize-none rounded-lg
                 outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
                 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              id={`${operator.id}-current-elite`}
-              type="number"
-              min={0}
-              max={maxEliteTable[operator.rarity]}
-              step={1}
-              value={currentEliteString}
-              onInput={(event) => {
-                handleEliteChange(event, "current");
-              }}
-              onKeyDown={(event) => handleExponentialNotation(event)}
-            ></input>
-            <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
-              ▶
-            </p>
-            <input
-              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+                id={`${operator.id}-current-elite`}
+                type="number"
+                min={0}
+                max={maxEliteTable[operator.rarity]}
+                step={1}
+                value={currentEliteString}
+                onInput={(event) => {
+                  handleEliteChange(event, "current");
+                }}
+                onKeyDown={(event) => handleExponentialNotation(event)}
+              ></input>
+              <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
+                ▶
+              </p>
+              <input
+                className="w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              id={`${operator.id}-target-elite`}
-              type="number"
-              min={0}
-              max={maxEliteTable[operator.rarity]}
-              step={1}
-              value={targetEliteString}
-              onInput={(event) => {
-                handleEliteChange(event, "target");
-              }}
-              onKeyDown={(event) => handleExponentialNotation(event)}
-            ></input>
+                id={`${operator.id}-target-elite`}
+                type="number"
+                min={0}
+                max={maxEliteTable[operator.rarity]}
+                step={1}
+                value={targetEliteString}
+                onInput={(event) => {
+                  handleEliteChange(event, "target");
+                }}
+                onKeyDown={(event) => handleExponentialNotation(event)}
+              ></input>
+            </div>
           </div>
-        </div>
-        {/* 레벨 */}
-        <div className="w-full flex items-center px-1">
-          <p className="pl-1 w-full leading-tight font-medium text-gray-200 break-keep">
-            레벨
-          </p>
-          <div className="flex flex-row items-center gap-[6px]">
-            <input
-              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+          {/* 레벨 */}
+          <div className="w-full flex items-center px-1">
+            <p className="pl-1 w-full leading-tight font-medium text-gray-200 break-keep">
+              레벨
+            </p>
+            <div className="flex flex-row items-center gap-[6px]">
+              <input
+                className="w-9 h-6 px-2 py-3 resize-none rounded-lg
           outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
           [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              id={`${operator.id}-current-level`}
-              type="number"
-              min={1}
-              max={maxLevelTable[operator.rarity][currentElite]}
-              step={1}
-              value={currentLevelString}
-              onInput={(event) => {
-                handleLevelChange(event, "current");
-              }}
-              onKeyDown={(event) => handleExponentialNotation(event)}
-              onBlur={() => handleLevelNaN("current")}
-            ></input>
-            <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
-              ▶
-            </p>
-            <input
-              className="w-9 h-6 px-2 py-3 resize-none rounded-lg
+                id={`${operator.id}-current-level`}
+                type="number"
+                min={1}
+                max={maxLevelTable[operator.rarity][currentElite]}
+                step={1}
+                value={currentLevelString}
+                onInput={(event) => {
+                  handleLevelChange(event, "current");
+                }}
+                onKeyDown={(event) => handleExponentialNotation(event)}
+                onBlur={() => handleLevelNaN("current")}
+              ></input>
+              <p className="leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent">
+                ▶
+              </p>
+              <input
+                className="w-9 h-6 px-2 py-3 resize-none rounded-lg
                 outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
                 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-              id={`${operator.id}-target-level`}
-              type="number"
-              min={1}
-              max={maxLevelTable[operator.rarity][targetElite]}
-              step={1}
-              value={targetLevelString}
-              onInput={(event) => {
-                handleLevelChange(event, "target");
-              }}
-              onKeyDown={(event) => handleExponentialNotation(event)}
-              onBlur={() => handleLevelNaN("target")}
-            ></input>
+                id={`${operator.id}-target-level`}
+                type="number"
+                min={1}
+                max={maxLevelTable[operator.rarity][targetElite]}
+                step={1}
+                value={targetLevelString}
+                onInput={(event) => {
+                  handleLevelChange(event, "target");
+                }}
+                onKeyDown={(event) => handleExponentialNotation(event)}
+                onBlur={() => handleLevelNaN("target")}
+              ></input>
+            </div>
           </div>
         </div>
+
         {/* 스킬 */}
         <div className="w-full flex flex-col gap-2 px-1">
           {operator.skillList.map((skill, index) => {

@@ -182,6 +182,7 @@ export default function SingleMaterial({
         onInput={(event) => handleCountStringValue(event)}
         onKeyDown={(event) => handleExponentialNotation(event)}
         readOnly={readonly}
+        tabIndex={readonly ? -1 : undefined}
       ></input>
     </div>
   );
