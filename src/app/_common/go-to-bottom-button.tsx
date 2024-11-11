@@ -14,7 +14,7 @@ export default function GoToBottomButton() {
 
   return (
     <Image
-      className="fixed z-50 bottom-[20px] right-[72px] opacity-60 cursor-pointer rotate-180 [transition:filter_0s]
+      className="fixed z-50 bottom-[20px] right-[20px] opacity-60 cursor-pointer rotate-180 [transition:filter_0s]
         [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
         hover:opacity-100 hover:[filter:invert(80%)_sepia(0%)_saturate(28%)_hue-rotate(223deg)_brightness(90%)_contrast(92%)]"
       src="/images/others/uparrow.png"

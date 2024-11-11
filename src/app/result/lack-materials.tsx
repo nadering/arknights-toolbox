@@ -56,7 +56,7 @@ export default function LackMaterials({
     for (let i = 0; i < 5 - materialMaxTier; i++) {
       // 선택된 최고 티어가 낮아질수록, 분해 횟수 증가
       resultDepot = makeEmptyDepot();
-      
+
       Object.keys(initialDepot).forEach((type) => {
         if (filterMaterialTypes.includes(type as MaterialType)) {
           // 필요한 타입의 재료만 필터링
@@ -65,18 +65,27 @@ export default function LackMaterials({
             if (
               mat.count < 0 &&
               mat.material.recipe &&
-              mat.material.tier > materialMaxTier &&
-              type != "Memory-Chip"
+              mat.material.tier > materialMaxTier
             ) {
-              // 설정된 티어 이상이면, 부족한 재료를 분해 후 분해된 재료를 추가
-              const recipe = mat.material.recipe;
-              for (const countableMaterial of recipe) {
+              if (type == "Memory-Chip" && mat.material.tier <= 4) {
+                // 메모리 칩은 5티어(듀얼 칩) > 4티어(칩셋) 변환만 허용
                 setDepotMaterialById(
-                  countableMaterial.material.id,
-                  mat.count * countableMaterial.count,
+                  mat.material.id,
+                  mat.count,
                   resultDepot,
                   true
                 );
+              } else {
+                // 설정된 티어 이상이면, 부족한 재료를 분해 후 분해된 재료를 추가
+                const recipe = mat.material.recipe;
+                for (const countableMaterial of recipe) {
+                  setDepotMaterialById(
+                    countableMaterial.material.id,
+                    mat.count * countableMaterial.count,
+                    resultDepot,
+                    true
+                  );
+                }
               }
             } else {
               // 그 외의 재료는 그대로 유지
@@ -170,7 +179,7 @@ export default function LackMaterials({
               materialMaxTier == 5
                 ? "border-tier-5"
                 : "border-gray-800 hover:border-tier-5"
-            } group relative flex justify-center items-center px-2 border-2 rounded-xl
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
             opacity-80 hover:opacity-100 selection:bg-transparent`}
             onClick={() => setMaterialMaxTier(5)}
           >
@@ -189,7 +198,7 @@ export default function LackMaterials({
               materialMaxTier == 4
                 ? "border-tier-4"
                 : "border-gray-800 hover:border-tier-4"
-            } group relative flex justify-center items-center px-2 border-2 rounded-xl
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
             opacity-80 hover:opacity-100 selection:bg-transparent`}
             onClick={() => setMaterialMaxTier(4)}
           >
@@ -208,7 +217,7 @@ export default function LackMaterials({
               materialMaxTier == 3
                 ? "border-tier-3"
                 : "border-gray-800 hover:border-tier-3"
-            } group relative flex justify-center items-center px-2 border-2 rounded-xl
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
             opacity-80 hover:opacity-100 selection:bg-transparent`}
             onClick={() => setMaterialMaxTier(3)}
           >
@@ -227,7 +236,7 @@ export default function LackMaterials({
               materialMaxTier == 2
                 ? "border-tier-2"
                 : "border-gray-800 hover:border-tier-2"
-            } group relative flex justify-center items-center px-2 border-2 rounded-xl
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
             opacity-80 hover:opacity-100 selection:bg-transparent`}
             onClick={() => setMaterialMaxTier(2)}
           >
@@ -246,7 +255,7 @@ export default function LackMaterials({
               materialMaxTier == 1
                 ? "border-tier-1"
                 : "border-gray-800 hover:border-tier-1"
-            } group relative flex justify-center items-center px-2 border-2 rounded-xl
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
             opacity-80 hover:opacity-100 selection:bg-transparent`}
             onClick={() => setMaterialMaxTier(1)}
           >
