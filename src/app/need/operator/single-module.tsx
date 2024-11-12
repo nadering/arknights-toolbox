@@ -1,10 +1,10 @@
 import { FormEvent, useEffect, useState } from "react";
 import {
   EliteNumber,
-  moduleActiveElite,
+  MODULE_ACTIVE_ELITE,
   ModuleLevel,
-  moduleLevelRequired,
-  moduleMaxLevel,
+  MODULE_LEVEL_REQUIRED,
+  MODULE_MAX_LEVEL,
   RarityNumber,
 } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
@@ -35,11 +35,11 @@ export default function SingleModule({
 }) {
   // 현재 정예화에 따른 모듈 현재 입력창 색상 설정 여부
   const isAbleAtCurrentElite =
-    currentElite >= moduleActiveElite && currentLevel >= moduleLevelRequired[rarity];
+    currentElite >= MODULE_ACTIVE_ELITE && currentLevel >= MODULE_LEVEL_REQUIRED[rarity];
 
   // 목표 정예화에 따른 모듈 활성화 여부
   const isActive =
-    targetElite >= moduleActiveElite && targetLevel >= moduleLevelRequired[rarity];
+    targetElite >= MODULE_ACTIVE_ELITE && targetLevel >= MODULE_LEVEL_REQUIRED[rarity];
 
   // 스킬 문자열 설정
   const [currentModuleString, setCurrentModuleString] = useState(
@@ -80,7 +80,7 @@ export default function SingleModule({
           id={`${moduleLevels[index].type}-current`}
           type={isActive ? "number" : "hidden"}
           min={0}
-          max={moduleMaxLevel}
+          max={MODULE_MAX_LEVEL}
           step={1}
           value={currentModuleString}
           disabled={!isAbleAtCurrentElite}
@@ -101,7 +101,7 @@ export default function SingleModule({
           id={`${moduleLevels[index].type}-target`}
           type={isActive ? "number" : "hidden"}
           min={0}
-          max={moduleMaxLevel}
+          max={MODULE_MAX_LEVEL}
           step={1}
           value={targetModuleString}
           disabled={!isActive}

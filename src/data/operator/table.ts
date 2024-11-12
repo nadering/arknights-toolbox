@@ -34,10 +34,10 @@ export interface SkillLevel {
 }
 
 /** 모듈 활성화 정예화 */
-export const moduleActiveElite = 2;
+export const MODULE_ACTIVE_ELITE = 2;
 
 /** 모듈 최대 레벨 */
-export const moduleMaxLevel = 3;
+export const MODULE_MAX_LEVEL = 3;
 
 /** 모듈 인터페이스 */
 export interface ModuleInfo {
@@ -67,7 +67,7 @@ type MaxLevelTableType = {
 };
 
 /** 레벨 상한 */
-export const maxLevelTable: MaxLevelTableType = {
+export const MAX_LEVEL_TABLE: MaxLevelTableType = {
   6: {
     0: 50,
     1: 80,
@@ -107,7 +107,7 @@ type LevelUpTable = {
 
 
 /** 레벨 업에 필요한 경험치 및 용문폐, 정예화별 누적 테이블 */
-export const levelUpStackedTable: LevelUpTable = {
+export const LEVEL_UP_STACKED_TABLE: LevelUpTable = {
   0: {
     0: {
       exp: 0,
@@ -1014,7 +1014,7 @@ type NumberByRarity = {
 };
 
 /** 모듈 레벨 조건 */
-export const moduleLevelRequired: NumberByRarity = {
+export const MODULE_LEVEL_REQUIRED: NumberByRarity = {
   6: 60,
   5: 50,
   4: 40,
@@ -1028,8 +1028,8 @@ type EliteByRarity = {
   [key in RarityNumber]: EliteNumber;
 };
 
-/** 최대 정예화 */
-export const maxEliteTable: EliteByRarity = {
+/** 레어도에 따른 최대 정예화 */
+export const MAX_ELITE_TABLE: EliteByRarity = {
   6: 2,
   5: 2,
   4: 2,
@@ -1044,7 +1044,7 @@ type NumberByElite = {
 };
 
 /** 현재 정예화에 따른 스킬 최대 레벨 */
-export const skillMaxLevelTable: NumberByElite = {
+export const SKILL_MAX_LEVEL_TABLE: NumberByElite = {
   0: 4,
   1: 7,
   2: 10,

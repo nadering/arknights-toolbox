@@ -1,32 +1,52 @@
 import Operator from "./operator";
 import {
+  aggregateCyclicene,
+  aketon,
   bipolarNanoflake,
   compoundCuttingFluid,
+  crystallineComponent,
+  cuttingFluidSolution,
+  cyclicenePrefab,
+  D32Steel,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
   diketon,
+  fuscousFiber,
   grindstone,
   grindstonePentahydrate,
+  incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
   LMD,
+  manganeseOre,
   manganeseTrihydrate,
   moduleDataBlock,
+  nucleicCrystalSinter,
   optimizedDevice,
+  orirock,
+  orirockCluster,
+  orirockConcentration,
   orirockCube,
   oriron,
   orironBlock,
+  polyester,
   polyesterPack,
   polyketon,
   polymerizationPreparation,
+  polymerizedGel,
+  refinedSolvent,
   RMA7012,
+  RMA7024,
   skillSummary1,
   skillSummary2,
   skillSummary3,
+  solidifiedFiberBoard,
   sugarPack,
+  transmutedSaltAgglomerate,
   vanguardChip,
   vanguardChipPack,
+  vanguardDualchip,
   whiteHorseKohl,
 } from "@/data/material";
 
@@ -45,6 +65,144 @@ export interface Vanguard extends Operator {
   /** 세부 직군 */
   branch: VanguardBranch;
 }
+
+// 6성
+/** 불피스폴리아 */
+export const Vulpisfoglia: Vanguard = {
+  id: 351,
+  name: "불피스폴리아",
+  imageFilename: "vulpisfoglia",
+  class: "Vanguard",
+  branch: "Pioneer",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: vanguardChip!, count: 5 },
+      { material: polyester, count: 10 },
+      { material: polyketon, count: 3 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: vanguardDualchip, count: 4 },
+      { material: nucleicCrystalSinter, count: 4 },
+      { material: cyclicenePrefab, count: 2 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["가벼운 징계", "단검 낙하 고문", "은밀한 여우의 기교"],
+  preferSkillList: ["은밀한 여우의 기교"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: diketon, count: 6 },
+        { material: orirock, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: device, count: 3 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCube, count: 5 },
+        { material: device, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: crystallineComponent, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: aketon, count: 5 },
+        { material: orirockCluster, count: 4 },
+      ],
+    },
+    "가벼운 징계": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: aggregateCyclicene, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+        { material: solidifiedFiberBoard, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: polymerizedGel, count: 7 },
+      ],
+    },
+    "단검 낙하 고문": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: cyclicenePrefab, count: 4 },
+        { material: manganeseOre, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orironBlock, count: 4 },
+        { material: grindstonePentahydrate, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: orirockConcentration, count: 7 },
+      ],
+    },
+    "은밀한 여우의 기교": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: refinedSolvent, count: 4 },
+        { material: fuscousFiber, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: RMA7024, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: incandescentAlloyBlock, count: 2 },
+      ],
+    },
+  },
+  moduleList: [{ type: "SOL-X", name: "히트맨에게도 필요한 휴가" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "SOL-X",
+        name: "히트맨에게도 필요한 휴가",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "SOL-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
 
 // 4성
 /** 머틀 */
@@ -156,4 +314,4 @@ export const Myrtle: Vanguard = {
 };
 
 /** 뱅가드 오퍼레이터 리스트 */
-export const vanguardList: Vanguard[] = [Myrtle];
+export const vanguardList: Vanguard[] = [Vulpisfoglia, Myrtle];

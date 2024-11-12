@@ -1,34 +1,60 @@
 import Operator from "./operator";
 import {
+  aketon,
+  bipolarNanoflake,
   casterChip,
   casterDualchip,
+  coagulatingGel,
+  crystallineCircuit,
   crystallineElectronicUnit,
+  cuttingFluidSolution,
+  cyclicenePrefab,
   D32Steel,
+  damagedDivice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
+  diketon,
+  ester,
+  fuscousFiber,
+  grindstone,
+  grindstonePentahydrate,
   incandescentAlloy,
+  incandescentAlloyBlock,
+  integratedDevice,
   ketonColloid,
   LMD,
+  loxicKohl,
+  manganeseOre,
   manganeseTrihydrate,
   moduleDataBlock,
   nucleicCrystalSinter,
   optimizedDevice,
+  orirock,
   orirockCluster,
   orirockConcentration,
   orirockCube,
+  oriron,
   orironBlock,
+  orironCluster,
   orironShard,
   polyester,
+  polyesterPack,
   polyketon,
   polymerizationPreparation,
+  polymerizedGel,
+  refinedSolvent,
+  RMA7012,
   RMA7024,
   semiSyntheticSolvent,
   skillSummary1,
   skillSummary2,
   skillSummary3,
+  solidifiedFiberBoard,
+  sugar,
   sugarPack,
   sugarSubstitute,
+  transmutedSaltAgglomerate,
   whiteHorseKohl,
 } from "@/data/material";
 
@@ -52,6 +78,388 @@ export interface Caster extends Operator {
 }
 
 // 6성
+/** 라플란드 더 데카덴차 */
+export const LapplandTheDecadenza: Caster = {
+  id: 350,
+  name: "라플란드 더 데카덴차",
+  imageFilename: "lappland-the-decadenza",
+  class: "Caster",
+  branch: "Mech-Accord",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: casterChip!, count: 5 },
+      { material: oriron, count: 8 },
+      { material: device, count: 3 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: casterDualchip, count: 4 },
+      { material: crystallineElectronicUnit, count: 4 },
+      { material: orironBlock, count: 2 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["나태한 자의 비명", "맹렬한 사냥", "종막 - 대단원"],
+  preferSkillList: ["종막 - 대단원"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: damagedDivice, count: 4 },
+        { material: ester, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCube, count: 7 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyketon, count: 4 },
+        { material: sugar, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: aketon, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: coagulatingGel, count: 5 },
+        { material: grindstone, count: 2 },
+      ],
+    },
+    "나태한 자의 비명": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: solidifiedFiberBoard, count: 4 },
+        { material: orironCluster, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: polymerizedGel, count: 4 },
+        { material: crystallineCircuit, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: ketonColloid, count: 1 },
+      ],
+    },
+    "맹렬한 사냥": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: orirockCluster, count: 8 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orirockConcentration, count: 4 },
+        { material: manganeseTrihydrate, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: transmutedSaltAgglomerate, count: 6 },
+      ],
+    },
+    "종막 - 대단원": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: RMA7024, count: 4 },
+        { material: grindstone, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: cyclicenePrefab, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: orironBlock, count: 5 },
+      ],
+    },
+  },
+  moduleList: [{ type: "FUN-X", name: "늑대의 시간" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "FUN-X",
+        name: "늑대의 시간",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "FUN-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 마르실 */
+export const Marcille: Caster = {
+  id: 342,
+  name: "마르실",
+  imageFilename: "marcille",
+  class: "Caster",
+  branch: "Splash",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: casterChip!, count: 5 },
+      { material: device, count: 5 },
+      { material: polyketon, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: casterDualchip, count: 4 },
+      { material: nucleicCrystalSinter, count: 4 },
+      { material: grindstonePentahydrate, count: 2 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["수재의 실력", "사역마 소환", "폭발 마법"],
+  preferSkillList: ["사역마 소환"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: sugarSubstitute, count: 5 },
+        { material: diketon, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+        { material: sugar, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: RMA7012, count: 4 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: semiSyntheticSolvent, count: 5 },
+        { material: manganeseOre, count: 3 },
+      ],
+    },
+    "수재의 실력": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: refinedSolvent, count: 4 },
+        { material: RMA7012, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: RMA7024, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: incandescentAlloyBlock, count: 6 },
+      ],
+    },
+    "사역마 소환": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 4 },
+        { material: semiSyntheticSolvent, count: 1 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: solidifiedFiberBoard, count: 4 },
+        { material: crystallineCircuit, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: ketonColloid, count: 5 },
+      ],
+    },
+    "폭발 마법": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: polymerizedGel, count: 4 },
+        { material: sugarPack, count: 10 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: manganeseTrihydrate, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: transmutedSaltAgglomerate, count: 2 },
+      ],
+    },
+  },
+  moduleList: [{ type: "SPC-Y", name: "천재의 장서" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "SPC-Y",
+        name: "천재의 장서",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SPC-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 님프 */
+export const Nymph: Caster = {
+  id: 333,
+  name: "님프",
+  imageFilename: "nymph",
+  class: "Caster",
+  branch: "Primal",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: casterChip!, count: 5 },
+      { material: polyester, count: 8 },
+      { material: sugar, count: 6 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: casterDualchip, count: 4 },
+      { material: polymerizationPreparation, count: 4 },
+      { material: optimizedDevice, count: 5 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["고백 공격", "엄습하는 공포", "상심 방지"],
+  preferSkillList: ["엄습하는 공포", "상심 방지"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: diketon, count: 6 },
+        { material: orirock, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: device, count: 3 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCube, count: 5 },
+        { material: device, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: incandescentAlloy, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: polyesterPack, count: 5 },
+        { material: integratedDevice, count: 3 },
+      ],
+    },
+    "고백 공격": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orironBlock, count: 4 },
+        { material: coagulatingGel, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: refinedSolvent, count: 4 },
+        { material: orirockConcentration, count: 10 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: RMA7024, count: 6 },
+      ],
+    },
+    "엄습하는 공포": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 4 },
+        { material: loxicKohl, count: 1 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: solidifiedFiberBoard, count: 4 },
+        { material: crystallineCircuit, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: ketonColloid, count: 2 },
+      ],
+    },
+    "상심 방지": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: fuscousFiber, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orirockConcentration, count: 4 },
+        { material: transmutedSaltAgglomerate, count: 10 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: cyclicenePrefab, count: 5 },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 로고스 */
 export const Logos: Caster = {
   id: 327,
@@ -190,4 +598,4 @@ export const Logos: Caster = {
 };
 
 /** 캐스터 오퍼레이터 리스트 */
-export const casterList: Caster[] = [Logos];
+export const casterList: Caster[] = [LapplandTheDecadenza, Marcille, Nymph, Logos];

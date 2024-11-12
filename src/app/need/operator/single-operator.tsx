@@ -5,13 +5,13 @@ import { useAtom, useAtomValue } from "jotai";
 import Image from "next/image";
 import {
   ModuleLevel,
-  moduleMaxLevel,
+  MODULE_MAX_LEVEL,
   Operator,
   SkillLevel,
   EliteNumber,
-  maxEliteTable,
-  skillMaxLevelTable,
-  maxLevelTable,
+  MAX_ELITE_TABLE,
+  SKILL_MAX_LEVEL_TABLE,
+  MAX_LEVEL_TABLE,
 } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 import {
@@ -49,7 +49,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   // 정예화 설정
   const [currentElite, setCurrentElite] = useState<EliteNumber>(0);
   const [targetElite, setTargetElite] = useState<EliteNumber>(
-    maxEliteTable[operator.rarity]
+    MAX_ELITE_TABLE[operator.rarity]
   );
 
   // 정예화 문자열 설정
@@ -63,7 +63,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   // 레벨 설정
   const [currentLevel, setCurrentLevel] = useState(1);
   const [targetLevel, setTargetLevel] = useState(
-    maxLevelTable[operator.rarity][targetElite]
+    MAX_LEVEL_TABLE[operator.rarity][targetElite]
   );
 
   // 레벨 문자열 설정
@@ -81,14 +81,14 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         return {
           name: skill,
           current: 1,
-          target: skillMaxLevelTable[targetElite],
+          target: SKILL_MAX_LEVEL_TABLE[targetElite],
         };
       } else {
         return {
           name: skill,
           current: 1,
           target:
-            skillMaxLevelTable[Math.max(0, targetElite - 1) as EliteNumber],
+            SKILL_MAX_LEVEL_TABLE[Math.max(0, targetElite - 1) as EliteNumber],
         };
       }
     })
@@ -149,7 +149,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     // 값을 숫자로 변환
     let valueNumber = Math.min(
       parseInt(value, 10),
-      maxEliteTable[operator.rarity]
+      MAX_ELITE_TABLE[operator.rarity]
     );
 
     if (type == "current") {
@@ -214,7 +214,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     const elite = type == "current" ? currentElite : targetElite;
     const valueNumber = Math.min(
       parseInt(value, 10),
-      maxLevelTable[operator.rarity][elite]
+      MAX_LEVEL_TABLE[operator.rarity][elite]
     );
 
     if (type == "current") {
@@ -242,7 +242,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   ) => {
     if (targetEliteChanged) {
       // 목표 정예화 단계가 변경되면, 해당 단계의 최대 레벨로 설정
-      setTargetLevel(maxLevelTable[operator.rarity][targetElite]);
+      setTargetLevel(MAX_LEVEL_TABLE[operator.rarity][targetElite]);
     }
 
     if (currentLevel < 1) {
@@ -254,13 +254,13 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       setTargetLevel(1);
     }
 
-    if (currentLevel > maxLevelTable[operator.rarity][currentElite]) {
+    if (currentLevel > MAX_LEVEL_TABLE[operator.rarity][currentElite]) {
       // 최대 레벨을 초과하지 않도록 설정
-      setCurrentLevel(maxLevelTable[operator.rarity][currentElite]);
+      setCurrentLevel(MAX_LEVEL_TABLE[operator.rarity][currentElite]);
     }
-    if (targetLevel > maxLevelTable[operator.rarity][targetElite]) {
+    if (targetLevel > MAX_LEVEL_TABLE[operator.rarity][targetElite]) {
       // 최대 레벨을 초과하지 않도록 설정
-      setTargetLevel(maxLevelTable[operator.rarity][targetElite]);
+      setTargetLevel(MAX_LEVEL_TABLE[operator.rarity][targetElite]);
     }
 
     if (currentElite == targetElite) {
@@ -332,17 +332,17 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
       // 스킬이 가능한 최대 레벨을 초과할 경우, 최대 레벨로 조정
       skillLevels[i].current = Math.min(
         skillLevels[i].current,
-        skillMaxLevelTable[currentElite]
+        SKILL_MAX_LEVEL_TABLE[currentElite]
       );
       skillLevels[i].target = Math.min(
         skillLevels[i].target,
-        skillMaxLevelTable[targetElite]
+        SKILL_MAX_LEVEL_TABLE[targetElite]
       );
 
       if (!targetEliteChanged) {
         // 현재 레벨이 최대 레벨을 초과할 경우, 현재 레벨을 최대 레벨로 조정
-        if (skillLevels[i].current > skillMaxLevelTable[currentElite]) {
-          skillLevels[i].current = skillMaxLevelTable[currentElite];
+        if (skillLevels[i].current > SKILL_MAX_LEVEL_TABLE[currentElite]) {
+          skillLevels[i].current = SKILL_MAX_LEVEL_TABLE[currentElite];
         }
       }
 
@@ -414,9 +414,9 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     // 값을 숫자로 변환
     let valueNumber = parseInt(value, 10);
 
-    if (valueNumber > moduleMaxLevel) {
+    if (valueNumber > MODULE_MAX_LEVEL) {
       // 모듈 최대 레벨을 초과하지 않게 설정
-      valueNumber = moduleMaxLevel;
+      valueNumber = MODULE_MAX_LEVEL;
     }
 
     prev[index][type] = valueNumber;
@@ -641,7 +641,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 id={`${operator.id}-current-elite`}
                 type="number"
                 min={0}
-                max={maxEliteTable[operator.rarity]}
+                max={MAX_ELITE_TABLE[operator.rarity]}
                 step={1}
                 value={currentEliteString}
                 onInput={(event) => {
@@ -659,7 +659,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 id={`${operator.id}-target-elite`}
                 type="number"
                 min={0}
-                max={maxEliteTable[operator.rarity]}
+                max={MAX_ELITE_TABLE[operator.rarity]}
                 step={1}
                 value={targetEliteString}
                 onInput={(event) => {
@@ -682,7 +682,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 id={`${operator.id}-current-level`}
                 type="number"
                 min={1}
-                max={maxLevelTable[operator.rarity][currentElite]}
+                max={MAX_LEVEL_TABLE[operator.rarity][currentElite]}
                 step={1}
                 value={currentLevelString}
                 onInput={(event) => {
@@ -701,7 +701,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
                 id={`${operator.id}-target-level`}
                 type="number"
                 min={1}
-                max={maxLevelTable[operator.rarity][targetElite]}
+                max={MAX_LEVEL_TABLE[operator.rarity][targetElite]}
                 step={1}
                 value={targetLevelString}
                 onInput={(event) => {

@@ -1,29 +1,40 @@
 import Operator from "./operator";
 import {
+  aggregateCyclicene,
+  bipolarNanoflake,
+  coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
   crystallineComponent,
   crystallineElectronicUnit,
   cuttingFluidSolution,
+  cyclicenePrefab,
   D32Steel,
+  damagedDivice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
   ester,
+  grindstonePentahydrate,
+  incandescentAlloyBlock,
   ketonColloid,
   LMD,
   manganeseTrihydrate,
   moduleDataBlock,
   nucleicCrystalSinter,
   optimizedDevice,
+  orirock,
   orirockConcentration,
   orirockCube,
   oriron,
   orironCluster,
   orironShard,
+  polyester,
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
+  refinedSolvent,
+  RMA7012,
   semiSyntheticSolvent,
   skillSummary1,
   skillSummary2,
@@ -59,6 +70,114 @@ export interface Sniper extends Operator {
 }
 
 // 6성
+/** 나란투야 */
+export const Narantuya: Sniper = {
+  id: 337,
+  name: "나란투야",
+  imageFilename: "narantuya",
+  class: "Sniper",
+  branch: "Loopshooter",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: sniperChip!, count: 5 },
+      { material: polyketon, count: 7 },
+      { material: oriron, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: sniperDualchip, count: 4 },
+      { material: bipolarNanoflake, count: 4 },
+      { material: polymerizedGel, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["회전하는 칼날", "악몽", "태양을 삼키다"],
+  preferSkillList: ["태양을 삼키다"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orirock, count: 6 },
+        { material: damagedDivice, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 4 },
+        { material: oriron, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: transmutedSalt, count: 5 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: RMA7012, count: 5 },
+        { material: aggregateCyclicene, count: 1 },
+      ],
+    },
+    "회전하는 칼날": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 4 },
+        { material: transmutedSalt, count: 1 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: solidifiedFiberBoard, count: 4 },
+        { material: crystallineCircuit, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: ketonColloid, count: 2 },
+      ],
+    },
+    "악몽": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: sugarPack, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orirockConcentration, count: 4 },
+        { material: transmutedSaltAgglomerate, count: 10 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: cyclicenePrefab, count: 5 },
+      ],
+    },
+    "태양을 삼키다": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: coagulatingGel, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: crystallineCircuit, count: 4 },
+        { material: refinedSolvent, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: cuttingFluidSolution, count: 1 },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 위셔델 */
 export const Wisadel: Sniper = {
   id: 328,
@@ -197,4 +316,4 @@ export const Wisadel: Sniper = {
 };
 
 /** 스나이퍼 오퍼레이터 리스트 */
-export const sniperList: Sniper[] = [Wisadel];
+export const sniperList: Sniper[] = [Narantuya, Wisadel];

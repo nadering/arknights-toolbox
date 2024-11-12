@@ -12,10 +12,10 @@ import {
 import { setDepotMaterialById } from "@/tool";
 import { CountableMaterial, EXP, LMD } from "@/data/material";
 import {
-  levelUpStackedTable,
-  maxLevelTable,
-  moduleActiveElite,
-  moduleLevelRequired,
+  LEVEL_UP_STACKED_TABLE,
+  MAX_LEVEL_TABLE,
+  MODULE_ACTIVE_ELITE,
+  MODULE_LEVEL_REQUIRED,
 } from "@/data/operator";
 
 /** 사용자 필요 재료의 창고화된 데이터 */
@@ -67,13 +67,13 @@ export default function UserNeedToDepot() {
       if (target.currentElite == target.targetElite) {
         // 같은 정예화 단계면, 같은 테이블 안에서 경험치 및 용문폐를 계산
         newExp +=
-          levelUpStackedTable[target.currentElite][target.targetLevel].exp -
-          levelUpStackedTable[target.currentElite][target.currentLevel].exp;
+          LEVEL_UP_STACKED_TABLE[target.currentElite][target.targetLevel].exp -
+          LEVEL_UP_STACKED_TABLE[target.currentElite][target.currentLevel].exp;
 
         setDepotMaterialById(
           LMD.id,
-          levelUpStackedTable[target.currentElite][target.targetLevel].lmd -
-            levelUpStackedTable[target.currentElite][target.currentLevel].lmd,
+          LEVEL_UP_STACKED_TABLE[target.currentElite][target.targetLevel].lmd -
+            LEVEL_UP_STACKED_TABLE[target.currentElite][target.currentLevel].lmd,
           newUserNeed,
           true
         );
@@ -87,24 +87,24 @@ export default function UserNeedToDepot() {
           if (eliteNum != target.targetElite) {
             if (eliteNum == target.currentElite) {
               // 현재 인덱스가 현재 정예화 단계면, 최대 레벨에서 현재 레벨의 수치를 뺀 만큼 더하면 됨
-              const maxLevel = maxLevelTable[operatorMaterial.rarity][eliteNum];
+              const maxLevel = MAX_LEVEL_TABLE[operatorMaterial.rarity][eliteNum];
               newExp +=
-                levelUpStackedTable[eliteNum][maxLevel].exp -
-                levelUpStackedTable[eliteNum][target.currentLevel].exp;
+                LEVEL_UP_STACKED_TABLE[eliteNum][maxLevel].exp -
+                LEVEL_UP_STACKED_TABLE[eliteNum][target.currentLevel].exp;
               setDepotMaterialById(
                 LMD.id,
-                levelUpStackedTable[eliteNum][maxLevel].lmd -
-                  levelUpStackedTable[eliteNum][target.currentLevel].lmd,
+                LEVEL_UP_STACKED_TABLE[eliteNum][maxLevel].lmd -
+                  LEVEL_UP_STACKED_TABLE[eliteNum][target.currentLevel].lmd,
                 newUserNeed,
                 true
               );
             } else {
               // 현재 인덱스가 현재 정예화 단계도 아니고, 목표 정예화 단계도 아니라면 최대 레벨의 수치를 더하면 됨
-              const maxLevel = maxLevelTable[operatorMaterial.rarity][eliteNum];
-              newExp += levelUpStackedTable[eliteNum][maxLevel].exp;
+              const maxLevel = MAX_LEVEL_TABLE[operatorMaterial.rarity][eliteNum];
+              newExp += LEVEL_UP_STACKED_TABLE[eliteNum][maxLevel].exp;
               setDepotMaterialById(
                 LMD.id,
-                levelUpStackedTable[eliteNum][maxLevel].lmd,
+                LEVEL_UP_STACKED_TABLE[eliteNum][maxLevel].lmd,
                 newUserNeed,
                 true
               );
@@ -112,10 +112,10 @@ export default function UserNeedToDepot() {
           } else {
             // 목표 정예화 단계와 동일하다면, 같은 테이블 안에서 경험치 및 용문폐를 계산
             // 이 경우, 현재 레벨은 1레벨 기준으로 계산해도 됨
-            newExp += levelUpStackedTable[eliteNum][target.targetLevel].exp;
+            newExp += LEVEL_UP_STACKED_TABLE[eliteNum][target.targetLevel].exp;
             setDepotMaterialById(
               LMD.id,
-              levelUpStackedTable[eliteNum][target.targetLevel].lmd,
+              LEVEL_UP_STACKED_TABLE[eliteNum][target.targetLevel].lmd,
               newUserNeed,
               true
             );
@@ -162,8 +162,8 @@ export default function UserNeedToDepot() {
 
       // 모듈
       if (
-        target.targetElite >= moduleActiveElite &&
-        target.targetLevel >= moduleLevelRequired[operatorMaterial.rarity]
+        target.targetElite >= MODULE_ACTIVE_ELITE &&
+        target.targetLevel >= MODULE_LEVEL_REQUIRED[operatorMaterial.rarity]
       ) {
         // 모듈이 활성화되어 있는 경우에만 추가
         for (const moduleInfo of target.moduleLevels) {
