@@ -1,4 +1,6 @@
 import {
+  aketon,
+  bipolarNanoflake,
   compoundCuttingFluid,
   crystallineCircuit,
   crystallineComponent,
@@ -6,9 +8,12 @@ import {
   cuttingFluidSolution,
   cyclicenePrefab,
   D32Steel,
+  damagedDivice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
+  fuscousFiber,
+  grindstone,
   grindstonePentahydrate,
   incandescentAlloyBlock,
   integratedDevice,
@@ -18,7 +23,10 @@ import {
   manganeseTrihydrate,
   moduleDataBlock,
   nucleicCrystalSinter,
+  orirock,
+  orirockCluster,
   orirockConcentration,
+  orirockCube,
   oriron,
   orironBlock,
   orironCluster,
@@ -26,6 +34,7 @@ import {
   polyester,
   polyketon,
   polymerizationPreparation,
+  polymerizedGel,
   refinedSolvent,
   RMA7024,
   skillSummary1,
@@ -189,5 +198,137 @@ export const Crownslayer: Specialist = {
   },
 };
 
+/** Ela (엘라) */
+export const Ela: Specialist = {
+  id: 319,
+  name: "Ela",
+  nicknameList: ["엘라"],
+  imageFilename: "ela",
+  class: "Specialist",
+  branch: "Trapmaster",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: device, count: 5 },
+      { material: orirockCube, count: 7 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: bipolarNanoflake, count: 4 },
+      { material: orironBlock, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["옵티컬 인터퍼런스", "쇼크 디펜스", "'보삭 템페스트'"],
+  preferSkillList: ["'보삭 템페스트'"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orirock, count: 6 },
+        { material: damagedDivice, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 4 },
+        { material: oriron, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: fuscousFiber, count: 5 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: orirockCluster, count: 6 },
+        { material: aketon, count: 4 },
+      ],
+    },
+    "옵티컬 인터퍼런스": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: polymerizedGel, count: 4 },
+        { material: crystallineComponent, count: 9 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: ketonColloid, count: 4 },
+        { material: refinedSolvent, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: crystallineCircuit, count: 4 },
+      ],
+    },
+    "쇼크 디펜스": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: refinedSolvent, count: 4 },
+        { material: fuscousFiber, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cyclicenePrefab, count: 4 },
+        { material: incandescentAlloyBlock, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: refinedSolvent, count: 6 },
+      ],
+    },
+    "'보삭 템페스트'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: grindstone, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: polymerizedGel, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: grindstonePentahydrate, count: 4 },
+      ],
+    },
+  },
+  moduleList: [{ type: "TRP-Δ", name: "사회적 기대 전술배낭" }],
+  preferModuleList: [
+    { module: { type: "TRP-Δ", name: "사회적 기대 전술배낭" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "TRP-Δ": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 /** 스페셜리스트 오퍼레이터 리스트 */
-export const specialistList: Specialist[] = [Crownslayer];
+export const specialistList: Specialist[] = [Crownslayer, Ela];

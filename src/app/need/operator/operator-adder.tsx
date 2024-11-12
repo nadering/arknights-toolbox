@@ -28,16 +28,37 @@ export default function OperatorAdder() {
     let currentDataCount = 0;
     const maxDataCount = 5;
 
+    // 전체 오퍼레이터를 순회하며 검색
     return operatorList.filter((operator) => {
       if (currentDataCount >= maxDataCount) {
         // 최대 데이터 수를 초과하면, 검색하여 추가하지 않음
         return;
       }
 
+      // 모든 글자를 소문자화 후 검색
+      const lowerSearchText = searchText.toLowerCase();
+      const lowerOperatorName = operator.name.toLowerCase();
+
+      if (searchText && operator.nicknameList) {
+        // 별명이 있다면, 별명을 검색
+        for (const nickname of operator.nicknameList) {
+          const lowerNickname = nickname.toLowerCase();
+          if (
+            lowerNickname.startsWith(lowerSearchText.at(0)!) &&
+            lowerNickname.includes(lowerSearchText)
+          ) {
+            if (!selectedOperators || !selectedOperators.includes(operator)) {
+              currentDataCount += 1;
+              return operator;
+            }
+          }
+        }
+      }
+
       if (
         searchText &&
-        operator.name.startsWith(searchText.at(0)!) &&
-        operator.name.includes(searchText)
+        lowerOperatorName.startsWith(lowerSearchText.at(0)!) &&
+        lowerOperatorName.includes(lowerSearchText)
       ) {
         // 문자열 탐색 후, 현재 검색 문자열에 오퍼레이터가 해당된다고 파악되면 추가
         // 단, 이미 선택된 오퍼레이터는 추가하지 않음
@@ -111,7 +132,9 @@ export default function OperatorAdder() {
       </div>
       <ol
         className={`${
-          !showSearchedData || searchedData.length == 0 ? "opacity-0" : "opacity-100"
+          !showSearchedData || searchedData.length == 0
+            ? "opacity-0"
+            : "opacity-100"
         } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl`}
       >
         {searchedData.map((data) => (

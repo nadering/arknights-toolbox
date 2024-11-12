@@ -28,7 +28,7 @@ export default function JsonImportButton() {
           draggable={false}
         />
       </div>
-      <div className="flex flex-col items-center gap-y-3">
+      <div className="flex flex-col items-center gap-2 sm:gap-3">
         <p className="leading-none font-semibold text-2xl text-white text-center break-keep">
           JSON 가져오기
         </p>

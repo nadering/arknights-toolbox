@@ -68,7 +68,7 @@ export default function DepotGuide({
 
   return (
     <div
-      className="hidden relative w-full flex flex-col justify-between min-h-[283px] sm:flex-row"
+      className="hidden relative w-full flex flex-col justify-between gap-1 sm:flex-row sm:min-h-[283px] sm:gap-0"
       ref={divRef}
     >
       <JsonImportButton />
