@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { KeyboardEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
 import { Operator, operatorList } from "@/data/operator";
@@ -17,20 +17,45 @@ export default function OperatorAdder() {
   const [searchText, setSearchText] = useState("");
   const [searchedData, setSearchedData] = useState<Operator[]>([]);
 
-  // 검색 결과 표시 여부
-  const [showSearchedData, setShowSearchedData] = useState(true);
+  /** 검색 결과 최대 개수 */
+  const MAX_DATA_COUNT = 5;
 
-  const searchBarRef = useRef<HTMLInputElement>(null);
+  // 검색 결과 드랍다운의 인덱스
+  const [dataIndex, setDataIndex] = useState(0);
+
+  /** 검색 중 키보드 입력에 따라 선택된 오퍼레이터를 추가하거나, 오퍼레이터 선택을 변경 */
+  const handleSearchBarKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      if (searchedData.length != 0) {
+        // 엔터 키가 눌리면, 선택된 오퍼레이터를 추가
+        addSelectedOperator(searchedData[dataIndex]);
+      }
+    } else if (event.key === "ArrowUp") {
+      // 위 방향키가 눌리면, 위의 오퍼레이터를 선택하며 검색 창의 커서가 움직이지 않게 설정
+      event.preventDefault();
+      if (dataIndex > 0) {
+        setDataIndex(dataIndex - 1);
+      }
+    } else if (event.key === "ArrowDown") {
+      // 아래 방향키가 눌리면, 아래의 오퍼레이터를 선택하며 검색 창의 커서가 움직이지 않게 설정
+      event.preventDefault();
+      if (
+        dataIndex + 1 < searchedData.length &&
+        dataIndex + 1 < MAX_DATA_COUNT
+      ) {
+        setDataIndex(dataIndex + 1);
+      }
+    }
+  };
 
   /** 검색 문자열에 해당되는 오퍼레이터 리스트를 반환 */
   const searchOperatorData = () => {
     // 현재 및 최대 데이터 수
     let currentDataCount = 0;
-    const maxDataCount = 5;
 
     // 전체 오퍼레이터를 순회하며 검색
     return operatorList.filter((operator) => {
-      if (currentDataCount >= maxDataCount) {
+      if (currentDataCount >= MAX_DATA_COUNT) {
         // 최대 데이터 수를 초과하면, 검색하여 추가하지 않음
         return;
       }
@@ -74,49 +99,42 @@ export default function OperatorAdder() {
   const addSelectedOperator = (operator: Operator) => {
     setSelectedOperators((prev) => [...prev, operator]);
     setSearchText("");
+    setDataIndex(0);
   };
 
   // 검색 문자열이 변경될 때마다, 검색 데이터를 갱신
   useEffect(() => {
     setSearchedData(searchOperatorData());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchText]);
+  }, [searchText, selectedOperators]);
 
   return (
     <div className="group relative flex justify-center items-center">
       <div className="relative w-full flex flex-row justify-between items-center">
         <input
           className={`w-full min-h-12 px-4 py-3 ${
-            !showSearchedData || searchedData.length == 0
-              ? "rounded-lg"
-              : "rounded-t-lg"
+            searchedData.length == 0 ? "rounded-lg" : "rounded-t-lg"
           } z-20 resize-none 
           outline-solid outline-1 outline-gray-400
           bg-dark-800 text-gray-200 selection:bg-gray-800
           [&::-webkit-search-cancel-button]:appearance-none`}
           id="operator-adder"
-          ref={searchBarRef}
           type="search"
           placeholder="원하는 오퍼레이터 이름을 입력해주세요."
           value={searchText}
           autoComplete="off"
           autoFocus
           onChange={(event) => {
+            // 검색 창의 텍스트가 바뀔 때마다, 맨 위의 오퍼레이터를 선택
+            setDataIndex(0);
             setSearchText(event.target.value);
           }}
           onKeyDown={(event) => {
-            if (event.key === "Enter") {
-              if (searchedData.length != 0) {
-                // 엔터 키가 눌리면, 가장 위에 있는 오퍼레이터를 추가
-                addSelectedOperator(searchedData[0]);
-              }
-            }
+            handleSearchBarKeyDown(event);
           }}
           onFocus={() => {
-            setShowSearchedData(true);
-          }}
-          onBlur={() => {
-            setShowSearchedData(false);
+            // 검색 창을 포커스할 때마다, 맨 위의 오퍼레이터를 선택
+            setDataIndex(0);
           }}
         ></input>
         <div className="absolute right-4 w-6 z-30 aspect-square selection:bg-transparent">
@@ -132,17 +150,20 @@ export default function OperatorAdder() {
       </div>
       <ol
         className={`${
-          !showSearchedData || searchedData.length == 0
-            ? "opacity-0"
-            : "opacity-100"
+          searchedData.length == 0 ? "opacity-0" : "opacity-100"
         } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl`}
       >
-        {searchedData.map((data) => (
+        {searchedData.map((data, index) => (
           <li
             key={data.id}
-            className="flex flex-row items-center gap-3 px-4 py-2 rounded-xl cursor-pointer transition-all hover:bg-dark-300 hover:bg-opacity-20"
+            className={`${
+              dataIndex == index ? "bg-dark-300 bg-opacity-20" : ""
+            } flex flex-row items-center gap-3 px-4 py-2 rounded-xl cursor-pointer transition-colors`}
             onClick={() => {
               addSelectedOperator(data);
+            }}
+            onMouseOver={() => {
+              setDataIndex(index);
             }}
           >
             <div className="relative w-8 min-w-8 aspect-square rounded-2xl select-none">

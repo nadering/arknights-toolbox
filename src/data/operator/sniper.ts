@@ -1,6 +1,7 @@
 import Operator from "./operator";
 import {
   aggregateCyclicene,
+  aketon,
   bipolarNanoflake,
   coagulatingGel,
   compoundCuttingFluid,
@@ -17,8 +18,10 @@ import {
   ester,
   grindstonePentahydrate,
   incandescentAlloyBlock,
+  integratedDevice,
   ketonColloid,
   LMD,
+  manganeseOre,
   manganeseTrihydrate,
   moduleDataBlock,
   nucleicCrystalSinter,
@@ -35,6 +38,7 @@ import {
   polymerizedGel,
   refinedSolvent,
   RMA7012,
+  RMA7024,
   semiSyntheticSolvent,
   skillSummary1,
   skillSummary2,
@@ -44,6 +48,7 @@ import {
   solidifiedFiberBoard,
   sugar,
   sugarPack,
+  sugarSubstitute,
   transmutedSalt,
   transmutedSaltAgglomerate,
   whiteHorseKohl,
@@ -139,7 +144,7 @@ export const Narantuya: Sniper = {
         { material: ketonColloid, count: 2 },
       ],
     },
-    "악몽": {
+    악몽: {
       8: [
         { material: skillSummary3, count: 8 },
         { material: grindstonePentahydrate, count: 4 },
@@ -282,12 +287,12 @@ export const Wisadel: Sniper = {
       ],
     },
   },
-  moduleList: [{ type: "BOM-X", name: `'조상 발사기'` }],
+  moduleList: [{ type: "BOM-X", name: "'조상 발사기'" }],
   preferModuleList: [
     {
       module: {
         type: "BOM-X",
-        name: `'조상 발사기'`,
+        name: "'조상 발사기'",
       },
       level: 3,
     },
@@ -315,5 +320,142 @@ export const Wisadel: Sniper = {
   },
 };
 
+/** 레이 */
+export const Ray: Sniper = {
+  id: 310,
+  name: "레이",
+  imageFilename: "ray",
+  class: "Sniper",
+  branch: "Hunter",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: sniperChip!, count: 5 },
+      { material: polyester, count: 8 },
+      { material: oriron, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: sniperDualchip, count: 4 },
+      { material: bipolarNanoflake, count: 4 },
+      { material: orirockConcentration, count: 8 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["쏜살", "광역 경계", "'빛을 보았다'"],
+  preferSkillList: ["'빛을 보았다'"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orironShard, count: 5 },
+        { material: sugarSubstitute, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: polyketon, count: 4 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: device, count: 3 },
+        { material: polyester, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: aketon, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineComponent, count: 6 },
+        { material: manganeseOre, count: 3 },
+      ],
+    },
+    쏜살: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 3 },
+        { material: coagulatingGel, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: refinedSolvent, count: 4 },
+        { material: grindstonePentahydrate, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+      ],
+    },
+    "광역 경계": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: RMA7024, count: 4 },
+        { material: semiSyntheticSolvent, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: optimizedDevice, count: 4 },
+        { material: manganeseTrihydrate, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: orirockConcentration, count: 5 },
+      ],
+    },
+    "'빛을 보았다'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: integratedDevice, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cyclicenePrefab, count: 4 },
+        { material: RMA7024, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: incandescentAlloyBlock, count: 6 },
+      ],
+    },
+  },
+  moduleList: [{ type: "HUN-X", name: "《춤추는 달빛》" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "HUN-X",
+        name: "《춤추는 달빛》",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "HUN-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 /** 스나이퍼 오퍼레이터 리스트 */
-export const sniperList: Sniper[] = [Narantuya, Wisadel];
+export const sniperList: Sniper[] = [Narantuya, Wisadel, Ray];

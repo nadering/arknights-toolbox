@@ -158,10 +158,10 @@ export const Shu: Defender = {
       ],
     },
   },
-  moduleList: [{ type: "GUA-X", name: `'시간 제정에 관해'` }],
+  moduleList: [{ type: "GUA-X", name: "'시간 제정에 관해'" }],
   preferModuleList: [
     {
-      module: { type: "GUA-X", name: `'시간 제정에 관해'` },
+      module: { type: "GUA-X", name: "'시간 제정에 관해'" },
       level: 3,
     },
   ],

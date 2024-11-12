@@ -1,4 +1,5 @@
 import {
+  aggregateCyclicene,
   aketon,
   bipolarNanoflake,
   compoundCuttingFluid,
@@ -12,6 +13,7 @@ import {
   dataSupplementInstrument,
   dataSupplementStick,
   device,
+  diketon,
   fuscousFiber,
   grindstone,
   grindstonePentahydrate,
@@ -23,6 +25,7 @@ import {
   manganeseTrihydrate,
   moduleDataBlock,
   nucleicCrystalSinter,
+  optimizedDevice,
   orirock,
   orirockCluster,
   orirockConcentration,
@@ -40,11 +43,13 @@ import {
   skillSummary1,
   skillSummary2,
   skillSummary3,
+  solidifiedFiberBoard,
   specialistChip,
   specialistDualchip,
   sugar,
   sugarPack,
   sugarSubstitute,
+  transmutedSalt,
   transmutedSaltAgglomerate,
 } from "../material";
 import Operator from "./operator";
@@ -198,6 +203,137 @@ export const Crownslayer: Specialist = {
   },
 };
 
+/** 아스카론 */
+export const Ascalon: Specialist = {
+  id: 323,
+  name: "아스카론",
+  imageFilename: "ascalon",
+  class: "Specialist",
+  branch: "Ambusher",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: orirockCube, count: 12 },
+      { material: polyketon, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: D32Steel, count: 4 },
+      { material: ketonColloid, count: 6 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["추격", "은총", "강림"],
+  preferSkillList: ["은총"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: sugarSubstitute, count: 5 },
+        { material: diketon, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+        { material: sugar, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCluster, count: 8 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: sugarPack, count: 6 },
+        { material: compoundCuttingFluid, count: 3 },
+      ],
+    },
+    추격: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+        { material: integratedDevice, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+        { material: solidifiedFiberBoard, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: orirockConcentration, count: 5 },
+      ],
+    },
+    은총: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: transmutedSalt, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: optimizedDevice, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: incandescentAlloyBlock, count: 6 },
+      ],
+    },
+    강림: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orironBlock, count: 4 },
+        { material: aggregateCyclicene, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orironBlock, count: 4 },
+        { material: crystallineCircuit, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: RMA7024, count: 5 },
+      ],
+    },
+  },
+  moduleList: [{ type: "AMB-X", name: "'히든 블레이드'" }],
+  preferModuleList: [
+    { module: { type: "AMB-X", name: "'히든 블레이드'" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "AMB-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 /** Ela (엘라) */
 export const Ela: Specialist = {
   id: 319,
@@ -331,4 +467,4 @@ export const Ela: Specialist = {
 };
 
 /** 스페셜리스트 오퍼레이터 리스트 */
-export const specialistList: Specialist[] = [Crownslayer, Ela];
+export const specialistList: Specialist[] = [Crownslayer, Ascalon, Ela];

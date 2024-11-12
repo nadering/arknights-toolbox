@@ -598,4 +598,9 @@ export const Logos: Caster = {
 };
 
 /** 캐스터 오퍼레이터 리스트 */
-export const casterList: Caster[] = [LapplandTheDecadenza, Marcille, Nymph, Logos];
+export const casterList: Caster[] = [
+  LapplandTheDecadenza,
+  Marcille,
+  Nymph,
+  Logos,
+];
