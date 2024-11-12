@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
 import { Operator, operatorList } from "@/data/operator";
@@ -16,6 +16,11 @@ export default function OperatorAdder() {
   // 오퍼레이터 검색 문자열 및 검색된 데이터
   const [searchText, setSearchText] = useState("");
   const [searchedData, setSearchedData] = useState<Operator[]>([]);
+
+  // 검색 결과 표시 여부
+  const [showSearchedData, setShowSearchedData] = useState(true);
+
+  const searchBarRef = useRef<HTMLInputElement>(null);
 
   /** 검색 문자열에 해당되는 오퍼레이터 리스트를 반환 */
   const searchOperatorData = () => {
@@ -61,12 +66,15 @@ export default function OperatorAdder() {
       <div className="relative w-full flex flex-row justify-between items-center">
         <input
           className={`w-full min-h-12 px-4 py-3 ${
-            searchedData.length == 0 ? "rounded-lg" : "rounded-t-lg"
+            !showSearchedData || searchedData.length == 0
+              ? "rounded-lg"
+              : "rounded-t-lg"
           } z-20 resize-none 
           outline-solid outline-1 outline-gray-400
           bg-dark-800 text-gray-200 selection:bg-gray-800
           [&::-webkit-search-cancel-button]:appearance-none`}
           id="operator-adder"
+          ref={searchBarRef}
           type="search"
           placeholder="원하는 오퍼레이터 이름을 입력해주세요."
           value={searchText}
@@ -83,6 +91,12 @@ export default function OperatorAdder() {
               }
             }
           }}
+          onFocus={() => {
+            setShowSearchedData(true);
+          }}
+          onBlur={() => {
+            setShowSearchedData(false);
+          }}
         ></input>
         <div className="absolute right-4 w-6 z-30 aspect-square selection:bg-transparent">
           <Image
@@ -97,7 +111,7 @@ export default function OperatorAdder() {
       </div>
       <ol
         className={`${
-          searchedData.length == 0 ? "hidden" : "group-focus:block"
+          !showSearchedData || searchedData.length == 0 ? "opacity-0" : "opacity-100"
         } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl`}
       >
         {searchedData.map((data) => (

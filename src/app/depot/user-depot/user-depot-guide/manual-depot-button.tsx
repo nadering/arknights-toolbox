@@ -73,7 +73,7 @@ export default function ManualDepotButton() {
       onClick={() => goDepot()}
       ref={buttonRef}
     >
-      <div className="relative w-32 aspect-square selection:bg-transparent">
+      <div className="relative w-16 aspect-square selection:bg-transparent sm:w-24">
         <Image
           className="translate-y-[-12px] [filter:brightness(100%)_invert(100%)]"
           src={`/images/others/keyboard.png`}

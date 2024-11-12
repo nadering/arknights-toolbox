@@ -9,7 +9,7 @@ export default function NeedLinkButton() {
       href="/need"
     >
       <div
-        className="relative w-16 selection:bg-transparent aspect-square sm:w-24"
+        className="relative w-16 aspect-square selection:bg-transparent sm:w-24"
         draggable={false}
       >
         <Image

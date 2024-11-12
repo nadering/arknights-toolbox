@@ -18,7 +18,7 @@ export default function JsonImportButton() {
       }`}
       onClick={() => setUserSelect("JSON")}
     >
-      <div className="relative w-32 aspect-square selection:bg-transparent">
+      <div className="relative w-16 aspect-square selection:bg-transparent sm:w-24">
         <Image
           className="rotate-90 [filter:brightness(100%)_invert(100%)]"
           src="/images/others/import.png"
