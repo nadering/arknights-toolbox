@@ -19,7 +19,6 @@ export default function useModal(
     // 바깥 부분이 클릭되었다면 모달 창을 닫으며, useEffect의 콜백 함수를 실행
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function handleClickOutside(e: { target: any }) {
-      console.log(e.target);
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setModalOpen(false);
       }

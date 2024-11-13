@@ -24,8 +24,9 @@ export default function OperatorAdder() {
   // 검색 결과 드랍다운의 인덱스
   const [dataIndex, setDataIndex] = useState(0);
 
-  // 검색 창 및 검색 결과 드랍다운을 클릭했는지 확인
+  // 검색 창 및 검색 결과 드랍다운을 클릭 및 숨기기 관련
   const adderRef = useRef<HTMLDivElement>(null);
+  const searchBarRef = useRef<HTMLInputElement>(null);
   const searchClicked = useModal(adderRef);
 
   /** 검색 중 키보드 입력에 따라 선택된 오퍼레이터를 추가하거나, 오퍼레이터 선택을 변경 */
@@ -113,6 +114,12 @@ export default function OperatorAdder() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText, selectedOperators]);
 
+  // 컴포넌트가 마운트될 때, Div 노드를 클릭해 드랍다운을 활성화하고, Input 노드에 포커스를 설정
+  useEffect(() => {
+    adderRef.current?.click();
+    searchBarRef.current?.focus();
+  }, []);
+
   return (
     <div
       className="group relative flex justify-center items-center"
@@ -128,12 +135,12 @@ export default function OperatorAdder() {
           outline-solid outline-1 outline-gray-400
           bg-dark-800 text-gray-200 selection:bg-gray-800
           [&::-webkit-search-cancel-button]:appearance-none`}
+          ref={searchBarRef}
           id="operator-adder"
           type="search"
           placeholder="원하는 오퍼레이터 이름을 입력해주세요."
           value={searchText}
           autoComplete="off"
-          autoFocus
           onChange={(event) => {
             // 검색 창의 텍스트가 바뀔 때마다, 맨 위의 오퍼레이터를 선택
             setDataIndex(0);
