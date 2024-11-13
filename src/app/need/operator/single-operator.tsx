@@ -387,6 +387,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     }
 
     // 스킬 레벨 변경을 반영
+    handleSkillLevelRange(skillLevels, currentElite, targetElite);
     setSkillLevels([...skillLevels]);
   };
 

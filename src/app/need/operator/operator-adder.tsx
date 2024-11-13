@@ -1,10 +1,11 @@
 "use client";
 
-import { KeyboardEvent, useEffect, useState } from "react";
+import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
 import { Operator, operatorList } from "@/data/operator";
 import { selectedOperatorsAtom } from "@/store";
+import { useModal } from "@/hooks";
 
 /** 오퍼레이터 한 명을 추가하는 컴포넌트 */
 export default function OperatorAdder() {
@@ -22,6 +23,10 @@ export default function OperatorAdder() {
 
   // 검색 결과 드랍다운의 인덱스
   const [dataIndex, setDataIndex] = useState(0);
+
+  // 검색 창 및 검색 결과 드랍다운을 클릭했는지 확인
+  const adderRef = useRef<HTMLDivElement>(null);
+  const searchClicked = useModal(adderRef);
 
   /** 검색 중 키보드 입력에 따라 선택된 오퍼레이터를 추가하거나, 오퍼레이터 선택을 변경 */
   const handleSearchBarKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -109,11 +114,16 @@ export default function OperatorAdder() {
   }, [searchText, selectedOperators]);
 
   return (
-    <div className="group relative flex justify-center items-center">
+    <div
+      className="group relative flex justify-center items-center"
+      ref={adderRef}
+    >
       <div className="relative w-full flex flex-row justify-between items-center">
         <input
           className={`w-full min-h-12 px-4 py-3 ${
-            searchedData.length == 0 ? "rounded-lg" : "rounded-t-lg"
+            !searchClicked || searchedData.length == 0
+              ? "rounded-lg"
+              : "rounded-t-lg"
           } z-20 resize-none 
           outline-solid outline-1 outline-gray-400
           bg-dark-800 text-gray-200 selection:bg-gray-800
@@ -150,7 +160,11 @@ export default function OperatorAdder() {
       </div>
       <ol
         className={`${
-          searchedData.length == 0 ? "opacity-0" : "opacity-100"
+          searchClicked
+            ? searchedData.length == 0
+              ? "opacity-0"
+              : "opacity-100"
+            : "invisible"
         } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl`}
       >
         {searchedData.map((data, index) => (

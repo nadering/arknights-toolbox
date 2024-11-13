@@ -45,7 +45,7 @@ export default function LMDExpLine({
     <div
       key={lmd.material.id}
       className={`${
-        skipZero && lmd.count == 0 && "hidden"
+        skipZero && lmd.count <= 0 && selectedExp.count <= 0 && "hidden"
       } relative flex flex-col items-start gap-1`}
     >
       <p className="leading-tight font-semibold text-2xl text-white break-keep">
