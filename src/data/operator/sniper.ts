@@ -481,7 +481,7 @@ export const Typhon: Sniper = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["신속 공격γ", "빙원의 질서", "'영원한 사냥'"],
+  skillList: ["신속 공격 γ", "빙원의 질서", "'영원한 사냥'"],
   preferSkillList: ["빙원의 질서", "'영원한 사냥'"],
   skillUpgradeMaterials: {
     common: {
@@ -510,7 +510,7 @@ export const Typhon: Sniper = {
         { material: RMA7012, count: 3 },
       ],
     },
-    "신속공격γ": {
+    "신속 공격 γ": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: transmutedSaltAgglomerate, count: 4 },
