@@ -27,6 +27,7 @@ import {
   nucleicCrystalSinter,
   optimizedDevice,
   orirock,
+  orirockCluster,
   orirockConcentration,
   orirockCube,
   oriron,
@@ -457,5 +458,157 @@ export const Ray: Sniper = {
   },
 };
 
+/** 티폰 */
+export const Typhon: Sniper = {
+  id: 290,
+  name: "티폰",
+  imageFilename: "typhon",
+  class: "Sniper",
+  branch: "Besieger",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: sniperChip!, count: 5 },
+      { material: device, count: 5 },
+      { material: polyketon, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: sniperDualchip, count: 4 },
+      { material: polymerizationPreparation, count: 4 },
+      { material: refinedSolvent, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["신속 공격γ", "빙원의 질서", "'영원한 사냥'"],
+  preferSkillList: ["빙원의 질서", "'영원한 사냥'"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orirock, count: 6 },
+        { material: damagedDivice, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 4 },
+        { material: oriron, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: sugarPack, count: 7 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: orirockCluster, count: 6 },
+        { material: RMA7012, count: 3 },
+      ],
+    },
+    "신속공격γ": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+        { material: integratedDevice, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: refinedSolvent, count: 4 },
+        { material: manganeseTrihydrate, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: orirockConcentration, count: 6 },
+      ],
+    },
+    "빙원의 질서": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: manganeseOre, count: 8 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: polymerizedGel, count: 4 },
+        { material: incandescentAlloyBlock, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: whiteHorseKohl, count: 7 },
+      ],
+    },
+    "'영원한 사냥'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: polymerizedGel, count: 4 },
+        { material: compoundCuttingFluid, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: orirockConcentration, count: 10 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: cuttingFluidSolution, count: 4 },
+      ],
+    },
+  },
+  moduleList: [{ type: "SIE-X", name: "자연의 포용" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "SIE-X",
+        name: "자연의 포용",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SIE-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+// 스나이퍼 오퍼레이터 리스트 계열
+const sixStarSniperList: Sniper[] = [Narantuya, Wisadel, Ray, Typhon];
+const fiveStarSniperList: Sniper[] = [];
+const fourStarSniperList: Sniper[] = [];
+const threeStarSniperList: Sniper[] = [];
+const twoStarSniperList: Sniper[] = [];
+const oneStarSniperList: Sniper[] = [];
+
 /** 스나이퍼 오퍼레이터 리스트 */
-export const sniperList: Sniper[] = [Narantuya, Wisadel, Ray];
+export const sniperList: Sniper[] = [
+  ...sixStarSniperList,
+  ...fiveStarSniperList,
+  ...fourStarSniperList,
+  ...threeStarSniperList,
+  ...twoStarSniperList,
+  ...oneStarSniperList,
+];

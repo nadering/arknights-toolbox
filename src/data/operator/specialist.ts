@@ -1,7 +1,9 @@
+import Operator from "./operator";
 import {
   aggregateCyclicene,
   aketon,
   bipolarNanoflake,
+  coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
   crystallineComponent,
@@ -14,14 +16,17 @@ import {
   dataSupplementStick,
   device,
   diketon,
+  ester,
   fuscousFiber,
   grindstone,
   grindstonePentahydrate,
+  incandescentAlloy,
   incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
   LMD,
   loxicKohl,
+  manganeseOre,
   manganeseTrihydrate,
   moduleDataBlock,
   nucleicCrystalSinter,
@@ -40,6 +45,7 @@ import {
   polymerizedGel,
   refinedSolvent,
   RMA7024,
+  semiSyntheticSolvent,
   skillSummary1,
   skillSummary2,
   skillSummary3,
@@ -51,8 +57,8 @@ import {
   sugarSubstitute,
   transmutedSalt,
   transmutedSaltAgglomerate,
-} from "../material";
-import Operator from "./operator";
+  whiteHorseKohl,
+} from "@/data/material";
 
 // 스페셜리스트
 
@@ -466,5 +472,445 @@ export const Ela: Specialist = {
   },
 };
 
+/** 스와이어 디 엘리건트 위트 (수와이어) */
+export const SwireTheElegantWit: Specialist = {
+  id: 287,
+  name: "스와이어 디 엘리건트 위트",
+  nicknameList: ["수와이어"],
+  imageFilename: "swire-the-elegant-wit",
+  class: "Specialist",
+  branch: "Merchant",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: sugar, count: 8 },
+      { material: oriron, count: 5 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: D32Steel, count: 4 },
+      { material: whiteHorseKohl, count: 6 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["재물보다 의리", "'웰컴 드링크'", "거금 쾌척"],
+  preferSkillList: ["'웰컴 드링크'"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: ester, count: 6 },
+        { material: orironShard, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyketon, count: 4 },
+        { material: orirockCube, count: 5 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: semiSyntheticSolvent, count: 5 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineComponent, count: 6 },
+        { material: sugarPack, count: 4 },
+      ],
+    },
+    "재물보다 의리": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: coagulatingGel, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+        { material: refinedSolvent, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: optimizedDevice, count: 4 },
+      ],
+    },
+    "'웰컴 드링크'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: grindstone, count: 6 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: RMA7024, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+      ],
+    },
+    "거금 쾌척": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineCircuit, count: 4 },
+        { material: sugarPack, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: ketonColloid, count: 4 },
+        { material: manganeseTrihydrate, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: polymerizedGel, count: 4 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "MER-X", name: "'금화휘황'" },
+    { type: "MER-Y", name: "스와이어의 용문 요리 가이드" },
+  ],
+  preferModuleList: [
+    { module: { type: "MER-X", name: "'금화휘황'" }, level: 1 },
+  ],
+  moduleMaterials: {
+    "MER-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: bipolarNanoflake, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "MER-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: nucleicCrystalSinter, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 키린R 야토 (특토) */
+export const KirinRYato: Specialist = {
+  id: 272,
+  name: "키린R 야토",
+  nicknameList: ["특토"],
+  imageFilename: "kirin-r-yato",
+  class: "Specialist",
+  branch: "Executor",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: device, count: 5 },
+      { material: polyester, count: 5 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: nucleicCrystalSinter, count: 3 },
+      { material: ketonColloid, count: 6 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["귀인화", "난무", "공중 회전난무"],
+  preferSkillList: ["난무", "공중 회전난무"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orirock, count: 6 },
+        { material: damagedDivice, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 4 },
+        { material: oriron, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: compoundCuttingFluid, count: 5 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: incandescentAlloy, count: 5 },
+        { material: grindstone, count: 3 },
+      ],
+    },
+    귀인화: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineCircuit, count: 4 },
+        { material: compoundCuttingFluid, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orironBlock, count: 4 },
+        { material: grindstonePentahydrate, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: polymerizedGel, count: 6 },
+      ],
+    },
+    난무: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orirockConcentration, count: 4 },
+        { material: coagulatingGel, count: 8 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: refinedSolvent, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: orirockConcentration, count: 4 },
+      ],
+    },
+    "공중 회전난무": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: orirockCluster, count: 9 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: RMA7024, count: 4 },
+        { material: incandescentAlloyBlock, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: optimizedDevice, count: 3 },
+      ],
+    },
+  },
+  moduleList: [{ type: "EXE-X", name: "훈련용 말뚝" }],
+  preferModuleList: [
+    { module: { type: "EXE-X", name: "훈련용 말뚝" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "EXE-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: bipolarNanoflake, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 텍사스 디 오메르토사 (특사스) */
+export const TexasTheOmertosa: Specialist = {
+  id: 257,
+  name: "텍사스 디 오메르토사",
+  nicknameList: ["특사스"],
+  imageFilename: "texas-the-omertosa",
+  class: "Specialist",
+  branch: "Executor",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: polyketon, count: 6 },
+      { material: polyester, count: 5 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: bipolarNanoflake, count: 4 },
+      { material: orironBlock, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["고요한 이슬비", "끊임없는 소나기", "맹렬한 검의 비"],
+  preferSkillList: ["끊임없는 소나기", "맹렬한 검의 비"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: damagedDivice, count: 4 },
+        { material: ester, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCube, count: 7 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 4 },
+        { material: polyketon, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: crystallineComponent, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstone, count: 5 },
+        { material: transmutedSalt, count: 3 },
+      ],
+    },
+    "고요한 이슬비": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 3 },
+        { material: transmutedSalt, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: crystallineCircuit, count: 5 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: nucleicCrystalSinter, count: 6 },
+        { material: ketonColloid, count: 4 },
+      ],
+    },
+    "끊임없는 소나기": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: manganeseOre, count: 8 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orirockConcentration, count: 4 },
+        { material: ketonColloid, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: refinedSolvent, count: 6 },
+      ],
+    },
+    "맹렬한 검의 비": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: transmutedSaltAgglomerate, count: 4 },
+        { material: integratedDevice, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: crystallineCircuit, count: 4 },
+        { material: polymerizedGel, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: grindstonePentahydrate, count: 5 },
+      ],
+    },
+  },
+  moduleList: [{ type: "EXE-Y", name: "블루베리와 다크초콜릿" }],
+  preferModuleList: [
+    { module: { type: "EXE-Y", name: "블루베리와 다크초콜릿" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "EXE-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: bipolarNanoflake, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+// 스페셜리스트 오퍼레이터 리스트 계열
+const sixStarSpecialistList: Specialist[] = [
+  Crownslayer,
+  Ascalon,
+  Ela,
+  SwireTheElegantWit,
+  KirinRYato,
+  TexasTheOmertosa,
+];
+const fiveStarSpecialistList: Specialist[] = [];
+const fourStarSpecialistList: Specialist[] = [];
+const threeStarSpecialistList: Specialist[] = [];
+const twoStarSpecialistList: Specialist[] = [];
+const oneStarSpecialistList: Specialist[] = [];
+
 /** 스페셜리스트 오퍼레이터 리스트 */
-export const specialistList: Specialist[] = [Crownslayer, Ascalon, Ela];
+export const specialistList: Specialist[] = [
+  ...sixStarSpecialistList,
+  ...fiveStarSpecialistList,
+  ...fourStarSpecialistList,
+  ...threeStarSpecialistList,
+  ...twoStarSpecialistList,
+  ...oneStarSpecialistList,
+];
