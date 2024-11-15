@@ -603,7 +603,7 @@ export const Logos: Caster = {
 export const Hoolheyak: Caster = {
   id: 279,
   name: "오올헤약",
-  imageFilename: "hoolheyak",
+  imageFilename: "ho'olheyak",
   class: "Caster",
   branch: "Core",
   rarity: 6,
