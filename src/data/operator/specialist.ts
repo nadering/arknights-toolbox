@@ -44,6 +44,7 @@ import {
   polymerizationPreparation,
   polymerizedGel,
   refinedSolvent,
+  RMA7012,
   RMA7024,
   semiSyntheticSolvent,
   skillSummary1,
@@ -890,6 +891,290 @@ export const TexasTheOmertosa: Specialist = {
   },
 };
 
+/** 도로시 */
+export const Dorothy: Specialist = {
+  id: 246,
+  name: "도로시",
+  imageFilename: "dorothy",
+  class: "Specialist",
+  branch: "Trapmaster",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: device, count: 5 },
+      { material: orirockCube, count: 7 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: polymerizationPreparation, count: 4 },
+      { material: cuttingFluidSolution, count: 8 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["위험 목표 제거", "유사 지형 생성", "고속 공진 제거"],
+  preferSkillList: ["고속 공진 제거"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orirock, count: 6 },
+        { material: damagedDivice, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 4 },
+        { material: oriron, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: manganeseOre, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstone, count: 4 },
+        { material: orirockCluster, count: 5 },
+      ],
+    },
+    "위험 목표 제거": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orirockConcentration, count: 4 },
+        { material: grindstone, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: RMA7024, count: 4 },
+        { material: manganeseTrihydrate, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: cuttingFluidSolution, count: 5 },
+      ],
+    },
+    "유사 지형 생성": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: polymerizedGel, count: 4 },
+        { material: orirockCluster, count: 11 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: crystallineCircuit, count: 4 },
+        { material: RMA7024, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: incandescentAlloyBlock, count: 6 },
+      ],
+    },
+    "고속 공진 제거": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: RMA7012, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: optimizedDevice, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: polymerizedGel, count: 6 },
+      ],
+    },
+  },
+  moduleList: [{ type: "TRP-Y", name: "동화책" }],
+  preferModuleList: [{ module: { type: "TRP-Y", name: "동화책" }, level: 3 }],
+  moduleMaterials: {
+    "TRP-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: bipolarNanoflake, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 스펙터 디 언체인드 (언펙터) */
+export const SpecterTheUnchained: Specialist = {
+  id: 233,
+  name: "스펙터 디 언체인드",
+  nicknameList: ["언펙터"],
+  imageFilename: "specter-the-unchained",
+  class: "Specialist",
+  branch: "Dollkeeper",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: specialistChip!, count: 5 },
+      { material: sugar, count: 8 },
+      { material: polyester, count: 5 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: specialistDualchip, count: 4 },
+      { material: polymerizationPreparation, count: 4 },
+      { material: ketonColloid, count: 6 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["생존의 기교", "생존의 열망", "생존의 중압"],
+  preferSkillList: ["생존의 열망", "생존의 중압"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: ester, count: 6 },
+        { material: orironShard, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyketon, count: 4 },
+        { material: orirockCube, count: 5 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: orironCluster, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: aketon, count: 3 },
+        { material: loxicKohl, count: 6 },
+      ],
+    },
+    "생존의 기교": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: polymerizedGel, count: 4 },
+        { material: orirockCluster, count: 11 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: crystallineCircuit, count: 4 },
+        { material: incandescentAlloyBlock, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: refinedSolvent, count: 4 },
+      ],
+    },
+    "생존의 열망": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: RMA7012, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: optimizedDevice, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: incandescentAlloyBlock, count: 6 },
+      ],
+    },
+    "생존의 중압": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orironBlock, count: 4 },
+        { material: coagulatingGel, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: refinedSolvent, count: 4 },
+        { material: crystallineCircuit, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: incandescentAlloyBlock, count: 6 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "PUM-X", name: "'음반' 수집 상자" },
+    { type: "PUM-Y", name: "미완성의 아름다움" },
+  ],
+  preferModuleList: [
+    { module: { type: "PUM-X", name: "'음반' 수집 상자" }, level: 3 },
+    { module: { type: "PUM-Y", name: "미완성의 아름다움" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "PUM-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: bipolarNanoflake, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "PUM-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: bipolarNanoflake, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
   Crownslayer,
@@ -898,6 +1183,8 @@ const sixStarSpecialistList: Specialist[] = [
   SwireTheElegantWit,
   KirinRYato,
   TexasTheOmertosa,
+  Dorothy,
+  SpecterTheUnchained,
 ];
 const fiveStarSpecialistList: Specialist[] = [];
 const fourStarSpecialistList: Specialist[] = [];

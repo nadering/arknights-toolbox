@@ -17,10 +17,12 @@ import {
   device,
   ester,
   grindstonePentahydrate,
+  incandescentAlloy,
   incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
   LMD,
+  loxicKohl,
   manganeseOre,
   manganeseTrihydrate,
   moduleDataBlock,
@@ -31,6 +33,7 @@ import {
   orirockConcentration,
   orirockCube,
   oriron,
+  orironBlock,
   orironCluster,
   orironShard,
   polyester,
@@ -595,8 +598,312 @@ export const Typhon: Sniper = {
   },
 };
 
+/** 파죰카 */
+export const Pozëmka: Sniper = {
+  id: 243,
+  name: "파죰카",
+  imageFilename: "pozëmka",
+  class: "Sniper",
+  branch: "Heavyshooter",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: sniperChip!, count: 5 },
+      { material: sugar, count: 9 },
+      { material: device, count: 3 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: sniperDualchip, count: 4 },
+      { material: crystallineElectronicUnit, count: 3 },
+      { material: orirockConcentration, count: 9 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["약강격", "요약", "날카로운 스케치"],
+  preferSkillList: ["날카로운 스케치"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: ester, count: 6 },
+        { material: orironShard, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyketon, count: 4 },
+        { material: orirockCube, count: 5 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: RMA7012, count: 4 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineComponent, count: 4 },
+        { material: coagulatingGel, count: 4 },
+      ],
+    },
+    약강격: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: aketon, count: 8 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: RMA7024, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: ketonColloid, count: 5 },
+      ],
+    },
+    요약: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: compoundCuttingFluid, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orironBlock, count: 4 },
+        { material: incandescentAlloyBlock, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: grindstonePentahydrate, count: 4 },
+      ],
+    },
+    "날카로운 스케치": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: loxicKohl, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: ketonColloid, count: 4 },
+        { material: cuttingFluidSolution, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: manganeseTrihydrate, count: 5 },
+      ],
+    },
+  },
+  moduleList: [{ type: "ARC-Y", name: "타자기 리본" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "ARC-Y",
+        name: "타자기 리본",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "ARC-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: bipolarNanoflake, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 피아메타 */
+export const Fiammetta: Sniper = {
+  id: 227,
+  name: "피아메타",
+  imageFilename: "fiammetta",
+  class: "Sniper",
+  branch: "Artilleryman",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: sniperChip!, count: 5 },
+      { material: device, count: 6 },
+      { material: sugar, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: sniperDualchip, count: 4 },
+      { material: crystallineElectronicUnit, count: 3 },
+      { material: grindstonePentahydrate, count: 6 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: [
+    "'너는 직면해야 한다'",
+    "'너는 후회해야 한다'",
+    "'너는 갚아야 한다'",
+  ],
+  preferSkillList: ["'너는 갚아야 한다'"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orirock, count: 6 },
+        { material: damagedDivice, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 4 },
+        { material: oriron, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: coagulatingGel, count: 5 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: incandescentAlloy, count: 4 },
+        { material: manganeseOre, count: 5 },
+      ],
+    },
+    "'너는 직면해야 한다'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: loxicKohl, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: ketonColloid, count: 4 },
+        { material: cuttingFluidSolution, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: grindstonePentahydrate, count: 4 },
+      ],
+    },
+    "'너는 후회해야 한다'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: RMA7024, count: 3 },
+        { material: manganeseOre, count: 9 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: optimizedDevice, count: 3 },
+        { material: orironBlock, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: whiteHorseKohl, count: 5 },
+      ],
+    },
+    "'너는 갚아야 한다'": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineCircuit, count: 4 },
+        { material: coagulatingGel, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: ketonColloid, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: manganeseTrihydrate, count: 7 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "ART-X", name: "기나긴 여정" },
+    { type: "ART-Y", name: "'무법' 특수탄약 배급 세트" },
+  ],
+  preferModuleList: [
+    {
+      module: { type: "ART-Y", name: "'무법' 특수탄약 배급 세트" },
+      level: 2,
+    },
+  ],
+  moduleMaterials: {
+    "ART-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: bipolarNanoflake, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "ART-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: bipolarNanoflake, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 // 스나이퍼 오퍼레이터 리스트 계열
-const sixStarSniperList: Sniper[] = [Narantuya, Wisadel, Ray, Typhon];
+const sixStarSniperList: Sniper[] = [
+  Narantuya,
+  Wisadel,
+  Ray,
+  Typhon,
+  Pozëmka,
+  Fiammetta,
+];
 const fiveStarSniperList: Sniper[] = [];
 const fourStarSniperList: Sniper[] = [];
 const threeStarSniperList: Sniper[] = [];

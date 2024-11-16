@@ -2,18 +2,22 @@ import Operator from "./operator";
 import {
   aketon,
   bipolarNanoflake,
+  compoundCuttingFluid,
   crystallineCircuit,
   crystallineElectronicUnit,
   cuttingFluidSolution,
   D32Steel,
   dataSupplementInstrument,
   dataSupplementStick,
+  device,
   diketon,
   ester,
   grindstonePentahydrate,
+  incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
   LMD,
+  loxicKohl,
   manganeseOre,
   manganeseTrihydrate,
   medicChip,
@@ -21,6 +25,7 @@ import {
   moduleDataBlock,
   nucleicCrystalSinter,
   optimizedDevice,
+  orirock,
   orirockCluster,
   orirockConcentration,
   orirockCube,
@@ -330,6 +335,157 @@ export const ReedTheFlameShadow: Medic = {
   },
 };
 
+/** 루멘 */
+export const Lumen: Medic = {
+  id: 234,
+  name: "루멘",
+  imageFilename: "lumen",
+  class: "Medic",
+  branch: "Therapist",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: medicChip!, count: 5 },
+      { material: oriron, count: 8 },
+      { material: polyketon, count: 3 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: medicDualchip, count: 4 },
+      { material: crystallineElectronicUnit, count: 4 },
+      { material: optimizedDevice, count: 5 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["가랑비", "장맛비", "꺼지지 않는 등불"],
+  preferSkillList: ["꺼지지 않는 등불"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: diketon, count: 6 },
+        { material: orirock, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: device, count: 3 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCube, count: 5 },
+        { material: device, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: integratedDevice, count: 4 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: loxicKohl, count: 5 },
+        { material: aketon, count: 4 },
+      ],
+    },
+    가랑비: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: compoundCuttingFluid, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orironBlock, count: 4 },
+        { material: incandescentAlloyBlock, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: ketonColloid, count: 5 },
+      ],
+    },
+    장맛비: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: loxicKohl, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: ketonColloid, count: 4 },
+        { material: cuttingFluidSolution, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: grindstonePentahydrate, count: 4 },
+      ],
+    },
+    "꺼지지 않는 등불": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: RMA7024, count: 3 },
+        { material: manganeseOre, count: 9 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: optimizedDevice, count: 3 },
+        { material: orironBlock, count: 6 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: manganeseTrihydrate, count: 5 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "WAH-X", name: "순동 단안망원경" },
+    { type: "WAH-Y", name: "'행운'" },
+  ],
+  preferModuleList: [{ module: { type: "WAH-Y", name: "'행운'" }, level: 1 }],
+  moduleMaterials: {
+    "WAH-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "WAH-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 // 3성
 /** 히비스커스 */
 export const Hibiscus: Medic = {
@@ -376,7 +532,7 @@ export const Hibiscus: Medic = {
 };
 
 // 메딕 오퍼레이터 리스트 계열
-const sixStarMedicList: Medic[] = [EyjafjallaTheHvítAska, ReedTheFlameShadow];
+const sixStarMedicList: Medic[] = [EyjafjallaTheHvítAska, ReedTheFlameShadow, Lumen];
 const fiveStarMedicList: Medic[] = [];
 const fourStarMedicList: Medic[] = [];
 const threeStarMedicList: Medic[] = [Hibiscus];

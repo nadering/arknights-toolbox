@@ -497,8 +497,166 @@ export const Penance: Defender = {
   },
 };
 
+/** 혼 */
+export const Horn: Defender = {
+  id: 231,
+  name: "혼",
+  imageFilename: "horn",
+  class: "Defender",
+  branch: "Fortress",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: defenderChip!, count: 5 },
+      { material: orirockCube, count: 12 },
+      { material: sugar, count: 5 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: defenderDualchip, count: 4 },
+      { material: D32Steel, count: 4 },
+      { material: orironBlock, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["조명 유탄", "폭풍의 호령", "최종 방어선"],
+  preferSkillList: ["조명 유탄"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: sugarSubstitute, count: 5 },
+        { material: diketon, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+        { material: sugar, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: incandescentAlloy, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: orironCluster, count: 3 },
+        { material: compoundCuttingFluid, count: 5 },
+      ],
+    },
+    "조명 유탄": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: integratedDevice, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: refinedSolvent, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: RMA7024, count: 5 },
+      ],
+    },
+    "폭풍의 호령": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: refinedSolvent, count: 4 },
+        { material: incandescentAlloy, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: whiteHorseKohl, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: polymerizedGel, count: 4 },
+      ],
+    },
+    "최종 방어선": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orirockConcentration, count: 4 },
+        { material: grindstone, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: RMA7024, count: 4 },
+        { material: manganeseTrihydrate, count: 7 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: cuttingFluidSolution, count: 6 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "FOR-X", name: "'모범적인 사람'" },
+    { type: "FOR-Y", name: "오래된 옷, 새로운 날" },
+  ],
+  preferModuleList: [
+    { module: { type: "FOR-X", name: "'모범적인 사람'" }, level: 1 },
+  ],
+  moduleMaterials: {
+    "FOR-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "FOR-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 // 디펜더 오퍼레이터 리스트 계열
-const sixStarDefenderList: Defender[] = [Shu, JessicaTheLiberated, Penance];
+const sixStarDefenderList: Defender[] = [
+  Shu,
+  JessicaTheLiberated,
+  Penance,
+  Horn,
+];
 const fiveStarDefenderList: Defender[] = [];
 const fourStarDefenderList: Defender[] = [];
 const threeStarDefenderList: Defender[] = [];

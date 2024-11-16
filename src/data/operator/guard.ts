@@ -1587,6 +1587,297 @@ export const Młynar: Guard = {
   moduleMaterials: null,
 };
 
+/** 가비알 디 인빈서블 (수비알) */
+export const GavialTheInvincible: Guard = {
+  id: 242,
+  name: "가비알 디 인빈서블",
+  nicknameList: ["수비알"],
+  imageFilename: "gavial-the-invincible",
+  class: "Guard",
+  branch: "Centurion",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: guardChip!, count: 5 },
+      { material: orirockCube, count: 12 },
+      { material: polyketon, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: guardDualchip, count: 4 },
+      { material: bipolarNanoflake, count: 4 },
+      { material: polymerizedGel, count: 6 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["정밀 통격", "체인톱 강습", "정글의 영혼"],
+  preferSkillList: ["체인톱 강습"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: sugarSubstitute, count: 5 },
+        { material: diketon, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: polyester, count: 5 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: oriron, count: 4 },
+        { material: sugar, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: grindstone, count: 5 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: RMA7012, count: 3 },
+        { material: incandescentAlloy, count: 5 },
+      ],
+    },
+    "정밀 통격": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: orironBlock, count: 4 },
+        { material: semiSyntheticSolvent, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: refinedSolvent, count: 4 },
+        { material: polymerizedGel, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: orirockConcentration, count: 4 },
+      ],
+    },
+    "체인톱 강습": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: ketonColloid, count: 4 },
+        { material: coagulatingGel, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orirockConcentration, count: 4 },
+        { material: grindstonePentahydrate, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: optimizedDevice, count: 4 },
+      ],
+    },
+    "정글의 영혼": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 3 },
+        { material: orironCluster, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: polymerizedGel, count: 4 },
+        { material: orirockConcentration, count: 10 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: orironBlock, count: 5 },
+      ],
+    },
+  },
+  moduleList: [{ type: "CEN-X", name: "가비알의 괴로움" }],
+  preferModuleList: [
+    {
+      module: { type: "CEN-X", name: "가비알의 괴로움" },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "CEN-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 아이린 */
+export const Irene: Guard = {
+  id: 235,
+  name: "아이린",
+  imageFilename: "irene",
+  class: "Guard",
+  branch: "Swordmaster",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: guardChip!, count: 5 },
+      { material: polyester, count: 8 },
+      { material: oriron, count: 4 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: guardDualchip, count: 4 },
+      { material: bipolarNanoflake, count: 4 },
+      { material: RMA7024, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["불어오는 바람", "갈라지는 파도", "판결"],
+  preferSkillList: ["판결"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: orironShard, count: 5 },
+        { material: sugarSubstitute, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: polyketon, count: 4 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: device, count: 3 },
+        { material: polyester, count: 3 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: aketon, count: 6 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: integratedDevice, count: 3 },
+        { material: coagulatingGel, count: 4 },
+      ],
+    },
+    "불어오는 바람": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: ketonColloid, count: 4 },
+        { material: coagulatingGel, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: orirockConcentration, count: 4 },
+        { material: grindstonePentahydrate, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: orironBlock, count: 4 },
+      ],
+    },
+    "갈라지는 파도": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: optimizedDevice, count: 3 },
+        { material: orironCluster, count: 4 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: polymerizedGel, count: 4 },
+        { material: orirockConcentration, count: 10 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: bipolarNanoflake, count: 6 },
+        { material: optimizedDevice, count: 4 },
+      ],
+    },
+    판결: {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: aketon, count: 8 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: incandescentAlloyBlock, count: 4 },
+        { material: RMA7024, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: orironBlock, count: 5 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "SWO-X", name: "재판관의 식량" },
+    { type: "SWO-Y", name: "두껍고 무거운 경전" },
+  ],
+  preferModuleList: [
+    {
+      module: { type: "SWO-Y", name: "두껍고 무거운 경전" },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "SWO-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: bipolarNanoflake, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "SWO-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 /** 스카디 */
 export const Skadi: Guard = {
   id: 89,
@@ -1761,6 +2052,8 @@ const sixStarGuardList: Guard[] = [
   Qiubai,
   Chongyue,
   Młynar,
+  GavialTheInvincible,
+  Irene,
   Skadi,
 ];
 const fiveStarGuardList: Guard[] = [];

@@ -886,6 +886,185 @@ export const Lin: Caster = {
   },
 };
 
+/** 에벤홀츠 */
+export const Ebenholz: Caster = {
+  id: 239,
+  name: "에벤홀츠",
+  imageFilename: "ebenholz",
+  class: "Caster",
+  branch: "Mystic",
+  rarity: 6,
+  eliteMaterials: {
+    0: [],
+    1: [
+      { material: casterChip!, count: 5 },
+      { material: polyketon, count: 7 },
+      { material: device, count: 3 },
+      { material: LMD, count: 30000 },
+    ],
+    2: [
+      { material: casterDualchip, count: 4 },
+      { material: D32Steel, count: 4 },
+      { material: refinedSolvent, count: 7 },
+      { material: LMD, count: 180000 },
+    ],
+  },
+  skillList: ["급속 변주", "황량한 메아리", "침묵의 소리"],
+  preferSkillList: ["침묵의 소리"],
+  skillUpgradeMaterials: {
+    common: {
+      2: [{ material: skillSummary1, count: 5 }],
+      3: [
+        { material: skillSummary1, count: 5 },
+        { material: damagedDivice, count: 4 },
+        { material: ester, count: 4 },
+      ],
+      4: [
+        { material: skillSummary2, count: 8 },
+        { material: orirockCube, count: 7 },
+      ],
+      5: [
+        { material: skillSummary2, count: 8 },
+        { material: sugar, count: 4 },
+        { material: polyketon, count: 4 },
+      ],
+      6: [
+        { material: skillSummary2, count: 8 },
+        { material: loxicKohl, count: 7 },
+      ],
+      7: [
+        { material: skillSummary3, count: 8 },
+        { material: manganeseOre, count: 3 },
+        { material: semiSyntheticSolvent, count: 5 },
+      ],
+    },
+    "급속 변주": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: crystallineCircuit, count: 4 },
+        { material: coagulatingGel, count: 3 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: whiteHorseKohl, count: 4 },
+        { material: ketonColloid, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: polymerizationPreparation, count: 6 },
+        { material: whiteHorseKohl, count: 7 },
+      ],
+    },
+    "황량한 메아리": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: cuttingFluidSolution, count: 4 },
+        { material: integratedDevice, count: 5 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: manganeseTrihydrate, count: 4 },
+        { material: refinedSolvent, count: 8 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: D32Steel, count: 6 },
+        { material: RMA7024, count: 5 },
+      ],
+    },
+    "침묵의 소리": {
+      8: [
+        { material: skillSummary3, count: 8 },
+        { material: refinedSolvent, count: 4 },
+        { material: incandescentAlloy, count: 7 },
+      ],
+      9: [
+        { material: skillSummary3, count: 12 },
+        { material: grindstonePentahydrate, count: 4 },
+        { material: whiteHorseKohl, count: 9 },
+      ],
+      10: [
+        { material: skillSummary3, count: 15 },
+        { material: crystallineElectronicUnit, count: 6 },
+        { material: refinedSolvent, count: 4 },
+      ],
+    },
+  },
+  moduleList: [
+    { type: "MSC-X", name: "오리지늄 주사위 수납함" },
+    { type: "MSC-Y", name: "'음악이론 해설자'" },
+    { type: "MSC-Δ", name: "부패의 전승" },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "MSC-Δ",
+        name: "부패의 전승",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "MSC-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "MSC-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "MSC-Δ": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
   LapplandTheDecadenza,
@@ -894,6 +1073,7 @@ const sixStarCasterList: Caster[] = [
   Logos,
   Hoolheyak,
   Lin,
+  Ebenholz,
 ];
 const fiveStarCasterList: Caster[] = [];
 const fourStarCasterList: Caster[] = [];
