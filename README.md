@@ -17,7 +17,7 @@ npm run dev
 
 ## 재료
 - `material.ts` 재료 클래스
-- `upgradel.ts` 정예화 및 스킬 업그레이드 재료
+- `upgrade.ts` 정예화 및 스킬 업그레이드 재료
 - `battle-record.ts` 작전개론
 - `exp.ts` 경험치 (작전개론과 별개)
 - `lmd.ts` 용문폐
