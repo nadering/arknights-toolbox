@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Depot, makeEmptyDepot } from "@/store";
+import { useSetAtom } from "jotai";
+import { Depot, makeEmptyDepot, materialLeftAtom, materialLeftInitializedAtom } from "@/store";
 import { DepotLine, LMDExpLine, UpgradeLine } from "@common/depot";
 import {
   CountableMaterial,
@@ -31,7 +32,11 @@ export default function LackMaterials({
   // 필터링된 데이터
   const [filteredData, setFilteredData] = useState({ ...data });
 
-  // 경험치 데이터
+  // 남은 재료 데이터
+  const setMaterialLeft = useSetAtom(materialLeftAtom);
+  const setMaterialLeftInitialized = useSetAtom(materialLeftInitializedAtom);
+
+  // 경험치 데이터 (데이터가 음수일 때 부족하다는 뜻이므로, 부호를 바꾼 값이 양수일 때만 보여줌)
   const [expData, setExpData] = useState<CountableMaterial>({
     material: EXP,
     count: -exp.count,
@@ -106,10 +111,14 @@ export default function LackMaterials({
     return resultDepot;
   };
 
-  /** 부족한 재료만 필터링 후 반환 */
+  /** 부족한 재료만 필터링 후, 필터링 된 재료 및 남은 재료를 반환 */
   const filterLackMaterial = (depot: Depot) => {
-    // 빈 창고를 생성
+    // 빈 창고 2개를 생성하여, 필터링 된 재료 및 남은 재료로 설정
     const newFilteredData = makeEmptyDepot();
+    const newMaterialLeft = makeEmptyDepot();
+
+    // 남은 재료가 없다고 가정
+    let isMaterialLeft = false;
 
     Object.keys(depot).forEach((type) => {
       if (filterMaterialTypes.includes(type as MaterialType)) {
@@ -120,10 +129,17 @@ export default function LackMaterials({
             // 재료를 순회하면서, 부족한 재료만 추가
             setDepotMaterialById(mat.material.id, -mat.count, newFilteredData);
           }
+          else if (mat.count > 0) {
+            // 재료를 순회하면서, 남은 재료를 추가
+            setDepotMaterialById(mat.material.id, mat.count, newMaterialLeft);
+            isMaterialLeft = true;
+          }
         }
       }
     });
-    return newFilteredData;
+
+    setMaterialLeftInitialized(isMaterialLeft);
+    return [newFilteredData, newMaterialLeft];
   };
 
   // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
@@ -159,10 +175,11 @@ export default function LackMaterials({
     const newDecomposedData = decomposeMaterial(data);
 
     // 부족한 재료만 보이도록 필터링
-    const newFilteredData = filterLackMaterial(newDecomposedData);
+    const [newFilteredData, newMaterialLeft] = filterLackMaterial(newDecomposedData);
 
-    // 변경된 필터링 데이터를 반영
+    // 변경된 필터링 데이터 및 남은 재료를 반영
     setFilteredData(newFilteredData);
+    setMaterialLeft(newMaterialLeft);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, materialMaxTier]);
 

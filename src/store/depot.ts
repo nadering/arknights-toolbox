@@ -62,7 +62,13 @@ export const userNeedAtom = atom<Depot>(makeEmptyDepot());
 /** 사용자가 필요한 재료를 입력했는지 여부를 저장하는 아톰 */
 export const userNeedInitializedAtom = atom<boolean>(false);
 
-/** 총 경험치를 저장하는 아톰 */
+/** 제작 후 남은 재료를 저장하는 아톰 */
+export const materialLeftAtom = atom<Depot>(makeEmptyDepot());
+
+/** 제작 후 남은 재료가 생겼는지 여부를 저장하는 아톰 */
+export const materialLeftInitializedAtom = atom<boolean>(false);
+
+/** 오퍼레이터 육성에 필요한 총 경험치를 저장하는 아톰 */
 export const expAtom = atom<CountableMaterial>({
   material: EXP,
   count: 0,

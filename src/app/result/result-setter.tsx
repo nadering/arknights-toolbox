@@ -17,6 +17,7 @@ import {
 } from "@/data/material";
 import { setDepotMaterialById } from "@/tool";
 import LackMaterials from "./lack-materials";
+import Remaining from "./remaining";
 
 /** 계산 결과를 제공하는 컴포넌트 */
 export default function ResultSetter() {
@@ -77,12 +78,13 @@ export default function ResultSetter() {
   useEffect(() => calculate(), [userDepot, userNeed, needExp]);
 
   return (
-    <>
+    <div className="flex flex-col w-full gap-4">
       <LackMaterials
         key="need-to-craft"
         data={calculatedDepot}
         exp={calculatedExp}
       />
-    </>
+      <Remaining key="remaining" exp={calculatedExp} />
+    </div>
   );
 }
