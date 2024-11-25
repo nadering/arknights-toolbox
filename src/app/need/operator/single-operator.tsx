@@ -446,8 +446,14 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     setSelectedOperators(newSelectedOperators);
     setSelectedOperatorsMaterial(newSelectedOperatorsMaterial);
     if (newSelectedOperators.length == 0) {
-      // 오퍼레이터가 남지 않았다면, 사용자가 핑료 재료 및 오퍼레이터를 설정하지 않은 상태
+      // 오퍼레이터가 남지 않았다면, 사용자가 필요 재료 및 오퍼레이터를 설정하지 않은 상태
       setUserNeedInitialized(false);
+
+      if (typeof window !== undefined) {
+        localStorage.removeItem("selectedOperators");
+        localStorage.removeItem("selectedOperatorsMaterial");
+        localStorage.removeItem("userNeed");
+      }
     }
   };
 
