@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useSetAtom } from "jotai";
 import { userSelectAtom } from "@/store";
 
@@ -20,6 +21,23 @@ export default function Header() {
       >
         Arknights-Toolbox
       </Link>
+      <a
+        href="https://github.com/nadering/arknights-toolbox"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group relative w-[28px] aspect-square translate-y-2 selection:bg-transparent`}
+      >
+        <Image
+          className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+            hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+          src="/images/others/github.png"
+          alt="github-link"
+          fill
+          sizes="10vw"
+          draggable={false}
+        />
+        
+      </a>
     </header>
   );
 }
