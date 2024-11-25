@@ -82,6 +82,7 @@ export default function SingleMaterial({
         newCount,
         userDepot
       );
+      setUserDepot({...userDepot});
     }
   };
 
@@ -110,7 +111,7 @@ export default function SingleMaterial({
         parseInt(value, 10),
         userDepot
       );
-      setUserDepot(userDepot);
+      setUserDepot({...userDepot});
     }
   };
 

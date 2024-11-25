@@ -6,6 +6,7 @@ import SingleOperator from "./single-operator";
 
 /** 선택된 오퍼레이터 목록 */
 export default function SelectedOperators() {
+  // 선택된 오퍼레이터
   const selectedOperators = useAtomValue(selectedOperatorsAtom);
 
   return (

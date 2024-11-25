@@ -33,8 +33,13 @@ export default function UserDepotSetter() {
     setUserDepot(makeEmptyDepot());
     setActivateDepot(false);
     setUserDepotInitialized(false);
+
+    if (typeof window !== undefined) {
+      localStorage.removeItem("userDepot");
+    }
   };
 
+  // 애니메이션
   useEffect(() => {
     if (userSelect == "JSON") {
       /**

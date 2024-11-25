@@ -38,6 +38,12 @@ export default function OperatorSetter() {
     setSelectedOperatorsMaterial([]);
     setUserNeed(makeEmptyDepot());
     setUserNeedInitialized(false);
+
+    if (typeof window !== undefined) {
+      localStorage.removeItem("selectedOperators");
+      localStorage.removeItem("selectedOperatorsMaterial");
+      localStorage.removeItem("userNeed");
+    }
   };
 
   return (

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Header, BackToTopButton, BackToMainButton, GoToBottomButton } from "@/app/_common";
-import { Providers } from "./providers";
+import {
+  Header,
+  BackToTopButton,
+  BackToMainButton,
+  GoToBottomButton,
+} from "@/app/_common";
+import Providers from "./providers";
+import LocalStorageSetter from "./local-storage-setter";
 import "./globals.css";
 
 /** Next.js에서 제공하는 localFont 기능으로, 폰트는 Pretendard 사용 */
@@ -27,6 +33,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${pretendard.variable} font-pretendard antialiased`}>
         <Providers>
+          <LocalStorageSetter />
           <div className="relative w-screen h-full min-h-screen bg-dark">
             <Header />
             <div className="flex flex-col w-screen max-w-3xl h-full min-h-screen bg-dark py-12 mx-auto">

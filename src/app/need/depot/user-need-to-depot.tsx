@@ -8,6 +8,7 @@ import {
   makeEmptyDepot,
   selectedOperatorsMaterialAtom,
   userNeedAtom,
+  userNeedInitializedAtom,
 } from "@/store";
 import { setDepotMaterialById } from "@/tool";
 import { CountableMaterial, EXP, LMD } from "@/data/material";
@@ -22,6 +23,9 @@ import {
 export default function UserNeedToDepot() {
   // 사용자 필요 재료
   const [userNeed, setUserNeed] = useAtom(userNeedAtom);
+
+  // 사용자 필요 재료 설정 여부
+  const setUserNeedInitialized = useSetAtom(userNeedInitializedAtom);
 
   /** 오퍼레이터 총 육성 재화 */
   const selectedOperatorsMaterial = useAtomValue(selectedOperatorsMaterialAtom);
@@ -193,8 +197,11 @@ export default function UserNeedToDepot() {
 
     // 오퍼레이터의 육성 재료 추가가 끝나면 새로운 창고 및 경험치를 사용자 필요 재료의 창고화된 데이터로 설정
     setUserNeed(newUserNeed);
+    setUserNeedInitialized(true);
     setExp({ material: EXP, count: newExp });
-  }, [setExp, setUserNeed, selectedOperatorsMaterial]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedOperatorsMaterial]);
 
   // 오퍼레이터가 변경되면, 새로 재료를 설정
   useEffect(() => {

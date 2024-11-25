@@ -1,7 +1,7 @@
 "use client;";
 
 import { useState, useRef, useEffect, FormEvent } from "react";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import Image from "next/image";
 import {
   ModuleLevel,
@@ -42,9 +42,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   );
 
   // 사용자의 필요 재료가 설정되었는지 여부를 설정
-  const [userNeedInitialized, setUserNeedInitialized] = useAtom(
-    userNeedInitializedAtom
-  );
+  const setUserNeedInitialized = useSetAtom(userNeedInitializedAtom);
 
   // 정예화 설정
   const [currentElite, setCurrentElite] = useState<EliteNumber>(0);
@@ -98,14 +96,14 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   const [moduleLevels, setModuleLevels] = useState<ModuleLevel[]>(
     operator.moduleList.map((module) => {
       if (operator.preferModuleList) {
-        for (const perferModule of operator.preferModuleList) {
+        for (const preferModule of operator.preferModuleList) {
           // 선호하는 모듈이라면, 해당 모듈의 목표 레벨을 설정
-          if (perferModule.module.type == module.type) {
+          if (preferModule.module.type == module.type) {
             return {
               type: module.type,
               name: module.name,
               current: 0,
-              target: perferModule.level,
+              target: preferModule.level,
             };
           }
         }
@@ -503,7 +501,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   // 현재 오퍼레이터의 육성 단계가 설정되어 있다면, 해당 단계에 맞게 설정
   useEffect(() => {
-    if (userNeedInitialized) {
+    if (selectedOperatorsMaterial.length > 0) {
       for (const operatorMaterial of selectedOperatorsMaterial) {
         if (operatorMaterial.id == operator.id) {
           setCurrentElite(operatorMaterial.target.currentElite);
