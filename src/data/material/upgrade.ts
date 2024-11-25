@@ -404,10 +404,10 @@ export const solidifiedFiberBoard: Material = {
   ],
 };
 
-/** (T4) 합성 소금 번들 */
+/** (T4) 합성 소금 팩 */
 export const transmutedSaltAgglomerate: Material = {
   id: "31064",
-  name: "합성 소금 번들",
+  name: "합성 소금 팩",
   imageFilename: "transmuted-salt-agglomerate",
   type: "Upgrade",
   tier: 4,

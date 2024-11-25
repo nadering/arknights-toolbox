@@ -2,11 +2,17 @@ import { CountableMaterial } from "@/data/material";
 
 // 오퍼레이터 관련 타입 및 테이블
 
+/** 레어도 타입 리스트 */
+export const RarityNumberList = [1, 2, 3, 4, 5, 6] as const;
+
 /** 레어도(별) 타입 */
-export type RarityNumber = 1 | 2 | 3 | 4 | 5 | 6;
+export type RarityNumber = (typeof RarityNumberList)[number];
+
+/** 정예화 타입 리스트 */
+export const EliteNumberList = [0, 1, 2] as const;
 
 /** 정예화 타입 */
-export type EliteNumber = 0 | 1 | 2;
+export type EliteNumber = (typeof EliteNumberList)[number];
 
 /** 숫자와 필요한 재료 매핑 */
 export interface MaterialsWithNumber {
@@ -104,7 +110,6 @@ type LevelUpTable = {
     };
   };
 };
-
 
 /** 레벨 업에 필요한 경험치 및 용문폐, 정예화별 누적 테이블 */
 export const LEVEL_UP_STACKED_TABLE: LevelUpTable = {
@@ -1009,7 +1014,7 @@ export const LEVEL_UP_STACKED_TABLE: LevelUpTable = {
 };
 
 /** [레어도: 숫자] 타입 */
-type NumberByRarity = {
+export type NumberByRarity = {
   [key in RarityNumber]: number;
 };
 
@@ -1023,8 +1028,78 @@ export const MODULE_LEVEL_REQUIRED: NumberByRarity = {
   1: 99,
 };
 
+/** 레어도에 따른 보유 스킬 개수 */
+export const SKILL_COUNT_TABLE: NumberByRarity = {
+  6: 3,
+  5: 2,
+  4: 2,
+  3: 1,
+  2: 0,
+  1: 0,
+};
+
+/** 레어도에 따른 1정예화 재료 수 */
+export const ELITE_ONE_MATERIAL_TABLE: NumberByRarity = {
+  6: 4,
+  5: 4,
+  4: 4,
+  3: 1,
+  2: 0,
+  1: 0,
+};
+
+/** 레어도에 따른 1정예화에 소모되는 칩 개수 */
+export const ELITE_ONE_CHIP_TABLE: NumberByRarity = {
+  6: 5,
+  5: 4,
+  4: 3,
+  3: 0,
+  2: 0,
+  1: 0,
+};
+
+/** 레어도에 따른 1정예화에 소모되는 용문폐 */
+export const ELITE_ONE_LMD_TABLE: NumberByRarity = {
+  6: 30000,
+  5: 20000,
+  4: 15000,
+  3: 10000,
+  2: 0,
+  1: 0,
+};
+
+/** 레어도에 따른 2정예화 재료 수 */
+export const ELITE_TWO_MATERIAL_TABLE: NumberByRarity = {
+  6: 4,
+  5: 4,
+  4: 4,
+  3: 0,
+  2: 0,
+  1: 0,
+};
+
+/** 레어도에 따른 2정예화에 소모되는 칩 개수 */
+export const ELITE_TWO_CHIP_TABLE: NumberByRarity = {
+  6: 4,
+  5: 3,
+  4: 5,
+  3: 0,
+  2: 0,
+  1: 0,
+}
+
+/** 레어도에 따른 2정예화에 소모되는 용문폐 */
+export const ELITE_TWO_LMD_TABLE: NumberByRarity = {
+  6: 180000,
+  5: 120000,
+  4: 60000,
+  3: 0,
+  2: 0,
+  1: 0,
+};
+
 /** [레어도: 정예화] 타입 */
-type EliteByRarity = {
+export type EliteByRarity = {
   [key in RarityNumber]: EliteNumber;
 };
 
@@ -1039,7 +1114,7 @@ export const MAX_ELITE_TABLE: EliteByRarity = {
 };
 
 /** [정예화: 숫자] 타입 */
-type NumberByElite = {
+export type NumberByElite = {
   [key in EliteNumber]: number;
 };
 
