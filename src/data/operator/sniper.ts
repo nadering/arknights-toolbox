@@ -1134,7 +1134,7 @@ export const ChenTheHolungday: Sniper = {
           count: 4,
         },
         {
-          material: optimizedDevice,
+          material: grindstonePentahydrate,
           count: 9,
         },
       ],
