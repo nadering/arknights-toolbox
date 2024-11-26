@@ -12,6 +12,7 @@ export interface BattleRecord extends Material {
 export const drillBattleRecord: BattleRecord = {
   id: "2001",
   name: "기초작전기록",
+  objectName: "drillBattleRecord",
   imageFilename: "drill-battle-record",
   type: "Battle-Record",
   tier: 2,
@@ -22,6 +23,7 @@ export const drillBattleRecord: BattleRecord = {
 export const frontlineBattleRecord: BattleRecord = {
   id: "2002",
   name: "초급작전기록",
+  objectName: "frontlineBattleRecord",
   imageFilename: "frontline-battle-record",
   type: "Battle-Record",
   tier: 3,
@@ -32,6 +34,7 @@ export const frontlineBattleRecord: BattleRecord = {
 export const tacticalBattleRecord: BattleRecord = {
   id: "2003",
   name: "중급작전기록",
+  objectName: "tacticalBattleRecord",
   imageFilename: "tactical-battle-record",
   type: "Battle-Record",
   tier: 4,
@@ -42,6 +45,7 @@ export const tacticalBattleRecord: BattleRecord = {
 export const strategicBattleRecord: BattleRecord = {
   id: "2004",
   name: "고급작전기록",
+  objectName: "strategicBattleRecord",
   imageFilename: "strategic-battle-record",
   type: "Battle-Record",
   tier: 5,

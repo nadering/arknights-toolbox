@@ -23,23 +23,25 @@ export default function Remaining({ exp }: { exp: CountableMaterial }) {
 
   // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
   useEffect(() => {
-    /** 애니메이션을 나타내는 클래스 */
-    const animateClass = "animate-[fade-in-down_0.2s_ease-in-out]";
+    if (materialLeftInitialized) {
+      /** 애니메이션을 나타내는 클래스 */
+      const animateClass = "animate-[fade-in-down_0.2s_ease-in-out]";
 
-    if (!divRef.current?.classList.contains(animateClass)) {
-      /**
-       * 숨겨두었던 컴포넌트를 다시 활성화시키고,
-       * Fade-in 애니메이션을 실행함
-       */
-      if (divRef.current?.classList.contains("hidden")) {
-        divRef.current.classList.remove("hidden");
+      if (!divRef.current?.classList.contains(animateClass)) {
+        /**
+         * 숨겨두었던 컴포넌트를 다시 활성화시키고,
+         * Fade-in 애니메이션을 실행함
+         */
+        if (divRef.current?.classList.contains("hidden")) {
+          divRef.current.classList.remove("hidden");
+        }
+        divRef.current?.classList.add(animateClass);
+
+        // 200ms 동안 애니메이션 실행
+        setTimeout(() => {
+          divRef.current?.classList.remove(animateClass);
+        }, 200);
       }
-      divRef.current?.classList.add(animateClass);
-
-      // 200ms 동안 애니메이션 실행
-      setTimeout(() => {
-        divRef.current?.classList.remove(animateClass);
-      }, 200);
     }
   }, [materialLeftInitialized]);
 

@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, SetStateAction, useEffect, useState } from "react";
 import Image from "next/image";
 import {
   casterChip,
   casterChipPack,
   casterDualchip,
   CountableMaterial,
+  dataSupplementInstrument,
+  dataSupplementStick,
   defenderChip,
   defenderChipPack,
   defenderDualchip,
@@ -17,9 +17,11 @@ import {
   guardDualchip,
   LMD,
   Material,
+  materialNames,
   medicChip,
   medicChipPack,
   medicDualchip,
+  moduleDataBlock,
   skillSummary1,
   skillSummary2,
   skillSummary3,
@@ -44,8 +46,10 @@ import {
   ELITE_TWO_LMD_TABLE,
   ELITE_TWO_MATERIAL_TABLE,
   EliteNumber,
+  MaterialsWithNumberAndName,
   MAX_ELITE_TABLE,
-  NumberByElite,
+  MODULE_ACTIVE_ELITE,
+  Operator,
   OperatorClass,
   OperatorClassList,
   RarityNumber,
@@ -55,6 +59,7 @@ import {
 } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 import SelectableMaterial from "./selectable-material";
+import ModuleTextInput from "./module-text-input";
 
 /** 공백 컴포넌트 */
 const EmptySpace = () => {
@@ -143,38 +148,21 @@ export default function OperatorMaker() {
   ]);
 
   // 모듈
-  const [moduleCount, setModuleCount] = useState<number>(3);
+  const [moduleCount, setModuleCount] = useState("0");
 
   // 모듈 타입 및 이름
-  const [moduleNameList, setModuleNameList] = useState([
-    ["", ""],
-    ["", ""],
-    ["", ""],
-  ]);
+  const [moduleNameList, setModuleNameList] = useState<string[][]>([]);
 
   // 모듈 재료
   const [moduleMaterial, setModuleMaterial] = useState<
     CountableMaterialMultipleList[]
-  >([
-    [
-      [null, null, null],
-      [null, null, null, null],
-      [null, null, null, null],
-    ],
-    [
-      [null, null, null],
-      [null, null, null, null],
-      [null, null, null, null],
-    ],
-    [
-      [null, null, null],
-      [null, null, null, null],
-      [null, null, null, null],
-    ],
-  ]);
+  >([]);
 
-  /** 아이디 문자열 설정 */
-  const handleIdValue = (event: FormEvent<HTMLInputElement>) => {
+  /** 숫자로 된 문자열 설정 */
+  const handleNumberStringValue = (
+    event: FormEvent<HTMLInputElement>,
+    setter: (value: SetStateAction<string>) => void
+  ) => {
     let value = event.currentTarget.value;
 
     // 0으로 시작하고 문자열 길이가 1을 초과한다면 (00, 01 등), 가장 왼쪽의 0을 제거함
@@ -189,7 +177,7 @@ export default function OperatorMaker() {
     }
 
     // 그 후, 아이디 문자열을 설정
-    setId(value);
+    setter(value);
   };
 
   /** 1차 정예화 재료 변화를 반영 */
@@ -226,10 +214,10 @@ export default function OperatorMaker() {
           className="flex flex-row items-center justify-between gap-2"
           key={`skill-common-${level}`}
         >
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             공통 {level + 2}레벨
           </p>
-          <div className="w-[640px] flex flex-row gap-2">
+          <div className="w-full flex flex-row flex-wrap gap-2">
             {Array.from(Array(3), (_, slot) => {
               switch (slot) {
                 // 스킬개론
@@ -342,10 +330,10 @@ export default function OperatorMaker() {
           className="flex flex-row items-center justify-between gap-2"
           key={`skill-${skillNum}-${level}`}
         >
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             {skillNum}스킬 {level + 8}레벨
           </p>
-          <div className="w-[640px] flex flex-row gap-2">
+          <div className="w-full flex flex-row flex-wrap gap-2">
             {Array.from(Array(3), (_, slot) => {
               // 각각의 스킬 레벨을 올릴 때마다 필요한 재료 설정
               switch (slot) {
@@ -474,6 +462,473 @@ export default function OperatorMaker() {
     setSkillMasteryMaterial([...skillMasteryMaterial]);
   };
 
+  /** 모듈 타입 및 이름 변경을 반영 */
+  const handleModuleTextChange = (
+    text: string,
+    itemIndex: number,
+    index: number
+  ) => {
+    // 타입 및 이름 변경
+    moduleNameList[itemIndex][index] = text;
+    setModuleNameList([...moduleNameList]);
+  };
+
+  /** 모듈 재료 목록을 생성 및 반환 */
+  const makeModuleList = (moduleNum: number) => {
+    const result = [];
+
+    // 모듈 타입 및 이름 입력란을 생성
+    result.push(
+      <ModuleTextInput
+        key={`module-text-${moduleNum}`}
+        itemId={moduleNum}
+        handleChange={handleModuleTextChange}
+      />
+    );
+
+    // 모듈 업그레이드 1레벨 ~ 3레벨 구간을 생성
+    for (let level = 0; level < moduleMaterial[moduleNum].length; level++) {
+      result.push(
+        <div
+          className="flex flex-row items-center justify-between gap-2"
+          key={`module-${moduleNum}-${level}`}
+        >
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
+            {moduleNum + 1}모듈 {level + 1}레벨
+          </p>
+          <div className="w-full flex flex-row flex-wrap gap-2">
+            {Array.from(
+              Array(moduleMaterial[moduleNum][level].length),
+              (_, slot) => {
+                // 각각의 모듈 레벨을 올릴 때마다 필요한 재료 설정
+                switch (slot) {
+                  // 1번째 칸: 모듈 데이터 칩
+                  case 0:
+                    return (
+                      <SelectableMaterial
+                        id={slot}
+                        listId={level}
+                        itemId={moduleNum}
+                        handleChange={handleModuleMaterialChange}
+                        key={`module-${moduleNum}-${level}-${slot}`}
+                        keyString={`module-${moduleNum}-${level}-${slot}`}
+                        defaultMaterial={moduleDataBlock}
+                        module
+                      />
+                    );
+                  // 2번째 칸
+                  case 1:
+                    switch (level + 1) {
+                      // 1레벨 업그레이드 시 2번째 칸은 재료
+                      case 1:
+                        switch (rarity) {
+                          case 6:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T5
+                              />
+                            );
+                          case 5:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T4
+                              />
+                            );
+                          case 4:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T3
+                              />
+                            );
+                          default:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T5
+                                T4
+                                T3
+                              />
+                            );
+                        }
+                      // 2~3레벨 업그레이드 시 2번째 칸은 데이터 리더기, 데이터 메모리
+                      case 2:
+                        return (
+                          <SelectableMaterial
+                            id={slot}
+                            listId={level}
+                            itemId={moduleNum}
+                            handleChange={handleModuleMaterialChange}
+                            key={`module-${moduleNum}-${level}-${slot}`}
+                            keyString={`module-${moduleNum}-${level}-${slot}`}
+                            defaultMaterial={dataSupplementStick}
+                            module
+                          />
+                        );
+                      case 3:
+                        return (
+                          <SelectableMaterial
+                            id={slot}
+                            listId={level}
+                            itemId={moduleNum}
+                            handleChange={handleModuleMaterialChange}
+                            key={`module-${moduleNum}-${level}-${slot}`}
+                            keyString={`module-${moduleNum}-${level}-${slot}`}
+                            defaultMaterial={dataSupplementInstrument}
+                            module
+                          />
+                        );
+                    }
+                  // 3번째 칸
+                  case 2:
+                    switch (level + 1) {
+                      // 1레벨 업그레이드 시 3번째 칸은 용문폐
+                      case 1:
+                        return (
+                          <SelectableMaterial
+                            id={slot}
+                            listId={level}
+                            itemId={moduleNum}
+                            handleChange={handleModuleMaterialChange}
+                            key={`module-${moduleNum}-${level}-${slot}`}
+                            keyString={`module-${moduleNum}-${level}-${slot}`}
+                            defaultMaterial={LMD}
+                            lmd
+                          />
+                        );
+                      // 2~3레벨 업그레이드 시 3번째 칸은 재료
+                      case 2:
+                      case 3:
+                        switch (rarity) {
+                          case 6:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T5
+                              />
+                            );
+                          case 5:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T4
+                              />
+                            );
+                          case 4:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T3
+                              />
+                            );
+                          default:
+                            return (
+                              <SelectableMaterial
+                                id={slot}
+                                listId={level}
+                                itemId={moduleNum}
+                                handleChange={handleModuleMaterialChange}
+                                key={`module-${moduleNum}-${level}-${slot}`}
+                                keyString={`module-${moduleNum}-${level}-${slot}`}
+                                T5
+                                T4
+                                T3
+                              />
+                            );
+                        }
+                    }
+                  // 4번째 칸: 용문폐
+                  case 3:
+                    return (
+                      <SelectableMaterial
+                        id={slot}
+                        listId={level}
+                        itemId={moduleNum}
+                        handleChange={handleModuleMaterialChange}
+                        key={`module-${moduleNum}-${level}-${slot}`}
+                        keyString={`module-${moduleNum}-${level}-${slot}`}
+                        defaultMaterial={LMD}
+                        lmd
+                      />
+                    );
+                }
+              }
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // 마지막에 공백 추가
+    result.push(<EmptySpace key={`module-emptyspace-${moduleNum}`} />);
+
+    return result;
+  };
+
+  /** 모듈 업그레이드 재료 변화를 반영 */
+  const handleModuleMaterialChange = (
+    index: number,
+    material: Material,
+    count: number,
+    listIndex?: number,
+    itemIndex?: number
+  ) => {
+    const prev = moduleMaterial[itemIndex!][listIndex!];
+    prev[index] = { material, count } as CountableMaterial;
+
+    setModuleMaterial([...moduleMaterial]);
+  };
+
+  /** JSON Stringfy 과정에서 객체를 객체 이름으로 변환시키는 Replacer */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const replacer = (key: string, value: any): any => {
+    // 속성에 material이 있다면, 해당 객체는 CountableMaterial이므로 객체 이름으로 전환
+    if (value && typeof value === "object" && "material" in value) {
+      const material = (value as CountableMaterial).material;
+      const materialName = materialNames[material.objectName];
+
+      console.log(material.objectName);
+
+      return {
+        material: materialName || "Unknown",
+        count: value.count,
+      };
+    }
+    return value;
+  };
+
+  /** 오퍼레이터 데이터 문자열 제작 */
+  const makeOperatorData = () => {
+    let operatorData: Operator;
+
+    if (rarity && operatorClass) {
+      // 모듈 재료
+      let moduleMaterials: MaterialsWithNumberAndName | null;
+
+      if (parseInt(moduleCount, 10) > 0) {
+        moduleMaterials = {};
+
+        // 모듈이 존재한다면 모듈을 추가
+        for (let i = 0; i < moduleNameList.length; i++) {
+          moduleMaterials[moduleNameList[i][0]] = {};
+          for (let j = 0; j < moduleMaterial[i].length; j++) {
+            moduleMaterials[moduleNameList[i][0]][j + 1] = moduleMaterial[i][
+              j
+            ].filter((material) => material != null);
+          }
+        }
+      } else {
+        moduleMaterials = null;
+      }
+
+      // 레어도에 따라 오퍼레이터 데이터를 생성
+      if (rarity == 6) {
+        operatorData = {
+          id: parseInt(id, 10),
+          name,
+          imageFilename: englishName.toLowerCase().split(" ").join("-"),
+          class: operatorClass,
+          // 세부 직군 생략
+          rarity,
+          eliteMaterials: {
+            0: [],
+            1: eliteOneMaterial.filter((material) => material != null),
+            2: eliteTwoMaterial.filter((material) => material != null),
+          },
+          skillList: [skillOneName, skillTwoName, skillThreeName],
+          skillUpgradeMaterials: {
+            common: {
+              2: commonSkillMaterial[0].filter((material) => material != null),
+              3: commonSkillMaterial[1].filter((material) => material != null),
+              4: commonSkillMaterial[2].filter((material) => material != null),
+              5: commonSkillMaterial[3].filter((material) => material != null),
+              6: commonSkillMaterial[4].filter((material) => material != null),
+              7: commonSkillMaterial[5].filter((material) => material != null),
+            },
+            [skillOneName]: {
+              8: skillMasteryMaterial[0][0].filter(
+                (material) => material != null
+              ),
+              9: skillMasteryMaterial[0][1].filter(
+                (material) => material != null
+              ),
+              10: skillMasteryMaterial[0][2].filter(
+                (material) => material != null
+              ),
+            },
+            [skillTwoName]: {
+              8: skillMasteryMaterial[1][0].filter(
+                (material) => material != null
+              ),
+              9: skillMasteryMaterial[1][1].filter(
+                (material) => material != null
+              ),
+              10: skillMasteryMaterial[1][2].filter(
+                (material) => material != null
+              ),
+            },
+            [skillThreeName]: {
+              8: skillMasteryMaterial[2][0].filter(
+                (material) => material != null
+              ),
+              9: skillMasteryMaterial[2][1].filter(
+                (material) => material != null
+              ),
+              10: skillMasteryMaterial[2][2].filter(
+                (material) => material != null
+              ),
+            },
+          },
+          moduleList: moduleNameList.map((moduleName) => {
+            return { type: moduleName[0], name: moduleName[1] };
+          }),
+          moduleMaterials,
+        };
+      } else if (rarity == 5 || rarity == 4) {
+        // 오퍼레이터 데이터를 생성
+        operatorData = {
+          id: parseInt(id, 10),
+          name,
+          imageFilename: englishName.toLowerCase().split(" ").join("-"),
+          class: operatorClass,
+          // 세부 직군 생략
+          rarity,
+          eliteMaterials: {
+            0: [],
+            1: eliteOneMaterial.filter((material) => material != null),
+            2: eliteTwoMaterial.filter((material) => material != null),
+          },
+          skillList: [skillOneName, skillTwoName],
+          skillUpgradeMaterials: {
+            common: {
+              2: commonSkillMaterial[0].filter((material) => material != null),
+              3: commonSkillMaterial[1].filter((material) => material != null),
+              4: commonSkillMaterial[2].filter((material) => material != null),
+              5: commonSkillMaterial[3].filter((material) => material != null),
+              6: commonSkillMaterial[4].filter((material) => material != null),
+              7: commonSkillMaterial[5].filter((material) => material != null),
+            },
+            [skillOneName]: {
+              8: skillMasteryMaterial[0][0].filter(
+                (material) => material != null
+              ),
+              9: skillMasteryMaterial[0][1].filter(
+                (material) => material != null
+              ),
+              10: skillMasteryMaterial[0][2].filter(
+                (material) => material != null
+              ),
+            },
+            [skillTwoName]: {
+              8: skillMasteryMaterial[1][0].filter(
+                (material) => material != null
+              ),
+              9: skillMasteryMaterial[1][1].filter(
+                (material) => material != null
+              ),
+              10: skillMasteryMaterial[1][2].filter(
+                (material) => material != null
+              ),
+            },
+          },
+          moduleList: moduleNameList.map((moduleName) => {
+            return { type: moduleName[0], name: moduleName[1] };
+          }),
+          moduleMaterials,
+        };
+      } else if (rarity == 3) {
+        operatorData = {
+          id: parseInt(id, 10),
+          name,
+          imageFilename: englishName.toLowerCase().split(" ").join("-"),
+          class: operatorClass,
+          // 세부 직군 생략
+          rarity,
+          eliteMaterials: {
+            0: [],
+            1: eliteOneMaterial.filter((material) => material != null),
+            2: eliteTwoMaterial.filter((material) => material != null),
+          },
+          skillList: [skillOneName],
+          skillUpgradeMaterials: {
+            common: {
+              2: commonSkillMaterial[0].filter((material) => material != null),
+              3: commonSkillMaterial[1].filter((material) => material != null),
+              4: commonSkillMaterial[2].filter((material) => material != null),
+              5: commonSkillMaterial[3].filter((material) => material != null),
+              6: commonSkillMaterial[4].filter((material) => material != null),
+              7: commonSkillMaterial[5].filter((material) => material != null),
+            },
+          },
+          moduleList: moduleNameList.map((moduleName) => {
+            return { type: moduleName[0], name: moduleName[1] };
+          }),
+          moduleMaterials,
+        };
+      } else {
+        operatorData = {
+          id: parseInt(id, 10),
+          name,
+          imageFilename: englishName.toLowerCase().split(" ").join("-"),
+          class: operatorClass,
+          // 세부 직군 생략
+          rarity,
+          eliteMaterials: {
+            0: [],
+            1: eliteOneMaterial.filter((material) => material != null),
+            2: eliteTwoMaterial.filter((material) => material != null),
+          },
+          skillList: [],
+          skillUpgradeMaterials: {},
+          moduleList: moduleNameList.map((moduleName) => {
+            return { type: moduleName[0], name: moduleName[1] };
+          }),
+          moduleMaterials,
+        };
+      }
+
+      // 콘솔에 오퍼레이터 데이터를 출력
+      console.log(JSON.stringify(operatorData!, replacer, 2));
+    }
+  };
+
   // 최대 정예화, 스킬 개수 및 최대 스킬 레벨을 자동으로 설정
   useEffect(() => {
     if (rarity) {
@@ -488,25 +943,92 @@ export default function OperatorMaker() {
     }
   }, [rarity]);
 
-  useEffect(() => {});
+  // 모듈 설정
+  useEffect(() => {
+    // 모듈 수량이 변경되면, 이름 및 재료를 재설정
+    const moduleCountNumber = parseInt(moduleCount, 10);
+
+    if (!isNaN(moduleCountNumber)) {
+      const newModuleNameList: string[][] = [];
+      const newModuleMaterial: CountableMaterialMultipleList[] = [];
+
+      for (let i = 0; i < moduleCountNumber; i++) {
+        newModuleNameList.push(["", ""]);
+        newModuleMaterial.push([
+          [null, null, null],
+          [null, null, null, null],
+          [null, null, null, null],
+        ]);
+      }
+
+      setModuleNameList(newModuleNameList);
+      setModuleMaterial(newModuleMaterial);
+    }
+  }, [moduleCount]);
 
   return (
-    <div className="flex flex-col w-full gap-3 py-4 pb-32">
-      <p className="px-1 mb-1 leading-none font-semibold text-3xl text-white break-keep">
-        오퍼레이터 데이터 제작 (PC, Fullscreen Only)
-      </p>
+    <div className="flex flex-col w-full gap-3 p-4 pb-32">
+      <div className="flex flex-row gap-5">
+        <p className="pl-1 font-bold text-3xl text-white break-keep">
+          오퍼레이터 데이터 제작소
+        </p>
+        <div className="flex flex-row justify-start items-center gap-2 translate-y-[2px]">
+          <button
+            className={`group relative w-9 selection:bg-transparent aspect-square`}
+            onClick={() => makeOperatorData()}
+          >
+            <Image
+              className="rotate-90 transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+                hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              src="/images/others/import.png"
+              alt="make-operator-data"
+              fill
+              sizes="10vw"
+              draggable={false}
+            />
+            <p
+              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-31px] translate-y-[-30px] group-hover:block"
+            >
+              데이터 제작
+            </p>
+          </button>
+          <a
+            href="https://forms.gle/NoCmMhxvd5feDmCT6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group relative w-7 selection:bg-transparent aspect-square`}
+          >
+            <Image
+              className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+                hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              src="/images/others/page-new.png"
+              alt="google-forms"
+              fill
+              sizes="10vw"
+              draggable={false}
+            />
+            <p
+              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-48px] translate-y-[-34px] group-hover:block"
+            >
+              Google Forms
+            </p>
+          </a>
+        </div>
+      </div>
       {/* 아이디 */}
       <div className="flex flex-row items-center justify-between gap-2">
         <a
           href="https://hx3n.github.io/gachaplanner/oper"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-1 leading-none font-semibold text-xl text-gray-200 underline break-keep"
+          className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 underline break-keep"
         >
           아이디
         </a>
         <input
-          className="w-[640px] px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+          className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
             bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           id="id"
           type="number"
@@ -514,17 +1036,17 @@ export default function OperatorMaker() {
           step={1}
           placeholder={`오퍼레이터 아이디를 입력해주세요.`}
           value={id}
-          onInput={(event) => handleIdValue(event)}
+          onInput={(event) => handleNumberStringValue(event, setId)}
           onKeyDown={(event) => handleExponentialNotation(event)}
         ></input>
       </div>
       {/* 이름 */}
       <div className="flex flex-row items-center justify-between gap-2">
-        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+        <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
           이름
         </p>
         <input
-          className="w-[640px] px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+          className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
             bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           id="name"
           type="text"
@@ -536,11 +1058,11 @@ export default function OperatorMaker() {
       </div>
       {/* 영어 이름 */}
       <div className="flex flex-row items-center justify-between gap-2">
-        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+        <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
           영어 이름
         </p>
         <input
-          className="w-[640px] px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+          className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
             bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           id="english-name"
           type="text"
@@ -552,10 +1074,10 @@ export default function OperatorMaker() {
       </div>
       {/* 레어도 */}
       <div className="flex flex-row items-center justify-between gap-2">
-        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+        <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
           레어도
         </p>
-        <div className="w-[640px] flex flex-row gap-2">
+        <div className="w-full flex flex-row flex-wrap gap-2">
           {RarityNumberList.map((rarityNumber) => {
             return (
               <button
@@ -573,10 +1095,10 @@ export default function OperatorMaker() {
       </div>
       {/* 포지션 */}
       <div className="flex flex-row items-center justify-between gap-2">
-        <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+        <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
           포지션
         </p>
-        <div className="w-[640px] flex flex-row gap-2">
+        <div className="w-full flex flex-row flex-wrap gap-2">
           {OperatorClassList.map((opClass) => {
             return (
               <Image
@@ -602,11 +1124,11 @@ export default function OperatorMaker() {
       {/* 1스킬 이름 */}
       {rarity && skillCount! >= 1 && (
         <div className="flex flex-row items-center justify-between gap-2">
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             1스킬 이름
           </p>
           <input
-            className="w-[640px] px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+            className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
             bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             id="skill-1-name"
             type="text"
@@ -620,11 +1142,11 @@ export default function OperatorMaker() {
       {/* 2스킬 이름 */}
       {rarity && skillCount! >= 2 && (
         <div className="flex flex-row items-center justify-between gap-2">
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             2스킬 이름
           </p>
           <input
-            className="w-[640px] px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+            className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
             bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             id="skill-2-name"
             type="text"
@@ -638,11 +1160,11 @@ export default function OperatorMaker() {
       {/* 3스킬 이름 */}
       {rarity && skillCount! >= 3 && (
         <div className="flex flex-row items-center justify-between gap-2">
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             3스킬 이름
           </p>
           <input
-            className="w-[640px] px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+            className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
             bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             id="skill-3-name"
             type="text"
@@ -657,10 +1179,10 @@ export default function OperatorMaker() {
       {/* 1정예화 재료 */}
       {rarity && maxElite! >= 1 && (
         <div className="flex flex-row items-center justify-between gap-2">
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             1정예화 재료
           </p>
-          <div className="w-[640px] flex flex-row gap-2">
+          <div className="w-full flex flex-row flex-wrap gap-2">
             {Array.from(Array(ELITE_ONE_MATERIAL_TABLE[rarity]), (_, i) => {
               switch (i) {
                 // 용문폐
@@ -737,10 +1259,10 @@ export default function OperatorMaker() {
       {/* 2정예화 재료 */}
       {rarity && maxElite! >= 2 && (
         <div className="flex flex-row items-center justify-between gap-2">
-          <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
             2정예화 재료
           </p>
-          <div className="w-[640px] flex flex-row gap-2">
+          <div className="w-full flex flex-row flex-wrap gap-2">
             {Array.from(Array(ELITE_TWO_MATERIAL_TABLE[rarity]), (_, i) => {
               switch (i) {
                 // 용문폐
@@ -893,18 +1415,59 @@ export default function OperatorMaker() {
       )}
       <EmptySpace />
       {/* 공통 재료 */}
-      {rarity && skillCount! >= 1 && makeCommonSkillMaterialList()}
-      <EmptySpace />
+      {rarity && skillCount! >= 1 && (
+        <>
+          {makeCommonSkillMaterialList()}
+          <EmptySpace />
+        </>
+      )}
       {/* 1스킬 재료 */}
-      {rarity && skillCount! >= 1 && makeSkillMaterialList(1)}
-      <EmptySpace />
+      {rarity && skillCount! >= 1 && (
+        <>
+          {makeSkillMaterialList(1)}
+          <EmptySpace />
+        </>
+      )}
       {/* 2스킬 재료 */}
-      {rarity && skillCount! >= 2 && makeSkillMaterialList(2)}
-      <EmptySpace />
+      {rarity && skillCount! >= 2 && (
+        <>
+          {makeSkillMaterialList(2)}
+          <EmptySpace />
+        </>
+      )}
       {/* 3스킬 재료 */}
-      {rarity && skillCount! >= 3 && makeSkillMaterialList(3)}
+      {rarity && skillCount! >= 3 && (
+        <>
+          {makeSkillMaterialList(3)}
+          <EmptySpace />
+        </>
+      )}
+      {/* 모듈 개수 */}
+      {rarity && maxElite! >= MODULE_ACTIVE_ELITE && (
+        <div className="flex flex-row items-center justify-between gap-2">
+          <p className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 break-keep">
+            모듈 개수
+          </p>
+          <input
+            className="w-full px-4 py-1 rounded-lg resize-none outline-solid outline-1 outline-gray-400
+            bg-dark-800 text-gray-200 selection:bg-gray-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            id="module-count"
+            type="number"
+            min={0}
+            step={1}
+            placeholder={`모듈 개수를 입력해주세요.`}
+            value={moduleCount}
+            onInput={(event) => handleNumberStringValue(event, setModuleCount)}
+            onKeyDown={(event) => handleExponentialNotation(event)}
+          ></input>
+        </div>
+      )}
       <EmptySpace />
-      {/* 모듈 */}
+      {/* 모듈 정보 입력 */}
+      {moduleMaterial.length > 0 &&
+        Array.from({ length: moduleMaterial.length }, (_, i) => {
+          return makeModuleList(i);
+        })}
     </div>
   );
 }

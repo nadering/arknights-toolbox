@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react"
 import {
   Header,
   BackToTopButton,
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${pretendard.variable} font-pretendard antialiased`}>
+        <Analytics />
         <Providers>
           <LocalStorageSetter />
           <div className="relative w-screen h-full min-h-screen bg-dark">

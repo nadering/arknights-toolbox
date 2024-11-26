@@ -25,3 +25,9 @@ export const materialMap = new Map<string, Material>();
 materialList.forEach((material) => {
   materialMap.set(material.id, material);
 });
+
+/** 재료의 객체 이름을 저장해둔 Record로, 객체 이름 자체에 접근할 수 있도록 해줌 */
+export const materialNames: Record<string, string> = materialList.reduce((acc, material) => {
+  acc[material.objectName] = material.objectName;
+  return acc;
+}, {} as Record<string, string>);

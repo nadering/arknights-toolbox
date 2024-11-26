@@ -6,6 +6,7 @@ import Material from "./material";
 export const skillSummary1: Material = {
   id: "3301",
   name: "스킬개론 제1권",
+  objectName: "skillSummary1",
   imageFilename: "skill-summary-1",
   type: "Skill-Summary",
   tier: 2,
@@ -15,6 +16,7 @@ export const skillSummary1: Material = {
 export const skillSummary2: Material = {
   id: "3302",
   name: "스킬개론 제2권",
+  objectName: "skillSummary2",
   imageFilename: "skill-summary-2",
   type: "Skill-Summary",
   tier: 3,
@@ -25,6 +27,7 @@ export const skillSummary2: Material = {
 export const skillSummary3: Material = {
   id: "3303",
   name: "스킬개론 제3권",
+  objectName: "skillSummary3",
   imageFilename: "skill-summary-3",
   type: "Skill-Summary",
   tier: 4,

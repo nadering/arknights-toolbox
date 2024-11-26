@@ -9,6 +9,7 @@ import Material from "./material";
 export const chipCatalyst: Material = {
   id: "32001",
   name: "칩 첨가제",
+  objectName: "chipCatalyst",
   imageFilename: "chip-catalyst",
   type: "Memory-Chip",
   tier: 4,
@@ -42,6 +43,7 @@ export let specialistChip: Material | undefined;
 vanguardChip = {
   id: "3211",
   name: "뱅가드 칩",
+  objectName: "vanguardChip",
   imageFilename: "vanguard-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -52,6 +54,7 @@ vanguardChip = {
 guardChip = {
   id: "3221",
   name: "가드 칩",
+  objectName: "guardChip",
   imageFilename: "guard-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -62,6 +65,7 @@ guardChip = {
 defenderChip = {
   id: "3231",
   name: "디펜더 칩",
+  objectName: "defenderChip",
   imageFilename: "defender-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -72,6 +76,7 @@ defenderChip = {
 sniperChip = {
   id: "3241",
   name: "스나이퍼 칩",
+  objectName: "sniperChip",
   imageFilename: "sniper-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -82,6 +87,7 @@ sniperChip = {
 casterChip = {
   id: "3251",
   name: "캐스터 칩",
+  objectName: "casterChip",
   imageFilename: "caster-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -92,6 +98,7 @@ casterChip = {
 medicChip = {
   id: "3261",
   name: "메딕 칩",
+  objectName: "medicChip",
   imageFilename: "medic-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -102,6 +109,7 @@ medicChip = {
 supporterChip = {
   id: "3271",
   name: "서포터 칩",
+  objectName: "supporterChip",
   imageFilename: "supporter-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -112,6 +120,7 @@ supporterChip = {
 specialistChip = {
   id: "3281",
   name: "스페셜리스트 칩",
+  objectName: "specialistChip",
   imageFilename: "specialist-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -159,6 +168,7 @@ export let specialistChipPack: Material | undefined;
 vanguardChipPack = {
   id: "3212",
   name: "뱅가드 칩셋",
+  objectName: "vanguardChipPack",
   imageFilename: "vanguard-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -169,6 +179,7 @@ vanguardChipPack = {
 guardChipPack = {
   id: "3222",
   name: "가드 칩셋",
+  objectName: "guardChipPack",
   imageFilename: "guard-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -179,6 +190,7 @@ guardChipPack = {
 defenderChipPack = {
   id: "3232",
   name: "디펜더 칩셋",
+  objectName: "defenderChipPack",
   imageFilename: "defender-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -189,6 +201,7 @@ defenderChipPack = {
 sniperChipPack = {
   id: "3242",
   name: "스나이퍼 칩셋",
+  objectName: "sniperChipPack",
   imageFilename: "sniper-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -199,6 +212,7 @@ sniperChipPack = {
 casterChipPack = {
   id: "3252",
   name: "캐스터 칩셋",
+  objectName: "casterChipPack",
   imageFilename: "caster-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -209,6 +223,7 @@ casterChipPack = {
 medicChipPack = {
   id: "3262",
   name: "메딕 칩셋",
+  objectName: "medicChipPack",
   imageFilename: "medic-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -219,6 +234,7 @@ medicChipPack = {
 supporterChipPack = {
   id: "3272",
   name: "서포터 칩셋",
+  objectName: "supporterChipPack",
   imageFilename: "supporter-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -229,6 +245,7 @@ supporterChipPack = {
 specialistChipPack = {
   id: "3282",
   name: "스페셜리스트 칩셋",
+  objectName: "specialistChipPack",
   imageFilename: "specialist-chip-pack",
   type: "Memory-Chip",
   tier: 4,
@@ -253,6 +270,7 @@ export const chipPackList: Material[] = [
 export const vanguardDualchip: Material = {
   id: "3213",
   name: "뱅가드 듀얼 칩",
+  objectName: "vanguardDualchip",
   imageFilename: "vanguard-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -266,6 +284,7 @@ export const vanguardDualchip: Material = {
 export const guardDualchip: Material = {
   id: "3223",
   name: "가드 듀얼 칩",
+  objectName: "guardDualchip",
   imageFilename: "guard-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -279,6 +298,7 @@ export const guardDualchip: Material = {
 export const defenderDualchip: Material = {
   id: "3233",
   name: "디펜더 듀얼 칩",
+  objectName: "defenderDualchip",
   imageFilename: "defender-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -292,6 +312,7 @@ export const defenderDualchip: Material = {
 export const sniperDualchip: Material = {
   id: "3243",
   name: "스나이퍼 듀얼 칩",
+  objectName: "sniperDualchip",
   imageFilename: "sniper-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -305,6 +326,7 @@ export const sniperDualchip: Material = {
 export const casterDualchip: Material = {
   id: "3253",
   name: "캐스터 듀얼 칩",
+  objectName: "casterDualchip",
   imageFilename: "caster-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -318,6 +340,7 @@ export const casterDualchip: Material = {
 export const medicDualchip: Material = {
   id: "3263",
   name: "메딕 듀얼 칩",
+  objectName: "medicDualchip",
   imageFilename: "medic-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -331,6 +354,7 @@ export const medicDualchip: Material = {
 export const supporterDualchip: Material = {
   id: "3273",
   name: "서포터 듀얼 칩",
+  objectName: "supporterDualchip",
   imageFilename: "supporter-dualchip",
   type: "Memory-Chip",
   tier: 5,
@@ -344,6 +368,7 @@ export const supporterDualchip: Material = {
 export const specialistDualchip: Material = {
   id: "3283",
   name: "스페셜리스트 듀얼 칩",
+  objectName: "specialistDualchip",
   imageFilename: "specialist-dualchip",
   type: "Memory-Chip",
   tier: 5,
