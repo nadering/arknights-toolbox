@@ -724,8 +724,6 @@ export default function OperatorMaker() {
       const material = (value as CountableMaterial).material;
       const materialName = materialNames[material.objectName];
 
-      console.log(material.objectName);
-
       return {
         material: materialName || "Unknown",
         count: value.count,
