@@ -61,6 +61,13 @@ const EmptySpace = () => {
   return <div className="h-6"></div>;
 };
 
+// 업그레이드 재료 관련
+// 1줄
+type CountableMaterialList = (CountableMaterial | null)[];
+
+// 여러 줄
+type CountableMaterialMultipleList = CountableMaterialList[];
+
 /** 오퍼레이터 데이터 제작 컴포넌트 */
 export default function OperatorMaker() {
   // 아이디
@@ -87,14 +94,12 @@ export default function OperatorMaker() {
   const [maxElite, setMaxElite] = useState<EliteNumber>();
 
   // 1정예화 재료
-  const [eliteOneMaterial, setEliteOneMaterial] = useState<
-    (CountableMaterial | null)[]
-  >([null, null, null, null]);
+  const [eliteOneMaterial, setEliteOneMaterial] =
+    useState<CountableMaterialList>([null, null, null, null]);
 
   // 2정예화 재료
-  const [eliteTwoMaterial, setEliteTwoMaterial] = useState<
-    (CountableMaterial | null)[]
-  >([null, null, null, null]);
+  const [eliteTwoMaterial, setEliteTwoMaterial] =
+    useState<CountableMaterialList>([null, null, null, null]);
 
   // 스킬 개수 및 최대 레벨
   const [skillCount, setSkillCount] = useState<number>();
@@ -106,46 +111,45 @@ export default function OperatorMaker() {
   const [skillThreeName, setSkillThreeName] = useState("");
 
   // 스킬 재료 (공통)
-  const [commonSkillMaterial, setCommonSkillMaterial] = useState<
-    (CountableMaterial | null)[][]
-  >([
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-  ]);
+  const [commonSkillMaterial, setCommonSkillMaterial] =
+    useState<CountableMaterialMultipleList>([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ]);
 
   // 1스킬 재료
-  const [skillOneMaterial, setSkillOneMaterial] = useState<
-    (CountableMaterial | null)[][]
-  >([
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-  ]);
+  const [skillOneMaterial, setSkillOneMaterial] =
+    useState<CountableMaterialMultipleList>([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ]);
 
   // 2스킬 재료
-  const [skillTwoMaterial, setSkillTwoMaterial] = useState<
-    (CountableMaterial | null)[][]
-  >([
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-  ]);
+  const [skillTwoMaterial, setSkillTwoMaterial] =
+    useState<CountableMaterialMultipleList>([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ]);
 
   // 3스킬 재료
-  const [skillThreeMaterial, setSkillThreeMaterial] = useState<
-    (CountableMaterial | null)[][]
-  >([
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-  ]);
+  const [skillThreeMaterial, setSkillThreeMaterial] =
+    useState<CountableMaterialMultipleList>([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ]);
 
   // 모듈
   const [moduleCount, setModuleCount] = useState<number>(0);
+  
+  // 모듈 재료
+  const [moduleMaterial, setModuleMaterial] = useState<CountableMaterialMultipleList[]>([]);
 
   /** 아이디 문자열 설정 */
   const handleIdValue = (event: FormEvent<HTMLInputElement>) => {
@@ -194,46 +198,46 @@ export default function OperatorMaker() {
   const makeCommonSkillMaterialList = () => {
     const result = [];
 
-    for (let i = 0; i < 6; i++) {
+    for (let level = 0; level < 6; level++) {
       result.push(
         <div
           className="flex flex-row items-center justify-between gap-2"
-          key={`skill-common-${i}`}
+          key={`skill-common-${level}`}
         >
           <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
-            공통 {i + 2}레벨
+            공통 {level + 2}레벨
           </p>
           <div className="w-[640px] flex flex-row gap-2">
-            {Array.from(Array(3), (_, j) => {
-              switch (j) {
+            {Array.from(Array(3), (_, slot) => {
+              switch (slot) {
                 // 스킬개론
                 case 0:
                   let defaultMaterial;
-                  switch (i) {
+                  switch (level + 2) {
                     // 2레벨 ~ 3레벨 = 제1권
-                    case 0:
-                    case 1:
+                    case 2:
+                    case 3:
                       defaultMaterial = skillSummary1;
                       break;
                     // 4레벨 ~ 6레벨 = 제2권
-                    case 2:
-                    case 3:
                     case 4:
+                    case 5:
+                    case 6:
                       defaultMaterial = skillSummary2;
                       break;
                     // 7레벨 = 제3권
-                    case 5:
+                    case 7:
                       defaultMaterial = skillSummary3;
                       break;
                   }
 
                   return (
                     <SelectableMaterial
-                      key={`skill-common-${i}-${j}`}
-                      keyString={`skill-common-${i}-${j}`}
+                      key={`skill-common-${level}-${slot}`}
+                      keyString={`skill-common-${level}-${slot}`}
                       defaultMaterial={defaultMaterial}
-                      id={j}
-                      listId={i}
+                      id={slot}
+                      listId={level}
                       handleChange={handleCommonSkillMaterialChange}
                       skillSummary
                     />
@@ -241,42 +245,42 @@ export default function OperatorMaker() {
                 // 스킬개론 제외한 재료
                 case 1:
                 case 2:
-                  switch (i) {
+                  switch (level + 2) {
                     // 2레벨 ~ 3레벨 = 1티어
-                    case 0:
-                    case 1:
+                    case 2:
+                    case 3:
                       return (
                         <SelectableMaterial
-                          key={`skill-common-${i}-${j}`}
-                          keyString={`skill-common-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-common-${level}-${slot}`}
+                          keyString={`skill-common-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handleCommonSkillMaterialChange}
                           T1
                         />
                       );
                     // 4레벨 ~ 5레벨 = 2티어
-                    case 2:
-                    case 3:
+                    case 4:
+                    case 5:
                       return (
                         <SelectableMaterial
-                          key={`skill-common-${i}-${j}`}
-                          keyString={`skill-common-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-common-${level}-${slot}`}
+                          keyString={`skill-common-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handleCommonSkillMaterialChange}
                           T2
                         />
                       );
                     // 6레벨 ~ 7레벨 = 3티어
-                    case 4:
-                    case 5:
+                    case 6:
+                    case 7:
                       return (
                         <SelectableMaterial
-                          key={`skill-common-${i}-${j}`}
-                          keyString={`skill-common-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-common-${level}-${slot}`}
+                          keyString={`skill-common-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handleCommonSkillMaterialChange}
                           T3
                         />
@@ -284,10 +288,10 @@ export default function OperatorMaker() {
                     default:
                       return (
                         <SelectableMaterial
-                          key={`skill-common-${i}-${j}`}
-                          keyString={`skill-common-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-common-${level}-${slot}`}
+                          keyString={`skill-common-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handleCommonSkillMaterialChange}
                           T1
                           T2
@@ -327,84 +331,84 @@ export default function OperatorMaker() {
     }
 
     // 8레벨 ~ 10레벨 구간의 스킬을 생성
-    for (let i = 0; i < skillMaxLevel! - 7; i++) {
+    for (let level = 0; level < skillMaxLevel! - 7; level++) {
       result.push(
         <div
           className="flex flex-row items-center justify-between gap-2"
-          key={`skill-${skillNum}-${i}`}
+          key={`skill-${skillNum}-${level}`}
         >
           <p className="px-1 leading-none font-semibold text-xl text-gray-200 break-keep">
-            {skillNum}스킬 {i + 8}레벨
+            {skillNum}스킬 {level + 8}레벨
           </p>
           <div className="w-[640px] flex flex-row gap-2">
-            {Array.from(Array(3), (_, j) => {
+            {Array.from(Array(3), (_, slot) => {
               // 각각의 스킬 레벨을 올릴 때마다 필요한 재료 설정
-              switch (j) {
+              switch (slot) {
                 // 스킬개론
                 case 0:
                   return (
                     <SelectableMaterial
-                      key={`skill-${skillNum}-${i}-${j}`}
-                      keyString={`skill-${skillNum}-${i}-${j}`}
+                      key={`skill-${skillNum}-${level}-${slot}`}
+                      keyString={`skill-${skillNum}-${level}-${slot}`}
                       defaultMaterial={skillSummary3}
-                      id={j}
-                      listId={i}
+                      id={slot}
+                      listId={level}
                       handleChange={handler}
                       skillSummary
                     />
                   );
                 // 스킬의 레벨에 따라 사용되는 재료 티어가 설정됨
                 case 1:
-                  switch (i) {
+                  switch (level + 8) {
                     // 8레벨 ~ 9레벨 구간의 첫 번째 칸 = 4티어
-                    case 0:
-                    case 1:
+                    case 8:
+                    case 9:
                       return (
                         <SelectableMaterial
-                          key={`skill-${skillNum}-${i}-${j}`}
-                          keyString={`skill-${skillNum}-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-${skillNum}-${level}-${slot}`}
+                          keyString={`skill-${skillNum}-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handler}
                           T4
                         />
                       );
                     // 10레벨 구간의 첫 번째 칸 = 5티어
-                    case 2:
+                    case 10:
                       return (
                         <SelectableMaterial
-                          key={`skill-${skillNum}-${i}-${j}`}
-                          keyString={`skill-${skillNum}-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-${skillNum}-${level}-${slot}`}
+                          keyString={`skill-${skillNum}-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handler}
                           T5
                         />
                       );
                   }
                 case 2:
-                  switch (i) {
+                  switch (level + 8) {
                     // 8레벨 구간의 두 번째 칸 = 3티어
-                    case 0:
+                    case 8:
                       return (
                         <SelectableMaterial
-                          key={`skill-${skillNum}-${i}-${j}`}
-                          keyString={`skill-${skillNum}-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-${skillNum}-${level}-${slot}`}
+                          keyString={`skill-${skillNum}-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handler}
                           T3
                         />
                       );
                     // 9 ~ 10레벨 구간의 두 번째 칸 = 4티어
-                    case 1:
-                    case 2:
+                    case 9:
+                    case 10:
                       return (
                         <SelectableMaterial
-                          key={`skill-${skillNum}-${i}-${j}`}
-                          keyString={`skill-${skillNum}-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-${skillNum}-${level}-${slot}`}
+                          keyString={`skill-${skillNum}-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handler}
                           T4
                         />
@@ -412,10 +416,10 @@ export default function OperatorMaker() {
                     default:
                       return (
                         <SelectableMaterial
-                          key={`skill-${skillNum}-${i}-${j}`}
-                          keyString={`skill-${skillNum}-${i}-${j}`}
-                          id={j}
-                          listId={i}
+                          key={`skill-${skillNum}-${level}-${slot}`}
+                          keyString={`skill-${skillNum}-${level}-${slot}`}
+                          id={slot}
+                          listId={level}
                           handleChange={handler}
                           T3
                           T4

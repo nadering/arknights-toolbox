@@ -162,6 +162,7 @@ export default function SelectableMaterial({
         handleChange(id, selectedMaterial, count);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, listId, selectedMaterial, countString]);
 
   return (
