@@ -923,7 +923,11 @@ export default function OperatorMaker() {
       }
 
       // 콘솔에 오퍼레이터 데이터를 출력
-      console.log(JSON.stringify(operatorData!, replacer, 2));
+      const resultString = JSON.stringify(operatorData!, replacer, 2).replace(
+        /"material": "(.*?)"/g,
+        '"material": $1'
+      );
+      console.log(resultString);
     }
   };
 
