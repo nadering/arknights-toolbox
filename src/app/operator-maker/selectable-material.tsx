@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   LMD,
   Material,
@@ -13,28 +14,29 @@ import {
   T4UpgradeList,
   T5UpgradeList,
 } from "@/data/material";
-import Image from "next/image";
 import { useModal } from "@/hooks";
 import { handleExponentialNotation } from "@/tool";
 
 /** 선택될 수 있는 재료 목록 */
 interface SelectableMaterialProps {
+  // 부모 값 변경을 위한 아이디 및 함수
+  id: number;
+  listId?: number;
+  itemId?: number;
+  handleChange: (
+    index: number,
+    material: Material,
+    count: number,
+    listIndex?: number,
+    itemIndex?: number
+  ) => void;
+
   // Key로 사용할 값
   keyString: string;
 
   // 기본 설정
   defaultMaterial?: Material;
   defaultCount?: number;
-
-  // 부모 값 변경을 위한 아이디 및 함수
-  id: number;
-  listId?: number;
-  handleChange: (
-    index: number,
-    material: Material,
-    count: number,
-    listIndex?: number
-  ) => void;
 
   // 정예화 재료
   T1?: boolean;
@@ -58,12 +60,13 @@ interface SelectableMaterialProps {
 
 /** 사용자가 종류 및 수량을 선택할 수 있는 재료 */
 export default function SelectableMaterial({
+  id,
+  listId,
+  itemId,
+  handleChange,
   keyString,
   defaultMaterial,
   defaultCount,
-  id,
-  listId,
-  handleChange,
   T1,
   T2,
   T3,
@@ -157,7 +160,11 @@ export default function SelectableMaterial({
     const count = parseInt(countString, 10);
     if (selectedMaterial && count > 0) {
       if (typeof listId !== undefined) {
-        handleChange(id, selectedMaterial, count, listId);
+        if (typeof itemId !== undefined) {
+          handleChange(id, selectedMaterial, count, listId, itemId);
+        } else {
+          handleChange(id, selectedMaterial, count, listId);
+        }
       } else {
         handleChange(id, selectedMaterial, count);
       }

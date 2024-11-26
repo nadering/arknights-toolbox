@@ -121,35 +121,57 @@ export default function OperatorMaker() {
       [null, null, null],
     ]);
 
-  // 1스킬 재료
-  const [skillOneMaterial, setSkillOneMaterial] =
-    useState<CountableMaterialMultipleList>([
+  // 스킬 재료 (8레벨 이후)
+  const [skillMasteryMaterial, setSkillMasteryMaterial] = useState<
+    CountableMaterialMultipleList[]
+  >([
+    [
       [null, null, null],
       [null, null, null],
       [null, null, null],
-    ]);
-
-  // 2스킬 재료
-  const [skillTwoMaterial, setSkillTwoMaterial] =
-    useState<CountableMaterialMultipleList>([
+    ],
+    [
       [null, null, null],
       [null, null, null],
       [null, null, null],
-    ]);
-
-  // 3스킬 재료
-  const [skillThreeMaterial, setSkillThreeMaterial] =
-    useState<CountableMaterialMultipleList>([
+    ],
+    [
       [null, null, null],
       [null, null, null],
       [null, null, null],
-    ]);
+    ],
+  ]);
 
   // 모듈
-  const [moduleCount, setModuleCount] = useState<number>(0);
-  
+  const [moduleCount, setModuleCount] = useState<number>(3);
+
+  // 모듈 타입 및 이름
+  const [moduleNameList, setModuleNameList] = useState([
+    ["", ""],
+    ["", ""],
+    ["", ""],
+  ]);
+
   // 모듈 재료
-  const [moduleMaterial, setModuleMaterial] = useState<CountableMaterialMultipleList[]>([]);
+  const [moduleMaterial, setModuleMaterial] = useState<
+    CountableMaterialMultipleList[]
+  >([
+    [
+      [null, null, null],
+      [null, null, null, null],
+      [null, null, null, null],
+    ],
+    [
+      [null, null, null],
+      [null, null, null, null],
+      [null, null, null, null],
+    ],
+    [
+      [null, null, null],
+      [null, null, null, null],
+      [null, null, null, null],
+    ],
+  ]);
 
   /** 아이디 문자열 설정 */
   const handleIdValue = (event: FormEvent<HTMLInputElement>) => {
@@ -313,23 +335,6 @@ export default function OperatorMaker() {
   const makeSkillMaterialList = (skillNum: number) => {
     const result = [];
 
-    // 스킬 재료 설정 함수를, 스킬에 따라 다르게 설정
-    let handler;
-    switch (skillNum) {
-      case 1:
-        handler = handleOneSkillMaterialChange;
-        break;
-      case 2:
-        handler = handleTwoSkillMaterialChange;
-        break;
-      case 3:
-        handler = handleThreeSkillMaterialChange;
-        break;
-      default:
-        handler = handleOneSkillMaterialChange;
-        break;
-    }
-
     // 8레벨 ~ 10레벨 구간의 스킬을 생성
     for (let level = 0; level < skillMaxLevel! - 7; level++) {
       result.push(
@@ -353,7 +358,8 @@ export default function OperatorMaker() {
                       defaultMaterial={skillSummary3}
                       id={slot}
                       listId={level}
-                      handleChange={handler}
+                      itemId={skillNum - 1}
+                      handleChange={handleSkillMasteryMaterialChange}
                       skillSummary
                     />
                   );
@@ -369,7 +375,8 @@ export default function OperatorMaker() {
                           keyString={`skill-${skillNum}-${level}-${slot}`}
                           id={slot}
                           listId={level}
-                          handleChange={handler}
+                          itemId={skillNum - 1}
+                          handleChange={handleSkillMasteryMaterialChange}
                           T4
                         />
                       );
@@ -381,7 +388,8 @@ export default function OperatorMaker() {
                           keyString={`skill-${skillNum}-${level}-${slot}`}
                           id={slot}
                           listId={level}
-                          handleChange={handler}
+                          itemId={skillNum - 1}
+                          handleChange={handleSkillMasteryMaterialChange}
                           T5
                         />
                       );
@@ -396,7 +404,8 @@ export default function OperatorMaker() {
                           keyString={`skill-${skillNum}-${level}-${slot}`}
                           id={slot}
                           listId={level}
-                          handleChange={handler}
+                          itemId={skillNum - 1}
+                          handleChange={handleSkillMasteryMaterialChange}
                           T3
                         />
                       );
@@ -409,7 +418,8 @@ export default function OperatorMaker() {
                           keyString={`skill-${skillNum}-${level}-${slot}`}
                           id={slot}
                           listId={level}
-                          handleChange={handler}
+                          itemId={skillNum - 1}
+                          handleChange={handleSkillMasteryMaterialChange}
                           T4
                         />
                       );
@@ -420,7 +430,8 @@ export default function OperatorMaker() {
                           keyString={`skill-${skillNum}-${level}-${slot}`}
                           id={slot}
                           listId={level}
-                          handleChange={handler}
+                          itemId={skillNum - 1}
+                          handleChange={handleSkillMasteryMaterialChange}
                           T3
                           T4
                         />
@@ -446,82 +457,21 @@ export default function OperatorMaker() {
     const prev = commonSkillMaterial[listIndex!];
     prev[index] = { material, count } as CountableMaterial;
 
-    const newMaterial = [];
-    for (let i = 0; i < commonSkillMaterial.length; i++) {
-      if (i == index) {
-        newMaterial.push(prev);
-      } else {
-        newMaterial.push(commonSkillMaterial[i]);
-      }
-    }
-
-    setCommonSkillMaterial(newMaterial);
+    setCommonSkillMaterial([...commonSkillMaterial]);
   };
 
-  /** 1스킬 업그레이드 재료 변화를 반영 */
-  const handleOneSkillMaterialChange = (
+  /** 7레벨 이후의 스킬 업그레이드 재료 변화를 반영 */
+  const handleSkillMasteryMaterialChange = (
     index: number,
     material: Material,
     count: number,
-    listIndex?: number
+    listIndex?: number,
+    itemIndex?: number
   ) => {
-    const prev = skillOneMaterial[listIndex!];
+    const prev = skillMasteryMaterial[itemIndex!][listIndex!];
     prev[index] = { material, count } as CountableMaterial;
 
-    const newMaterial = [];
-    for (let i = 0; i < skillOneMaterial.length; i++) {
-      if (i == index) {
-        newMaterial.push(prev);
-      } else {
-        newMaterial.push(skillOneMaterial[i]);
-      }
-    }
-
-    setSkillOneMaterial(newMaterial);
-  };
-
-  /** 2스킬 업그레이드 재료 변화를 반영 */
-  const handleTwoSkillMaterialChange = (
-    index: number,
-    material: Material,
-    count: number,
-    listIndex?: number
-  ) => {
-    const prev = skillTwoMaterial[listIndex!];
-    prev[index] = { material, count } as CountableMaterial;
-
-    const newMaterial = [];
-    for (let i = 0; i < skillTwoMaterial.length; i++) {
-      if (i == index) {
-        newMaterial.push(prev);
-      } else {
-        newMaterial.push(skillTwoMaterial[i]);
-      }
-    }
-
-    setSkillTwoMaterial(newMaterial);
-  };
-
-  /** 3스킬 업그레이드 재료 변화를 반영 */
-  const handleThreeSkillMaterialChange = (
-    index: number,
-    material: Material,
-    count: number,
-    listIndex?: number
-  ) => {
-    const prev = skillThreeMaterial[listIndex!];
-    prev[index] = { material, count } as CountableMaterial;
-
-    const newMaterial = [];
-    for (let i = 0; i < skillThreeMaterial.length; i++) {
-      if (i == index) {
-        newMaterial.push(prev);
-      } else {
-        newMaterial.push(skillThreeMaterial[i]);
-      }
-    }
-
-    setSkillThreeMaterial(newMaterial);
+    setSkillMasteryMaterial([...skillMasteryMaterial]);
   };
 
   // 최대 정예화, 스킬 개수 및 최대 스킬 레벨을 자동으로 설정
@@ -537,6 +487,8 @@ export default function OperatorMaker() {
       setSkillMaxLevel(SKILL_MAX_LEVEL_TABLE[MAX_ELITE_TABLE[rarity]]);
     }
   }, [rarity]);
+
+  useEffect(() => {});
 
   return (
     <div className="flex flex-col w-full gap-3 py-4 pb-32">
@@ -952,6 +904,7 @@ export default function OperatorMaker() {
       {/* 3스킬 재료 */}
       {rarity && skillCount! >= 3 && makeSkillMaterialList(3)}
       <EmptySpace />
+      {/* 모듈 */}
     </div>
   );
 }
