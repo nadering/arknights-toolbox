@@ -15,6 +15,7 @@ import Material from "./material";
 export const orirock: Material = {
   id: "30011",
   name: "원암",
+  objectName: "orirock",
   imageFilename: "orirock",
   type: "Upgrade",
   tier: 1,
@@ -24,6 +25,7 @@ export const orirock: Material = {
 export const damagedDivice: Material = {
   id: "30061",
   name: "파손된 장치",
+  objectName: "damagedDevice",
   imageFilename: "damaged-device",
   type: "Upgrade",
   tier: 1,
@@ -33,6 +35,7 @@ export const damagedDivice: Material = {
 export const ester: Material = {
   id: "30031",
   name: "에스테르 원료",
+  objectName: "ester",
   imageFilename: "ester",
   type: "Upgrade",
   tier: 1,
@@ -42,6 +45,7 @@ export const ester: Material = {
 export const sugarSubstitute: Material = {
   id: "30021",
   name: "대체당",
+  objectName: "sugarSubstitute",
   imageFilename: "sugar-substitute",
   type: "Upgrade",
   tier: 1,
@@ -51,6 +55,7 @@ export const sugarSubstitute: Material = {
 export const orironShard: Material = {
   id: "30041",
   name: "이철 조각",
+  objectName: "orironShard",
   imageFilename: "oriron-shard",
   type: "Upgrade",
   tier: 1,
@@ -60,6 +65,7 @@ export const orironShard: Material = {
 export const diketon: Material = {
   id: "30051",
   name: "디케톤",
+  objectName: "diketon",
   imageFilename: "diketon",
   type: "Upgrade",
   tier: 1,
@@ -80,6 +86,7 @@ export const T1UpgradeList: Material[] = [
 export const orirockCube: Material = {
   id: "30012",
   name: "원암 큐브",
+  objectName: "orirockCube",
   imageFilename: "orirock-cube",
   type: "Upgrade",
   tier: 2,
@@ -93,6 +100,7 @@ export const orirockCube: Material = {
 export const device: Material = {
   id: "30062",
   name: "장치",
+  objectName: "device",
   imageFilename: "device",
   type: "Upgrade",
   tier: 2,
@@ -106,6 +114,7 @@ export const device: Material = {
 export const polyester: Material = {
   id: "30032",
   name: "폴리에스테르",
+  objectName: "polyester",
   imageFilename: "polyester",
   type: "Upgrade",
   tier: 2,
@@ -119,6 +128,7 @@ export const polyester: Material = {
 export const sugar: Material = {
   id: "30022",
   name: "포도당",
+  objectName: "sugar",
   imageFilename: "sugar",
   type: "Upgrade",
   tier: 2,
@@ -132,6 +142,7 @@ export const sugar: Material = {
 export const oriron: Material = {
   id: "30042",
   name: "이철",
+  objectName: "oriron",
   imageFilename: "oriron",
   type: "Upgrade",
   tier: 2,
@@ -145,6 +156,7 @@ export const oriron: Material = {
 export const polyketon: Material = {
   id: "30052",
   name: "아케톤 응집체",
+  objectName: "polyketon",
   imageFilename: "polyketon",
   type: "Upgrade",
   tier: 2,
@@ -169,6 +181,7 @@ export const T2UpgradeList: Material[] = [
 export const aggregateCyclicene: Material = {
   id: "31083",
   name: "고리탄화수소 응집질",
+  objectName: "aggregateCyclicene",
   imageFilename: "aggregate-cyclicene",
   type: "Upgrade",
   tier: 3,
@@ -178,6 +191,7 @@ export const aggregateCyclicene: Material = {
 export const fuscousFiber: Material = {
   id: "31073",
   name: "퓨신 섬유",
+  objectName: "fuscousFiber",
   imageFilename: "fuscous-fiber",
   type: "Upgrade",
   tier: 3,
@@ -187,6 +201,7 @@ export const fuscousFiber: Material = {
 export const transmutedSalt: Material = {
   id: "31063",
   name: "합성 소금 번들",
+  objectName: "transmutedSalt",
   imageFilename: "transmuted-salt",
   type: "Upgrade",
   tier: 3,
@@ -196,6 +211,7 @@ export const transmutedSalt: Material = {
 export const compoundCuttingFluid: Material = {
   id: "31053",
   name: "중합 절삭유",
+  objectName: "compoundCuttingFluid",
   imageFilename: "compound-cutting-fluid",
   type: "Upgrade",
   tier: 3,
@@ -205,6 +221,7 @@ export const compoundCuttingFluid: Material = {
 export const semiSyntheticSolvent: Material = {
   id: "31043",
   name: "반합성 용제",
+  objectName: "semiSyntheticSolvent",
   imageFilename: "semi-synthetic-solvent",
   type: "Upgrade",
   tier: 3,
@@ -214,6 +231,7 @@ export const semiSyntheticSolvent: Material = {
 export const crystallineComponent: Material = {
   id: "31033",
   name: "결정 부품",
+  objectName: "crystallineComponent",
   imageFilename: "crystalline-component",
   type: "Upgrade",
   tier: 3,
@@ -223,6 +241,7 @@ export const crystallineComponent: Material = {
 export const incandescentAlloy: Material = {
   id: "31023",
   name: "열합금",
+  objectName: "incandescentAlloy",
   imageFilename: "incandescent-alloy",
   type: "Upgrade",
   tier: 3,
@@ -232,6 +251,7 @@ export const incandescentAlloy: Material = {
 export const coagulatingGel: Material = {
   id: "31013",
   name: "젤",
+  objectName: "coagulatingGel",
   imageFilename: "coagulating-gel",
   type: "Upgrade",
   tier: 3,
@@ -241,6 +261,7 @@ export const coagulatingGel: Material = {
 export const loxicKohl: Material = {
   id: "30073",
   name: "로식 콜",
+  objectName: "loxicKohl",
   imageFilename: "loxic-kohl",
   type: "Upgrade",
   tier: 3,
@@ -250,6 +271,7 @@ export const loxicKohl: Material = {
 export const manganeseOre: Material = {
   id: "30083",
   name: "망간",
+  objectName: "manganeseOre",
   imageFilename: "manganese-ore",
   type: "Upgrade",
   tier: 3,
@@ -259,6 +281,7 @@ export const manganeseOre: Material = {
 export const grindstone: Material = {
   id: "30093",
   name: "연마석",
+  objectName: "grindstone",
   imageFilename: "grindstone",
   type: "Upgrade",
   tier: 3,
@@ -268,6 +291,7 @@ export const grindstone: Material = {
 export const RMA7012: Material = {
   id: "30103",
   name: "RMA70-12",
+  objectName: "RMA7012",
   imageFilename: "rma70-12",
   type: "Upgrade",
   tier: 3,
@@ -277,6 +301,7 @@ export const RMA7012: Material = {
 export const orirockCluster: Material = {
   id: "30013",
   name: "원암 큐브 번들",
+  objectName: "orirockCluster",
   imageFilename: "orirock-cluster",
   type: "Upgrade",
   tier: 3,
@@ -290,6 +315,7 @@ export const orirockCluster: Material = {
 export const integratedDevice: Material = {
   id: "30063",
   name: "리뉴얼 장치",
+  objectName: "integratedDevice",
   imageFilename: "integrated-device",
   type: "Upgrade",
   tier: 3,
@@ -303,6 +329,7 @@ export const integratedDevice: Material = {
 export const polyesterPack: Material = {
   id: "30033",
   name: "폴리에스테르 번들",
+  objectName: "polyesterPack",
   imageFilename: "polyester-pack",
   type: "Upgrade",
   tier: 3,
@@ -316,6 +343,7 @@ export const polyesterPack: Material = {
 export const sugarPack: Material = {
   id: "30023",
   name: "포도당 번들",
+  objectName: "sugarPack",
   imageFilename: "sugar-pack",
   type: "Upgrade",
   tier: 3,
@@ -329,6 +357,7 @@ export const sugarPack: Material = {
 export const orironCluster: Material = {
   id: "30043",
   name: "이철 번들",
+  objectName: "orironCluster",
   imageFilename: "oriron-cluster",
   type: "Upgrade",
   tier: 3,
@@ -342,6 +371,7 @@ export const orironCluster: Material = {
 export const aketon: Material = {
   id: "30053",
   name: "아케톤 응집체 번들",
+  objectName: "aketon",
   imageFilename: "aketon",
   type: "Upgrade",
   tier: 3,
@@ -378,6 +408,7 @@ export const T3UpgradeList: Material[] = [
 export const cyclicenePrefab: Material = {
   id: "31084",
   name: "고리탄화수소 프리폼",
+  objectName: "cyclicenePrefab",
   imageFilename: "cyclicene-prefab",
   type: "Upgrade",
   tier: 4,
@@ -393,6 +424,7 @@ export const cyclicenePrefab: Material = {
 export const solidifiedFiberBoard: Material = {
   id: "31074",
   name: "경화 섬유판",
+  objectName: "solidifiedFiberBoard",
   imageFilename: "solidified-fiber-board",
   type: "Upgrade",
   tier: 4,
@@ -408,6 +440,7 @@ export const solidifiedFiberBoard: Material = {
 export const transmutedSaltAgglomerate: Material = {
   id: "31064",
   name: "합성 소금 팩",
+  objectName: "transmutedSaltAgglomerate",
   imageFilename: "transmuted-salt-agglomerate",
   type: "Upgrade",
   tier: 4,
@@ -423,6 +456,7 @@ export const transmutedSaltAgglomerate: Material = {
 export const cuttingFluidSolution: Material = {
   id: "31054",
   name: "절삭유 원액",
+  objectName: "cuttingFluidSolution",
   imageFilename: "cutting-fluid-solution",
   type: "Upgrade",
   tier: 4,
@@ -438,6 +472,7 @@ export const cuttingFluidSolution: Material = {
 export const refinedSolvent: Material = {
   id: "31044",
   name: "정제된 용제",
+  objectName: "refinedSolvent",
   imageFilename: "refined-solvent",
   type: "Upgrade",
   tier: 4,
@@ -453,6 +488,7 @@ export const refinedSolvent: Material = {
 export const crystallineCircuit: Material = {
   id: "31034",
   name: "결정 회로",
+  objectName: "crystallineCircuit",
   imageFilename: "crystalline-circuit",
   type: "Upgrade",
   tier: 4,
@@ -468,6 +504,7 @@ export const crystallineCircuit: Material = {
 export const incandescentAlloyBlock: Material = {
   id: "31024",
   name: "열합금 팩",
+  objectName: "incandescentAlloyBlock",
   imageFilename: "incandescent-alloy-block",
   type: "Upgrade",
   tier: 4,
@@ -483,6 +520,7 @@ export const incandescentAlloyBlock: Material = {
 export const polymerizedGel: Material = {
   id: "31014",
   name: "중합젤",
+  objectName: "polymerizedGel",
   imageFilename: "polymerized-gel",
   type: "Upgrade",
   tier: 4,
@@ -498,6 +536,7 @@ export const polymerizedGel: Material = {
 export const whiteHorseKohl: Material = {
   id: "30074",
   name: "화이트 호스 콜",
+  objectName: "whiteHorseKohl",
   imageFilename: "white-horse-kohl",
   type: "Upgrade",
   tier: 4,
@@ -513,6 +552,7 @@ export const whiteHorseKohl: Material = {
 export const manganeseTrihydrate: Material = {
   id: "30084",
   name: "망간 중합체",
+  objectName: "manganeseTrihydrate",
   imageFilename: "manganese-trihydrate",
   type: "Upgrade",
   tier: 4,
@@ -528,6 +568,7 @@ export const manganeseTrihydrate: Material = {
 export const grindstonePentahydrate: Material = {
   id: "30094",
   name: "고급연마석",
+  objectName: "grindstonePentahydrate",
   imageFilename: "grindstone-pentahydrate",
   type: "Upgrade",
   tier: 4,
@@ -543,6 +584,7 @@ export const grindstonePentahydrate: Material = {
 export const RMA7024: Material = {
   id: "30104",
   name: "RMA70-24",
+  objectName: "RMA7024",
   imageFilename: "rma70-24",
   type: "Upgrade",
   tier: 4,
@@ -558,6 +600,7 @@ export const RMA7024: Material = {
 export const orirockConcentration: Material = {
   id: "30014",
   name: "정제 원암",
+  objectName: "orirockConcentration",
   imageFilename: "orirock-concentration",
   type: "Upgrade",
   tier: 4,
@@ -571,6 +614,7 @@ export const orirockConcentration: Material = {
 export const optimizedDevice: Material = {
   id: "30064",
   name: "개량 장치",
+  objectName: "optimizedDevice",
   imageFilename: "optimized-device",
   type: "Upgrade",
   tier: 4,
@@ -586,6 +630,7 @@ export const optimizedDevice: Material = {
 export const polyesterLump: Material = {
   id: "30034",
   name: "폴리에스테르 팩",
+  objectName: "polyesterLump",
   imageFilename: "polyester-lump",
   type: "Upgrade",
   tier: 4,
@@ -601,6 +646,7 @@ export const polyesterLump: Material = {
 export const sugarLump: Material = {
   id: "30024",
   name: "포도당 팩",
+  objectName: "sugarLump",
   imageFilename: "sugar-lump",
   type: "Upgrade",
   tier: 4,
@@ -616,6 +662,7 @@ export const sugarLump: Material = {
 export const orironBlock: Material = {
   id: "30044",
   name: "이철 팩",
+  objectName: "orironBlock",
   imageFilename: "oriron-block",
   type: "Upgrade",
   tier: 4,
@@ -631,6 +678,7 @@ export const orironBlock: Material = {
 export const ketonColloid: Material = {
   id: "30054",
   name: "아케톤 팩",
+  objectName: "ketonColloid",
   imageFilename: "keton-colloid",
   type: "Upgrade",
   tier: 4,
@@ -669,6 +717,7 @@ export const T4UpgradeList: Material[] = [
 export const nucleicCrystalSinter: Material = {
   id: "30155",
   name: "핵결정체 소결물",
+  objectName: "nucleicCrystalSinter",
   imageFilename: "nucleic-crystal-sinter",
   type: "Upgrade",
   tier: 5,
@@ -684,6 +733,7 @@ export const nucleicCrystalSinter: Material = {
 export const crystallineElectronicUnit: Material = {
   id: "30145",
   name: "결정 전자 장치",
+  objectName: "crystallineElectronicUnit",
   imageFilename: "crystalline-electronic-unit",
   type: "Upgrade",
   tier: 5,
@@ -699,6 +749,7 @@ export const crystallineElectronicUnit: Material = {
 export const D32Steel: Material = {
   id: "30135",
   name: "D32강",
+  objectName: "D32Steel",
   imageFilename: "d32-steel",
   type: "Upgrade",
   tier: 5,
@@ -714,6 +765,7 @@ export const D32Steel: Material = {
 export const bipolarNanoflake: Material = {
   id: "30125",
   name: "바이폴라 나노플레이크 칩",
+  objectName: "bipolarNanoflake",
   imageFilename: "bipolar-nanoflake",
   type: "Upgrade",
   tier: 5,
@@ -728,6 +780,7 @@ export const bipolarNanoflake: Material = {
 export const polymerizationPreparation: Material = {
   id: "30115",
   name: "중합제",
+  objectName: "polymerizationPreparation",
   imageFilename: "polymerization-preparation",
   type: "Upgrade",
   tier: 5,

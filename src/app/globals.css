@@ -4,6 +4,7 @@
 
 html, body {
   @apply scrollbar-hide;
+  @apply bg-dark;
 }
 
 /* 

@@ -1,4 +1,5 @@
 export type { default as Operator, OperatorClass } from "./operator";
+export { OperatorClassList } from "./operator";
 export * from "./vanguard";
 export * from "./guard";
 export * from "./defender";

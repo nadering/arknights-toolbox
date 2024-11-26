@@ -4,6 +4,7 @@ import Material from "./material";
 export const LMD: Material = {
   id: "lmd",
   name: "용문폐",
+  objectName: "LMD",
   imageFilename: "lmd",
   type: "LMD",
   tier: 4,

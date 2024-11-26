@@ -16,6 +16,7 @@ import {
   dataSupplementStick,
   device,
   ester,
+  grindstone,
   grindstonePentahydrate,
   incandescentAlloy,
   incandescentAlloyBlock,
@@ -60,22 +61,26 @@ import {
 
 // 스나이퍼
 
+/** 스나이퍼 세부 직군 리스트 */
+export const SniperBranchList = [
+  "Marksman", // 명사수
+  "Artilleryman", // 포격사수
+  "Deadeye", // 저격수
+  "Heavyshooter", // 헤비슈터
+  "Spreadshooter", // 산탄사수
+  "Besieger", // 공성사수
+  "Flinger", // 투척수
+  "Hunter", // 사냥꾼
+  "Loopshooter", // 루프슈터
+] as const;
+
 /** 스나이퍼 세부 직군 */
-export type SniperBranch =
-  | "Marksman" // 명사수
-  | "Artilleryman" // 포격사수
-  | "Deadeye" // 저격수
-  | "Heavyshooter" // 헤비슈터
-  | "Spreadshooter" // 산탄사수
-  | "Besieger" // 공성사수
-  | "Flinger" // 투척수
-  | "Hunter" // 사냥꾼
-  | "Loopshooter"; // 루프슈터
+export type SniperBranch = (typeof SniperBranchList)[number];
 
 /** 스나이퍼 오퍼레이터 */
 export interface Sniper extends Operator {
   /** 세부 직군 */
-  branch: SniperBranch;
+  branch?: SniperBranch;
 }
 
 // 6성
@@ -895,6 +900,322 @@ export const Fiammetta: Sniper = {
   },
 };
 
+/** 첸 더 홀룽데이 (수첸) */
+export const ChenTheHolungday: Sniper = {
+  id: 200,
+  name: "첸 더 홀룽데이",
+  nicknameList: ["수첸"],
+  imageFilename: "ch'en-the-holungday",
+  class: "Sniper",
+  branch: "Spreadshooter",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: sniperChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: sugar,
+        count: 6,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: sniperDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["고압 충격", "'나이트 오브 바이올렛'", "'홀리데이 스톰'"],
+  preferSkillList: ["'홀리데이 스톰'"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: manganeseOre,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+    },
+    "고압 충격": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 6,
+        },
+      ],
+    },
+    "'나이트 오브 바이올렛'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 6,
+        },
+      ],
+    },
+    "'홀리데이 스톰'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "RPR-X",
+      name: "샌드비치 배틀 세트",
+    },
+  ],
+  moduleMaterials: {
+    "RPR-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 스나이퍼 오퍼레이터 리스트 계열
 const sixStarSniperList: Sniper[] = [
   Narantuya,
@@ -903,6 +1224,7 @@ const sixStarSniperList: Sniper[] = [
   Typhon,
   Pozëmka,
   Fiammetta,
+  ChenTheHolungday,
 ];
 const fiveStarSniperList: Sniper[] = [];
 const fourStarSniperList: Sniper[] = [];

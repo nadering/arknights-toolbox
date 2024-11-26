@@ -56,20 +56,24 @@ import {
 
 // 서포터
 
+/** 서포터 세부 직군 리스트 */
+export const SupporterBranchList = [
+  "Decel-Binder", // 감속자
+  "Summoner", // 소환사
+  "Hexer", // 약화자
+  "Bard", // 음유시인
+  "Abjurer", // 비호자
+  "Artificer", // 기능공
+  "Ritualist", // 의식술사
+] as const;
+
 /** 서포터 세부 직군 */
-export type SupporterBranch =
-  | "Decel-Binder" // 감속자
-  | "Summoner" // 소환사
-  | "Hexer" // 약화자
-  | "Bard" // 음유시인
-  | "Abjurer" // 비호자
-  | "Artificer" // 기능공
-  | "Ritualist"; // 의식술사
+export type SupporterBranch = typeof SupporterBranchList[number];
 
 /** 서포터 오퍼레이터 */
 export interface Supporter extends Operator {
   /** 세부 직군 */
-  branch: SupporterBranch;
+  branch?: SupporterBranch;
 }
 
 // 6성

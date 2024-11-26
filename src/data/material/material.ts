@@ -18,6 +18,8 @@ export default interface Material {
   id: string;
   /** 재료 이름 */
   name: string;
+  /** 재료 객체 이름 */
+  objectName: string;
   /** 이미지 파일 이름 */
   imageFilename: string;
   /** 재료 타입 */

@@ -61,18 +61,22 @@ import {
 
 // 뱅가드
 
+/** 뱅가드 세부 직군 리스트 */
+export const VanguardBranchList = [
+  "Pioneer", // 척후병
+  "Charger", // 돌격수
+  "Standard-Bearer", // 기수
+  "Tactician", // 전술가
+  "Agent", // 에이전트
+] as const;
+
 /** 뱅가드 세부 직군 */
-export type VanguardBranch =
-  | "Pioneer" // 척후병
-  | "Charger" // 돌격수
-  | "Standard-Bearer" // 기수
-  | "Tactician" // 전술가
-  | "Agent"; // 에이전트
+export type VanguardBranch = typeof VanguardBranchList[number];
 
 /** 뱅가드 오퍼레이터 */
 export interface Vanguard extends Operator {
   /** 세부 직군 */
-  branch: VanguardBranch;
+  branch?: VanguardBranch;
 }
 
 // 6성
