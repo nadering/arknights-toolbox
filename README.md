@@ -29,6 +29,10 @@ npm run dev
 - 모든 오퍼레이터는 [JavaScript의 Object 타입](https://ko.javascript.info/object)으로 만들어져 있습니다.
 - 원하는 클래스의 파일에서 하단의 작성 예시를 참고해 오퍼레이터를 추가한 후 (레어도 및 ID 내림차순을 추천), 파일 최하단의 오퍼레이터 리스트 중 추가한 오퍼레이터의 레어도와 일치하는 곳에 추가하면 됩니다.
 - 데이터를 추가 후, GitHub 저장소에 Pull Request 해주시면 확인 후 반영하겠습니다.
+- 혹은 아래의 오퍼레이터 데이터 제작소 기능을 이용할 수 있습니다.
+
+## 오퍼레이터 데이터 제작소
+- [노션 링크](https://balsam-column-ee9.notion.site/Arknights-Toolbox-13d2f32df8da80a0b30bf1e8063d2fc5)를 참고해주세요.
 
 ## 오퍼레이터 데이터 작성 예시
 ```TypeScript
