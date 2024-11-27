@@ -11,7 +11,7 @@ import {
   cuttingFluidSolution,
   cyclicenePrefab,
   D32Steel,
-  damagedDivice,
+  damagedDevice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
@@ -75,7 +75,7 @@ export const CasterBranchList = [
 ] as const;
 
 /** 캐스터 세부 직군 */
-export type CasterBranch = typeof CasterBranchList[number];
+export type CasterBranch = (typeof CasterBranchList)[number];
 
 /** 캐스터 오퍼레이터 */
 export interface Caster extends Operator {
@@ -114,7 +114,7 @@ export const LapplandTheDecadenza: Caster = {
       2: [{ material: skillSummary1, count: 5 }],
       3: [
         { material: skillSummary1, count: 5 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
         { material: ester, count: 4 },
       ],
       4: [
@@ -920,7 +920,7 @@ export const Ebenholz: Caster = {
       2: [{ material: skillSummary1, count: 5 }],
       3: [
         { material: skillSummary1, count: 5 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
         { material: ester, count: 4 },
       ],
       4: [
@@ -1069,6 +1069,331 @@ export const Ebenholz: Caster = {
   },
 };
 
+/** 골든글로우 (핑댕이) */
+export const Goldenglow: Caster = {
+  id: 224,
+  name: "골든글로우",
+  nicknameList: ["핑댕이"],
+  imageFilename: "goldenglow",
+  class: "Caster",
+  branch: "Mech-Accord",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 7,
+      },
+      {
+        material: orirockCube,
+        count: 7,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: manganeseTrihydrate,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["불꽃 스파크", "일렁이는 전류", "맑고 깨끗한 반짝임"],
+  preferSkillList: ["맑고 깨끗한 반짝임"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+    },
+    "불꽃 스파크": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+    "일렁이는 전류": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+      ],
+    },
+    "맑고 깨끗한 반짝임": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "FUN-X",
+      name: "'노력의 날개'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "FUN-X",
+        name: "'노력의 날개'",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "FUN-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
   LapplandTheDecadenza,
@@ -1078,6 +1403,7 @@ const sixStarCasterList: Caster[] = [
   Hoolheyak,
   Lin,
   Ebenholz,
+  Goldenglow,
 ];
 const fiveStarCasterList: Caster[] = [];
 const fourStarCasterList: Caster[] = [];

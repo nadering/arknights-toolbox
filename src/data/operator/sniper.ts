@@ -11,7 +11,7 @@ import {
   cuttingFluidSolution,
   cyclicenePrefab,
   D32Steel,
-  damagedDivice,
+  damagedDevice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
@@ -115,7 +115,7 @@ export const Narantuya: Sniper = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },
@@ -497,7 +497,7 @@ export const Typhon: Sniper = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },
@@ -775,7 +775,7 @@ export const Fiammetta: Sniper = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },

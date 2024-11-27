@@ -22,7 +22,7 @@ export const orirock: Material = {
 };
 
 /** (T1) 파손된 장치 */
-export const damagedDivice: Material = {
+export const damagedDevice: Material = {
   id: "30061",
   name: "파손된 장치",
   objectName: "damagedDevice",
@@ -74,7 +74,7 @@ export const diketon: Material = {
 /** 정예화 재료(T1) 리스트 */
 export const T1UpgradeList: Material[] = [
   orirock,
-  damagedDivice,
+  damagedDevice,
   ester,
   sugarSubstitute,
   orironShard,
@@ -105,7 +105,7 @@ export const device: Material = {
   type: "Upgrade",
   tier: 2,
   recipe: [
-    { material: damagedDivice, count: 3 },
+    { material: damagedDevice, count: 3 },
     { material: LMD, count: 100 },
   ],
 };

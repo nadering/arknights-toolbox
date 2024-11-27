@@ -11,7 +11,7 @@ import {
   cuttingFluidSolution,
   cyclicenePrefab,
   D32Steel,
-  damagedDivice,
+  damagedDevice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
@@ -377,7 +377,7 @@ export const Ela: Specialist = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },
@@ -663,7 +663,7 @@ export const KirinRYato: Specialist = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },
@@ -794,7 +794,7 @@ export const TexasTheOmertosa: Specialist = {
       2: [{ material: skillSummary1, count: 5 }],
       3: [
         { material: skillSummary1, count: 5 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
         { material: ester, count: 4 },
       ],
       4: [
@@ -926,7 +926,7 @@ export const Dorothy: Specialist = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },

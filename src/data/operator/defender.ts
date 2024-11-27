@@ -8,7 +8,7 @@ import {
   crystallineElectronicUnit,
   cuttingFluidSolution,
   D32Steel,
-  damagedDivice,
+  damagedDevice,
   dataSupplementInstrument,
   dataSupplementStick,
   defenderChip,
@@ -376,7 +376,7 @@ export const Penance: Defender = {
       3: [
         { material: skillSummary1, count: 5 },
         { material: orirock, count: 6 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
       ],
       4: [
         { material: skillSummary2, count: 8 },

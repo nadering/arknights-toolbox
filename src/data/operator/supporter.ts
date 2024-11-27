@@ -10,7 +10,7 @@ import {
   cuttingFluidSolution,
   cyclicenePrefab,
   D32Steel,
-  damagedDivice,
+  damagedDevice,
   dataSupplementInstrument,
   dataSupplementStick,
   device,
@@ -238,7 +238,7 @@ export const Virtuosa: Supporter = {
       2: [{ material: skillSummary1, count: 5 }],
       3: [
         { material: skillSummary1, count: 5 },
-        { material: damagedDivice, count: 4 },
+        { material: damagedDevice, count: 4 },
         { material: ester, count: 4 },
       ],
       4: [
