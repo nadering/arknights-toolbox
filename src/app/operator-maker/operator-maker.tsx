@@ -60,6 +60,7 @@ import {
 import { handleExponentialNotation } from "@/tool";
 import SelectableMaterial from "./selectable-material";
 import ModuleTextInput from "./module-text-input";
+import ToastPopup from "./toast-popup";
 
 /** 공백 컴포넌트 */
 const EmptySpace = () => {
@@ -157,6 +158,9 @@ export default function OperatorMaker() {
   const [moduleMaterial, setModuleMaterial] = useState<
     CountableMaterialMultipleList[]
   >([]);
+
+  // 토스트 팝업
+  const [toastPopupActive, setToastPopupActive] = useState(false);
 
   /** 숫자로 된 문자열 설정 */
   const handleNumberStringValue = (
@@ -716,7 +720,7 @@ export default function OperatorMaker() {
     setModuleMaterial([...moduleMaterial]);
   };
 
-  /** JSON Stringfy 과정에서 객체를 객체 이름으로 변환시키는 Replacer */
+  /** JSON Stringify 과정에서 CountableMaterial 안의 Material 객체를 객체 이름으로 변환시키는 Replacer */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const replacer = (key: string, value: any): any => {
     // 속성에 material이 있다면, 해당 객체는 CountableMaterial이므로 객체 이름으로 전환
@@ -922,12 +926,19 @@ export default function OperatorMaker() {
         };
       }
 
-      // 콘솔에 오퍼레이터 데이터를 출력
+      // 오퍼레이터 데이터를 문자열로 변환
       const resultString = JSON.stringify(operatorData!, replacer, 2).replace(
         /"material": "(.*?)"/g,
         '"material": $1'
       );
-      console.log(resultString);
+
+      // 클립보드 혹은 콘솔에 출력
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(resultString);
+        setToastPopupActive(true);
+      } else {
+        console.log(resultString);
+      }
     }
   };
 
@@ -974,6 +985,7 @@ export default function OperatorMaker() {
         <p className="pl-1 font-bold text-3xl text-white break-keep">
           오퍼레이터 데이터 제작소
         </p>
+        {/* 버튼 */}
         <div className="flex flex-row justify-start items-center gap-2 translate-y-[2px]">
           <button
             className={`group relative w-9 selection:bg-transparent aspect-square`}
@@ -994,6 +1006,14 @@ export default function OperatorMaker() {
             >
               데이터 제작
             </p>
+            {/* 팝업 */}
+            {toastPopupActive && (
+              <ToastPopup
+                message="클립보드에 복사되었습니다."
+                ms={1500}
+                setter={setToastPopupActive}
+              />
+            )}
           </button>
           <a
             href="https://forms.gle/NoCmMhxvd5feDmCT6"
@@ -1466,7 +1486,9 @@ export default function OperatorMaker() {
       )}
       <EmptySpace />
       {/* 모듈 정보 입력 */}
-      {moduleMaterial.length > 0 &&
+      {rarity &&
+        maxElite! >= MODULE_ACTIVE_ELITE &&
+        moduleMaterial.length > 0 &&
         Array.from({ length: moduleMaterial.length }, (_, i) => {
           return makeModuleList(i);
         })}

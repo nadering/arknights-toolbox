@@ -87,8 +87,9 @@ export default function SelectableMaterial({
   const [countString, setCountString] = useState("0");
 
   // 모달
-  const divRef = useRef<HTMLDivElement>(null);
-  const selectModalActive = useModal(divRef);
+  const divRef = useRef<HTMLDivElement>(null); // 모달 트리거
+  const modalRef = useRef<HTMLDivElement>(null); // 모달
+  const selectModalActive = useModal(divRef); // 모달 활성화 여부
 
   /** 현재 보유량 문자열 설정 */
   const handleCountStringValue = (event: FormEvent<HTMLInputElement>) => {
@@ -107,6 +108,27 @@ export default function SelectableMaterial({
 
     // 그 후, 보유량 문자열을 설정
     setCountString(value);
+  };
+
+  /** 화면 크기가 640px 이상일 때, 모달이 화면을 벗어나지 않도록 위치 조정 */
+  const setModalPosition = () => {
+    if (window && window.innerWidth >= 640) {
+      const rightPos = modalRef.current?.getBoundingClientRect().right;
+      const padding = 16;
+
+      if (rightPos) {
+        if (rightPos > window.innerWidth - padding) {
+          modalRef.current?.style.setProperty(
+            "transform",
+            `translateX(-${rightPos - window.innerWidth + padding}px)`
+          );
+        } else {
+          modalRef.current?.style.setProperty("transform", "");
+        }
+      }
+    } else {
+      modalRef.current?.style.setProperty("transform", "");
+    }
   };
 
   useEffect(() => {
@@ -172,6 +194,13 @@ export default function SelectableMaterial({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, listId, selectedMaterial, countString]);
 
+  // 모달 위치 조정
+  useEffect(() => {
+    if (selectModalActive) {
+      setModalPosition();
+    }
+  }, [selectModalActive]);
+
   return (
     <div className="relative w-20">
       <div className="flex flex-col w-full items-center">
@@ -207,25 +236,32 @@ export default function SelectableMaterial({
         ></input>
       </div>
       {selectModalActive && (
-        <div className="absolute top-full flex flex-row flex-wrap z-10 w-80 gap-1 mt-1 p-1 rounded-xl bg-dark-900 border-2 border-gray-800">
-          {materialList.map((material) => {
-            return (
-              <Image
-                key={material.name}
-                className="cursor-pointer"
-                src={`/images/material/${material.type.toLowerCase()}/${
-                  material.type == "Upgrade" ? `${material.tier}/` : ""
-                }${material.imageFilename}.png`}
-                alt={material.name}
-                title={material.name}
-                width={48}
-                height={48}
-                draggable={false}
-                onClick={() => setSelectedMaterial(material)}
-              />
-            );
-          })}
-        </div>
+        <>
+          <div
+            className="flex flex-row flex-wrap items-start z-10 gap-1 mt-1 p-2 bg-dark-900 border-t-2 border-gray-800
+              fixed bottom-24 left-0 right-0 w-full h-min rounded-t-lg sm:absolute sm:top-full sm:w-80 sm:p-1 sm:rounded-xl sm:border-2"
+            ref={modalRef}
+          >
+            {materialList.map((material) => {
+              return (
+                <Image
+                  key={material.name}
+                  className="cursor-pointer"
+                  src={`/images/material/${material.type.toLowerCase()}/${
+                    material.type == "Upgrade" ? `${material.tier}/` : ""
+                  }${material.imageFilename}.png`}
+                  alt={material.name}
+                  title={material.name}
+                  width={48}
+                  height={48}
+                  draggable={false}
+                  onClick={() => setSelectedMaterial(material)}
+                />
+              );
+            })}
+          </div>
+          <div className="sm:hidden fixed bottom-0 left-0 right-0 w-full h-24 bg-dark-900 z-10"></div>
+        </>
       )}
     </div>
   );
