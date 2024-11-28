@@ -1037,6 +1037,28 @@ export default function OperatorMaker() {
               Google Forms
             </p>
           </a>
+          <a
+            href="https://balsam-column-ee9.notion.site/Arknights-Toolbox-13d2f32df8da80a0b30bf1e8063d2fc5?pvs=4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group relative w-7 selection:bg-transparent aspect-square`}
+          >
+            <Image
+              className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+                hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              src="/images/others/information.png"
+              alt="information"
+              fill
+              sizes="10vw"
+              draggable={false}
+            />
+            <p
+              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-53px] translate-y-[-34px] group-hover:block"
+            >
+              도움말 (외부 링크)
+            </p>
+          </a>
         </div>
       </div>
       {/* 아이디 */}
