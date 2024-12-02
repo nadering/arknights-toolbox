@@ -34,6 +34,8 @@ import {
   orirockCube,
   oriron,
   orironBlock,
+  orironCluster,
+  orironShard,
   polyester,
   polyesterPack,
   polyketon,
@@ -50,6 +52,7 @@ import {
   sugarPack,
   supporterChip,
   supporterDualchip,
+  transmutedSalt,
   transmutedSaltAgglomerate,
   whiteHorseKohl,
 } from "@/data/material";
@@ -68,7 +71,7 @@ export const SupporterBranchList = [
 ] as const;
 
 /** 서포터 세부 직군 */
-export type SupporterBranch = typeof SupporterBranchList[number];
+export type SupporterBranch = (typeof SupporterBranchList)[number];
 
 /** 서포터 오퍼레이터 */
 export interface Supporter extends Operator {
@@ -619,6 +622,269 @@ export const Stainless: Supporter = {
   },
 };
 
+// 5성
+/** 루실라 */
+export const Lucilla: Supporter = {
+  id: 330,
+  name: "루실라",
+  imageFilename: "lucilla",
+  class: "Supporter",
+  branch: "Hexer",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: supporterChip!,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: supporterDualchip,
+        count: 3,
+      },
+      {
+        material: RMA7024,
+        count: 6,
+      },
+      {
+        material: manganeseOre,
+        count: 16,
+      },
+    ],
+  },
+  skillList: ["현혹성 해류도", "저지성 현색제"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSalt,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 2,
+        },
+      ],
+    },
+    "현혹성 해류도": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 1,
+        },
+      ],
+    },
+    "저지성 현색제": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "UMD-X",
+      name: "다기능 지도 작성자 - 개량판",
+    },
+  ],
+  moduleMaterials: {
+    "UMD-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 서포터 오퍼레이터 리스트 계열
 const sixStarSupporterList: Supporter[] = [
   CivilightEterna,
@@ -626,7 +892,7 @@ const sixStarSupporterList: Supporter[] = [
   SilenceTheParadigmatic,
   Stainless,
 ];
-const fiveStarSupporterList: Supporter[] = [];
+const fiveStarSupporterList: Supporter[] = [Lucilla];
 const fourStarSupporterList: Supporter[] = [];
 const threeStarSupporterList: Supporter[] = [];
 const twoStarSupporterList: Supporter[] = [];

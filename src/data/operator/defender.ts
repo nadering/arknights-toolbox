@@ -7,6 +7,7 @@ import {
   crystallineComponent,
   crystallineElectronicUnit,
   cuttingFluidSolution,
+  cyclicenePrefab,
   D32Steel,
   damagedDevice,
   dataSupplementInstrument,
@@ -15,6 +16,7 @@ import {
   defenderDualchip,
   device,
   diketon,
+  fuscousFiber,
   grindstone,
   grindstonePentahydrate,
   incandescentAlloy,
@@ -36,12 +38,14 @@ import {
   orironCluster,
   orironShard,
   polyester,
+  polyesterPack,
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
   refinedSolvent,
   RMA7012,
   RMA7024,
+  semiSyntheticSolvent,
   skillSummary1,
   skillSummary2,
   skillSummary3,
@@ -67,7 +71,7 @@ export const DefenderBranchList = [
 ] as const;
 
 /** 디펜더 세부 직군 */
-export type DefenderBranch = typeof DefenderBranchList[number];
+export type DefenderBranch = (typeof DefenderBranchList)[number];
 
 /** 디펜더 오퍼레이터 */
 export interface Defender extends Operator {
@@ -654,6 +658,269 @@ export const Horn: Defender = {
   },
 };
 
+// 5성
+/** 언더플로우 */
+export const Underflow: Defender = {
+  id: 329,
+  name: "언더플로우",
+  imageFilename: "underflow",
+  class: "Defender",
+  branch: "Sentry-Protector",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: defenderChip!,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: defenderDualchip,
+        count: 3,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 8,
+      },
+      {
+        material: fuscousFiber,
+        count: 9,
+      },
+    ],
+  },
+  skillList: ["침입파괴 대응", "행동능력 박탈"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: diketon,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 8,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 2,
+        },
+      ],
+    },
+    "침입파괴 대응": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+      ],
+    },
+    "행동능력 박탈": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SPT-X",
+      name: "커피 소재의 신경 활성제",
+    },
+  ],
+  moduleMaterials: {
+    "SPT-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 디펜더 오퍼레이터 리스트 계열
 const sixStarDefenderList: Defender[] = [
   Shu,
@@ -661,7 +928,7 @@ const sixStarDefenderList: Defender[] = [
   Penance,
   Horn,
 ];
-const fiveStarDefenderList: Defender[] = [];
+const fiveStarDefenderList: Defender[] = [Underflow];
 const fourStarDefenderList: Defender[] = [];
 const threeStarDefenderList: Defender[] = [];
 const twoStarDefenderList: Defender[] = [];
