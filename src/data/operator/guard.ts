@@ -331,8 +331,8 @@ export const Ulpianus: Guard = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["성사시켜야 할 접촉", "유지되어야 할 경계", "개척해야 할 길"],
-  preferSkillList: ["유지되어야 할 경계", "개척해야 할 길"],
+  skillList: ["이뤄져야 할 만남", "지켜야 할 선", "개척해야 할 길"],
+  preferSkillList: ["지켜야 할 선", "개척해야 할 길"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -360,7 +360,7 @@ export const Ulpianus: Guard = {
         { material: compoundCuttingFluid, count: 3 },
       ],
     },
-    "성사시켜야 할 접촉": {
+    "이뤄져야 할 만남": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: polymerizedGel, count: 4 },
@@ -377,7 +377,7 @@ export const Ulpianus: Guard = {
         { material: transmutedSaltAgglomerate, count: 6 },
       ],
     },
-    "유지되어야 할 경계": {
+    "지켜야 할 선": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: RMA7024, count: 4 },
