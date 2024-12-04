@@ -4,6 +4,7 @@ import {
   aketon,
   bipolarNanoflake,
   coagulatingGel,
+  compoundCuttingFluid,
   crystallineCircuit,
   crystallineComponent,
   crystallineElectronicUnit,
@@ -30,6 +31,7 @@ import {
   nucleicCrystalSinter,
   optimizedDevice,
   orirock,
+  orirockCluster,
   orirockConcentration,
   orirockCube,
   oriron,
@@ -42,6 +44,7 @@ import {
   polymerizationPreparation,
   polymerizedGel,
   refinedSolvent,
+  RMA7012,
   RMA7024,
   semiSyntheticSolvent,
   skillSummary1,
@@ -622,6 +625,654 @@ export const Stainless: Supporter = {
   },
 };
 
+/** 링 */
+export const Ling: Supporter = {
+  id: 221,
+  name: "링",
+  imageFilename: "ling",
+  class: "Supporter",
+  branch: "Summoner",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 10,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: D32Steel,
+        count: 4,
+      },
+      {
+        material: crystallineCircuit,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["다시 술을 권하다", "웃으며 슬을 켜다", "나 자신이 되다"],
+  preferSkillList: ["나 자신이 되다"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+    },
+    "다시 술을 권하다": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: optimizedDevice,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+    "웃으며 슬을 켜다": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+      ],
+    },
+    "나 자신이 되다": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SUM-Y",
+      name: "시는 짧고 꿈은 길다",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "SUM-Y",
+        name: "시는 짧고 꿈은 길다",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SUM-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 노시스 */
+export const Gnosis: Supporter = {
+  id: 216,
+  name: "노시스",
+  imageFilename: "gnosis",
+  class: "Supporter",
+  branch: "Hexer",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: oriron,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: crystallineElectronicUnit,
+        count: 3,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["빠른 사고", "영도 폭발", "저체온증"],
+  preferSkillList: ["저체온증"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 6,
+        },
+        {
+          material: orironShard,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: crystallineComponent,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+        {
+          material: RMA7012,
+          count: 4,
+        },
+      ],
+    },
+    "빠른 사고": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+        {
+          material: manganeseOre,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+      ],
+    },
+    "영도 폭발": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+      ],
+    },
+    저체온증: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 7,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "UMD-X",
+      name: "'약속'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "UMD-X",
+        name: "'약속'",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "UMD-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 5성
 /** 루실라 */
 export const Lucilla: Supporter = {
@@ -891,6 +1542,8 @@ const sixStarSupporterList: Supporter[] = [
   Virtuosa,
   SilenceTheParadigmatic,
   Stainless,
+  Ling,
+  Gnosis,
 ];
 const fiveStarSupporterList: Supporter[] = [Lucilla];
 const fourStarSupporterList: Supporter[] = [];

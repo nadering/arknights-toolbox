@@ -71,7 +71,7 @@ export const VanguardBranchList = [
 ] as const;
 
 /** 뱅가드 세부 직군 */
-export type VanguardBranch = typeof VanguardBranchList[number];
+export type VanguardBranch = (typeof VanguardBranchList)[number];
 
 /** 뱅가드 오퍼레이터 */
 export interface Vanguard extends Operator {
@@ -589,6 +589,387 @@ export const Vigil: Vanguard = {
   },
 };
 
+/** 플레임테일 (불꼬리) */
+export const Flametail: Vanguard = {
+  id: 213,
+  name: "플레임테일",
+  nicknameList: ["불꼬리"],
+  imageFilename: "flametail",
+  class: "Vanguard",
+  branch: "Pioneer",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: vanguardChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 12,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: orirockConcentration,
+        count: 9,
+      },
+    ],
+  },
+  skillList: ["예리한 직감", "'피누스 실베스트리스'", "불꽃의 마음"],
+  preferSkillList: ["불꽃의 마음"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+    },
+    "예리한 직감": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+    "'피누스 실베스트리스'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+      ],
+    },
+    "불꽃의 마음": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: loxicKohl,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SOL-X",
+      name: "그녀들의 미래",
+    },
+    {
+      type: "SOL-Y",
+      name: "피누스 실베스트리스의 출발점",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "SOL-Y",
+        name: "피누스 실베스트리스의 출발점",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "SOL-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "SOL-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 4성
 /** 머틀 */
 export const Myrtle: Vanguard = {
@@ -699,7 +1080,13 @@ export const Myrtle: Vanguard = {
 };
 
 // 뱅가드 오퍼레이터 리스트 계열
-const sixStarVanguardList: Vanguard[] = [Vulpisfoglia, Muelsyse, Ines, Vigil];
+const sixStarVanguardList: Vanguard[] = [
+  Vulpisfoglia,
+  Muelsyse,
+  Ines,
+  Vigil,
+  Flametail,
+];
 const fiveStarVanguardList: Vanguard[] = [];
 const fourStarVanguardList: Vanguard[] = [Myrtle];
 const threeStarVanguardList: Vanguard[] = [];

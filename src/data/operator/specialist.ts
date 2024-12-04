@@ -78,7 +78,7 @@ export const SpecialistBranchList = [
 ] as const;
 
 /** 스페셜리스트 세부 직군 */
-export type SpecialistBranch = typeof SpecialistBranchList[number];
+export type SpecialistBranch = (typeof SpecialistBranchList)[number];
 
 /** 스페셜리스트 오퍼레이터 */
 export interface Specialist extends Operator {
@@ -1179,6 +1179,386 @@ export const SpecterTheUnchained: Specialist = {
   },
 };
 
+/** 리 */
+export const Lee: Specialist = {
+  id: 222,
+  name: "리",
+  imageFilename: "lee",
+  branch: "Merchant",
+  class: "Specialist",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: specialistChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 8,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: specialistDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: whiteHorseKohl,
+        count: 9,
+      },
+    ],
+  },
+  skillList: ["일벌백계", "축귀벽사", "귀빈내방"],
+  preferSkillList: ["귀빈내방"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+    },
+    일벌백계: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+      ],
+    },
+    축귀벽사: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+      ],
+    },
+    귀빈내방: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 11,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "MER-X",
+      name: "'길흉불문'",
+    },
+    {
+      type: "MER-Y",
+      name: "'단사선악'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "MER-X",
+        name: "'길흉불문'",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "MER-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "MER-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
   Crownslayer,
@@ -1189,6 +1569,7 @@ const sixStarSpecialistList: Specialist[] = [
   TexasTheOmertosa,
   Dorothy,
   SpecterTheUnchained,
+  Lee
 ];
 const fiveStarSpecialistList: Specialist[] = [];
 const fourStarSpecialistList: Specialist[] = [];

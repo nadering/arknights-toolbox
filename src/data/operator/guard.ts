@@ -83,7 +83,7 @@ export const GuardBranchList = [
 ] as const;
 
 /** 가드 세부 직군 */
-export type GuardBranch = typeof GuardBranchList[number];
+export type GuardBranch = (typeof GuardBranchList)[number];
 
 /** 가드 오퍼레이터 */
 export interface Guard extends Operator {
@@ -1882,6 +1882,387 @@ export const Irene: Guard = {
   },
 };
 
+/** 니어 더 래디언트 나이트 (창니어) */
+export const NearlTheRadiantKnight: Guard = {
+  id: 212,
+  name: "니어 더 래디언트 나이트",
+  nicknameList: ["창니어"],
+  imageFilename: "nearl-the-radiant-knight",
+  class: "Guard",
+  branch: "Dreadnought",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: polymerizedGel,
+        count: 8,
+      },
+    ],
+  },
+  skillList: ["찬란한 불꽃의 장검", "밤의 광채", "눈부신 태양의 승인"],
+  preferSkillList: ["밤의 광채", "눈부신 태양의 승인"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 5,
+        },
+      ],
+    },
+    "찬란한 불꽃의 장검": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+    "밤의 광채": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+    },
+    "눈부신 태양의 승인": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "DRE-X",
+      name: "눈부신 태양의 칼날",
+    },
+    {
+      type: "DRE-Y",
+      name: "'기사 가문'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "DRE-X",
+        name: "눈부신 태양의 칼날",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "DRE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "DRE-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 스카디 */
 export const Skadi: Guard = {
   id: 89,
@@ -2058,6 +2439,7 @@ const sixStarGuardList: Guard[] = [
   Młynar,
   GavialTheInvincible,
   Irene,
+  NearlTheRadiantKnight,
   Skadi,
 ];
 const fiveStarGuardList: Guard[] = [];
