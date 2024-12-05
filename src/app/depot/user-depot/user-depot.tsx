@@ -46,7 +46,7 @@ export default function UserDepot() {
     <div className="hidden w-full flex flex-col gap-8" ref={divRef}>
       <LMDLine list={userDepot["LMD"]} userDepotUse />
       <DepotLine
-        title="작전개론"
+        title="작전기록"
         list={userDepot["Battle-Record"]}
         userDepotUse
       />

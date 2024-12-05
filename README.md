@@ -18,8 +18,8 @@ npm run dev
 ## 재료
 - `material.ts` 재료 클래스
 - `upgrade.ts` 정예화 및 스킬 업그레이드 재료
-- `battle-record.ts` 작전개론
-- `exp.ts` 경험치 (작전개론과 별개)
+- `battle-record.ts` 작전기록
+- `exp.ts` 경험치 (작전기록과 별개)
 - `lmd.ts` 용문폐
 - `skill-summary.ts` 스킬개론
 - `module.ts` 모듈 (모듈 데이터 칩, 데이터 메모리, 데이터 리더기)
