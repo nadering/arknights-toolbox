@@ -196,8 +196,28 @@ export const VinaVictoria: Guard = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "AFT-X", name: "성주의 모험" }],
+  moduleMaterials: {
+    "AFT-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 페페 */
@@ -941,8 +961,31 @@ export const Viviana: Guard = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "AFT-Δ", name: "보이지 않는 곳" }],
+  preferModuleList: [
+    { module: { type: "AFT-Δ", name: "보이지 않는 곳" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "AFT-Δ": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 외드레르 */
