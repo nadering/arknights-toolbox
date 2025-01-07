@@ -53,6 +53,7 @@ import {
   solidifiedFiberBoard,
   sugar,
   sugarPack,
+  sugarSubstitute,
   supporterChip,
   supporterDualchip,
   transmutedSalt,
@@ -214,10 +215,11 @@ export const CivilightEterna: Supporter = {
   },
 };
 
-/** 비르투오사 */
+/** 비르투오사 (아르투리아) */
 export const Virtuosa: Supporter = {
   id: 305,
   name: "비르투오사",
+  nicknameList: ["아르투리아"],
   imageFilename: "virtuosa",
   class: "Supporter",
   branch: "Ritualist",
@@ -1273,6 +1275,330 @@ export const Gnosis: Supporter = {
   },
 };
 
+/** 스카디 더 커럽팅 하트 (보카디) */
+export const SkadiTheCorruptingHeart: Supporter = {
+  id: 190,
+  name: "스카디 더 커럽팅 하트",
+  nicknameList: ["보카디"],
+  imageFilename: "skadi-the-corrupting-heart",
+  class: "Supporter",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: grindstonePentahydrate,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["수도동귀의 노래", "함께 묻히길 바라는 마음", "'밀물, 썰물'"],
+  preferSkillList: ["함께 묻히길 바라는 마음"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: coagulatingGel,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+    },
+    "수도동귀의 노래": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 7,
+        },
+      ],
+    },
+    "함께 묻히길 바라는 마음": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: loxicKohl,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+      ],
+    },
+    "'밀물, 썰물'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "BAR-X",
+      name: "타락의 흔적",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "BAR-X",
+        name: "타락의 흔적",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "BAR-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 5성
 /** 루실라 */
 export const Lucilla: Supporter = {
@@ -1544,6 +1870,7 @@ const sixStarSupporterList: Supporter[] = [
   Stainless,
   Ling,
   Gnosis,
+  SkadiTheCorruptingHeart,
 ];
 const fiveStarSupporterList: Supporter[] = [Lucilla];
 const fourStarSupporterList: Supporter[] = [];

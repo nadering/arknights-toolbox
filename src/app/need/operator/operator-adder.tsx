@@ -19,7 +19,7 @@ export default function OperatorAdder() {
   const [searchedData, setSearchedData] = useState<Operator[]>([]);
 
   /** 검색 결과 최대 개수 */
-  const MAX_DATA_COUNT = 5;
+  const MAX_DATA_COUNT = 50;
 
   // 검색 결과 드랍다운의 인덱스
   const [dataIndex, setDataIndex] = useState(0);
