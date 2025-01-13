@@ -19,7 +19,7 @@ export default function OperatorAdder() {
   const [searchedData, setSearchedData] = useState<Operator[]>([]);
 
   /** 검색 결과 최대 개수 */
-  const MAX_DATA_COUNT = 50;
+  const MAX_DATA_COUNT = 5;
 
   // 검색 결과 드랍다운의 인덱스
   const [dataIndex, setDataIndex] = useState(0);
@@ -59,18 +59,24 @@ export default function OperatorAdder() {
     // 현재 및 최대 데이터 수
     let currentDataCount = 0;
 
+    // 이름이 완벽히 일치하는 오퍼레이터
+    let matchedOperator: Operator | null = null;
+
     // 전체 오퍼레이터를 순회하며 검색
-    return operatorList.filter((operator) => {
+    const searchedOperatorList = operatorList.filter((operator) => {
       if (currentDataCount >= MAX_DATA_COUNT) {
         // 최대 데이터 수를 초과하면, 검색하여 추가하지 않음
         return;
       }
 
+      // 입력된 문자열이 없다면, 검색하지 않음
+      if (!searchText) return;
+
       // 모든 글자를 소문자화 후 검색
       const lowerSearchText = searchText.toLowerCase();
       const lowerOperatorName = operator.name.toLowerCase();
 
-      if (searchText && operator.nicknameList) {
+      if (operator.nicknameList) {
         // 별명이 있다면, 별명을 검색
         for (const nickname of operator.nicknameList) {
           const lowerNickname = nickname.toLowerCase();
@@ -86,8 +92,10 @@ export default function OperatorAdder() {
         }
       }
 
-      if (
-        searchText &&
+      if (lowerSearchText == lowerOperatorName) {
+        // 이름이 완벽히 일치하는 오퍼레이터를 검색
+        matchedOperator = operator;
+      } else if (
         lowerOperatorName.startsWith(lowerSearchText.at(0)!) &&
         lowerOperatorName.includes(lowerSearchText)
       ) {
@@ -99,6 +107,13 @@ export default function OperatorAdder() {
         }
       }
     });
+
+    if (matchedOperator) {
+      // 이름이 완벽히 일치하는 오퍼레이터를, 검색 결과 최상단에 추가
+      searchedOperatorList.unshift(matchedOperator);
+    }
+
+    return searchedOperatorList;
   };
 
   /** 선택된 오퍼레이터를 추가 */

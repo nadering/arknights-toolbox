@@ -1,12 +1,17 @@
 import Operator from "./operator";
 import {
+  aggregateCyclicene,
   aketon,
   bipolarNanoflake,
+  casterChip,
+  casterDualchip,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
+  crystallineComponent,
   crystallineElectronicUnit,
   cuttingFluidSolution,
+  cyclicenePrefab,
   D32Steel,
   damagedDevice,
   dataSupplementInstrument,
@@ -14,6 +19,8 @@ import {
   device,
   diketon,
   ester,
+  fuscousFiber,
+  grindstone,
   grindstonePentahydrate,
   incandescentAlloyBlock,
   integratedDevice,
@@ -36,6 +43,7 @@ import {
   orironCluster,
   orironShard,
   polyester,
+  polyesterLump,
   polyesterPack,
   polyketon,
   polymerizationPreparation,
@@ -895,6 +903,473 @@ export const Kaltsit: Medic = {
   },
 };
 
+// 5성
+/** 파피루스 */
+export const Papyrus: Medic = {
+  id: 333,
+  name: "파피루스",
+  imageFilename: "papyrus",
+  class: "Medic",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: medicChip!,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+      {
+        material: sugar,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: medicDualchip,
+        count: 3,
+      },
+      {
+        material: manganeseTrihydrate,
+        count: 7,
+      },
+      {
+        material: grindstone,
+        count: 13,
+      },
+    ],
+  },
+  skillList: ["번뜩이는 생각", "벼락치기"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: sugarSubstitute,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineComponent,
+          count: 3,
+        },
+        {
+          material: RMA7012,
+          count: 2,
+        },
+      ],
+    },
+    "번뜩이는 생각": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+      ],
+    },
+    벼락치기: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
+/** 아미야 (메딕) */
+export const AmiyaMedic: Medic = {
+  id: 75.2,
+  name: "아미야 (메딕)",
+  nicknameList: ["힐미야", "힐당끼"],
+  imageFilename: "amiya-medic",
+  class: "Medic",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 3,
+      },
+      {
+        material: device,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: orirockConcentration,
+        count: 10,
+      },
+      {
+        material: loxicKohl,
+        count: 10,
+      },
+    ],
+  },
+  skillList: ["슬픔의 공감", "자비의 비전"],
+  preferSkillList: ["자비의 비전"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: aketon,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 2,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+      ],
+    },
+    "슬픔의 공감": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+      ],
+    },
+    "자비의 비전": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: crystallineCircuit,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "INC-X",
+      name: "그을림 자국의 치마",
+    },
+  ],
+  moduleMaterials: {
+    "INC-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: polyesterLump,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 3성
 /** 히비스커스 */
 export const Hibiscus: Medic = {
@@ -947,7 +1422,7 @@ const sixStarMedicList: Medic[] = [
   Lumen,
   Kaltsit,
 ];
-const fiveStarMedicList: Medic[] = [];
+const fiveStarMedicList: Medic[] = [Papyrus, AmiyaMedic];
 const fourStarMedicList: Medic[] = [];
 const threeStarMedicList: Medic[] = [Hibiscus];
 const twoStarMedicList: Medic[] = [];
