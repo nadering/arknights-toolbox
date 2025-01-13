@@ -113,6 +113,11 @@ export default function OperatorAdder() {
       searchedOperatorList.unshift(matchedOperator);
     }
 
+    if (searchedOperatorList.length > MAX_DATA_COUNT) {
+      // 검색 결과 최대 개수를 초과하면, 해당 오퍼레이터를 제외
+      searchedOperatorList.pop();
+    }
+
     return searchedOperatorList;
   };
 

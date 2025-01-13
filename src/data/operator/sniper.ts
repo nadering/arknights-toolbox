@@ -3074,6 +3074,329 @@ export const W: Sniper = {
   },
 };
 
+/** 로사 */
+export const Rosa: Sniper = {
+  id: 131,
+  name: "로사",
+  imageFilename: "rosa",
+  class: "Sniper",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: sniperChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: sniperDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: optimizedDevice,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["공격 강화γ", "분열 사격", "눈사태 사격"],
+  preferSkillList: ["분열 사격", "눈사태 사격"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+    },
+    "공격 강화γ": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 11,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 6,
+        },
+      ],
+    },
+    "분열 사격": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+    "눈사태 사격": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SIE-X",
+      name: "공성기계 훈련장치",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "SIE-X",
+        name: "공성기계 훈련장치",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SIE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 스나이퍼 오퍼레이터 리스트 계열
 const sixStarSniperList: Sniper[] = [
   Narantuya,
@@ -3088,6 +3411,7 @@ const sixStarSniperList: Sniper[] = [
   Archetto,
   Rosmontis,
   W,
+  Rosa,
 ];
 const fiveStarSniperList: Sniper[] = [];
 const fourStarSniperList: Sniper[] = [];

@@ -3356,6 +3356,329 @@ export const Phantom: Specialist = {
   },
 };
 
+/** 아 */
+export const Aak: Specialist = {
+  id: 121,
+  name: "아",
+  imageFilename: "aak",
+  class: "Specialist",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: specialistChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: oriron,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: specialistDualchip,
+        count: 4,
+      },
+      {
+        material: D32Steel,
+        count: 4,
+      },
+      {
+        material: polymerizedGel,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["쾌속사격", "폭발제γ", "폭발제 (두리안맛)"],
+  preferSkillList: ["폭발제 (두리안맛)"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+        {
+          material: loxicKohl,
+          count: 6,
+        },
+      ],
+    },
+    쾌속사격: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 11,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+    폭발제γ: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+    },
+    "폭발제 (두리안맛)": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "GEE-X",
+      name: "모듬 과일맛 의료 상자",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "GEE-X",
+        name: "모듬 과일맛 의료 상자",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "GEE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
   ThornsTheLodestar,
@@ -3372,6 +3695,7 @@ const sixStarSpecialistList: Specialist[] = [
   Gladiia,
   Weedy,
   Phantom,
+  Aak,
 ];
 const fiveStarSpecialistList: Specialist[] = [];
 const fourStarSpecialistList: Specialist[] = [];

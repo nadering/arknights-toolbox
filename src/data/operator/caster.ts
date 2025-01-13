@@ -2530,6 +2530,385 @@ export const Dusk: Caster = {
   },
 };
 
+/** 케오베 */
+export const Ceobe: Caster = {
+  id: 123,
+  name: "케오베",
+  imageFilename: "ceobe",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 8,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["'엄청 차가운' 도끼", "'엄청 뜨거운' 칼", "'엄청 무거운' 창"],
+  preferSkillList: ["'엄청 뜨거운' 칼"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: aketon,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+    },
+    "'엄청 차가운' 도끼": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 7,
+        },
+      ],
+    },
+    "'엄청 뜨거운' 칼": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+    "'엄청 무거운' 창": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 11,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "CCR-X",
+      name: "'바짝 마른 빵'",
+    },
+    {
+      type: "CCR-Y",
+      name: "'내가 만든 칼'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "CCR-X",
+        name: "'바짝 마른 빵'",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "CCR-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "CCR-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
   LapplandTheDecadenza,
@@ -2543,6 +2922,7 @@ const sixStarCasterList: Caster[] = [
   Carnelian,
   Passenger,
   Dusk,
+  Ceobe,
 ];
 const fiveStarCasterList: Caster[] = [];
 const fourStarCasterList: Caster[] = [];
