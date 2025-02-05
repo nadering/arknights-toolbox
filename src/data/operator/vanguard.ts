@@ -2037,6 +2037,268 @@ export const Bagpipe: Vanguard = {
   },
 };
 
+// 5성
+/** 미틈 */
+export const Mitm: Vanguard = {
+  id: 336,
+  name: "미틈",
+  imageFilename: "mitm",
+  class: "Vanguard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: vanguardChip!,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 3,
+      },
+      {
+        material: crystallineCircuit,
+        count: 6,
+      },
+      {
+        material: orironCluster,
+        count: 12,
+      },
+    ],
+  },
+  skillList: ["원격 해체", "내압 출력"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+      ],
+    },
+    "원격 해체": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: coagulatingGel,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: refinedSolvent,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+      ],
+    },
+    "내압 출력": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: optimizedDevice,
+          count: 2,
+        },
+        {
+          material: loxicKohl,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "TAC-Y",
+      name: "속으로 감춘 칼날",
+    },
+  ],
+  moduleMaterials: {
+    "TAC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 4성
 /** 머틀 */
 export const Myrtle: Vanguard = {
@@ -2157,7 +2419,7 @@ const sixStarVanguardList: Vanguard[] = [
   Saga,
   Bagpipe,
 ];
-const fiveStarVanguardList: Vanguard[] = [];
+const fiveStarVanguardList: Vanguard[] = [Mitm];
 const fourStarVanguardList: Vanguard[] = [Myrtle];
 const threeStarVanguardList: Vanguard[] = [];
 const twoStarVanguardList: Vanguard[] = [];

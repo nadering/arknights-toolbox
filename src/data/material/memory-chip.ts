@@ -43,7 +43,7 @@ export let specialistChip: Material | undefined;
 vanguardChip = {
   id: "3211",
   name: "뱅가드 칩",
-  objectName: "vanguardChip",
+  objectName: "vanguardChip!",
   imageFilename: "vanguard-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -54,7 +54,7 @@ vanguardChip = {
 guardChip = {
   id: "3221",
   name: "가드 칩",
-  objectName: "guardChip",
+  objectName: "guardChip!",
   imageFilename: "guard-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -65,7 +65,7 @@ guardChip = {
 defenderChip = {
   id: "3231",
   name: "디펜더 칩",
-  objectName: "defenderChip",
+  objectName: "defenderChip!",
   imageFilename: "defender-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -76,7 +76,7 @@ defenderChip = {
 sniperChip = {
   id: "3241",
   name: "스나이퍼 칩",
-  objectName: "sniperChip",
+  objectName: "sniperChip!",
   imageFilename: "sniper-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -87,7 +87,7 @@ sniperChip = {
 casterChip = {
   id: "3251",
   name: "캐스터 칩",
-  objectName: "casterChip",
+  objectName: "casterChip!",
   imageFilename: "caster-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -98,7 +98,7 @@ casterChip = {
 medicChip = {
   id: "3261",
   name: "메딕 칩",
-  objectName: "medicChip",
+  objectName: "medicChip!",
   imageFilename: "medic-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -109,7 +109,7 @@ medicChip = {
 supporterChip = {
   id: "3271",
   name: "서포터 칩",
-  objectName: "supporterChip",
+  objectName: "supporterChip!",
   imageFilename: "supporter-chip",
   type: "Memory-Chip",
   tier: 3,
@@ -120,7 +120,7 @@ supporterChip = {
 specialistChip = {
   id: "3281",
   name: "스페셜리스트 칩",
-  objectName: "specialistChip",
+  objectName: "specialistChip!",
   imageFilename: "specialist-chip",
   type: "Memory-Chip",
   tier: 3,

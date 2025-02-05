@@ -763,7 +763,7 @@ export const Kaltsit: Medic = {
     },
     {
       type: "ISW-α",
-      name: "켈시의 헌정 배지",
+      name: "켈시의 특별 한정 배지",
     },
   ],
   preferModuleList: [
@@ -771,6 +771,13 @@ export const Kaltsit: Medic = {
       module: {
         type: "PHY-Y",
         name: "의사",
+      },
+      level: 3,
+    },
+    {
+      module: {
+        type: "ISW-α",
+        name: "켈시의 특별 한정 배지",
       },
       level: 3,
     },

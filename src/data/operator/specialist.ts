@@ -3216,14 +3216,14 @@ export const Phantom: Specialist = {
     },
     {
       type: "ISW-α",
-      name: "팬텀의 헌정 배지",
+      name: "팬텀의 특별 한정 배지",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "ISW-α",
-        name: "팬텀의 헌정 배지",
+        name: "팬텀의 특별 한정 배지",
       },
       level: 3,
     },
@@ -3679,6 +3679,211 @@ export const Aak: Specialist = {
   },
 };
 
+// 5성
+/** 틴맨 */
+export const TinMan: Specialist = {
+  id: 338,
+  name: "틴맨",
+  imageFilename: "tin-man",
+  class: "Specialist",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: specialistChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: specialistDualchip,
+        count: 3,
+      },
+      {
+        material: ketonColloid,
+        count: 7,
+      },
+      {
+        material: orirockCluster,
+        count: 18,
+      },
+    ],
+  },
+  skillList: ["'올드 켈리'", "'빅 래리'"],
+  preferSkillList: ["'빅 래리'"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: loxicKohl,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+        {
+          material: transmutedSalt,
+          count: 3,
+        },
+      ],
+    },
+    "'올드 켈리'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 1,
+        },
+      ],
+    },
+    "'빅 래리'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
   ThornsTheLodestar,
@@ -3697,7 +3902,7 @@ const sixStarSpecialistList: Specialist[] = [
   Phantom,
   Aak,
 ];
-const fiveStarSpecialistList: Specialist[] = [];
+const fiveStarSpecialistList: Specialist[] = [TinMan];
 const fourStarSpecialistList: Specialist[] = [];
 const threeStarSpecialistList: Specialist[] = [];
 const twoStarSpecialistList: Specialist[] = [];

@@ -7,6 +7,7 @@ import {
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
+  crystallineComponent,
   crystallineElectronicUnit,
   cuttingFluidSolution,
   cyclicenePrefab,
@@ -40,6 +41,7 @@ import {
   orironCluster,
   orironShard,
   polyester,
+  polyesterLump,
   polyesterPack,
   polyketon,
   polymerizationPreparation,
@@ -53,6 +55,7 @@ import {
   skillSummary3,
   solidifiedFiberBoard,
   sugar,
+  sugarLump,
   sugarPack,
   sugarSubstitute,
   transmutedSalt,
@@ -84,10 +87,268 @@ export interface Caster extends Operator {
 }
 
 // 6성
-/** 라플란드 더 데카덴차 */
+/** 블레이즈 디 이그나이팅 스파크 (술무라) */
+export const BlazeTheIgnitingSpark: Caster = {
+  id: 358,
+  name: "블레이즈 디 이그나이팅 스파크",
+  nicknameList: ["술무라"],
+  imageFilename: "blaze-the-igniting-spark",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 12,
+      },
+      {
+        material: sugar,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: nucleicCrystalSinter,
+        count: 4,
+      },
+      {
+        material: crystallineCircuit,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["화끈한 지원", "끓어오르는 피의 불바다", "만악의 소각장"],
+  preferSkillList: ["끓어오르는 피의 불바다", "만악의 소각장"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 6,
+        },
+        {
+          material: orironShard,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: loxicKohl,
+          count: 5,
+        },
+        {
+          material: transmutedSalt,
+          count: 3,
+        },
+      ],
+    },
+    "화끈한 지원": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: crystallineComponent,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+    },
+    "끓어오르는 피의 불바다": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 6,
+        },
+      ],
+    },
+    "만악의 소각장": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
+/** 라플란드 더 데카덴차 (꼬술이) */
 export const LapplandTheDecadenza: Caster = {
   id: 350,
   name: "라플란드 더 데카덴차",
+  nicknameList: ["꼬술이"],
   imageFilename: "lappland-the-decadenza",
   class: "Caster",
   branch: "Mech-Accord",
@@ -195,7 +456,7 @@ export const LapplandTheDecadenza: Caster = {
         type: "FUN-X",
         name: "늑대의 시간",
       },
-      level: 1,
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -857,7 +1118,10 @@ export const Lin: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "PLX-X", name: "'슬기로움'" }],
+  moduleList: [
+    { type: "PLX-X", name: "'슬기로움'" },
+    { type: "PLX-Y", name: "'정과 의'" },
+  ],
   preferModuleList: [
     {
       module: {
@@ -884,6 +1148,25 @@ export const Lin: Caster = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "PLX-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -2405,6 +2688,10 @@ export const Dusk: Caster = {
       type: "SPC-Y",
       name: "'잠 못 이루는 밤'",
     },
+    {
+      type: "ISW-α",
+      name: "시의 특별 한정 배지",
+    },
   ],
   preferModuleList: [
     {
@@ -2418,6 +2705,13 @@ export const Dusk: Caster = {
       module: {
         type: "SPC-Y",
         name: "'잠 못 이루는 밤'",
+      },
+      level: 3,
+    },
+    {
+      module: {
+        type: "ISW-α",
+        name: "시의 특별 한정 배지",
       },
       level: 3,
     },
@@ -2524,6 +2818,26 @@ export const Dusk: Caster = {
         {
           material: LMD,
           count: 120000,
+        },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
         },
       ],
     },
@@ -2909,8 +3223,388 @@ export const Ceobe: Caster = {
   },
 };
 
+/** 모스티마 */
+export const Mostima: Caster = {
+  id: 112,
+  name: "모스티마",
+  imageFilename: "mostima",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 7,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: grindstonePentahydrate,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["공격 강화γ", "혼돈의 시간의 자물쇠", "질서의 시간의 열쇠"],
+  preferSkillList: ["질서의 시간의 열쇠"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+    },
+    "공격 강화γ": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 5,
+        },
+      ],
+    },
+    "혼돈의 시간의 자물쇠": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 6,
+        },
+      ],
+    },
+    "질서의 시간의 열쇠": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SPC-X",
+      name: "베테랑 메신저 커스텀 망토",
+    },
+    {
+      type: "SPC-Y",
+      name: "자물쇠와 열쇠의 집",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "SPC-Y",
+        name: "자물쇠와 열쇠의 집",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SPC-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "SPC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
+  BlazeTheIgnitingSpark,
   LapplandTheDecadenza,
   Marcille,
   Nymph,
@@ -2923,6 +3617,7 @@ const sixStarCasterList: Caster[] = [
   Passenger,
   Dusk,
   Ceobe,
+  Mostima,
 ];
 const fiveStarCasterList: Caster[] = [];
 const fourStarCasterList: Caster[] = [];

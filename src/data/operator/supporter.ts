@@ -192,7 +192,7 @@ export const CivilightEterna: Supporter = {
   },
   moduleList: [{ type: "BAR-X", name: "이야기의 결말" }],
   preferModuleList: [
-    { module: { type: "BAR-X", name: "이야기의 결말" }, level: 2 },
+    { module: { type: "BAR-X", name: "이야기의 결말" }, level: 1 },
   ],
   moduleMaterials: {
     "BAR-X": {

@@ -51,7 +51,9 @@ import {
   skillSummary1,
   skillSummary2,
   skillSummary3,
+  solidifiedFiberBoard,
   sugar,
+  sugarPack,
   sugarSubstitute,
   transmutedSalt,
   transmutedSaltAgglomerate,
@@ -82,6 +84,262 @@ export interface Defender extends Operator {
 }
 
 // 6성
+/** 위 */
+export const Yu: Defender = {
+  id: 357,
+  name: "위",
+  imageFilename: "yu",
+  class: "Defender",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: defenderChip!,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 6,
+      },
+      {
+        material: sugar,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: defenderDualchip,
+        count: 4,
+      },
+      {
+        material: D32Steel,
+        count: 4,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["오늘의 주인공", "정성이 담긴 접대", "부엌의 천지"],
+  preferSkillList: ["정성이 담긴 접대", "부엌의 천지"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: integratedDevice,
+          count: 5,
+        },
+        {
+          material: polyesterPack,
+          count: 2,
+        },
+      ],
+    },
+    "오늘의 주인공": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 7,
+        },
+      ],
+    },
+    "정성이 담긴 접대": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 2,
+        },
+      ],
+    },
+    "부엌의 천지": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 10,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 슈 */
 export const Shu: Defender = {
   id: 314,
@@ -1623,6 +1881,10 @@ export const Eunectes: Defender = {
       type: "HES-Y",
       name: "'작고 못생긴 것'",
     },
+    {
+      type: "RA-α",
+      name: "유넥티스의 특별 한정 배지",
+    },
   ],
   preferModuleList: [
     {
@@ -1631,6 +1893,13 @@ export const Eunectes: Defender = {
         name: "주마마의 공구함",
       },
       level: 1,
+    },
+    {
+      module: {
+        type: "RA-α",
+        name: "유넥티스의 특별 한정 배지",
+      },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -1730,6 +1999,405 @@ export const Eunectes: Defender = {
         },
         {
           material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "RA-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+    },
+  },
+};
+
+/** 니엔 */
+export const Nian: Defender = {
+  id: 120,
+  name: "니엔",
+  imageFilename: "nian",
+  class: "Defender",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: defenderChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 12,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: defenderDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["달아오른 주석", "동의 인장", "철의 방어"],
+  preferSkillList: ["동의 인장"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: coagulatingGel,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironCluster,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+    },
+    "달아오른 주석": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: loxicKohl,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+    },
+    "동의 인장": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 7,
+        },
+      ],
+    },
+    "철의 방어": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PRO-X",
+      name: "혼돈의 진열",
+    },
+    {
+      type: "PRO-Y",
+      name: "'노크 금지'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "PRO-X",
+        name: "혼돈의 진열",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "PRO-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "PRO-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
           count: 4,
         },
         {
@@ -2006,6 +2674,7 @@ export const Underflow: Defender = {
 
 // 디펜더 오퍼레이터 리스트 계열
 const sixStarDefenderList: Defender[] = [
+  Yu,
   Shu,
   JessicaTheLiberated,
   Penance,
@@ -2013,6 +2682,7 @@ const sixStarDefenderList: Defender[] = [
   Mudrock,
   Blemishine,
   Eunectes,
+  Nian,
 ];
 const fiveStarDefenderList: Defender[] = [Underflow];
 const fourStarDefenderList: Defender[] = [];
