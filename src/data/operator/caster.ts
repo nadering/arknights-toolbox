@@ -642,8 +642,8 @@ export const Nymph: Caster = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["고백 공격", "엄습하는 공포", "상심 방지"],
-  preferSkillList: ["엄습하는 공포", "상심 방지"],
+  skillList: ["디얄 일격", "공포의 폭파", "마음의 붕괴"],
+  preferSkillList: ["공포의 폭파", "마음의 붕괴"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -671,7 +671,7 @@ export const Nymph: Caster = {
         { material: integratedDevice, count: 3 },
       ],
     },
-    "고백 공격": {
+    "디얄 일격": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: orironBlock, count: 4 },
@@ -688,7 +688,7 @@ export const Nymph: Caster = {
         { material: RMA7024, count: 6 },
       ],
     },
-    "엄습하는 공포": {
+    "공포의 폭파": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: optimizedDevice, count: 4 },
@@ -705,7 +705,7 @@ export const Nymph: Caster = {
         { material: ketonColloid, count: 2 },
       ],
     },
-    "상심 방지": {
+    "마음의 붕괴": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: grindstonePentahydrate, count: 4 },
