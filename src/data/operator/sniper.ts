@@ -89,7 +89,7 @@ export interface Sniper extends Operator {
 // 6성
 /** 나란투야 */
 export const Narantuya: Sniper = {
-  id: 337,
+  id: 334,
   name: "나란투야",
   imageFilename: "narantuya",
   class: "Sniper",

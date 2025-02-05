@@ -222,7 +222,7 @@ export const VinaVictoria: Guard = {
 
 /** 페페 */
 export const Pepe: Guard = {
-  id: 338,
+  id: 335,
   name: "페페",
   imageFilename: "pepe",
   class: "Guard",

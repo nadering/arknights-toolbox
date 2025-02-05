@@ -621,7 +621,7 @@ export const Marcille: Caster = {
 
 /** 님프 */
 export const Nymph: Caster = {
-  id: 333,
+  id: 337,
   name: "님프",
   imageFilename: "nymph",
   class: "Caster",
