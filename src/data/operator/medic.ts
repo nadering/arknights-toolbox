@@ -192,7 +192,7 @@ export const EyjafjallaTheHvítAska: Medic = {
   },
   moduleList: [{ type: "WDM-X", name: "간직하고 싶은 소리" }],
   preferModuleList: [
-    { module: { type: "WDM-X", name: "간직하고 싶은 소리" }, level: 1 },
+    { module: { type: "WDM-X", name: "간직하고 싶은 소리" }, level: 3 },
   ],
   moduleMaterials: {
     "WDM-X": {
