@@ -2445,7 +2445,7 @@ export const SandReckoner: Supporter = {
   moduleList: [
     {
       type: "SUM-X",
-      name: "과거의 자취",
+      name: "과거의 흔적",
     },
   ],
   moduleMaterials: {
