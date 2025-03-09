@@ -2038,6 +2038,277 @@ export const Bagpipe: Vanguard = {
 };
 
 // 5성
+/** 칠책 */
+export const Chilchuck: Vanguard = {
+  id: 339,
+  name: "칠책",
+  imageFilename: "chilchuck",
+  class: "Vanguard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: vanguardChip!,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 3,
+      },
+      {
+        material: refinedSolvent,
+        count: 9,
+      },
+      {
+        material: RMA7012,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["피킹 툴", "임기응변"],
+  preferSkillList: ["피킹 툴"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 1,
+        },
+      ],
+    },
+    "피킹 툴": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: orirockConcentration,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+    임기응변: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "AGE-X",
+      name: "오리지널 피킹 툴",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "AGE-X",
+        name: "오리지널 피킹 툴",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "AGE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 /** 미틈 */
 export const Mitm: Vanguard = {
   id: 336,
@@ -2240,7 +2511,7 @@ export const Mitm: Vanguard = {
   moduleList: [
     {
       type: "TAC-Y",
-      name: "속으로 감춘 칼날",
+      name: "감춰진 예리함",
     },
   ],
   moduleMaterials: {
@@ -2419,7 +2690,7 @@ const sixStarVanguardList: Vanguard[] = [
   Saga,
   Bagpipe,
 ];
-const fiveStarVanguardList: Vanguard[] = [Mitm];
+const fiveStarVanguardList: Vanguard[] = [Chilchuck, Mitm];
 const fourStarVanguardList: Vanguard[] = [Myrtle];
 const threeStarVanguardList: Vanguard[] = [];
 const twoStarVanguardList: Vanguard[] = [];

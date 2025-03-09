@@ -1530,7 +1530,7 @@ export const ChenTheHolungday: Sniper = {
   moduleList: [
     {
       type: "RPR-X",
-      name: "샌드비치 배틀 세트",
+      name: "해변 전투 세트",
     },
   ],
   moduleMaterials: {

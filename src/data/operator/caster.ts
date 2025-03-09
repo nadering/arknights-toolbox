@@ -505,7 +505,7 @@ export const Marcille: Caster = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["수재의 실력", "사역마 소환", "폭발 마법"],
+  skillList: ["수재의 실력", "사역마 소환", "폭파 마법"],
   preferSkillList: ["사역마 소환"],
   skillUpgradeMaterials: {
     common: {
@@ -568,7 +568,7 @@ export const Marcille: Caster = {
         { material: ketonColloid, count: 5 },
       ],
     },
-    "폭발 마법": {
+    "폭파 마법": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: polymerizedGel, count: 4 },
@@ -586,12 +586,12 @@ export const Marcille: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "SPC-Y", name: "천재의 장서" }],
+  moduleList: [{ type: "SPC-Y", name: "수재의 장서" }],
   preferModuleList: [
     {
       module: {
         type: "SPC-Y",
-        name: "천재의 장서",
+        name: "수재의 장서",
       },
       level: 3,
     },
