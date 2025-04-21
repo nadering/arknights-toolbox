@@ -1,5 +1,6 @@
 import Operator from "./operator";
 import {
+  aggregateCyclicene,
   aketon,
   bipolarNanoflake,
   casterChip,
@@ -87,6 +88,262 @@ export interface Caster extends Operator {
 }
 
 // 6성
+/** 네크라스 */
+export const Necrass: Caster = {
+  id: 363,
+  name: "네크라스",
+  imageFilename: "necrass",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: transmutedSaltAgglomerate,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["부정한 염원", "사멸", "절명적 격상"],
+  preferSkillList: ["절명적 격상"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+    },
+    "부정한 염원": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 2,
+        },
+      ],
+    },
+    사멸: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 1,
+        },
+      ],
+    },
+    "절명적 격상": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 블레이즈 디 이그나이팅 스파크 (술무라) */
 export const BlazeTheIgnitingSpark: Caster = {
   id: 358,
@@ -3604,6 +3861,7 @@ export const Mostima: Caster = {
 
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
+  Necrass,
   BlazeTheIgnitingSpark,
   LapplandTheDecadenza,
   Marcille,

@@ -710,7 +710,10 @@ export const Pozëmka: Sniper = {
       ],
     },
   },
-  moduleList: [{ type: "ARC-Y", name: "타자기 리본" }],
+  moduleList: [
+    { type: "ARC-X", name: "형식미" },
+    { type: "ARC-Y", name: "타자기 리본" },
+  ],
   preferModuleList: [
     {
       module: {
@@ -721,6 +724,25 @@ export const Pozëmka: Sniper = {
     },
   ],
   moduleMaterials: {
+    "ARC-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
     "ARC-Y": {
       1: [
         { material: moduleDataBlock, count: 4 },

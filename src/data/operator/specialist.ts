@@ -340,8 +340,28 @@ export const ThornsTheLodestar: Specialist = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "ALC-X", name: "세 면의 금화" }],
+  moduleMaterials: {
+    "ALC-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 크라운슬레이어 */
@@ -3880,8 +3900,28 @@ export const TinMan: Specialist = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "ALC-X", name: "'골상학'" }],
+  moduleMaterials: {
+    "ALC-X": {
+      1: [
+        { material: moduleDataBlock, count: 2 },
+        { material: cuttingFluidSolution, count: 3 },
+        { material: LMD, count: 40000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 2 },
+        { material: dataSupplementStick, count: 20 },
+        { material: solidifiedFiberBoard, count: 4 },
+        { material: LMD, count: 50000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 2 },
+        { material: dataSupplementInstrument, count: 8 },
+        { material: polymerizedGel, count: 5 },
+        { material: LMD, count: 60000 },
+      ],
+    },
+  },
 };
 
 // 스페셜리스트 오퍼레이터 리스트 계열

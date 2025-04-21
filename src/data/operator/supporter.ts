@@ -1211,6 +1211,10 @@ export const Gnosis: Supporter = {
       type: "UMD-X",
       name: "'약속'",
     },
+    {
+      type: "UMD-Y",
+      name: "1번 프로젝트 모델",
+    },
   ],
   preferModuleList: [
     {
@@ -1266,6 +1270,58 @@ export const Gnosis: Supporter = {
         },
         {
           material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "UMD-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
           count: 4,
         },
         {
