@@ -368,8 +368,8 @@ export const LapplandTheDecadenza: Caster = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["나태한 자의 비명", "맹렬한 사냥", "종막 - 대단원"],
-  preferSkillList: ["종막 - 대단원"],
+  skillList: ["나태한 자의 비명", "사냥의 질주", "종막 - 재난"],
+  preferSkillList: ["종막 - 재난"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -414,7 +414,7 @@ export const LapplandTheDecadenza: Caster = {
         { material: ketonColloid, count: 1 },
       ],
     },
-    "맹렬한 사냥": {
+    "사냥의 질주": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: grindstonePentahydrate, count: 4 },
@@ -431,7 +431,7 @@ export const LapplandTheDecadenza: Caster = {
         { material: transmutedSaltAgglomerate, count: 6 },
       ],
     },
-    "종막 - 대단원": {
+    "종막 - 재난": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: RMA7024, count: 4 },

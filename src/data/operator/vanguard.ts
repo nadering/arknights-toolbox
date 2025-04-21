@@ -106,8 +106,8 @@ export const Vulpisfoglia: Vanguard = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["가벼운 징계", "단검 낙하 고문", "은밀한 여우의 기교"],
-  preferSkillList: ["은밀한 여우의 기교"],
+  skillList: ["가벼운 징계", "칼날 낙하 고문", "은밀한 여우의 예술"],
+  preferSkillList: ["은밀한 여우의 예술"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -152,7 +152,7 @@ export const Vulpisfoglia: Vanguard = {
         { material: polymerizedGel, count: 7 },
       ],
     },
-    "단검 낙하 고문": {
+    "칼날 낙하 고문": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: cyclicenePrefab, count: 4 },
@@ -169,7 +169,7 @@ export const Vulpisfoglia: Vanguard = {
         { material: orirockConcentration, count: 7 },
       ],
     },
-    "은밀한 여우의 기교": {
+    "은밀한 여우의 예술": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: refinedSolvent, count: 4 },

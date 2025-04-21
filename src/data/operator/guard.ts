@@ -139,7 +139,7 @@ export const Entelechia: Guard = {
     ],
   },
   skillList: ["장미빛 그림자의 흔적", "담홍색 벽", "영혼과 욕망의 이별"],
-  preferSkillList: ["영혼과 욕망의 이별"],
+  preferSkillList: ["담홍색 벽", "영혼과 욕망의 이별"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -429,8 +429,8 @@ export const VinaVictoria: Guard = {
       { material: LMD, count: 180000 },
     ],
   },
-  skillList: ["다시금 내리쬐는 햇빛", "고향으로의 귀환", "나의 이름으로"],
-  preferSkillList: ["나의 이름으로"],
+  skillList: ["영광을 되찾아", "고향을 향해", "모두 내 이름으로"],
+  preferSkillList: ["모두 내 이름으로"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -458,7 +458,7 @@ export const VinaVictoria: Guard = {
         { material: fuscousFiber, count: 4 },
       ],
     },
-    "다시금 내리쬐는 햇빛": {
+    "영광을 되찾아": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: orirockConcentration, count: 4 },
@@ -475,7 +475,7 @@ export const VinaVictoria: Guard = {
         { material: orironBlock, count: 1 },
       ],
     },
-    "고향으로의 귀환": {
+    "고향을 향해": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: incandescentAlloyBlock, count: 4 },
@@ -492,7 +492,7 @@ export const VinaVictoria: Guard = {
         { material: cuttingFluidSolution, count: 6 },
       ],
     },
-    "나의 이름으로": {
+    "모두 내 이름으로": {
       8: [
         { material: skillSummary3, count: 8 },
         { material: ketonColloid, count: 4 },
