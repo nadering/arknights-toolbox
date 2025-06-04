@@ -4717,6 +4717,385 @@ export const Hellagur: Guard = {
   },
 };
 
+/** 첸 */
+export const Chen: Guard = {
+  id: 94,
+  name: "첸",
+  imageFilename: "ch'en",
+  class: "Guard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 12,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: whiteHorseKohl,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["칼집 공격", "적소·발도", "적소·절영"],
+  preferSkillList: ["적소·발도", "적소·절영"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: loxicKohl,
+          count: 5,
+        },
+        {
+          material: aketon,
+          count: 4,
+        },
+      ],
+    },
+    "칼집 공격": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 7,
+        },
+      ],
+    },
+    "적소·발도": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: loxicKohl,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 6,
+        },
+      ],
+    },
+    "적소·절영": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SWO-X",
+      name: "로도스 아일랜드 제식검",
+    },
+    {
+      type: "SWO-Y",
+      name: "옛 시절",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "SWO-X",
+        name: "로도스 아일랜드 제식검",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SWO-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "SWO-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 스카디 */
 export const Skadi: Guard = {
   id: 89,
@@ -4872,6 +5251,330 @@ export const Skadi: Guard = {
         { material: dataSupplementInstrument, count: 20 },
         { material: crystallineElectronicUnit, count: 4 },
         { material: LMD, count: 120000 },
+      ],
+    },
+  },
+};
+
+/** 실버애쉬 (은재) */
+export const Silverash: Guard = {
+  id: 80,
+  name: "실버애쉬",
+  nicknameList: ["은재"],
+  imageFilename: "silverash",
+  class: "Guard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: D32Steel,
+        count: 4,
+      },
+      {
+        material: whiteHorseKohl,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["강타γ", "히라 생존 법칙", "진은참"],
+  preferSkillList: ["진은참"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 6,
+        },
+        {
+          material: orironShard,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugarPack,
+          count: 7,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polyesterPack,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+    },
+    강타γ: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 7,
+        },
+      ],
+    },
+    "히라 생존 법칙": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterPack,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: optimizedDevice,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 6,
+        },
+      ],
+    },
+    진은참: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "LOR-X",
+      name: "히라 파울케어 키트",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "LOR-X",
+        name: "히라 파울케어 키트",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "LOR-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
       ],
     },
   },
@@ -5163,7 +5866,9 @@ const sixStarGuardList: Guard[] = [
   Thorns,
   Blaze,
   Hellagur,
+  Chen,
   Skadi,
+  Silverash,
 ];
 const fiveStarGuardList: Guard[] = [Laios];
 const fourStarGuardList: Guard[] = [];

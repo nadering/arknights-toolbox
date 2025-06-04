@@ -56,6 +56,7 @@ import {
   skillSummary2,
   skillSummary3,
   sugar,
+  sugarLump,
   sugarPack,
   sugarSubstitute,
   transmutedSalt,
@@ -910,6 +911,756 @@ export const Kaltsit: Medic = {
   },
 };
 
+/** 샤이닝 */
+export const Shining: Medic = {
+  id: 81,
+  name: "샤이닝",
+  imageFilename: "shining",
+  class: "Medic",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: medicChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 6,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: medicDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: orironBlock,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["신조", "자동 엄호", "신조의 역장"],
+  preferSkillList: ["신조의 역장"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: manganeseOre,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+    },
+    신조: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+      ],
+    },
+    "자동 엄호": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 5,
+        },
+      ],
+    },
+    "신조의 역장": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PHY-X",
+      name: "'사도'",
+    },
+    {
+      type: "PHY-Y",
+      name: "바싹 마른 검집",
+    },
+  ],
+  moduleMaterials: {
+    "PHY-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "PHY-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 나이팅게일 (팅게) */
+export const Nightingale: Medic = {
+  id: 79,
+  name: "나이팅게일",
+  nicknameList: ["팅게"],
+  imageFilename: "nightingale",
+  class: "Medic",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: medicChip!,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 6,
+      },
+      {
+        material: oriron,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: medicDualchip,
+        count: 4,
+      },
+      {
+        material: D32Steel,
+        count: 4,
+      },
+      {
+        material: ketonColloid,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["치료 강화γ", "아츠 실드", "성역"],
+  preferSkillList: ["성역"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+      ],
+    },
+    "치료 강화γ": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+    "아츠 실드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+    성역: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "RIN-X",
+      name: "'갇혀버린 희망'",
+    },
+    {
+      type: "RIN-Y",
+      name: "'밤의 노래'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "RIN-X",
+        name: "'갇혀버린 희망'",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "RIN-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "RIN-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 5성
 /** 파피루스 */
 export const Papyrus: Medic = {
@@ -1428,6 +2179,8 @@ const sixStarMedicList: Medic[] = [
   ReedTheFlameShadow,
   Lumen,
   Kaltsit,
+  Shining,
+  Nightingale,
 ];
 const fiveStarMedicList: Medic[] = [Papyrus, AmiyaMedic];
 const fourStarMedicList: Medic[] = [];

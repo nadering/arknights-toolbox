@@ -3800,6 +3800,376 @@ export const Schwarz: Sniper = {
   },
 };
 
+/** 엑시아 */
+export const Exusiai: Sniper = {
+  id: 85,
+  name: "엑시아",
+  imageFilename: "exusiai",
+  class: "Sniper",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: sniperChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 12,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: sniperDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: sugarLump,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["어설트 모드", "슈팅 모드", "과부하 모드"],
+  preferSkillList: ["과부하 모드"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orironCluster,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+        {
+          material: loxicKohl,
+          count: 6,
+        },
+      ],
+    },
+    "어설트 모드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 6,
+        },
+      ],
+    },
+    "슈팅 모드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 7,
+        },
+      ],
+    },
+    "과부하 모드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "MAR-X",
+      name: "엑시아의 걸작",
+    },
+    {
+      type: "MAR-Y",
+      name: "웰컴 투 펭귄 로지스틱스",
+    },
+  ],
+  moduleMaterials: {
+    "MAR-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "MAR-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 스나이퍼 오퍼레이터 리스트 계열
 const sixStarSniperList: Sniper[] = [
   Narantuya,
@@ -3816,6 +4186,7 @@ const sixStarSniperList: Sniper[] = [
   W,
   Rosa,
   Schwarz,
+  Exusiai,
 ];
 const fiveStarSniperList: Sniper[] = [];
 const fourStarSniperList: Sniper[] = [];

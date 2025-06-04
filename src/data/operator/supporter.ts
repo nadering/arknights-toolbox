@@ -40,6 +40,7 @@ import {
   orironCluster,
   orironShard,
   polyester,
+  polyesterLump,
   polyesterPack,
   polyketon,
   polymerizationPreparation,
@@ -53,6 +54,7 @@ import {
   skillSummary3,
   solidifiedFiberBoard,
   sugar,
+  sugarLump,
   sugarPack,
   sugarSubstitute,
   supporterChip,
@@ -2036,6 +2038,793 @@ export const Suzuran: Supporter = {
   },
 };
 
+/** 마젤란 */
+export const Magallan: Supporter = {
+  id: 99,
+  name: "마젤란",
+  imageFilename: "magallan",
+  class: "Supporter",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 7,
+      },
+      {
+        material: polyester,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: manganeseTrihydrate,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["고효율 냉각 모드", "레이저 채굴 모드", "무장 타격 모드"],
+  preferSkillList: ["고효율 냉각 모드", "무장 타격 모드"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+      ],
+    },
+    "고효율 냉각 모드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 6,
+        },
+      ],
+    },
+    "레이저 채굴 모드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+    "무장 타격 모드": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SUM-X",
+      name: "프로 드론 조작 모듈",
+    },
+    {
+      type: "SUM-Y",
+      name: "교육용 드래곤플라이 드론",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "SUM-X",
+        name: "프로 드론 조작 모듈",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "SUM-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "SUM-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 안젤리나 (젤리) */
+export const Angelina: Supporter = {
+  id: 76,
+  name: "안젤리나",
+  nicknameList: ["젤리"],
+  imageFilename: "angelina",
+  class: "Supporter",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 7,
+      },
+      {
+        material: sugar,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: sugarLump,
+        count: 5,
+      },
+    ],
+  },
+  skillList: [
+    "아케인스태프·충전",
+    "아케인스태프·미립자",
+    "아케인스태프·반중력",
+  ],
+  preferSkillList: ["아케인스태프·반중력"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orironCluster,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+        {
+          material: loxicKohl,
+          count: 6,
+        },
+      ],
+    },
+    "아케인스태프·충전": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 5,
+        },
+      ],
+    },
+    "아케인스태프·미립자": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 6,
+        },
+      ],
+    },
+    "아케인스태프·반중력": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 7,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "DEC-X",
+      name: "실험용 반중력 모듈",
+    },
+    {
+      type: "DEC-Y",
+      name: "중력 교정 모듈",
+    },
+    {
+      type: "ISW-α",
+      name: "안젤리나의 특별 한정 배지",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "ISW-α",
+        name: "안젤리나의 특별 한정 배지",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "DEC-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "DEC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+    },
+  },
+};
+
 // 5성
 /** 루실라 */
 export const Lucilla: Supporter = {
@@ -2570,6 +3359,8 @@ const sixStarSupporterList: Supporter[] = [
   Gnosis,
   SkadiTheCorruptingHeart,
   Suzuran,
+  Magallan,
+  Angelina,
 ];
 const fiveStarSupporterList: Supporter[] = [Lucilla, SandReckoner];
 const fourStarSupporterList: Supporter[] = [];

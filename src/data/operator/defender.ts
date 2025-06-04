@@ -17,6 +17,7 @@ import {
   defenderDualchip,
   device,
   diketon,
+  ester,
   fuscousFiber,
   grindstone,
   grindstonePentahydrate,
@@ -40,6 +41,7 @@ import {
   orironCluster,
   orironShard,
   polyester,
+  polyesterLump,
   polyesterPack,
   polyketon,
   polymerizationPreparation,
@@ -53,6 +55,7 @@ import {
   skillSummary3,
   solidifiedFiberBoard,
   sugar,
+  sugarLump,
   sugarPack,
   sugarSubstitute,
   transmutedSalt,
@@ -2409,6 +2412,764 @@ export const Nian: Defender = {
   },
 };
 
+/** 호시구마 */
+export const Hoshiguma: Defender = {
+  id: 82,
+  name: "호시구마",
+  imageFilename: "hoshiguma",
+  class: "Defender",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: defenderChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 11,
+      },
+      {
+        material: oriron,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: defenderDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: grindstonePentahydrate,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["전의 고양", "가시덤불", "반야회전참"],
+  preferSkillList: ["가시덤불"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 6,
+        },
+        {
+          material: orironShard,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+    },
+    "전의 고양": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterLump,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 6,
+        },
+      ],
+    },
+    가시덤불: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 6,
+        },
+      ],
+    },
+    반야회전참: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 7,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PRO-X",
+      name: "호신 부적",
+    },
+    {
+      type: "PRO-Y",
+      name: "친구들의 선물",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "PRO-X",
+        name: "호신 부적",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "PRO-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "PRO-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 사리아 */
+export const Saria: Defender = {
+  id: 77,
+  name: "사리아",
+  imageFilename: "saria",
+  class: "Defender",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: defenderChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: polyketon,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: defenderDualchip,
+        count: 4,
+      },
+      {
+        material: bipolarNanoflake,
+        count: 4,
+      },
+      {
+        material: manganeseTrihydrate,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["응급처치", "약제 배급", "칼슘화"],
+  preferSkillList: ["응급처치", "약제 배급", "칼슘화"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+        {
+          material: orironCluster,
+          count: 5,
+        },
+      ],
+    },
+    응급처치: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+      ],
+    },
+    "약제 배급": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+    칼슘화: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: polyesterPack,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+        {
+          material: optimizedDevice,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: RMA7024,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "GUA-X",
+      name: "방치된 복싱 글러브",
+    },
+    {
+      type: "GUA-Y",
+      name: "과학계 신성",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "GUA-X",
+        name: "방치된 복싱 글러브",
+      },
+      level: 2,
+    },
+  ],
+  moduleMaterials: {
+    "GUA-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "GUA-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 // 5성
 /** 센시 */
 export const Senshi: Defender = {
@@ -2944,6 +3705,8 @@ const sixStarDefenderList: Defender[] = [
   Blemishine,
   Eunectes,
   Nian,
+  Hoshiguma,
+  Saria,
 ];
 const fiveStarDefenderList: Defender[] = [Senshi, Underflow];
 const fourStarDefenderList: Defender[] = [];
