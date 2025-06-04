@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import {
+  Depot,
   expAtom,
   makeEmptyDepot,
   selectedOperatorsAtom,
@@ -12,7 +13,7 @@ import {
   userNeedAtom,
   userNeedInitializedAtom,
 } from "@/store";
-import { EXP } from "@/data/material";
+import { EXP, MaterialType } from "@/data/material";
 
 /** localStorage 불러오기 및 저장을 담당하는 클라이언트 레이아웃 컴포넌트 */
 export default function LocalStorageSetter() {
@@ -50,9 +51,34 @@ export default function LocalStorageSetter() {
   useEffect(() => {
     // 사용자의 현재 재료 보유량
     const userDepotSaved = localStorage.getItem("userDepot");
+
     if (userDepotSaved) {
       try {
-        setUserDepot(JSON.parse(userDepotSaved));
+        const savedDepot: Depot = JSON.parse(userDepotSaved);
+        const emptyDepot = makeEmptyDepot();
+
+        const mergedDepot: Depot = {} as Depot;
+
+        for (const type in emptyDepot) {
+          const typed = type as MaterialType;
+
+          const currentMaterials = emptyDepot[typed]; // 최신 전체 재료 리스트 (count: 0)
+          const savedMaterials = savedDepot[typed] ?? []; // 저장된 기존 재료 리스트
+
+          const mergedMaterials = currentMaterials.map((mat) => {
+            const matched = savedMaterials.find(
+              (s) => s.material.id === mat.material.id
+            );
+            return {
+              material: mat.material,
+              count: matched?.count ?? 0, // 있으면 유지, 없으면 0
+            };
+          });
+
+          mergedDepot[typed] = mergedMaterials;
+        }
+
+        setUserDepot(mergedDepot);
         setUserDepotInitialized(true);
       } catch {
         setUserDepot(makeEmptyDepot());
@@ -61,9 +87,34 @@ export default function LocalStorageSetter() {
 
     // 사용자의 필요 재료
     const userNeedSaved = localStorage.getItem("userNeed");
+
     if (userNeedSaved) {
       try {
-        setUserNeed(JSON.parse(userNeedSaved));
+        const savedNeed: Depot = JSON.parse(userNeedSaved);
+        const emptyNeed = makeEmptyDepot();
+
+        const mergedNeed: Depot = {} as Depot;
+
+        for (const type in emptyNeed) {
+          const typed = type as MaterialType;
+
+          const currentMaterials = emptyNeed[typed];
+          const savedMaterials = savedNeed[typed] ?? [];
+
+          const mergedMaterials = currentMaterials.map((mat) => {
+            const matched = savedMaterials.find(
+              (s) => s.material.id === mat.material.id
+            );
+            return {
+              material: mat.material,
+              count: matched?.count ?? 0,
+            };
+          });
+
+          mergedNeed[typed] = mergedMaterials;
+        }
+
+        setUserNeed(mergedNeed);
         setUserNeedInitialized(true);
       } catch {
         setUserNeed(makeEmptyDepot());

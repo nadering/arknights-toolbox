@@ -2,6 +2,7 @@ import Operator from "./operator";
 import {
   aggregateCyclicene,
   aketon,
+  biphasicEnantiomorphicMedium,
   bipolarNanoflake,
   coagulatingGel,
   compoundCuttingFluid,
@@ -326,7 +327,10 @@ export const Muelsyse: Vanguard = {
       ],
     },
   },
-  moduleList: [{ type: "TAC-X", name: "드레서 유동체" }],
+  moduleList: [
+    { type: "TAC-X", name: "드레서 유동체" },
+    { type: "TAC-Y", name: "사계절의 낙엽" },
+  ],
   preferModuleList: [
     {
       module: {
@@ -353,6 +357,25 @@ export const Muelsyse: Vanguard = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "TAC-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: biphasicEnantiomorphicMedium, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -463,8 +486,34 @@ export const Ines: Vanguard = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "AGE-Y", name: "뿔 '관리' 키트" }],
+  preferModuleList: [
+    {
+      module: { type: "AGE-Y", name: "뿔 '관리' 키트" },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "AGE-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: biphasicEnantiomorphicMedium, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 비질 */

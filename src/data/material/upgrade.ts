@@ -177,6 +177,16 @@ export const T2UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T3)
+/** (T3) 응결핵 */
+export const pseudocondensationNucleus: Material = {
+  id: "31093",
+  name: "응결핵",
+  objectName: "pseudocondensationNucleus",
+  imageFilename: "pseudocondensation-nucleus",
+  type: "Upgrade",
+  tier: 3,
+};
+
 /** (T3) 고리탄화수소 응집질 */
 export const aggregateCyclicene: Material = {
   id: "31083",
@@ -383,6 +393,7 @@ export const aketon: Material = {
 
 /** 정예화 재료(T3) 리스트 */
 export const T3UpgradeList: Material[] = [
+  pseudocondensationNucleus,
   aggregateCyclicene,
   fuscousFiber,
   transmutedSalt,
@@ -404,6 +415,22 @@ export const T3UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T4)
+/** (T4) 카이랄 굴절체 */
+export const chiralRefractor: Material = {
+  id: "31094",
+  name: "카이랄 굴절체",
+  objectName: "chiralRefractor",
+  imageFilename: "chiral-refractor",
+  type: "Upgrade",
+  tier: 4,
+  recipe: [
+    { material: pseudocondensationNucleus, count: 2 },
+    { material: aggregateCyclicene, count: 1 },
+    { material: sugarPack, count: 1 },
+    { material: LMD, count: 300 },
+  ],
+};
+
 /** (T4) 고리탄화수소 프리폼 */
 export const cyclicenePrefab: Material = {
   id: "31084",
@@ -692,6 +719,7 @@ export const ketonColloid: Material = {
 
 /** 정예화 재료(T4) 리스트 */
 export const T4UpgradeList: Material[] = [
+  chiralRefractor,
   cyclicenePrefab,
   solidifiedFiberBoard,
   transmutedSaltAgglomerate,
@@ -713,6 +741,22 @@ export const T4UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T5)
+/** (T5) 중상 광학 이성질체 */
+export const biphasicEnantiomorphicMedium: Material = {
+  id: "30165",
+  name: "중상 광학 이성질체",
+  objectName: "biphasicEnantiomorphicMedium",
+  imageFilename: "biphasic-enantiomorphic-medium",
+  type: "Upgrade",
+  tier: 5,
+  recipe: [
+    { material: chiralRefractor, count: 2 },
+    { material: cyclicenePrefab, count: 1 },
+    { material: solidifiedFiberBoard, count: 2 },
+    { material: LMD, count: 400 },
+  ],
+};
+
 /** (T5) 핵결정체 소결물 */
 export const nucleicCrystalSinter: Material = {
   id: "30155",
@@ -794,6 +838,7 @@ export const polymerizationPreparation: Material = {
 
 /** 정예화 재료(T5) 리스트 */
 export const T5UpgradeList: Material[] = [
+  biphasicEnantiomorphicMedium,
   nucleicCrystalSinter,
   crystallineElectronicUnit,
   D32Steel,

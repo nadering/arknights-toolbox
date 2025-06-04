@@ -5,6 +5,7 @@ import {
   bipolarNanoflake,
   casterChip,
   casterDualchip,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -22,6 +23,7 @@ import {
   fuscousFiber,
   grindstone,
   grindstonePentahydrate,
+  incandescentAlloy,
   incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
@@ -55,6 +57,7 @@ import {
   skillSummary1,
   skillSummary2,
   skillSummary3,
+  solidifiedFiberBoard,
   sugar,
   sugarLump,
   sugarPack,
@@ -86,6 +89,263 @@ export interface Medic extends Operator {
 }
 
 // 6성
+/** Mon3tr (몬삼터) */
+export const Mon3tr: Medic = {
+  id: 366,
+  name: "Mon3tr",
+  nicknameList: ["몬삼터"],
+  imageFilename: "mon3tr",
+  class: "Medic",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: medicChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 8,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: medicDualchip,
+        count: 4,
+      },
+      {
+        material: crystallineElectronicUnit,
+        count: 4,
+      },
+      {
+        material: orirockConcentration,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["책략: 초연결", "책략: 과부하", "책략: 용해"],
+  preferSkillList: ["책략: 과부하", "책략: 용해"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: damagedDevice,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugarPack,
+          count: 7,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+      ],
+    },
+    "책략: 초연결": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 10,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 6,
+        },
+      ],
+    },
+    "책략: 과부하": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 2,
+        },
+      ],
+    },
+    "책략: 용해": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 에이야퍄들라 더 크비트 아스카 (힐이야) */
 export const EyjafjallaTheHvítAska: Medic = {
   id: 288,
@@ -2175,6 +2435,7 @@ export const Hibiscus: Medic = {
 
 // 메딕 오퍼레이터 리스트 계열
 const sixStarMedicList: Medic[] = [
+  Mon3tr,
   EyjafjallaTheHvítAska,
   ReedTheFlameShadow,
   Lumen,

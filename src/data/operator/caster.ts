@@ -1088,7 +1088,10 @@ export const Logos: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "CCR-Δ", name: "협곡에서 온 필통" }],
+  moduleList: [
+    { type: "CCR-Δ", name: "협곡에서 온 필통" },
+    { type: "CCR-Y", name: "《언어 형식 백과사전》" },
+  ],
   preferModuleList: [
     {
       module: {
@@ -1099,6 +1102,25 @@ export const Logos: Caster = {
     },
   ],
   moduleMaterials: {
+    "CCR-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
     "CCR-Δ": {
       1: [
         { material: moduleDataBlock, count: 4 },

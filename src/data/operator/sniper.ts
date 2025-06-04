@@ -2,7 +2,9 @@ import Operator from "./operator";
 import {
   aggregateCyclicene,
   aketon,
+  biphasicEnantiomorphicMedium,
   bipolarNanoflake,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -87,6 +89,325 @@ export interface Sniper extends Operator {
 }
 
 // 6성
+/** 르무엔 */
+export const Lemuen: Sniper = {
+  id: 371,
+  name: "르무엔",
+  imageFilename: "lemuen",
+  class: "Sniper",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: sniperChip!,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 7,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: sniperDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["재회 인사", "고향의 초대", "예포 - 강압적 애도"],
+  preferSkillList: ["고향의 초대", "예포 - 강압적 애도"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: loxicKohl,
+          count: 5,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+      ],
+    },
+    "재회 인사": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 2,
+        },
+      ],
+    },
+    "고향의 초대": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 1,
+        },
+      ],
+    },
+    "예포 - 강압적 애도": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "DEA-Y",
+      name: "'탄창과 창호'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "DEA-Y",
+        name: "'탄창과 창호'",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "DEA-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 나란투야 */
 export const Narantuya: Sniper = {
   id: 334,
@@ -2253,6 +2574,10 @@ export const Archetto: Sniper = {
       type: "MAR-Y",
       name: "'내일의 씨앗'",
     },
+    {
+      type: "ISW-α",
+      name: "아르케토의 특별 한정 배지",
+    },
   ],
   preferModuleList: [
     {
@@ -2261,6 +2586,13 @@ export const Archetto: Sniper = {
         name: "'내일의 씨앗'",
       },
       level: 1,
+    },
+    {
+      module: {
+        type: "ISW-α",
+        name: "아르케토의 특별 한정 배지",
+      },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -2365,6 +2697,26 @@ export const Archetto: Sniper = {
         {
           material: LMD,
           count: 120000,
+        },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
         },
       ],
     },
@@ -4172,6 +4524,7 @@ export const Exusiai: Sniper = {
 
 // 스나이퍼 오퍼레이터 리스트 계열
 const sixStarSniperList: Sniper[] = [
+  Lemuen,
   Narantuya,
   Wisadel,
   Ray,

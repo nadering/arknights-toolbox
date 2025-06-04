@@ -2,7 +2,9 @@ import Operator from "./operator";
 import {
   aggregateCyclicene,
   aketon,
+  biphasicEnantiomorphicMedium,
   bipolarNanoflake,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -88,10 +90,335 @@ export interface Specialist extends Operator {
 }
 
 // 6성
-/** 쏜즈 더 로드스타 */
+/** 엑시아 더 뉴 커버넌트 (신시아) */
+export const ExusiaiTheNewCovenant: Specialist = {
+  id: 370,
+  name: "엑시아 더 뉴 커버넌트",
+  nicknameList: ["신시아"],
+  imageFilename: "exusiai-the-new-covenant",
+  class: "Specialist",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: specialistChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 7,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: specialistDualchip,
+        count: 4,
+      },
+      {
+        material: biphasicEnantiomorphicMedium,
+        count: 4,
+      },
+      {
+        material: RMA7024,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["하늘 대청소", "트리거 해피", "사명은 반드시 완수한다!"],
+  preferSkillList: ["트리거 해피", "사명은 반드시 완수한다!"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: integratedDevice,
+          count: 5,
+        },
+        {
+          material: transmutedSalt,
+          count: 1,
+        },
+      ],
+    },
+    "하늘 대청소": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: polyesterPack,
+          count: 10,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 1,
+        },
+      ],
+    },
+    "트리거 해피": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: transmutedSalt,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+    },
+    "사명은 반드시 완수한다!": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "GEE-X",
+      name: "새 친구를 위한 성도 생활 세트",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "GEE-X",
+        name: "새 친구를 위한 성도 생활 세트",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "GEE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 쏜즈 더 로드스타 (쏜별) */
 export const ThornsTheLodestar: Specialist = {
   id: 354,
   name: "쏜즈 더 로드스타",
+  nicknameList: ["쏜별"],
   imageFilename: "thorns-the-lodestar",
   class: "Specialist",
   rarity: 6,
@@ -135,7 +462,7 @@ export const ThornsTheLodestar: Specialist = {
     ],
   },
   skillList: ["조석 계산", "해일 분쇄", "'나의 바다'"],
-  preferSkillList: ["해일 분쇄", "'나의 바다'"],
+  preferSkillList: ["조석 계산", "해일 분쇄", "'나의 바다'"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -388,6 +715,7 @@ export const Crownslayer: Specialist = {
     ],
   },
   skillList: ["시야 차단 연막탄", "포연 진폭", "봉화 처형장"],
+  preferSkillList: ["봉화 처형장"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -467,7 +795,11 @@ export const Crownslayer: Specialist = {
       ],
     },
   },
-  moduleList: [{ type: "EXE-X", name: "왕을 시해하는 칼날" }],
+  moduleList: [
+    { type: "EXE-X", name: "시해의 칼" },
+    { type: "EXE-Y", name: "목탄화" },
+  ],
+  preferModuleList: [{ module: { type: "EXE-Y", name: "목탄화" }, level: 3 }],
   moduleMaterials: {
     "EXE-X": {
       1: [
@@ -485,6 +817,25 @@ export const Crownslayer: Specialist = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "EXE-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: biphasicEnantiomorphicMedium, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -2097,6 +2448,10 @@ export const Mizuki: Specialist = {
       type: "AMB-Y",
       name: "검푸른 씨앗",
     },
+    {
+      type: "ISW-α",
+      name: "미즈키의 특별 한정 배지",
+    },
   ],
   preferModuleList: [
     {
@@ -2105,6 +2460,13 @@ export const Mizuki: Specialist = {
         name: "사도의 약속",
       },
       level: 2,
+    },
+    {
+      module: {
+        type: "ISW-α",
+        name: "미즈키의 특별 한정 배지",
+      },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -2209,6 +2571,26 @@ export const Mizuki: Specialist = {
         {
           material: LMD,
           count: 120000,
+        },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
         },
       ],
     },
@@ -3926,6 +4308,7 @@ export const TinMan: Specialist = {
 
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
+  ExusiaiTheNewCovenant,
   ThornsTheLodestar,
   Crownslayer,
   Ascalon,

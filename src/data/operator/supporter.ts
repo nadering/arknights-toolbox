@@ -453,7 +453,10 @@ export const SilenceTheParadigmatic: Supporter = {
       ],
     },
   },
-  moduleList: [{ type: "BLS-X", name: "모처럼 맑은 정신" }],
+  moduleList: [
+    { type: "BLS-X", name: "모처럼 맑은 정신" },
+    { type: "BLS-Y", name: "제어할 수 있는 운동량" },
+  ],
   moduleMaterials: {
     "BLS-X": {
       1: [
@@ -471,6 +474,25 @@ export const SilenceTheParadigmatic: Supporter = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "BLS-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },

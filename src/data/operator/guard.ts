@@ -2,6 +2,7 @@ import Operator from "./operator";
 import {
   aggregateCyclicene,
   aketon,
+  biphasicEnantiomorphicMedium,
   bipolarNanoflake,
   coagulatingGel,
   compoundCuttingFluid,
@@ -2008,8 +2009,34 @@ export const Młynar: Guard = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "LIB-X", name: "'칼집 속의 사람'" }],
+  preferModuleList: [
+    {
+      module: { type: "LIB-X", name: "'칼집 속의 사람'" },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "LIB-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: nucleicCrystalSinter, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: biphasicEnantiomorphicMedium, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 가비알 디 인빈서블 (수비알) */
@@ -3958,6 +3985,10 @@ export const Thorns: Guard = {
       type: "LOR-X",
       name: "'소금과 모래'",
     },
+    {
+      type: "LOR-Δ",
+      name: "부식성 모래",
+    },
   ],
   preferModuleList: [
     {
@@ -4013,6 +4044,58 @@ export const Thorns: Guard = {
         },
         {
           material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "LOR-Δ": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
           count: 4,
         },
         {
