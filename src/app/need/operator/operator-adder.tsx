@@ -84,7 +84,10 @@ export default function OperatorAdder() {
             lowerNickname.startsWith(lowerSearchText.at(0)!) &&
             lowerNickname.includes(lowerSearchText)
           ) {
-            if (!selectedOperators || !selectedOperators.includes(operator)) {
+            if (
+              !selectedOperators ||
+              !selectedOperators.find((op) => op.id === operator.id)
+            ) {
               currentDataCount += 1;
               return operator;
             }
@@ -101,7 +104,10 @@ export default function OperatorAdder() {
       ) {
         // 문자열 탐색 후, 현재 검색 문자열에 오퍼레이터가 해당된다고 파악되면 추가
         // 단, 이미 선택된 오퍼레이터는 추가하지 않음
-        if (!selectedOperators || !selectedOperators.includes(operator)) {
+        if (
+          !selectedOperators ||
+          !selectedOperators.find((op) => op.id === operator.id)
+        ) {
           currentDataCount += 1;
           return operator;
         }
