@@ -340,8 +340,34 @@ export const Necrass: Caster = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "SOC-X", name: "처분되지 않은 유산" }],
+  preferModuleList: [
+    {
+      module: { type: "SOC-X", name: "처분되지 않은 유산" },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "SOC-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 블레이즈 디 이그나이팅 스파크 (술무라) */

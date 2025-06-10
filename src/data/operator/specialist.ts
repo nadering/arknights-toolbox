@@ -946,7 +946,10 @@ export const Ascalon: Specialist = {
       ],
     },
   },
-  moduleList: [{ type: "AMB-X", name: "'히든 블레이드'" }],
+  moduleList: [
+    { type: "AMB-X", name: "'히든 블레이드'" },
+    { type: "AMB-Y", name: "'아스카론의 눈'" },
+  ],
   preferModuleList: [
     { module: { type: "AMB-X", name: "'히든 블레이드'" }, level: 3 },
   ],
@@ -967,6 +970,25 @@ export const Ascalon: Specialist = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "AMB-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: nucleicCrystalSinter, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: biphasicEnantiomorphicMedium, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -1627,9 +1649,31 @@ export const Dorothy: Specialist = {
       ],
     },
   },
-  moduleList: [{ type: "TRP-Y", name: "동화책" }],
+  moduleList: [
+    { type: "TRP-X", name: "꿈 속의 사람" },
+    { type: "TRP-Y", name: "동화책" },
+  ],
   preferModuleList: [{ module: { type: "TRP-Y", name: "동화책" }, level: 3 }],
   moduleMaterials: {
+    "TRP-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: biphasicEnantiomorphicMedium, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
     "TRP-Y": {
       1: [
         { material: moduleDataBlock, count: 4 },

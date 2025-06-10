@@ -1318,9 +1318,9 @@ export const Viviana: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "AFT-Δ", name: "보이지 않는 곳" }],
+  moduleList: [{ type: "AFT-Δ", name: "눈이 닿지 않는 곳" }],
   preferModuleList: [
-    { module: { type: "AFT-Δ", name: "보이지 않는 곳" }, level: 3 },
+    { module: { type: "AFT-Δ", name: "눈이 닿지 않는 곳" }, level: 3 },
   ],
   moduleMaterials: {
     "AFT-Δ": {
@@ -3336,6 +3336,10 @@ export const Mountain: Guard = {
   },
   moduleList: [
     {
+      type: "FGT-X",
+      name: "'깊고 한적한 밤'",
+    },
+    {
       type: "FGT-Y",
       name: "'자유의 대가'",
     },
@@ -3350,6 +3354,58 @@ export const Mountain: Guard = {
     },
   ],
   moduleMaterials: {
+    "FGT-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
     "FGT-Y": {
       "1": [
         {
@@ -3660,14 +3716,14 @@ export const Surtr: Guard = {
   moduleList: [
     {
       type: "AFT-X",
-      name: "사미의 영생하는 심장 조각",
+      name: "사미 불멸의 심장",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "AFT-X",
-        name: "사미의 영생하는 심장 조각",
+        name: "사미 불멸의 심장",
       },
       level: 3,
     },
