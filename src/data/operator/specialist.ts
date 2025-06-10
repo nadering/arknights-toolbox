@@ -461,8 +461,8 @@ export const ThornsTheLodestar: Specialist = {
       },
     ],
   },
-  skillList: ["조석 계산", "해일 분쇄", "'나의 바다'"],
-  preferSkillList: ["조석 계산", "해일 분쇄", "'나의 바다'"],
+  skillList: ["파도 측정", "해일 분해", "'나의 바다'"],
+  preferSkillList: ["파도 측정", "해일 분해", "'나의 바다'"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -534,7 +534,7 @@ export const ThornsTheLodestar: Specialist = {
         },
       ],
     },
-    "조석 계산": {
+    "파도 측정": {
       "8": [
         {
           material: skillSummary3,
@@ -578,7 +578,7 @@ export const ThornsTheLodestar: Specialist = {
         },
       ],
     },
-    "해일 분쇄": {
+    "해일 분해": {
       "8": [
         {
           material: skillSummary3,
@@ -667,7 +667,7 @@ export const ThornsTheLodestar: Specialist = {
       ],
     },
   },
-  moduleList: [{ type: "ALC-X", name: "세 면의 금화" }],
+  moduleList: [{ type: "ALC-X", name: "삼면의 금화" }],
   moduleMaterials: {
     "ALC-X": {
       1: [
