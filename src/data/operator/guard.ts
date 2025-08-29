@@ -139,8 +139,8 @@ export const Entelechia: Guard = {
       },
     ],
   },
-  skillList: ["장미빛 그림자의 흔적", "담홍색 벽", "영혼과 욕망의 이별"],
-  preferSkillList: ["담홍색 벽", "영혼과 욕망의 이별"],
+  skillList: ["장미의 흔적", "진홍빛 장벽", "영혼과 욕망의 이별"],
+  preferSkillList: ["진홍빛 장벽", "영혼과 욕망의 이별"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -212,7 +212,7 @@ export const Entelechia: Guard = {
         },
       ],
     },
-    "장미빛 그림자의 흔적": {
+    "장미의 흔적": {
       "8": [
         {
           material: skillSummary3,
@@ -256,7 +256,7 @@ export const Entelechia: Guard = {
         },
       ],
     },
-    "담홍색 벽": {
+    "진홍빛 장벽": {
       "8": [
         {
           material: skillSummary3,
@@ -348,7 +348,7 @@ export const Entelechia: Guard = {
   moduleList: [
     {
       type: "REA-X",
-      name: "쉽게 시드는 혈관",
+      name: "시들어버린 배",
     },
   ],
   moduleMaterials: {
@@ -639,7 +639,7 @@ export const Pepe: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "HAM-X", name: "맑은 비" }],
+  moduleList: [{ type: "HAM-X", name: "비가 오나 맑으나" }],
   moduleMaterials: {
     "HAM-X": {
       1: [

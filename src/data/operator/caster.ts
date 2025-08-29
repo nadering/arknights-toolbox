@@ -134,8 +134,8 @@ export const Necrass: Caster = {
       },
     ],
   },
-  skillList: ["부정한 염원", "사멸", "절명적 격상"],
-  preferSkillList: ["절명적 격상"],
+  skillList: ["저주받은 염원", "무너지는 부패", "왕관으로 빛나는 죽음"],
+  preferSkillList: ["왕관으로 빛나는 죽음"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -207,7 +207,7 @@ export const Necrass: Caster = {
         },
       ],
     },
-    "부정한 염원": {
+    "저주받은 염원": {
       "8": [
         {
           material: skillSummary3,
@@ -251,7 +251,7 @@ export const Necrass: Caster = {
         },
       ],
     },
-    사멸: {
+    "무너지는 부패": {
       "8": [
         {
           material: skillSummary3,
@@ -295,7 +295,7 @@ export const Necrass: Caster = {
         },
       ],
     },
-    "절명적 격상": {
+    "왕관으로 빛나는 죽음": {
       "8": [
         {
           material: skillSummary3,
@@ -417,8 +417,8 @@ export const BlazeTheIgnitingSpark: Caster = {
       },
     ],
   },
-  skillList: ["화끈한 지원", "끓어오르는 피의 불바다", "만악의 소각장"],
-  preferSkillList: ["끓어오르는 피의 불바다", "만악의 소각장"],
+  skillList: ["화끈한 지원", "끓어오르는 피의 불꽃", "만악의 소각장"],
+  preferSkillList: ["만악의 소각장"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -534,7 +534,7 @@ export const BlazeTheIgnitingSpark: Caster = {
         },
       ],
     },
-    "끓어오르는 피의 불바다": {
+    "끓어오르는 피의 불꽃": {
       "8": [
         {
           material: skillSummary3,

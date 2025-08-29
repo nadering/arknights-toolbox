@@ -450,8 +450,8 @@ export const Yu: Defender = {
       },
     ],
   },
-  skillList: ["오늘의 주인공", "정성이 담긴 접대", "부엌의 천지"],
-  preferSkillList: ["정성이 담긴 접대", "부엌의 천지"],
+  skillList: ["오늘의 주인공", "귀빈 대접", "부엌 속 세상"],
+  preferSkillList: ["귀빈 대접", "부엌 속 세상"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -567,7 +567,7 @@ export const Yu: Defender = {
         },
       ],
     },
-    "정성이 담긴 접대": {
+    "귀빈 대접": {
       "8": [
         {
           material: skillSummary3,
@@ -611,7 +611,7 @@ export const Yu: Defender = {
         },
       ],
     },
-    "부엌의 천지": {
+    "부엌 속 세상": {
       "8": [
         {
           material: skillSummary3,
