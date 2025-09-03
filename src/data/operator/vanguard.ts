@@ -621,7 +621,7 @@ export const Vigil: Vanguard = {
   },
   moduleList: [
     { type: "TAC-X", name: "시라쿠사 입문 의식" },
-    { type: "TAC-Y", name: "지난 세월" },
+    { type: "TAC-Y", name: "지나간 시간" },
   ],
   moduleMaterials: {
     "TAC-X": {
@@ -1306,14 +1306,14 @@ export const Saileach: Vanguard = {
     },
     {
       type: "BEA-Y",
-      name: "'영원한 우정'",
+      name: "'우정 만세'",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "BEA-Y",
-        name: "'영원한 우정'",
+        name: "'우정 만세'",
       },
       level: 3,
     },

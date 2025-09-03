@@ -1152,7 +1152,7 @@ export const SwireTheElegantWit: Specialist = {
     ],
   },
   skillList: ["재물보다 의리", "'웰컴 드링크'", "거금 쾌척"],
-  preferSkillList: ["'웰컴 드링크'"],
+  preferSkillList: ["'웰컴 드링크'", "거금 쾌척"],
   skillUpgradeMaterials: {
     common: {
       2: [{ material: skillSummary1, count: 5 }],
@@ -1235,9 +1235,17 @@ export const SwireTheElegantWit: Specialist = {
   moduleList: [
     { type: "MER-X", name: "'금화휘황'" },
     { type: "MER-Y", name: "스와이어의 용문 요리 가이드" },
+    { type: "ISW-α", name: "스와이어 디 엘리건트 위트의 특별 한정 배지" },
   ],
   preferModuleList: [
     { module: { type: "MER-X", name: "'금화휘황'" }, level: 1 },
+    {
+      module: {
+        type: "ISW-α",
+        name: "스와이어 디 엘리건트 위트의 특별 한정 배지",
+      },
+      level: 3,
+    },
   ],
   moduleMaterials: {
     "MER-X": {
@@ -1276,6 +1284,26 @@ export const SwireTheElegantWit: Specialist = {
         { material: dataSupplementInstrument, count: 20 },
         { material: polymerizationPreparation, count: 4 },
         { material: LMD, count: 120000 },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
       ],
     },
   },

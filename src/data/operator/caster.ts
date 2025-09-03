@@ -2,6 +2,7 @@ import Operator from "./operator";
 import {
   aggregateCyclicene,
   aketon,
+  biphasicEnantiomorphicMedium,
   bipolarNanoflake,
   casterChip,
   casterDualchip,
@@ -623,8 +624,37 @@ export const BlazeTheIgnitingSpark: Caster = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "PRI-X", name: "열렬한 기대" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "PRI-X",
+        name: "열렬한 기대",
+      },
+      level: 1,
+    },
+  ],
+  moduleMaterials: {
+    "PRI-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 라플란드 더 데카덴차 (꼬술이) */
@@ -1006,8 +1036,37 @@ export const Nymph: Caster = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [{ type: "PRI-X", name: "마음의 소리" }],
+  preferModuleList: [
+    {
+      module: {
+        type: "PRI-X",
+        name: "마음의 소리",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "PRI-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: biphasicEnantiomorphicMedium, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+  },
 };
 
 /** 로고스 */
@@ -1917,6 +1976,10 @@ export const Goldenglow: Caster = {
       type: "FUN-X",
       name: "'노력의 날개'",
     },
+    {
+      type: "FUN-Y",
+      name: "꿈은 이루어진다",
+    },
   ],
   preferModuleList: [
     {
@@ -1972,6 +2035,58 @@ export const Goldenglow: Caster = {
         },
         {
           material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "FUN-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
           count: 4,
         },
         {

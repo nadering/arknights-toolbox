@@ -4,6 +4,7 @@ import {
   aketon,
   biphasicEnantiomorphicMedium,
   bipolarNanoflake,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -93,6 +94,326 @@ export interface Guard extends Operator {
 }
 
 // 6성
+/** 레이즈 더 썬더브링어 (근첩) */
+export const LeiziTheThunderbringer: Guard = {
+  id: 376,
+  name: "레이즈 더 썬더브링어",
+  nicknameList: ["근첩"],
+  imageFilename: "leizi-the-thunderbringer",
+  class: "Guard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: orirockCube,
+        count: 8,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: crystallineElectronicUnit,
+        count: 4,
+      },
+      {
+        material: polymerizedGel,
+        count: 8,
+      },
+    ],
+  },
+  skillList: ["영원한 호기", "뇌정의 위세", "천지통명"],
+  preferSkillList: ["영원한 호기", "뇌정의 위세", "천지통명"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: manganeseOre,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: fuscousFiber,
+          count: 5,
+        },
+        {
+          material: crystallineComponent,
+          count: 3,
+        },
+      ],
+    },
+    "영원한 호기": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+    "뇌정의 위세": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 2,
+        },
+      ],
+    },
+    천지통명: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: fuscousFiber,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "LIB-X",
+      name: "'일념'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "LIB-X",
+        name: "'일념'",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "LIB-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 엔텔레키아 */
 export const Entelechia: Guard = {
   id: 360,
@@ -639,7 +960,13 @@ export const Pepe: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "HAM-X", name: "비가 오나 맑으나" }],
+  moduleList: [
+    { type: "HAM-X", name: "비가 오나 맑으나" },
+    { type: "RA-α", name: "페페의 특별 한정 배지" },
+  ],
+  preferModuleList: [
+    { module: { type: "RA-α", name: "페페의 특별 한정 배지" }, level: 3 },
+  ],
   moduleMaterials: {
     "HAM-X": {
       1: [
@@ -658,6 +985,26 @@ export const Pepe: Guard = {
         { material: dataSupplementInstrument, count: 20 },
         { material: crystallineElectronicUnit, count: 4 },
         { material: LMD, count: 120000 },
+      ],
+    },
+    "RA-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
       ],
     },
   },
@@ -2144,10 +2491,13 @@ export const GavialTheInvincible: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "CEN-X", name: "가비알의 괴로움" }],
+  moduleList: [
+    { type: "CEN-X", name: "가비알의 괴로움" },
+    { type: "CEN-Y", name: "많이 갈음질한 좋은 톱" },
+  ],
   preferModuleList: [
     {
-      module: { type: "CEN-X", name: "가비알의 괴로움" },
+      module: { type: "CEN-Y", name: "많이 갈음질한 좋은 톱" },
       level: 1,
     },
   ],
@@ -2168,6 +2518,25 @@ export const GavialTheInvincible: Guard = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "CEN-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -5983,6 +6352,7 @@ export const Laios: Guard = {
 
 // 가드 오퍼레이터 리스트 계열
 const sixStarGuardList: Guard[] = [
+  LeiziTheThunderbringer,
   Entelechia,
   VinaVictoria,
   Pepe,

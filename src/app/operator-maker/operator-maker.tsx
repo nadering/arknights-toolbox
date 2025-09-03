@@ -1064,7 +1064,7 @@ export default function OperatorMaker() {
       {/* 아이디 */}
       <div className="flex flex-row items-center justify-between gap-2">
         <a
-          href="https://hx3n.github.io/gachaplanner/oper"
+          href="https://hx3n.github.io/gachaplanner/operators"
           target="_blank"
           rel="noopener noreferrer"
           className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 underline break-keep"

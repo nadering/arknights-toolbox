@@ -91,6 +91,263 @@ export interface Defender extends Operator {
 }
 
 // 6성
+/** 호시구마 더 브리처 (수구마) */
+export const HoshigumaTheBreacher: Defender = {
+  id: 380,
+  name: "호시구마 더 브리처",
+  nicknameList: ["수구마"],
+  imageFilename: "hoshiguma-the-breacher",
+  class: "Defender",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: defenderChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 7,
+      },
+      {
+        material: sugar,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: defenderDualchip,
+        count: 4,
+      },
+      {
+        material: biphasicEnantiomorphicMedium,
+        count: 4,
+      },
+      {
+        material: chiralRefractor,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["악행의 말로", "시작이 없다면 빛도 없으리", "지옥변상"],
+  preferSkillList: ["시작이 없다면 빛도 없으리", "지옥변상"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: fuscousFiber,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironCluster,
+          count: 5,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+      ],
+    },
+    "악행의 말로": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: orironCluster,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+    "시작이 없다면 빛도 없으리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 6,
+        },
+      ],
+    },
+    지옥변상: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: chiralRefractor,
+          count: 6,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 산크타 믹사파라토 */
 export const SanktaMiksaparato: Defender = {
   id: 369,
@@ -4069,6 +4326,7 @@ export const Underflow: Defender = {
 
 // 디펜더 오퍼레이터 리스트 계열
 const sixStarDefenderList: Defender[] = [
+  HoshigumaTheBreacher,
   SanktaMiksaparato,
   Yu,
   Shu,

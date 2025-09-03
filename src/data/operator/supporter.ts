@@ -4,6 +4,7 @@ import {
   aketon,
   biphasicEnantiomorphicMedium,
   bipolarNanoflake,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -88,6 +89,333 @@ export interface Supporter extends Operator {
 }
 
 // 6성
+/** 하루카 */
+export const Haruka: Supporter = {
+  id: 381,
+  name: "하루카",
+  imageFilename: "haruka",
+  class: "Supporter",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 6,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: orirockConcentration,
+        count: 9,
+      },
+    ],
+  },
+  skillList: [
+    "밤에 우는 파울비스트",
+    "한밤중을 비추는 반딧불이",
+    "늦여름의 헤엄치는 린수",
+  ],
+  preferSkillList: ["한밤중을 비추는 반딧불이", "늦여름의 헤엄치는 린수"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orironCluster,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+    },
+    "밤에 우는 파울비스트": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: RMA7024,
+          count: 2,
+        },
+      ],
+    },
+    "한밤중을 비추는 반딧불이": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: polyesterPack,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 1,
+        },
+      ],
+    },
+    "늦여름의 헤엄치는 린수": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: transmutedSalt,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "BLS-Y",
+      name: "뒤늦은 기념",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "BLS-Y",
+        name: "뒤늦은 기념",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "BLS-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 트라고디아 (보텀) */
 export const Tragodia: Supporter = {
   id: 374,
@@ -1562,7 +1890,7 @@ export const Gnosis: Supporter = {
     },
     {
       type: "UMD-Y",
-      name: "1번 프로젝트 모델",
+      name: "1호 프로젝트 모델",
     },
   ],
   preferModuleList: [
@@ -3698,6 +4026,7 @@ export const SandReckoner: Supporter = {
 
 // 서포터 오퍼레이터 리스트 계열
 const sixStarSupporterList: Supporter[] = [
+  Haruka,
   Tragodia,
   CivilightEterna,
   Virtuosa,
