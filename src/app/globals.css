@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html, body {
-  @apply scrollbar-hide;
   @apply bg-dark;
 }
 

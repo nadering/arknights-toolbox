@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import {
   Header,
   BackToTopButton,
@@ -36,9 +36,9 @@ export default function RootLayout({
         <Analytics />
         <Providers>
           <LocalStorageSetter />
-          <div className="relative w-screen h-full min-h-screen bg-dark">
+          <div className="relative w-full h-full min-h-screen bg-dark">
             <Header />
-            <div className="flex flex-col w-screen max-w-3xl h-full min-h-screen bg-dark py-12 mx-auto">
+            <div className="flex flex-col w-full max-w-3xl h-full min-h-screen bg-dark py-12 mx-auto">
               {children}
             </div>
             <BackToTopButton />

@@ -49,6 +49,7 @@ import {
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
+  pseudocondensationNucleus,
   refinedSolvent,
   RMA7012,
   RMA7024,
@@ -94,6 +95,330 @@ export interface Guard extends Operator {
 }
 
 // 6성
+/** 토가와 사키코 (사키코) */
+export const TogawaSakiko: Guard = {
+  id: 386,
+  name: "토가와 사키코",
+  nicknameList: ["사키코"],
+  imageFilename: "togawa-sakiko",
+  class: "Guard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 6,
+      },
+      {
+        material: oriron,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: D32Steel,
+        count: 4,
+      },
+      {
+        material: RMA7024,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["초승달의 소생", "보름달의 무도", "그믐달의 여광"],
+  preferSkillList: ["초승달의 소생", "보름달의 무도", "그믐달의 여광"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCluster,
+          count: 8,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 2,
+        },
+      ],
+    },
+    "초승달의 소생": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+      ],
+    },
+    "보름달의 무도": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+    },
+    "그믐달의 여광": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "LOR-Y",
+      name: "무언의 약속",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "LOR-Y",
+        name: "무언의 약속",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "LOR-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: D32Steel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 레이즈 더 썬더브링어 (근첩) */
 export const LeiziTheThunderbringer: Guard = {
   id: 376,
@@ -6089,6 +6414,278 @@ export const Silverash: Guard = {
 };
 
 // 5성
+/** 유텐지 냐무 (냐무) */
+export const YūtenjiNyamu: Guard = {
+  id: 385,
+  name: "유텐지 냐무",
+  nicknameList: ["냐무"],
+  imageFilename: "yūtenji-nyamu",
+  class: "Guard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: guardChip!,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 6,
+      },
+      {
+        material: polyester,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: guardDualchip,
+        count: 3,
+      },
+      {
+        material: refinedSolvent,
+        count: 7,
+      },
+      {
+        material: RMA7012,
+        count: 12,
+      },
+    ],
+  },
+  skillList: ["불꽃처럼 뜨겁게", "밀처럼 활기차게"],
+  preferSkillList: ["밀처럼 활기차게"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 1,
+        },
+      ],
+    },
+    "불꽃처럼 뜨겁게": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+      ],
+    },
+    "밀처럼 활기차게": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: chiralRefractor,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "HAM-X",
+      name: "어린 밀",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "HAM-X",
+        name: "어린 밀",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "HAM-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 /** 라이오스 */
 export const Laios: Guard = {
   id: 341,
@@ -6352,6 +6949,7 @@ export const Laios: Guard = {
 
 // 가드 오퍼레이터 리스트 계열
 const sixStarGuardList: Guard[] = [
+  TogawaSakiko,
   LeiziTheThunderbringer,
   Entelechia,
   VinaVictoria,
@@ -6379,7 +6977,7 @@ const sixStarGuardList: Guard[] = [
   Skadi,
   Silverash,
 ];
-const fiveStarGuardList: Guard[] = [Laios];
+const fiveStarGuardList: Guard[] = [YūtenjiNyamu, Laios];
 const fourStarGuardList: Guard[] = [];
 const threeStarGuardList: Guard[] = [];
 const twoStarGuardList: Guard[] = [];
