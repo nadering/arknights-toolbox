@@ -177,10 +177,10 @@ export const T2UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T3)
-/** (T3) 응결핵 */
+/** (T3) 유사 응결핵 */
 export const pseudocondensationNucleus: Material = {
   id: "31093",
-  name: "응결핵",
+  name: "유사 응결핵",
   objectName: "pseudocondensationNucleus",
   imageFilename: "pseudocondensation-nucleus",
   type: "Upgrade",
@@ -415,10 +415,10 @@ export const T3UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T4)
-/** (T4) 카이랄 굴절체 */
+/** (T4) 카이랄 굴광체 */
 export const chiralRefractor: Material = {
   id: "31094",
-  name: "카이랄 굴절체",
+  name: "카이랄 굴광체",
   objectName: "chiralRefractor",
   imageFilename: "chiral-refractor",
   type: "Upgrade",
@@ -741,10 +741,10 @@ export const T4UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T5)
-/** (T5) 중상 광학 이성질체 */
+/** (T5) 중위상 엔안티오머 */
 export const biphasicEnantiomorphicMedium: Material = {
   id: "30165",
-  name: "중상 광학 이성질체",
+  name: "중위상 엔안티오머",
   objectName: "biphasicEnantiomorphicMedium",
   imageFilename: "biphasic-enantiomorphic-medium",
   type: "Upgrade",

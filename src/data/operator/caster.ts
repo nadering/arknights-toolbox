@@ -1175,7 +1175,7 @@ export const Logos: Caster = {
   },
   moduleList: [
     { type: "CCR-Δ", name: "협곡에서 온 필통" },
-    { type: "CCR-Y", name: "《언어 형식 백과사전》" },
+    { type: "CCR-Y", name: "《의미 범주 백과사전》" },
   ],
   preferModuleList: [
     {

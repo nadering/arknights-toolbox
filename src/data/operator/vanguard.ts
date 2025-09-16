@@ -486,10 +486,10 @@ export const Ines: Vanguard = {
       ],
     },
   },
-  moduleList: [{ type: "AGE-Y", name: "뿔 '관리' 키트" }],
+  moduleList: [{ type: "AGE-Y", name: "뿔 '케어' 키트" }],
   preferModuleList: [
     {
-      module: { type: "AGE-Y", name: "뿔 '관리' 키트" },
+      module: { type: "AGE-Y", name: "뿔 '케어' 키트" },
       level: 3,
     },
   ],

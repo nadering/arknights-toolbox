@@ -1754,7 +1754,7 @@ export const Mudrock: Defender = {
     },
     {
       type: "UNY-Y",
-      name: "옥토가 바라는 미래",
+      name: "비옥한 땅의 전망",
     },
   ],
   preferModuleList: [
