@@ -20,7 +20,8 @@ export default function Home() {
       </p>
       <ResultLinkButton />
       <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-        최근 업데이트: 평안한 잠꼬대 (2025-09-04 시작, 2025-09-13 반영)
+        최근 업데이트: 평안한 잠꼬대 (2025-09-04 시작, 2025-09-19 누락된 데이터
+        반영)
       </p>
     </div>
   );

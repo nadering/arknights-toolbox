@@ -977,8 +977,11 @@ export const Virtuosa: Supporter = {
       ],
     },
   },
-  moduleList: [{ type: "RIT-X", name: "셈여림법" }],
-  preferModuleList: [{ module: { type: "RIT-X", name: "셈여림법" }, level: 3 }],
+  moduleList: [
+    { type: "RIT-X", name: "셈여림표" },
+    { type: "RIT-Y", name: "음악가의 여정" },
+  ],
+  preferModuleList: [{ module: { type: "RIT-X", name: "셈여림표" }, level: 3 }],
   moduleMaterials: {
     "RIT-X": {
       1: [
@@ -990,6 +993,25 @@ export const Virtuosa: Supporter = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementStick, count: 60 },
         { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "RIT-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: biphasicEnantiomorphicMedium, count: 3 },
         { material: LMD, count: 100000 },
       ],
       3: [

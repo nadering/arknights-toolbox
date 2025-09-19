@@ -5114,6 +5114,10 @@ export const Blaze: Guard = {
       type: "CEN-X",
       name: "과부하된 무기와 과열된 심장",
     },
+    {
+      type: "CEN-Y",
+      name: "'곧 돌아올게'",
+    },
   ],
   preferModuleList: [
     {
@@ -5169,6 +5173,58 @@ export const Blaze: Guard = {
         },
         {
           material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "CEN-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
           count: 4,
         },
         {
