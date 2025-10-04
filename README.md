@@ -1,6 +1,6 @@
 # Arknights-Toolbox
 ## 프론트엔드 스택
-- React 19 RC, Next.js 15, TypeScript, TailwindCSS 3+, Jotai
+- React 19, Next.js 15, TypeScript, TailwindCSS 3+, Jotai
 
 ## 초기 설정
 ```bash
