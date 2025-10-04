@@ -1,17 +1,22 @@
 "use client";
 
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { DepotLine, LMDExpLine, UpgradeLine } from "@common/depot";
 import {
+  Depot,
   expAtom,
   makeEmptyDepot,
   selectedOperatorsMaterialAtom,
   userNeedAtom,
   userNeedInitializedAtom,
 } from "@/store";
-import { getOperatorById, setDepotMaterialById } from "@/tool";
-import { CountableMaterial, EXP, LMD } from "@/data/material";
+import {
+  decomposeMaterial,
+  getOperatorById,
+  setDepotMaterialById,
+} from "@/tool";
+import { CountableMaterial, EXP, LMD, TierType } from "@/data/material";
 import {
   EliteNumber,
   LEVEL_UP_STACKED_TABLE,
@@ -24,17 +29,19 @@ import {
 export default function UserNeedToDepot() {
   // 사용자 필요 재료
   const [userNeed, setUserNeed] = useAtom(userNeedAtom);
-
-  // 사용자 필요 재료 설정 여부
   const setUserNeedInitialized = useSetAtom(userNeedInitializedAtom);
 
-  /** 오퍼레이터 총 육성 재화 */
+  // 오퍼레이터 총 육성 재화
   const selectedOperatorsMaterial = useAtomValue(selectedOperatorsMaterialAtom);
 
-  /** 오퍼레이터 육성 경험치 */
+  // 오퍼레이터 육성 경험치
   const setExp = useSetAtom(expAtom);
 
-  /** 애니메이션을 위해 노드를 참조하는 Ref */
+  // 재료 분해
+  const [materialMaxTier, setMaterialMaxTier] = useState<TierType>(5);
+  const [decomposedDepot, setDecomposedDepot] = useState<Depot>(userNeed);
+
+  // 애니메이션을 위해 노드를 참조하는 Ref
   const divRef = useRef<HTMLDivElement>(null);
 
   /** 오퍼레이터 총 육성 재화를 창고 데이터로 반영 */
@@ -217,6 +224,16 @@ export default function UserNeedToDepot() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedOperatorsMaterial]);
 
+  // 사용자가 선택한 티어에 맞게 분해 후 재료 수량을 변경
+  useEffect(() => {
+    const newDecomposedData = decomposeMaterial({
+      depot: userNeed,
+      materialMaxTier,
+      userNeedOnly: true,
+    });
+    setDecomposedDepot(newDecomposedData);
+  }, [userNeed, materialMaxTier]);
+
   // 애니메이션 (창고를 보여줄 경우, 아래쪽으로 이동하며 Fade-in으로 나타남)
   useEffect(() => {
     /** 애니메이션을 나타내는 클래스 */
@@ -241,24 +258,127 @@ export default function UserNeedToDepot() {
 
   return (
     <div className="hidden flex flex-col p-4" ref={divRef}>
-      <div className="flex flex-row gap-4">
-        <p className="font-bold text-3xl text-white break-keep">
+      <div className="flex flex-col gap-1 sm:flex-row sm:gap-5">
+        <p className="pl-1 font-bold text-3xl text-white break-keep">
           필요 재료 확인
         </p>
+        {/* 버튼 */}
+        <div className="flex flex-row justify-start items-center gap-2 pl-2 translate-y-[2px] sm:pl-0">
+          <button
+            className={`${
+              materialMaxTier == 5
+                ? "border-tier-5"
+                : "border-gray-800 hover:border-tier-5"
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
+            opacity-80 hover:opacity-100 selection:bg-transparent`}
+            onClick={() => setMaterialMaxTier(5)}
+          >
+            <p
+              className={`${
+                materialMaxTier == 5
+                  ? "text-tier-5"
+                  : "text-gray-800 group-hover:text-tier-5"
+              }  text-center`}
+            >
+              5
+            </p>
+          </button>
+          <button
+            className={`${
+              materialMaxTier == 4
+                ? "border-tier-4"
+                : "border-gray-800 hover:border-tier-4"
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
+            opacity-80 hover:opacity-100 selection:bg-transparent`}
+            onClick={() => setMaterialMaxTier(4)}
+          >
+            <p
+              className={`${
+                materialMaxTier == 4
+                  ? "text-tier-4"
+                  : "text-gray-800 group-hover:text-tier-4"
+              }  text-center`}
+            >
+              4
+            </p>
+          </button>
+          <button
+            className={`${
+              materialMaxTier == 3
+                ? "border-tier-3"
+                : "border-gray-800 hover:border-tier-3"
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
+            opacity-80 hover:opacity-100 selection:bg-transparent`}
+            onClick={() => setMaterialMaxTier(3)}
+          >
+            <p
+              className={`${
+                materialMaxTier == 3
+                  ? "text-tier-3"
+                  : "text-gray-800 group-hover:text-tier-3"
+              }  text-center`}
+            >
+              3
+            </p>
+          </button>
+          <button
+            className={`${
+              materialMaxTier == 2
+                ? "border-tier-2"
+                : "border-gray-800 hover:border-tier-2"
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
+            opacity-80 hover:opacity-100 selection:bg-transparent`}
+            onClick={() => setMaterialMaxTier(2)}
+          >
+            <p
+              className={`${
+                materialMaxTier == 2
+                  ? "text-tier-2"
+                  : "text-gray-800 group-hover:text-tier-2"
+              }  text-center`}
+            >
+              2
+            </p>
+          </button>
+          <button
+            className={`${
+              materialMaxTier == 1
+                ? "border-tier-1"
+                : "border-gray-800 hover:border-tier-1"
+            } group relative w-[30px] flex justify-center items-center px-2 border-2 rounded-xl
+            opacity-80 hover:opacity-100 selection:bg-transparent`}
+            onClick={() => setMaterialMaxTier(1)}
+          >
+            <p
+              className={`${
+                materialMaxTier == 1
+                  ? "text-tier-1"
+                  : "text-gray-800 group-hover:text-tier-1"
+              }  text-center`}
+            >
+              1
+            </p>
+          </button>
+        </div>
       </div>
-      <div className="grow w-full flex flex-col gap-8 p-2 border-none rounded-xl">
-        <UpgradeLine list={userNeed["Upgrade"]} skipZero readonly />
-        <LMDExpLine list={userNeed["LMD"]} skipZero readonly />
+      <div className="grow w-full flex flex-col gap-8 p-2 pt-4 border-none rounded-xl sm:pt-2">
+        <UpgradeLine list={decomposedDepot["Upgrade"]} skipZero readonly />
+        <LMDExpLine list={decomposedDepot["LMD"]} skipZero readonly />
         <DepotLine
           title="스킬개론"
-          list={userNeed["Skill-Summary"]}
+          list={decomposedDepot["Skill-Summary"]}
           skipZero
           readonly
         />
-        <DepotLine title="모듈" list={userNeed["Module"]} skipZero readonly />
+        <DepotLine
+          title="모듈"
+          list={decomposedDepot["Module"]}
+          skipZero
+          readonly
+        />
         <DepotLine
           title="데이터 칩"
-          list={userNeed["Memory-Chip"]}
+          list={decomposedDepot["Memory-Chip"]}
           skipZero
           readonly
         />

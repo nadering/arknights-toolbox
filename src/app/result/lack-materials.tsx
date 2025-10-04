@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useSetAtom } from "jotai";
-import { Depot, makeEmptyDepot, materialLeftAtom, materialLeftInitializedAtom } from "@/store";
+import {
+  Depot,
+  makeEmptyDepot,
+  materialLeftAtom,
+  materialLeftInitializedAtom,
+} from "@/store";
 import { DepotLine, LMDExpLine, UpgradeLine } from "@common/depot";
 import {
   CountableMaterial,
@@ -10,7 +15,7 @@ import {
   MaterialType,
   TierType,
 } from "@/data/material";
-import { setDepotMaterialById } from "@/tool";
+import { decomposeMaterial, setDepotMaterialById } from "@/tool";
 
 /** 부족한 재료를 나타내는 컴포넌트 */
 export default function LackMaterials({
@@ -48,69 +53,6 @@ export default function LackMaterials({
   /** 애니메이션을 위해 노드를 참조하는 Ref */
   const divRef = useRef<HTMLDivElement>(null);
 
-  /** 재료의 최고 티어에 따라, 재료를 분해한 후 반환 */
-  const decomposeMaterial = (depot: Depot) => {
-    let initialDepot = { ...depot };
-    let resultDepot = makeEmptyDepot();
-
-    if (5 - materialMaxTier <= 0) {
-      // 분해할 필요가 없다면, 그대로 반환
-      return depot;
-    }
-
-    for (let i = 0; i < 5 - materialMaxTier; i++) {
-      // 선택된 최고 티어가 낮아질수록, 분해 횟수 증가
-      resultDepot = makeEmptyDepot();
-
-      Object.keys(initialDepot).forEach((type) => {
-        if (filterMaterialTypes.includes(type as MaterialType)) {
-          // 필요한 타입의 재료만 필터링
-          const dataLine = initialDepot[type as MaterialType];
-          for (const mat of dataLine) {
-            if (
-              mat.count < 0 &&
-              mat.material.recipe &&
-              mat.material.tier > materialMaxTier
-            ) {
-              if (type == "Memory-Chip" && mat.material.tier <= 4) {
-                // 메모리 칩은 5티어(듀얼 칩) > 4티어(칩셋) 변환만 허용
-                setDepotMaterialById(
-                  mat.material.id,
-                  mat.count,
-                  resultDepot,
-                  true
-                );
-              } else {
-                // 설정된 티어 이상이면, 부족한 재료를 분해 후 분해된 재료를 추가
-                const recipe = mat.material.recipe;
-                for (const countableMaterial of recipe) {
-                  setDepotMaterialById(
-                    countableMaterial.material.id,
-                    mat.count * countableMaterial.count,
-                    resultDepot,
-                    true
-                  );
-                }
-              }
-            } else {
-              // 그 외의 재료는 그대로 유지
-              setDepotMaterialById(
-                mat.material.id,
-                mat.count,
-                resultDepot,
-                true
-              );
-            }
-          }
-        }
-      });
-
-      // 분해 대상인 Depot을 재설정
-      initialDepot = { ...resultDepot };
-    }
-    return resultDepot;
-  };
-
   /** 부족한 재료만 필터링 후, 필터링 된 재료 및 남은 재료를 반환 */
   const filterLackMaterial = (depot: Depot) => {
     // 빈 창고 2개를 생성하여, 필터링 된 재료 및 남은 재료로 설정
@@ -128,8 +70,7 @@ export default function LackMaterials({
           if (mat.count < 0) {
             // 재료를 순회하면서, 부족한 재료만 추가
             setDepotMaterialById(mat.material.id, -mat.count, newFilteredData);
-          }
-          else if (mat.count > 0) {
+          } else if (mat.count > 0) {
             // 재료를 순회하면서, 남은 재료를 추가
             setDepotMaterialById(mat.material.id, mat.count, newMaterialLeft);
             isMaterialLeft = true;
@@ -172,10 +113,14 @@ export default function LackMaterials({
   // 사용자가 선택한 티어에 맞게 재료 수량을 변경하고, 부족한 재료만 보이도록 필터링
   useEffect(() => {
     // 사용자가 선택한 티어에 맞게 재료 수량을 변경
-    const newDecomposedData = decomposeMaterial(data);
+    const newDecomposedData = decomposeMaterial({
+      depot: data,
+      materialMaxTier,
+    });
 
     // 부족한 재료만 보이도록 필터링
-    const [newFilteredData, newMaterialLeft] = filterLackMaterial(newDecomposedData);
+    const [newFilteredData, newMaterialLeft] =
+      filterLackMaterial(newDecomposedData);
 
     // 변경된 필터링 데이터 및 남은 재료를 반영
     setFilteredData(newFilteredData);

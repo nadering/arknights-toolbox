@@ -1,3 +1,4 @@
 export * from "./set-depot";
 export * from "./input-number";
-export * from "./get-material";
+export * from "./get-operator";
+export * from "./decompose-material";
