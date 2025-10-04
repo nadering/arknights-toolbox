@@ -10,9 +10,10 @@ import {
   userNeedAtom,
   userNeedInitializedAtom,
 } from "@/store";
-import { setDepotMaterialById } from "@/tool";
+import { getOperatorById, setDepotMaterialById } from "@/tool";
 import { CountableMaterial, EXP, LMD } from "@/data/material";
 import {
+  EliteNumber,
   LEVEL_UP_STACKED_TABLE,
   MAX_LEVEL_TABLE,
   MODULE_ACTIVE_ELITE,
@@ -45,6 +46,10 @@ export default function UserNeedToDepot() {
     for (const operatorMaterial of selectedOperatorsMaterial) {
       // 각각의 오퍼레이터의 육성 재화를 창고 데이터에 추가
       const target = operatorMaterial.target;
+      const operator = getOperatorById(operatorMaterial.id);
+      if (operator === undefined) {
+        break;
+      }
 
       // 정예화
       for (
@@ -54,7 +59,7 @@ export default function UserNeedToDepot() {
       ) {
         // 정예화 재료를 구해서,
         const eliteMaterial: CountableMaterial[] =
-          operatorMaterial.eliteMaterials[eliteNum + 1];
+          operator.eliteMaterials[(eliteNum + 1) as EliteNumber];
 
         // 창고 데이터에 추가
         for (const countableMaterial of eliteMaterial) {
@@ -77,7 +82,8 @@ export default function UserNeedToDepot() {
         setDepotMaterialById(
           LMD.id,
           LEVEL_UP_STACKED_TABLE[target.currentElite][target.targetLevel].lmd -
-            LEVEL_UP_STACKED_TABLE[target.currentElite][target.currentLevel].lmd,
+            LEVEL_UP_STACKED_TABLE[target.currentElite][target.currentLevel]
+              .lmd,
           newUserNeed,
           true
         );
@@ -91,7 +97,8 @@ export default function UserNeedToDepot() {
           if (eliteNum != target.targetElite) {
             if (eliteNum == target.currentElite) {
               // 현재 인덱스가 현재 정예화 단계면, 최대 레벨에서 현재 레벨의 수치를 뺀 만큼 더하면 됨
-              const maxLevel = MAX_LEVEL_TABLE[operatorMaterial.rarity][eliteNum];
+              const maxLevel =
+                MAX_LEVEL_TABLE[operatorMaterial.rarity][eliteNum];
               newExp +=
                 LEVEL_UP_STACKED_TABLE[eliteNum][maxLevel].exp -
                 LEVEL_UP_STACKED_TABLE[eliteNum][target.currentLevel].exp;
@@ -104,7 +111,8 @@ export default function UserNeedToDepot() {
               );
             } else {
               // 현재 인덱스가 현재 정예화 단계도 아니고, 목표 정예화 단계도 아니라면 최대 레벨의 수치를 더하면 됨
-              const maxLevel = MAX_LEVEL_TABLE[operatorMaterial.rarity][eliteNum];
+              const maxLevel =
+                MAX_LEVEL_TABLE[operatorMaterial.rarity][eliteNum];
               newExp += LEVEL_UP_STACKED_TABLE[eliteNum][maxLevel].exp;
               setDepotMaterialById(
                 LMD.id,
@@ -144,12 +152,12 @@ export default function UserNeedToDepot() {
             if (commonAdded[skillNum]) continue;
 
             skillMaterial =
-              operatorMaterial.skillUpgradeMaterials["common"][skillNum + 1];
+              operator.skillUpgradeMaterials["common"][skillNum + 1];
             commonAdded[skillNum] = true;
           } else {
             // 마스터리 (8 ~ 10레벨)
             skillMaterial =
-              operatorMaterial.skillUpgradeMaterials[skillName][skillNum + 1];
+              operator.skillUpgradeMaterials[skillName][skillNum + 1];
           }
 
           // 창고 데이터에 추가
@@ -179,7 +187,7 @@ export default function UserNeedToDepot() {
           ) {
             // 모듈 레벨에 따라 재료 추가 (이 분기에는 반드시 모듈 재료가 있음)
             const moduleMaterial: CountableMaterial[] =
-              operatorMaterial.moduleMaterials![moduleType][moduleNum + 1];
+              operator.moduleMaterials![moduleType][moduleNum + 1];
 
             // 창고 데이터에 추가
             for (const countableMaterial of moduleMaterial) {

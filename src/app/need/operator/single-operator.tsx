@@ -430,11 +430,12 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   /** 선택된 오퍼레이터에서 제거 */
   const removeSelf = () => {
-    const newSelectedOperators: Operator[] = [];
+    const newSelectedOperators: number[] = [];
     const newSelectedOperatorsMaterial: OperatorMaterial[] = [];
+
     for (let i = 0; i < selectedOperators.length; i++) {
       // 현재 오퍼레이터가 아닌 경우에만 추가
-      if (selectedOperators[i].id != operator.id) {
+      if (selectedOperators[i] != operator.id) {
         newSelectedOperators.push(selectedOperators[i]);
       }
       if (selectedOperatorsMaterial[i].id != operator.id) {
@@ -551,9 +552,6 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         skillLevels,
         moduleLevels,
       },
-      eliteMaterials: operator.eliteMaterials,
-      skillUpgradeMaterials: operator.skillUpgradeMaterials,
-      moduleMaterials: operator.moduleMaterials,
     };
 
     // 오퍼레이터 육성 재화 리스트에, 현재 오퍼레이터가 있는지 여부를 확인하며 현재 오퍼레이터를 추가

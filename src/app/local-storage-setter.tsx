@@ -6,6 +6,8 @@ import {
   Depot,
   expAtom,
   makeEmptyDepot,
+  operatorCollapsedAtom,
+  OperatorMaterial,
   selectedOperatorsAtom,
   selectedOperatorsMaterialAtom,
   userDepotAtom,
@@ -14,6 +16,7 @@ import {
   userNeedInitializedAtom,
 } from "@/store";
 import { EXP, MaterialType } from "@/data/material";
+import { Operator } from "@/data/operator";
 
 /** localStorage 불러오기 및 저장을 담당하는 클라이언트 레이아웃 컴포넌트 */
 export default function LocalStorageSetter() {
@@ -44,6 +47,11 @@ export default function LocalStorageSetter() {
     selectedOperatorsMaterialAtom
   );
 
+  // 접기/펼치기 여부
+  const [operatorCollapsed, setOperatorCollapsed] = useAtom(
+    operatorCollapsedAtom
+  );
+
   // localStorage에서 값을 가져왔는지 여부
   const [dataFetched, setDataFetched] = useState(false);
 
@@ -70,7 +78,7 @@ export default function LocalStorageSetter() {
               (s) => s.material.id === mat.material.id
             );
             return {
-              material: mat.material,
+              material: { ...mat.material, name: mat.material.name },
               count: matched?.count ?? 0, // 있으면 유지, 없으면 0
             };
           });
@@ -106,7 +114,7 @@ export default function LocalStorageSetter() {
               (s) => s.material.id === mat.material.id
             );
             return {
-              material: mat.material,
+              material: { ...mat.material, name: mat.material.name },
               count: matched?.count ?? 0,
             };
           });
@@ -137,9 +145,22 @@ export default function LocalStorageSetter() {
     );
     if (selectedOperatorsMaterialSaved) {
       try {
-        setSelectedOperatorsMaterial(
-          JSON.parse(selectedOperatorsMaterialSaved)
-        );
+        // 오퍼레이터 육성 필요 재료를 분리함에 따라 구조 변경
+        const savedObject = JSON.parse(
+          selectedOperatorsMaterialSaved
+        ) as OperatorMaterial[];
+        const newObject: OperatorMaterial[] = [];
+
+        // 옛날 데이터를 지원하되, 저장될 때는 최신 형식으로 저장되도록 설정
+        savedObject.forEach((operatorMaterial) => {
+          newObject.push({
+            id: operatorMaterial.id,
+            rarity: operatorMaterial.rarity,
+            target: operatorMaterial.target,
+          });
+        });
+
+        setSelectedOperatorsMaterial(newObject);
       } catch {
         setSelectedOperatorsMaterial([]);
       }
@@ -148,11 +169,32 @@ export default function LocalStorageSetter() {
     // 선택된 오퍼레이터
     const selectedOperatorsSaved = localStorage.getItem("selectedOperators");
     if (selectedOperatorsSaved) {
+      // 오퍼레이터 정보를 분리함에 따라 구조 변경
       try {
-        setSelectedOperators(JSON.parse(selectedOperatorsSaved));
+        const savedObject = JSON.parse(selectedOperatorsSaved) as
+          | Operator[]
+          | number[];
+        const newObject: number[] = [];
+
+        // 옛날 데이터를 지원하되, 저장될 때는 최신 형식으로 저장되도록 설정
+        savedObject.forEach((operator) => {
+          if (typeof operator === "number") {
+            newObject.push(operator);
+          } else if (typeof operator === "object") {
+            newObject.push(operator.id);
+          }
+        });
+
+        setSelectedOperators(newObject);
       } catch {
         setSelectedOperators([]);
       }
+    }
+
+    // 접기/펼치기 여부
+    const operatorCollapsedSaved = localStorage.getItem("operatorCollapsed");
+    if (operatorCollapsedSaved) {
+      setOperatorCollapsed(JSON.parse(operatorCollapsedSaved));
     }
 
     // 데이터를 가져왔음을 알림
@@ -190,6 +232,15 @@ export default function LocalStorageSetter() {
       );
     }
   }, [dataFetched, selectedOperators, selectedOperatorsMaterial]);
+
+  useEffect(() => {
+    if (dataFetched) {
+      localStorage.setItem(
+        "operatorCollapsed",
+        new Boolean(operatorCollapsed).toString()
+      );
+    }
+  });
 
   return <></>;
 }
