@@ -4,7 +4,6 @@ import {
   MaterialsWithNumber,
   MaterialsWithNumberAndName,
   ModuleLevel,
-  Operator,
   RarityNumber,
   SkillLevel,
 } from "@/data/operator";
@@ -38,17 +37,17 @@ export interface OperatorMaterial {
   target: OperatorTarget;
 
   /** 정예화 재료 */
-  eliteMaterials: MaterialsWithNumber;
+  eliteMaterials?: MaterialsWithNumber;
 
   /** 스킬 마스터리 재료 */
-  skillUpgradeMaterials: MaterialsWithNumberAndName;
+  skillUpgradeMaterials?: MaterialsWithNumberAndName;
 
   /** 모듈 재료 */
-  moduleMaterials: MaterialsWithNumberAndName | null;
+  moduleMaterials?: MaterialsWithNumberAndName | null;
 }
 
 /** 사용자가 선택한 오퍼레이터 목록을 저장하는 아톰 */
-export const selectedOperatorsAtom = atom<Operator[]>([]);
+export const selectedOperatorsAtom = atom<number[]>([]);
 
 /** 사용자가 선택한 오퍼레이터의 육성 재화 목록을 저장하는 아톰 */
 export const selectedOperatorsMaterialAtom = atom<OperatorMaterial[]>([]);

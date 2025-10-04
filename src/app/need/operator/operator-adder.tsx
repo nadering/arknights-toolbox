@@ -86,7 +86,7 @@ export default function OperatorAdder() {
           ) {
             if (
               !selectedOperators ||
-              !selectedOperators.find((op) => op.id === operator.id)
+              !selectedOperators.find((op) => op === operator.id)
             ) {
               currentDataCount += 1;
               return operator;
@@ -106,7 +106,7 @@ export default function OperatorAdder() {
         // 단, 이미 선택된 오퍼레이터는 추가하지 않음
         if (
           !selectedOperators ||
-          !selectedOperators.find((op) => op.id === operator.id)
+          !selectedOperators.find((op) => op === operator.id)
         ) {
           currentDataCount += 1;
           return operator;
@@ -129,7 +129,7 @@ export default function OperatorAdder() {
 
   /** 선택된 오퍼레이터를 추가 */
   const addSelectedOperator = (operator: Operator) => {
-    setSelectedOperators((prev) => [...prev, operator]);
+    setSelectedOperators((prev) => [...prev, operator.id]);
     setSearchText("");
     setDataIndex(0);
   };
