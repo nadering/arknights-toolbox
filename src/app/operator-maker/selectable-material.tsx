@@ -89,7 +89,7 @@ export default function SelectableMaterial({
   // 모달
   const divRef = useRef<HTMLDivElement>(null); // 모달 트리거
   const modalRef = useRef<HTMLDivElement>(null); // 모달
-  const selectModalActive = useModal(divRef); // 모달 활성화 여부
+  const { open: selectModalActive } = useModal(divRef); // 모달 활성화 여부
 
   /** 현재 보유량 문자열 설정 */
   const handleCountStringValue = (event: FormEvent<HTMLInputElement>) => {

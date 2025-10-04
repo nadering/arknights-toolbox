@@ -94,8 +94,8 @@ export default function UserDepotSetter() {
               draggable={false}
             />
             <p
-              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-                rounded-lg translate-x-[-21px] translate-y-[-36px] group-hover:block"
+              className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
             >
               초기화
             </p>

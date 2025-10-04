@@ -22,3 +22,6 @@ export const operatorList: Operator[] = [
   // ID 내림차순으로 정렬
   return b.id - a.id;
 });
+
+/** 최근에 글로벌 서버에 출시된 오퍼레이터 아이디 */
+export const RECENT_OPERATOR_ID = 366;

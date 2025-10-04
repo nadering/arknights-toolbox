@@ -992,7 +992,7 @@ export default function OperatorMaker() {
             onClick={() => makeOperatorData()}
           >
             <Image
-              className="rotate-90 transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+              className="w-9 rotate-90 transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
                 hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
               src="/images/others/import.png"
               alt="make-operator-data"
@@ -1001,8 +1001,8 @@ export default function OperatorMaker() {
               draggable={false}
             />
             <p
-              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-                rounded-lg translate-x-[-31px] translate-y-[-30px] group-hover:block"
+              className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-50%] translate-y-[-120%] group-hover:block"
             >
               데이터 제작
             </p>
@@ -1031,8 +1031,8 @@ export default function OperatorMaker() {
               draggable={false}
             />
             <p
-              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-                rounded-lg translate-x-[-48px] translate-y-[-34px] group-hover:block"
+              className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
             >
               Google Forms
             </p>
@@ -1053,8 +1053,8 @@ export default function OperatorMaker() {
               draggable={false}
             />
             <p
-              className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-                rounded-lg translate-x-[-53px] translate-y-[-34px] group-hover:block"
+              className="hidden absolute inset-x-auto top-0 left-3 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+                rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
             >
               도움말 (외부 링크)
             </p>

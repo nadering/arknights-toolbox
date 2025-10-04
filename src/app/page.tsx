@@ -19,10 +19,20 @@ export default function Home() {
         ↓
       </p>
       <ResultLinkButton />
-      <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-        최근 업데이트: 평안한 잠꼬대 (2025-09-04 시작, 2025-09-19 누락된 데이터
-        반영)
-      </p>
+      <div className="flex flex-col items-center gap-1 mt-1">
+        <p className="leading-tight font-medium text-xl text-gray-400 text-center break-keep select-none">
+          최근 업데이트
+        </p>
+        <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
+          중국 서버: 평안한 잠꼬대 (2025-09-04)
+        </p>
+        <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
+          글로벌 서버: 해리성 결합 (2025-09-16)
+        </p>
+        <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
+          사이트 업데이트 (2025-10-05)
+        </p>
+      </div>
     </div>
   );
 }

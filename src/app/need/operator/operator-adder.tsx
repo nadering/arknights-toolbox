@@ -3,12 +3,15 @@
 import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
-import { Operator, operatorList } from "@/data/operator";
-import { selectedOperatorsAtom } from "@/store";
+import { Operator, operatorList, RECENT_OPERATOR_ID } from "@/data/operator";
+import { selectedOperatorsAtom, showFutureAtom } from "@/store";
 import { useModal } from "@/hooks";
 
 /** 오퍼레이터 한 명을 추가하는 컴포넌트 */
 export default function OperatorAdder() {
+  /** 검색 결과 최대 개수 */
+  const MAX_DATA_COUNT = 5;
+
   // 사용자가 선택한 오퍼레이터
   const [selectedOperators, setSelectedOperators] = useAtom(
     selectedOperatorsAtom
@@ -18,8 +21,8 @@ export default function OperatorAdder() {
   const [searchText, setSearchText] = useState("");
   const [searchedData, setSearchedData] = useState<Operator[]>([]);
 
-  /** 검색 결과 최대 개수 */
-  const MAX_DATA_COUNT = 5;
+  // 미래시
+  const [showFuture, setShowFuture] = useAtom(showFutureAtom);
 
   // 검색 결과 드랍다운의 인덱스
   const [dataIndex, setDataIndex] = useState(0);
@@ -27,7 +30,11 @@ export default function OperatorAdder() {
   // 검색 창 및 검색 결과 드랍다운을 클릭 및 숨기기 관련
   const adderRef = useRef<HTMLDivElement>(null);
   const searchBarRef = useRef<HTMLInputElement>(null);
-  const searchClicked = useModal(adderRef);
+  const {
+    open: searchClicked,
+    setOpen: setSearchClicked,
+    outsideTick,
+  } = useModal(adderRef);
 
   /** 검색 중 키보드 입력에 따라 선택된 오퍼레이터를 추가하거나, 오퍼레이터 선택을 변경 */
   const handleSearchBarKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -46,8 +53,8 @@ export default function OperatorAdder() {
       // 아래 방향키가 눌리면, 아래의 오퍼레이터를 선택하며 검색 창의 커서가 움직이지 않게 설정
       event.preventDefault();
       if (
-        dataIndex + 1 < searchedData.length &&
-        dataIndex + 1 < MAX_DATA_COUNT
+        (showFuture && dataIndex + 1 < searchedData.length) ||
+        (dataIndex + 1 < searchedData.length && dataIndex + 1 < MAX_DATA_COUNT)
       ) {
         setDataIndex(dataIndex + 1);
       }
@@ -95,7 +102,7 @@ export default function OperatorAdder() {
         }
       }
 
-      if (lowerSearchText == lowerOperatorName) {
+      if (lowerSearchText === lowerOperatorName) {
         // 이름이 완벽히 일치하는 오퍼레이터를 검색
         matchedOperator = operator;
       } else if (
@@ -114,9 +121,11 @@ export default function OperatorAdder() {
       }
     });
 
-    if (matchedOperator) {
+    if (matchedOperator !== null) {
       // 이름이 완벽히 일치하는 오퍼레이터를, 검색 결과 최상단에 추가
-      searchedOperatorList.unshift(matchedOperator);
+      if (!selectedOperators.find((op) => op === matchedOperator!.id)) {
+        searchedOperatorList.unshift(matchedOperator);
+      }
     }
 
     if (searchedOperatorList.length > MAX_DATA_COUNT) {
@@ -127,24 +136,81 @@ export default function OperatorAdder() {
     return searchedOperatorList;
   };
 
+  /** 미래시에 해당되는 오퍼레이터 리스트를 반환 */
+  const searchFutureOperatorData = () => {
+    // 전체 오퍼레이터를 순회하며 검색
+    const futureOperatorList = operatorList.toReversed().filter((operator) => {
+      if (operator.id <= RECENT_OPERATOR_ID) {
+        // 미래시 오퍼레이터가 아니라면, 추가하지 않음
+        return;
+      }
+
+      if (
+        operator.id > RECENT_OPERATOR_ID &&
+        operator.rarity === 6 &&
+        !selectedOperators.includes(operator.id)
+      ) {
+        return operator;
+      }
+    });
+
+    if (futureOperatorList.length === 0) {
+      setShowFuture(false);
+    }
+    return futureOperatorList;
+  };
+
   /** 선택된 오퍼레이터를 추가 */
   const addSelectedOperator = (operator: Operator) => {
     setSelectedOperators((prev) => [...prev, operator.id]);
     setSearchText("");
     setDataIndex(0);
+
+    setSearchClicked(true);
+    searchBarRef.current?.focus();
+  };
+
+  /** 미래시 오퍼레이터를 보여주도록 설정 */
+  const showFutureOperator = () => {
+    setSearchedData(searchFutureOperatorData());
+    setSearchText("");
+    setDataIndex(0);
+
+    setSearchClicked(true);
+    searchBarRef.current?.focus();
   };
 
   // 검색 문자열이 변경될 때마다, 검색 데이터를 갱신
   useEffect(() => {
-    setSearchedData(searchOperatorData());
+    if (showFuture && searchText.length === 0) {
+      setSearchedData(searchFutureOperatorData());
+    } else {
+      setSearchedData(searchOperatorData());
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchText, selectedOperators]);
+  }, [showFuture, searchText, selectedOperators]);
+
+  useEffect(() => {
+    if (showFuture) {
+      showFutureOperator();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showFuture]);
+
+  useEffect(() => {
+    setShowFuture(false);
+  }, [outsideTick, setShowFuture]);
 
   // 컴포넌트가 마운트될 때, Div 노드를 클릭해 드랍다운을 활성화하고, Input 노드에 포커스를 설정
   useEffect(() => {
     adderRef.current?.click();
     searchBarRef.current?.focus();
-  }, []);
+
+    return () => setShowFuture(false);
+  }, [setShowFuture]);
+
+  const showSearchBox =
+    showFuture || (searchClicked && searchedData.length !== 0);
 
   return (
     <div
@@ -154,9 +220,7 @@ export default function OperatorAdder() {
       <div className="relative w-full flex flex-row justify-between items-center">
         <input
           className={`w-full min-h-12 px-4 py-3 ${
-            !searchClicked || searchedData.length == 0
-              ? "rounded-lg"
-              : "rounded-t-lg"
+            showSearchBox ? "rounded-t-lg" : "rounded-lg"
           } z-20 resize-none 
           outline-solid outline-1 outline-gray-400
           bg-dark-800 text-gray-200 selection:bg-gray-800
@@ -171,6 +235,7 @@ export default function OperatorAdder() {
             // 검색 창의 텍스트가 바뀔 때마다, 맨 위의 오퍼레이터를 선택
             setDataIndex(0);
             setSearchText(event.target.value);
+            setShowFuture(false);
           }}
           onKeyDown={(event) => {
             handleSearchBarKeyDown(event);
@@ -179,7 +244,7 @@ export default function OperatorAdder() {
             // 검색 창을 포커스할 때마다, 맨 위의 오퍼레이터를 선택
             setDataIndex(0);
           }}
-        ></input>
+        />
         <div className="absolute right-4 w-6 z-30 aspect-square selection:bg-transparent">
           <Image
             className="[filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]"
@@ -193,12 +258,12 @@ export default function OperatorAdder() {
       </div>
       <ol
         className={`${
-          searchClicked
-            ? searchedData.length == 0
+          showSearchBox
+            ? searchedData.length === 0
               ? "opacity-0"
               : "opacity-100"
             : "invisible"
-        } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl`}
+        } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl shadow-2xl`}
       >
         {searchedData.map((data, index) => (
           <li
