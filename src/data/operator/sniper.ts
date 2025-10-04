@@ -334,6 +334,10 @@ export const Lemuen: Sniper = {
           material: biphasicEnantiomorphicMedium,
           count: 6,
         },
+        {
+          material: orirockConcentration,
+          count: 1,
+        },
       ],
     },
   },
