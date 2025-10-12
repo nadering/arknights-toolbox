@@ -665,6 +665,10 @@ export const LeiziTheThunderbringer: Guard = {
           material: crystallineElectronicUnit,
           count: 6,
         },
+        {
+          material: cyclicenePrefab,
+          count: 1,
+        }
       ],
     },
   },

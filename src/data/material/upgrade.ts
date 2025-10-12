@@ -424,7 +424,7 @@ export const chiralRefractor: Material = {
   type: "Upgrade",
   tier: 4,
   recipe: [
-    { material: pseudocondensationNucleus, count: 2 },
+    { material: pseudocondensationNucleus, count: 1 },
     { material: aggregateCyclicene, count: 1 },
     { material: sugarPack, count: 1 },
     { material: LMD, count: 300 },
@@ -752,7 +752,7 @@ export const biphasicEnantiomorphicMedium: Material = {
   recipe: [
     { material: chiralRefractor, count: 2 },
     { material: cyclicenePrefab, count: 1 },
-    { material: solidifiedFiberBoard, count: 2 },
+    { material: solidifiedFiberBoard, count: 1 },
     { material: LMD, count: 400 },
   ],
 };

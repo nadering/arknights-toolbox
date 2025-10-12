@@ -30,7 +30,7 @@ export default function Home() {
           글로벌 서버: 해리성 결합 (2025-09-16)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          사이트 업데이트 (2025-10-05)
+          사이트 업데이트 (2025-10-13)
         </p>
       </div>
     </div>
