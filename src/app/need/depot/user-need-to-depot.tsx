@@ -145,7 +145,8 @@ export default function UserNeedToDepot() {
       // 스킬 마스터리
       const commonAdded = [false, false, false, false, false, false, false];
       for (const skill of target.skillLevels) {
-        const skillName = skill.name;
+        const skillName = operator.skillList[skill.index];
+
         for (
           let skillNum = skill.current;
           skillNum < skill.target;

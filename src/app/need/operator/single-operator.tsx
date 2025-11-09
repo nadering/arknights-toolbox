@@ -74,15 +74,17 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
 
   // 스킬 레벨 설정
   const [skillLevels, setSkillLevels] = useState<SkillLevel[]>(
-    operator.skillList.map((skill) => {
+    operator.skillList.map((skill, index) => {
       if (operator.preferSkillList?.includes(skill)) {
         return {
+          index,
           name: skill,
           current: 1,
           target: SKILL_MAX_LEVEL_TABLE[targetElite],
         };
       } else {
         return {
+          index,
           name: skill,
           current: 1,
           target:
