@@ -8,6 +8,7 @@ import {
   makeEmptyDepot,
   operatorCollapsedAtom,
   OperatorMaterial,
+  OperatorTarget,
   selectedOperatorsAtom,
   selectedOperatorsMaterialAtom,
   userDepotAtom,
@@ -16,7 +17,8 @@ import {
   userNeedInitializedAtom,
 } from "@/store";
 import { EXP, MaterialType } from "@/data/material";
-import { Operator } from "@/data/operator";
+import { ModuleLevel, Operator } from "@/data/operator";
+import { getOperatorById } from "@/tool";
 
 /** localStorage 불러오기 및 저장을 담당하는 클라이언트 레이아웃 컴포넌트 */
 export default function LocalStorageSetter() {
@@ -59,7 +61,6 @@ export default function LocalStorageSetter() {
   useEffect(() => {
     // 사용자의 현재 재료 보유량
     const userDepotSaved = localStorage.getItem("userDepot");
-
     if (userDepotSaved) {
       try {
         const savedDepot: Depot = JSON.parse(userDepotSaved);
@@ -95,7 +96,6 @@ export default function LocalStorageSetter() {
 
     // 사용자의 필요 재료
     const userNeedSaved = localStorage.getItem("userNeed");
-
     if (userNeedSaved) {
       try {
         const savedNeed: Depot = JSON.parse(userNeedSaved);
@@ -153,10 +153,45 @@ export default function LocalStorageSetter() {
 
         // 옛날 데이터를 지원하되, 저장될 때는 최신 형식으로 저장되도록 설정
         savedObject.forEach((operatorMaterial) => {
+          const operator = getOperatorById(operatorMaterial.id);
+          const newTarget: OperatorTarget = { ...operatorMaterial.target };
+
+          // 스킬 이름 변경 반영
+          newTarget.skillLevels = newTarget.skillLevels.map(
+            (skillLevel, index) => {
+              return {
+                ...skillLevel,
+                index,
+                name: operator!.skillList[index],
+              };
+            }
+          );
+
+          // 모듈 추가 및 이름 변경 반영
+          newTarget.moduleLevels = operator!.moduleList.map((module) => {
+            const existModuleLevel = operatorMaterial.target.moduleLevels.find(
+              (moduleLevel) => moduleLevel.type === module.type
+            );
+
+            if (existModuleLevel !== undefined) {
+              return {
+                ...existModuleLevel,
+                name: module.name,
+              };
+            } else {
+              return {
+                type: module.type,
+                name: module.name,
+                current: 0,
+                target: 0,
+              } as ModuleLevel;
+            }
+          });
+
           newObject.push({
             id: operatorMaterial.id,
             rarity: operatorMaterial.rarity,
-            target: operatorMaterial.target,
+            target: newTarget,
           });
         });
 

@@ -35,6 +35,7 @@ export interface MaterialsWithNumberAndName {
 /** 스킬 레벨 타입 */
 export interface SkillLevel {
   name: string;
+  index: number;
   current: number;
   target: number;
 }
@@ -1086,7 +1087,7 @@ export const ELITE_TWO_CHIP_TABLE: NumberByRarity = {
   3: 0,
   2: 0,
   1: 0,
-}
+};
 
 /** 레어도에 따른 2정예화에 소모되는 용문폐 */
 export const ELITE_TWO_LMD_TABLE: NumberByRarity = {
