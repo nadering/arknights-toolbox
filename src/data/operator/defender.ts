@@ -394,7 +394,7 @@ export const SanktaMiksaparato: Defender = {
       },
     ],
   },
-  skillList: ["총기 감독관", "여덟팔 전기톱맨", "은퇴 전의 포교"],
+  skillList: ["총기사 시험관", "여덟팔 전기톱맨", "은퇴 전 포교"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -466,7 +466,7 @@ export const SanktaMiksaparato: Defender = {
         },
       ],
     },
-    "총기 감독관": {
+    "총기사 시험관": {
       "8": [
         {
           material: skillSummary3,
@@ -554,7 +554,7 @@ export const SanktaMiksaparato: Defender = {
         },
       ],
     },
-    "은퇴 전의 포교": {
+    "은퇴 전 포교": {
       "8": [
         {
           material: skillSummary3,
@@ -602,7 +602,7 @@ export const SanktaMiksaparato: Defender = {
   moduleList: [
     {
       type: "SPT-X",
-      name: "갑옷 관리용 먼지떨이 세트",
+      name: "갑옷 청소용 브러시 세트",
     },
   ],
   moduleMaterials: {

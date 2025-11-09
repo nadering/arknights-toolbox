@@ -138,8 +138,8 @@ export const ExusiaiTheNewCovenant: Specialist = {
       },
     ],
   },
-  skillList: ["하늘 대청소", "트리거 해피", "사명은 반드시 완수한다!"],
-  preferSkillList: ["트리거 해피", "사명은 반드시 완수한다!"],
+  skillList: ["하늘 대청소", "발포 중독증", "신속배달!"],
+  preferSkillList: ["발포 중독증", "신속배달!"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -255,7 +255,7 @@ export const ExusiaiTheNewCovenant: Specialist = {
         },
       ],
     },
-    "트리거 해피": {
+    "발포 중독증": {
       "8": [
         {
           material: skillSummary3,
@@ -299,7 +299,7 @@ export const ExusiaiTheNewCovenant: Specialist = {
         },
       ],
     },
-    "사명은 반드시 완수한다!": {
+    "신속배달!": {
       "8": [
         {
           material: skillSummary3,
@@ -347,14 +347,14 @@ export const ExusiaiTheNewCovenant: Specialist = {
   moduleList: [
     {
       type: "GEE-X",
-      name: "새 친구를 위한 성도 생활 세트",
+      name: "새 친구를 위한 웰컴 키트",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "GEE-X",
-        name: "새 친구를 위한 성도 생활 세트",
+        name: "새 친구를 위한 웰컴 키트",
       },
       level: 3,
     },

@@ -135,8 +135,8 @@ export const Lemuen: Sniper = {
       },
     ],
   },
-  skillList: ["재회 인사", "고향의 초대", "예포 - 강압적 애도"],
-  preferSkillList: ["고향의 초대", "예포 - 강압적 애도"],
+  skillList: ["재회 인사", "귀향의 약속", "예포 - 강제적인 추모"],
+  preferSkillList: ["귀향의 약속", "예포 - 강제적인 추모"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -252,7 +252,7 @@ export const Lemuen: Sniper = {
         },
       ],
     },
-    "고향의 초대": {
+    "귀향의 약속": {
       "8": [
         {
           material: skillSummary3,
@@ -296,7 +296,7 @@ export const Lemuen: Sniper = {
         },
       ],
     },
-    "예포 - 강압적 애도": {
+    "예포 - 강제적인 추모": {
       "8": [
         {
           material: skillSummary3,
@@ -344,14 +344,14 @@ export const Lemuen: Sniper = {
   moduleList: [
     {
       type: "DEA-Y",
-      name: "'탄창과 창호'",
+      name: "'탄창과 색유리 창'",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "DEA-Y",
-        name: "'탄창과 창호'",
+        name: "'탄창과 색유리 창'",
       },
       level: 3,
     },

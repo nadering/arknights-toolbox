@@ -1130,7 +1130,7 @@ export const SilenceTheParadigmatic: Supporter = {
   },
   moduleList: [
     { type: "BLS-X", name: "모처럼 맑은 정신" },
-    { type: "BLS-Y", name: "제어할 수 있는 운동량" },
+    { type: "BLS-Y", name: "제어 가능한 모멘텀" },
   ],
   moduleMaterials: {
     "BLS-X": {

@@ -27,10 +27,10 @@ export default function Home() {
           중국 서버: 평안한 잠꼬대 (2025-09-04)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          글로벌 서버: 해리성 결합 (2025-09-16)
+          글로벌 서버: 중생의 여정 (2025-10-14)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          사이트 업데이트 (2025-10-13)
+          사이트 업데이트 (2025-11-09)
         </p>
       </div>
     </div>

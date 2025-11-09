@@ -2685,10 +2685,10 @@ export const Młynar: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "LIB-X", name: "'칼집 속의 사람'" }],
+  moduleList: [{ type: "LIB-X", name: "'칼집 속 사람'" }],
   preferModuleList: [
     {
-      module: { type: "LIB-X", name: "'칼집 속의 사람'" },
+      module: { type: "LIB-X", name: "'칼집 속 사람'" },
       level: 3,
     },
   ],
@@ -4741,7 +4741,7 @@ export const Thorns: Guard = {
     },
     {
       type: "LOR-Δ",
-      name: "부식성 모래",
+      name: "모래 침식",
     },
   ],
   preferModuleList: [
