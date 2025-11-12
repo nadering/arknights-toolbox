@@ -668,7 +668,7 @@ export const LeiziTheThunderbringer: Guard = {
         {
           material: cyclicenePrefab,
           count: 1,
-        }
+        },
       ],
     },
   },
@@ -1161,7 +1161,13 @@ export const VinaVictoria: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "AFT-X", name: "성주의 모험" }],
+  moduleList: [
+    { type: "AFT-X", name: "성주의 모험" },
+    { type: "AFT-Y", name: "신성한 질서의 '보주'" },
+  ],
+  preferModuleList: [
+    { module: { type: "AFT-Y", name: "신성한 질서의 '보주'" }, level: 3 },
+  ],
   moduleMaterials: {
     "AFT-X": {
       1: [
@@ -1179,6 +1185,25 @@ export const VinaVictoria: Guard = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "AFT-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -2260,7 +2285,10 @@ export const ExecutorTheExFoedere: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "REA-X", name: "답을 기다리며" }],
+  moduleList: [
+    { type: "REA-X", name: "답을 기다리며" },
+    { type: "REA-Y", name: "이미 깨친 것" },
+  ],
   preferModuleList: [
     {
       module: { type: "REA-X", name: "답을 기다리며" },
@@ -2284,6 +2312,25 @@ export const ExecutorTheExFoedere: Guard = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: D32Steel, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "REA-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },

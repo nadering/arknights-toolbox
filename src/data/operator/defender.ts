@@ -344,8 +344,75 @@ export const HoshigumaTheBreacher: Defender = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [
+    {
+      type: "AST-X",
+      name: "무흔",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "AST-X",
+        name: "무흔",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "AST-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
 };
 
 /** 산크타 믹사파라토 */

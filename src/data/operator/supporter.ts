@@ -89,6 +89,319 @@ export interface Supporter extends Operator {
 }
 
 // 6성
+/** 아스트젠 더 라이트체이서 */
+export const AstgenneTheLightchaser: Supporter = {
+  id: 393,
+  name: "아스트젠 더 라이트체이서",
+  imageFilename: "astgenne-the-lightchaser",
+  class: "Supporter",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: supporterChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 8,
+      },
+      {
+        material: orirockCube,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: supporterDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: transmutedSaltAgglomerate,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["반짝이는 별자리", "별을 가두는 중력", "병렬 연결선"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: transmutedSalt,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 1,
+        },
+      ],
+    },
+    "반짝이는 별자리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: orirockCluster,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 1,
+        },
+      ],
+    },
+    "별을 가두는 중력": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 7,
+        },
+      ],
+    },
+    "병렬 연결선": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 7,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "DEC-Y",
+      name: "탐험가의 수집품",
+    },
+  ],
+  moduleMaterials: {
+    "DEC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 하루카 */
 export const Haruka: Supporter = {
   id: 381,
@@ -1914,12 +2227,23 @@ export const Gnosis: Supporter = {
       type: "UMD-Y",
       name: "1호 프로젝트 모델",
     },
+    {
+      type: "ISW-α",
+      name: "노시스의 특별 한정 배지",
+    },
   ],
   preferModuleList: [
     {
       module: {
         type: "UMD-X",
         name: "'약속'",
+      },
+      level: 3,
+    },
+    {
+      module: {
+        type: "ISW-α",
+        name: "노시스의 특별 한정 배지",
       },
       level: 3,
     },
@@ -2026,6 +2350,26 @@ export const Gnosis: Supporter = {
         {
           material: LMD,
           count: 120000,
+        },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
         },
       ],
     },
@@ -4320,6 +4664,7 @@ export const SandReckoner: Supporter = {
 
 // 서포터 오퍼레이터 리스트 계열
 const sixStarSupporterList: Supporter[] = [
+  AstgenneTheLightchaser,
   Haruka,
   Tragodia,
   CivilightEterna,

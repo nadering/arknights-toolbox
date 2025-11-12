@@ -516,8 +516,75 @@ export const Narantuya: Sniper = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [
+    {
+      type: "LPS-X",
+      name: "'모래바람을 헤치며'",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "LPS-X",
+        name: "'모래바람을 헤치며'",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "LPS-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
 };
 
 /** 위셔델 */

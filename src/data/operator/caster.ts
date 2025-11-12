@@ -6,6 +6,7 @@ import {
   bipolarNanoflake,
   casterChip,
   casterDualchip,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -89,6 +90,652 @@ export interface Caster extends Operator {
 }
 
 // 6성
+/** 프라마닉스 더 프레리타 */
+export const PramanixThePrerita: Caster = {
+  id: 394,
+  name: "프라마닉스 더 프레리타",
+  imageFilename: "pramanix-the-prerita",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: biphasicEnantiomorphicMedium,
+        count: 4,
+      },
+      {
+        material: ketonColloid,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["종소리와 눈보라", "서릿발 치는 산골", "뭇 산의 경배"],
+  preferSkillList: ["서릿발 치는 산골", "뭇 산의 경배"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyesterPack,
+          count: 7,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSalt,
+          count: 5,
+        },
+        {
+          material: loxicKohl,
+          count: 2,
+        },
+      ],
+    },
+    "종소리와 눈보라": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+    },
+    "서릿발 치는 산골": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+    "뭇 산의 경배": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: fuscousFiber,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PLX-Y",
+      name: "1000분의 1의 마음",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "PLX-Y",
+        name: "1000분의 1의 마음",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "PLX-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 만트라 */
+export const Mantra: Caster = {
+  id: 389,
+  name: "만트라",
+  imageFilename: "mantra",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 11,
+      },
+      {
+        material: oriron,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: nucleicCrystalSinter,
+        count: 4,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["공명의 붕괴", "의식의 화합", "고요가 곧 진실"],
+  preferSkillList: ["고요가 곧 진실"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 6,
+        },
+        {
+          material: orironShard,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 5,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 3,
+        },
+      ],
+    },
+    "공명의 붕괴": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 1,
+        },
+      ],
+    },
+    "의식의 화합": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+    "고요가 곧 진실": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PRI-X",
+      name: "중추 신경계 감지 모듈",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "PRI-X",
+        name: "중추 신경계 감지 모듈",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "PRI-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 네크라스 */
 export const Necrass: Caster = {
   id: 363,
@@ -1174,8 +1821,8 @@ export const Logos: Caster = {
     },
   },
   moduleList: [
-    { type: "CCR-Δ", name: "협곡에서 온 필통" },
     { type: "CCR-Y", name: "《의미 범주 백과사전》" },
+    { type: "CCR-Δ", name: "협곡에서 온 필통" },
   ],
   preferModuleList: [
     {
@@ -1335,6 +1982,10 @@ export const Hoolheyak: Caster = {
   moduleList: [
     { type: "CCR-X", name: "'도서관'" },
     { type: "CCR-Y", name: "쿠쿨칸의 시간 박물관" },
+    { type: "ISW-α", name: "오올헤약의 특별 한정 배지" },
+  ],
+  preferModuleList: [
+    { module: { type: "ISW-α", name: "오올헤약의 특별 한정 배지" }, level: 3 },
   ],
   moduleMaterials: {
     "CCR-X": {
@@ -1373,6 +2024,26 @@ export const Hoolheyak: Caster = {
         { material: dataSupplementInstrument, count: 20 },
         { material: D32Steel, count: 4 },
         { material: LMD, count: 120000 },
+      ],
+    },
+    "ISW-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
       ],
     },
   },
@@ -4665,6 +5336,10 @@ export const Eyjafjalla: Caster = {
       type: "CCR-X",
       name: "'놓친 소리'",
     },
+    {
+      type: "CCR-Y",
+      name: "반려동물 대회 일등상",
+    },
   ],
   preferModuleList: [
     {
@@ -4728,11 +5403,65 @@ export const Eyjafjalla: Caster = {
         },
       ],
     },
+    "CCR-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
   },
 };
 
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
+  PramanixThePrerita,
+  Mantra,
   Necrass,
   BlazeTheIgnitingSpark,
   LapplandTheDecadenza,

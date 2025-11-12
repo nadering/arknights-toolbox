@@ -4,6 +4,7 @@ import {
   aketon,
   biphasicEnantiomorphicMedium,
   bipolarNanoflake,
+  chiralRefractor,
   coagulatingGel,
   compoundCuttingFluid,
   crystallineCircuit,
@@ -46,6 +47,7 @@ import {
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
+  pseudocondensationNucleus,
   refinedSolvent,
   RMA7012,
   RMA7024,
@@ -86,6 +88,263 @@ export interface Vanguard extends Operator {
 }
 
 // 6성
+/** 실버애쉬 더 레인프로스트 (레재) */
+export const SilverashTheReignfrost: Vanguard = {
+  id: 395,
+  name: "실버애쉬 더 레인프로스트",
+  nicknameList: ["레재"],
+  imageFilename: "silverash-the-reignfrost",
+  class: "Vanguard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: vanguardChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: polyketon,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 4,
+      },
+      {
+        material: crystallineElectronicUnit,
+        count: 4,
+      },
+      {
+        material: crystallineCircuit,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["응대 전략", "외세를 막는 혜안", "개혁이 도래했다"],
+  preferSkillList: ["외세를 막는 혜안", "개혁이 도래했다"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+      ],
+    },
+    "응대 전략": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 8,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: D32Steel,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+    },
+    "외세를 막는 혜안": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 2,
+        },
+      ],
+    },
+    "개혁이 도래했다": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 불피스폴리아 */
 export const Vulpisfoglia: Vanguard = {
   id: 351,
@@ -3198,6 +3457,7 @@ export const Myrtle: Vanguard = {
 
 // 뱅가드 오퍼레이터 리스트 계열
 const sixStarVanguardList: Vanguard[] = [
+  SilverashTheReignfrost,
   Vulpisfoglia,
   Muelsyse,
   Ines,
