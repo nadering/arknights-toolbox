@@ -27,7 +27,7 @@ export default function Home() {
           중국 서버: 설산 강림 1101 (2025-11-01)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          글로벌 서버: 중생의 여정 (2025-10-14)
+          글로벌 서버: 경중집 (2025-12-11)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
           사이트 업데이트 (2025-11-12)

@@ -741,10 +741,10 @@ export const T4UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T5)
-/** (T5) 중위상 엔안티오머 */
+/** (T5) 중위상 이성질체 */
 export const biphasicEnantiomorphicMedium: Material = {
   id: "30165",
-  name: "중위상 엔안티오머",
+  name: "중위상 이성질체",
   objectName: "biphasicEnantiomorphicMedium",
   imageFilename: "biphasic-enantiomorphic-medium",
   type: "Upgrade",

@@ -1679,7 +1679,7 @@ export const Dorothy: Specialist = {
     },
   },
   moduleList: [
-    { type: "TRP-X", name: "꿈 속의 사람" },
+    { type: "TRP-X", name: "꿈속에서" },
     { type: "TRP-Y", name: "동화책" },
   ],
   preferModuleList: [{ module: { type: "TRP-Y", name: "동화책" }, level: 3 }],

@@ -776,8 +776,8 @@ export const Tragodia: Supporter = {
       },
     ],
   },
-  skillList: ["어두운 밤의 반향", "집단적 섬망", "황량한 극장"],
-  preferSkillList: ["집단적 섬망", "황량한 극장"],
+  skillList: ["밤의 메아리", "집단적 섬망", "빈 극장"],
+  preferSkillList: ["집단적 섬망", "빈 극장"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -849,7 +849,7 @@ export const Tragodia: Supporter = {
         },
       ],
     },
-    "어두운 밤의 반향": {
+    "밤의 메아리": {
       "8": [
         {
           material: skillSummary3,
@@ -937,7 +937,7 @@ export const Tragodia: Supporter = {
         },
       ],
     },
-    "황량한 극장": {
+    "빈 극장": {
       "8": [
         {
           material: skillSummary3,
@@ -985,14 +985,14 @@ export const Tragodia: Supporter = {
   moduleList: [
     {
       type: "RIT-X",
-      name: "트라고디아의 마음",
+      name: "트라고디아의 심장",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "RIT-X",
-        name: "트라고디아의 마음",
+        name: "트라고디아의 심장",
       },
       level: 3,
     },

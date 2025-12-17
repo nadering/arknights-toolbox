@@ -466,8 +466,8 @@ export const LeiziTheThunderbringer: Guard = {
       },
     ],
   },
-  skillList: ["영원한 호기", "뇌정의 위세", "천지통명"],
-  preferSkillList: ["영원한 호기", "뇌정의 위세", "천지통명"],
+  skillList: ["호기장존", "천뢰지위", "천지통명"],
+  preferSkillList: ["호기장존", "천뢰지위", "천지통명"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -539,7 +539,7 @@ export const LeiziTheThunderbringer: Guard = {
         },
       ],
     },
-    "영원한 호기": {
+    호기장존: {
       "8": [
         {
           material: skillSummary3,
@@ -583,7 +583,7 @@ export const LeiziTheThunderbringer: Guard = {
         },
       ],
     },
-    "뇌정의 위세": {
+    천뢰지위: {
       "8": [
         {
           material: skillSummary3,
@@ -2869,11 +2869,11 @@ export const GavialTheInvincible: Guard = {
   },
   moduleList: [
     { type: "CEN-X", name: "가비알의 괴로움" },
-    { type: "CEN-Y", name: "많이 갈음질한 좋은 톱" },
+    { type: "CEN-Y", name: "호'톱'다마" },
   ],
   preferModuleList: [
     {
-      module: { type: "CEN-Y", name: "많이 갈음질한 좋은 톱" },
+      module: { type: "CEN-Y", name: "호'톱'다마" },
       level: 1,
     },
   ],
@@ -4082,7 +4082,7 @@ export const Mountain: Guard = {
   moduleList: [
     {
       type: "FGT-X",
-      name: "'깊고 한적한 밤'",
+      name: "'깊은 밤'",
     },
     {
       type: "FGT-Y",

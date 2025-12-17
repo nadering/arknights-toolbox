@@ -988,10 +988,10 @@ export const Necrass: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "SOC-X", name: "처분되지 않은 유산" }],
+  moduleList: [{ type: "SOC-X", name: "주인 없는 유산" }],
   preferModuleList: [
     {
-      module: { type: "SOC-X", name: "처분되지 않은 유산" },
+      module: { type: "SOC-X", name: "주인 없는 유산" },
       level: 3,
     },
   ],
