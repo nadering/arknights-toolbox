@@ -24,7 +24,7 @@ export default function Home() {
           최근 업데이트
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          중국 서버: 설산 강림 1101 (2025-11-01)
+          중국 서버: 허락되지 않은 땅 (2025-12-05)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
           글로벌 서버: 경중집 (2025-12-11)

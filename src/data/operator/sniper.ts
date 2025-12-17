@@ -828,7 +828,10 @@ export const Ray: Sniper = {
       ],
     },
   },
-  moduleList: [{ type: "HUN-X", name: "《춤추는 달빛》" }],
+  moduleList: [
+    { type: "HUN-X", name: "《춤추는 달빛》" },
+    { type: "HUN-Y", name: "무엇을 증명하는가?" },
+  ],
   preferModuleList: [
     {
       module: {
@@ -855,6 +858,25 @@ export const Ray: Sniper = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "HUN-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: biphasicEnantiomorphicMedium, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: D32Steel, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
