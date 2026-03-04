@@ -765,12 +765,8 @@ export const Haruka: Supporter = {
       },
     ],
   },
-  skillList: [
-    "밤에 우는 파울비스트",
-    "한밤중을 비추는 반딧불이",
-    "늦여름의 헤엄치는 린수",
-  ],
-  preferSkillList: ["한밤중을 비추는 반딧불이", "늦여름의 헤엄치는 린수"],
+  skillList: ["밤의 파울비스트", "틈새의 반딧불", "늦여름의 린수"],
+  preferSkillList: ["틈새의 반딧불", "늦여름의 린수"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -842,7 +838,7 @@ export const Haruka: Supporter = {
         },
       ],
     },
-    "밤에 우는 파울비스트": {
+    "밤의 파울비스트": {
       "8": [
         {
           material: skillSummary3,
@@ -886,7 +882,7 @@ export const Haruka: Supporter = {
         },
       ],
     },
-    "한밤중을 비추는 반딧불이": {
+    "틈새의 반딧불": {
       "8": [
         {
           material: skillSummary3,
@@ -930,7 +926,7 @@ export const Haruka: Supporter = {
         },
       ],
     },
-    "늦여름의 헤엄치는 린수": {
+    "늦여름의 린수": {
       "8": [
         {
           material: skillSummary3,
@@ -4231,8 +4227,8 @@ export const MisumiUika: Supporter = {
       },
     ],
   },
-  skillList: ["내가 사모하는", "내가 연민하는"],
-  preferSkillList: ["내가 연민하는"],
+  skillList: ["내가 그리워하는 것", "내가 슬퍼하는 것"],
+  preferSkillList: ["내가 슬퍼하는 것"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -4296,7 +4292,7 @@ export const MisumiUika: Supporter = {
         },
       ],
     },
-    "내가 사모하는": {
+    "내가 그리워하는 것": {
       "8": [
         {
           material: skillSummary3,
@@ -4340,7 +4336,7 @@ export const MisumiUika: Supporter = {
         },
       ],
     },
-    "내가 연민하는": {
+    "내가 슬퍼하는 것": {
       "8": [
         {
           material: skillSummary3,
@@ -4388,14 +4384,14 @@ export const MisumiUika: Supporter = {
   moduleList: [
     {
       type: "BAR-X",
-      name: "점술의 의미",
+      name: "점괘의 의미",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "BAR-X",
-        name: "점술의 의미",
+        name: "점괘의 의미",
       },
       level: 3,
     },

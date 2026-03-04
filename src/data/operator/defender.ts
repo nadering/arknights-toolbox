@@ -138,8 +138,8 @@ export const HoshigumaTheBreacher: Defender = {
       },
     ],
   },
-  skillList: ["악행의 말로", "시작이 없다면 빛도 없으리", "지옥변상"],
-  preferSkillList: ["시작이 없다면 빛도 없으리", "지옥변상"],
+  skillList: ["악업과보", "무시무명", "지옥변상"],
+  preferSkillList: ["무시무명", "지옥변상"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -211,7 +211,7 @@ export const HoshigumaTheBreacher: Defender = {
         },
       ],
     },
-    "악행의 말로": {
+    악업과보: {
       "8": [
         {
           material: skillSummary3,
@@ -255,7 +255,7 @@ export const HoshigumaTheBreacher: Defender = {
         },
       ],
     },
-    "시작이 없다면 빛도 없으리": {
+    무시무명: {
       "8": [
         {
           material: skillSummary3,
@@ -980,8 +980,75 @@ export const Yu: Defender = {
       ],
     },
   },
-  moduleList: [],
-  moduleMaterials: null,
+  moduleList: [
+    {
+      type: "PRP-X",
+      name: "인간백미",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "PRP-X",
+        name: "인간백미",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "PRP-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
 };
 
 /** 슈 */
@@ -2587,13 +2654,6 @@ export const Eunectes: Defender = {
     },
   ],
   preferModuleList: [
-    {
-      module: {
-        type: "HES-X",
-        name: "주마마의 공구함",
-      },
-      level: 1,
-    },
     {
       module: {
         type: "RA-α",

@@ -165,7 +165,7 @@ export default function OperatorMaker() {
   /** 숫자로 된 문자열 설정 */
   const handleNumberStringValue = (
     event: FormEvent<HTMLInputElement>,
-    setter: (value: SetStateAction<string>) => void
+    setter: (value: SetStateAction<string>) => void,
   ) => {
     let value = event.currentTarget.value;
 
@@ -188,7 +188,7 @@ export default function OperatorMaker() {
   const handleEliteOneMaterialChange = (
     index: number,
     material: Material,
-    count: number
+    count: number,
   ) => {
     const prev = eliteOneMaterial;
     prev[index] = { material, count };
@@ -200,7 +200,7 @@ export default function OperatorMaker() {
   const handleEliteTwoMaterialChange = (
     index: number,
     material: Material,
-    count: number
+    count: number,
   ) => {
     const prev = eliteTwoMaterial;
     prev[index] = { material, count };
@@ -316,7 +316,7 @@ export default function OperatorMaker() {
               }
             })}
           </div>
-        </div>
+        </div>,
       );
     }
 
@@ -432,7 +432,7 @@ export default function OperatorMaker() {
               }
             })}
           </div>
-        </div>
+        </div>,
       );
     }
 
@@ -444,7 +444,7 @@ export default function OperatorMaker() {
     index: number,
     material: Material,
     count: number,
-    listIndex?: number
+    listIndex?: number,
   ) => {
     const prev = commonSkillMaterial[listIndex!];
     prev[index] = { material, count } as CountableMaterial;
@@ -458,7 +458,7 @@ export default function OperatorMaker() {
     material: Material,
     count: number,
     listIndex?: number,
-    itemIndex?: number
+    itemIndex?: number,
   ) => {
     const prev = skillMasteryMaterial[itemIndex!][listIndex!];
     prev[index] = { material, count } as CountableMaterial;
@@ -470,7 +470,7 @@ export default function OperatorMaker() {
   const handleModuleTextChange = (
     text: string,
     itemIndex: number,
-    index: number
+    index: number,
   ) => {
     // 타입 및 이름 변경
     moduleNameList[itemIndex][index] = text;
@@ -487,7 +487,7 @@ export default function OperatorMaker() {
         key={`module-text-${moduleNum}`}
         itemId={moduleNum}
         handleChange={handleModuleTextChange}
-      />
+      />,
     );
 
     // 모듈 업그레이드 1레벨 ~ 3레벨 구간을 생성
@@ -693,10 +693,10 @@ export default function OperatorMaker() {
                       />
                     );
                 }
-              }
+              },
             )}
           </div>
-        </div>
+        </div>,
       );
     }
 
@@ -712,7 +712,7 @@ export default function OperatorMaker() {
     material: Material,
     count: number,
     listIndex?: number,
-    itemIndex?: number
+    itemIndex?: number,
   ) => {
     const prev = moduleMaterial[itemIndex!][listIndex!];
     prev[index] = { material, count } as CountableMaterial;
@@ -786,35 +786,35 @@ export default function OperatorMaker() {
             },
             [skillOneName]: {
               8: skillMasteryMaterial[0][0].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               9: skillMasteryMaterial[0][1].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               10: skillMasteryMaterial[0][2].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
             },
             [skillTwoName]: {
               8: skillMasteryMaterial[1][0].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               9: skillMasteryMaterial[1][1].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               10: skillMasteryMaterial[1][2].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
             },
             [skillThreeName]: {
               8: skillMasteryMaterial[2][0].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               9: skillMasteryMaterial[2][1].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               10: skillMasteryMaterial[2][2].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
             },
           },
@@ -849,24 +849,24 @@ export default function OperatorMaker() {
             },
             [skillOneName]: {
               8: skillMasteryMaterial[0][0].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               9: skillMasteryMaterial[0][1].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               10: skillMasteryMaterial[0][2].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
             },
             [skillTwoName]: {
               8: skillMasteryMaterial[1][0].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               9: skillMasteryMaterial[1][1].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
               10: skillMasteryMaterial[1][2].filter(
-                (material) => material != null
+                (material) => material != null,
               ),
             },
           },
@@ -929,7 +929,7 @@ export default function OperatorMaker() {
       // 오퍼레이터 데이터를 문자열로 변환
       const resultString = JSON.stringify(operatorData!, replacer, 2).replace(
         /"material": "(.*?)"/g,
-        '"material": $1'
+        '"material": $1',
       );
 
       // 클립보드 혹은 콘솔에 출력
@@ -1064,7 +1064,7 @@ export default function OperatorMaker() {
       {/* 아이디 */}
       <div className="flex flex-row items-center justify-between gap-2">
         <a
-          href="https://hx3n.github.io/gachaplanner/operators"
+          href="https://ark-gachaplanner.netlify.app/operators"
           target="_blank"
           rel="noopener noreferrer"
           className="px-1 w-40 leading-none font-semibold text-xl text-gray-200 underline break-keep"

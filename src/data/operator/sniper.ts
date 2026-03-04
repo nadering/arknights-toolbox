@@ -1989,14 +1989,14 @@ export const ChenTheHolungday: Sniper = {
     },
     {
       type: "RPR-Y",
-      name: "휴가의 마지막 날",
+      name: "휴가 마지막 날",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "RPR-Y",
-        name: "휴가의 마지막 날",
+        name: "휴가 마지막 날",
       },
       level: 3,
     },
@@ -2757,13 +2757,6 @@ export const Archetto: Sniper = {
     },
   ],
   preferModuleList: [
-    {
-      module: {
-        type: "MAR-Y",
-        name: "'내일의 씨앗'",
-      },
-      level: 1,
-    },
     {
       module: {
         type: "ISW-α",
@@ -3884,6 +3877,10 @@ export const Rosa: Sniper = {
       type: "SIE-X",
       name: "공성기계 훈련장치",
     },
+    {
+      type: "SIE-Y",
+      name: "'마음'",
+    },
   ],
   preferModuleList: [
     {
@@ -3939,6 +3936,58 @@ export const Rosa: Sniper = {
         },
         {
           material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "SIE-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: D32Steel,
           count: 4,
         },
         {

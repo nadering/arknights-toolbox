@@ -91,6 +91,323 @@ export interface Specialist extends Operator {
 }
 
 // 6성
+/** 왕 */
+export const Wang: Specialist = {
+  id: 405,
+  name: "왕",
+  imageFilename: "wang",
+  class: "Specialist",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: specialistChip!,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 12,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: specialistDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: ketonColloid,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["취세", "연성", "천하겁"],
+  preferSkillList: ["천하겁"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: ester,
+          count: 6,
+        },
+        {
+          material: orironShard,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugarPack,
+          count: 7,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineComponent,
+          count: 5,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+    },
+    취세: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 1,
+        },
+      ],
+    },
+    연성: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: integratedDevice,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+    },
+    천하겁: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: loxicKohl,
+          count: 10,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "TRP-X",
+      name: "짐승 모양 바둑통",
+    },
+  ],
+  preferModuleList: [
+    { module: { type: "TRP-X", name: "짐승 모양 바둑통" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "TRP-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 엑시아 더 뉴 커버넌트 (신시아) */
 export const ExusiaiTheNewCovenant: Specialist = {
   id: 370,
@@ -2307,7 +2624,7 @@ export const Mizuki: Specialist = {
     ],
   },
   skillList: ["일깨움", "죄수의 딜레마", "경화수월"],
-  preferSkillList: ["일깨움"],
+  preferSkillList: ["죄수의 딜레마"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -2527,13 +2844,6 @@ export const Mizuki: Specialist = {
     },
   ],
   preferModuleList: [
-    {
-      module: {
-        type: "AMB-X",
-        name: "사도의 약속",
-      },
-      level: 2,
-    },
     {
       module: {
         type: "ISW-α",
@@ -4202,7 +4512,7 @@ export const YahataUmiri: Specialist = {
       },
     ],
   },
-  skillList: ["전율의 현", "머물 곳 없는 존재"],
+  skillList: ["전율의 현", "머물 곳 없는 자"],
   preferSkillList: ["전율의 현"],
   skillUpgradeMaterials: {
     common: {
@@ -4311,7 +4621,7 @@ export const YahataUmiri: Specialist = {
         },
       ],
     },
-    "머물 곳 없는 존재": {
+    "머물 곳 없는 자": {
       "8": [
         {
           material: skillSummary3,
@@ -4359,14 +4669,14 @@ export const YahataUmiri: Specialist = {
   moduleList: [
     {
       type: "AMB-Y",
-      name: "추가 훈련",
+      name: "오버트레이닝",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "AMB-Y",
-        name: "추가 훈련",
+        name: "오버트레이닝",
       },
       level: 3,
     },
@@ -4474,8 +4784,8 @@ export const WakabaMutsumi: Specialist = {
       },
     ],
   },
-  skillList: ["히드라비스트", "파괴와 양육"],
-  preferSkillList: ["파괴와 양육"],
+  skillList: ["다두의 괴수", "파괴와 재생"],
+  preferSkillList: ["파괴와 재생"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -4539,7 +4849,7 @@ export const WakabaMutsumi: Specialist = {
         },
       ],
     },
-    히드라비스트: {
+    "다두의 괴수": {
       "8": [
         {
           material: skillSummary3,
@@ -4583,7 +4893,7 @@ export const WakabaMutsumi: Specialist = {
         },
       ],
     },
-    "파괴와 양육": {
+    "파괴와 재생": {
       "8": [
         {
           material: skillSummary3,
@@ -4631,14 +4941,14 @@ export const WakabaMutsumi: Specialist = {
   moduleList: [
     {
       type: "PUM-Y",
-      name: "새로운 친구",
+      name: "새로운 친구들",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "PUM-Y",
-        name: "새로운 친구",
+        name: "새로운 친구들",
       },
       level: 3,
     },
@@ -4925,6 +5235,7 @@ export const TinMan: Specialist = {
 
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
+  Wang,
   ExusiaiTheNewCovenant,
   ThornsTheLodestar,
   Crownslayer,

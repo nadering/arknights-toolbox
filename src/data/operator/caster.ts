@@ -1271,12 +1271,12 @@ export const BlazeTheIgnitingSpark: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "PRI-X", name: "열렬한 기대" }],
+  moduleList: [{ type: "PRI-X", name: "간절한 희망" }],
   preferModuleList: [
     {
       module: {
         type: "PRI-X",
-        name: "열렬한 기대",
+        name: "간절한 희망",
       },
       level: 1,
     },
@@ -3400,6 +3400,7 @@ export const Passenger: Caster = {
       type: "CHA-Y",
       name: "왕권의 금화",
     },
+    { type: "RA-α", name: "패신저의 특별 한정 배지" },
   ],
   preferModuleList: [
     {
@@ -3407,6 +3408,10 @@ export const Passenger: Caster = {
         type: "CHA-X",
         name: "전자기 조절 장치",
       },
+      level: 3,
+    },
+    {
+      module: { type: "RA-α", name: "패신저의 특별 한정 배지" },
       level: 3,
     },
   ],
@@ -3512,6 +3517,26 @@ export const Passenger: Caster = {
         {
           material: LMD,
           count: 120000,
+        },
+      ],
+    },
+    "RA-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
         },
       ],
     },
@@ -3785,20 +3810,6 @@ export const Dusk: Caster = {
     },
   ],
   preferModuleList: [
-    {
-      module: {
-        type: "SPC-X",
-        name: "무제의 긴 두루마리",
-      },
-      level: 1,
-    },
-    {
-      module: {
-        type: "SPC-Y",
-        name: "'잠 못 이루는 밤'",
-      },
-      level: 3,
-    },
     {
       module: {
         type: "ISW-α",
