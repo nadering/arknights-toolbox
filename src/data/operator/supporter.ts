@@ -452,7 +452,8 @@ export const AstgenneTheLightchaser: Supporter = {
       },
     ],
   },
-  skillList: ["반짝이는 별자리", "별을 가두는 중력", "병렬 연결선"],
+  skillList: ["반짝이는 항성도", "별무리 인력", "병렬 사슬"],
+  preferSkillList: ["병렬 사슬"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -524,7 +525,7 @@ export const AstgenneTheLightchaser: Supporter = {
         },
       ],
     },
-    "반짝이는 별자리": {
+    "반짝이는 항성도": {
       "8": [
         {
           material: skillSummary3,
@@ -568,7 +569,7 @@ export const AstgenneTheLightchaser: Supporter = {
         },
       ],
     },
-    "별을 가두는 중력": {
+    "별무리 인력": {
       "8": [
         {
           material: skillSummary3,
@@ -612,7 +613,7 @@ export const AstgenneTheLightchaser: Supporter = {
         },
       ],
     },
-    "병렬 연결선": {
+    "병렬 사슬": {
       "8": [
         {
           material: skillSummary3,
@@ -660,7 +661,7 @@ export const AstgenneTheLightchaser: Supporter = {
   moduleList: [
     {
       type: "DEC-Y",
-      name: "탐험가의 수집품",
+      name: "탐험가의 소장품",
     },
   ],
   moduleMaterials: {
@@ -2947,6 +2948,10 @@ export const SkadiTheCorruptingHeart: Supporter = {
       type: "BAR-X",
       name: "타락의 흔적",
     },
+    {
+      type: "BAR-Y",
+      name: "신생대",
+    },
   ],
   preferModuleList: [
     {
@@ -3002,6 +3007,58 @@ export const SkadiTheCorruptingHeart: Supporter = {
         },
         {
           material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "BAR-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
           count: 4,
         },
         {

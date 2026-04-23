@@ -519,14 +519,14 @@ export const Narantuya: Sniper = {
   moduleList: [
     {
       type: "LPS-X",
-      name: "'모래바람을 헤치며'",
+      name: "'모래에 묻힌 것'",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "LPS-X",
-        name: "'모래바람을 헤치며'",
+        name: "'모래에 묻힌 것'",
       },
       level: 3,
     },

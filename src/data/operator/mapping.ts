@@ -23,5 +23,8 @@ export const operatorList: Operator[] = [
   return b.id - a.id;
 });
 
-/** 최근에 글로벌 서버에 출시된 오퍼레이터 아이디 */
-export const RECENT_OPERATOR_ID = 386;
+/**
+ * 글로벌 서버 기준, 현재 오퍼레이터 직전에 출시된 오퍼레이터 아이디
+ * (예를 들어 만트라 - 레재 순서면, 만트라 아이디를 등록)
+ * */
+export const RECENT_OPERATOR_ID = 389;

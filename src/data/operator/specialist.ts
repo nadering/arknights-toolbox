@@ -4398,6 +4398,10 @@ export const Aak: Specialist = {
       type: "GEE-X",
       name: "모듬 과일맛 의료 상자",
     },
+    {
+      type: "GEE-Y",
+      name: "독극물 전문의가 남긴 것",
+    },
   ],
   preferModuleList: [
     {
@@ -4453,6 +4457,58 @@ export const Aak: Specialist = {
         },
         {
           material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "GEE-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
           count: 4,
         },
         {

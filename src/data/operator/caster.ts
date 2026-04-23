@@ -136,8 +136,8 @@ export const PramanixThePrerita: Caster = {
       },
     ],
   },
-  skillList: ["종소리와 눈보라", "서릿발 치는 산골", "뭇 산의 경배"],
-  preferSkillList: ["서릿발 치는 산골", "뭇 산의 경배"],
+  skillList: ["눈을 부르는 종소리", "산을 뒤덮는 서리", "뭇산의 순종"],
+  preferSkillList: ["산을 뒤덮는 서리", "뭇산의 순종"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -209,7 +209,7 @@ export const PramanixThePrerita: Caster = {
         },
       ],
     },
-    "종소리와 눈보라": {
+    "눈을 부르는 종소리": {
       "8": [
         {
           material: skillSummary3,
@@ -253,7 +253,7 @@ export const PramanixThePrerita: Caster = {
         },
       ],
     },
-    "서릿발 치는 산골": {
+    "산을 뒤덮는 서리": {
       "8": [
         {
           material: skillSummary3,
@@ -297,7 +297,7 @@ export const PramanixThePrerita: Caster = {
         },
       ],
     },
-    "뭇 산의 경배": {
+    "뭇산의 순종": {
       "8": [
         {
           material: skillSummary3,
@@ -345,14 +345,14 @@ export const PramanixThePrerita: Caster = {
   moduleList: [
     {
       type: "PLX-Y",
-      name: "1000분의 1의 마음",
+      name: "천분의 일의 마음",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "PLX-Y",
-        name: "1000분의 1의 마음",
+        name: "천분의 일의 마음",
       },
       level: 3,
     },
@@ -459,8 +459,8 @@ export const Mantra: Caster = {
       },
     ],
   },
-  skillList: ["공명의 붕괴", "의식의 화합", "고요가 곧 진실"],
-  preferSkillList: ["고요가 곧 진실"],
+  skillList: ["공명붕괴", "의식 연계", "침묵이 곧 진실"],
+  preferSkillList: ["침묵이 곧 진실"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -532,7 +532,7 @@ export const Mantra: Caster = {
         },
       ],
     },
-    "공명의 붕괴": {
+    공명붕괴: {
       "8": [
         {
           material: skillSummary3,
@@ -576,7 +576,7 @@ export const Mantra: Caster = {
         },
       ],
     },
-    "의식의 화합": {
+    "의식 연계": {
       "8": [
         {
           material: skillSummary3,
@@ -620,7 +620,7 @@ export const Mantra: Caster = {
         },
       ],
     },
-    "고요가 곧 진실": {
+    "침묵이 곧 진실": {
       "8": [
         {
           material: skillSummary3,
@@ -668,14 +668,14 @@ export const Mantra: Caster = {
   moduleList: [
     {
       type: "PRI-X",
-      name: "중추 신경계 감지 모듈",
+      name: "중추신경 탐지 모듈",
     },
   ],
   preferModuleList: [
     {
       module: {
         type: "PRI-X",
-        name: "중추 신경계 감지 모듈",
+        name: "중추신경 탐지 모듈",
       },
       level: 3,
     },
@@ -1683,12 +1683,15 @@ export const Nymph: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "PRI-X", name: "마음의 소리" }],
+  moduleList: [
+    { type: "PRI-X", name: "마음의 소리" },
+    { type: "PRI-Y", name: "상담용 장비" },
+  ],
   preferModuleList: [
     {
       module: {
-        type: "PRI-X",
-        name: "마음의 소리",
+        type: "PRI-Y",
+        name: "상담용 장비",
       },
       level: 3,
     },
@@ -1710,6 +1713,25 @@ export const Nymph: Caster = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "PRI-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: biphasicEnantiomorphicMedium, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -5349,7 +5371,7 @@ export const Eyjafjalla: Caster = {
     },
     {
       type: "CCR-Y",
-      name: "반려동물 대회 일등상",
+      name: "애완동물 대회 1위",
     },
   ],
   preferModuleList: [

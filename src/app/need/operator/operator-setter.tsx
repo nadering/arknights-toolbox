@@ -19,18 +19,18 @@ export default function OperatorSetter() {
   // 사용자의 필요 재료 설정
   const setUserNeed = useSetAtom(userNeedAtom);
   const [userNeedInitialized, setUserNeedInitialized] = useAtom(
-    userNeedInitializedAtom
+    userNeedInitializedAtom,
   );
 
   // 사용자가 선택한 오퍼레이터 및 재화
   const setSelectedOperators = useSetAtom(selectedOperatorsAtom);
   const setSelectedOperatorsMaterial = useSetAtom(
-    selectedOperatorsMaterialAtom
+    selectedOperatorsMaterialAtom,
   );
 
   // 오퍼레이터 정보 접기/펼치기 여부
   const [operatorCollapsed, setOperatorCollapsed] = useAtom(
-    operatorCollapsedAtom
+    operatorCollapsedAtom,
   );
 
   // 미래시 여부
@@ -76,7 +76,7 @@ export default function OperatorSetter() {
               className={`hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
             rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block`}
             >
-              미래시 오퍼레이터 보기
+              현재 이벤트 & 미래시 오퍼레이터 보기
             </p>
           </button>
           <button

@@ -792,9 +792,12 @@ export const EyjafjallaTheHvítAska: Medic = {
       ],
     },
   },
-  moduleList: [{ type: "WDM-X", name: "간직하고 싶은 소리" }],
+  moduleList: [
+    { type: "WDM-X", name: "간직하고 싶은 소리" },
+    { type: "WDM-Y", name: "남기고 싶은 생명" },
+  ],
   preferModuleList: [
-    { module: { type: "WDM-X", name: "간직하고 싶은 소리" }, level: 3 },
+    { module: { type: "WDM-Y", name: "남기고 싶은 생명" }, level: 3 },
   ],
   moduleMaterials: {
     "WDM-X": {
@@ -813,6 +816,25 @@ export const EyjafjallaTheHvítAska: Medic = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: nucleicCrystalSinter, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "WDM-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },

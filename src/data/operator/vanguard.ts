@@ -135,8 +135,8 @@ export const SilverashTheReignfrost: Vanguard = {
       },
     ],
   },
-  skillList: ["응대 전략", "외세를 막는 혜안", "개혁이 도래했다"],
-  preferSkillList: ["외세를 막는 혜안", "개혁이 도래했다"],
+  skillList: ["대응 계책", "적을 막는 예봉", "변혁의 도래"],
+  preferSkillList: ["적을 막는 예봉", "변혁의 도래"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -208,7 +208,7 @@ export const SilverashTheReignfrost: Vanguard = {
         },
       ],
     },
-    "응대 전략": {
+    "대응 계책": {
       "8": [
         {
           material: skillSummary3,
@@ -252,7 +252,7 @@ export const SilverashTheReignfrost: Vanguard = {
         },
       ],
     },
-    "외세를 막는 혜안": {
+    "적을 막는 예봉": {
       "8": [
         {
           material: skillSummary3,
@@ -296,7 +296,7 @@ export const SilverashTheReignfrost: Vanguard = {
         },
       ],
     },
-    "개혁이 도래했다": {
+    "변혁의 도래": {
       "8": [
         {
           material: skillSummary3,

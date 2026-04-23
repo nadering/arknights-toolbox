@@ -14,7 +14,7 @@ export default function OperatorAdder() {
 
   // 사용자가 선택한 오퍼레이터
   const [selectedOperators, setSelectedOperators] = useAtom(
-    selectedOperatorsAtom
+    selectedOperatorsAtom,
   );
 
   // 오퍼레이터 검색 문자열 및 검색된 데이터
@@ -71,11 +71,6 @@ export default function OperatorAdder() {
 
     // 전체 오퍼레이터를 순회하며 검색
     const searchedOperatorList = operatorList.filter((operator) => {
-      if (currentDataCount >= MAX_DATA_COUNT) {
-        // 최대 데이터 수를 초과하면, 검색하여 추가하지 않음
-        return;
-      }
-
       // 입력된 문자열이 없다면, 검색하지 않음
       if (!searchText) return;
 
@@ -106,9 +101,11 @@ export default function OperatorAdder() {
         // 이름이 완벽히 일치하는 오퍼레이터를 검색
         matchedOperator = operator;
       } else if (
+        currentDataCount < MAX_DATA_COUNT &&
         lowerOperatorName.startsWith(lowerSearchText.at(0)!) &&
         lowerOperatorName.includes(lowerSearchText)
       ) {
+        // 최대 데이터 수를 초과하면, 검색 결과에 추가하지 않음
         // 문자열 탐색 후, 현재 검색 문자열에 오퍼레이터가 해당된다고 파악되면 추가
         // 단, 이미 선택된 오퍼레이터는 추가하지 않음
         if (

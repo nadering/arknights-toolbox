@@ -1290,11 +1290,14 @@ export const JessicaTheLiberated: Defender = {
       ],
     },
   },
-  moduleList: [{ type: "SPT-X", name: "'나만의 영웅'" }],
+  moduleList: [
+    { type: "SPT-X", name: "'나만의 영웅'" },
+    { type: "SPT-Y", name: "풍화되지 않은 것" },
+  ],
   preferModuleList: [
     {
-      module: { type: "SPT-X", name: "'나만의 영웅'" },
-      level: 1,
+      module: { type: "SPT-Y", name: "풍화되지 않은 것" },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -1314,6 +1317,25 @@ export const JessicaTheLiberated: Defender = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: polymerizationPreparation, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "SPT-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: biphasicEnantiomorphicMedium, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },

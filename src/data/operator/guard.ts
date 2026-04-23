@@ -95,6 +95,640 @@ export interface Guard extends Operator {
 }
 
 // 6성
+/** 지마 더 레이징 타이드 */
+export const ZimaTheRagingTide: Guard = {
+  id: 410,
+  name: "지마 더 레이징 타이드",
+  imageFilename: "zima-the-raging-tide",
+  class: "Guard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 7,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: refinedSolvent,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["고개 숙이지 않으리", "결코 멈추지 않으리", "막을 수 없는 행진"],
+  preferSkillList: ["결코 멈추지 않으리", "막을 수 없는 행진"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+      ],
+    },
+    "고개 숙이지 않으리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: transmutedSalt,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+    "결코 멈추지 않으리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 1,
+        },
+      ],
+    },
+    "막을 수 없는 행진": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "HAM-X",
+      name: "때 늦은 훈장",
+    },
+  ],
+  preferModuleList: [
+    { module: { type: "HAM-X", name: "때 늦은 훈장" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "HAM-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
+/** 벨로네 */
+export const Bellone: Guard = {
+  id: 407,
+  name: "벨로네",
+  imageFilename: "bellone",
+  class: "Guard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: guardChip!,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 7,
+      },
+      {
+        material: polyester,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: guardDualchip,
+        count: 4,
+      },
+      {
+        material: biphasicEnantiomorphicMedium,
+        count: 4,
+      },
+      {
+        material: orironBlock,
+        count: 1,
+      },
+    ],
+  },
+  skillList: ["가주의 여유", "군사의 수단", "청산"],
+  preferSkillList: ["청산"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: coagulatingGel,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 5,
+        },
+        {
+          material: incandescentAlloy,
+          count: 3,
+        },
+      ],
+    },
+    "가주의 여유": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 6,
+        },
+      ],
+    },
+    "군사의 수단": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 1,
+        },
+      ],
+    },
+    청산: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: polyesterPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "FGT-Y",
+      name: "실용적인 도구",
+    },
+  ],
+  preferModuleList: [
+    { module: { type: "FGT-Y", name: "실용적인 도구" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "FGT-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 첸 더 던스트릭 (삼첸) */
 export const ChenTheDawnstreak: Guard = {
   id: 404,
@@ -1540,10 +2174,10 @@ export const VinaVictoria: Guard = {
   },
   moduleList: [
     { type: "AFT-X", name: "성주의 모험" },
-    { type: "AFT-Y", name: "신성한 질서의 '보주'" },
+    { type: "AFT-Y", name: "질서의 성'구'" },
   ],
   preferModuleList: [
-    { module: { type: "AFT-Y", name: "신성한 질서의 '보주'" }, level: 3 },
+    { module: { type: "AFT-Y", name: "질서의 성'구'" }, level: 3 },
   ],
   moduleMaterials: {
     "AFT-X": {
@@ -2712,7 +3346,7 @@ export const ExecutorTheExFoedere: Guard = {
   },
   moduleList: [
     { type: "REA-X", name: "답을 기다리며" },
-    { type: "REA-Y", name: "이미 깨친 것" },
+    { type: "REA-Y", name: "확인 완료" },
   ],
   preferModuleList: [
     {
@@ -4909,6 +5543,10 @@ export const Surtr: Guard = {
       type: "AFT-X",
       name: "사미 불멸의 심장",
     },
+    {
+      type: "AFT-Y",
+      name: "여행자의 필수품",
+    },
   ],
   preferModuleList: [
     {
@@ -4928,6 +5566,58 @@ export const Surtr: Guard = {
         },
         {
           material: D32Steel,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "AFT-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
           count: 2,
         },
         {
@@ -7502,6 +8192,8 @@ export const Laios: Guard = {
 
 // 가드 오퍼레이터 리스트 계열
 const sixStarGuardList: Guard[] = [
+  ZimaTheRagingTide,
+  Bellone,
   ChenTheDawnstreak,
   TogawaSakiko,
   LeiziTheThunderbringer,
