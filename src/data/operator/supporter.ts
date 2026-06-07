@@ -135,8 +135,8 @@ export const Nasti: Supporter = {
       },
     ],
   },
-  skillList: ["'수호'", "'집행'", "디딤대"],
-  preferSkillList: ["디딤대"],
+  skillList: ["'호위'", "'집행'", "보금자리"],
+  preferSkillList: ["보금자리"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -208,7 +208,7 @@ export const Nasti: Supporter = {
         },
       ],
     },
-    "'수호'": {
+    "'호위'": {
       "8": [
         {
           material: skillSummary3,
@@ -296,7 +296,7 @@ export const Nasti: Supporter = {
         },
       ],
     },
-    디딤대: {
+    보금자리: {
       "8": [
         {
           material: skillSummary3,

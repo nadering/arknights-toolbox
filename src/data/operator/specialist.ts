@@ -1732,7 +1732,10 @@ export const KirinRYato: Specialist = {
       ],
     },
   },
-  moduleList: [{ type: "EXE-X", name: "훈련용 말뚝" }],
+  moduleList: [
+    { type: "EXE-X", name: "훈련용 말뚝" },
+    { type: "EXE-Y", name: "로도스 아일랜드 제식 쌍검" },
+  ],
   preferModuleList: [
     { module: { type: "EXE-X", name: "훈련용 말뚝" }, level: 3 },
   ],
@@ -1753,6 +1756,25 @@ export const KirinRYato: Specialist = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "EXE-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: crystallineElectronicUnit, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: biphasicEnantiomorphicMedium, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: polymerizationPreparation, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
@@ -1864,11 +1886,33 @@ export const TexasTheOmertosa: Specialist = {
       ],
     },
   },
-  moduleList: [{ type: "EXE-Y", name: "블루베리와 다크초콜릿" }],
+  moduleList: [
+    { type: "EXE-X", name: "'새 차와 새로운 삶'" },
+    { type: "EXE-Y", name: "블루베리와 다크초콜릿" },
+  ],
   preferModuleList: [
-    { module: { type: "EXE-Y", name: "블루베리와 다크초콜릿" }, level: 3 },
+    { module: { type: "EXE-X", name: "'새 차와 새로운 삶'" }, level: 3 },
   ],
   moduleMaterials: {
+    "EXE-X": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: nucleicCrystalSinter, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: biphasicEnantiomorphicMedium, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
     "EXE-Y": {
       1: [
         { material: moduleDataBlock, count: 4 },
@@ -2150,10 +2194,15 @@ export const SpecterTheUnchained: Specialist = {
   moduleList: [
     { type: "PUM-X", name: "'음반' 수집 상자" },
     { type: "PUM-Y", name: "미완성의 아름다움" },
+    { type: "ISW-α", name: "스펙터 디 언체인드의 특별 한정 배지" },
   ],
   preferModuleList: [
     { module: { type: "PUM-X", name: "'음반' 수집 상자" }, level: 3 },
     { module: { type: "PUM-Y", name: "미완성의 아름다움" }, level: 3 },
+    {
+      module: { type: "ISW-α", name: "스펙터 디 언체인드의 특별 한정 배지" },
+      level: 3,
+    },
   ],
   moduleMaterials: {
     "PUM-X": {
@@ -2193,6 +2242,11 @@ export const SpecterTheUnchained: Specialist = {
         { material: D32Steel, count: 4 },
         { material: LMD, count: 120000 },
       ],
+    },
+    "ISW-α": {
+      "1": [{ material: moduleDataBlock, count: 1 }],
+      "2": [{ material: moduleDataBlock, count: 1 }],
+      "3": [{ material: moduleDataBlock, count: 1 }],
     },
   },
 };

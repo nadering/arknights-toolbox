@@ -20,6 +20,7 @@ import {
   dataSupplementStick,
   device,
   diketon,
+  energyConcentratingPowerUnit,
   ester,
   fuscousFiber,
   grindstone,
@@ -28,6 +29,7 @@ import {
   incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
+  liquefiedEtherAggregate,
   LMD,
   loxicKohl,
   manganeseOre,
@@ -90,6 +92,262 @@ export interface Medic extends Operator {
 }
 
 // 6성
+/** 켈시·에스페란타 */
+export const KaltsitEsperanta: Medic = {
+  id: 413,
+  name: "켈시·에스페란타",
+  imageFilename: "kal'tsit·esperanta",
+  class: "Medic",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: medicChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: oriron,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: medicDualchip,
+        count: 4,
+      },
+      {
+        material: polymerizationPreparation,
+        count: 4,
+      },
+      {
+        material: cyclicenePrefab,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["응급 교정 방어선", "보호성 차단", "자유로운 환생"],
+  preferSkillList: ["보호성 차단", "자유로운 환생"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: grindstone,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 5,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 3,
+        },
+      ],
+    },
+    "응급 교정 방어선": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: crystallineComponent,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 2,
+        },
+      ],
+    },
+    "보호성 차단": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: energyConcentratingPowerUnit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: liquefiedEtherAggregate,
+          count: 1,
+        },
+      ],
+    },
+    "자유로운 환생": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 /** 티티 */
 export const Titi: Medic = {
   id: 401,
@@ -660,9 +918,9 @@ export const Mon3tr: Medic = {
       ],
     },
   },
-  moduleList: [{ type: "XAH-X", name: "메모리 파일" }],
+  moduleList: [{ type: "XAH-X", name: "기억 파일" }],
   preferModuleList: [
-    { module: { type: "XAH-X", name: "메모리 파일" }, level: 3 },
+    { module: { type: "XAH-X", name: "기억 파일" }, level: 3 },
   ],
   moduleMaterials: {
     "XAH-X": {
@@ -2798,6 +3056,7 @@ export const Hibiscus: Medic = {
 
 // 메딕 오퍼레이터 리스트 계열
 const sixStarMedicList: Medic[] = [
+  KaltsitEsperanta,
   Titi,
   Mon3tr,
   EyjafjallaTheHvítAska,

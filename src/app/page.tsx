@@ -24,13 +24,13 @@ export default function Home() {
           최근 업데이트
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          중국 서버: 사람들, 우리들 (2026-04-07)
+          중국 서버: 물거품에 담긴 번개 (2026-06-01)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          글로벌 서버: 설산 강림 1101 (2026-04-14)
+          글로벌 서버: 허락받지 못한 땅 (2026-05-21)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          사이트 업데이트 (2026-04-24)
+          사이트 업데이트 (2026-06-07)
         </p>
       </div>
     </div>

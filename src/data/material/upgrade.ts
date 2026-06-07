@@ -177,6 +177,26 @@ export const T2UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T3)
+/** (T3) 전극 유닛 */
+export const electrodeUnit: Material = {
+  id: "31113",
+  name: "전극 유닛",
+  objectName: "electrodeUnit",
+  imageFilename: "electrode-unit",
+  type: "Upgrade",
+  tier: 3,
+};
+
+/** (T3) 액화 고에너지 기체 */
+export const liquefiedHighEnergyGas: Material = {
+  id: "31103",
+  name: "액화 고에너지 기체",
+  objectName: "liquefiedHighEnergyGas",
+  imageFilename: "liquefied-high-energy-gas",
+  type: "Upgrade",
+  tier: 3,
+};
+
 /** (T3) 유사 응결핵 */
 export const pseudocondensationNucleus: Material = {
   id: "31093",
@@ -393,6 +413,8 @@ export const aketon: Material = {
 
 /** 정예화 재료(T3) 리스트 */
 export const T3UpgradeList: Material[] = [
+  electrodeUnit,
+  liquefiedHighEnergyGas,
   pseudocondensationNucleus,
   aggregateCyclicene,
   fuscousFiber,
@@ -415,6 +437,38 @@ export const T3UpgradeList: Material[] = [
 ];
 
 // 재료 목록 (T4)
+/** (T4) 집중형 전력 장치 */
+export const energyConcentratingPowerUnit: Material = {
+  id: "31114",
+  name: "집중형 전력 장치",
+  objectName: "energyConcentratingPowerUnit",
+  imageFilename: "energy-concentrating-power-unit",
+  type: "Upgrade",
+  tier: 4,
+  recipe: [
+    { material: integratedDevice, count: 1 },
+    { material: liquefiedHighEnergyGas, count: 1 },
+    { material: electrodeUnit, count: 1 },
+    { material: LMD, count: 300 },
+  ],
+};
+
+/** (T4) 액화 에테르 응집체 */
+export const liquefiedEtherAggregate: Material = {
+  id: "31104",
+  name: "액화 에테르 응집체",
+  objectName: "liquefiedEtherAggregate",
+  imageFilename: "liquefied-ether-aggregate",
+  type: "Upgrade",
+  tier: 4,
+  recipe: [
+    { material: aketon, count: 1 },
+    { material: pseudocondensationNucleus, count: 1 },
+    { material: liquefiedHighEnergyGas, count: 1 },
+    { material: LMD, count: 300 },
+  ],
+};
+
 /** (T4) 카이랄 굴광체 */
 export const chiralRefractor: Material = {
   id: "31094",
@@ -719,6 +773,8 @@ export const ketonColloid: Material = {
 
 /** 정예화 재료(T4) 리스트 */
 export const T4UpgradeList: Material[] = [
+  energyConcentratingPowerUnit,
+  liquefiedEtherAggregate,
   chiralRefractor,
   cyclicenePrefab,
   solidifiedFiberBoard,

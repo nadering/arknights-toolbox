@@ -18,6 +18,8 @@ import {
   dataSupplementStick,
   device,
   diketon,
+  electrodeUnit,
+  energyConcentratingPowerUnit,
   ester,
   fuscousFiber,
   grindstone,
@@ -88,6 +90,323 @@ export interface Vanguard extends Operator {
 }
 
 // 6성
+/** 클로저 */
+export const Closure: Vanguard = {
+  id: 415,
+  name: "클로저",
+  imageFilename: "closure",
+  class: "Vanguard",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: vanguardChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 10,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 4,
+      },
+      {
+        material: nucleicCrystalSinter,
+        count: 4,
+      },
+      {
+        material: orironBlock,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["재귀함수", "모델 확장", "Q.E.D."],
+  preferSkillList: ["모델 확장", "Q.E.D."],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: incandescentAlloy,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+      ],
+    },
+    재귀함수: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: electrodeUnit,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+    },
+    "모델 확장": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: energyConcentratingPowerUnit,
+          count: 4,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 2,
+        },
+      ],
+    },
+    "Q.E.D.": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "TAC-X",
+      name: "나만의 작은 트로피",
+    },
+  ],
+  preferModuleList: [
+    { module: { type: "TAC-X", name: "나만의 작은 트로피" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "TAC-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 실버애쉬 더 레인프로스트 (레재) */
 export const SilverashTheReignfrost: Vanguard = {
   id: 395,
@@ -345,10 +664,11 @@ export const SilverashTheReignfrost: Vanguard = {
   moduleMaterials: null,
 };
 
-/** 불피스폴리아 */
+/** 불피스폴리아 (스즈맘) */
 export const Vulpisfoglia: Vanguard = {
   id: 351,
   name: "불피스폴리아",
+  nicknameList: ["스즈맘"],
   imageFilename: "vulpisfoglia",
   class: "Vanguard",
   branch: "Pioneer",
@@ -449,14 +769,14 @@ export const Vulpisfoglia: Vanguard = {
       ],
     },
   },
-  moduleList: [{ type: "SOL-X", name: "히트맨에게도 필요한 휴가" }],
+  moduleList: [
+    { type: "SOL-X", name: "히트맨에게도 필요한 휴가" },
+    { type: "SOL-Y", name: "검무" },
+  ],
   preferModuleList: [
     {
-      module: {
-        type: "SOL-X",
-        name: "히트맨에게도 필요한 휴가",
-      },
-      level: 1,
+      module: { type: "SOL-Y", name: "검무" },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -470,6 +790,25 @@ export const Vulpisfoglia: Vanguard = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementStick, count: 60 },
         { material: D32Steel, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "SOL-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: biphasicEnantiomorphicMedium, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
         { material: LMD, count: 100000 },
       ],
       3: [
@@ -3457,6 +3796,7 @@ export const Myrtle: Vanguard = {
 
 // 뱅가드 오퍼레이터 리스트 계열
 const sixStarVanguardList: Vanguard[] = [
+  Closure,
   SilverashTheReignfrost,
   Vulpisfoglia,
   Muelsyse,

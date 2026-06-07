@@ -42,6 +42,7 @@ import {
   orironShard,
   polyester,
   polyesterLump,
+  polyesterPack,
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
@@ -89,6 +90,324 @@ export interface Sniper extends Operator {
 }
 
 // 6성
+/** 음양인 오키드 (활키드) */
+export const VioletMizutsuneOrchid: Sniper = {
+  id: 418,
+  name: "음양인 오키드",
+  nicknameList: ["활키드"],
+  imageFilename: "violet-mizutsune-orchid",
+  class: "Sniper",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: sniperChip!,
+        count: 5,
+      },
+      {
+        material: polyester,
+        count: 8,
+      },
+      {
+        material: sugar,
+        count: 6,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: sniperDualchip,
+        count: 4,
+      },
+      {
+        material: crystallineElectronicUnit,
+        count: 4,
+      },
+      {
+        material: cyclicenePrefab,
+        count: 5,
+      },
+    ],
+  },
+  skillList: ["강사", "비상 노려쏘기", "용화살"],
+  preferSkillList: ["비상 노려쏘기"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: diketon,
+          count: 6,
+        },
+        {
+          material: orirock,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: orirockCube,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: aketon,
+          count: 6,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: coagulatingGel,
+          count: 5,
+        },
+        {
+          material: grindstone,
+          count: 2,
+        },
+      ],
+    },
+    강사: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: grindstone,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+    "비상 노려쏘기": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: incandescentAlloy,
+          count: 9,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 6,
+        },
+      ],
+    },
+    용화살: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: polyesterPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: chiralRefractor,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "ARC-X",
+      name: "오키드의 특제 과녁",
+    },
+  ],
+  preferModuleList: [
+    { module: { type: "ARC-X", name: "오키드의 특제 과녁" }, level: 3 },
+  ],
+  moduleMaterials: {
+    "ARC-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 르무엔 */
 export const Lemuen: Sniper = {
   id: 371,
@@ -521,6 +840,10 @@ export const Narantuya: Sniper = {
       type: "LPS-X",
       name: "'모래에 묻힌 것'",
     },
+    {
+      type: "LPS-Y",
+      name: "'우리의 대장에게'",
+    },
   ],
   preferModuleList: [
     {
@@ -576,6 +899,58 @@ export const Narantuya: Sniper = {
         },
         {
           material: D32Steel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+    "LPS-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: crystallineElectronicUnit,
           count: 4,
         },
         {
@@ -830,7 +1205,7 @@ export const Ray: Sniper = {
   },
   moduleList: [
     { type: "HUN-X", name: "《춤추는 달빛》" },
-    { type: "HUN-Y", name: "무엇을 증명하는가?" },
+    { type: "HUN-Y", name: "무슨 증명?" },
   ],
   preferModuleList: [
     {
@@ -990,10 +1365,15 @@ export const Typhon: Sniper = {
   moduleList: [
     { type: "SIE-X", name: "자연의 포용" },
     { type: "SIE-Y", name: "빙원의 그림자" },
+    { type: "ISW-α", name: "티폰의 특별 한정 배지" },
   ],
   preferModuleList: [
     {
       module: { type: "SIE-Y", name: "빙원의 그림자" },
+      level: 3,
+    },
+    {
+      module: { type: "ISW-α", name: "티폰의 특별 한정 배지" },
       level: 3,
     },
   ],
@@ -1035,6 +1415,11 @@ export const Typhon: Sniper = {
         { material: D32Steel, count: 4 },
         { material: LMD, count: 120000 },
       ],
+    },
+    "ISW-α": {
+      "1": [{ material: moduleDataBlock, count: 1 }],
+      "2": [{ material: moduleDataBlock, count: 1 }],
+      "3": [{ material: moduleDataBlock, count: 1 }],
     },
   },
 };
@@ -4750,6 +5135,7 @@ export const Exusiai: Sniper = {
 
 // 스나이퍼 오퍼레이터 리스트 계열
 const sixStarSniperList: Sniper[] = [
+  VioletMizutsuneOrchid,
   Lemuen,
   Narantuya,
   Wisadel,

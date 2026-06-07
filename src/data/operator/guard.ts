@@ -2769,7 +2769,10 @@ export const Degenbrecher: Guard = {
       ],
     },
   },
-  moduleList: [{ type: "SWO-X", name: "'과거에 대한 각주'" }],
+  moduleList: [
+    { type: "SWO-X", name: "'과거에 대한 각주'" },
+    { type: "SWO-Y", name: "새로운 계약" },
+  ],
   preferModuleList: [
     {
       module: { type: "SWO-X", name: "'과거에 대한 각주'" },
@@ -2793,6 +2796,25 @@ export const Degenbrecher: Guard = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: bipolarNanoflake, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "SWO-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: biphasicEnantiomorphicMedium, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: polymerizationPreparation, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },
