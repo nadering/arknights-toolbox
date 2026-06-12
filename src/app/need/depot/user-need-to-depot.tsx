@@ -33,9 +33,9 @@ export default function UserNeedToDepot() {
 
   // 오퍼레이터가 변경되면, 새로 재료를 설정
   useEffect(() => {
-    const { userNeed: newUserNeed, exp: newExp } = calculateUserNeed({
+    const { userNeed: newUserNeed, exp: newExp } = calculateUserNeed(
       selectedOperatorsMaterial,
-    });
+    );
 
     setUserNeed(newUserNeed);
     setUserNeedInitialized(true);

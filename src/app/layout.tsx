@@ -10,6 +10,7 @@ import {
 } from "@/app/_common";
 import Providers from "./providers";
 import StorageSetter from "./storage-setter";
+import FirebaseAuthSetter from "./firebase-auth-setter";
 import "./globals.css";
 
 /** Next.js에서 제공하는 localFont 기능으로, 폰트는 Pretendard 사용 */
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <Providers>
+          <FirebaseAuthSetter />
           <StorageSetter />
           <div className="relative w-full h-full min-h-screen bg-dark">
             <Header />

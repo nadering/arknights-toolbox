@@ -15,11 +15,9 @@ import { setDepotMaterialById } from "./set-depot";
  * @param selectedOperatorsMaterial 선택된 오퍼레이터들의 목표 육성치
  * @returns 사용자에게 필요한 재화 목록
  */
-export const calculateUserNeed = ({
-  selectedOperatorsMaterial,
-}: {
-  selectedOperatorsMaterial: OperatorMaterial[];
-}) => {
+export const calculateUserNeed = (
+  selectedOperatorsMaterial: OperatorMaterial[],
+) => {
   // 새로운 빈 창고 데이터를 생성
   const newUserNeed = makeEmptyDepot();
   let newExp = 0;
