@@ -4,6 +4,7 @@ import { useAtomValue } from "jotai";
 import Image from "next/image";
 import Link from "next/link";
 import { userDepotInitializedAtom, userNeedInitializedAtom } from "@/store";
+import { useEffect, useState } from "react";
 
 /** 계산 결과 페이지로 라우팅하는 버튼 컴포넌트 */
 export default function ResultLinkButton() {
@@ -11,7 +12,10 @@ export default function ResultLinkButton() {
   const userDepotInitialized = useAtomValue(userDepotInitializedAtom);
   const userNeedInitialized = useAtomValue(userNeedInitializedAtom);
 
-  const canAccessResult = userDepotInitialized && userNeedInitialized;
+  const [canAccessResult, setCanAccessResult] = useState(false);
+  useEffect(() => {
+    setCanAccessResult(userDepotInitialized && userNeedInitialized);
+  }, [userDepotInitialized, userNeedInitialized]);
 
   return (
     <Link

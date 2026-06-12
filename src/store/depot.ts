@@ -17,6 +17,12 @@ export type Depot = {
   [key in MaterialType]: CountableMaterial[];
 };
 
+/** localStorage, Firestore 등 저장소에 저장되는 재료 보유량을 나타내는 타입 */
+export type PersistedDepot = {
+  schemaVersion: 2;
+  items: Record<string, number>;
+};
+
 /**
  * Material[] 타입을 받아, 개수가 0으로 설정되어 있는 CountableMaterial[] 타입으로 반환
  * @param materialList 재료 아이템 리스트
