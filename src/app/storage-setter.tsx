@@ -76,9 +76,7 @@ export default function StorageSetter() {
 
   // 사용자의 현재 재료 보유량
   const [userDepot, setUserDepot] = useAtom(userDepotAtom);
-  const [userDepotInitialized, setUserDepotInitialized] = useAtom(
-    userDepotInitializedAtom,
-  );
+  const setUserDepotInitialized = useSetAtom(userDepotInitializedAtom);
 
   // 사용자의 필요 재료
   const setUserNeed = useSetAtom(userNeedAtom);
