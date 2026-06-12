@@ -19,21 +19,53 @@ import {
 } from "@/store";
 import { EXP } from "@/data/material";
 import { Operator } from "@/data/operator";
-import { calculateUserNeed } from "@/tool/calculate-user-need";
 import {
   createDepotFromRawStorageData,
   createStorageData,
-} from "@/tool/persisted-depot";
+  normalizeSelectedOperators,
+  normalizeSelectedOperatorsMaterial,
+  calculateUserNeed,
+  formatSavedAt,
+  clearLocalUserData,
+} from "@/tool";
 import {
   createAppDataFromUserCloudData,
   createUserCloudData,
   readUserCloudData,
   saveUserCloudData,
+  UserCloudData,
 } from "@/lib/firebase/user-cloud-data";
-import {
-  normalizeSelectedOperators,
-  normalizeSelectedOperatorsMaterial,
-} from "@/tool/normalize-storage-data";
+import { StorageConflictModal } from "./_common/modal/storage-conflict-modal";
+
+// localStorage에서 데이터를 불러올 때, 마지막으로 업데이트된 시간을 저장하는 키
+const LOCAL_UPDATED_AT_KEY = "localUpdatedAt";
+
+// localStorage와 Firebase 간 데이터 충돌이 발생했을 때, 사용자에게 선택지를 보여주기 위한 상태
+type StorageConflictData = {
+  localData: UserCloudData;
+  cloudData: UserCloudData;
+  localSavedAt: string;
+  cloudSavedAt: string;
+};
+
+const createUserCloudDataSignature = (userCloudData: UserCloudData) => {
+  return JSON.stringify({
+    schemaVersion: userCloudData.schemaVersion,
+    userDepot: userCloudData.userDepot,
+    selectedOperators: userCloudData.selectedOperators,
+    selectedOperatorsMaterial: userCloudData.selectedOperatorsMaterial,
+    operatorCollapsed: userCloudData.operatorCollapsed,
+  });
+};
+
+const hasMeaningfulUserCloudData = (userCloudData: UserCloudData) => {
+  return (
+    Object.keys(userCloudData.userDepot.items).length > 0 ||
+    userCloudData.selectedOperators.length > 0 ||
+    userCloudData.selectedOperatorsMaterial.length > 0 ||
+    userCloudData.operatorCollapsed
+  );
+};
 
 /** 저장소 불러오기 및 저장을 담당하는 클라이언트 레이아웃 컴포넌트 */
 export default function StorageSetter() {
@@ -76,19 +108,124 @@ export default function StorageSetter() {
   // Firestore에서 값을 가져왔는지 여부
   const [cloudDataFetched, setCloudDataFetched] = useState(false);
 
-  // 동일 uid에 대해 Firestore 데이터를 여러 번 불러오지 않기 위한 Ref
-  const cloudLoadedUidRef = useRef<string | null>(null);
+  // 데이터 충돌 처리를 위한 상태
+  const [storageConflictData, setStorageConflictData] =
+    useState<StorageConflictData | null>(null);
 
-  // Firestore 문서가 이미 존재하는지 여부
-  // 기존 문서가 있으면 사용자가 데이터를 전부 지워도 빈 상태를 저장해야 하므로 필요함
-  const cloudDocumentExistsRef = useRef(false);
+  // Refs
+  const cloudLoadedUidRef = useRef<string | null>(null); // 동일 uid에 대해 Firestore 데이터를 여러 번 불러오지 않기 위함
+  const cloudReadyUidRef = useRef<string | null>(null); // 해당 uid에 대해 충돌 처리가 끝나서 저장해도 되는 상태인지 확인
+  const cloudDocumentExistsRef = useRef(false); // Firestore 문서가 이미 존재하는지 여부
+  const cloudBaselineSignatureRef = useRef<string | null>(null); // Firestore에서 가져온 데이터의 시그니처를 저장
+  const localDataExistsRef = useRef(false); // localStorage에 저장된 데이터가 있는지 여부
+
+  const createCurrentUserCloudData = () => {
+    return createUserCloudData({
+      userDepot,
+      selectedOperators,
+      selectedOperatorsMaterial,
+      operatorCollapsed,
+    });
+  };
+
+  // localStorage 데이터를 Firestore에 저장하는 함수
+  const handleUseLocalDataClick = async () => {
+    if (authUser === null) {
+      return;
+    }
+
+    if (storageConflictData === null) {
+      return;
+    }
+
+    const appData = createAppDataFromUserCloudData(
+      storageConflictData.localData,
+    );
+
+    const normalizedLocalData = createUserCloudData({
+      userDepot: appData.userDepot,
+      selectedOperators: appData.selectedOperators,
+      selectedOperatorsMaterial: appData.selectedOperatorsMaterial,
+      operatorCollapsed: appData.operatorCollapsed,
+    });
+
+    await saveUserCloudData(authUser.uid, normalizedLocalData);
+
+    setUserDepot(appData.userDepot);
+    setUserDepotInitialized(true);
+
+    setSelectedOperators(appData.selectedOperators);
+    setSelectedOperatorsMaterial(appData.selectedOperatorsMaterial);
+    setOperatorCollapsed(appData.operatorCollapsed);
+
+    setUserNeed(appData.userNeed);
+    setUserNeedInitialized(appData.selectedOperatorsMaterial.length > 0);
+    setExp({ material: EXP, count: appData.exp });
+
+    clearLocalUserData();
+
+    cloudDocumentExistsRef.current = true;
+    cloudLoadedUidRef.current = authUser.uid;
+    cloudReadyUidRef.current = authUser.uid;
+    cloudBaselineSignatureRef.current =
+      createUserCloudDataSignature(normalizedLocalData);
+    localDataExistsRef.current = false;
+
+    setStorageConflictData(null);
+    setCloudDataFetched(true);
+  };
+
+  // Firestore 데이터를 localStorage에 저장하는 함수
+  const handleUseCloudDataClick = () => {
+    if (authUser === null) {
+      return;
+    }
+
+    if (storageConflictData === null) {
+      return;
+    }
+
+    const appData = createAppDataFromUserCloudData(
+      storageConflictData.cloudData,
+    );
+
+    const normalizedCloudData = createUserCloudData({
+      userDepot: appData.userDepot,
+      selectedOperators: appData.selectedOperators,
+      selectedOperatorsMaterial: appData.selectedOperatorsMaterial,
+      operatorCollapsed: appData.operatorCollapsed,
+    });
+
+    setUserDepot(appData.userDepot);
+    setUserDepotInitialized(true);
+
+    setSelectedOperators(appData.selectedOperators);
+    setSelectedOperatorsMaterial(appData.selectedOperatorsMaterial);
+    setOperatorCollapsed(appData.operatorCollapsed);
+
+    setUserNeed(appData.userNeed);
+    setUserNeedInitialized(appData.selectedOperatorsMaterial.length > 0);
+    setExp({ material: EXP, count: appData.exp });
+
+    clearLocalUserData();
+
+    cloudDocumentExistsRef.current = true;
+    cloudLoadedUidRef.current = authUser.uid;
+    cloudReadyUidRef.current = authUser.uid;
+    cloudBaselineSignatureRef.current =
+      createUserCloudDataSignature(normalizedCloudData);
+    localDataExistsRef.current = false;
+
+    setStorageConflictData(null);
+    setCloudDataFetched(true);
+  };
 
   // localStorage에서 값을 불러옴
   useEffect(() => {
     let loadedSelectedOperators: number[] = [];
     let loadedSelectedOperatorsMaterial: OperatorMaterial[] = [];
+    let localDataExists = false;
 
-    // 사용자의 현재 재료 보유량
     const userDepotSaved = localStorage.getItem("userDepot");
 
     if (userDepotSaved) {
@@ -97,12 +234,12 @@ export default function StorageSetter() {
 
         setUserDepot(restoredDepot);
         setUserDepotInitialized(true);
+        localDataExists = true;
       } catch {
         setUserDepot(makeEmptyDepot());
       }
     }
 
-    // 선택된 오퍼레이터
     const selectedOperatorsSaved = localStorage.getItem("selectedOperators");
 
     if (selectedOperatorsSaved) {
@@ -113,13 +250,16 @@ export default function StorageSetter() {
 
         loadedSelectedOperators = normalizeSelectedOperators(savedObject);
         setSelectedOperators(loadedSelectedOperators);
+
+        if (loadedSelectedOperators.length > 0) {
+          localDataExists = true;
+        }
       } catch {
         loadedSelectedOperators = [];
         setSelectedOperators([]);
       }
     }
 
-    // 선택된 오퍼레이터의 육성 목표치
     const selectedOperatorsMaterialSaved = localStorage.getItem(
       "selectedOperatorsMaterial",
     );
@@ -134,24 +274,32 @@ export default function StorageSetter() {
           normalizeSelectedOperatorsMaterial(savedObject);
 
         setSelectedOperatorsMaterial(loadedSelectedOperatorsMaterial);
+
+        if (loadedSelectedOperatorsMaterial.length > 0) {
+          localDataExists = true;
+        }
       } catch {
         loadedSelectedOperatorsMaterial = [];
         setSelectedOperatorsMaterial([]);
       }
     }
 
-    // 접기/펼치기 여부
     const operatorCollapsedSaved = localStorage.getItem("operatorCollapsed");
 
     if (operatorCollapsedSaved) {
       try {
-        setOperatorCollapsed(JSON.parse(operatorCollapsedSaved));
+        const parsedOperatorCollapsed = JSON.parse(operatorCollapsedSaved);
+
+        setOperatorCollapsed(parsedOperatorCollapsed);
+
+        if (parsedOperatorCollapsed) {
+          localDataExists = true;
+        }
       } catch {
         setOperatorCollapsed(false);
       }
     }
 
-    // 가져온 데이터를 기반으로, 필요 재료 계산 후 반영
     const { userNeed: newUserNeed, exp: newExp } = calculateUserNeed(
       loadedSelectedOperatorsMaterial,
     );
@@ -160,9 +308,10 @@ export default function StorageSetter() {
     setUserNeedInitialized(loadedSelectedOperatorsMaterial.length > 0);
     setExp({ material: EXP, count: newExp });
 
-    // 더 이상 사용하지 않는 데이터 제거
     localStorage.removeItem("userNeed");
     localStorage.removeItem("exp");
+
+    localDataExistsRef.current = localDataExists;
 
     setLocalDataFetched(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -171,6 +320,10 @@ export default function StorageSetter() {
   // 로그인 상태일 경우 Firestore에서 값을 불러옴
   useEffect(() => {
     const loadCloudData = async () => {
+      if (logoutInProgress) {
+        return;
+      }
+
       if (!authInitialized) {
         return;
       }
@@ -181,8 +334,16 @@ export default function StorageSetter() {
 
       if (authUser === null) {
         cloudLoadedUidRef.current = null;
+        cloudReadyUidRef.current = null;
         cloudDocumentExistsRef.current = false;
+        cloudBaselineSignatureRef.current = null;
+
+        setStorageConflictData(null);
         setCloudDataFetched(true);
+        return;
+      }
+
+      if (storageConflictData !== null) {
         return;
       }
 
@@ -190,64 +351,101 @@ export default function StorageSetter() {
         return;
       }
 
-      setCloudDataFetched(false);
       cloudLoadedUidRef.current = authUser.uid;
+      cloudReadyUidRef.current = null;
+      cloudDocumentExistsRef.current = false;
+      cloudBaselineSignatureRef.current = null;
+      setCloudDataFetched(false);
 
-      const userCloudData = await readUserCloudData(authUser.uid);
+      try {
+        const userCloudData = await readUserCloudData(authUser.uid);
+        const localData = createCurrentUserCloudData();
+        const hasLocalData = hasMeaningfulUserCloudData(localData);
 
-      // Firestore에 계정 데이터가 없는 경우
-      // 현재 localStorage에서 읽은 상태를 최초 클라우드 데이터로 저장
-      if (userCloudData === null) {
-        const hasLocalData =
-          userDepotInitialized ||
-          selectedOperators.length > 0 ||
-          selectedOperatorsMaterial.length > 0 ||
-          operatorCollapsed;
+        if (userCloudData === null) {
+          if (hasLocalData) {
+            await saveUserCloudData(authUser.uid, localData);
+            clearLocalUserData();
 
-        if (hasLocalData) {
-          const newUserCloudData = createUserCloudData({
-            userDepot,
-            selectedOperators,
-            selectedOperatorsMaterial,
-            operatorCollapsed,
-          });
+            cloudDocumentExistsRef.current = true;
+            localDataExistsRef.current = false;
+          } else {
+            cloudDocumentExistsRef.current = false;
+          }
 
-          await saveUserCloudData(authUser.uid, newUserCloudData);
-          cloudDocumentExistsRef.current = true;
-        } else {
-          cloudDocumentExistsRef.current = false;
+          cloudReadyUidRef.current = authUser.uid;
+          cloudBaselineSignatureRef.current =
+            createUserCloudDataSignature(localData);
+
+          setCloudDataFetched(true);
+          return;
         }
 
+        if (hasLocalData) {
+          const localSavedAt = formatSavedAt(
+            localStorage.getItem(LOCAL_UPDATED_AT_KEY),
+          );
+
+          const cloudSavedAt = formatSavedAt(userCloudData.updatedAt);
+
+          setStorageConflictData({
+            localData,
+            cloudData: userCloudData,
+            localSavedAt,
+            cloudSavedAt,
+          });
+
+          cloudDocumentExistsRef.current = true;
+          cloudReadyUidRef.current = null;
+          setCloudDataFetched(false);
+          return;
+        }
+
+        const appData = createAppDataFromUserCloudData(userCloudData);
+
+        const normalizedCloudData = createUserCloudData({
+          userDepot: appData.userDepot,
+          selectedOperators: appData.selectedOperators,
+          selectedOperatorsMaterial: appData.selectedOperatorsMaterial,
+          operatorCollapsed: appData.operatorCollapsed,
+        });
+
+        setUserDepot(appData.userDepot);
+        setUserDepotInitialized(true);
+
+        setSelectedOperators(appData.selectedOperators);
+        setSelectedOperatorsMaterial(appData.selectedOperatorsMaterial);
+        setOperatorCollapsed(appData.operatorCollapsed);
+
+        setUserNeed(appData.userNeed);
+        setUserNeedInitialized(appData.selectedOperatorsMaterial.length > 0);
+        setExp({ material: EXP, count: appData.exp });
+
+        cloudDocumentExistsRef.current = true;
+        cloudReadyUidRef.current = authUser.uid;
+        cloudBaselineSignatureRef.current =
+          createUserCloudDataSignature(normalizedCloudData);
+
         setCloudDataFetched(true);
-        return;
+      } catch (error) {
+        console.error(error);
+
+        cloudLoadedUidRef.current = null;
+        cloudReadyUidRef.current = null;
+        cloudDocumentExistsRef.current = false;
+        cloudBaselineSignatureRef.current = null;
+        setCloudDataFetched(false);
       }
-
-      // Firestore에 계정 데이터가 있는 경우
-      // 현재 버전에서는 Firestore 데이터를 우선 사용
-      const appData = createAppDataFromUserCloudData(userCloudData);
-
-      setUserDepot(appData.userDepot);
-      setUserDepotInitialized(true);
-
-      setSelectedOperators(appData.selectedOperators);
-      setSelectedOperatorsMaterial(appData.selectedOperatorsMaterial);
-      setOperatorCollapsed(appData.operatorCollapsed);
-
-      setUserNeed(appData.userNeed);
-      setUserNeedInitialized(appData.selectedOperatorsMaterial.length > 0);
-      setExp({ material: EXP, count: appData.exp });
-
-      cloudDocumentExistsRef.current = true;
-      setCloudDataFetched(true);
     };
 
     loadCloudData();
   }, [
+    logoutInProgress,
     authInitialized,
     authUser,
     localDataFetched,
+    storageConflictData,
     userDepot,
-    userDepotInitialized,
     selectedOperators,
     selectedOperatorsMaterial,
     operatorCollapsed,
@@ -278,7 +476,7 @@ export default function StorageSetter() {
     setLogoutInProgress(false);
   }, [authInitialized, authUser, logoutInProgress, setLogoutInProgress]);
 
-  // 비로그인 상태일 때만 localStorage에 userDepot 저장
+  // localStorage에 데이터 저장
   useEffect(() => {
     if (logoutInProgress) {
       return;
@@ -296,38 +494,17 @@ export default function StorageSetter() {
       return;
     }
 
-    if (!userDepotInitialized) {
-      localStorage.removeItem("userDepot");
-      return;
-    }
+    const localData = createCurrentUserCloudData();
+    const hasLocalData = hasMeaningfulUserCloudData(localData);
+
+    localDataExistsRef.current = hasLocalData;
 
     const storageData = createStorageData(userDepot);
-    localStorage.setItem("userDepot", JSON.stringify(storageData));
-  }, [
-    authInitialized,
-    authUser,
-    logoutInProgress,
-    localDataFetched,
-    userDepot,
-    userDepotInitialized,
-  ]);
 
-  // 비로그인 상태일 때만 localStorage에 selectedOperators 관련 데이터 저장
-  useEffect(() => {
-    if (logoutInProgress) {
-      return;
-    }
-
-    if (!authInitialized) {
-      return;
-    }
-
-    if (authUser !== null) {
-      return;
-    }
-
-    if (!localDataFetched) {
-      return;
+    if (Object.keys(storageData.items).length === 0) {
+      localStorage.removeItem("userDepot");
+    } else {
+      localStorage.setItem("userDepot", JSON.stringify(storageData));
     }
 
     if (selectedOperators.length === 0) {
@@ -347,47 +524,30 @@ export default function StorageSetter() {
         JSON.stringify(selectedOperatorsMaterial),
       );
     }
-  }, [
-    authInitialized,
-    authUser,
-    logoutInProgress,
-    localDataFetched,
-    selectedOperators,
-    selectedOperatorsMaterial,
-  ]);
-
-  // 비로그인 상태일 때만 localStorage에 접기/펼치기 여부 저장
-  useEffect(() => {
-    if (logoutInProgress) {
-      return;
-    }
-
-    if (!authInitialized) {
-      return;
-    }
-
-    if (authUser !== null) {
-      return;
-    }
-
-    if (!localDataFetched) {
-      return;
-    }
 
     if (!operatorCollapsed) {
       localStorage.removeItem("operatorCollapsed");
+    } else {
+      localStorage.setItem(
+        "operatorCollapsed",
+        JSON.stringify(operatorCollapsed),
+      );
+    }
+
+    if (!hasLocalData) {
+      localStorage.removeItem(LOCAL_UPDATED_AT_KEY);
       return;
     }
 
-    localStorage.setItem(
-      "operatorCollapsed",
-      JSON.stringify(operatorCollapsed),
-    );
+    localStorage.setItem(LOCAL_UPDATED_AT_KEY, new Date().toISOString());
   }, [
+    logoutInProgress,
     authInitialized,
     authUser,
-    logoutInProgress,
     localDataFetched,
+    userDepot,
+    selectedOperators,
+    selectedOperatorsMaterial,
     operatorCollapsed,
   ]);
 
@@ -413,43 +573,57 @@ export default function StorageSetter() {
       return;
     }
 
-    const hasAnyDataToSave =
-      userDepotInitialized ||
-      selectedOperators.length > 0 ||
-      selectedOperatorsMaterial.length > 0 ||
-      operatorCollapsed;
+    if (storageConflictData !== null) {
+      return;
+    }
+
+    if (cloudReadyUidRef.current !== authUser.uid) {
+      return;
+    }
+
+    const currentUserCloudData = createCurrentUserCloudData();
+    const currentSignature = createUserCloudDataSignature(currentUserCloudData);
+
+    if (cloudBaselineSignatureRef.current === currentSignature) {
+      return;
+    }
+
+    const hasAnyDataToSave = hasMeaningfulUserCloudData(currentUserCloudData);
 
     if (!cloudDocumentExistsRef.current && !hasAnyDataToSave) {
       return;
     }
 
     const timeoutId = window.setTimeout(() => {
-      const userCloudData = createUserCloudData({
-        userDepot,
-        selectedOperators,
-        selectedOperatorsMaterial,
-        operatorCollapsed,
+      saveUserCloudData(authUser.uid, currentUserCloudData).then(() => {
+        cloudDocumentExistsRef.current = true;
+        cloudBaselineSignatureRef.current = currentSignature;
       });
-
-      saveUserCloudData(authUser.uid, userCloudData);
-      cloudDocumentExistsRef.current = true;
     }, 700);
 
     return () => {
       window.clearTimeout(timeoutId);
     };
   }, [
+    logoutInProgress,
     authInitialized,
     authUser,
-    logoutInProgress,
     localDataFetched,
     cloudDataFetched,
+    storageConflictData,
     userDepot,
-    userDepotInitialized,
     selectedOperators,
     selectedOperatorsMaterial,
     operatorCollapsed,
   ]);
 
-  return <></>;
+  return (
+    <StorageConflictModal
+      isOpen={storageConflictData !== null}
+      localSavedAt={storageConflictData?.localSavedAt ?? "기록 없음"}
+      cloudSavedAt={storageConflictData?.cloudSavedAt ?? "기록 없음"}
+      onUseLocalData={handleUseLocalDataClick}
+      onUseCloudData={handleUseCloudDataClick}
+    />
+  );
 }

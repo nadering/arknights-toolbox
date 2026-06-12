@@ -1,4 +1,10 @@
-import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  serverTimestamp,
+  setDoc,
+  Timestamp,
+} from "firebase/firestore";
 import { firestore } from "@/lib/firebase/client";
 import { Depot, OperatorMaterial, PersistedDepot } from "@/store";
 import {
@@ -19,6 +25,7 @@ export type UserCloudData = {
   selectedOperators: number[];
   selectedOperatorsMaterial: OperatorMaterial[];
   operatorCollapsed: boolean;
+  updatedAt?: Timestamp | null;
 };
 
 export type AppDataFromUserCloudData = {
@@ -77,16 +84,10 @@ export const saveUserCloudData = async (
 ): Promise<void> => {
   const userDocumentRef = doc(firestore, USER_COLLECTION_NAME, uid);
 
-  await setDoc(
-    userDocumentRef,
-    {
-      ...userCloudData,
-      updatedAt: serverTimestamp(),
-    },
-    {
-      merge: true,
-    },
-  );
+  await setDoc(userDocumentRef, {
+    ...userCloudData,
+    updatedAt: serverTimestamp(),
+  });
 };
 
 /**

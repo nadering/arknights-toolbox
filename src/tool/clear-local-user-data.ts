@@ -7,4 +7,5 @@ export const clearLocalUserData = () => {
 
   localStorage.removeItem("userNeed");
   localStorage.removeItem("exp");
+  localStorage.removeItem("localUpdatedAt");
 };
