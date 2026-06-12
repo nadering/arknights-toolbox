@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSetAtom } from "jotai";
 import { userSelectAtom } from "@/store";
+import SignInButton from "./sign-in-button";
 
 export default function Header() {
   // 사용자가 선택한 데이터 입력 방법
@@ -36,8 +37,8 @@ export default function Header() {
             draggable={false}
           />
           <p
-            className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-              rounded-lg translate-x-[-40px] translate-y-[36px] group-hover:block"
+            className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+              rounded-lg translate-x-[-50%] translate-y-[135%] group-hover:block"
           >
             데이터 제작소
           </p>
@@ -58,12 +59,13 @@ export default function Header() {
             draggable={false}
           />
           <p
-            className="hidden absolute inset-x-auto top-0 z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-              rounded-lg translate-x-[-40px] translate-y-[36px] group-hover:block"
+            className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+              rounded-lg translate-x-[-50%] translate-y-[135%] group-hover:block"
           >
             GitHub
           </p>
         </a>
+        <SignInButton />
       </div>
     </header>
   );

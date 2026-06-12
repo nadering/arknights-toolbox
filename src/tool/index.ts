@@ -2,3 +2,8 @@ export * from "./set-depot";
 export * from "./input-number";
 export * from "./get-operator";
 export * from "./decompose-material";
+export * from "./calculate-user-need";
+export * from "./persisted-depot";
+export * from "./clear-local-user-data";
+export * from "./normalize-storage-data";
+export * from "./saved-format";

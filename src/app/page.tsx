@@ -30,7 +30,7 @@ export default function Home() {
           글로벌 서버: 허락받지 못한 땅 (2026-05-21)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          사이트 업데이트 (2026-06-07)
+          사이트 업데이트 (2026-06-13)
         </p>
       </div>
     </div>
