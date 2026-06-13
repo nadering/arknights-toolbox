@@ -91,7 +91,7 @@ export const saveUserCloudData = async (
 };
 
 /**
- * Firestore에서 가져온 UserCloudData를, 앱에서 쓰는 상태 형태로 변환
+ * 저장소에서 가져온 UserCloudData를, 앱에서 쓰는 상태 형태로 변환
  */
 export const createAppDataFromUserCloudData = (
   userCloudData: UserCloudData,

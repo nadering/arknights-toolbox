@@ -70,53 +70,54 @@ export default function OperatorAdder() {
     let matchedOperator: Operator | null = null;
 
     // 전체 오퍼레이터를 순회하며 검색
-    const searchedOperatorList = operatorList.filter((operator) => {
-      // 입력된 문자열이 없다면, 검색하지 않음
-      if (!searchText) return;
+    const searchedOperatorList = operatorList.reduce<Operator[]>(
+      (acc, operator) => {
+        if (!searchText) return acc;
 
-      // 모든 글자를 소문자화 후 검색
-      const lowerSearchText = searchText.toLowerCase();
-      const lowerOperatorName = operator.name.toLowerCase();
+        const lowerSearchText = searchText.toLowerCase();
+        const lowerOperatorName = operator.name.toLowerCase();
 
-      if (operator.nicknameList) {
-        // 별명이 있다면, 별명을 검색
-        for (const nickname of operator.nicknameList) {
-          const lowerNickname = nickname.toLowerCase();
+        // 이름이 완벽히 일치하는 오퍼레이터가 있다면, 해당 오퍼레이터를 저장
+        if (lowerSearchText === lowerOperatorName) {
+          matchedOperator = operator;
+          return acc;
+        }
+
+        // 검색 문자열이 오퍼레이터 이름 또는 별명에 포함되어 있고,
+        // 최대 데이터 수를 초과하지 않으며, 이미 선택된 오퍼레이터가 아니라면,
+        // 해당 오퍼레이터를 검색 결과에 추가
+        if (
+          currentDataCount < MAX_DATA_COUNT &&
+          !selectedOperators.includes(operator.id)
+        ) {
           if (
-            lowerNickname.startsWith(lowerSearchText.at(0)!) &&
-            lowerNickname.includes(lowerSearchText)
+            lowerOperatorName.startsWith(lowerSearchText.at(0)!) &&
+            lowerOperatorName.includes(lowerSearchText)
           ) {
-            if (
-              !selectedOperators ||
-              !selectedOperators.find((op) => op === operator.id)
-            ) {
-              currentDataCount += 1;
-              return operator;
+            currentDataCount += 1;
+            acc.push(operator);
+          } else if (operator.nicknameList) {
+            for (const nickname of operator.nicknameList) {
+              const lowerNickname = nickname.toLowerCase();
+              if (
+                lowerNickname.startsWith(lowerSearchText.at(0)!) &&
+                lowerNickname.includes(lowerSearchText)
+              ) {
+                currentDataCount += 1;
+                acc.push({
+                  ...operator,
+                  name: `${operator.name} (${nickname})`,
+                });
+                break;
+              }
             }
           }
         }
-      }
 
-      if (lowerSearchText === lowerOperatorName) {
-        // 이름이 완벽히 일치하는 오퍼레이터를 검색
-        matchedOperator = operator;
-      } else if (
-        currentDataCount < MAX_DATA_COUNT &&
-        lowerOperatorName.startsWith(lowerSearchText.at(0)!) &&
-        lowerOperatorName.includes(lowerSearchText)
-      ) {
-        // 최대 데이터 수를 초과하면, 검색 결과에 추가하지 않음
-        // 문자열 탐색 후, 현재 검색 문자열에 오퍼레이터가 해당된다고 파악되면 추가
-        // 단, 이미 선택된 오퍼레이터는 추가하지 않음
-        if (
-          !selectedOperators ||
-          !selectedOperators.find((op) => op === operator.id)
-        ) {
-          currentDataCount += 1;
-          return operator;
-        }
-      }
-    });
+        return acc;
+      },
+      [],
+    );
 
     if (matchedOperator !== null) {
       // 이름이 완벽히 일치하는 오퍼레이터를, 검색 결과 최상단에 추가
@@ -130,10 +131,11 @@ export default function OperatorAdder() {
       searchedOperatorList.pop();
     }
 
+    console.log(searchedOperatorList);
     return searchedOperatorList;
   };
 
-  /** 미래시에 해당되는 오퍼레이터 리스트를 반환 */
+  /** 미래시에 해당되는 6성 오퍼레이터 리스트를 반환 */
   const searchFutureOperatorData = () => {
     // 전체 오퍼레이터를 순회하며 검색
     const futureOperatorList = operatorList.toReversed().filter((operator) => {

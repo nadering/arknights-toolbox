@@ -117,6 +117,7 @@ export default function StorageSetter() {
   const cloudBaselineSignatureRef = useRef<string | null>(null); // Firestore에서 가져온 데이터의 시그니처를 저장
   const localDataExistsRef = useRef(false); // localStorage에 저장된 데이터가 있는지 여부
 
+  // 현재 상태를 UserCloudData 형태로 변환하는 함수
   const createCurrentUserCloudData = () => {
     return createUserCloudData({
       userDepot,
@@ -437,6 +438,7 @@ export default function StorageSetter() {
     };
 
     loadCloudData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     logoutInProgress,
     authInitialized,
@@ -538,6 +540,7 @@ export default function StorageSetter() {
     }
 
     localStorage.setItem(LOCAL_UPDATED_AT_KEY, new Date().toISOString());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     logoutInProgress,
     authInitialized,
@@ -602,6 +605,7 @@ export default function StorageSetter() {
     return () => {
       window.clearTimeout(timeoutId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     logoutInProgress,
     authInitialized,
