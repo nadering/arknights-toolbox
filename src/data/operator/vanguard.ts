@@ -2485,7 +2485,7 @@ export const Bagpipe: Vanguard = {
         },
         {
           material: orirockCube,
-          count: 4,
+          count: 5,
         },
       ],
       "6": [
