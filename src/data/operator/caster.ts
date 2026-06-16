@@ -93,10 +93,10 @@ export interface Caster extends Operator {
 
 // 6성
 /** 비이 */
-export const вий: Caster = {
+export const Veen: Caster = {
   id: 414,
   name: "비이",
-  imageFilename: "вий",
+  imageFilename: "veen",
   class: "Caster",
   rarity: 6,
   eliteMaterials: {
@@ -5812,7 +5812,7 @@ export const Eyjafjalla: Caster = {
 
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
-  вий,
+  Veen,
   PramanixThePrerita,
   Mantra,
   Necrass,

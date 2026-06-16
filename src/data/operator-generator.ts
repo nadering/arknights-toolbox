@@ -334,20 +334,31 @@ const getOperatorClass = (profession: string): OperatorClass => {
   return operatorClass;
 };
 
-const toPascalCaseIdentifier = (value: string): string => {
-  const normalized = value
-    .replace(/[^a-zA-Z0-9]+/g, " ")
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join("");
+const toPascalCaseIdentifier = (
+  value: string,
+  fallbackValue?: string,
+): string => {
+  const createIdentifier = (source: string): string => {
+    return source
+      .replace(/[^a-zA-Z0-9]+/g, " ")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join("");
+  };
 
-  if (!normalized) {
+  const normalized = createIdentifier(value);
+  const fallbackNormalized = fallbackValue
+    ? createIdentifier(fallbackValue)
+    : "";
+  const identifier = normalized || fallbackNormalized;
+
+  if (!identifier) {
     throw new Error(`const 이름 생성 실패: ${value}`);
   }
 
-  return /^[0-9]/.test(normalized) ? `Operator${normalized}` : normalized;
+  return /^[0-9]/.test(identifier) ? `Operator${identifier}` : identifier;
 };
 
 const toImageFilename = (appellation: string): string => {
@@ -613,13 +624,39 @@ const buildNicknameListCode = (nicknames: string[]): string | null => {
   return `  nicknameList: ${toStringArrayCode(nicknames)},`;
 };
 
+const toOutputFilenameBase = (
+  appellation: string,
+  fallbackValue: string,
+): string => {
+  const normalized = appellation
+    .trim()
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/^-+|-+$/g, "");
+
+  if (normalized) {
+    return normalized;
+  }
+
+  return fallbackValue
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
 const createOutputPath = (
   out: string,
   characterKey: string,
   character: RawCharacter,
 ): string => {
   const englishId = getEnglishIdFromCharacter(characterKey, character);
-  const outputFileName = `${englishId}.generated.ts`;
+  const outputFilenameBase = toOutputFilenameBase(
+    character.appellation,
+    englishId,
+  );
+  const outputFileName = `${outputFilenameBase}.generated.ts`;
   const outputPath = path.resolve(out);
 
   if (path.extname(outputPath)) {
@@ -641,10 +678,13 @@ const buildOperatorCode = (
 
   const rarity = getRarity(character.rarity);
   const operatorClass = getOperatorClass(character.profession);
+  const englishId = getEnglishIdFromCharacter(characterKey, character);
   const constName =
-    args.constName ?? toPascalCaseIdentifier(character.appellation);
+    args.constName ?? toPascalCaseIdentifier(character.appellation, englishId);
   const imageFilename =
-    args.imageFilename ?? toImageFilename(character.appellation);
+    (args.imageFilename ??
+      toImageFilename(character.appellation || englishId)) ||
+    englishId;
 
   const nicknameListCode = buildNicknameListCode(args.nicknames);
 
