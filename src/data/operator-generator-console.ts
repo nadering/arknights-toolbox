@@ -1,5 +1,8 @@
 /**
- * operator-generator.ts
+ * Deprecated file
+ * 
+ * 오퍼레이터 데이터 제작 (콘솔 버전)
+ * operator-generator-console.ts
  * 
  * 목적:
  * - 인게임 character JSON + 최소 메타정보를 받아서
