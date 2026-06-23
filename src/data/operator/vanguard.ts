@@ -62,6 +62,7 @@ import {
   sugarLump,
   sugarPack,
   sugarSubstitute,
+  transmutedSalt,
   transmutedSaltAgglomerate,
   vanguardChip,
   vanguardChipPack,
@@ -3153,6 +3154,211 @@ export const Siege: Vanguard = {
 };
 
 // 5성
+/** 마츠키리 */
+export const Matsukiri: Vanguard = {
+  id: 378,
+  name: "마츠키리",
+  imageFilename: "matsukiri",
+  class: "Vanguard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: vanguardChip!,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 3,
+      },
+      {
+        material: transmutedSaltAgglomerate,
+        count: 7,
+      },
+      {
+        material: incandescentAlloy,
+        count: 17,
+      },
+    ],
+  },
+  skillList: ["입장 배치", "만수성국"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: manganeseOre,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 2,
+        },
+      ],
+    },
+    "입장 배치": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 5,
+        },
+      ],
+    },
+    만수성국: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: chiralRefractor,
+          count: 3,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: orirockConcentration,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
 /** 칠책 */
 export const Chilchuck: Vanguard = {
   id: 339,
@@ -3686,6 +3892,265 @@ export const Mitm: Vanguard = {
 };
 
 // 4성
+/** 스네구로치카 */
+export const Wintim: Vanguard = {
+  id: 387,
+  name: "스네구로치카",
+  imageFilename: "wintim",
+  class: "Vanguard",
+  rarity: 4,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 15000,
+      },
+      {
+        material: vanguardChip!,
+        count: 3,
+      },
+      {
+        material: oriron,
+        count: 1,
+      },
+      {
+        material: device,
+        count: 1,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 60000,
+      },
+      {
+        material: vanguardChipPack!,
+        count: 5,
+      },
+      {
+        material: aggregateCyclicene,
+        count: 13,
+      },
+      {
+        material: RMA7012,
+        count: 6,
+      },
+    ],
+  },
+  skillList: ["데이터 분석", "합리적인 원인 분석"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+        {
+          material: damagedDevice,
+          count: 2,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: orirockCube,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: manganeseOre,
+          count: 2,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: fuscousFiber,
+          count: 2,
+        },
+      ],
+    },
+    "데이터 분석": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 1,
+        },
+        {
+          material: manganeseOre,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 2,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 2,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: crystallineCircuit,
+          count: 2,
+        },
+      ],
+    },
+    "합리적인 원인 분석": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: orironBlock,
+          count: 1,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 2,
+        },
+        {
+          material: ketonColloid,
+          count: 2,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "AGE-X",
+      name: "무효한 출입 카드",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "AGE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: incandescentAlloy,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 20000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementStick,
+          count: 15,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 25000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 5,
+        },
+        {
+          material: transmutedSalt,
+          count: 6,
+        },
+        {
+          material: LMD,
+          count: 30000,
+        },
+      ],
+    },
+  },
+};
+
 /** 머틀 */
 export const Myrtle: Vanguard = {
   id: 101,
@@ -3808,8 +4273,8 @@ const sixStarVanguardList: Vanguard[] = [
   Bagpipe,
   Siege,
 ];
-const fiveStarVanguardList: Vanguard[] = [Chilchuck, Mitm];
-const fourStarVanguardList: Vanguard[] = [Myrtle];
+const fiveStarVanguardList: Vanguard[] = [Matsukiri, Chilchuck, Mitm];
+const fourStarVanguardList: Vanguard[] = [Wintim, Myrtle];
 const threeStarVanguardList: Vanguard[] = [];
 const twoStarVanguardList: Vanguard[] = [];
 const oneStarVanguardList: Vanguard[] = [];

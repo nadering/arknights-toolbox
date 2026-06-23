@@ -5,6 +5,7 @@ import {
   biphasicEnantiomorphicMedium,
   bipolarNanoflake,
   casterChip,
+  casterChipPack,
   casterDualchip,
   chiralRefractor,
   coagulatingGel,
@@ -51,6 +52,7 @@ import {
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
+  pseudocondensationNucleus,
   refinedSolvent,
   RMA7012,
   RMA7024,
@@ -5810,6 +5812,530 @@ export const Eyjafjalla: Caster = {
   },
 };
 
+// 5성
+/** 리프레사 */
+export const Ripresa: Caster = {
+  id: 406,
+  name: "리프레사",
+  imageFilename: "ripresa",
+  class: "Caster",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 6,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: orirockConcentration,
+        count: 8,
+      },
+      {
+        material: fuscousFiber,
+        count: 14,
+      },
+    ],
+  },
+  skillList: ["합주의 시작", "피날레까지"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 2,
+        },
+      ],
+    },
+    "합주의 시작": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: chiralRefractor,
+          count: 3,
+        },
+        {
+          material: crystallineCircuit,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+    피날레까지: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SPC-Y",
+      name: "'황혼의 약속'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "SPC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: chiralRefractor,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+// 4성
+/** 아코르트 */
+export const Akkord: Caster = {
+  id: 390,
+  name: "아코르트",
+  imageFilename: "akkord",
+  class: "Caster",
+  rarity: 4,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 15000,
+      },
+      {
+        material: casterChip!,
+        count: 3,
+      },
+      {
+        material: polyketon,
+        count: 1,
+      },
+      {
+        material: orirockCube,
+        count: 1,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 60000,
+      },
+      {
+        material: casterChipPack!,
+        count: 5,
+      },
+      {
+        material: manganeseOre,
+        count: 14,
+      },
+      {
+        material: semiSyntheticSolvent,
+        count: 9,
+      },
+    ],
+  },
+  skillList: ["역박의 울림", "진폭 조율"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+        {
+          material: orirock,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: sugar,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 2,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: orironCluster,
+          count: 3,
+        },
+      ],
+    },
+    "역박의 울림": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 1,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 2,
+        },
+        {
+          material: orironBlock,
+          count: 2,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+    "진폭 조율": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 2,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "BLA-X",
+      name: "이동식 오르골",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "BLA-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 20000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementStick,
+          count: 15,
+        },
+        {
+          material: aketon,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 25000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 5,
+        },
+        {
+          material: coagulatingGel,
+          count: 6,
+        },
+        {
+          material: LMD,
+          count: 30000,
+        },
+      ],
+    },
+  },
+};
+
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
   Veen,
@@ -5833,8 +6359,8 @@ const sixStarCasterList: Caster[] = [
   Ifrit,
   Eyjafjalla,
 ];
-const fiveStarCasterList: Caster[] = [];
-const fourStarCasterList: Caster[] = [];
+const fiveStarCasterList: Caster[] = [Ripresa];
+const fourStarCasterList: Caster[] = [Akkord];
 const threeStarCasterList: Caster[] = [];
 const twoStarCasterList: Caster[] = [];
 const oneStarCasterList: Caster[] = [];

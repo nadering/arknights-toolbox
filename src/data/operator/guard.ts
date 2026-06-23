@@ -1954,11 +1954,11 @@ export const Entelechia: Guard = {
     },
     {
       type: "REA-Y",
-      name: "장밋빛 이야기 모음집",
+      name: "장밋빛 이야기집",
     },
   ],
   preferModuleList: [
-    { module: { type: "REA-Y", name: "장밋빛 이야기 모음집" }, level: 3 },
+    { module: { type: "REA-Y", name: "장밋빛 이야기집" }, level: 3 },
   ],
   moduleMaterials: {
     "REA-X": {
@@ -3053,7 +3053,7 @@ export const Viviana: Guard = {
     },
   },
   moduleList: [
-    { type: "AFT-Y", name: "마지막 한 줄" },
+    { type: "AFT-Y", name: "'마지막 한 줄'" },
     { type: "AFT-Δ", name: "눈이 닿지 않는 곳" },
   ],
   preferModuleList: [
@@ -7679,6 +7679,737 @@ export const Silverash: Guard = {
 };
 
 // 5성
+/** 진오우S 캐터펄트 */
+export const ZinogreSCatapult: Guard = {
+  id: 417,
+  name: "진오우S 캐터펄트",
+  imageFilename: "zinogre-s-catapult",
+  class: "Guard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: guardChip!,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+      {
+        material: orirockCube,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: guardDualchip,
+        count: 3,
+      },
+      {
+        material: chiralRefractor,
+        count: 8,
+      },
+      {
+        material: manganeseOre,
+        count: 12,
+      },
+    ],
+  },
+  skillList: ["고압회전베기", "초고출력 속성해방베기"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: sugarSubstitute,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 1,
+        },
+      ],
+    },
+    고압회전베기: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: chiralRefractor,
+          count: 3,
+        },
+        {
+          material: crystallineCircuit,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+    "초고출력 속성해방베기": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "MCN-X",
+      name: "사냥의 길",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "MCN-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 바르카리스 */
+export const VarkRis: Guard = {
+  id: 399,
+  name: "바르카리스",
+  imageFilename: "vark-ris",
+  class: "Guard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: guardChip!,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: guardDualchip,
+        count: 3,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 7,
+      },
+      {
+        material: compoundCuttingFluid,
+        count: 14,
+      },
+    ],
+  },
+  skillList: ["급류", "동포의 의지"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugarPack,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+        {
+          material: manganeseOre,
+          count: 2,
+        },
+      ],
+    },
+    급류: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+      ],
+    },
+    "동포의 의지": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "CEN-Y",
+      name: "귀갓길",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "CEN-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 하디야 */
+export const Hadiya: Guard = {
+  id: 391,
+  name: "하디야",
+  imageFilename: "hadiya",
+  class: "Guard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: guardChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: guardDualchip,
+        count: 3,
+      },
+      {
+        material: chiralRefractor,
+        count: 8,
+      },
+      {
+        material: aketon,
+        count: 14,
+      },
+    ],
+  },
+  skillList: ["사막 전술 개량", "카른사이프의 칼날"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: transmutedSalt,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+        {
+          material: integratedDevice,
+          count: 2,
+        },
+      ],
+    },
+    "사막 전술 개량": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+        {
+          material: crystallineComponent,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+      ],
+    },
+    "카른사이프의 칼날": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
 /** 유텐지 냐무 (냐무) */
 export const YūtenjiNyamu: Guard = {
   id: 385,
@@ -8245,7 +8976,13 @@ const sixStarGuardList: Guard[] = [
   Skadi,
   Silverash,
 ];
-const fiveStarGuardList: Guard[] = [YūtenjiNyamu, Laios];
+const fiveStarGuardList: Guard[] = [
+  ZinogreSCatapult,
+  VarkRis,
+  Hadiya,
+  YūtenjiNyamu,
+  Laios,
+];
 const fourStarGuardList: Guard[] = [];
 const threeStarGuardList: Guard[] = [];
 const twoStarGuardList: Guard[] = [];

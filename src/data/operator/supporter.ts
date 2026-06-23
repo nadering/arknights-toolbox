@@ -4237,6 +4237,532 @@ export const Angelina: Supporter = {
 };
 
 // 5성
+/** 보타니 */
+export const Botany: Supporter = {
+  id: 408,
+  name: "보타니",
+  imageFilename: "botany",
+  class: "Supporter",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: supporterChip!,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+      {
+        material: orirockCube,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: supporterDualchip,
+        count: 3,
+      },
+      {
+        material: crystallineCircuit,
+        count: 6,
+      },
+      {
+        material: orirockCluster,
+        count: 22,
+      },
+    ],
+  },
+  skillList: ["고조파 파괴", "정역의 메아리"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: diketon,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 8,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: loxicKohl,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineComponent,
+          count: 3,
+        },
+        {
+          material: transmutedSalt,
+          count: 2,
+        },
+      ],
+    },
+    "고조파 파괴": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: loxicKohl,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 1,
+        },
+      ],
+    },
+    "정역의 메아리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: chiralRefractor,
+          count: 3,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: orirockConcentration,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "RIT-X",
+      name: "어제, 오늘, 내일",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "RIT-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: refinedSolvent,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 퍼퓨머 더 디스틸트 */
+export const PerfumerTheDistilled: Supporter = {
+  id: 400,
+  name: "퍼퓨머 더 디스틸트",
+  imageFilename: "perfumer-the-distilled",
+  class: "Supporter",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: supporterChip!,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: supporterDualchip,
+        count: 3,
+      },
+      {
+        material: crystallineCircuit,
+        count: 6,
+      },
+      {
+        material: integratedDevice,
+        count: 11,
+      },
+    ],
+  },
+  skillList: ["'산속의 기쁨'", "'신전의 잔불'"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: diketon,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 8,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloy,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 2,
+        },
+      ],
+    },
+    "'산속의 기쁨'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+      ],
+    },
+    "'신전의 잔불'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "BLS-Y",
+      name: "'두 달의 호흡'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "BLS-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 /** 미스미 우이카 (우이카) */
 export const MisumiUika: Supporter = {
   id: 384,
@@ -5049,7 +5575,13 @@ const sixStarSupporterList: Supporter[] = [
   Magallan,
   Angelina,
 ];
-const fiveStarSupporterList: Supporter[] = [MisumiUika, Lucilla, SandReckoner];
+const fiveStarSupporterList: Supporter[] = [
+  PerfumerTheDistilled,
+  Botany,
+  MisumiUika,
+  Lucilla,
+  SandReckoner,
+];
 const fourStarSupporterList: Supporter[] = [];
 const threeStarSupporterList: Supporter[] = [];
 const twoStarSupporterList: Supporter[] = [];

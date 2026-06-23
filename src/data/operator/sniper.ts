@@ -46,6 +46,7 @@ import {
   polyketon,
   polymerizationPreparation,
   polymerizedGel,
+  pseudocondensationNucleus,
   refinedSolvent,
   RMA7012,
   RMA7024,
@@ -5133,6 +5134,1001 @@ export const Exusiai: Sniper = {
   },
 };
 
+// 5성
+/** 구 */
+export const Ju: Sniper = {
+  id: 402,
+  name: "구",
+  imageFilename: "ju",
+  class: "Sniper",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: sniperChip!,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: sniperDualchip,
+        count: 3,
+      },
+      {
+        material: solidifiedFiberBoard,
+        count: 8,
+      },
+      {
+        material: loxicKohl,
+        count: 13,
+      },
+    ],
+  },
+  skillList: ["다루기 힘든 명궁", "거스르기 힘든 날개"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: aketon,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 3,
+        },
+      ],
+    },
+    "다루기 힘든 명궁": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: transmutedSalt,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 1,
+        },
+      ],
+    },
+    "거스르기 힘든 날개": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: RMA7012,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SIE-X",
+      name: "논밭의 허수아비",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "SIE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: refinedSolvent,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 스카이박스 */
+export const Skybox: Sniper = {
+  id: 396,
+  name: "스카이박스",
+  imageFilename: "skybox",
+  class: "Sniper",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: sniperChip!,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 8,
+      },
+      {
+        material: sugar,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: sniperDualchip,
+        count: 3,
+      },
+      {
+        material: RMA7024,
+        count: 7,
+      },
+      {
+        material: pseudocondensationNucleus,
+        count: 13,
+      },
+    ],
+  },
+  skillList: ["오리지늄 화약의 행차", "전자 펄스의 은총"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockCluster,
+          count: 3,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+    },
+    "오리지늄 화약의 행차": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: loxicKohl,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: chiralRefractor,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 1,
+        },
+      ],
+    },
+    "전자 펄스의 은총": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
+/** 스노우헌터 */
+export const SnowHunter: Sniper = {
+  id: 392,
+  name: "스노우헌터",
+  imageFilename: "snow-hunter",
+  class: "Sniper",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: sniperChip!,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: sniperDualchip,
+        count: 3,
+      },
+      {
+        material: polymerizedGel,
+        count: 8,
+      },
+      {
+        material: crystallineComponent,
+        count: 17,
+      },
+    ],
+  },
+  skillList: ["강타 β", "눈보라 쇠뇌"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseOre,
+          count: 3,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 2,
+        },
+      ],
+    },
+    "강타 β": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+      ],
+    },
+    "눈보라 쇠뇌": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: chiralRefractor,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "HUN-X",
+      name: "과거의 사냥",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "HUN-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 키치세이 */
+export const Kichisei: Sniper = {
+  id: 379,
+  name: "키치세이",
+  imageFilename: "kichisei",
+  class: "Sniper",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: sniperChip!,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: sniperDualchip,
+        count: 3,
+      },
+      {
+        material: ketonColloid,
+        count: 6,
+      },
+      {
+        material: grindstone,
+        count: 14,
+      },
+    ],
+  },
+  skillList: ["어서 오세요!", "운수대통!"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: diketon,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 8,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+        {
+          material: RMA7012,
+          count: 2,
+        },
+      ],
+    },
+    "어서 오세요!": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 1,
+        },
+      ],
+    },
+    "운수대통!": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "RPR-X",
+      name: "수상한 전단지",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "RPR-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 스나이퍼 오퍼레이터 리스트 계열
 const sixStarSniperList: Sniper[] = [
   VioletMizutsuneOrchid,
@@ -5153,7 +6149,7 @@ const sixStarSniperList: Sniper[] = [
   Schwarz,
   Exusiai,
 ];
-const fiveStarSniperList: Sniper[] = [];
+const fiveStarSniperList: Sniper[] = [Ju, Skybox, SnowHunter, Kichisei];
 const fourStarSniperList: Sniper[] = [];
 const threeStarSniperList: Sniper[] = [];
 const twoStarSniperList: Sniper[] = [];

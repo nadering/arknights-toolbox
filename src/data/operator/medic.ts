@@ -394,8 +394,8 @@ export const Titi: Medic = {
       },
     ],
   },
-  skillList: ["방청", "봉인식 보호", "과거의 개화"],
-  preferSkillList: ["봉인식 보호", "과거의 개화"],
+  skillList: ["부식 지연", "밀봉 보호", "지난날의 만개"],
+  preferSkillList: ["밀봉 보호"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -467,7 +467,7 @@ export const Titi: Medic = {
         },
       ],
     },
-    방청: {
+    "부식 지연": {
       "8": [
         {
           material: skillSummary3,
@@ -511,7 +511,7 @@ export const Titi: Medic = {
         },
       ],
     },
-    "봉인식 보호": {
+    "밀봉 보호": {
       "8": [
         {
           material: skillSummary3,
@@ -555,7 +555,7 @@ export const Titi: Medic = {
         },
       ],
     },
-    "과거의 개화": {
+    "지난날의 만개": {
       "8": [
         {
           material: skillSummary3,
@@ -603,11 +603,11 @@ export const Titi: Medic = {
   moduleList: [
     {
       type: "INC-X",
-      name: "멀리서 온 선물",
+      name: "먼 곳의 선물",
     },
   ],
   preferModuleList: [
-    { module: { type: "INC-X", name: "멀리서 온 선물" }, level: 3 },
+    { module: { type: "INC-X", name: "먼 곳의 선물" }, level: 3 },
   ],
   moduleMaterials: {
     "INC-X": {
@@ -2543,6 +2543,476 @@ export const Nightingale: Medic = {
 };
 
 // 5성
+/** 우쿠시크 */
+export const Turdus: Medic = {
+  id: 409,
+  name: "우쿠시크",
+  imageFilename: "turdus",
+  class: "Medic",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: medicChip!,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: medicDualchip,
+        count: 3,
+      },
+      {
+        material: incandescentAlloyBlock,
+        count: 8,
+      },
+      {
+        material: orironCluster,
+        count: 12,
+      },
+    ],
+  },
+  skillList: ["화검의 비주", "'숨바꼭질!'"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 4,
+        },
+      ],
+    },
+    "화검의 비주": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 1,
+        },
+      ],
+    },
+    "'숨바꼭질!'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "XAH-X",
+      name: "'잠들기 전 이야기'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "XAH-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 터랙서컴 */
+export const Taraxacum: Medic = {
+  id: 403,
+  name: "터랙서컴",
+  imageFilename: "taraxacum",
+  class: "Medic",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: medicChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: medicDualchip,
+        count: 3,
+      },
+      {
+        material: polymerizedGel,
+        count: 7,
+      },
+      {
+        material: aggregateCyclicene,
+        count: 13,
+      },
+    ],
+  },
+  skillList: ["어디에 머무르리", "바람 타고 날아올라"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSalt,
+          count: 3,
+        },
+        {
+          material: orirockCluster,
+          count: 2,
+        },
+      ],
+    },
+    "어디에 머무르리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+      ],
+    },
+    "바람 타고 날아올라": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: crystallineComponent,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: chiralRefractor,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 1,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
+
+
 /** 파피루스 */
 export const Papyrus: Medic = {
   id: 333,
@@ -3066,7 +3536,7 @@ const sixStarMedicList: Medic[] = [
   Shining,
   Nightingale,
 ];
-const fiveStarMedicList: Medic[] = [Papyrus, AmiyaMedic];
+const fiveStarMedicList: Medic[] = [Turdus, Taraxacum, Papyrus, AmiyaMedic];
 const fourStarMedicList: Medic[] = [];
 const threeStarMedicList: Medic[] = [Hibiscus];
 const twoStarMedicList: Medic[] = [];
