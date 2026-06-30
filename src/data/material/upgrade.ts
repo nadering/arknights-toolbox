@@ -297,10 +297,10 @@ export const loxicKohl: Material = {
   tier: 3,
 };
 
-/** (T3) 망간 */
+/** (T3) 망간 광석 */
 export const manganeseOre: Material = {
   id: "30083",
-  name: "망간",
+  name: "망간 광석",
   objectName: "manganeseOre",
   imageFilename: "manganese-ore",
   type: "Upgrade",
@@ -766,7 +766,7 @@ export const ketonColloid: Material = {
   recipe: [
     { material: aketon, count: 2 },
     { material: sugarPack, count: 1 },
-    { material: orironCluster, count: 1 },
+    { material: manganeseOre, count: 1 },
     { material: LMD, count: 300 },
   ],
 };
