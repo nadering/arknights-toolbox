@@ -23,6 +23,7 @@ import {
   grindstone,
   grindstonePentahydrate,
   guardChip,
+  guardChipPack,
   guardDualchip,
   incandescentAlloy,
   incandescentAlloyBlock,
@@ -8682,6 +8683,211 @@ export const YūtenjiNyamu: Guard = {
   },
 };
 
+/** 그레이스베어러 */
+export const Gracebearer: Guard = {
+  id: 368,
+  name: "그레이스베어러",
+  imageFilename: "gracebearer",
+  class: "Guard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: guardChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: guardDualchip,
+        count: 3,
+      },
+      {
+        material: solidifiedFiberBoard,
+        count: 7,
+      },
+      {
+        material: manganeseOre,
+        count: 14,
+      },
+    ],
+  },
+  skillList: ["두개골 파열 엘레지", "가슴을 가르는 미사"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: pseudocondensationNucleus,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 1,
+        },
+      ],
+    },
+    "두개골 파열 엘레지": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+      ],
+    },
+    "가슴을 가르는 미사": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: chiralRefractor,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
 /** 라이오스 */
 export const Laios: Guard = {
   id: 341,
@@ -8943,6 +9149,266 @@ export const Laios: Guard = {
   },
 };
 
+// 4성
+/** 윈드스쿠트 */
+export const Windscoot: Guard = {
+  id: 364,
+  name: "윈드스쿠트",
+  imageFilename: "windscoot",
+  class: "Guard",
+  rarity: 4,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 15000,
+      },
+      {
+        material: guardChip!,
+        count: 3,
+      },
+      {
+        material: polyester,
+        count: 1,
+      },
+      {
+        material: polyketon,
+        count: 1,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 60000,
+      },
+      {
+        material: guardChipPack!,
+        count: 5,
+      },
+      {
+        material: loxicKohl,
+        count: 17,
+      },
+      {
+        material: transmutedSalt,
+        count: 8,
+      },
+    ],
+  },
+  skillList: ["공격으로 방어", "무허발"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+        {
+          material: diketon,
+          count: 3,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: device,
+          count: 1,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 2,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 3,
+        },
+      ],
+    },
+    "공격으로 방어": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: orirockConcentration,
+          count: 1,
+        },
+        {
+          material: loxicKohl,
+          count: 5,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 2,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 2,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 2,
+        },
+        {
+          material: polymerizedGel,
+          count: 1,
+        },
+      ],
+    },
+    무허발: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 2,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 2,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 2,
+        },
+        {
+          material: chiralRefractor,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "LIB-X",
+      name: "'의'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "LIB-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 20000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementStick,
+          count: 15,
+        },
+        {
+          material: manganeseOre,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 25000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 5,
+        },
+        {
+          material: fuscousFiber,
+          count: 6,
+        },
+        {
+          material: LMD,
+          count: 30000,
+        },
+      ],
+    },
+  },
+};
+
 // 가드 오퍼레이터 리스트 계열
 const sixStarGuardList: Guard[] = [
   ZimaTheRagingTide,
@@ -8981,9 +9447,10 @@ const fiveStarGuardList: Guard[] = [
   VarkRis,
   Hadiya,
   YūtenjiNyamu,
+  Gracebearer,
   Laios,
 ];
-const fourStarGuardList: Guard[] = [];
+const fourStarGuardList: Guard[] = [Windscoot];
 const threeStarGuardList: Guard[] = [];
 const twoStarGuardList: Guard[] = [];
 const oneStarGuardList: Guard[] = [];

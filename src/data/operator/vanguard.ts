@@ -3359,6 +3359,277 @@ export const Matsukiri: Vanguard = {
   moduleMaterials: {},
 };
 
+/** 서퍼 */
+export const Surfer: Vanguard = {
+  id: 356,
+  name: "서퍼",
+  imageFilename: "surfer",
+  class: "Vanguard",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: vanguardChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: vanguardDualchip,
+        count: 3,
+      },
+      {
+        material: orironBlock,
+        count: 6,
+      },
+      {
+        material: integratedDevice,
+        count: 11,
+      },
+    ],
+  },
+  skillList: ["탐색", "통찰"],
+  preferSkillList: ["탐색"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugarPack,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 2,
+        },
+      ],
+    },
+    탐색: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+      ],
+    },
+    통찰: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: refinedSolvent,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "AGE-X",
+      name: "멋진 요리",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "AGE-X",
+        name: "멋진 요리",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "AGE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 /** 칠책 */
 export const Chilchuck: Vanguard = {
   id: 339,
@@ -4273,7 +4544,7 @@ const sixStarVanguardList: Vanguard[] = [
   Bagpipe,
   Siege,
 ];
-const fiveStarVanguardList: Vanguard[] = [Matsukiri, Chilchuck, Mitm];
+const fiveStarVanguardList: Vanguard[] = [Matsukiri, Surfer, Chilchuck, Mitm];
 const fourStarVanguardList: Vanguard[] = [Wintim, Myrtle];
 const threeStarVanguardList: Vanguard[] = [];
 const twoStarVanguardList: Vanguard[] = [];
