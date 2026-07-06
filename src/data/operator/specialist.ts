@@ -42,6 +42,7 @@ import {
   orironCluster,
   orironShard,
   polyester,
+  polyesterLump,
   polyesterPack,
   polyketon,
   polymerizationPreparation,
@@ -59,6 +60,7 @@ import {
   specialistChipPack,
   specialistDualchip,
   sugar,
+  sugarLump,
   sugarPack,
   sugarSubstitute,
   transmutedSalt,
@@ -6075,6 +6077,796 @@ export const TinMan: Specialist = {
   },
 };
 
+/** Iana (야나) */
+export const Iana: Specialist = {
+  id: 317,
+  name: "Iana",
+  nicknameList: ["야나"],
+  imageFilename: "iana",
+  class: "Specialist",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: specialistChip!,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: specialistDualchip,
+        count: 3,
+      },
+      {
+        material: transmutedSaltAgglomerate,
+        count: 7,
+      },
+      {
+        material: aggregateCyclicene,
+        count: 12,
+      },
+    ],
+  },
+  skillList: ["홀로그램 트랩", "전지자의 전술"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: grindstone,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+        {
+          material: orirockCluster,
+          count: 2,
+        },
+      ],
+    },
+    "홀로그램 트랩": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: orirockCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+      ],
+    },
+    "전지자의 전술": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: transmutedSalt,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PUM-X",
+      name: "'생소하고 머나먼 세상'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "PUM-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: orirockConcentration,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 아몬드 */
+export const Almond: Specialist = {
+  id: 293,
+  name: "아몬드",
+  imageFilename: "almond",
+  class: "Specialist",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: specialistChip!,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+      {
+        material: oriron,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: specialistDualchip,
+        count: 3,
+      },
+      {
+        material: orironBlock,
+        count: 6,
+      },
+      {
+        material: manganeseOre,
+        count: 13,
+      },
+    ],
+  },
+  skillList: ["마그네틱 그랩", "파워 트렉션"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: diketon,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 8,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 3,
+        },
+      ],
+    },
+    "마그네틱 그랩": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+      ],
+    },
+    "파워 트렉션": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: manganeseOre,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "HOK-X",
+      name: "'졸업설계'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "HOK-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: sugarLump,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 스푸리아 */
+export const Spuria: Specialist = {
+  id: 283,
+  name: "스푸리아",
+  imageFilename: "spuria",
+  class: "Specialist",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: specialistChip!,
+        count: 4,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: specialistDualchip,
+        count: 3,
+      },
+      {
+        material: crystallineCircuit,
+        count: 7,
+      },
+      {
+        material: compoundCuttingFluid,
+        count: 9,
+      },
+    ],
+  },
+  skillList: ["임기응변", "즉석 총기 개조"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: diketon,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 8,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyesterPack,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+        {
+          material: sugarPack,
+          count: 2,
+        },
+      ],
+    },
+    임기응변: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+        {
+          material: incandescentAlloy,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+      ],
+    },
+    "즉석 총기 개조": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: optimizedDevice,
+          count: 2,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "GEE-X",
+      name: "드론 스프레이 세트",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "GEE-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 4성
 /** 콘트레일 */
 export const Contrail: Specialist = {
@@ -6277,6 +7069,265 @@ export const Contrail: Specialist = {
   moduleMaterials: {},
 };
 
+/** 버던트 */
+export const Verdant: Specialist = {
+  id: 297,
+  name: "버던트",
+  imageFilename: "verdant",
+  class: "Specialist",
+  rarity: 4,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 15000,
+      },
+      {
+        material: specialistChip!,
+        count: 3,
+      },
+      {
+        material: sugar,
+        count: 1,
+      },
+      {
+        material: orirockCube,
+        count: 1,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 60000,
+      },
+      {
+        material: specialistChipPack!,
+        count: 5,
+      },
+      {
+        material: orironCluster,
+        count: 15,
+      },
+      {
+        material: fuscousFiber,
+        count: 9,
+      },
+    ],
+  },
+  skillList: ["청록의 장벽", "양날의 독넝쿨"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 2,
+        },
+        {
+          material: orirock,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: sugar,
+          count: 2,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 3,
+        },
+        {
+          material: integratedDevice,
+          count: 2,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: transmutedSalt,
+          count: 3,
+        },
+      ],
+    },
+    "청록의 장벽": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: crystallineCircuit,
+          count: 1,
+        },
+        {
+          material: polyesterPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 2,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 2,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 2,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 2,
+        },
+      ],
+    },
+    "양날의 독넝쿨": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 2,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 2,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: D32Steel,
+          count: 2,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PUM-Y",
+      name: "정글에서 온 전리품",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "PUM-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 20000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementStick,
+          count: 15,
+        },
+        {
+          material: incandescentAlloy,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 25000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 5,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 6,
+        },
+        {
+          material: LMD,
+          count: 30000,
+        },
+      ],
+    },
+  },
+};
+
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
   Wang,
@@ -6304,8 +7355,11 @@ const fiveStarSpecialistList: Specialist[] = [
   Wulfenite,
   Figurino,
   TinMan,
+  Iana,
+  Almond,
+  Spuria,
 ];
-const fourStarSpecialistList: Specialist[] = [Contrail];
+const fourStarSpecialistList: Specialist[] = [Contrail, Verdant];
 const threeStarSpecialistList: Specialist[] = [];
 const twoStarSpecialistList: Specialist[] = [];
 const oneStarSpecialistList: Specialist[] = [];

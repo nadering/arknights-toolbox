@@ -6602,6 +6602,1321 @@ export const Tecno: Caster = {
   },
 };
 
+/** 아로마 */
+export const Aroma: Caster = {
+  id: 322,
+  name: "아로마",
+  imageFilename: "aroma",
+  class: "Caster",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: RMA7024,
+        count: 7,
+      },
+      {
+        material: loxicKohl,
+        count: 21,
+      },
+    ],
+  },
+  skillList: ["파워 클리닝", "미끄럼 주의"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+        {
+          material: RMA7012,
+          count: 2,
+        },
+      ],
+    },
+    "파워 클리닝": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+      ],
+    },
+    "미끄럼 주의": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "BLA-X",
+      name: "레몬 맛 어린 시절",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "BLA-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: sugarLump,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: optimizedDevice,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 워미 */
+export const Warmy: Caster = {
+  id: 309,
+  name: "워미",
+  imageFilename: "warmy",
+  class: "Caster",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: grindstonePentahydrate,
+        count: 6,
+      },
+      {
+        material: crystallineComponent,
+        count: 19,
+      },
+    ],
+  },
+  skillList: ["버닝 플레임", "스코칭 스트림"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: transmutedSalt,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockCluster,
+          count: 3,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+    },
+    "버닝 플레임": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+      ],
+    },
+    "스코칭 스트림": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: manganeseOre,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: optimizedDevice,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PRI-X",
+      name: "이별의 맛",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "PRI-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: chiralRefractor,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: orirockConcentration,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 디아만테 */
+export const Diamante: Caster = {
+  id: 301,
+  name: "디아만테",
+  imageFilename: "diamante",
+  class: "Caster",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 6,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: cyclicenePrefab,
+        count: 7,
+      },
+      {
+        material: manganeseOre,
+        count: 15,
+      },
+    ],
+  },
+  skillList: ["레이저 관통", "열처리 변색"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 2,
+        },
+        {
+          material: manganeseOre,
+          count: 3,
+        },
+      ],
+    },
+    "레이저 관통": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 3,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+      ],
+    },
+    "열처리 변색": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "PRI-X",
+      name: "평범한 돌",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "PRI-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 델핀 */
+export const Delphine: Caster = {
+  id: 296,
+  name: "델핀",
+  imageFilename: "delphine",
+  class: "Caster",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+      {
+        material: orirockCube,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: cyclicenePrefab,
+        count: 8,
+      },
+      {
+        material: semiSyntheticSolvent,
+        count: 10,
+      },
+    ],
+  },
+  skillList: ["'집중'", "'선공'"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: sugarSubstitute,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: compoundCuttingFluid,
+          count: 3,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 2,
+        },
+      ],
+    },
+    "'집중'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 1,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 2,
+        },
+      ],
+    },
+    "'선공'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: transmutedSalt,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "MSC-Y",
+      name: "암담한 정의",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "MSC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 산탈라 */
+export const Santalla: Caster = {
+  id: 289,
+  name: "산탈라",
+  imageFilename: "santalla",
+  class: "Caster",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: whiteHorseKohl,
+        count: 8,
+      },
+      {
+        material: polyesterPack,
+        count: 17,
+      },
+    ],
+  },
+  skillList: ["신속 공격 γ", "'마녀의 눈물'"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: RMA7012,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockCluster,
+          count: 3,
+        },
+        {
+          material: coagulatingGel,
+          count: 3,
+        },
+      ],
+    },
+    "신속 공격 γ": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+        {
+          material: transmutedSalt,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+      ],
+    },
+    "'마녀의 눈물'": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 3,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SPC-Y",
+      name: "'빙염'",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "SPC-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: polyesterLump,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: sugarLump,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 // 4성
 /** 아코르트 */
 export const Akkord: Caster = {
@@ -6885,7 +8200,16 @@ const sixStarCasterList: Caster[] = [
   Ifrit,
   Eyjafjalla,
 ];
-const fiveStarCasterList: Caster[] = [Ripresa, MissChristine, Tecno];
+const fiveStarCasterList: Caster[] = [
+  Ripresa,
+  MissChristine,
+  Tecno,
+  Aroma,
+  Warmy,
+  Diamante,
+  Delphine,
+  Santalla,
+];
 const fourStarCasterList: Caster[] = [Akkord];
 const threeStarCasterList: Caster[] = [];
 const twoStarCasterList: Caster[] = [];

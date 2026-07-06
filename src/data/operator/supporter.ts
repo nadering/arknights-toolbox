@@ -6087,6 +6087,267 @@ export const Catherine: Supporter = {
   },
 };
 
+/** 샌드레코너 */
+export const SandReckoner: Supporter = {
+  id: 332,
+  name: "샌드레코너",
+  imageFilename: "sand-reckoner",
+  class: "Supporter",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: supporterChip!,
+        count: 4,
+      },
+      {
+        material: orirockCube,
+        count: 8,
+      },
+      {
+        material: sugar,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: supporterDualchip,
+        count: 3,
+      },
+      {
+        material: transmutedSaltAgglomerate,
+        count: 9,
+      },
+      {
+        material: incandescentAlloy,
+        count: 12,
+      },
+    ],
+  },
+  skillList: ["태엽감기", "현권이동"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: ester,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: manganeseOre,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 2,
+        },
+      ],
+    },
+    태엽감기: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 3,
+        },
+        {
+          material: loxicKohl,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 3,
+        },
+        {
+          material: orirockConcentration,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+    현권이동: {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: crystallineCircuit,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "SUM-X",
+      name: "과거의 흔적",
+    },
+  ],
+  moduleMaterials: {
+    "SUM-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: grindstonePentahydrate,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 /** 루실라 */
 export const Lucilla: Supporter = {
   id: 330,
@@ -6349,11 +6610,11 @@ export const Lucilla: Supporter = {
   },
 };
 
-/** 샌드레코너 */
-export const SandReckoner: Supporter = {
-  id: 332,
-  name: "샌드레코너",
-  imageFilename: "sand-reckoner",
+/** 그레인버즈 */
+export const GrainBuds: Supporter = {
+  id: 312,
+  name: "그레인버즈",
+  imageFilename: "grain-buds",
   class: "Supporter",
   rarity: 5,
   eliteMaterials: {
@@ -6368,12 +6629,12 @@ export const SandReckoner: Supporter = {
         count: 4,
       },
       {
-        material: orirockCube,
-        count: 8,
+        material: polyketon,
+        count: 4,
       },
       {
-        material: sugar,
-        count: 2,
+        material: polyester,
+        count: 3,
       },
     ],
     "2": [
@@ -6386,16 +6647,17 @@ export const SandReckoner: Supporter = {
         count: 3,
       },
       {
-        material: transmutedSaltAgglomerate,
-        count: 9,
+        material: crystallineCircuit,
+        count: 7,
       },
       {
-        material: incandescentAlloy,
-        count: 12,
+        material: compoundCuttingFluid,
+        count: 11,
       },
     ],
   },
-  skillList: ["태엽감기", "현권이동"],
+  skillList: ["대나무 피리 소리", "정겨운 고향 소리"],
+  preferSkillList: [],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -6410,8 +6672,8 @@ export const SandReckoner: Supporter = {
           count: 4,
         },
         {
-          material: ester,
-          count: 7,
+          material: orirock,
+          count: 10,
         },
       ],
       "4": [
@@ -6420,7 +6682,7 @@ export const SandReckoner: Supporter = {
           count: 6,
         },
         {
-          material: oriron,
+          material: sugar,
           count: 3,
         },
       ],
@@ -6430,8 +6692,8 @@ export const SandReckoner: Supporter = {
           count: 6,
         },
         {
-          material: polyketon,
-          count: 4,
+          material: polyester,
+          count: 5,
         },
       ],
       "6": [
@@ -6440,8 +6702,8 @@ export const SandReckoner: Supporter = {
           count: 6,
         },
         {
-          material: manganeseOre,
-          count: 4,
+          material: orirockCluster,
+          count: 5,
         },
       ],
       "7": [
@@ -6454,20 +6716,64 @@ export const SandReckoner: Supporter = {
           count: 3,
         },
         {
-          material: semiSyntheticSolvent,
-          count: 2,
+          material: transmutedSalt,
+          count: 3,
         },
       ],
     },
-    태엽감기: {
+    "대나무 피리 소리": {
       "8": [
         {
           material: skillSummary3,
           count: 5,
         },
         {
-          material: grindstonePentahydrate,
+          material: incandescentAlloyBlock,
           count: 3,
+        },
+        {
+          material: sugarPack,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: ketonColloid,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: bipolarNanoflake,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+      ],
+    },
+    "정겨운 고향 소리": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: optimizedDevice,
+          count: 2,
         },
         {
           material: loxicKohl,
@@ -6480,55 +6786,11 @@ export const SandReckoner: Supporter = {
           count: 6,
         },
         {
-          material: refinedSolvent,
+          material: whiteHorseKohl,
           count: 3,
         },
         {
-          material: orirockConcentration,
-          count: 7,
-        },
-      ],
-      "10": [
-        {
-          material: skillSummary3,
-          count: 10,
-        },
-        {
-          material: nucleicCrystalSinter,
-          count: 4,
-        },
-        {
-          material: incandescentAlloyBlock,
-          count: 1,
-        },
-      ],
-    },
-    현권이동: {
-      "8": [
-        {
-          material: skillSummary3,
-          count: 5,
-        },
-        {
-          material: incandescentAlloyBlock,
-          count: 3,
-        },
-        {
-          material: fuscousFiber,
-          count: 3,
-        },
-      ],
-      "9": [
-        {
-          material: skillSummary3,
-          count: 6,
-        },
-        {
-          material: solidifiedFiberBoard,
-          count: 3,
-        },
-        {
-          material: crystallineCircuit,
+          material: orironBlock,
           count: 5,
         },
       ],
@@ -6538,31 +6800,32 @@ export const SandReckoner: Supporter = {
           count: 10,
         },
         {
-          material: D32Steel,
+          material: crystallineElectronicUnit,
           count: 4,
         },
         {
-          material: manganeseTrihydrate,
-          count: 4,
+          material: ketonColloid,
+          count: 3,
         },
       ],
     },
   },
   moduleList: [
     {
-      type: "SUM-X",
-      name: "과거의 흔적",
+      type: "DEC-X",
+      name: "들판에서",
     },
   ],
+  preferModuleList: [],
   moduleMaterials: {
-    "SUM-X": {
+    "DEC-X": {
       "1": [
         {
           material: moduleDataBlock,
           count: 2,
         },
         {
-          material: solidifiedFiberBoard,
+          material: whiteHorseKohl,
           count: 3,
         },
         {
@@ -6580,7 +6843,7 @@ export const SandReckoner: Supporter = {
           count: 20,
         },
         {
-          material: polymerizedGel,
+          material: grindstonePentahydrate,
           count: 4,
         },
         {
@@ -6598,7 +6861,270 @@ export const SandReckoner: Supporter = {
           count: 8,
         },
         {
+          material: polymerizedGel,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 발라크빈 */
+export const Valarqvin: Supporter = {
+  id: 291,
+  name: "발라크빈",
+  imageFilename: "valarqvin",
+  class: "Supporter",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: supporterChip!,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 3,
+      },
+      {
+        material: sugar,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: supporterDualchip,
+        count: 3,
+      },
+      {
+        material: orirockConcentration,
+        count: 10,
+      },
+      {
+        material: integratedDevice,
+        count: 7,
+      },
+    ],
+  },
+  skillList: ["붕괴 전을 예견", "마른 후를 예견"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: sugarSubstitute,
+          count: 7,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCluster,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+      ],
+    },
+    "붕괴 전을 예견": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 3,
+        },
+        {
+          material: grindstone,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+      ],
+    },
+    "마른 후를 예견": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: orirockCluster,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 3,
+        },
+        {
           material: grindstonePentahydrate,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "RIT-X",
+      name: "미래를 향한 등불",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "RIT-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: orironBlock,
           count: 5,
         },
         {
@@ -6635,8 +7161,10 @@ const fiveStarSupporterList: Supporter[] = [
   Xingzhu,
   Bobbing,
   Catherine,
-  Lucilla,
   SandReckoner,
+  Lucilla,
+  GrainBuds,
+  Valarqvin,
 ];
 const fourStarSupporterList: Supporter[] = [];
 const threeStarSupporterList: Supporter[] = [];

@@ -4011,6 +4011,532 @@ export const Papyrus: Medic = {
   moduleMaterials: null,
 };
 
+/** 해럴드 */
+export const Harold: Medic = {
+  id: 306,
+  name: "해럴드",
+  imageFilename: "harold",
+  class: "Medic",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: medicChip!,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 5,
+      },
+      {
+        material: device,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: medicDualchip,
+        count: 3,
+      },
+      {
+        material: transmutedSaltAgglomerate,
+        count: 8,
+      },
+      {
+        material: orirockCluster,
+        count: 14,
+      },
+    ],
+  },
+  skillList: ["치료 강화 γ", "중증 우선"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 3,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloy,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+      ],
+    },
+    "치료 강화 γ": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: integratedDevice,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: orirockConcentration,
+          count: 3,
+        },
+        {
+          material: refinedSolvent,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+      ],
+    },
+    "중증 우선": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 3,
+        },
+        {
+          material: crystallineComponent,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: orironBlock,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "WDM-X",
+      name: "다리 관리 키트",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "WDM-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: crystallineCircuit,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: manganeseTrihydrate,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
+/** 벤델라 */
+export const Vendela: Medic = {
+  id: 298,
+  name: "벤델라",
+  imageFilename: "vendela",
+  class: "Medic",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: medicChip!,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 4,
+      },
+      {
+        material: device,
+        count: 2,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: medicDualchip,
+        count: 3,
+      },
+      {
+        material: ketonColloid,
+        count: 5,
+      },
+      {
+        material: grindstone,
+        count: 13,
+      },
+    ],
+  },
+  skillList: ["전술 영창 γ", "가시덤불의 보우"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orirock,
+          count: 10,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: loxicKohl,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 2,
+        },
+      ],
+    },
+    "전술 영창 γ": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: orirockCluster,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: optimizedDevice,
+          count: 3,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: D32Steel,
+          count: 4,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+      ],
+    },
+    "가시덤불의 보우": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: RMA7024,
+          count: 3,
+        },
+        {
+          material: orironCluster,
+          count: 2,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 3,
+        },
+        {
+          material: orirockConcentration,
+          count: 6,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 3,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "INC-X",
+      name: "파편",
+    },
+  ],
+  preferModuleList: [],
+  moduleMaterials: {
+    "INC-X": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: polyesterLump,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 40000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementStick,
+          count: 20,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 50000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 2,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 8,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 5,
+        },
+        {
+          material: LMD,
+          count: 60000,
+        },
+      ],
+    },
+  },
+};
+
 /** 아미야 (메딕) */
 export const AmiyaMedic: Medic = {
   id: 75.2,
@@ -4338,6 +4864,8 @@ const fiveStarMedicList: Medic[] = [
   Nowell,
   RoseSalt,
   Papyrus,
+  Harold,
+  Vendela,
   AmiyaMedic,
 ];
 const fourStarMedicList: Medic[] = [];

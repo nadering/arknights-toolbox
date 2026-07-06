@@ -24,7 +24,7 @@ const pretendard = localFont({
 /** 웹 메타 데이터 */
 export const metadata: Metadata = {
   title: "Arknights-Toolbox",
-  description: "Arknights-Toolbox for Calculating Materials",
+  description: "명일방주 툴박스: 재료/미래시 계산기",
 };
 
 export default function RootLayout({
