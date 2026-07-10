@@ -1204,9 +1204,12 @@ export const ReedTheFlameShadow: Medic = {
       ],
     },
   },
-  moduleList: [{ type: "INC-X", name: "'붉은 용에게 주는 화관'" }],
+  moduleList: [
+    { type: "INC-X", name: "'붉은 용에게 주는 화관'" },
+    { type: "INC-Y", name: "'자신만의 안식처'" },
+  ],
   preferModuleList: [
-    { module: { type: "INC-X", name: "'붉은 용에게 주는 화관'" }, level: 1 },
+    { module: { type: "INC-Y", name: "'자신만의 안식처'" }, level: 3 },
   ],
   moduleMaterials: {
     "INC-X": {
@@ -1225,6 +1228,25 @@ export const ReedTheFlameShadow: Medic = {
         { material: moduleDataBlock, count: 4 },
         { material: dataSupplementInstrument, count: 20 },
         { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "INC-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: nucleicCrystalSinter, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: crystallineElectronicUnit, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: biphasicEnantiomorphicMedium, count: 4 },
         { material: LMD, count: 120000 },
       ],
     },

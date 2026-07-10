@@ -94,6 +94,329 @@ export interface Caster extends Operator {
 }
 
 // 6성
+/** 아프리사 */
+export const Aphrissa: Caster = {
+  id: 420,
+  name: "아프리사",
+  imageFilename: "aphrissa",
+  class: "Caster",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: casterChip!,
+        count: 5,
+      },
+      {
+        material: polyketon,
+        count: 7,
+      },
+      {
+        material: orirockCube,
+        count: 7,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: casterDualchip,
+        count: 4,
+      },
+      {
+        material: biphasicEnantiomorphicMedium,
+        count: 4,
+      },
+      {
+        material: liquefiedEtherAggregate,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["연속 투영", "임계 순폭", "혼돈의 본질"],
+  preferSkillList: ["혼돈의 본질"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orirock,
+          count: 6,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: transmutedSalt,
+          count: 5,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: RMA7012,
+          count: 5,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 1,
+        },
+      ],
+    },
+    "연속 투영": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 4,
+        },
+        {
+          material: manganeseOre,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 8,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 1,
+        },
+      ],
+    },
+    "임계 순폭": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: orironBlock,
+          count: 4,
+        },
+        {
+          material: fuscousFiber,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: ketonColloid,
+          count: 1,
+        },
+      ],
+    },
+    "혼돈의 본질": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: liquefiedEtherAggregate,
+          count: 4,
+        },
+        {
+          material: orironCluster,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 5,
+        },
+      ],
+    },
+  },
+  moduleList: [
+    {
+      type: "BLA-Y",
+      name: "제3상태",
+    },
+  ],
+  preferModuleList: [
+    {
+      module: {
+        type: "BLA-Y",
+        name: "제3상태",
+      },
+      level: 3,
+    },
+  ],
+  moduleMaterials: {
+    "BLA-Y": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 2,
+        },
+        {
+          material: LMD,
+          count: 80000,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementStick,
+          count: 60,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 3,
+        },
+        {
+          material: LMD,
+          count: 100000,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 4,
+        },
+        {
+          material: dataSupplementInstrument,
+          count: 20,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: LMD,
+          count: 120000,
+        },
+      ],
+    },
+  },
+};
+
 /** 비이 */
 export const Veen: Caster = {
   id: 414,
@@ -1592,7 +1915,10 @@ export const BlazeTheIgnitingSpark: Caster = {
       ],
     },
   },
-  moduleList: [{ type: "PRI-X", name: "간절한 희망" }],
+  moduleList: [
+    { type: "PRI-X", name: "간절한 희망" },
+    { type: "PRI-Y", name: "소통 도우미" },
+  ],
   preferModuleList: [
     {
       module: {
@@ -1607,6 +1933,25 @@ export const BlazeTheIgnitingSpark: Caster = {
       1: [
         { material: moduleDataBlock, count: 4 },
         { material: D32Steel, count: 2 },
+        { material: LMD, count: 80000 },
+      ],
+      2: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementStick, count: 60 },
+        { material: nucleicCrystalSinter, count: 3 },
+        { material: LMD, count: 100000 },
+      ],
+      3: [
+        { material: moduleDataBlock, count: 4 },
+        { material: dataSupplementInstrument, count: 20 },
+        { material: crystallineElectronicUnit, count: 4 },
+        { material: LMD, count: 120000 },
+      ],
+    },
+    "PRI-Y": {
+      1: [
+        { material: moduleDataBlock, count: 4 },
+        { material: polymerizationPreparation, count: 2 },
         { material: LMD, count: 80000 },
       ],
       2: [
@@ -8179,6 +8524,7 @@ export const Akkord: Caster = {
 
 // 캐스터 오퍼레이터 리스트 계열
 const sixStarCasterList: Caster[] = [
+  Aphrissa,
   Veen,
   PramanixThePrerita,
   Mantra,

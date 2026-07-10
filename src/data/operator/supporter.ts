@@ -18,6 +18,7 @@ import {
   dataSupplementStick,
   device,
   diketon,
+  energyConcentratingPowerUnit,
   ester,
   fuscousFiber,
   grindstone,
@@ -4237,6 +4238,211 @@ export const Angelina: Supporter = {
 };
 
 // 5성
+/** 페드로 */
+export const Pedro: Supporter = {
+  id: 419,
+  name: "페드로",
+  imageFilename: "pedro",
+  class: "Supporter",
+  rarity: 5,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: supporterChip!,
+        count: 4,
+      },
+      {
+        material: sugar,
+        count: 4,
+      },
+      {
+        material: polyketon,
+        count: 3,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: supporterDualchip,
+        count: 3,
+      },
+      {
+        material: cyclicenePrefab,
+        count: 7,
+      },
+      {
+        material: compoundCuttingFluid,
+        count: 11,
+      },
+    ],
+  },
+  skillList: ["표식 사격", "교대 철수"],
+  preferSkillList: [],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: crystallineComponent,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polyesterPack,
+          count: 3,
+        },
+        {
+          material: manganeseOre,
+          count: 3,
+        },
+      ],
+    },
+    "표식 사격": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: energyConcentratingPowerUnit,
+          count: 3,
+        },
+        {
+          material: crystallineComponent,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 3,
+        },
+        {
+          material: orirockConcentration,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: cyclicenePrefab,
+          count: 1,
+        },
+      ],
+    },
+    "교대 철수": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 3,
+        },
+        {
+          material: aketon,
+          count: 3,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 3,
+        },
+        {
+          material: crystallineCircuit,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: refinedSolvent,
+          count: 4,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
 /** 보타니 */
 export const Botany: Supporter = {
   id: 408,
@@ -7154,6 +7360,7 @@ const sixStarSupporterList: Supporter[] = [
   Angelina,
 ];
 const fiveStarSupporterList: Supporter[] = [
+  Pedro,
   PerfumerTheDistilled,
   Botany,
   MisumiUika,
