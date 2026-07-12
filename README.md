@@ -24,6 +24,8 @@ npm run dev
 - `skill-summary.ts` 스킬개론
 - `module.ts` 모듈 (모듈 데이터 칩, 데이터 메모리, 데이터 리더기)
 - `memory-chip.ts` 메모리 칩
+- `headhunting.ts` 헤드헌팅 재료
+- `others.ts` 기타 재료 (순금, 구매증명서 등)
 
 ## 오퍼레이터 및 오퍼레이터 추가 방법
 - 모든 오퍼레이터는 [JavaScript의 Object 타입](https://ko.javascript.info/object)으로 만들어져 있습니다.
@@ -31,7 +33,7 @@ npm run dev
 - 데이터를 추가 후, GitHub 저장소에 Pull Request 해주시면 확인 후 반영하겠습니다.
 - 혹은 아래의 오퍼레이터 데이터 제작소 기능을 이용할 수 있습니다.
 
-## 오퍼레이터 데이터 제작소
+## 오퍼레이터 데이터 제작소 (Deprecated)
 - [노션 링크](https://balsam-column-ee9.notion.site/Arknights-Toolbox-13d2f32df8da80a0b30bf1e8063d2fc5)를 참고해주세요.
 
 ## 오퍼레이터 데이터 작성 예시
