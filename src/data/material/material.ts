@@ -7,10 +7,12 @@ export type MaterialType =
   | "Skill-Summary"
   | "Memory-Chip"
   | "Module"
+  | "Headhunting"
+  | "Others"
   | "LMD"
   | "Exp";
 
-export type TierType = 1 | 2 | 3 | 4 | 5;
+export type TierType = 1 | 2 | 3 | 4 | 5 | 6;
 
 /** 재료 인터페이스 */
 export default interface Material {

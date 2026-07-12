@@ -38,7 +38,7 @@ export default function JsonImportButton() {
           <span className="font-semibold text-gray-300 underline">
             Arkntools
           </span>
-          으로 내보내기
+          로 내보내기
         </p>
       </div>
     </button>

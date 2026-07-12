@@ -2,7 +2,7 @@ import Material from "./material";
 
 /** 용문폐 */
 export const LMD: Material = {
-  id: "lmd",
+  id: "4001",
   name: "용문폐",
   objectName: "LMD",
   imageFilename: "lmd",

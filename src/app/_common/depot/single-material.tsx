@@ -10,12 +10,10 @@ import { userDepotAtom } from "@/store";
 /** 창고에 있는 재료 하나를 표현하는 컴포넌트 */
 export default function SingleMaterial({
   countableMaterial,
-  isLmd = false,
   readonly = false,
   userDepotUse = false,
 }: {
   countableMaterial: CountableMaterial;
-  isLmd?: boolean;
   readonly?: boolean;
   userDepotUse?: boolean;
 }) {
@@ -28,7 +26,7 @@ export default function SingleMaterial({
 
   // 사용자로부터 입력받은 재료 보유량
   const [countString, setCountString] = useState(
-    countableMaterial.count.toString()
+    countableMaterial.count.toString(),
   );
 
   /** 이미지 경로 */
@@ -45,6 +43,7 @@ export default function SingleMaterial({
 
   /** 아이템 티어에 따른 테두리 색상 */
   const borderColorByTier: BorderColors = {
+    6: "border-tier-6",
     5: "border-tier-5",
     4: "border-tier-4",
     3: "border-tier-3",
@@ -52,8 +51,14 @@ export default function SingleMaterial({
     1: "border-tier-1",
   };
 
-  /** 현재 재료가 용문폐라면, 화면 크기가 640px 이하일 때 보유량 길이 증가 */
-  const countLengthWhenMobile = isLmd ? "w-[108px]" : "w-16";
+  /** 재료 수량이 6자리 이상이거나, 그럴 가능성이 높은 경우, 입력창 크기를 확대 */
+  const needLongInput =
+    ["순오리지늄", "합성옥", "용문폐", "경험치"].includes(
+      countableMaterialData.material.name,
+    ) || countableMaterialData.count >= 100000;
+
+  /** 입력창 크기를 확대시켜야 한다면, 화면 크기가 640px 이하일 때 보유량 길이 증가 */
+  const countLengthWhenMobile = needLongInput ? "w-[108px]" : "w-16";
 
   /** 문자열을 입력하지 않고, (마우스 클릭을 통해) 현재 보유량 수정 */
   const addCount = (value: number) => {
@@ -80,9 +85,9 @@ export default function SingleMaterial({
       setDepotMaterialById(
         countableMaterialData.material.id,
         newCount,
-        userDepot
+        userDepot,
       );
-      setUserDepot({...userDepot});
+      setUserDepot({ ...userDepot });
     }
   };
 
@@ -109,9 +114,9 @@ export default function SingleMaterial({
       setDepotMaterialById(
         countableMaterialData.material.id,
         parseInt(value, 10),
-        userDepot
+        userDepot,
       );
-      setUserDepot({...userDepot});
+      setUserDepot({ ...userDepot });
     }
   };
 
