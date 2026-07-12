@@ -18,7 +18,7 @@ export default function UpgradeLine({
 }) {
   /** 티어별 재료 타입 */
   type MaterialByTierType = {
-    [key in TierType]: CountableMaterial[];
+    [key in Exclude<TierType, 6>]: CountableMaterial[];
   };
 
   /** 티어별 재료의 존재 여부 */
@@ -49,11 +49,17 @@ export default function UpgradeLine({
       1: [],
     };
     list.forEach((upgrade) => {
-      materialByTier[upgrade.material.tier].push(upgrade);
-      if (skipZero && upgrade.count > 0) {
-        // 티어별 재료 존재 여부를 확인 후 설정
-        setMaterialExists(true);
-        newMaterialExistsByTier[upgrade.material.tier] = true;
+      if (upgrade.material.tier !== 6) {
+        /**
+         * 현재 6티어 재료는 "순오리지늄" 등의 특수 재료로,
+         * 6티어인 정예화 재료는 존재하지 않으며 오퍼레이터 육성에 사용되지 않으므로 제외
+         */
+        materialByTier[upgrade.material.tier].push(upgrade);
+        if (skipZero && upgrade.count > 0) {
+          // 티어별 재료 존재 여부를 확인 후 설정
+          setMaterialExists(true);
+          newMaterialExistsByTier[upgrade.material.tier] = true;
+        }
       }
     });
     setMaterialExistsByTier(newMaterialExistsByTier);
@@ -102,7 +108,7 @@ export default function UpgradeLine({
       });
 
     setTierLines(upgradeTierLines);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [list, skipZero, readonly, userDepotUse]);
 
   return (

@@ -37,7 +37,6 @@ export default function LMDLine({
         {(!skipZero || lmd.count > 0) && (
           <SingleMaterial
             countableMaterial={lmd}
-            isLmd
             readonly={readonly}
             userDepotUse={userDepotUse}
           />

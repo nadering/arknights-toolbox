@@ -53,14 +53,10 @@ export default function LMDExpLine({
       </p>
       <div className="w-full flex flex-row flex-wrap gap-2">
         {(!skipZero || lmd.count > 0) && (
-          <SingleMaterial countableMaterial={lmd} isLmd readonly={readonly} />
+          <SingleMaterial countableMaterial={lmd} readonly={readonly} />
         )}
         {(!skipZero || selectedExp.count > 0) && (
-          <SingleMaterial
-            countableMaterial={selectedExp}
-            isLmd
-            readonly={readonly}
-          />
+          <SingleMaterial countableMaterial={selectedExp} readonly={readonly} />
         )}
       </div>
     </div>
