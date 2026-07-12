@@ -1,11 +1,44 @@
 import { Depot, makeEmptyDepot, PersistedDepot } from "@/store/depot";
 
+/** 재료 ID 변화에 따라, 기존 아이디 및 신규 아이디 매핑 */
+const MATERIAL_ID_ALIAS_MAP: Record<string, string> = {
+  lmd: "4001", // 용문폐 (lmd -> 4001)
+};
+
 const isObject = (value: unknown): value is Record<string, unknown> => {
   return typeof value === "object" && value !== null;
 };
 
 const isValidCount = (value: unknown): value is number => {
   return typeof value === "number" && Number.isFinite(value);
+};
+
+/** 재료 ID 변화에 따라, 재료 데이터의 ID 마이그레이션을 진행 */
+export const migratePersistedDepotIds = (
+  storageData: PersistedDepot,
+): PersistedDepot => {
+  const migratedItems: Record<string, number> = {
+    ...storageData.items,
+  };
+
+  Object.entries(MATERIAL_ID_ALIAS_MAP).forEach(([oldId, newId]) => {
+    const oldCount = migratedItems[oldId];
+
+    if (oldCount === undefined) {
+      return;
+    }
+
+    if (migratedItems[newId] === undefined) {
+      migratedItems[newId] = oldCount;
+    }
+
+    delete migratedItems[oldId];
+  });
+
+  return {
+    ...storageData,
+    items: migratedItems,
+  };
 };
 
 /**
@@ -38,23 +71,17 @@ export const isPersistedDepot = (value: unknown): value is PersistedDepot => {
  */
 export const createStorageData = (depot: Depot): PersistedDepot => {
   const items: Record<string, number> = {};
-  const visitedIds = new Set<string>();
 
   Object.values(depot).forEach((countableMaterials) => {
     countableMaterials.forEach((countableMaterial) => {
-      const { material, count } = countableMaterial;
-
-      if (visitedIds.has(material.id)) {
-        throw new Error(`Duplicated material id: ${material.id}`);
-      }
-
-      visitedIds.add(material.id);
+      const id = String(countableMaterial.material.id);
+      const count = countableMaterial.count;
 
       if (count === 0) {
         return;
       }
 
-      items[material.id] = count;
+      items[id] = count;
     });
   });
 
@@ -72,14 +99,15 @@ export const createStorageData = (depot: Depot): PersistedDepot => {
 export const createDepotFromStorageData = (
   storageData: PersistedDepot,
 ): Depot => {
-  const emptyDepot = makeEmptyDepot();
+  const migratedStorageData = migratePersistedDepotIds(storageData);
+  const depotTemplate = makeEmptyDepot();
 
-  const restoredDepot = Object.entries(emptyDepot).reduce<Depot>(
+  const restoredDepot = Object.entries(depotTemplate).reduce<Depot>(
     (acc, [materialType, countableMaterials]) => {
       acc[materialType as keyof Depot] = countableMaterials.map(
         (countableMaterial) => {
-          const id = countableMaterial.material.id;
-          const count = storageData.items[id];
+          const id = String(countableMaterial.material.id);
+          const count = migratedStorageData.items[id];
 
           return {
             material: countableMaterial.material,

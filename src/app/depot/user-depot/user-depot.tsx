@@ -62,6 +62,12 @@ export default function UserDepot() {
         list={userDepot["Memory-Chip"]}
         userDepotUse
       />
+      <DepotLine
+        title="헤드헌팅 재료"
+        list={userDepot["Headhunting"]}
+        userDepotUse
+      />
+      <DepotLine title="기타 재료" list={userDepot["Others"]} userDepotUse />
     </div>
   );
 }

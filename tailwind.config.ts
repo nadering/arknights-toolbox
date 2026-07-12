@@ -95,6 +95,7 @@ const config: Config = {
           950: "#1e1e1e",
         },
         // 재료 색상
+        "tier-6": "#e7a62e",
         "tier-5": "#ffc802",
         "tier-4": "#d4c3d4",
         "tier-3": "#00b2f6",

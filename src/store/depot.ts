@@ -8,6 +8,8 @@ import {
   skillSummaryList,
   memoryChipList,
   moduleMaterialList,
+  othersMaterialList,
+  headhuntingMaterialList,
   LMD,
   EXP,
 } from "@/data/material";
@@ -52,6 +54,8 @@ export const makeEmptyDepot = () => {
     "Skill-Summary": makeCountableMaterialList(skillSummaryList),
     "Memory-Chip": makeCountableMaterialList(memoryChipList),
     Module: makeCountableMaterialList(moduleMaterialList),
+    Headhunting: makeCountableMaterialList(headhuntingMaterialList),
+    Others: makeCountableMaterialList(othersMaterialList),
     LMD: [{ material: LMD, count: 0 }],
   } as Depot;
 };
