@@ -140,7 +140,7 @@ export const Wang: Specialist = {
       },
     ],
   },
-  skillList: ["취세", "연성", "천하겁"],
+  skillList: ["기세", "삼연성", "천하겁"],
   preferSkillList: ["천하겁"],
   skillUpgradeMaterials: {
     common: {
@@ -213,7 +213,7 @@ export const Wang: Specialist = {
         },
       ],
     },
-    취세: {
+    기세: {
       "8": [
         {
           material: skillSummary3,
@@ -257,7 +257,7 @@ export const Wang: Specialist = {
         },
       ],
     },
-    연성: {
+    삼연성: {
       "8": [
         {
           material: skillSummary3,
@@ -349,11 +349,11 @@ export const Wang: Specialist = {
   moduleList: [
     {
       type: "TRP-X",
-      name: "짐승 모양 바둑통",
+      name: "비스트 모양의 바둑통",
     },
   ],
   preferModuleList: [
-    { module: { type: "TRP-X", name: "짐승 모양 바둑통" }, level: 3 },
+    { module: { type: "TRP-X", name: "비스트 모양의 바둑통" }, level: 3 },
   ],
   moduleMaterials: {
     "TRP-X": {

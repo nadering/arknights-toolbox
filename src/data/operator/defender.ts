@@ -5002,7 +5002,7 @@ export const Philae: Defender = {
   moduleList: [
     {
       type: "PRP-X",
-      name: "손때 묻은 나날",
+      name: "침묵 속에 닳아버린 날들",
     },
   ],
   preferModuleList: [],

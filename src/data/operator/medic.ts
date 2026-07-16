@@ -2828,10 +2828,10 @@ export const Turdus: Medic = {
   },
 };
 
-/** 터랙서컴 */
+/** 타락사쿰 */
 export const Taraxacum: Medic = {
   id: 403,
-  name: "터랙서컴",
+  name: "타락사쿰",
   imageFilename: "taraxacum",
   class: "Medic",
   rarity: 5,
@@ -2874,7 +2874,7 @@ export const Taraxacum: Medic = {
       },
     ],
   },
-  skillList: ["어디에 머무르리", "바람 타고 날아올라"],
+  skillList: ["닿을 곳 없는 마음", "바람 끝에 올라"],
   preferSkillList: [],
   skillUpgradeMaterials: {
     common: {
@@ -2939,7 +2939,7 @@ export const Taraxacum: Medic = {
         },
       ],
     },
-    "어디에 머무르리": {
+    "닿을 곳 없는 마음": {
       "8": [
         {
           material: skillSummary3,
@@ -2983,7 +2983,7 @@ export const Taraxacum: Medic = {
         },
       ],
     },
-    "바람 타고 날아올라": {
+    "바람 끝에 올라": {
       "8": [
         {
           material: skillSummary3,

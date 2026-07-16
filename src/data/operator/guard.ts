@@ -777,7 +777,7 @@ export const ChenTheDawnstreak: Guard = {
       },
     ],
   },
-  skillList: ["적소·분야", "적소·절영 - 치", "적소·천위"],
+  skillList: ["적소·분야", "적소·절영-치", "적소·천위"],
   preferSkillList: ["적소·천위"],
   skillUpgradeMaterials: {
     common: {
@@ -894,7 +894,7 @@ export const ChenTheDawnstreak: Guard = {
         },
       ],
     },
-    "적소·절영 - 치": {
+    "적소·절영-치": {
       "8": [
         {
           material: skillSummary3,
@@ -986,11 +986,11 @@ export const ChenTheDawnstreak: Guard = {
   moduleList: [
     {
       type: "AFT-X",
-      name: "기억의 조각",
+      name: "기억의 잔편",
     },
   ],
   preferModuleList: [
-    { module: { type: "AFT-X", name: "기억의 조각" }, level: 3 },
+    { module: { type: "AFT-X", name: "기억의 잔편" }, level: 3 },
   ],
   moduleMaterials: {
     "AFT-X": {

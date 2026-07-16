@@ -5136,10 +5136,10 @@ export const Exusiai: Sniper = {
 };
 
 // 5성
-/** 구 */
+/** 쥐 */
 export const Ju: Sniper = {
   id: 402,
-  name: "구",
+  name: "쥐",
   imageFilename: "ju",
   class: "Sniper",
   rarity: 5,
@@ -5182,7 +5182,7 @@ export const Ju: Sniper = {
       },
     ],
   },
-  skillList: ["다루기 힘든 명궁", "거스르기 힘든 날개"],
+  skillList: ["당기기 어려운 활", "타기 어려운 날개"],
   preferSkillList: [],
   skillUpgradeMaterials: {
     common: {
@@ -5247,7 +5247,7 @@ export const Ju: Sniper = {
         },
       ],
     },
-    "다루기 힘든 명궁": {
+    "당기기 어려운 활": {
       "8": [
         {
           material: skillSummary3,
@@ -5339,7 +5339,7 @@ export const Ju: Sniper = {
   moduleList: [
     {
       type: "SIE-X",
-      name: "논밭의 허수아비",
+      name: "들판의 허수아비",
     },
   ],
   preferModuleList: [],
