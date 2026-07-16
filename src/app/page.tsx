@@ -27,7 +27,7 @@ export default function Home() {
           중국 서버: 볼리바르 진단 (2026-07-10)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          글로벌 서버: 아테누스 복수록 (2026-06-22)
+          글로벌 서버: 사세행 (2026-07-16)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
           사이트 업데이트 (2026-07-13)
