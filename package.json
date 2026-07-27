@@ -11,7 +11,8 @@
     "inspect:activity-table": "tsx scripts/operator-release/inspect-activity-table.ts",
     "scan:character-first-appearance": "tsx scripts/operator-release/scan-character-first-appearance.ts",
     "scan:operator-release": "tsx scripts/operator-release/scan-release-candidates.ts",
-    "scan:cn-operator-release": "tsx scripts/operator-release/scan-cn-release-candidates.ts"
+    "scan:cn-operator-release": "tsx scripts/operator-release/scan-cn-release-candidates.ts",
+    "create:operator-release-event-draft": "tsx scripts/operator-release/create-operator-release-event-draft.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",

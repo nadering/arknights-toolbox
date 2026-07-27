@@ -12,6 +12,7 @@ export type OperatorReleaseSource =
   | "activity_table"
   | "gacha_table"
   | "git_history"
+  | "cn_git_history"
   | "manual";
 
 export type OperatorReleaseEvent = {

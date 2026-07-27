@@ -48,6 +48,13 @@ const PLAYABLE_PROFESSIONS = new Set([
   "SPECIAL",
 ]);
 
+const RELEASE_ACTIVITY_CATEGORIES = new Set([
+  "main_story",
+  "side_story",
+  "mini_event",
+  "roguelike",
+]);
+
 type GachaTableLike = {
   gachaPoolClient?: unknown;
   gachaPoolDetail?: Record<string, unknown>;
@@ -78,12 +85,6 @@ const toTimestampOrNull = (value: number | undefined | null) => {
   return value;
 };
 
-/**
- * 출시 후보 분석용 오퍼레이터 필터입니다.
- *
- * 지금 단계에서는 너무 강하게 제외하지 않고, 실제 직군을 가진 char_ 계열만 남깁니다.
- * 이벤트성 캐릭터나 특수 데이터는 이후 suspicious report에서 따로 걸러내는 쪽이 안전합니다.
- */
 const isPlayableOperator = (charId: string, character: CharacterInfo) => {
   if (!charId.startsWith("char_")) {
     return false;
@@ -169,10 +170,7 @@ const createAddedActivityList = (
         cnName: latestCnActivity.name,
         globalName: latestGlobalActivity?.name ?? null,
 
-        // 표시용 메타데이터는 최신 CN JSON 기준으로 맞춥니다.
         type: String(latestCnActivity.type),
-
-        // 과거 commit에서 숫자 enum으로 들어온 경우를 추적하기 위해 남깁니다.
         firstSeenType: String(firstSeenActivity.type),
 
         displayType: latestCnActivity.displayType,
@@ -196,10 +194,6 @@ const createAddedActivityList = (
   );
 };
 
-/**
- * gacha_table 구조는 서버/시점에 따라 흔들릴 수 있어서
- * 여러 후보 위치에서 id/name을 느슨하게 수집합니다.
- */
 const createGachaRecord = (gachaTable: GachaTableLike | null) => {
   const gachaRecord: Record<string, CnAddedGachaInfo> = {};
 
@@ -325,31 +319,25 @@ const createCandidateReasons = (
   return reasons;
 };
 
-/**
- * CN Git history를 기준으로 출시 후보를 만들고,
- * KR 최신 JSON을 overlay해서 global/future 상태와 KR 이벤트 시간을 붙입니다.
- */
-const scanCnReleaseCandidates = (
+const isReleaseLikeActivity = (activity: CnAddedActivityInfo) => {
+  if (!RELEASE_ACTIVITY_CATEGORIES.has(activity.category)) {
+    return false;
+  }
+
+  if (activity.isRerun || activity.isReplicate) {
+    return false;
+  }
+
+  return true;
+};
+
+const scanCnOperatorReleaseCandidates = (
   cnRepositoryPath: string,
   globalRepositoryPath: string,
+  latestCnActivityTable: ActivityTable,
+  latestGlobalActivityTable: ActivityTable,
+  globalOperatorRecord: Record<string, CharacterInfo>,
 ) => {
-  const latestGlobalCharacterTable = readLatestJsonFile<CharacterTable>(
-    globalRepositoryPath,
-    GLOBAL_CHARACTER_TABLE_PATH,
-  );
-
-  const latestCnActivityTable = readLatestJsonFile<ActivityTable>(
-    cnRepositoryPath,
-    CN_ACTIVITY_TABLE_PATH,
-  );
-
-  const latestGlobalActivityTable = readLatestJsonFile<ActivityTable>(
-    globalRepositoryPath,
-    GLOBAL_ACTIVITY_TABLE_PATH,
-  );
-
-  const globalOperatorRecord = createOperatorRecord(latestGlobalCharacterTable);
-
   const commitHashes = getCommitHashesByFilePath(
     cnRepositoryPath,
     CN_CHARACTER_TABLE_PATH,
@@ -473,6 +461,141 @@ const scanCnReleaseCandidates = (
   return candidates;
 };
 
+const scanCnUnmappedReleaseActivities = (
+  cnRepositoryPath: string,
+  latestCnActivityTable: ActivityTable,
+  latestGlobalActivityTable: ActivityTable,
+  mappedActivityIds: Set<string>,
+) => {
+  const commitHashes = getCommitHashesByFilePath(
+    cnRepositoryPath,
+    CN_ACTIVITY_TABLE_PATH,
+  );
+
+  const candidates: CnReleaseCandidate[] = [];
+
+  commitHashes.forEach((commitHash, index) => {
+    const previousCommitHash = commitHashes[index - 1] ?? null;
+
+    const previousCnActivityTable = parseJsonOrNull<ActivityTable>(
+      previousCommitHash === null
+        ? null
+        : readFileAtCommit(
+            cnRepositoryPath,
+            previousCommitHash,
+            CN_ACTIVITY_TABLE_PATH,
+          ),
+    );
+
+    const currentCnActivityTable = parseJsonOrNull<ActivityTable>(
+      readFileAtCommit(cnRepositoryPath, commitHash, CN_ACTIVITY_TABLE_PATH),
+    );
+
+    const addedActivityList = createAddedActivityList(
+      previousCnActivityTable,
+      currentCnActivityTable,
+      latestCnActivityTable,
+      latestGlobalActivityTable,
+    ).filter((activity) => {
+      return (
+        isReleaseLikeActivity(activity) && !mappedActivityIds.has(activity.id)
+      );
+    });
+
+    if (addedActivityList.length === 0) {
+      return;
+    }
+
+    const previousCnGachaTable = parseJsonOrNull<GachaTableLike>(
+      previousCommitHash === null
+        ? null
+        : readFileAtCommit(
+            cnRepositoryPath,
+            previousCommitHash,
+            CN_GACHA_TABLE_PATH,
+          ),
+    );
+
+    const currentCnGachaTable = parseJsonOrNull<GachaTableLike>(
+      readFileAtCommit(cnRepositoryPath, commitHash, CN_GACHA_TABLE_PATH),
+    );
+
+    const addedGachaList = createAddedGachaList(
+      previousCnGachaTable,
+      currentCnGachaTable,
+    );
+
+    addedActivityList.forEach((activity) => {
+      candidates.push({
+        kind: "cn_unmapped_release_activity",
+        commitHash,
+        commitDate: getCommitDate(cnRepositoryPath, commitHash),
+        addedOperatorList: [],
+        addedActivityList: [activity],
+        addedGachaList,
+        confidence: "low",
+        reasons: [
+          "release-like activity added without mapped operator",
+          `${activity.category} activity needs manual operator mapping`,
+        ],
+      });
+    });
+  });
+
+  return candidates;
+};
+
+const scanCnReleaseCandidates = (
+  cnRepositoryPath: string,
+  globalRepositoryPath: string,
+) => {
+  const latestGlobalCharacterTable = readLatestJsonFile<CharacterTable>(
+    globalRepositoryPath,
+    GLOBAL_CHARACTER_TABLE_PATH,
+  );
+
+  const latestCnActivityTable = readLatestJsonFile<ActivityTable>(
+    cnRepositoryPath,
+    CN_ACTIVITY_TABLE_PATH,
+  );
+
+  const latestGlobalActivityTable = readLatestJsonFile<ActivityTable>(
+    globalRepositoryPath,
+    GLOBAL_ACTIVITY_TABLE_PATH,
+  );
+
+  const globalOperatorRecord = createOperatorRecord(latestGlobalCharacterTable);
+
+  const operatorCandidates = scanCnOperatorReleaseCandidates(
+    cnRepositoryPath,
+    globalRepositoryPath,
+    latestCnActivityTable,
+    latestGlobalActivityTable,
+    globalOperatorRecord,
+  );
+
+  const mappedActivityIds = new Set(
+    operatorCandidates.flatMap((candidate) => {
+      return candidate.addedActivityList.map((activity) => {
+        return activity.id;
+      });
+    }),
+  );
+
+  const unmappedReleaseActivityCandidates = scanCnUnmappedReleaseActivities(
+    cnRepositoryPath,
+    latestCnActivityTable,
+    latestGlobalActivityTable,
+    mappedActivityIds,
+  );
+
+  return [...operatorCandidates, ...unmappedReleaseActivityCandidates].sort(
+    (a, b) => {
+      return a.commitDate.localeCompare(b.commitDate);
+    },
+  );
+};
+
 const createGeneratedFileContent = (candidates: CnReleaseCandidate[]) => {
   return `import { CnReleaseCandidate } from "../../../../scripts/operator-release/cn-release-candidate-types";
 
@@ -498,6 +621,10 @@ const createReport = (candidates: CnReleaseCandidate[]) => {
     return candidate.kind === "cn_historical_baseline";
   });
 
+  const unmappedReleaseActivityCandidates = candidates.filter((candidate) => {
+    return candidate.kind === "cn_unmapped_release_activity";
+  });
+
   const lines: string[] = [
     "# CN Operator Release Candidate Report",
     "",
@@ -507,6 +634,7 @@ const createReport = (candidates: CnReleaseCandidate[]) => {
     `- Total candidates: ${candidates.length}`,
     `- Release candidates: ${releaseCandidates.length}`,
     `- Historical baseline batches: ${baselineCandidates.length}`,
+    `- Unmapped release activities: ${unmappedReleaseActivityCandidates.length}`,
     "",
   ];
 
@@ -579,6 +707,48 @@ const createReport = (candidates: CnReleaseCandidate[]) => {
     lines.push("");
   });
 
+  if (unmappedReleaseActivityCandidates.length > 0) {
+    lines.push("## Unmapped Release Activities");
+    lines.push("");
+    lines.push(
+      "> main_story / side_story / mini_event / roguelike로 분류됐지만 매핑된 오퍼레이터가 없는 이벤트입니다.",
+    );
+    lines.push(
+      "> 최종 확정 시 manual/operator-release-events.ts에서 operatorIds를 채워주세요.",
+    );
+    lines.push("");
+
+    unmappedReleaseActivityCandidates.forEach((candidate) => {
+      const activity = candidate.addedActivityList[0];
+
+      if (activity === undefined) {
+        return;
+      }
+
+      lines.push(
+        `### ${candidate.commitDate.slice(0, 10)} / ${getShortCommitHash(
+          candidate.commitHash,
+        )}`,
+      );
+
+      lines.push("");
+      lines.push(
+        `- Activity: \`${activity.id}\` / ${activity.globalName ?? activity.cnName}`,
+      );
+      lines.push(`- Category: ${activity.category}`);
+      lines.push(`- Type: ${activity.type}`);
+      lines.push(
+        `- CN: ${formatDate(activity.cnStartTime)}~${formatDate(activity.cnEndTime)}`,
+      );
+      lines.push(
+        `- KR: ${formatDate(activity.globalStartTime)}~${formatDate(activity.globalEndTime)}`,
+      );
+      lines.push(`- Global match: ${activity.hasGlobalMatch}`);
+      lines.push(`- Reasons: ${candidate.reasons.join(", ")}`);
+      lines.push("");
+    });
+  }
+
   return `${lines.join("\n")}\n`;
 };
 
@@ -617,10 +787,19 @@ const main = () => {
     return candidate.kind === "cn_release_candidate";
   });
 
+  const unmappedReleaseActivityCandidates = latestCandidates.filter(
+    (candidate) => {
+      return candidate.kind === "cn_unmapped_release_activity";
+    },
+  );
+
   console.log(
     `총 ${candidates.length}개의 CN release batch 후보를 찾았습니다.`,
   );
   console.log(`일반 출시 후보: ${releaseCandidates.length}개`);
+  console.log(
+    `매핑 안 된 출시성 이벤트: ${unmappedReleaseActivityCandidates.length}개`,
+  );
   console.log(`생성 완료: ${CN_RELEASE_CANDIDATES_OUTPUT_PATH}`);
   console.log(`생성 완료: ${CN_RELEASE_CANDIDATE_REPORT_OUTPUT_PATH}`);
 };

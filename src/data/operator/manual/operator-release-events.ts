@@ -1,3 +1,3 @@
-import { OperatorReleaseEvent } from "./operator-release-type";
+import { OperatorReleaseEvent } from "./operator-release-types";
 
 export const operatorReleaseEventList: OperatorReleaseEvent[] = [];

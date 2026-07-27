@@ -1,4 +1,4 @@
-import { OperatorReleaseCategory } from "@/data/operator/manual/operator-release-type";
+import { OperatorReleaseCategory } from "@/data/operator/manual/operator-release-types";
 
 // 이벤트 타입
 

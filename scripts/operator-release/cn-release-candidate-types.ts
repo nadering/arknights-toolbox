@@ -1,7 +1,7 @@
 import {
   OperatorReleaseCategory,
   Server,
-} from "@/data/operator/manual/operator-release-type";
+} from "../../src/data/operator/manual/operator-release-types";
 
 export type CnAddedOperatorInfo = {
   charId: string;
@@ -60,7 +60,8 @@ export type CnReleaseCandidateConfidence = "high" | "medium" | "low";
 
 export type CnReleaseCandidateKind =
   | "cn_release_candidate"
-  | "cn_historical_baseline";
+  | "cn_historical_baseline"
+  | "cn_unmapped_release_activity";
 
 export type CnReleaseCandidate = {
   kind: CnReleaseCandidateKind;

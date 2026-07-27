@@ -1,26 +1,57 @@
-import { OperatorReleaseCategory } from "@/data/operator/manual/operator-release-type";
+import { OperatorReleaseCategory } from "../../src/data/operator/manual/operator-release-types";
 import { ActivityBasicInfo, ActivityClassification } from "./activity-types";
 
-// 이벤트 분류
+const getStringValue = (value: unknown) => {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (typeof value === "number") {
+    return String(value);
+  }
+
+  return "";
+};
+
+const getActivityId = (activity: ActivityBasicInfo) => {
+  return getStringValue(activity.id);
+};
+
+const getActivityType = (activity: ActivityBasicInfo) => {
+  return getStringValue(activity.type);
+};
+
+const getActivityDisplayType = (activity: ActivityBasicInfo) => {
+  return getStringValue(activity.displayType);
+};
+
+const getActivityName = (activity: ActivityBasicInfo) => {
+  return getStringValue(activity.name);
+};
 
 const isSideStoryActivity = (activity: ActivityBasicInfo) => {
-  if (activity.displayType === "SIDESTORY") {
+  const id = getActivityId(activity);
+  const type = getActivityType(activity);
+  const displayType = getActivityDisplayType(activity);
+  const templateShopId = activity.templateShopId ?? "";
+
+  if (displayType === "SIDESTORY") {
     return true;
   }
 
-  if (/^act\d+side$/.test(activity.id)) {
+  if (/^act\d+side$/.test(id)) {
     return true;
   }
 
-  if (/^act\d+sre$/.test(activity.id)) {
+  if (/^act\d+sre$/.test(id)) {
     return true;
   }
 
-  if (String(activity.type).endsWith("SIDE")) {
+  if (type.endsWith("SIDE")) {
     return true;
   }
 
-  if (activity.templateShopId?.includes("side") === true) {
+  if (templateShopId.includes("side")) {
     return true;
   }
 
@@ -28,15 +59,19 @@ const isSideStoryActivity = (activity: ActivityBasicInfo) => {
 };
 
 const isMainStoryActivity = (activity: ActivityBasicInfo) => {
-  if (/^act\d+mainss$/.test(activity.id)) {
+  const id = getActivityId(activity);
+  const type = getActivityType(activity);
+  const templateShopId = activity.templateShopId ?? "";
+
+  if (/^act\d+mainss$/.test(id)) {
     return true;
   }
 
-  if (activity.type === "TYPE_MAINSS") {
+  if (type === "TYPE_MAINSS") {
     return true;
   }
 
-  if (activity.templateShopId?.includes("mainss") === true) {
+  if (templateShopId.includes("mainss")) {
     return true;
   }
 
@@ -44,9 +79,9 @@ const isMainStoryActivity = (activity: ActivityBasicInfo) => {
 };
 
 const isMiniEventActivity = (activity: ActivityBasicInfo) => {
-  const lowerId = activity.id.toLowerCase();
-  const lowerType = String(activity.type).toLowerCase();
-  const lowerDisplayType = activity.displayType.toLowerCase();
+  const lowerId = getActivityId(activity).toLowerCase();
+  const lowerType = getActivityType(activity).toLowerCase();
+  const lowerDisplayType = getActivityDisplayType(activity).toLowerCase();
 
   return (
     lowerDisplayType.includes("mini") ||
@@ -57,9 +92,9 @@ const isMiniEventActivity = (activity: ActivityBasicInfo) => {
 };
 
 const isRoguelikeActivity = (activity: ActivityBasicInfo) => {
-  const lowerId = activity.id.toLowerCase();
-  const lowerType = String(activity.type).toLowerCase();
-  const lowerDisplayType = activity.displayType.toLowerCase();
+  const lowerId = getActivityId(activity).toLowerCase();
+  const lowerType = getActivityType(activity).toLowerCase();
+  const lowerDisplayType = getActivityDisplayType(activity).toLowerCase();
 
   return (
     lowerDisplayType.includes("rogue") ||
@@ -69,19 +104,22 @@ const isRoguelikeActivity = (activity: ActivityBasicInfo) => {
 };
 
 const isRerunActivity = (activity: ActivityBasicInfo) => {
+  const id = getActivityId(activity);
+  const name = getActivityName(activity);
+
   if (activity.isReplicate === true) {
     return true;
   }
 
-  if (activity.name.includes("재개방")) {
+  if (name.includes("재개방")) {
     return true;
   }
 
-  if (/re$/.test(activity.id)) {
+  if (/re$/.test(id)) {
     return true;
   }
 
-  if (/sre$/.test(activity.id)) {
+  if (/sre$/.test(id)) {
     return true;
   }
 
@@ -110,11 +148,6 @@ const getActivityCategory = (
   return "other";
 };
 
-/**
- * 이벤트를 분류합니다.
- * @param activity 이벤트 정보
- * @returns 이벤트 분류 결과
- */
 export const classifyActivity = (
   activity: ActivityBasicInfo,
 ): ActivityClassification => {
