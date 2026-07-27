@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "check:gamedata": "tsx scripts/operator-release/check-gamedata-path.ts",
-    "inspect:activity-table": "tsx scripts/operator-release/inspect-activity-table.ts"
+    "inspect:activity-table": "tsx scripts/operator-release/inspect-activity-table.ts",
+    "scan:character-first-appearance": "tsx scripts/operator-release/scan-character-first-appearance.ts",
+    "scan:operator-release": "tsx scripts/operator-release/scan-release-candidates.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
