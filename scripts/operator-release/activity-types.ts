@@ -4,7 +4,7 @@ import { OperatorReleaseCategory } from "@/data/operator/manual/operator-release
 
 export type ActivityBasicInfo = {
   id: string;
-  type: string;
+  type: string | number;
   displayType: string;
   name: string;
 

@@ -45,7 +45,7 @@ const createActivitySummary = (
 
   return {
     id: activity.id,
-    type: activity.type,
+    type: String(activity.type),
     displayType: activity.displayType,
     name: activity.name,
 

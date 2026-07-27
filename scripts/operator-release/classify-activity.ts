@@ -16,7 +16,7 @@ const isSideStoryActivity = (activity: ActivityBasicInfo) => {
     return true;
   }
 
-  if (activity.type.endsWith("SIDE")) {
+  if (String(activity.type).endsWith("SIDE")) {
     return true;
   }
 
@@ -45,7 +45,7 @@ const isMainStoryActivity = (activity: ActivityBasicInfo) => {
 
 const isMiniEventActivity = (activity: ActivityBasicInfo) => {
   const lowerId = activity.id.toLowerCase();
-  const lowerType = activity.type.toLowerCase();
+  const lowerType = String(activity.type).toLowerCase();
   const lowerDisplayType = activity.displayType.toLowerCase();
 
   return (
@@ -58,7 +58,7 @@ const isMiniEventActivity = (activity: ActivityBasicInfo) => {
 
 const isRoguelikeActivity = (activity: ActivityBasicInfo) => {
   const lowerId = activity.id.toLowerCase();
-  const lowerType = activity.type.toLowerCase();
+  const lowerType = String(activity.type).toLowerCase();
   const lowerDisplayType = activity.displayType.toLowerCase();
 
   return (
