@@ -4,6 +4,7 @@ export type OperatorReleaseCategory =
   | "main_story"
   | "side_story"
   | "mini_event"
+  | "crisis"
   | "roguelike"
   | "server_open"
   | "other";
