@@ -1,7 +1,7 @@
 import {
   OperatorReleaseCategory,
   Server,
-} from "../../src/data/operator/manual/operator-release-types";
+} from "@/data/operator/manual/operator-release-types";
 
 export type CnAddedOperatorInfo = {
   charId: string;

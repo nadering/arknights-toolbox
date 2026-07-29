@@ -21,13 +21,13 @@ import {
   CnReleaseCandidateConfidence,
 } from "./cn-release-candidate-types";
 import { getAddedKeys, parseJsonOrNull } from "./table-diff-utils";
-
-const CN_CHARACTER_TABLE_PATH = "zh_CN/gamedata/excel/character_table.json";
-const CN_ACTIVITY_TABLE_PATH = "zh_CN/gamedata/excel/activity_table.json";
-const CN_GACHA_TABLE_PATH = "zh_CN/gamedata/excel/gacha_table.json";
-
-const GLOBAL_CHARACTER_TABLE_PATH = "kr/gamedata/excel/character_table.json";
-const GLOBAL_ACTIVITY_TABLE_PATH = "kr/gamedata/excel/activity_table.json";
+import {
+  CN_ACTIVITY_TABLE_PATH,
+  CN_CHARACTER_TABLE_PATH,
+  CN_GACHA_TABLE_PATH,
+  GLOBAL_ACTIVITY_TABLE_PATH,
+  GLOBAL_CHARACTER_TABLE_PATH,
+} from "../table-path";
 
 const CN_RELEASE_CANDIDATES_OUTPUT_PATH =
   "src/data/operator/generated/operator-cn-release-candidates.generated.ts";

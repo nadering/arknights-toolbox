@@ -1,4 +1,4 @@
-import { operatorExclusionList } from "../../../src/data/operator/manual/operator-exclusions";
+import { operatorExclusionList } from "@/data/operator/manual/operator-exclusions";
 
 export type CharacterPhaseForOperatorFilter = {
   evolveCost?: unknown[] | null;

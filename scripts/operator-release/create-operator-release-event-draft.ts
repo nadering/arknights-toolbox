@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { cnOperatorReleaseCandidateList } from "../../src/data/operator/generated/operator-cn-release-candidates.generated";
-import { OperatorReleaseEvent } from "../../src/data/operator/manual/operator-release-types";
+import { cnOperatorReleaseCandidateList } from "@/data/operator/generated/operator-cn-release-candidates.generated";
+import { OperatorReleaseEvent } from "@/data/operator/manual/operator-release-types";
 
 const OUTPUT_PATH =
   "src/data/operator/generated/operator-release-events.draft.generated.ts";
@@ -12,8 +12,9 @@ const RELEASE_ACTIVITY_CATEGORY_SCORE: Record<
 > = {
   main_story: 100,
   side_story: 100,
+  mini_event: 100,
   roguelike: 80,
-  mini_event: 60,
+  crisis: 60,
   server_open: -100,
   other: -100,
 };

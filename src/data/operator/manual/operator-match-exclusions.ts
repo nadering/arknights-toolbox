@@ -5,7 +5,7 @@ export type OperatorMatchExclusion = {
 
 /**
  * character_table에 없어서 매칭되지 않지만,
- * 실제 앱 데이터에 포함되어야 하는 캐릭터를 수동으로 넣습니다.
+ * 기존 데이터가 있어 실제 데이터에 포함되어야 하는 캐릭터를 수동으로 넣습니다.
  */
 export const operatorMatchExclusionList: OperatorMatchExclusion[] = [
   {

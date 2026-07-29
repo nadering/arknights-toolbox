@@ -9,15 +9,16 @@ import {
   type CharacterForOperatorFilter,
   type ExcludedOperatorInfo,
 } from "../operator-generator/parsers/filter-normal-operators";
-import { operatorReleaseEventList } from "../../src/data/operator/manual/operator-release-events";
+import { operatorReleaseEventList } from "@/data/operator/manual/operator-release-events";
 import {
   type OperatorReleaseCategory,
   type OperatorReleaseEvent,
-} from "../../src/data/operator/manual/operator-release-types";
+} from "@/data/operator/manual/operator-release-types";
 import { type CharacterTable } from "./character-types";
-
-const GLOBAL_CHARACTER_TABLE_PATH = "kr/gamedata/excel/character_table.json";
-const CN_CHARACTER_TABLE_PATH = "zh_CN/gamedata/excel/character_table.json";
+import {
+  CN_CHARACTER_TABLE_PATH,
+  GLOBAL_CHARACTER_TABLE_PATH,
+} from "../table-path";
 
 const RELEASE_INFO_OUTPUT_PATH =
   "src/data/operator/generated/operator-release-info-map.generated.ts";

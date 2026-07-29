@@ -1,24 +1,26 @@
 import fs from "node:fs";
 import path from "node:path";
+import { operatorList } from "@/data/operator";
+import { type OperatorOverride } from "@/data/operator/manual/operator-override";
+import { operatorMatchExclusionList } from "@/data/operator/manual/operator-match-exclusions";
+import {
+  CN_CHARACTER_TABLE_PATH,
+  CN_UNIEQUIP_TABLE_PATH,
+  GLOBAL_CHARACTER_TABLE_PATH,
+  GLOBAL_UNIEQUIP_TABLE_PATH,
+} from "../table-path";
 import {
   loadCnGamedataPath,
   loadGamedataPath,
 } from "../operator-generator/loaders/load-gamedata-path";
-import { operatorList } from "@/data/operator";
 import {
   createFilteredOperatorRecord,
   type CharacterForOperatorFilter,
 } from "../operator-generator/parsers/filter-normal-operators";
-import { type OperatorOverride } from "@/data/operator/manual/operator-override";
-import { operatorMatchExclusionList } from "@/data/operator/manual/operator-match-exclusions";
-
-// 기존에 존재하던 오퍼레이터 데이터 파일에서, 필요한 개인화 정보만 추출
-
-const GLOBAL_CHARACTER_TABLE_PATH = "kr/gamedata/excel/character_table.json";
-const GLOBAL_UNIEQUIP_TABLE_PATH = "kr/gamedata/excel/uniequip_table.json";
-
-const CN_CHARACTER_TABLE_PATH = "zh_CN/gamedata/excel/character_table.json";
-const CN_UNIEQUIP_TABLE_PATH = "zh_CN/gamedata/excel/uniequip_table.json";
+import {
+  createModuleTypeFromParts,
+  normalizeModuleTypeForCompare,
+} from "../operator-generator/utils/module-type";
 
 const OVERRIDE_DRAFT_OUTPUT_PATH =
   "src/data/operator/generated/operator-overrides.draft.generated.ts";
@@ -39,12 +41,21 @@ type LegacyOperator = {
   id?: unknown;
   name?: unknown;
   imageFilename?: unknown;
+
   skillList?: unknown;
+  moduleList?: unknown;
+
   nicknameList?: unknown;
   preferSkillList?: unknown;
+
   preferModules?: unknown;
   preferModuleList?: unknown;
   preferModuleInfoList?: unknown;
+  preferModuleNameList?: unknown;
+
+  preferModule?: unknown;
+  preferModuleInfo?: unknown;
+  preferModuleName?: unknown;
 };
 
 type CharacterSkillInfo = NonNullable<
@@ -67,6 +78,7 @@ type UniequipInfo = {
   typeName1?: string;
   typeName2?: string;
   charId?: string;
+  tmplId?: string | null;
   charEquipOrder?: number;
 };
 
@@ -78,6 +90,11 @@ type GameModuleInfo = {
   type: string;
   name: string;
   charEquipOrder: number;
+};
+
+type LegacyModuleInfo = {
+  type: string;
+  name: string;
 };
 
 type CharacterCandidate = {
@@ -149,12 +166,11 @@ type ExtractOverrideResult = {
   unmatchedPreferModuleList: UnmatchedPreferModuleInfo[];
 };
 
-const matchExclusionList =
-  operatorMatchExclusionList as OperatorMatchExclusion[];
-
 const matchExclusionByLegacyId = new Map(
-  matchExclusionList.map((exclusion) => {
-    return [exclusion.legacyId, exclusion];
+  operatorMatchExclusionList.map((exclusion) => {
+    const typedExclusion = exclusion as OperatorMatchExclusion;
+
+    return [typedExclusion.legacyId, typedExclusion];
   }),
 );
 
@@ -201,6 +217,40 @@ const getNumberValue = (value: unknown) => {
   return null;
 };
 
+const getIntegerValue = (value: unknown) => {
+  const numberValue = getNumberValue(value);
+
+  if (numberValue !== null && Number.isInteger(numberValue)) {
+    return numberValue;
+  }
+
+  if (typeof value === "string" && value.trim() !== "") {
+    const parsedValue = Number(value);
+
+    if (Number.isInteger(parsedValue)) {
+      return parsedValue;
+    }
+  }
+
+  return null;
+};
+
+const isUsefulSingleValue = (value: unknown) => {
+  if (typeof value === "string") {
+    return value.trim() !== "";
+  }
+
+  if (typeof value === "number") {
+    return Number.isFinite(value);
+  }
+
+  if (typeof value === "object" && value !== null) {
+    return true;
+  }
+
+  return false;
+};
+
 const createLegacyOperator = (rawOperator: unknown): LegacyOperator => {
   const operatorRecord = getUnknownRecord(rawOperator);
 
@@ -208,12 +258,21 @@ const createLegacyOperator = (rawOperator: unknown): LegacyOperator => {
     id: operatorRecord.id,
     name: operatorRecord.name,
     imageFilename: operatorRecord.imageFilename,
+
     skillList: operatorRecord.skillList,
+    moduleList: operatorRecord.moduleList,
+
     nicknameList: operatorRecord.nicknameList,
     preferSkillList: operatorRecord.preferSkillList,
+
     preferModules: operatorRecord.preferModules,
     preferModuleList: operatorRecord.preferModuleList,
     preferModuleInfoList: operatorRecord.preferModuleInfoList,
+    preferModuleNameList: operatorRecord.preferModuleNameList,
+
+    preferModule: operatorRecord.preferModule,
+    preferModuleInfo: operatorRecord.preferModuleInfo,
+    preferModuleName: operatorRecord.preferModuleName,
   };
 };
 
@@ -527,6 +586,24 @@ const findMatchedOperatorList = (
   };
 };
 
+const createTranslatedName = (
+  legacyOperator: LegacyOperator,
+  character: CharacterInfo,
+  server: Server,
+): OperatorOverride["translatedName"] => {
+  if (server !== "future") {
+    return undefined;
+  }
+
+  const legacyName = getLegacyName(legacyOperator);
+
+  if (legacyName === "" || legacyName === character.name) {
+    return undefined;
+  }
+
+  return legacyName;
+};
+
 const createPreferSkillIndexes = (
   charId: string,
   operatorName: string,
@@ -603,15 +680,34 @@ const createTranslatedSkillNames = (
   return translatedSkillNames;
 };
 
-const createGameModuleType = (module: UniequipInfo) => {
-  const typeName1 = getStringValue(module.typeName1);
-  const typeName2 = getStringValue(module.typeName2);
-
-  if (typeName1 !== "" && typeName2 !== "") {
-    return `${typeName1}-${typeName2}`;
+const normalizeModuleTypeNamePart = (value: string) => {
+  if (value === "D") {
+    return "Δ";
   }
 
-  return getStringValue(module.type);
+  return value;
+};
+
+const createGameModuleType = (module: UniequipInfo) => {
+  return createModuleTypeFromParts(
+    getStringValue(module.typeName1),
+    getStringValue(module.typeName2),
+    getStringValue(module.type),
+  );
+};
+
+const getModuleOwnerId = (module: UniequipInfo) => {
+  return getStringValue(module.tmplId) || getStringValue(module.charId);
+};
+
+const sortGameModuleList = (moduleList: GameModuleInfo[]) => {
+  return [...moduleList].sort((moduleA, moduleB) => {
+    if (moduleA.charEquipOrder !== moduleB.charEquipOrder) {
+      return moduleA.charEquipOrder - moduleB.charEquipOrder;
+    }
+
+    return moduleA.type.localeCompare(moduleB.type);
+  });
 };
 
 const createGameModuleList = (
@@ -620,34 +716,176 @@ const createGameModuleList = (
 ): GameModuleInfo[] => {
   const equipDict = uniequipTable.equipDict ?? {};
 
-  return Object.values(equipDict)
-    .filter((module) => {
-      return module.charId === charId && module.type !== "INITIAL";
-    })
+  return sortGameModuleList(
+    Object.values(equipDict)
+      .filter((module) => {
+        return (
+          getModuleOwnerId(module) === charId &&
+          getStringValue(module.type) !== "INITIAL"
+        );
+      })
+      .map((module) => {
+        return {
+          type: createGameModuleType(module),
+          name: getStringValue(module.uniEquipName),
+          charEquipOrder: module.charEquipOrder ?? 999,
+        };
+      })
+      .filter((module) => {
+        return module.type !== "";
+      }),
+  );
+};
+
+const createMergedGameModuleList = (
+  charId: string,
+  globalUniequipTable: UniequipTable,
+  cnUniequipTable: UniequipTable,
+  server: Server,
+): GameModuleInfo[] => {
+  if (server === "future") {
+    return createGameModuleList(charId, cnUniequipTable);
+  }
+
+  const globalModuleList = createGameModuleList(charId, globalUniequipTable);
+  const globalModuleTypeSet = new Set(
+    globalModuleList.map((module) => {
+      return module.type;
+    }),
+  );
+
+  const cnOnlyModuleList = createGameModuleList(charId, cnUniequipTable).filter(
+    (module) => {
+      return !globalModuleTypeSet.has(module.type);
+    },
+  );
+
+  return sortGameModuleList([...globalModuleList, ...cnOnlyModuleList]);
+};
+
+const createModuleTranslationTargetList = (
+  charId: string,
+  globalUniequipTable: UniequipTable,
+  cnUniequipTable: UniequipTable,
+  server: Server,
+): GameModuleInfo[] => {
+  if (server === "future") {
+    return createGameModuleList(charId, cnUniequipTable);
+  }
+
+  const globalModuleTypeSet = new Set(
+    createGameModuleList(charId, globalUniequipTable).map((module) => {
+      return module.type;
+    }),
+  );
+
+  return createGameModuleList(charId, cnUniequipTable).filter((module) => {
+    return !globalModuleTypeSet.has(module.type);
+  });
+};
+
+const getLegacyModuleRawList = (legacyOperator: LegacyOperator) => {
+  if (!Array.isArray(legacyOperator.moduleList)) {
+    return [];
+  }
+
+  return legacyOperator.moduleList;
+};
+
+const getLegacyModuleType = (value: unknown) => {
+  const record = getUnknownRecord(value);
+
+  return (
+    getStringValue(record.type) ||
+    getStringValue(record.moduleType) ||
+    getStringValue(record.typeName)
+  );
+};
+
+const getLegacyModuleName = (value: unknown) => {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  const record = getUnknownRecord(value);
+
+  return (
+    getStringValue(record.name) ||
+    getStringValue(record.moduleName) ||
+    getStringValue(record.uniEquipName) ||
+    getStringValue(record.equipName)
+  );
+};
+
+const getLegacyModuleList = (
+  legacyOperator: LegacyOperator,
+): LegacyModuleInfo[] => {
+  return getLegacyModuleRawList(legacyOperator)
     .map((module) => {
       return {
-        type: createGameModuleType(module),
-        name: getStringValue(module.uniEquipName),
-        charEquipOrder: module.charEquipOrder ?? 999,
+        type: getLegacyModuleType(module),
+        name: getLegacyModuleName(module),
       };
     })
     .filter((module) => {
-      return module.type !== "";
-    })
-    .sort((moduleA, moduleB) => {
-      if (moduleA.charEquipOrder !== moduleB.charEquipOrder) {
-        return moduleA.charEquipOrder - moduleB.charEquipOrder;
-      }
-
-      return moduleA.type.localeCompare(moduleB.type);
+      return module.type !== "" && module.name !== "";
     });
 };
 
-const getLegacyPreferModuleRawList = (legacyOperator: LegacyOperator) => {
+const createLegacyModuleTypeByName = (legacyOperator: LegacyOperator) => {
+  return new Map(
+    getLegacyModuleList(legacyOperator).map((module) => {
+      return [normalizeText(module.name), module.type];
+    }),
+  );
+};
+
+const createTranslatedModuleNames = (
+  legacyOperator: LegacyOperator,
+  targetModuleList: GameModuleInfo[],
+): OperatorOverride["translatedModuleNames"] => {
+  if (targetModuleList.length === 0) {
+    return undefined;
+  }
+
+  const legacyModuleList = getLegacyModuleList(legacyOperator);
+
+  if (legacyModuleList.length === 0) {
+    return undefined;
+  }
+
+  const translatedModuleNameEntries = targetModuleList
+    .map((targetModule) => {
+      const matchedLegacyModule = legacyModuleList.find((legacyModule) => {
+        return (
+          normalizeModuleTypeForCompare(legacyModule.type) ===
+          normalizeModuleTypeForCompare(targetModule.type)
+        );
+      });
+
+      if (matchedLegacyModule === undefined) {
+        return null;
+      }
+
+      return [targetModule.type, matchedLegacyModule.name];
+    })
+    .filter((entry): entry is [string, string] => {
+      return entry !== null;
+    });
+
+  if (translatedModuleNameEntries.length === 0) {
+    return undefined;
+  }
+
+  return Object.fromEntries(translatedModuleNameEntries);
+};
+
+const getLegacyPreferModuleArrayValue = (legacyOperator: LegacyOperator) => {
   const candidate = [
     legacyOperator.preferModules,
     legacyOperator.preferModuleList,
     legacyOperator.preferModuleInfoList,
+    legacyOperator.preferModuleNameList,
   ].find((value) => {
     return Array.isArray(value);
   });
@@ -659,12 +897,49 @@ const getLegacyPreferModuleRawList = (legacyOperator: LegacyOperator) => {
   return candidate;
 };
 
+const getLegacyPreferModuleSingleValueList = (
+  legacyOperator: LegacyOperator,
+) => {
+  return [
+    legacyOperator.preferModule,
+    legacyOperator.preferModuleInfo,
+    legacyOperator.preferModuleName,
+  ].filter(isUsefulSingleValue);
+};
+
+const getLegacyPreferModuleRawList = (legacyOperator: LegacyOperator) => {
+  const arrayValue = getLegacyPreferModuleArrayValue(legacyOperator);
+
+  if (arrayValue.length > 0) {
+    return arrayValue;
+  }
+
+  return getLegacyPreferModuleSingleValueList(legacyOperator);
+};
+
 const getLegacyPreferModuleLevel = (value: unknown): 1 | 2 | 3 => {
   const record = getUnknownRecord(value);
-  const level = record.level;
+  const moduleRecord = getUnknownRecord(record.module);
 
-  if (level === 1 || level === 2 || level === 3) {
-    return level;
+  const levelCandidateList = [
+    record.level,
+    record.moduleLevel,
+    record.stage,
+    record.moduleStage,
+    record.moduleUpgradeLevel,
+    moduleRecord.level,
+    moduleRecord.moduleLevel,
+    moduleRecord.stage,
+    moduleRecord.moduleStage,
+    moduleRecord.moduleUpgradeLevel,
+  ];
+
+  const matchedLevel = levelCandidateList.map(getIntegerValue).find((level) => {
+    return level === 1 || level === 2 || level === 3;
+  });
+
+  if (matchedLevel === 1 || matchedLevel === 2 || matchedLevel === 3) {
+    return matchedLevel;
   }
 
   return 3;
@@ -676,19 +951,124 @@ const getLegacyPreferModuleName = (value: unknown) => {
   }
 
   const record = getUnknownRecord(value);
+  const moduleRecord = getUnknownRecord(record.module);
 
   return (
     getStringValue(record.name) ||
     getStringValue(record.moduleName) ||
-    getStringValue(record.type)
+    getStringValue(record.uniEquipName) ||
+    getStringValue(record.equipName) ||
+    getStringValue(moduleRecord.name) ||
+    getStringValue(moduleRecord.moduleName) ||
+    getStringValue(moduleRecord.uniEquipName) ||
+    getStringValue(moduleRecord.equipName)
   );
+};
+
+const getLegacyPreferModuleType = (value: unknown) => {
+  const record = getUnknownRecord(value);
+  const moduleRecord = getUnknownRecord(record.module);
+
+  return (
+    getStringValue(record.type) ||
+    getStringValue(record.moduleType) ||
+    getStringValue(record.typeName) ||
+    getStringValue(moduleRecord.type) ||
+    getStringValue(moduleRecord.moduleType) ||
+    getStringValue(moduleRecord.typeName)
+  );
+};
+
+const getLegacyPreferModuleIndex = (value: unknown) => {
+  if (typeof value === "number") {
+    return getIntegerValue(value);
+  }
+
+  const record = getUnknownRecord(value);
+  const moduleRecord = getUnknownRecord(record.module);
+
+  const indexCandidateList = [
+    record.index,
+    record.moduleIndex,
+    record.moduleOrder,
+    record.charEquipOrder,
+    moduleRecord.index,
+    moduleRecord.moduleIndex,
+    moduleRecord.moduleOrder,
+    moduleRecord.charEquipOrder,
+  ];
+
+  return (
+    indexCandidateList.map(getIntegerValue).find((index) => {
+      return index !== null;
+    }) ?? null
+  );
+};
+
+const getGameModuleByType = (
+  gameModuleList: GameModuleInfo[],
+  moduleType: string,
+) => {
+  return gameModuleList.find((module) => {
+    return (
+      normalizeModuleTypeForCompare(module.type) ===
+      normalizeModuleTypeForCompare(moduleType)
+    );
+  });
+};
+
+const getGameModuleByName = (
+  gameModuleList: GameModuleInfo[],
+  moduleName: string,
+) => {
+  return gameModuleList.find((module) => {
+    return normalizeText(module.name) === normalizeText(moduleName);
+  });
+};
+
+const getGameModuleByIndex = (
+  gameModuleList: GameModuleInfo[],
+  legacyModuleList: LegacyModuleInfo[],
+  moduleIndex: number,
+) => {
+  const legacyModuleByZeroBasedIndex = legacyModuleList[moduleIndex];
+
+  if (legacyModuleByZeroBasedIndex !== undefined) {
+    return getGameModuleByType(
+      gameModuleList,
+      legacyModuleByZeroBasedIndex.type,
+    );
+  }
+
+  const legacyModuleByOneBasedIndex = legacyModuleList[moduleIndex - 1];
+
+  if (legacyModuleByOneBasedIndex !== undefined) {
+    return getGameModuleByType(
+      gameModuleList,
+      legacyModuleByOneBasedIndex.type,
+    );
+  }
+
+  const gameModuleByZeroBasedIndex = gameModuleList[moduleIndex];
+
+  if (gameModuleByZeroBasedIndex !== undefined) {
+    return gameModuleByZeroBasedIndex;
+  }
+
+  const gameModuleByOneBasedIndex = gameModuleList[moduleIndex - 1];
+
+  if (gameModuleByOneBasedIndex !== undefined) {
+    return gameModuleByOneBasedIndex;
+  }
+
+  return undefined;
 };
 
 const createPreferModules = (
   charId: string,
   operatorName: string,
   legacyOperator: LegacyOperator,
-  uniequipTable: UniequipTable,
+  gameModuleList: GameModuleInfo[],
   unmatchedPreferModuleList: UnmatchedPreferModuleInfo[],
 ): OperatorOverride["preferModules"] => {
   const legacyPreferModuleRawList =
@@ -698,30 +1078,61 @@ const createPreferModules = (
     return undefined;
   }
 
-  const gameModuleList = createGameModuleList(charId, uniequipTable);
+  const legacyModuleList = getLegacyModuleList(legacyOperator);
+  const legacyModuleTypeByName = createLegacyModuleTypeByName(legacyOperator);
   const preferModules: NonNullable<OperatorOverride["preferModules"]> = [];
 
   legacyPreferModuleRawList.forEach((legacyPreferModule) => {
     const legacyPreferModuleName =
       getLegacyPreferModuleName(legacyPreferModule);
+    const legacyPreferModuleTypeFromValue =
+      getLegacyPreferModuleType(legacyPreferModule);
+    const legacyPreferModuleTypeFromName =
+      legacyModuleTypeByName.get(normalizeText(legacyPreferModuleName)) ?? "";
+    const legacyPreferModuleType =
+      legacyPreferModuleTypeFromValue || legacyPreferModuleTypeFromName;
+    const legacyPreferModuleIndex =
+      getLegacyPreferModuleIndex(legacyPreferModule);
     const level = getLegacyPreferModuleLevel(legacyPreferModule);
 
-    if (legacyPreferModuleName === "") {
+    if (
+      legacyPreferModuleName === "" &&
+      legacyPreferModuleType === "" &&
+      legacyPreferModuleIndex === null
+    ) {
       return;
     }
 
-    const matchedModule = gameModuleList.find((module) => {
-      return (
-        normalizeText(module.name) === normalizeText(legacyPreferModuleName) ||
-        normalizeText(module.type) === normalizeText(legacyPreferModuleName)
-      );
-    });
+    const matchedModuleByType =
+      legacyPreferModuleType !== ""
+        ? getGameModuleByType(gameModuleList, legacyPreferModuleType)
+        : undefined;
+
+    const matchedModuleByName =
+      legacyPreferModuleName !== ""
+        ? getGameModuleByName(gameModuleList, legacyPreferModuleName)
+        : undefined;
+
+    const matchedModuleByIndex =
+      legacyPreferModuleIndex !== null
+        ? getGameModuleByIndex(
+            gameModuleList,
+            legacyModuleList,
+            legacyPreferModuleIndex,
+          )
+        : undefined;
+
+    const matchedModule =
+      matchedModuleByType ?? matchedModuleByName ?? matchedModuleByIndex;
 
     if (matchedModule === undefined) {
       unmatchedPreferModuleList.push({
         charId,
         operatorName,
-        moduleName: legacyPreferModuleName,
+        moduleName:
+          legacyPreferModuleName ||
+          legacyPreferModuleType ||
+          String(legacyPreferModuleIndex ?? "-"),
         availableModules: gameModuleList,
       });
 
@@ -747,18 +1158,6 @@ const createPreferModules = (
   });
 };
 
-const getUniequipTableByServer = (
-  server: Server,
-  globalUniequipTable: UniequipTable,
-  cnUniequipTable: UniequipTable,
-) => {
-  if (server === "future") {
-    return cnUniequipTable;
-  }
-
-  return globalUniequipTable;
-};
-
 const createOverrideList = (
   matchedOperatorList: MatchedOperatorInfo[],
   globalUniequipTable: UniequipTable,
@@ -771,10 +1170,19 @@ const createOverrideList = (
       const legacyId = getLegacyId(legacyOperator);
       const operatorName = getLegacyName(legacyOperator) || charId;
       const nicknameList = getLegacyNicknameList(legacyOperator);
-      const uniequipTable = getUniequipTableByServer(
-        server,
+
+      const gameModuleList = createMergedGameModuleList(
+        charId,
         globalUniequipTable,
         cnUniequipTable,
+        server,
+      );
+
+      const moduleTranslationTargetList = createModuleTranslationTargetList(
+        charId,
+        globalUniequipTable,
+        cnUniequipTable,
+        server,
       );
 
       const preferSkillIndexes = createPreferSkillIndexes(
@@ -784,17 +1192,28 @@ const createOverrideList = (
         unmatchedPreferSkillList,
       );
 
+      const preferModules = createPreferModules(
+        charId,
+        operatorName,
+        legacyOperator,
+        gameModuleList,
+        unmatchedPreferModuleList,
+      );
+
+      const translatedName = createTranslatedName(
+        legacyOperator,
+        character,
+        server,
+      );
+
       const translatedSkillNames =
         server === "future"
           ? createTranslatedSkillNames(legacyOperator, character)
           : undefined;
 
-      const preferModules = createPreferModules(
-        charId,
-        operatorName,
+      const translatedModuleNames = createTranslatedModuleNames(
         legacyOperator,
-        uniequipTable,
-        unmatchedPreferModuleList,
+        moduleTranslationTargetList,
       );
 
       return {
@@ -802,8 +1221,12 @@ const createOverrideList = (
         ...(legacyId !== null ? { legacyId } : {}),
         ...(nicknameList.length > 0 ? { nicknameList } : {}),
         ...(preferSkillIndexes !== undefined ? { preferSkillIndexes } : {}),
-        ...(translatedSkillNames !== undefined ? { translatedSkillNames } : {}),
         ...(preferModules !== undefined ? { preferModules } : {}),
+        ...(translatedName !== undefined ? { translatedName } : {}),
+        ...(translatedSkillNames !== undefined ? { translatedSkillNames } : {}),
+        ...(translatedModuleNames !== undefined
+          ? { translatedModuleNames }
+          : {}),
       } satisfies OperatorOverride;
     })
     .sort((operatorA, operatorB) => {
@@ -829,12 +1252,24 @@ export const operatorOverrideDraftList: OperatorOverride[] = ${JSON.stringify(
 };
 
 const createReport = (result: ExtractOverrideResult) => {
+  const extractedPreferModuleCount = result.overrideList.filter((override) => {
+    return override.preferModules !== undefined;
+  }).length;
+
+  const extractedTranslatedModuleNameCount = result.overrideList.filter(
+    (override) => {
+      return override.translatedModuleNames !== undefined;
+    },
+  ).length;
+
   const lines: string[] = [
     "# Operator Override Report",
     "",
     "> legacy operatorList에서 operator-overrides 초안을 추출한 결과입니다.",
     "",
     `- Extracted overrides: ${result.overrideList.length}`,
+    `- Extracted preferModules: ${extractedPreferModuleCount}`,
+    `- Extracted translatedModuleNames: ${extractedTranslatedModuleNameCount}`,
     `- Manually managed legacy operators: ${result.manuallyManagedLegacyOperatorList.length}`,
     `- Unmatched legacy operators: ${result.unmatchedLegacyOperatorList.length}`,
     `- Ambiguous legacy operators: ${result.ambiguousLegacyOperatorList.length}`,
@@ -1014,12 +1449,22 @@ const main = () => {
   writeFile(OVERRIDE_DRAFT_OUTPUT_PATH, createDraftFileContent(overrideList));
   writeFile(OVERRIDE_REPORT_OUTPUT_PATH, createReport(result));
 
+  const extractedPreferModuleCount = overrideList.filter((override) => {
+    return override.preferModules !== undefined;
+  }).length;
+
+  const extractedTranslatedModuleNameCount = overrideList.filter((override) => {
+    return override.translatedModuleNames !== undefined;
+  }).length;
+
   console.log(`override 초안 ${overrideList.length}개를 생성했습니다.`);
-  console.log(`legacy 매칭 실패: ${unmatchedLegacyOperatorList.length}개`);
-  console.log(`legacy 중복 후보: ${ambiguousLegacyOperatorList.length}개`);
+  console.log(`추천 모듈 추출: ${extractedPreferModuleCount}개`);
+  console.log(`모듈 번역명 추출: ${extractedTranslatedModuleNameCount}개`);
   console.log(
     `수동 관리 legacy 오퍼레이터: ${manuallyManagedLegacyOperatorList.length}개`,
   );
+  console.log(`legacy 매칭 실패: ${unmatchedLegacyOperatorList.length}개`);
+  console.log(`legacy 중복 후보: ${ambiguousLegacyOperatorList.length}개`);
   console.log(
     `imageFilename 매칭: ${imageFilenameMatchedOperatorList.length}개`,
   );

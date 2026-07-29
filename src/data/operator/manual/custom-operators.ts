@@ -1,11 +1,14 @@
 import {
   CountableMaterial,
   LMD,
+  RMA7024,
   aketon,
   bipolarNanoflake,
   casterChip,
   casterDualchip,
+  coagulatingGel,
   crystallineCircuit,
+  crystallineElectronicUnit,
   cuttingFluidSolution,
   damagedDevice,
   dataSupplementInstrument,
@@ -14,6 +17,7 @@ import {
   fuscousFiber,
   incandescentAlloyBlock,
   integratedDevice,
+  ketonColloid,
   loxicKohl,
   manganeseTrihydrate,
   moduleDataBlock,
@@ -24,6 +28,7 @@ import {
   polyesterLump,
   polyesterPack,
   polymerizationPreparation,
+  polymerizedGel,
   refinedSolvent,
   skillSummary1,
   skillSummary2,
@@ -65,7 +70,7 @@ export type CustomOperator = {
   id: string;
 
   /** 기존 number id. localStorage / Firestore migration용입니다. */
-  legacyId: number;
+  legacyId?: number;
 
   name: string;
   nicknameList?: string[];
@@ -96,8 +101,221 @@ export type CustomOperator = {
   moduleMaterials: ModuleMaterials | null;
 };
 
+export const AmiyaGuard: CustomOperator = {
+  id: "char_1001_amiya2",
+  legacyId: 75.1,
+
+  name: "아미야 (가드)",
+
+  imageFilename: "amiya-guard",
+
+  class: "Guard",
+  rarity: 5,
+
+  isCustomOperator: true,
+  server: "global",
+
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 20000,
+      },
+      {
+        material: casterChip,
+        count: 3,
+      },
+      {
+        material: device,
+        count: 4,
+      },
+      {
+        material: oriron,
+        count: 4,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 120000,
+      },
+      {
+        material: casterDualchip,
+        count: 3,
+      },
+      {
+        material: orirockConcentration,
+        count: 10,
+      },
+      {
+        material: loxicKohl,
+        count: 10,
+      },
+    ],
+  },
+
+  skillList: ["영소·분야", "영소·절영"],
+
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 4,
+        },
+        {
+          material: damagedDevice,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: orirockCube,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 6,
+        },
+        {
+          material: aketon,
+          count: 4,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: integratedDevice,
+          count: 2,
+        },
+        {
+          material: sugarPack,
+          count: 3,
+        },
+      ],
+    },
+    "영소·분야": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: incandescentAlloyBlock,
+          count: 4,
+        },
+        {
+          material: RMA7024,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: whiteHorseKohl,
+          count: 4,
+        },
+      ],
+    },
+    "영소·절영": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 5,
+        },
+        {
+          material: ketonColloid,
+          count: 4,
+        },
+        {
+          material: coagulatingGel,
+          count: 4,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 6,
+        },
+        {
+          material: crystallineCircuit,
+          count: 4,
+        },
+        {
+          material: polymerizedGel,
+          count: 5,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 10,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: optimizedDevice,
+          count: 4,
+        },
+      ],
+    },
+  },
+
+  moduleList: [],
+  moduleMaterials: null,
+};
+
 export const AmiyaMedic: CustomOperator = {
-  id: "amiya-medic",
+  id: "char_1037_amiya3",
   legacyId: 75.2,
 
   name: "아미야 (메딕)",
@@ -307,71 +525,12 @@ export const AmiyaMedic: CustomOperator = {
     },
   },
 
-  moduleList: [
-    {
-      type: "INC-X",
-      name: "그을림 자국의 치마",
-    },
-  ],
-
-  moduleMaterials: {
-    "INC-X": {
-      "1": [
-        {
-          material: moduleDataBlock,
-          count: 2,
-        },
-        {
-          material: optimizedDevice,
-          count: 3,
-        },
-        {
-          material: LMD,
-          count: 40000,
-        },
-      ],
-      "2": [
-        {
-          material: moduleDataBlock,
-          count: 2,
-        },
-        {
-          material: dataSupplementStick,
-          count: 20,
-        },
-        {
-          material: incandescentAlloyBlock,
-          count: 4,
-        },
-        {
-          material: LMD,
-          count: 50000,
-        },
-      ],
-      "3": [
-        {
-          material: moduleDataBlock,
-          count: 2,
-        },
-        {
-          material: dataSupplementInstrument,
-          count: 8,
-        },
-        {
-          material: polyesterLump,
-          count: 5,
-        },
-        {
-          material: LMD,
-          count: 60000,
-        },
-      ],
-    },
-  },
+  moduleList: [],
+  moduleMaterials: null,
 };
 
 /**
  * 인게임 JSON 파일에서 찾을 수 없는 오퍼레이터의 목록으로,
  * 자동화가 불가능하여 수동으로 관리해야 합니다.
  */
-export const customOperatorList: CustomOperator[] = [AmiyaMedic];
+export const customOperatorList: CustomOperator[] = [AmiyaGuard, AmiyaMedic];

@@ -7,15 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check:gamedata": "tsx scripts/operator-release/check-gamedata-path.ts",
-    "check:cn-gamedata": "tsx scripts/operator-release/check-cn-gamedata-path.ts",
+    "extract:operator-overrides": "tsx scripts/operator-meta/extract-operator-overrides.ts",
     "inspect:activity-table": "tsx scripts/operator-release/inspect-activity-table.ts",
     "scan:character-first-appearance": "tsx scripts/operator-release/scan-character-first-appearance.ts",
+    "check:gamedata": "tsx scripts/operator-release/check-gamedata-path.ts",
+    "check:cn-gamedata": "tsx scripts/operator-release/check-cn-gamedata-path.ts",
     "scan:operator-release": "tsx scripts/operator-release/scan-release-candidates.ts",
     "scan:cn-operator-release": "tsx scripts/operator-release/scan-cn-release-candidates.ts",
     "create:operator-release-event-draft": "tsx scripts/operator-release/create-operator-release-event-draft.ts",
     "generate:operator-release-info": "tsx scripts/operator-release/generate-operator-release-info.ts",
-    "extract:operator-overrides": "tsx scripts/operator-meta/extract-operator-overrides.ts"
+    "generate:operators": "tsx scripts/operator-generator/generate-operators.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
