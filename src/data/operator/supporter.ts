@@ -3877,11 +3877,11 @@ export const Angelina: Supporter = {
     ],
   },
   skillList: [
-    "아케인스태프·충전",
-    "아케인스태프·미립자",
-    "아케인스태프·반중력",
+    "아케인스태프 - 충전",
+    "아케인스태프 - 미립자",
+    "아케인스태프 - 반중력",
   ],
-  preferSkillList: ["아케인스태프·반중력"],
+  preferSkillList: ["아케인스태프 - 반중력"],
   skillUpgradeMaterials: {
     common: {
       "2": [
@@ -3953,7 +3953,7 @@ export const Angelina: Supporter = {
         },
       ],
     },
-    "아케인스태프·충전": {
+    "아케인스태프 - 충전": {
       "8": [
         {
           material: skillSummary3,
@@ -3997,7 +3997,7 @@ export const Angelina: Supporter = {
         },
       ],
     },
-    "아케인스태프·미립자": {
+    "아케인스태프 - 미립자": {
       "8": [
         {
           material: skillSummary3,
@@ -4041,7 +4041,7 @@ export const Angelina: Supporter = {
         },
       ],
     },
-    "아케인스태프·반중력": {
+    "아케인스태프 - 반중력": {
       "8": [
         {
           material: skillSummary3,
