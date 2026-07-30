@@ -29,6 +29,9 @@ const RELEASE_INFO_REPORT_OUTPUT_PATH =
 const SERVER_OPEN_RELEASE_EVENT_ID = "server_open";
 const UNMAPPED_FUTURE_RELEASE_EVENT_ID = "unmapped_future_release";
 
+const SERVER_OPEN_RELEASE_ORDER = 1;
+const MANUAL_RELEASE_EVENT_START_ORDER = SERVER_OPEN_RELEASE_ORDER + 1;
+
 type GeneratedOperatorReleaseInfo = {
   eventId: string;
   eventName: string;
@@ -166,6 +169,13 @@ const createManualOperatorIdList = () => {
   ).sort((charIdA, charIdB) => {
     return charIdA.localeCompare(charIdB);
   });
+};
+
+const createManualReleaseOrder = (eventIndex: number) => {
+  return (
+    MANUAL_RELEASE_EVENT_START_ORDER +
+    (operatorReleaseEventList.length - 1 - eventIndex)
+  );
 };
 
 /**
@@ -325,7 +335,7 @@ const sortReleaseInfoMap = (
     Object.entries(releaseInfoByCharId).sort(
       ([charIdA, releaseInfoA], [charIdB, releaseInfoB]) => {
         if (releaseInfoA.order !== releaseInfoB.order) {
-          return releaseInfoA.order - releaseInfoB.order;
+          return releaseInfoB.order - releaseInfoA.order;
         }
 
         return charIdA.localeCompare(charIdB);
@@ -335,12 +345,14 @@ const sortReleaseInfoMap = (
 };
 
 /**
- * manual/operator-release-events.ts 배열 순서를 그대로 출시순 order로 사용합니다.
+ * manual/operator-release-events.ts 배열 순서는 그대로 유지합니다.
  *
  * 현재 프로젝트 기준:
- * - order 1 = 가장 최근 출시 이벤트
- * - order 숫자가 커질수록 오래된 이벤트
- * - server_open은 manual 이벤트 마지막 이후에 자동 배치
+ * - operator-release-events.ts는 최신 이벤트 → 오래된 이벤트 순서로 작성합니다.
+ * - order 1 = 서버 오픈
+ * - 가장 오래된 manual 이벤트 = order 2
+ * - 최신 manual 이벤트일수록 더 큰 order
+ * - 사용자에게 보여줄 때는 order 내림차순으로 정렬합니다.
  */
 const applyManualReleaseEvents = (
   releaseInfoByCharId: Record<string, GeneratedOperatorReleaseInfo>,
@@ -351,7 +363,7 @@ const applyManualReleaseEvents = (
   const emptyReleaseEvents: EmptyReleaseEvent[] = [];
 
   operatorReleaseEventList.forEach((releaseEvent, eventIndex) => {
-    const order = eventIndex + 1;
+    const order = createManualReleaseOrder(eventIndex);
 
     if (releaseEvent.operatorIds.length === 0) {
       emptyReleaseEvents.push({
@@ -435,11 +447,8 @@ const applyAutoReleaseInfo = (
   serverOpenOperatorList: OperatorBasicInfo[],
   unmappedFutureOperatorList: OperatorBasicInfo[],
 ) => {
-  const hasUnmappedFutureOperators = unmappedFutureOperatorList.length > 0;
-
-  const unmappedFutureOrder = operatorReleaseEventList.length + 1;
-  const serverOpenOrder =
-    operatorReleaseEventList.length + (hasUnmappedFutureOperators ? 2 : 1);
+  const unmappedFutureOrder =
+    MANUAL_RELEASE_EVENT_START_ORDER + operatorReleaseEventList.length;
 
   const unmappedFutureReleaseInfo: GeneratedOperatorReleaseInfo = {
     eventId: UNMAPPED_FUTURE_RELEASE_EVENT_ID,
@@ -452,7 +461,7 @@ const applyAutoReleaseInfo = (
     eventId: SERVER_OPEN_RELEASE_EVENT_ID,
     eventName: "서버 오픈",
     category: "server_open",
-    order: serverOpenOrder,
+    order: SERVER_OPEN_RELEASE_ORDER,
   };
 
   unmappedFutureOperatorList.forEach((operator) => {
@@ -530,9 +539,12 @@ export type GeneratedReleaseOperatorInfo = {
  * 자동 생성된 출시 정보 맵입니다.
  *
  * order는 다음 기준을 따릅니다.
- * - 1: 가장 최근 출시 이벤트
- * - 숫자가 커질수록 오래된 이벤트
- * - server_open은 manual 이벤트 마지막 이후에 자동 배치됩니다.
+ * - 1: 서버 오픈
+ * - 가장 오래된 manual 이벤트: 2
+ * - 최신 manual 이벤트일수록 더 큰 order
+ * - 출시 이벤트 미지정 future 오퍼레이터는 manual 이벤트보다 큰 order
+ *
+ * 표시 순서는 order 내림차순입니다.
  *
  * 직접 수정하지 말고 \`npm run generate:operator-release-info\`로 재생성하세요.
  */
@@ -731,9 +743,12 @@ const createReport = (result: GenerateReleaseInfoResult) => {
     "",
     "## Order Rule",
     "",
-    "- order 1 = 가장 최근 출시 이벤트",
-    "- order 숫자가 커질수록 오래된 이벤트",
-    "- server_open은 manual 이벤트 마지막 이후에 자동 배치됩니다.",
+    "- operator-release-events.ts는 최신 이벤트 → 오래된 이벤트 순서로 유지합니다.",
+    "- order 1 = 서버 오픈",
+    "- 가장 오래된 manual 이벤트 = order 2",
+    "- 최신 manual 이벤트일수록 더 큰 order",
+    "- 출시 이벤트 미지정 future 오퍼레이터는 manual 이벤트보다 큰 order",
+    "- 사용자에게 보여주는 순서는 order 내림차순입니다.",
     "",
   ];
 

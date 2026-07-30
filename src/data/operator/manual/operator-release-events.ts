@@ -1,6 +1,11 @@
 import { OperatorReleaseEvent } from "./operator-release-types";
 
-/** 이벤트 및 오퍼레이터 매핑 정보 (출시순 내림차순 정렬) */
+/**
+ * 이벤트 및 오퍼레이터 매핑 정보 (출시순 내림차순 정렬)
+ *
+ * generated/operator-release-events.draft.generated.ts 파일을 참고하여,
+ * 아래 내용을 직접 수정해야 합니다.
+ */
 export const operatorReleaseEventList: OperatorReleaseEvent[] = [
   {
     id: "dis_rogue_6",

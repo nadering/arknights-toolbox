@@ -36,7 +36,12 @@ export type OperatorOverride = {
   growthType?: OperatorGrowthType;
 };
 
-/** 오퍼레이터의 선호 스킬, 모듈 등 인게임 JSON 파일에 없는 개인화 정보 */
+/**
+ * 오퍼레이터의 선호 스킬, 모듈 등 인게임 JSON 파일에 없는 개인화 정보
+ *
+ * 새로 추가된 데이터는, 번역명 등을 직접 추가해야 합니다.
+ * 과거의 데이터를 기반으로 한 내용은 generated/opereator-overrides.draft.generated.ts 파일을 참고하세요.
+ */
 export const operatorOverrideList: OperatorOverride[] = [
   {
     charId: "char_003_kalts",
@@ -1861,6 +1866,26 @@ export const operatorOverrideList: OperatorOverride[] = [
     translatedModuleNames: {
       "BLA-Y": "제3상태",
     },
+  },
+  {
+    charId: "char_4230_mcnist",
+    preferSkillIndexes: [2],
+    preferModules: [
+      {
+        type: "SO-α",
+        level: 3,
+      },
+    ],
+    translatedName: "메커니스트",
+    translatedSkillNames: {
+      skchr_mcnist_1: "군집 분석",
+      skchr_mcnist_2: "협동방어 술식",
+      skchr_mcnist_3: "공학 유성우",
+    },
+    translatedModuleNames: {
+      "SO-α": "메커니스트의 특근 배지",
+    },
+    growthType: "roguelike",
   },
   {
     charId: "char_423_blemsh",
