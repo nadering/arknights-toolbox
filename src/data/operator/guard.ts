@@ -3952,11 +3952,16 @@ export const GavialTheInvincible: Guard = {
   moduleList: [
     { type: "CEN-X", name: "가비알의 괴로움" },
     { type: "CEN-Y", name: "호'톱'다마" },
+    { type: "RA-α", name: "가비알 디 인빈서블의 특별 한정 배지" },
   ],
   preferModuleList: [
     {
       module: { type: "CEN-Y", name: "호'톱'다마" },
       level: 1,
+    },
+    {
+      module: { type: "RA-α", name: "가비알 디 인빈서블의 특별 한정 배지" },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -3996,6 +4001,26 @@ export const GavialTheInvincible: Guard = {
         { material: dataSupplementInstrument, count: 20 },
         { material: nucleicCrystalSinter, count: 4 },
         { material: LMD, count: 120000 },
+      ],
+    },
+    "RA-α": {
+      "1": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "2": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
+      ],
+      "3": [
+        {
+          material: moduleDataBlock,
+          count: 1,
+        },
       ],
     },
   },

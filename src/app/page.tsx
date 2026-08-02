@@ -24,7 +24,7 @@ export default function Home() {
           최근 업데이트
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          중국 서버: 볼리바르 진단 (2026-07-10)
+          중국 서버: 대지가 오렌지 한 알이 될 때까지 (2026-08-01)
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
           글로벌 서버: 사세행 (2026-07-16)
