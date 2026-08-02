@@ -1,11 +1,11 @@
-import { FormEvent, useEffect, useState } from "react";
+import type { InputEvent } from "react";
 import {
-  EliteNumber,
+  type EliteNumber,
   MODULE_ACTIVE_ELITE,
-  ModuleLevel,
+  type ModuleLevel,
   MODULE_LEVEL_REQUIRED,
   MODULE_MAX_LEVEL,
-  RarityNumber,
+  type RarityNumber,
 } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 
@@ -28,86 +28,85 @@ export default function SingleModule({
   targetLevel: number;
   moduleLevels: ModuleLevel[];
   handleModuleLevelChange: (
-    event: FormEvent<HTMLInputElement>,
+    event: InputEvent<HTMLInputElement>,
     type: "current" | "target",
-    index: number
+    index: number,
   ) => void;
 }) {
-  // 현재 정예화에 따른 모듈 현재 입력창 색상 설정 여부
+  const operatorModule = moduleLevels[index];
+
+  if (!operatorModule) {
+    return null;
+  }
+
+  // 현재 정예화 및 레벨에서 모듈을 사용할 수 있는지 여부
   const isAbleAtCurrentElite =
-    currentElite >= MODULE_ACTIVE_ELITE && currentLevel >= MODULE_LEVEL_REQUIRED[rarity];
+    currentElite >= MODULE_ACTIVE_ELITE &&
+    currentLevel >= MODULE_LEVEL_REQUIRED[rarity];
 
-  // 목표 정예화에 따른 모듈 활성화 여부
+  // 목표 정예화 및 레벨에서 모듈을 활성화할 수 있는지 여부
   const isActive =
-    targetElite >= MODULE_ACTIVE_ELITE && targetLevel >= MODULE_LEVEL_REQUIRED[rarity];
-
-  // 스킬 문자열 설정
-  const [currentModuleString, setCurrentModuleString] = useState(
-    moduleLevels[index].current.toString()
-  );
-  const [targetModuleString, setTargetModuleString] = useState(
-    moduleLevels[index].target.toString()
-  );
-
-  useEffect(() => {
-    setCurrentModuleString(moduleLevels[index].current.toString());
-    setTargetModuleString(moduleLevels[index].target.toString());
-  }, [index, moduleLevels]);
+    targetElite >= MODULE_ACTIVE_ELITE &&
+    targetLevel >= MODULE_LEVEL_REQUIRED[rarity];
 
   return (
     <div
-      className={`${!isActive ? "select-none" : ""} w-full flex flex-row gap-2`}
+      className={`${isActive ? "" : "select-none"} flex w-full flex-row gap-2`}
     >
-      <div className="w-full flex flex-col items-start">
+      <div className="flex w-full flex-col items-start">
         <p className="leading-tight text-gray-600 break-keep">
-          {moduleLevels[index].type}
+          {operatorModule.type}
         </p>
+
         <p
-          className={`pl-1 leading-tight font-medium ${
+          className={`pl-1 leading-tight font-medium break-keep ${
             isActive ? "text-gray-200" : "text-gray-600"
-          } break-keep`}
+          }`}
         >
-          {moduleLevels[index].name}
+          {operatorModule.name}
         </p>
       </div>
+
       <div className="flex flex-row items-center gap-[6px]">
         <input
-          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
-          outline-none bg-dark-800 selection:bg-gray-800 ${
+          className={`h-6 w-9 resize-none rounded-lg bg-dark-800 px-2 py-3 text-center outline-none selection:bg-gray-800 ${
             isAbleAtCurrentElite ? "text-gray-200" : "text-gray-600"
-          } text-center 
-          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
-          id={`${moduleLevels[index].type}-current`}
+          } [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none`}
+          id={`${operatorModule.type}-current`}
           type={isActive ? "number" : "hidden"}
           min={0}
           max={MODULE_MAX_LEVEL}
           step={1}
-          value={currentModuleString}
+          value={operatorModule.current}
           disabled={!isAbleAtCurrentElite}
-          onInput={(event) => handleModuleLevelChange(event, "current", index)}
-          onKeyDown={(event) => handleExponentialNotation(event)}
-        ></input>
+          onInput={(event) => {
+            handleModuleLevelChange(event, "current", index);
+          }}
+          onKeyDown={handleExponentialNotation}
+        />
+
         <p
           className={`${
             isActive ? "" : "hidden"
-          } leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent`}
+          } text-[10px] leading-tight font-medium text-dark-800 select-none selection:bg-transparent`}
         >
           ▶
         </p>
+
         <input
-          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
-          outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
-          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
-          id={`${moduleLevels[index].type}-target`}
+          className="h-6 w-9 resize-none rounded-lg bg-dark-800 px-2 py-3 text-center text-gray-200 outline-none selection:bg-gray-800 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          id={`${operatorModule.type}-target`}
           type={isActive ? "number" : "hidden"}
           min={0}
           max={MODULE_MAX_LEVEL}
           step={1}
-          value={targetModuleString}
+          value={operatorModule.target}
           disabled={!isActive}
-          onInput={(event) => handleModuleLevelChange(event, "target", index)}
-          onKeyDown={(event) => handleExponentialNotation(event)}
-        ></input>
+          onInput={(event) => {
+            handleModuleLevelChange(event, "target", index);
+          }}
+          onKeyDown={handleExponentialNotation}
+        />
       </div>
     </div>
   );

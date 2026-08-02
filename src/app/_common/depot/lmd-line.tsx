@@ -2,7 +2,6 @@
 
 import { SingleMaterial } from "@common/depot";
 import { CountableMaterial } from "@data/material";
-import { useEffect, useState } from "react";
 
 /** 창고의 용문폐 */
 export default function LMDLine({
@@ -16,12 +15,7 @@ export default function LMDLine({
   readonly?: boolean;
   userDepotUse?: boolean;
 }) {
-  // 용문폐 보유량
-  const [lmd, setLmd] = useState<CountableMaterial>(list[0]);
-
-  useEffect(() => {
-    setLmd(list[0]);
-  }, [list]);
+  const lmd = list[0];
 
   return (
     <div

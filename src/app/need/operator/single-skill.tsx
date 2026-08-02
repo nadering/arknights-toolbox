@@ -1,5 +1,5 @@
-import { FormEvent, useEffect, useState } from "react";
-import { EliteNumber, SkillLevel } from "@/data/operator";
+import type { InputEvent } from "react";
+import type { EliteNumber, SkillLevel } from "@/data/operator";
 import { handleExponentialNotation } from "@/tool";
 
 /** 오퍼레이터의 단일 스킬 */
@@ -18,103 +18,96 @@ export default function SingleSkill({
   targetElite: EliteNumber;
   skillLevels: SkillLevel[];
   handleSkillLevelChange: (
-    event: FormEvent<HTMLInputElement>,
+    event: InputEvent<HTMLInputElement>,
     type: "current" | "target",
-    index: number
+    index: number,
   ) => void;
-  handleCommonSkillLevels: (
-    type: "current" | "target",
-    index: number
-  ) => void;
+  handleCommonSkillLevels: (type: "current" | "target", index: number) => void;
 }) {
-  // 현재 정예화에 따른 스킬 입력창 색상 설정 여부
+  const skillLevel = skillLevels[index];
+
+  if (!skillLevel) {
+    return null;
+  }
+
+  // 현재 정예화에 따른 스킬 입력창 활성화 여부
   const isAbleAtCurrentElite = currentElite >= index;
 
   // 목표 정예화에 따른 스킬 활성화 여부
   const isActive = targetElite >= index;
 
-  // 스킬 문자열 설정
-  const [currentSkillString, setCurrentSkillString] = useState(
-    skillLevels[index].current.toString()
-  );
-  const [targetSkillString, setTargetSkillString] = useState(
-    skillLevels[index].target.toString()
-  );
+  const currentSkillValue = Number.isNaN(skillLevel.current)
+    ? ""
+    : skillLevel.current;
 
-  useEffect(() => {
-    if (isNaN(skillLevels[index].current)) {
-      setCurrentSkillString("");
-    } else {
-      setCurrentSkillString(skillLevels[index].current.toString());
-    }
-
-    if (isNaN(skillLevels[index].target)) {
-      setTargetSkillString("");
-    } else {
-      setTargetSkillString(skillLevels[index].target.toString());
-    }
-  }, [index, skillLevels]);
+  const targetSkillValue = Number.isNaN(skillLevel.target)
+    ? ""
+    : skillLevel.target;
 
   return (
     <div
-      className={`${!isActive ? "select-none" : ""} w-full flex flex-row gap-2`}
+      className={`${isActive ? "" : "select-none"} flex w-full flex-row gap-2`}
     >
-      <div className="w-full flex flex-col items-start">
+      <div className="flex w-full flex-col items-start">
         <p className="leading-tight text-gray-600 break-keep">
           스킬 {index + 1}
         </p>
+
         <p
-          className={`pl-1 leading-tight font-medium ${
+          className={`pl-1 leading-tight font-medium break-keep ${
             isActive ? "text-gray-200" : "text-gray-600"
-          } break-keep`}
+          }`}
         >
           {skill}
         </p>
       </div>
+
       <div className="flex flex-row items-center gap-[6px]">
         <input
-          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
-          outline-none bg-dark-800 selection:bg-gray-800 ${
+          className={`h-6 w-9 resize-none rounded-lg bg-dark-800 px-2 py-3 text-center outline-none selection:bg-gray-800 ${
             isAbleAtCurrentElite ? "text-gray-200" : "text-gray-600"
-          } text-center 
-          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+          } [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none`}
           id={`${skill}-current`}
           type={isActive ? "number" : "hidden"}
           min={1}
           max={10}
           step={1}
-          value={currentSkillString}
+          value={currentSkillValue}
           disabled={!isAbleAtCurrentElite}
-          onInput={(event) => handleSkillLevelChange(event, "current", index)}
+          onInput={(event) => {
+            handleSkillLevelChange(event, "current", index);
+          }}
           onBlur={() => {
             handleCommonSkillLevels("current", index);
           }}
-          onKeyDown={(event) => handleExponentialNotation(event)}
-        ></input>
+          onKeyDown={handleExponentialNotation}
+        />
+
         <p
           className={`${
             isActive ? "" : "hidden"
-          } leading-tight font-medium text-[10px] text-dark-800 select-none selection:bg-transparent`}
+          } text-[10px] leading-tight font-medium text-dark-800 select-none selection:bg-transparent`}
         >
           ▶
         </p>
+
         <input
-          className={`w-9 h-6 px-2 py-3 resize-none rounded-lg
-          outline-none bg-dark-800 selection:bg-gray-800 text-gray-200 text-center 
-          [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+          className="h-6 w-9 resize-none rounded-lg bg-dark-800 px-2 py-3 text-center text-gray-200 outline-none selection:bg-gray-800 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           id={`${skill}-target`}
           type={isActive ? "number" : "hidden"}
           min={1}
           max={10}
           step={1}
-          value={targetSkillString}
+          value={targetSkillValue}
           disabled={!isActive}
-          onInput={(event) => handleSkillLevelChange(event, "target", index)}
+          onInput={(event) => {
+            handleSkillLevelChange(event, "target", index);
+          }}
           onBlur={() => {
             handleCommonSkillLevels("target", index);
           }}
-          onKeyDown={(event) => handleExponentialNotation(event)}
-        ></input>
+          onKeyDown={handleExponentialNotation}
+        />
       </div>
     </div>
   );

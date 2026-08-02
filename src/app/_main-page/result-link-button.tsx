@@ -4,7 +4,6 @@ import { useAtomValue } from "jotai";
 import Image from "next/image";
 import Link from "next/link";
 import { userDepotInitializedAtom, userNeedInitializedAtom } from "@/store";
-import { useEffect, useState } from "react";
 
 /** 계산 결과 페이지로 라우팅하는 버튼 컴포넌트 */
 export default function ResultLinkButton() {
@@ -12,25 +11,21 @@ export default function ResultLinkButton() {
   const userDepotInitialized = useAtomValue(userDepotInitializedAtom);
   const userNeedInitialized = useAtomValue(userNeedInitializedAtom);
 
-  const [canAccessResult, setCanAccessResult] = useState(false);
-  useEffect(() => {
-    setCanAccessResult(userDepotInitialized && userNeedInitialized);
-  }, [userDepotInitialized, userNeedInitialized]);
+  const canAccessResult = userDepotInitialized && userNeedInitialized;
 
   return (
     <Link
-      className={`relative grow flex flex-row justify-center items-center gap-6 p-4 rounded-xl sm:flex-col sm:gap-4 
-      ${
+      className={`relative flex grow flex-row items-center justify-center gap-6 rounded-xl p-4 sm:flex-col sm:gap-4 ${
         canAccessResult
           ? "hover:bg-gray-800 hover:bg-opacity-15"
           : "pointer-events-none"
       }`}
       aria-disabled={!canAccessResult}
-      tabIndex={!canAccessResult ? -1 : undefined}
+      tabIndex={canAccessResult ? undefined : -1}
       href="/result"
     >
       <div
-        className="relative w-16 aspect-square selection:bg-transparent sm:w-24"
+        className="relative aspect-square w-16 selection:bg-transparent sm:w-24"
         draggable={false}
       >
         <Image
@@ -47,18 +42,20 @@ export default function ResultLinkButton() {
           draggable={false}
         />
       </div>
-      <div className="w-[180px] flex flex-col items-center gap-1 translate-y-[4px]">
+
+      <div className="flex w-[180px] translate-y-[4px] flex-col items-center gap-1">
         <p
-          className={`leading-none font-semibold text-2xl ${
+          className={`text-center text-2xl leading-none font-semibold break-keep ${
             canAccessResult ? "text-white" : "text-gray-600"
-          } text-center break-keep`}
+          }`}
         >
           계산 결과 확인
         </p>
+
         <p
-          className={`leading-tight text-center ${
+          className={`text-center leading-tight break-keep ${
             canAccessResult ? "text-gray-500" : "text-gray-900"
-          } break-keep`}
+          }`}
         >
           입력된 데이터로 자동 계산
         </p>
