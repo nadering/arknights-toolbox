@@ -1,4 +1,4 @@
-import Operator from "./operator";
+import { LegacyOperator } from "../operator";
 import {
   aggregateCyclicene,
   aketon,
@@ -86,7 +86,7 @@ export const MedicBranchList = [
 export type MedicBranch = (typeof MedicBranchList)[number];
 
 /** 메딕 오퍼레이터 */
-export interface Medic extends Operator {
+export interface Medic extends LegacyOperator {
   /** 세부 직군 */
   branch?: MedicBranch;
 }

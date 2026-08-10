@@ -31,11 +31,139 @@ type CollapseState = {
   localValue: boolean;
 };
 
+type SkillLevelType = "current" | "target";
+
+const COMMON_SKILL_MAX_LEVEL = 7;
+
 const cloneSkillLevels = (skillLevels: SkillLevel[]) =>
   skillLevels.map((skillLevel) => ({ ...skillLevel }));
 
 const cloneModuleLevels = (moduleLevels: ModuleLevel[]) =>
   moduleLevels.map((moduleLevel) => ({ ...moduleLevel }));
+
+const getSafeSkillLevelValue = (value: number) => {
+  if (Number.isNaN(value)) {
+    return 1;
+  }
+
+  return Math.max(1, value);
+};
+
+/**
+ * 명일방주의 스킬 레벨 규칙을 적용
+ *
+ * - 1~7레벨은 모든 스킬이 공유
+ * - 8~10레벨은 스킬별 개별 마스터리
+ * - 어떤 스킬이 8레벨 이상이면 다른 스킬은 최소 7레벨
+ * - 다른 스킬이 8레벨 이상인 상태에서는 한 스킬만 6레벨 이하로 내릴 수 없음
+ * - 마지막 8레벨 이상 스킬을 6레벨 이하로 내리면 모든 스킬이 같이 내려감
+ */
+const applySharedSkillLevelRule = (
+  skillLevels: SkillLevel[],
+  type: SkillLevelType,
+  index: number,
+  value: number,
+) => {
+  if (Number.isNaN(value)) {
+    return skillLevels.map((skillLevel, skillIndex) =>
+      skillIndex === index
+        ? {
+            ...skillLevel,
+            [type]: value,
+          }
+        : skillLevel,
+    );
+  }
+
+  const nextValue = getSafeSkillLevelValue(value);
+
+  if (nextValue >= COMMON_SKILL_MAX_LEVEL) {
+    return skillLevels.map((skillLevel, skillIndex) => {
+      if (skillIndex === index) {
+        return {
+          ...skillLevel,
+          [type]: nextValue,
+        };
+      }
+
+      if (skillLevel[type] >= COMMON_SKILL_MAX_LEVEL) {
+        return skillLevel;
+      }
+
+      return {
+        ...skillLevel,
+        [type]: COMMON_SKILL_MAX_LEVEL,
+      };
+    });
+  }
+
+  const hasOtherMasterySkill = skillLevels.some((skillLevel, skillIndex) => {
+    return skillIndex !== index && skillLevel[type] > COMMON_SKILL_MAX_LEVEL;
+  });
+
+  if (hasOtherMasterySkill) {
+    return skillLevels.map((skillLevel, skillIndex) =>
+      skillIndex === index
+        ? {
+            ...skillLevel,
+            [type]: COMMON_SKILL_MAX_LEVEL,
+          }
+        : skillLevel,
+    );
+  }
+
+  return skillLevels.map((skillLevel) => ({
+    ...skillLevel,
+    [type]: nextValue,
+  }));
+};
+
+/** 저장된 스킬 레벨 데이터에도 공통 스킬 레벨 규칙을 적용 */
+const normalizeSharedSkillLevelsByType = (
+  skillLevels: SkillLevel[],
+  type: SkillLevelType,
+) => {
+  const hasMasterySkill = skillLevels.some((skillLevel) => {
+    return skillLevel[type] > COMMON_SKILL_MAX_LEVEL;
+  });
+
+  if (hasMasterySkill) {
+    return skillLevels.map((skillLevel) => {
+      if (skillLevel[type] >= COMMON_SKILL_MAX_LEVEL) {
+        return skillLevel;
+      }
+
+      return {
+        ...skillLevel,
+        [type]: COMMON_SKILL_MAX_LEVEL,
+      };
+    });
+  }
+
+  const commonSkillLevel = Math.max(
+    1,
+    ...skillLevels.map((skillLevel) => {
+      return Number.isNaN(skillLevel[type]) ? 1 : skillLevel[type];
+    }),
+  );
+
+  return skillLevels.map((skillLevel) => ({
+    ...skillLevel,
+    [type]: Math.min(commonSkillLevel, COMMON_SKILL_MAX_LEVEL),
+  }));
+};
+
+const normalizeSharedSkillLevels = (skillLevels: SkillLevel[]) => {
+  const currentNormalizedSkillLevels = normalizeSharedSkillLevelsByType(
+    skillLevels,
+    "current",
+  );
+
+  return normalizeSharedSkillLevelsByType(
+    currentNormalizedSkillLevels,
+    "target",
+  );
+};
 
 /** 스킬 레벨을 현재 및 목표 정예화 단계의 허용 범위로 조정 */
 const normalizeSkillLevels = (
@@ -67,7 +195,14 @@ const createDefaultOperatorTarget = (operator: Operator): OperatorTarget => {
   const targetElite = MAX_ELITE_TABLE[operator.rarity];
 
   const skillLevels = operator.skillList.map((skill, index) => {
-    const target = operator.preferSkillList?.includes(skill)
+    const isPreferredSkill =
+      operator.preferSkillIndexes?.includes(index as 0 | 1 | 2) ??
+      operator.preferSkillList?.includes(skill) ??
+      false;
+
+    const shouldTargetMaxSkillLevel = operator.rarity === 3 || isPreferredSkill;
+
+    const target = shouldTargetMaxSkillLevel
       ? SKILL_MAX_LEVEL_TABLE[targetElite]
       : SKILL_MAX_LEVEL_TABLE[Math.max(0, targetElite - 1) as EliteNumber];
 
@@ -80,9 +215,13 @@ const createDefaultOperatorTarget = (operator: Operator): OperatorTarget => {
   });
 
   const moduleLevels = operator.moduleList.map((module) => {
-    const preferredModule = operator.preferModuleList?.find(
-      (preference) => preference.module.type === module.type,
-    );
+    const preferredModule =
+      operator.preferModules?.find((preference) => {
+        return preference.type === module.type;
+      }) ??
+      operator.preferModuleList?.find((preference) => {
+        return preference.module.type === module.type;
+      });
 
     return {
       type: module.type,
@@ -97,7 +236,7 @@ const createDefaultOperatorTarget = (operator: Operator): OperatorTarget => {
     targetElite,
     currentLevel: 1,
     targetLevel: MAX_LEVEL_TABLE[operator.rarity][targetElite],
-    skillLevels,
+    skillLevels: normalizeSharedSkillLevels(skillLevels),
     moduleLevels,
   };
 };
@@ -111,10 +250,16 @@ const createInitialOperatorTarget = (
     return createDefaultOperatorTarget(operator);
   }
 
+  const savedTarget = savedOperatorMaterial.target;
+
   return {
-    ...savedOperatorMaterial.target,
-    skillLevels: cloneSkillLevels(savedOperatorMaterial.target.skillLevels),
-    moduleLevels: cloneModuleLevels(savedOperatorMaterial.target.moduleLevels),
+    ...savedTarget,
+    skillLevels: normalizeSkillLevels(
+      normalizeSharedSkillLevels(cloneSkillLevels(savedTarget.skillLevels)),
+      savedTarget.currentElite,
+      savedTarget.targetElite,
+    ),
+    moduleLevels: cloneModuleLevels(savedTarget.moduleLevels),
   };
 };
 
@@ -248,7 +393,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         currentElite: nextCurrentElite,
         targetElite: typedTargetElite,
         skillLevels: normalizeSkillLevels(
-          previousTarget.skillLevels,
+          normalizeSharedSkillLevels(previousTarget.skillLevels),
           nextCurrentElite,
           typedTargetElite,
         ),
@@ -331,7 +476,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   /** 스킬 레벨 변경을 담당 */
   const handleSkillLevelChange = (
     event: InputEvent<HTMLInputElement>,
-    type: "current" | "target",
+    type: SkillLevelType,
     index: number,
   ) => {
     let value = event.currentTarget.value;
@@ -347,14 +492,11 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
     }
 
     setOperatorTarget((previousTarget) => {
-      const nextSkillLevels = previousTarget.skillLevels.map(
-        (skillLevel, skillIndex) =>
-          skillIndex === index
-            ? {
-                ...skillLevel,
-                [type]: valueNumber,
-              }
-            : skillLevel,
+      const nextSkillLevels = applySharedSkillLevelRule(
+        previousTarget.skillLevels,
+        type,
+        index,
+        valueNumber,
       );
 
       return {
@@ -369,10 +511,7 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
   };
 
   /** 스킬 레벨이 7레벨까지 공통으로 변경되는 부분 설정 */
-  const handleCommonSkillLevels = (
-    type: "current" | "target",
-    index: number,
-  ) => {
+  const handleCommonSkillLevels = (type: SkillLevelType, index: number) => {
     setOperatorTarget((previousTarget) => {
       const selectedSkillLevel = previousTarget.skillLevels[index]?.[type];
 
@@ -380,38 +519,16 @@ export default function SingleOperator({ operator }: { operator: Operator }) {
         return previousTarget;
       }
 
-      const nextSkillLevels = previousTarget.skillLevels.map((skillLevel) => {
-        if (Number.isNaN(selectedSkillLevel)) {
-          return {
-            ...skillLevel,
-            [type]: 1,
-          };
-        }
+      const nextSelectedSkillLevel = Number.isNaN(selectedSkillLevel)
+        ? 1
+        : selectedSkillLevel;
 
-        if (selectedSkillLevel < 7) {
-          const nextTarget =
-            type === "current" && selectedSkillLevel > skillLevel.target
-              ? selectedSkillLevel
-              : skillLevel.target;
-
-          return {
-            ...skillLevel,
-            [type]: selectedSkillLevel,
-            target: nextTarget,
-          };
-        }
-
-        if (skillLevel[type] >= 7) {
-          return skillLevel;
-        }
-
-        return {
-          ...skillLevel,
-          [type]: 7,
-          target:
-            type === "current" && skillLevel.target < 7 ? 7 : skillLevel.target,
-        };
-      });
+      const nextSkillLevels = applySharedSkillLevelRule(
+        previousTarget.skillLevels,
+        type,
+        index,
+        nextSelectedSkillLevel,
+      );
 
       return {
         ...previousTarget,

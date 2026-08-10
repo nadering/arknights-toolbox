@@ -3,6 +3,7 @@ import {
   NeedLinkButton,
   ResultLinkButton,
 } from "@/app/_main-page";
+import { latestOperatorReleaseEventByServer } from "@/data/operator/generated/operator-release-events.generated";
 
 /** 메인 페이지 */
 export default function Home() {
@@ -24,13 +25,15 @@ export default function Home() {
           최근 업데이트
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          중국 서버: 대지가 오렌지 한 알이 될 때까지 (2026-08-01)
+          중국 서버: {latestOperatorReleaseEventByServer.future.name} (
+          {latestOperatorReleaseEventByServer.future.startDate})
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          글로벌 서버: 사세행 (2026-07-16)
+          글로벌 서버: {latestOperatorReleaseEventByServer.global.name} (
+          {latestOperatorReleaseEventByServer.global.startDate})
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          사이트 업데이트 (2026-07-13)
+          사이트 업데이트 (2026-08-11)
         </p>
       </div>
     </div>

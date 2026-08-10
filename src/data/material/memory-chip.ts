@@ -1,9 +1,6 @@
 import Material from "./material";
 
 // 메모리 칩 계열
-//
-/* eslint-disable prefer-const */
-// 상호 참조를 해결하기 위해 const로 선언하지 않고 let으로 변수를 먼저 선언 후 할당
 
 /** 칩 첨가제 */
 export const chipCatalyst: Material = {
@@ -17,155 +14,117 @@ export const chipCatalyst: Material = {
 
 // 칩
 /** 뱅가드 칩 */
-export let vanguardChip: Material | undefined;
-
-/** 가드 칩 */
-export let guardChip: Material | undefined;
-
-/** 디펜더 칩 */
-export let defenderChip: Material | undefined;
-
-/** 스나이퍼 칩 */
-export let sniperChip: Material | undefined;
-
-/** 캐스터 칩 */
-export let casterChip: Material | undefined;
-
-/** 메딕 칩 */
-export let medicChip: Material | undefined;
-
-/** 서포터 칩 */
-export let supporterChip: Material | undefined;
-
-/** 스페셜리스트 칩 */
-export let specialistChip: Material | undefined;
-
-vanguardChip = {
+export const vanguardChip: Material = {
   id: "3211",
   name: "뱅가드 칩",
-  objectName: "vanguardChip!",
+  objectName: "vanguardChip",
   imageFilename: "vanguard-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: supporterChip!, count: 3 }],
 };
 
-guardChip = {
+/** 가드 칩 */
+export const guardChip: Material = {
   id: "3221",
   name: "가드 칩",
-  objectName: "guardChip!",
+  objectName: "guardChip",
   imageFilename: "guard-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: specialistChip!, count: 3 }],
 };
 
-defenderChip = {
+/** 디펜더 칩 */
+export const defenderChip: Material = {
   id: "3231",
   name: "디펜더 칩",
-  objectName: "defenderChip!",
+  objectName: "defenderChip",
   imageFilename: "defender-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: medicChip!, count: 3 }],
 };
 
-sniperChip = {
+/** 스나이퍼 칩 */
+export const sniperChip: Material = {
   id: "3241",
   name: "스나이퍼 칩",
-  objectName: "sniperChip!",
+  objectName: "sniperChip",
   imageFilename: "sniper-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: casterChip!, count: 3 }],
 };
 
-casterChip = {
+/** 캐스터 칩 */
+export const casterChip: Material = {
   id: "3251",
   name: "캐스터 칩",
-  objectName: "casterChip!",
+  objectName: "casterChip",
   imageFilename: "caster-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: sniperChip!, count: 3 }],
 };
 
-medicChip = {
+/** 메딕 칩 */
+export const medicChip: Material = {
   id: "3261",
   name: "메딕 칩",
-  objectName: "medicChip!",
+  objectName: "medicChip",
   imageFilename: "medic-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: defenderChip!, count: 3 }],
 };
 
-supporterChip = {
+/** 서포터 칩 */
+export const supporterChip: Material = {
   id: "3271",
   name: "서포터 칩",
-  objectName: "supporterChip!",
+  objectName: "supporterChip",
   imageFilename: "supporter-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: vanguardChip!, count: 3 }],
 };
 
-specialistChip = {
+/** 스페셜리스트 칩 */
+export const specialistChip: Material = {
   id: "3281",
   name: "스페셜리스트 칩",
-  objectName: "specialistChip!",
+  objectName: "specialistChip",
   imageFilename: "specialist-chip",
   type: "Memory-Chip",
   tier: 3,
   craftingUnit: 2,
-  recipe: [{ material: guardChip!, count: 3 }],
 };
+
+vanguardChip.recipe = [{ material: supporterChip, count: 3 }];
+guardChip.recipe = [{ material: specialistChip, count: 3 }];
+defenderChip.recipe = [{ material: medicChip, count: 3 }];
+sniperChip.recipe = [{ material: casterChip, count: 3 }];
+casterChip.recipe = [{ material: sniperChip, count: 3 }];
+medicChip.recipe = [{ material: defenderChip, count: 3 }];
+supporterChip.recipe = [{ material: vanguardChip, count: 3 }];
+specialistChip.recipe = [{ material: guardChip, count: 3 }];
 
 /** 칩 리스트 */
 export const chipList: Material[] = [
-  vanguardChip!,
-  guardChip!,
-  defenderChip!,
-  sniperChip!,
-  casterChip!,
-  medicChip!,
-  supporterChip!,
-  specialistChip!,
+  vanguardChip,
+  guardChip,
+  defenderChip,
+  sniperChip,
+  casterChip,
+  medicChip,
+  supporterChip,
+  specialistChip,
 ];
 
 // 칩셋
 /** 뱅가드 칩셋 */
-export let vanguardChipPack: Material | undefined;
-
-/** 가드 칩셋 */
-export let guardChipPack: Material | undefined;
-
-/** 디펜더 칩셋 */
-export let defenderChipPack: Material | undefined;
-
-/** 스나이퍼 칩셋 */
-export let sniperChipPack: Material | undefined;
-
-/** 캐스터 칩셋 */
-export let casterChipPack: Material | undefined;
-
-/** 메딕 칩셋 */
-export let medicChipPack: Material | undefined;
-
-/** 서포터 칩셋 */
-export let supporterChipPack: Material | undefined;
-
-/** 스페셜리스트 칩셋 */
-export let specialistChipPack: Material | undefined;
-
-vanguardChipPack = {
+export const vanguardChipPack: Material = {
   id: "3212",
   name: "뱅가드 칩셋",
   objectName: "vanguardChipPack",
@@ -173,10 +132,10 @@ vanguardChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: supporterChipPack!, count: 3 }],
 };
 
-guardChipPack = {
+/** 가드 칩셋 */
+export const guardChipPack: Material = {
   id: "3222",
   name: "가드 칩셋",
   objectName: "guardChipPack",
@@ -184,10 +143,10 @@ guardChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: specialistChipPack!, count: 3 }],
 };
 
-defenderChipPack = {
+/** 디펜더 칩셋 */
+export const defenderChipPack: Material = {
   id: "3232",
   name: "디펜더 칩셋",
   objectName: "defenderChipPack",
@@ -195,10 +154,10 @@ defenderChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: medicChipPack!, count: 3 }],
 };
 
-sniperChipPack = {
+/** 스나이퍼 칩셋 */
+export const sniperChipPack: Material = {
   id: "3242",
   name: "스나이퍼 칩셋",
   objectName: "sniperChipPack",
@@ -206,10 +165,10 @@ sniperChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: casterChipPack!, count: 3 }],
 };
 
-casterChipPack = {
+/** 캐스터 칩셋 */
+export const casterChipPack: Material = {
   id: "3252",
   name: "캐스터 칩셋",
   objectName: "casterChipPack",
@@ -217,10 +176,10 @@ casterChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: sniperChipPack!, count: 3 }],
 };
 
-medicChipPack = {
+/** 메딕 칩셋 */
+export const medicChipPack: Material = {
   id: "3262",
   name: "메딕 칩셋",
   objectName: "medicChipPack",
@@ -228,10 +187,10 @@ medicChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: defenderChipPack!, count: 3 }],
 };
 
-supporterChipPack = {
+/** 서포터 칩셋 */
+export const supporterChipPack: Material = {
   id: "3272",
   name: "서포터 칩셋",
   objectName: "supporterChipPack",
@@ -239,10 +198,10 @@ supporterChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: vanguardChipPack!, count: 3 }],
 };
 
-specialistChipPack = {
+/** 스페셜리스트 칩셋 */
+export const specialistChipPack: Material = {
   id: "3282",
   name: "스페셜리스트 칩셋",
   objectName: "specialistChipPack",
@@ -250,19 +209,27 @@ specialistChipPack = {
   type: "Memory-Chip",
   tier: 4,
   craftingUnit: 2,
-  recipe: [{ material: guardChipPack!, count: 3 }],
 };
+
+vanguardChipPack.recipe = [{ material: supporterChipPack, count: 3 }];
+guardChipPack.recipe = [{ material: specialistChipPack, count: 3 }];
+defenderChipPack.recipe = [{ material: medicChipPack, count: 3 }];
+sniperChipPack.recipe = [{ material: casterChipPack, count: 3 }];
+casterChipPack.recipe = [{ material: sniperChipPack, count: 3 }];
+medicChipPack.recipe = [{ material: defenderChipPack, count: 3 }];
+supporterChipPack.recipe = [{ material: vanguardChipPack, count: 3 }];
+specialistChipPack.recipe = [{ material: guardChipPack, count: 3 }];
 
 /** 칩셋 리스트 */
 export const chipPackList: Material[] = [
-  vanguardChipPack!,
-  guardChipPack!,
-  defenderChipPack!,
-  sniperChipPack!,
-  casterChipPack!,
-  medicChipPack!,
-  supporterChipPack!,
-  specialistChipPack!,
+  vanguardChipPack,
+  guardChipPack,
+  defenderChipPack,
+  sniperChipPack,
+  casterChipPack,
+  medicChipPack,
+  supporterChipPack,
+  specialistChipPack,
 ];
 
 // 듀얼 칩

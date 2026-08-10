@@ -1,12 +1,20 @@
 {
   "name": "arknights-toolbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3003",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "extract:operator-overrides": "tsx scripts/operator-meta/extract-operator-overrides.ts",
+    "check:gamedata": "tsx scripts/operator-release/check-gamedata-path.ts",
+    "check:cn-gamedata": "tsx scripts/operator-release/check-cn-gamedata-path.ts",
+    "scan:operator-release": "tsx scripts/operator-release/scan-release-candidates.ts",
+    "scan:cn-operator-release": "tsx scripts/operator-release/scan-cn-release-candidates.ts",
+    "create:operator-release-event-draft": "tsx scripts/operator-release/create-operator-release-event-draft.ts",
+    "generate:operator-release-info": "tsx scripts/operator-release/generate-operator-release-info.ts",
+    "generate:operators": "tsx scripts/operator-generator/generate-operators.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",

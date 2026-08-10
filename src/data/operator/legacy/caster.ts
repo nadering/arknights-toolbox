@@ -1,4 +1,4 @@
-import Operator from "./operator";
+import { LegacyOperator } from "../operator";
 import {
   aggregateCyclicene,
   aketon,
@@ -88,7 +88,7 @@ export const CasterBranchList = [
 export type CasterBranch = (typeof CasterBranchList)[number];
 
 /** 캐스터 오퍼레이터 */
-export interface Caster extends Operator {
+export interface Caster extends LegacyOperator {
   /** 세부 직군 */
   branch?: CasterBranch;
 }

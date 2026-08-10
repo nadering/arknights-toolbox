@@ -27,7 +27,7 @@ export const calculateUserNeed = (
     const target = operatorMaterial.target;
     const operator = getOperatorById(operatorMaterial.id);
     if (operator === undefined) {
-      break;
+      continue;
     }
 
     // 정예화
