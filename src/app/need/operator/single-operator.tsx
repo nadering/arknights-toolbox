@@ -72,7 +72,9 @@ const createDefaultOperatorTarget = (operator: Operator): OperatorTarget => {
       operator.preferSkillList?.includes(skill) ??
       false;
 
-    const target = isPreferredSkill
+    const shouldTargetMaxSkillLevel = operator.rarity === 3 || isPreferredSkill;
+
+    const target = shouldTargetMaxSkillLevel
       ? SKILL_MAX_LEVEL_TABLE[targetElite]
       : SKILL_MAX_LEVEL_TABLE[Math.max(0, targetElite - 1) as EliteNumber];
 
