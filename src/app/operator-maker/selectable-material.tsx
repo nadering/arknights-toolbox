@@ -1,10 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { type InputEvent, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import {
   LMD,
-  Material,
+  type Material,
   memoryChipList,
   moduleMaterialList,
   skillSummaryList,
@@ -28,7 +28,7 @@ interface SelectableMaterialProps {
     material: Material,
     count: number,
     listIndex?: number,
-    itemIndex?: number
+    itemIndex?: number,
   ) => void;
 
   // Key로 사용할 값
@@ -58,6 +58,13 @@ interface SelectableMaterialProps {
   memoryChip?: boolean;
 }
 
+type SelectableMaterialState = {
+  selectedMaterial?: Material;
+  countString: string;
+  defaultMaterialId?: Material["id"];
+  defaultCount?: number;
+};
+
 /** 사용자가 종류 및 수량을 선택할 수 있는 재료 */
 export default function SelectableMaterial({
   id,
@@ -77,145 +84,168 @@ export default function SelectableMaterial({
   module,
   memoryChip,
 }: SelectableMaterialProps) {
-  // 재료 목록
-  const [materialList, setMaterialList] = useState<Material[]>([]);
+  const materialList = useMemo(() => {
+    const newMaterialList: Material[] = [];
 
-  // 선택된 재료
-  const [selectedMaterial, setSelectedMaterial] = useState<Material>();
-
-  // 수량
-  const [countString, setCountString] = useState("0");
-
-  // 모달
-  const divRef = useRef<HTMLDivElement>(null); // 모달 트리거
-  const modalRef = useRef<HTMLDivElement>(null); // 모달
-  const { open: selectModalActive, setOpen: setSelectModalActive } = useModal(
-    divRef,
-    { extraInsideRefs: [modalRef] }
-  ); // 모달 활성화 여부
-
-  /** 현재 보유량 문자열 설정 */
-  const handleCountStringValue = (event: FormEvent<HTMLInputElement>) => {
-    let value = event.currentTarget.value;
-
-    // 0으로 시작하고 문자열 길이가 1을 초과한다면 (00, 01 등), 가장 왼쪽의 0을 제거함
-    const startsWithZeroPattern = /^0+/;
-    if (value.length > 1) {
-      value = value.replace(startsWithZeroPattern, "");
+    if (T1) {
+      newMaterialList.push(...T1UpgradeList);
     }
 
-    // 문자열의 길이가 0이라면, 0으로 재설정
-    if (value.length == 0) {
+    if (T2) {
+      newMaterialList.push(...T2UpgradeList);
+    }
+
+    if (T3) {
+      newMaterialList.push(...T3UpgradeList);
+    }
+
+    if (T4) {
+      newMaterialList.push(...T4UpgradeList);
+    }
+
+    if (T5) {
+      newMaterialList.push(...T5UpgradeList);
+    }
+
+    if (lmd) {
+      newMaterialList.push(LMD);
+    }
+
+    if (skillSummary) {
+      newMaterialList.push(...skillSummaryList);
+    }
+
+    if (module) {
+      newMaterialList.push(...moduleMaterialList);
+    }
+
+    if (memoryChip) {
+      newMaterialList.push(...memoryChipList);
+    }
+
+    return newMaterialList;
+  }, [T1, T2, T3, T4, T5, lmd, skillSummary, module, memoryChip]);
+
+  const [state, setState] = useState<SelectableMaterialState>(() => ({
+    selectedMaterial: defaultMaterial,
+    countString: (defaultCount ?? 0).toString(),
+    defaultMaterialId: defaultMaterial?.id,
+    defaultCount,
+  }));
+
+  const { selectedMaterial, countString } = state;
+
+  // 외부에서 기본값이 변경되면 입력값도 함께 갱신
+  if (
+    state.defaultMaterialId !== defaultMaterial?.id ||
+    state.defaultCount !== defaultCount
+  ) {
+    setState({
+      selectedMaterial: defaultMaterial,
+      countString: (defaultCount ?? 0).toString(),
+      defaultMaterialId: defaultMaterial?.id,
+      defaultCount,
+    });
+  }
+
+  // 모달
+  const divRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const extraInsideRefs = useMemo(() => [modalRef], [modalRef]);
+
+  const { open: selectModalActive, setOpen: setSelectModalActive } = useModal(
+    divRef,
+    {
+      extraInsideRefs,
+    },
+  );
+
+  /** 변경된 값을 부모 컴포넌트에 반영 */
+  const applyChange = (material: Material | undefined, countValue: string) => {
+    const count = Number.parseInt(countValue, 10);
+
+    if (!material || Number.isNaN(count) || count <= 0) {
+      return;
+    }
+
+    if (listId !== undefined && itemId !== undefined) {
+      handleChange(id, material, count, listId, itemId);
+      return;
+    }
+
+    if (listId !== undefined) {
+      handleChange(id, material, count, listId);
+      return;
+    }
+
+    handleChange(id, material, count);
+  };
+
+  /** 현재 보유량 문자열 설정 */
+  const handleCountStringValue = (event: InputEvent<HTMLInputElement>) => {
+    let value = event.currentTarget.value;
+
+    // 00, 01처럼 0으로 시작하면 왼쪽의 0을 제거
+    if (value.length > 1) {
+      value = value.replace(/^0+/, "");
+    }
+
+    if (value.length === 0) {
       value = "0";
     }
 
-    // 그 후, 보유량 문자열을 설정
-    setCountString(value);
+    setState((previousState) => ({
+      ...previousState,
+      countString: value,
+    }));
+
+    applyChange(selectedMaterial, value);
   };
 
-  /** 화면 크기가 640px 이상일 때, 모달이 화면을 벗어나지 않도록 위치 조정 */
-  const setModalPosition = () => {
-    if (window && window.innerWidth >= 640) {
-      const rightPos = modalRef.current?.getBoundingClientRect().right;
-      const padding = 16;
-
-      if (rightPos) {
-        if (rightPos > window.innerWidth - padding) {
-          modalRef.current?.style.setProperty(
-            "transform",
-            `translateX(-${rightPos - window.innerWidth + padding}px)`
-          );
-        } else {
-          modalRef.current?.style.setProperty("transform", "");
-        }
-      }
-    } else {
-      modalRef.current?.style.setProperty("transform", "");
-    }
-  };
-
+  // 모달이 열렸을 때 화면 바깥으로 나가지 않도록 위치 조정
   useEffect(() => {
-    // 기본 재료 설정
-    if (defaultMaterial) {
-      setSelectedMaterial(defaultMaterial);
-    }
-    if (defaultCount) {
-      setCountString(defaultCount.toString());
+    if (!selectModalActive) {
+      return;
     }
 
-    // 재료 설정
-    const newMaterialList: Material[] = [];
+    const modalElement = modalRef.current;
 
-    // 정예화 재료
-    if (T1) newMaterialList.push(...T1UpgradeList);
-    if (T2) newMaterialList.push(...T2UpgradeList);
-    if (T3) newMaterialList.push(...T3UpgradeList);
-    if (T4) newMaterialList.push(...T4UpgradeList);
-    if (T5) newMaterialList.push(...T5UpgradeList);
-
-    // 용문폐
-    if (lmd) newMaterialList.push(LMD);
-
-    // 스킬개론
-    if (skillSummary) newMaterialList.push(...skillSummaryList);
-
-    // 모듈
-    if (module) newMaterialList.push(...moduleMaterialList);
-
-    // 메모리 칩
-    if (memoryChip) newMaterialList.push(...memoryChipList);
-
-    setMaterialList(newMaterialList);
-  }, [
-    T1,
-    T2,
-    T3,
-    T4,
-    T5,
-    lmd,
-    memoryChip,
-    module,
-    skillSummary,
-    defaultMaterial,
-    defaultCount,
-  ]);
-
-  // 값 변경을 반영
-  useEffect(() => {
-    const count = parseInt(countString, 10);
-    if (selectedMaterial && count > 0) {
-      if (typeof listId !== undefined) {
-        if (typeof itemId !== undefined) {
-          handleChange(id, selectedMaterial, count, listId, itemId);
-        } else {
-          handleChange(id, selectedMaterial, count, listId);
-        }
-      } else {
-        handleChange(id, selectedMaterial, count);
-      }
+    if (!modalElement) {
+      return;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id, listId, selectedMaterial, countString]);
 
-  // 모달 위치 조정
-  useEffect(() => {
-    if (selectModalActive) {
-      setModalPosition();
+    if (window.innerWidth < 640) {
+      modalElement.style.transform = "";
+      return;
     }
+
+    const padding = 16;
+    const rightPosition = modalElement.getBoundingClientRect().right;
+    const maximumRightPosition = window.innerWidth - padding;
+
+    if (rightPosition > maximumRightPosition) {
+      const overflowWidth = rightPosition - maximumRightPosition;
+
+      modalElement.style.transform = `translateX(-${overflowWidth}px)`;
+      return;
+    }
+
+    modalElement.style.transform = "";
   }, [selectModalActive]);
 
   return (
     <div className="relative w-20">
-      <div className="flex flex-col w-full items-center">
+      <div className="flex w-full flex-col items-center">
         <div
-          className="relative w-20 h-16 border-2 border-gray-800 rounded-t-xl cursor-pointer"
           ref={divRef}
+          className="relative h-16 w-20 cursor-pointer rounded-t-xl border-2 border-gray-800"
         >
           {selectedMaterial && (
             <Image
               className="px-3 py-1"
               src={`/images/material/${selectedMaterial.type.toLowerCase()}/${
-                selectedMaterial.type == "Upgrade"
+                selectedMaterial.type === "Upgrade"
                   ? `${selectedMaterial.tier}/`
                   : ""
               }${selectedMaterial.imageFilename}.png`}
@@ -226,47 +256,51 @@ export default function SelectableMaterial({
             />
           )}
         </div>
+
         <input
-          className="w-20 h-6 px-2 py-3 resize-none rounded-b-xl outline-none bg-dark-800 text-gray-200 text-center border-2 border-t-0 border-gray-800 selection:bg-gray-800
-            [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          className="h-6 w-20 resize-none rounded-b-xl border-2 border-t-0 border-gray-800 bg-dark-800 px-2 py-3 text-center text-gray-200 outline-none selection:bg-gray-800 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           id={keyString}
           type="number"
           min={0}
           step={1}
           value={countString}
-          onInput={(event) => handleCountStringValue(event)}
-          onKeyDown={(event) => handleExponentialNotation(event)}
-        ></input>
+          onInput={handleCountStringValue}
+          onKeyDown={handleExponentialNotation}
+        />
       </div>
+
       {selectModalActive && (
         <>
           <div
-            className="flex flex-row flex-wrap items-start z-10 gap-1 mt-1 p-2 bg-dark-900 border-t-2 border-gray-800
-              fixed bottom-24 left-0 right-0 w-full h-min rounded-t-lg sm:absolute sm:top-full sm:w-80 sm:p-1 sm:rounded-xl sm:border-2"
             ref={modalRef}
+            className="fixed right-0 bottom-24 left-0 z-10 mt-1 flex h-min w-full flex-row flex-wrap items-start gap-1 rounded-t-lg border-t-2 border-gray-800 bg-dark-900 p-2 sm:absolute sm:top-full sm:w-80 sm:rounded-xl sm:border-2 sm:p-1"
           >
-            {materialList.map((material) => {
-              return (
-                <Image
-                  key={material.name}
-                  className="cursor-pointer"
-                  src={`/images/material/${material.type.toLowerCase()}/${
-                    material.type == "Upgrade" ? `${material.tier}/` : ""
-                  }${material.imageFilename}.png`}
-                  alt={material.name}
-                  title={material.name}
-                  width={48}
-                  height={48}
-                  draggable={false}
-                  onClick={() => {
-                    setSelectedMaterial(material);
-                    setSelectModalActive(false);
-                  }}
-                />
-              );
-            })}
+            {materialList.map((material) => (
+              <Image
+                key={material.id}
+                className="cursor-pointer"
+                src={`/images/material/${material.type.toLowerCase()}/${
+                  material.type === "Upgrade" ? `${material.tier}/` : ""
+                }${material.imageFilename}.png`}
+                alt={material.name}
+                title={material.name}
+                width={48}
+                height={48}
+                draggable={false}
+                onClick={() => {
+                  setState((previousState) => ({
+                    ...previousState,
+                    selectedMaterial: material,
+                  }));
+
+                  applyChange(material, countString);
+                  setSelectModalActive(false);
+                }}
+              />
+            ))}
           </div>
-          <div className="sm:hidden fixed bottom-0 left-0 right-0 w-full h-24 bg-dark-900 z-10"></div>
+
+          <div className="fixed right-0 bottom-0 left-0 z-10 h-24 w-full bg-dark-900 sm:hidden" />
         </>
       )}
     </div>

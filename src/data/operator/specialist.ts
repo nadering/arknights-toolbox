@@ -18,6 +18,7 @@ import {
   dataSupplementStick,
   device,
   diketon,
+  energyConcentratingPowerUnit,
   ester,
   fuscousFiber,
   grindstone,
@@ -26,6 +27,8 @@ import {
   incandescentAlloyBlock,
   integratedDevice,
   ketonColloid,
+  liquefiedEtherAggregate,
+  liquefiedHighEnergyGas,
   LMD,
   loxicKohl,
   manganeseOre,
@@ -94,6 +97,263 @@ export interface Specialist extends Operator {
 }
 
 // 6성
+/** 안젤리나 더 멜로우 위시 */
+export const AngelinaTheMellowWish: Specialist = {
+  id: 425,
+  name: "안젤리나 더 멜로우 위시",
+  imageFilename: "angelina-the-mellow-wish",
+  class: "Specialist",
+  rarity: 6,
+  eliteMaterials: {
+    "0": [],
+    "1": [
+      {
+        material: LMD,
+        count: 30000,
+      },
+      {
+        material: specialistChip!,
+        count: 5,
+      },
+      {
+        material: sugar,
+        count: 8,
+      },
+      {
+        material: polyester,
+        count: 5,
+      },
+    ],
+    "2": [
+      {
+        material: LMD,
+        count: 180000,
+      },
+      {
+        material: specialistDualchip,
+        count: 4,
+      },
+      {
+        material: crystallineElectronicUnit,
+        count: 4,
+      },
+      {
+        material: chiralRefractor,
+        count: 2,
+      },
+    ],
+  },
+  skillList: ["초고속 배송", "중력 커스터마이징", "라임의 속마음"],
+  preferSkillList: ["라임의 속마음"],
+  skillUpgradeMaterials: {
+    common: {
+      "2": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+      ],
+      "3": [
+        {
+          material: skillSummary1,
+          count: 5,
+        },
+        {
+          material: orironShard,
+          count: 5,
+        },
+        {
+          material: sugarSubstitute,
+          count: 4,
+        },
+      ],
+      "4": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+      ],
+      "5": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "6": [
+        {
+          material: skillSummary2,
+          count: 8,
+        },
+        {
+          material: sugarPack,
+          count: 7,
+        },
+      ],
+      "7": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: liquefiedHighEnergyGas,
+          count: 5,
+        },
+        {
+          material: orironCluster,
+          count: 2,
+        },
+      ],
+    },
+    "초고속 배송": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: liquefiedEtherAggregate,
+          count: 4,
+        },
+        {
+          material: semiSyntheticSolvent,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 10,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 6,
+        },
+        {
+          material: refinedSolvent,
+          count: 1,
+        },
+      ],
+    },
+    "중력 커스터마이징": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 4,
+        },
+        {
+          material: sugarPack,
+          count: 7,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: polymerizedGel,
+          count: 4,
+        },
+        {
+          material: crystallineCircuit,
+          count: 7,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 6,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 6,
+        },
+      ],
+    },
+    "라임의 속마음": {
+      "8": [
+        {
+          material: skillSummary3,
+          count: 8,
+        },
+        {
+          material: chiralRefractor,
+          count: 4,
+        },
+        {
+          material: liquefiedHighEnergyGas,
+          count: 6,
+        },
+      ],
+      "9": [
+        {
+          material: skillSummary3,
+          count: 12,
+        },
+        {
+          material: energyConcentratingPowerUnit,
+          count: 4,
+        },
+        {
+          material: transmutedSaltAgglomerate,
+          count: 9,
+        },
+      ],
+      "10": [
+        {
+          material: skillSummary3,
+          count: 15,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 6,
+        },
+        {
+          material: polymerizedGel,
+          count: 2,
+        },
+      ],
+    },
+  },
+  moduleList: [],
+  preferModuleList: [],
+  moduleMaterials: {},
+};
+
 /** 왕 */
 export const Wang: Specialist = {
   id: 405,
@@ -7330,6 +7590,7 @@ export const Verdant: Specialist = {
 
 // 스페셜리스트 오퍼레이터 리스트 계열
 const sixStarSpecialistList: Specialist[] = [
+  AngelinaTheMellowWish,
   Wang,
   ExusiaiTheNewCovenant,
   ThornsTheLodestar,

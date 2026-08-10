@@ -312,7 +312,10 @@ export default function StorageSetter() {
 
     localDataExistsRef.current = localDataExists;
 
+    // localStorage 복원 완료를 후속 Effect에 알리기 위한 의도적인 상태 갱신
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLocalDataFetched(true);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

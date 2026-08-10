@@ -1,250 +1,237 @@
 "use client";
 
-import { KeyboardEvent, useEffect, useRef, useState } from "react";
+import {
+  type KeyboardEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
-import { Operator, operatorList, RECENT_OPERATOR_ID } from "@/data/operator";
+import {
+  type Operator,
+  operatorList,
+  RECENT_OPERATOR_ID,
+} from "@/data/operator";
 import { selectedOperatorsAtom, showFutureAtom } from "@/store";
 import { useModal } from "@/hooks";
 
+/** 검색 결과 최대 개수 */
+const MAX_DATA_COUNT = 5;
+
 /** 오퍼레이터 한 명을 추가하는 컴포넌트 */
 export default function OperatorAdder() {
-  /** 검색 결과 최대 개수 */
-  const MAX_DATA_COUNT = 5;
-
   // 사용자가 선택한 오퍼레이터
   const [selectedOperators, setSelectedOperators] = useAtom(
     selectedOperatorsAtom,
   );
 
-  // 오퍼레이터 검색 문자열 및 검색된 데이터
+  // 오퍼레이터 검색 문자열
   const [searchText, setSearchText] = useState("");
-  const [searchedData, setSearchedData] = useState<Operator[]>([]);
 
   // 미래시
   const [showFuture, setShowFuture] = useAtom(showFutureAtom);
 
-  // 검색 결과 드랍다운의 인덱스
+  // 검색 결과 드롭다운의 선택된 인덱스
   const [dataIndex, setDataIndex] = useState(0);
 
-  // 검색 창 및 검색 결과 드랍다운을 클릭 및 숨기기 관련
+  // 검색창 및 검색 결과 드롭다운 활성화
   const adderRef = useRef<HTMLDivElement>(null);
   const searchBarRef = useRef<HTMLInputElement>(null);
+
   const {
     open: searchClicked,
     setOpen: setSearchClicked,
     outsideTick,
   } = useModal(adderRef);
 
-  /** 검색 중 키보드 입력에 따라 선택된 오퍼레이터를 추가하거나, 오퍼레이터 선택을 변경 */
-  const handleSearchBarKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      if (searchedData.length != 0) {
-        // 엔터 키가 눌리면, 선택된 오퍼레이터를 추가
-        addSelectedOperator(searchedData[dataIndex]);
-      }
-    } else if (event.key === "ArrowUp") {
-      // 위 방향키가 눌리면, 위의 오퍼레이터를 선택하며 검색 창의 커서가 움직이지 않게 설정
-      event.preventDefault();
-      if (dataIndex > 0) {
-        setDataIndex(dataIndex - 1);
-      }
-    } else if (event.key === "ArrowDown") {
-      // 아래 방향키가 눌리면, 아래의 오퍼레이터를 선택하며 검색 창의 커서가 움직이지 않게 설정
-      event.preventDefault();
-      if (
-        (showFuture && dataIndex + 1 < searchedData.length) ||
-        (dataIndex + 1 < searchedData.length && dataIndex + 1 < MAX_DATA_COUNT)
-      ) {
-        setDataIndex(dataIndex + 1);
-      }
-    }
-  };
-
-  /** 검색 문자열에 해당되는 오퍼레이터 리스트를 반환 */
-  const searchOperatorData = () => {
-    // 현재 및 최대 데이터 수
-    let currentDataCount = 0;
-
-    // 이름이 완벽히 일치하는 오퍼레이터
-    let matchedOperator: Operator | null = null;
-
-    // 전체 오퍼레이터를 순회하며 검색
-    const searchedOperatorList = operatorList.reduce<Operator[]>(
-      (acc, operator) => {
-        if (!searchText) return acc;
-
-        const lowerSearchText = searchText.toLowerCase();
-        const lowerOperatorName = operator.name.toLowerCase();
-
-        // 이름이 완벽히 일치하는 오퍼레이터가 있다면, 해당 오퍼레이터를 저장
-        if (lowerSearchText === lowerOperatorName) {
-          matchedOperator = operator;
-          return acc;
-        }
-
-        // 검색 문자열이 오퍼레이터 이름 또는 별명에 포함되어 있고,
-        // 최대 데이터 수를 초과하지 않으며, 이미 선택된 오퍼레이터가 아니라면,
-        // 해당 오퍼레이터를 검색 결과에 추가
-        if (
-          currentDataCount < MAX_DATA_COUNT &&
+  /** 검색 문자열 또는 미래시에 해당하는 오퍼레이터 목록 */
+  const searchedData = useMemo<Operator[]>(() => {
+    if (showFuture) {
+      return operatorList.toReversed().filter((operator) => {
+        return (
+          operator.id > RECENT_OPERATOR_ID &&
+          operator.rarity === 6 &&
           !selectedOperators.includes(operator.id)
-        ) {
-          if (
-            lowerOperatorName.startsWith(lowerSearchText.at(0)!) &&
-            lowerOperatorName.includes(lowerSearchText)
-          ) {
-            currentDataCount += 1;
-            acc.push(operator);
-          } else if (operator.nicknameList) {
-            for (const nickname of operator.nicknameList) {
-              const lowerNickname = nickname.toLowerCase();
-              if (
-                lowerNickname.startsWith(lowerSearchText.at(0)!) &&
-                lowerNickname.includes(lowerSearchText)
-              ) {
-                currentDataCount += 1;
-                acc.push({
-                  ...operator,
-                  name: `${operator.name} (${nickname})`,
-                });
-                break;
-              }
-            }
-          }
-        }
+        );
+      });
+    }
 
-        return acc;
-      },
-      [],
-    );
+    const lowerSearchText = searchText.trim().toLowerCase();
 
-    if (matchedOperator !== null) {
-      // 이름이 완벽히 일치하는 오퍼레이터를, 검색 결과 최상단에 추가
-      if (!selectedOperators.find((op) => op === matchedOperator!.id)) {
-        searchedOperatorList.unshift(matchedOperator);
+    if (!lowerSearchText) {
+      return [];
+    }
+
+    const firstSearchCharacter = lowerSearchText.at(0);
+    const searchedOperatorList: Operator[] = [];
+    let matchedOperator: Operator | undefined;
+
+    for (const operator of operatorList) {
+      if (selectedOperators.includes(operator.id)) {
+        continue;
+      }
+
+      const lowerOperatorName = operator.name.toLowerCase();
+
+      // 이름이 완전히 일치하는 오퍼레이터는 검색 결과 최상단에 배치
+      if (lowerOperatorName === lowerSearchText) {
+        matchedOperator = operator;
+        continue;
+      }
+
+      if (searchedOperatorList.length >= MAX_DATA_COUNT) {
+        continue;
+      }
+
+      const nameMatches =
+        lowerOperatorName.startsWith(firstSearchCharacter ?? "") &&
+        lowerOperatorName.includes(lowerSearchText);
+
+      if (nameMatches) {
+        searchedOperatorList.push(operator);
+        continue;
+      }
+
+      const matchedNickname = operator.nicknameList?.find((nickname) => {
+        const lowerNickname = nickname.toLowerCase();
+
+        return (
+          lowerNickname.startsWith(firstSearchCharacter ?? "") &&
+          lowerNickname.includes(lowerSearchText)
+        );
+      });
+
+      if (matchedNickname) {
+        searchedOperatorList.push({
+          ...operator,
+          name: `${operator.name} (${matchedNickname})`,
+        });
       }
     }
 
-    if (searchedOperatorList.length > MAX_DATA_COUNT) {
-      // 검색 결과 최대 개수를 초과하면, 해당 오퍼레이터를 제외
-      searchedOperatorList.pop();
+    if (matchedOperator) {
+      searchedOperatorList.unshift(matchedOperator);
     }
 
-    console.log(searchedOperatorList);
-    return searchedOperatorList;
-  };
+    return searchedOperatorList.slice(0, MAX_DATA_COUNT);
+  }, [searchText, selectedOperators, showFuture]);
 
-  /** 미래시에 해당되는 6성 오퍼레이터 리스트를 반환 */
-  const searchFutureOperatorData = () => {
-    // 전체 오퍼레이터를 순회하며 검색
-    const futureOperatorList = operatorList.toReversed().filter((operator) => {
-      if (operator.id <= RECENT_OPERATOR_ID) {
-        // 미래시 오퍼레이터가 아니라면, 추가하지 않음
-        return;
-      }
-
-      if (
-        operator.id > RECENT_OPERATOR_ID &&
-        operator.rarity === 6 &&
-        !selectedOperators.includes(operator.id)
-      ) {
-        return operator;
-      }
-    });
-
-    if (futureOperatorList.length === 0) {
-      setShowFuture(false);
-    }
-    return futureOperatorList;
-  };
+  const selectedDataIndex = Math.min(
+    dataIndex,
+    Math.max(searchedData.length - 1, 0),
+  );
 
   /** 선택된 오퍼레이터를 추가 */
   const addSelectedOperator = (operator: Operator) => {
-    setSelectedOperators((prev) => [...prev, operator.id]);
+    setSelectedOperators((previousOperators) => [
+      ...previousOperators,
+      operator.id,
+    ]);
+
     setSearchText("");
     setDataIndex(0);
-
     setSearchClicked(true);
+
+    // 마지막 미래시 오퍼레이터를 추가한 경우 미래시 모드를 종료
+    if (showFuture && searchedData.length <= 1) {
+      setShowFuture(false);
+    }
+
     searchBarRef.current?.focus();
   };
 
-  /** 미래시 오퍼레이터를 보여주도록 설정 */
-  const showFutureOperator = () => {
-    setSearchedData(searchFutureOperatorData());
-    setSearchText("");
-    setDataIndex(0);
+  /** 검색 중 키보드 입력 처리 */
+  const handleSearchBarKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      const selectedOperator = searchedData[selectedDataIndex];
 
-    setSearchClicked(true);
-    searchBarRef.current?.focus();
+      if (selectedOperator) {
+        addSelectedOperator(selectedOperator);
+      }
+
+      return;
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+
+      setDataIndex((previousIndex) => Math.max(previousIndex - 1, 0));
+      return;
+    }
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+
+      setDataIndex((previousIndex) =>
+        Math.min(previousIndex + 1, searchedData.length - 1),
+      );
+    }
   };
 
-  // 검색 문자열이 변경될 때마다, 검색 데이터를 갱신
+  // 외부에서 미래시 모드가 활성화되면 검색창을 열고 포커스
   useEffect(() => {
-    if (showFuture && searchText.length === 0) {
-      setSearchedData(searchFutureOperatorData());
-    } else {
-      setSearchedData(searchOperatorData());
+    if (!showFuture) {
+      return;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showFuture, searchText, selectedOperators]);
 
-  useEffect(() => {
-    if (showFuture) {
-      showFutureOperator();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showFuture]);
+    const animationFrameId = window.requestAnimationFrame(() => {
+      setSearchText("");
+      setDataIndex(0);
+      setSearchClicked(true);
+      searchBarRef.current?.focus();
+    });
 
+    return () => {
+      window.cancelAnimationFrame(animationFrameId);
+    };
+  }, [showFuture, setSearchClicked]);
+
+  // 검색 영역 바깥을 클릭하면 미래시 모드를 종료
   useEffect(() => {
-    setShowFuture(false);
+    const timeoutId = window.setTimeout(() => {
+      setShowFuture(false);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, [outsideTick, setShowFuture]);
 
-  // 컴포넌트가 마운트될 때, Div 노드를 클릭해 드랍다운을 활성화하고, Input 노드에 포커스를 설정
-  useEffect(() => {
-    adderRef.current?.click();
-    searchBarRef.current?.focus();
-
-    return () => setShowFuture(false);
-  }, [setShowFuture]);
-
   const showSearchBox =
-    showFuture || (searchClicked && searchedData.length !== 0);
+    (showFuture || searchClicked) && searchedData.length > 0;
 
   return (
     <div
-      className="group relative flex justify-center items-center"
       ref={adderRef}
+      className="group relative flex items-center justify-center"
     >
-      <div className="relative w-full flex flex-row justify-between items-center">
+      <div className="relative flex w-full flex-row items-center justify-between">
         <input
-          className={`w-full min-h-12 px-4 py-3 ${
-            showSearchBox ? "rounded-t-lg" : "rounded-lg"
-          } z-20 resize-none 
-          outline-solid outline-1 outline-gray-400
-          bg-dark-800 text-gray-200 selection:bg-gray-800
-          [&::-webkit-search-cancel-button]:appearance-none`}
           ref={searchBarRef}
+          className={`z-20 min-h-12 w-full resize-none px-4 py-3 ${
+            showSearchBox ? "rounded-t-lg" : "rounded-lg"
+          } bg-dark-800 text-gray-200 outline-1 outline-solid outline-gray-400 selection:bg-gray-800 [&::-webkit-search-cancel-button]:appearance-none`}
           id="operator-adder"
           type="search"
           placeholder="원하는 오퍼레이터 이름을 입력해주세요."
           value={searchText}
           autoComplete="off"
+          autoFocus
           onChange={(event) => {
-            // 검색 창의 텍스트가 바뀔 때마다, 맨 위의 오퍼레이터를 선택
             setDataIndex(0);
             setSearchText(event.target.value);
             setShowFuture(false);
           }}
-          onKeyDown={(event) => {
-            handleSearchBarKeyDown(event);
-          }}
+          onKeyDown={handleSearchBarKeyDown}
           onFocus={() => {
-            // 검색 창을 포커스할 때마다, 맨 위의 오퍼레이터를 선택
             setDataIndex(0);
+            setSearchClicked(true);
           }}
         />
-        <div className="absolute right-4 w-6 z-30 aspect-square selection:bg-transparent">
+
+        <div className="absolute right-4 z-30 aspect-square w-6 selection:bg-transparent">
           <Image
             className="[filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]"
             src="/images/others/search.png"
@@ -255,45 +242,43 @@ export default function OperatorAdder() {
           />
         </div>
       </div>
+
       <ol
         className={`${
-          showSearchBox
-            ? searchedData.length === 0
-              ? "opacity-0"
-              : "opacity-100"
-            : "invisible"
-        } absolute left-0 right-0 top-full flex flex-col bg-dark-700 z-10 rounded-b-xl shadow-2xl`}
+          showSearchBox ? "visible opacity-100" : "invisible opacity-0"
+        } bg-dark-700 absolute top-full right-0 left-0 z-10 flex flex-col rounded-b-xl shadow-2xl`}
       >
-        {searchedData.map((data, index) => (
+        {searchedData.map((operator, index) => (
           <li
-            key={data.id}
+            key={operator.id}
             className={`${
-              dataIndex == index ? "bg-dark-300 bg-opacity-20" : ""
-            } flex flex-row items-center gap-3 px-4 py-2 rounded-xl cursor-pointer transition-colors`}
+              selectedDataIndex === index ? "bg-dark-300 bg-opacity-20" : ""
+            } flex cursor-pointer flex-row items-center gap-3 rounded-xl px-4 py-2 transition-colors`}
             onClick={() => {
-              addSelectedOperator(data);
+              addSelectedOperator(operator);
             }}
-            onMouseOver={() => {
+            onMouseEnter={() => {
               setDataIndex(index);
             }}
           >
-            <div className="relative w-8 min-w-8 aspect-square rounded-2xl select-none">
+            <div className="relative aspect-square w-8 min-w-8 rounded-2xl select-none">
               <Image
                 className="rounded-2xl"
-                src={`/images/operator/list/${data.class.toLowerCase()}/${
-                  data.imageFilename
+                src={`/images/operator/list/${operator.class.toLowerCase()}/${
+                  operator.imageFilename
                 }.png`}
-                alt={data.name}
+                alt={operator.name}
                 fill
                 sizes="10vw"
                 draggable={false}
               />
             </div>
+
             <p
-              className="text-gray-200 translate-y-px selection:bg-transparent"
+              className="translate-y-px text-gray-200 selection:bg-transparent"
               draggable={false}
             >
-              {data.name}
+              {operator.name}
             </p>
           </li>
         ))}

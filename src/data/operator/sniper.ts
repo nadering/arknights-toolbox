@@ -1696,11 +1696,16 @@ export const Fiammetta: Sniper = {
   moduleList: [
     { type: "ART-X", name: "기나긴 여정" },
     { type: "ART-Y", name: "'무법' 특수탄약 배급 세트" },
+    { type: "ISW-α", name: "피아메타의 특별 한정 배지" },
   ],
   preferModuleList: [
     {
       module: { type: "ART-Y", name: "'무법' 특수탄약 배급 세트" },
       level: 2,
+    },
+    {
+      module: { type: "ISW-α", name: "피아메타의 특별 한정 배지" },
+      level: 3,
     },
   ],
   moduleMaterials: {
@@ -1741,6 +1746,11 @@ export const Fiammetta: Sniper = {
         { material: polymerizationPreparation, count: 4 },
         { material: LMD, count: 120000 },
       ],
+    },
+    "ISW-α": {
+      "1": [{ material: moduleDataBlock, count: 1 }],
+      "2": [{ material: moduleDataBlock, count: 1 }],
+      "3": [{ material: moduleDataBlock, count: 1 }],
     },
   },
 };

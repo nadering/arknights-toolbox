@@ -1,8 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { SingleMaterial } from "@common/depot";
-import { CountableMaterial, TierType } from "@data/material";
+import type { CountableMaterial, TierType } from "@data/material";
+
+type UpgradeTier = Exclude<TierType, 6>;
+
+type MaterialByTierType = {
+  [key in UpgradeTier]: CountableMaterial[];
+};
+
+const UPGRADE_TIERS = [5, 4, 3, 2, 1] as const satisfies readonly UpgradeTier[];
 
 /** 창고의 정예화 재료 목록 */
 export default function UpgradeLine({
@@ -16,112 +23,76 @@ export default function UpgradeLine({
   readonly?: boolean;
   userDepotUse?: boolean;
 }) {
-  /** 티어별 재료 타입 */
-  type MaterialByTierType = {
-    [key in Exclude<TierType, 6>]: CountableMaterial[];
-  };
+  const materialByTier = list.reduce<MaterialByTierType>(
+    (result, upgrade) => {
+      const tier = upgrade.material.tier;
 
-  /** 티어별 재료의 존재 여부 */
-  const [materialExists, setMaterialExists] = useState<boolean>(false);
-  const [materialExistsByTier, setMaterialExistsByTier] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+      /**
+       * 현재 6티어 재료는 순오리지늄 등의 특수 재료로,
+       * 정예화 재료 목록에서는 제외
+       */
+      if (tier !== 6) {
+        result[tier].push(upgrade);
+      }
 
-  /** 티어별 재료에 따른 JSX 엘리먼트 리스트 */
-  const [tierLines, setTierLines] = useState<React.JSX.Element[]>([]);
-
-  // 티어별 재료를 설정
-  useEffect(() => {
-    // 티어별 재료가 없다고 가정
-    setMaterialExists(false);
-    const newMaterialExistsByTier = materialExistsByTier.map(() => false);
-
-    // 티어별 재료를 초기화 및 재설정
-    const materialByTier: MaterialByTierType = {
+      return result;
+    },
+    {
       5: [],
       4: [],
       3: [],
       2: [],
       1: [],
-    };
-    list.forEach((upgrade) => {
-      if (upgrade.material.tier !== 6) {
-        /**
-         * 현재 6티어 재료는 "순오리지늄" 등의 특수 재료로,
-         * 6티어인 정예화 재료는 존재하지 않으며 오퍼레이터 육성에 사용되지 않으므로 제외
-         */
-        materialByTier[upgrade.material.tier].push(upgrade);
-        if (skipZero && upgrade.count > 0) {
-          // 티어별 재료 존재 여부를 확인 후 설정
-          setMaterialExists(true);
-          newMaterialExistsByTier[upgrade.material.tier] = true;
-        }
-      }
-    });
-    setMaterialExistsByTier(newMaterialExistsByTier);
+    },
+  );
 
-    // 티어별 재료에 맞게 JSX 엘리먼트를 생성
-    const upgradeTierLines = Object.entries(materialByTier)
-      .reverse()
-      .map((materials) => {
-        // Key(티어), Value(티어별 재료 리스트)
-        const key = materials[0];
-        const value = materials[1];
+  const materialExists = UPGRADE_TIERS.some((tier) =>
+    materialByTier[tier].some((upgrade) => upgrade.count > 0),
+  );
 
-        if (value.length > 0) {
-          // 티어별 재료가 존재한다면, 각각 티어에 맞게 창고 데이터를 생성
+  const shouldHide = skipZero && !materialExists;
+
+  return (
+    <div className={`${shouldHide ? "hidden" : ""} flex flex-col items-start`}>
+      <p className="text-2xl leading-tight font-semibold text-white break-keep">
+        정예화 재료
+      </p>
+
+      <div className="flex w-full flex-col gap-4">
+        {UPGRADE_TIERS.map((tier) => {
+          const materials = materialByTier[tier];
+
+          if (materials.length === 0) {
+            return null;
+          }
+
+          const visibleMaterials = skipZero
+            ? materials.filter((upgrade) => upgrade.count > 0)
+            : materials;
+
+          if (visibleMaterials.length === 0) {
+            return null;
+          }
+
           return (
-            <div
-              key={key}
-              className={`${
-                skipZero &&
-                !newMaterialExistsByTier[parseInt(key, 10)] &&
-                "hidden"
-              } flex flex-col gap-[2px]`}
-            >
-              <p className="leading-tight font-semibold text-xl text-gray-300 break-keep px-2">
-                {key}티어
+            <div key={tier} className="flex flex-col gap-[2px]">
+              <p className="px-2 text-xl leading-tight font-semibold text-gray-300 break-keep">
+                {tier}티어
               </p>
+
               <div className="flex flex-row flex-wrap gap-2">
-                {value.map((upgrade) => {
-                  if (!skipZero || upgrade.count > 0) {
-                    return (
-                      <SingleMaterial
-                        key={upgrade.material.id}
-                        countableMaterial={upgrade}
-                        readonly={readonly}
-                        userDepotUse={userDepotUse}
-                      />
-                    );
-                  }
-                })}
+                {visibleMaterials.map((upgrade) => (
+                  <SingleMaterial
+                    key={upgrade.material.id}
+                    countableMaterial={upgrade}
+                    readonly={readonly}
+                    userDepotUse={userDepotUse}
+                  />
+                ))}
               </div>
             </div>
           );
-        } else {
-          return <></>;
-        }
-      });
-
-    setTierLines(upgradeTierLines);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [list, skipZero, readonly, userDepotUse]);
-
-  return (
-    <div
-      className={`${
-        skipZero && !materialExists && "hidden"
-      } flex flex-col items-start`}
-    >
-      <p className="leading-tight font-semibold text-2xl text-white break-keep">
-        정예화 재료
-      </p>
-      <div className="w-full flex flex-col gap-4">
-        {tierLines.map((tierLine) => tierLine)}
+        })}
       </div>
     </div>
   );

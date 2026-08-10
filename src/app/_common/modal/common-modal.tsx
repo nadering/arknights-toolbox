@@ -1,6 +1,12 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import {
+  type MouseEvent,
+  type ReactNode,
+  useEffect,
+  useId,
+  useSyncExternalStore,
+} from "react";
 import { createPortal } from "react-dom";
 
 type CommonModalProps = {
@@ -14,6 +20,13 @@ type CommonModalProps = {
   closeOnEscape?: boolean;
 };
 
+const subscribe = () => {
+  return () => {};
+};
+
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
+
 /** 공통 모달 컴포넌트 */
 export const CommonModal = ({
   isOpen,
@@ -25,11 +38,13 @@ export const CommonModal = ({
   closeOnBackdrop = true,
   closeOnEscape = true,
 }: CommonModalProps) => {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const titleId = useId();
 
   useEffect(() => {
     if (!isOpen) {
@@ -45,20 +60,14 @@ export const CommonModal = ({
   }, [isOpen]);
 
   useEffect(() => {
-    if (!isOpen) {
-      return;
-    }
-
-    if (!closeOnEscape) {
+    if (!isOpen || !closeOnEscape) {
       return;
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") {
-        return;
+      if (event.key === "Escape") {
+        onClose();
       }
-
-      onClose();
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -68,23 +77,17 @@ export const CommonModal = ({
     };
   }, [isOpen, closeOnEscape, onClose]);
 
-  if (!mounted) {
-    return null;
-  }
-
-  if (!isOpen) {
+  if (!mounted || !isOpen) {
     return null;
   }
 
   const handleBackdropMouseDown = () => {
-    if (!closeOnBackdrop) {
-      return;
+    if (closeOnBackdrop) {
+      onClose();
     }
-
-    onClose();
   };
 
-  const handleModalMouseDown = (event: React.MouseEvent) => {
+  const handleModalMouseDown = (event: MouseEvent<HTMLElement>) => {
     event.stopPropagation();
   };
 
@@ -96,24 +99,24 @@ export const CommonModal = ({
       <section
         role="dialog"
         aria-modal="true"
-        aria-labelledby="common-modal-title"
+        aria-labelledby={titleId}
         className="relative flex max-h-[calc(100vh-48px)] w-full max-w-[480px] flex-col rounded-2xl border border-gray-700 bg-gray-950 px-6 py-5 shadow-2xl"
         onMouseDown={handleModalMouseDown}
       >
         <div className="flex items-center justify-between gap-4">
           <h2
-            id="common-modal-title"
-            className="leading-tight font-medium text-xl text-gray-300 break-keep select-none"
+            id={titleId}
+            className="text-xl leading-tight font-medium text-gray-300 break-keep select-none"
           >
             {title}
           </h2>
+
           {hasCloseButton && (
             <button
               type="button"
               aria-label="모달 닫기"
               className="flex size-8 shrink-0 items-center justify-center rounded-lg text-gray-400 transition hover:bg-gray-800 hover:text-gray-100"
               onClick={onClose}
-              hidden={!hasCloseButton}
             >
               ×
             </button>
@@ -126,9 +129,9 @@ export const CommonModal = ({
 
         {actions.length > 0 && (
           <div className="mt-6 flex flex-wrap justify-end gap-2">
-            {actions.map((action, index) => {
-              return <div key={index}>{action}</div>;
-            })}
+            {actions.map((action, index) => (
+              <div key={index}>{action}</div>
+            ))}
           </div>
         )}
       </section>
