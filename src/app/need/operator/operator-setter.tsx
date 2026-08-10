@@ -80,28 +80,6 @@ export default function OperatorSetter() {
             </p>
           </button>
           <button
-            className="group relative w-6 aspect-square selection:bg-transparent"
-            onClick={() => {
-              console.log("test");
-            }}
-          >
-            <Image
-              className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
-            hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
-              src="/images/others/grid.png"
-              alt="show-all-operator"
-              fill
-              sizes="10vw"
-              draggable={false}
-            />
-            <p
-              className={`hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-            rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block`}
-            >
-              전체 오퍼레이터 보기
-            </p>
-          </button>
-          <button
             className={`${
               userNeedInitialized ? "" : "hidden"
             } group relative w-6 aspect-square selection:bg-transparent`}
