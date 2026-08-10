@@ -13,15 +13,26 @@ import { operatorReleaseEventList } from "@/data/operator/manual/operator-releas
 import {
   type OperatorReleaseCategory,
   type OperatorReleaseEvent,
+  type Server,
 } from "@/data/operator/manual/operator-release-types";
 import { type CharacterTable } from "./character-types";
 import {
+  CN_ACTIVITY_TABLE_PATH,
   CN_CHARACTER_TABLE_PATH,
+  GLOBAL_ACTIVITY_TABLE_PATH,
   GLOBAL_CHARACTER_TABLE_PATH,
 } from "../table-path";
 
+/**
+ * 이벤트 정보를 기반으로, 오퍼레이터가 어떤 이벤트에 출시되었는지와
+ * 이벤트가 시작된 날짜가 언제인지를 생성하는 스크립트
+ */
+
 const RELEASE_INFO_OUTPUT_PATH =
   "src/data/operator/generated/operator-release-info-map.generated.ts";
+
+const RELEASE_EVENT_OUTPUT_PATH =
+  "src/data/operator/generated/operator-release-events.generated.ts";
 
 const RELEASE_INFO_REPORT_OUTPUT_PATH =
   "src/data/operator/generated/operator-release-info-report.md";
@@ -32,11 +43,35 @@ const UNMAPPED_FUTURE_RELEASE_EVENT_ID = "unmapped_future_release";
 const SERVER_OPEN_RELEASE_ORDER = 1;
 const MANUAL_RELEASE_EVENT_START_ORDER = SERVER_OPEN_RELEASE_ORDER + 1;
 
+type UnknownRecord = Record<string, unknown>;
+
 type GeneratedOperatorReleaseInfo = {
   eventId: string;
   eventName: string;
   category: OperatorReleaseCategory;
   order: number;
+};
+
+type GeneratedOperatorReleaseEvent = {
+  id: string;
+  name: string;
+  category: OperatorReleaseEvent["category"];
+  server: OperatorReleaseEvent["server"];
+  source: OperatorReleaseEvent["source"];
+  order: number;
+  startTime: number | null;
+  startDate: string | null;
+  operatorIds: string[];
+};
+
+type GeneratedLatestOperatorReleaseEvent = {
+  id: string;
+  name: string;
+  server: OperatorReleaseEvent["server"];
+  serverLabel: string;
+  order: number;
+  startTime: number | null;
+  startDate: string | null;
 };
 
 type OperatorBasicInfo = {
@@ -67,6 +102,13 @@ type EmptyReleaseEvent = {
   id: string;
   name: string;
   category: OperatorReleaseEvent["category"];
+  order: number;
+};
+
+type MissingReleaseEventStartTime = {
+  id: string;
+  name: string;
+  server: OperatorReleaseEvent["server"];
   order: number;
 };
 
@@ -104,6 +146,25 @@ type GenerateReleaseInfoResult = {
   futureOperatorCount: number;
 };
 
+type GenerateReleaseEventResult = {
+  releaseEventList: GeneratedOperatorReleaseEvent[];
+  latestReleaseEventByServer: Record<
+    Server,
+    GeneratedLatestOperatorReleaseEvent
+  >;
+  missingReleaseEventStartTimeList: MissingReleaseEventStartTime[];
+};
+
+const SERVER_LABEL_BY_SERVER: Record<Server, string> = {
+  future: "중국 서버",
+  global: "글로벌 서버",
+};
+
+const TIME_ZONE_BY_SERVER: Record<Server, string> = {
+  future: "Asia/Shanghai",
+  global: "Asia/Seoul",
+};
+
 const readLatestJsonFile = <TValue>(
   repositoryPath: string,
   filePath: string,
@@ -131,6 +192,18 @@ const getStringValue = (value: unknown) => {
   }
 
   return "";
+};
+
+const getNumberValue = (value: unknown) => {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  return null;
+};
+
+const isUnknownRecord = (value: unknown): value is UnknownRecord => {
+  return typeof value === "object" && value !== null;
 };
 
 const createOperatorBasicInfo = (
@@ -344,6 +417,171 @@ const sortReleaseInfoMap = (
   );
 };
 
+const getActivityInfoRecord = (
+  activityTable: UnknownRecord,
+): Record<string, UnknownRecord> => {
+  const basicInfo = activityTable.basicInfo;
+
+  if (isUnknownRecord(basicInfo)) {
+    return Object.fromEntries(
+      Object.entries(basicInfo).filter(
+        (entry): entry is [string, UnknownRecord] => {
+          return isUnknownRecord(entry[1]);
+        },
+      ),
+    );
+  }
+
+  return Object.fromEntries(
+    Object.entries(activityTable).filter(
+      (entry): entry is [string, UnknownRecord] => {
+        return isUnknownRecord(entry[1]);
+      },
+    ),
+  );
+};
+
+const getActivityStartTime = (
+  activityInfoRecord: Record<string, UnknownRecord>,
+  activityId: string,
+) => {
+  const activityInfo = activityInfoRecord[activityId];
+
+  if (activityInfo === undefined) {
+    return null;
+  }
+
+  return getNumberValue(activityInfo.startTime);
+};
+
+const formatDate = (timestamp: number, timeZone: string) => {
+  const timestampMs = timestamp > 9999999999 ? timestamp : timestamp * 1000;
+
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date(timestampMs));
+
+  const year = parts.find((part) => {
+    return part.type === "year";
+  })?.value;
+  const month = parts.find((part) => {
+    return part.type === "month";
+  })?.value;
+  const day = parts.find((part) => {
+    return part.type === "day";
+  })?.value;
+
+  if (year === undefined || month === undefined || day === undefined) {
+    throw new Error(`날짜 변환에 실패했습니다. timestamp=${timestamp}`);
+  }
+
+  return `${year}-${month}-${day}`;
+};
+
+const createGeneratedReleaseEvent = (
+  releaseEvent: OperatorReleaseEvent,
+  eventIndex: number,
+  activityInfoRecordByServer: Record<Server, Record<string, UnknownRecord>>,
+): GeneratedOperatorReleaseEvent => {
+  const order = createManualReleaseOrder(eventIndex);
+  const startTime = getActivityStartTime(
+    activityInfoRecordByServer[releaseEvent.server],
+    releaseEvent.id,
+  );
+
+  return {
+    id: releaseEvent.id,
+    name: releaseEvent.name,
+    category: releaseEvent.category,
+    server: releaseEvent.server,
+    source: releaseEvent.source,
+    order,
+    startTime,
+    startDate:
+      startTime === null
+        ? null
+        : formatDate(startTime, TIME_ZONE_BY_SERVER[releaseEvent.server]),
+    operatorIds: releaseEvent.operatorIds,
+  };
+};
+
+const createLatestReleaseEventByServer = (
+  releaseEventList: GeneratedOperatorReleaseEvent[],
+): Record<Server, GeneratedLatestOperatorReleaseEvent> => {
+  const latestReleaseEventByServer: Partial<
+    Record<Server, GeneratedLatestOperatorReleaseEvent>
+  > = {};
+
+  releaseEventList.forEach((releaseEvent) => {
+    if (latestReleaseEventByServer[releaseEvent.server] !== undefined) {
+      return;
+    }
+
+    latestReleaseEventByServer[releaseEvent.server] = {
+      id: releaseEvent.id,
+      name: releaseEvent.name,
+      server: releaseEvent.server,
+      serverLabel: SERVER_LABEL_BY_SERVER[releaseEvent.server],
+      order: releaseEvent.order,
+      startTime: releaseEvent.startTime,
+      startDate: releaseEvent.startDate,
+    };
+  });
+
+  const futureLatestReleaseEvent = latestReleaseEventByServer.future;
+  const globalLatestReleaseEvent = latestReleaseEventByServer.global;
+
+  if (futureLatestReleaseEvent === undefined) {
+    throw new Error("중국 서버 최신 출시 이벤트를 찾을 수 없습니다.");
+  }
+
+  if (globalLatestReleaseEvent === undefined) {
+    throw new Error("글로벌 서버 최신 출시 이벤트를 찾을 수 없습니다.");
+  }
+
+  return {
+    future: futureLatestReleaseEvent,
+    global: globalLatestReleaseEvent,
+  };
+};
+
+const createGeneratedReleaseEventList = (
+  activityInfoRecordByServer: Record<Server, Record<string, UnknownRecord>>,
+): GenerateReleaseEventResult => {
+  const releaseEventList = operatorReleaseEventList.map(
+    (releaseEvent, eventIndex) => {
+      return createGeneratedReleaseEvent(
+        releaseEvent,
+        eventIndex,
+        activityInfoRecordByServer,
+      );
+    },
+  );
+
+  const missingReleaseEventStartTimeList = releaseEventList
+    .filter((releaseEvent) => {
+      return releaseEvent.startTime === null;
+    })
+    .map((releaseEvent) => {
+      return {
+        id: releaseEvent.id,
+        name: releaseEvent.name,
+        server: releaseEvent.server,
+        order: releaseEvent.order,
+      };
+    });
+
+  return {
+    releaseEventList,
+    latestReleaseEventByServer:
+      createLatestReleaseEventByServer(releaseEventList),
+    missingReleaseEventStartTimeList,
+  };
+};
+
 /**
  * manual/operator-release-events.ts 배열 순서는 그대로 유지합니다.
  *
@@ -538,8 +776,8 @@ export type GeneratedReleaseOperatorInfo = {
  * manual/operator-release-events.ts와 최신 character_table.json을 기반으로
  * 자동 생성된 출시 정보 맵입니다.
  *
- * order는 다음 기준을 따릅니다.
- * - 1: 서버 오픈
+ * order는 다음 기준을 따릅니다. (시간 오름차순)
+ * - 서버 오픈: 1
  * - 가장 오래된 manual 이벤트: 2
  * - 최신 manual 이벤트일수록 더 큰 order
  * - 출시 이벤트 미지정 future 오퍼레이터는 manual 이벤트보다 큰 order
@@ -572,6 +810,66 @@ export const serverOpenOperatorList: GeneratedReleaseOperatorInfo[] = ${JSON.str
  */
 export const unmappedFutureOperatorList: GeneratedReleaseOperatorInfo[] = ${JSON.stringify(
     unmappedFutureOperatorList,
+    null,
+    2,
+  )};
+`;
+};
+
+const createGeneratedReleaseEventFileContent = (
+  releaseEventResult: GenerateReleaseEventResult,
+) => {
+  return `import {
+  type OperatorReleaseCategory,
+  type OperatorReleaseSource,
+  type Server,
+} from "../manual/operator-release-types";
+
+export type GeneratedOperatorReleaseEvent = {
+  id: string;
+  name: string;
+  category: OperatorReleaseCategory;
+  server: Server;
+  source: OperatorReleaseSource;
+  order: number;
+  startTime: number | null;
+  startDate: string | null;
+  operatorIds: string[];
+};
+
+export type GeneratedLatestOperatorReleaseEvent = {
+  id: string;
+  name: string;
+  server: Server;
+  serverLabel: string;
+  order: number;
+  startTime: number | null;
+  startDate: string | null;
+};
+
+/**
+ * manual/operator-release-events.ts와 activity_table.json을 기반으로
+ * 자동 생성된 출시 이벤트 목록입니다.
+ *
+ * - 이벤트명과 오퍼레이터 매핑은 manual/operator-release-events.ts를 따릅니다.
+ * - startTime/startDate는 각 서버의 activity_table.json에서 가져옵니다.
+ * - 배열 순서는 manual/operator-release-events.ts와 동일하게 최신 이벤트 → 오래된 이벤트입니다.
+ *
+ * 직접 수정하지 말고 \`npm run generate:operator-release-info\`로 재생성하세요.
+ */
+export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleaseEvent[] = ${JSON.stringify(
+    releaseEventResult.releaseEventList,
+    null,
+    2,
+  )};
+
+/**
+ * 각 서버의 최신 출시 이벤트입니다.
+ *
+ * generatedOperatorReleaseEventList를 서버별로 처음 발견한 값입니다.
+ */
+export const latestOperatorReleaseEventByServer: Record<Server, GeneratedLatestOperatorReleaseEvent> = ${JSON.stringify(
+    releaseEventResult.latestReleaseEventByServer,
     null,
     2,
   )};
@@ -660,6 +958,35 @@ const createEmptyReleaseEventSection = (
   return lines;
 };
 
+const createMissingReleaseEventStartTimeSection = (
+  missingReleaseEventStartTimeList: MissingReleaseEventStartTime[],
+) => {
+  const lines: string[] = [
+    "## Missing Release Event Start Times",
+    "",
+    "> manual/operator-release-events.ts의 id와 activity_table.json의 key가 맞지 않거나, 해당 activity에 startTime이 없는 경우입니다.",
+    "> 최신 이벤트 표시에서 startDate가 null로 생성될 수 있으므로 확인이 필요합니다.",
+    "",
+  ];
+
+  if (missingReleaseEventStartTimeList.length === 0) {
+    lines.push("- 없음");
+    lines.push("");
+
+    return lines;
+  }
+
+  missingReleaseEventStartTimeList.forEach((releaseEvent) => {
+    lines.push(
+      `- #${releaseEvent.order} [${releaseEvent.server}] \`${releaseEvent.id}\` / ${releaseEvent.name}`,
+    );
+  });
+
+  lines.push("");
+
+  return lines;
+};
+
 const createExcludedOperatorSection = (
   excludedOperatorList: ExcludedOperatorWithSource[],
 ) => {
@@ -718,7 +1045,10 @@ const createDuplicateOperatorMappingSection = (
   return lines;
 };
 
-const createReport = (result: GenerateReleaseInfoResult) => {
+const createReport = (
+  result: GenerateReleaseInfoResult,
+  releaseEventResult: GenerateReleaseEventResult,
+) => {
   const mappedOperatorCount = Object.keys(result.releaseInfoByCharId).length;
   const totalOperatorCount =
     result.globalOperatorCount + result.futureOperatorCount;
@@ -729,6 +1059,7 @@ const createReport = (result: GenerateReleaseInfoResult) => {
     "> manual/operator-release-events.ts와 최신 character_table.json을 기반으로 생성한 출시 정보 보고서입니다.",
     "",
     `- Manual release events: ${operatorReleaseEventList.length}`,
+    `- Manual release events missing startTime: ${releaseEventResult.missingReleaseEventStartTimeList.length}`,
     `- Total operators: ${totalOperatorCount}`,
     `  - Global operators: ${result.globalOperatorCount}`,
     `  - Future operators: ${result.futureOperatorCount}`,
@@ -740,6 +1071,11 @@ const createReport = (result: GenerateReleaseInfoResult) => {
     `- Server open operators: ${result.serverOpenOperatorList.length}`,
     `- Duplicate operator mappings: ${result.duplicateOperatorMappings.length}`,
     `- Manual-included filtered operators: ${result.manualIncludedOperatorList.length}`,
+    "",
+    "## Latest Release Events",
+    "",
+    `- 중국 서버: ${releaseEventResult.latestReleaseEventByServer.future.name} (${releaseEventResult.latestReleaseEventByServer.future.startDate ?? "날짜 미지정"})`,
+    `- 글로벌 서버: ${releaseEventResult.latestReleaseEventByServer.global.name} (${releaseEventResult.latestReleaseEventByServer.global.startDate ?? "날짜 미지정"})`,
     "",
     "## Order Rule",
     "",
@@ -769,6 +1105,12 @@ const createReport = (result: GenerateReleaseInfoResult) => {
   );
 
   lines.push(...createEmptyReleaseEventSection(result.emptyReleaseEvents));
+
+  lines.push(
+    ...createMissingReleaseEventStartTimeSection(
+      releaseEventResult.missingReleaseEventStartTimeList,
+    ),
+  );
 
   lines.push(...createExcludedOperatorSection(result.excludedOperatorList));
 
@@ -807,6 +1149,28 @@ const main = () => {
     CN_CHARACTER_TABLE_PATH,
   );
 
+  const globalActivityTable = readLatestJsonFile<UnknownRecord>(
+    globalGamedataPath,
+    GLOBAL_ACTIVITY_TABLE_PATH,
+  );
+
+  const cnActivityTable = readLatestJsonFile<UnknownRecord>(
+    cnGamedataPath,
+    CN_ACTIVITY_TABLE_PATH,
+  );
+
+  const activityInfoRecordByServer: Record<
+    Server,
+    Record<string, UnknownRecord>
+  > = {
+    global: getActivityInfoRecord(globalActivityTable),
+    future: getActivityInfoRecord(cnActivityTable),
+  };
+
+  const releaseEventResult = createGeneratedReleaseEventList(
+    activityInfoRecordByServer,
+  );
+
   const {
     allOperatorInfoList,
     allOperatorInfoByCharId,
@@ -830,7 +1194,15 @@ const main = () => {
     ),
   );
 
-  writeGeneratedFile(RELEASE_INFO_REPORT_OUTPUT_PATH, createReport(result));
+  writeGeneratedFile(
+    RELEASE_EVENT_OUTPUT_PATH,
+    createGeneratedReleaseEventFileContent(releaseEventResult),
+  );
+
+  writeGeneratedFile(
+    RELEASE_INFO_REPORT_OUTPUT_PATH,
+    createReport(result, releaseEventResult),
+  );
 
   console.log(
     `출시 정보 ${Object.keys(result.releaseInfoByCharId).length}개를 생성했습니다.`,
@@ -849,6 +1221,9 @@ const main = () => {
     `manual에 있지만 raw character_table에 없는 오퍼레이터: ${result.unknownManualOperatorMappings.length}개`,
   );
   console.log(`빈 출시 이벤트: ${result.emptyReleaseEvents.length}개`);
+  console.log(
+    `startTime을 찾지 못한 출시 이벤트: ${releaseEventResult.missingReleaseEventStartTimeList.length}개`,
+  );
   console.log(`=============================================`);
   console.log(
     `server_open 자동 분류 오퍼레이터: ${result.serverOpenOperatorList.length}개`,
@@ -858,7 +1233,15 @@ const main = () => {
     `중복 오퍼레이터 매핑: ${result.duplicateOperatorMappings.length}개`,
   );
   console.log(`=============================================`);
+  console.log(
+    `중국 서버 최신 이벤트: ${releaseEventResult.latestReleaseEventByServer.future.name} (${releaseEventResult.latestReleaseEventByServer.future.startDate ?? "날짜 미지정"})`,
+  );
+  console.log(
+    `글로벌 서버 최신 이벤트: ${releaseEventResult.latestReleaseEventByServer.global.name} (${releaseEventResult.latestReleaseEventByServer.global.startDate ?? "날짜 미지정"})`,
+  );
+  console.log(`=============================================`);
   console.log(`생성 완료: ${RELEASE_INFO_OUTPUT_PATH}`);
+  console.log(`생성 완료: ${RELEASE_EVENT_OUTPUT_PATH}`);
   console.log(`생성 완료: ${RELEASE_INFO_REPORT_OUTPUT_PATH}`);
 };
 

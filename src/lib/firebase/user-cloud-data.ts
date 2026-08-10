@@ -20,9 +20,9 @@ import {
 export const USER_COLLECTION_NAME = "users";
 
 export type UserCloudData = {
-  schemaVersion: 1;
+  schemaVersion: 3;
   userDepot: PersistedDepot;
-  selectedOperators: number[];
+  selectedOperators: string[];
   selectedOperatorsMaterial: OperatorMaterial[];
   operatorCollapsed: boolean;
   updatedAt?: Timestamp | null;
@@ -32,26 +32,24 @@ export type AppDataFromUserCloudData = {
   userDepot: Depot;
   userNeed: Depot;
   exp: number;
-  selectedOperators: number[];
+  selectedOperators: string[];
   selectedOperatorsMaterial: OperatorMaterial[];
   operatorCollapsed: boolean;
 };
 
 type CreateUserCloudDataParams = {
   userDepot: Depot;
-  selectedOperators: number[];
+  selectedOperators: string[];
   selectedOperatorsMaterial: OperatorMaterial[];
   operatorCollapsed: boolean;
 };
 
-/**
- * 현재 앱 상태를 Firestore에 저장할 수 있는 UserCloudData 형태로 변환
- */
+/** 현재 앱 상태를 Firestore에 저장할 수 있는 UserCloudData 형태로 변환 */
 export const createUserCloudData = (
   params: CreateUserCloudDataParams,
 ): UserCloudData => {
   return {
-    schemaVersion: 1,
+    schemaVersion: 3,
     userDepot: createStorageData(params.userDepot),
     selectedOperators: params.selectedOperators,
     selectedOperatorsMaterial: params.selectedOperatorsMaterial,
@@ -59,9 +57,7 @@ export const createUserCloudData = (
   };
 };
 
-/**
- * Firestore에서 사용자 클라우드 데이터 읽기
- */
+/** Firestore에서 사용자 클라우드 데이터 읽기 */
 export const readUserCloudData = async (
   uid: string,
 ): Promise<UserCloudData | null> => {
@@ -75,9 +71,7 @@ export const readUserCloudData = async (
   return snapshot.data() as UserCloudData;
 };
 
-/**
- * Firestore에 사용자 클라우드 데이터 저장
- */
+/** Firestore에 사용자 클라우드 데이터 저장 */
 export const saveUserCloudData = async (
   uid: string,
   userCloudData: UserCloudData,
@@ -90,9 +84,7 @@ export const saveUserCloudData = async (
   });
 };
 
-/**
- * 저장소에서 가져온 UserCloudData를, 앱에서 쓰는 상태 형태로 변환
- */
+/** 저장소에서 가져온 UserCloudData를, 앱에서 쓰는 상태 형태로 변환 */
 export const createAppDataFromUserCloudData = (
   userCloudData: UserCloudData,
 ): AppDataFromUserCloudData => {

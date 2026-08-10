@@ -18,7 +18,6 @@ import {
   logoutInProgressAtom,
 } from "@/store";
 import { EXP } from "@/data/material";
-import { Operator } from "@/data/operator";
 import {
   createDepotFromRawStorageData,
   createStorageData,
@@ -221,7 +220,7 @@ export default function StorageSetter() {
 
   // localStorage에서 값을 불러옴
   useEffect(() => {
-    let loadedSelectedOperators: number[] = [];
+    let loadedSelectedOperators: string[] = [];
     let loadedSelectedOperatorsMaterial: OperatorMaterial[] = [];
     let localDataExists = false;
 
@@ -243,11 +242,9 @@ export default function StorageSetter() {
 
     if (selectedOperatorsSaved) {
       try {
-        const savedObject = JSON.parse(selectedOperatorsSaved) as
-          | Operator[]
-          | number[];
-
+        const savedObject = JSON.parse(selectedOperatorsSaved);
         loadedSelectedOperators = normalizeSelectedOperators(savedObject);
+
         setSelectedOperators(loadedSelectedOperators);
 
         if (loadedSelectedOperators.length > 0) {
@@ -265,10 +262,7 @@ export default function StorageSetter() {
 
     if (selectedOperatorsMaterialSaved) {
       try {
-        const savedObject = JSON.parse(
-          selectedOperatorsMaterialSaved,
-        ) as OperatorMaterial[];
-
+        const savedObject = JSON.parse(selectedOperatorsMaterialSaved);
         loadedSelectedOperatorsMaterial =
           normalizeSelectedOperatorsMaterial(savedObject);
 

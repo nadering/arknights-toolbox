@@ -10,11 +10,11 @@ import {
 
 /** 오퍼레이터 목표치 */
 export interface OperatorTarget {
-  // 정예화
+  /** 정예화 */
   currentElite: EliteNumber;
   targetElite: EliteNumber;
 
-  // 레벨
+  /** 레벨 */
   currentLevel: number;
   targetLevel: number;
 
@@ -28,7 +28,7 @@ export interface OperatorTarget {
 /** 오퍼레이터 육성 재료 */
 export interface OperatorMaterial {
   /** 오퍼레이터 아이디 */
-  id: number;
+  id: string;
 
   /** 오퍼레이터 레어도 */
   rarity: RarityNumber;
@@ -47,7 +47,7 @@ export interface OperatorMaterial {
 }
 
 /** 사용자가 선택한 오퍼레이터 목록을 저장하는 아톰 */
-export const selectedOperatorsAtom = atom<number[]>([]);
+export const selectedOperatorsAtom = atom<string[]>([]);
 
 /** 사용자가 선택한 오퍼레이터의 육성 재화 목록을 저장하는 아톰 */
 export const selectedOperatorsMaterialAtom = atom<OperatorMaterial[]>([]);

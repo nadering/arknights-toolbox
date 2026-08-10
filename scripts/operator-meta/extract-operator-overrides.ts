@@ -680,14 +680,6 @@ const createTranslatedSkillNames = (
   return translatedSkillNames;
 };
 
-const normalizeModuleTypeNamePart = (value: string) => {
-  if (value === "D") {
-    return "Δ";
-  }
-
-  return value;
-};
-
 const createGameModuleType = (module: UniequipInfo) => {
   return createModuleTypeFromParts(
     getStringValue(module.typeName1),

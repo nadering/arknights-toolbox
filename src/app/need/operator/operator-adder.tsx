@@ -9,16 +9,38 @@ import {
 } from "react";
 import Image from "next/image";
 import { useAtom } from "jotai";
-import {
-  type Operator,
-  operatorList,
-  RECENT_OPERATOR_ID,
-} from "@/data/operator";
+import { type Operator, operatorList } from "@/data/operator";
 import { selectedOperatorsAtom, showFutureAtom } from "@/store";
 import { useModal } from "@/hooks";
 
 /** 검색 결과 최대 개수 */
 const MAX_DATA_COUNT = 5;
+
+const getLatestGlobalSixStarReleaseOrder = () => {
+  const globalSixStarOrderList = operatorList
+    .filter((operator) => {
+      return operator.server !== "future" && operator.rarity === 6;
+    })
+    .map((operator) => {
+      return operator.releaseInfo?.order ?? Number.MIN_SAFE_INTEGER;
+    });
+
+  return Math.max(...globalSixStarOrderList);
+};
+
+const sortOperatorsByReleaseOrderAsc = (
+  operatorA: Operator,
+  operatorB: Operator,
+) => {
+  const orderA = operatorA.releaseInfo?.order ?? Number.MAX_SAFE_INTEGER;
+  const orderB = operatorB.releaseInfo?.order ?? Number.MAX_SAFE_INTEGER;
+
+  if (orderA !== orderB) {
+    return orderA - orderB;
+  }
+
+  return operatorA.id.localeCompare(operatorB.id);
+};
 
 /** 오퍼레이터 한 명을 추가하는 컴포넌트 */
 export default function OperatorAdder() {
@@ -49,13 +71,19 @@ export default function OperatorAdder() {
   /** 검색 문자열 또는 미래시에 해당하는 오퍼레이터 목록 */
   const searchedData = useMemo<Operator[]>(() => {
     if (showFuture) {
-      return operatorList.toReversed().filter((operator) => {
-        return (
-          operator.id > RECENT_OPERATOR_ID &&
-          operator.rarity === 6 &&
-          !selectedOperators.includes(operator.id)
-        );
-      });
+      const latestGlobalReleaseOrder = getLatestGlobalSixStarReleaseOrder();
+
+      return operatorList
+        .filter((operator) => {
+          return (
+            operator.rarity === 6 &&
+            operator.growthType === "normal" &&
+            (operator.server === "future" ||
+              operator.releaseInfo?.order === latestGlobalReleaseOrder) &&
+            !selectedOperators.includes(operator.id)
+          );
+        })
+        .sort(sortOperatorsByReleaseOrderAsc);
     }
 
     const lowerSearchText = searchText.trim().toLowerCase();
@@ -69,7 +97,10 @@ export default function OperatorAdder() {
     let matchedOperator: Operator | undefined;
 
     for (const operator of operatorList) {
-      if (selectedOperators.includes(operator.id)) {
+      if (
+        selectedOperators.includes(operator.id) ||
+        operator.growthType === "roguelike"
+      ) {
         continue;
       }
 

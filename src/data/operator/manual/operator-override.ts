@@ -1919,6 +1919,19 @@ export const operatorOverrideList: OperatorOverride[] = [
     ],
   },
   {
+    charId: "char_4230_mcnist",
+    translatedName: "메커니스트",
+    translatedSkillNames: {
+      skchr_mcnist_1: "군집 분석",
+      skchr_mcnist_2: "협동방어 술식",
+      skchr_mcnist_3: "공학 유성우",
+    },
+    translatedModuleNames: {
+      "SO-α": "메커니스트의 특근 배지",
+    },
+    growthType: "roguelike",
+  },
+  {
     charId: "char_4234_pedro",
     legacyId: 419,
     translatedName: "페드로",

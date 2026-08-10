@@ -67,7 +67,12 @@ const createDefaultOperatorTarget = (operator: Operator): OperatorTarget => {
   const targetElite = MAX_ELITE_TABLE[operator.rarity];
 
   const skillLevels = operator.skillList.map((skill, index) => {
-    const target = operator.preferSkillList?.includes(skill)
+    const isPreferredSkill =
+      operator.preferSkillIndexes?.includes(index as 0 | 1 | 2) ??
+      operator.preferSkillList?.includes(skill) ??
+      false;
+
+    const target = isPreferredSkill
       ? SKILL_MAX_LEVEL_TABLE[targetElite]
       : SKILL_MAX_LEVEL_TABLE[Math.max(0, targetElite - 1) as EliteNumber];
 
@@ -80,9 +85,13 @@ const createDefaultOperatorTarget = (operator: Operator): OperatorTarget => {
   });
 
   const moduleLevels = operator.moduleList.map((module) => {
-    const preferredModule = operator.preferModuleList?.find(
-      (preference) => preference.module.type === module.type,
-    );
+    const preferredModule =
+      operator.preferModules?.find((preference) => {
+        return preference.type === module.type;
+      }) ??
+      operator.preferModuleList?.find((preference) => {
+        return preference.module.type === module.type;
+      });
 
     return {
       type: module.type,

@@ -8,8 +8,6 @@
     "start": "next start",
     "lint": "eslint .",
     "extract:operator-overrides": "tsx scripts/operator-meta/extract-operator-overrides.ts",
-    "inspect:activity-table": "tsx scripts/operator-release/inspect-activity-table.ts",
-    "scan:character-first-appearance": "tsx scripts/operator-release/scan-character-first-appearance.ts",
     "check:gamedata": "tsx scripts/operator-release/check-gamedata-path.ts",
     "check:cn-gamedata": "tsx scripts/operator-release/check-cn-gamedata-path.ts",
     "scan:operator-release": "tsx scripts/operator-release/scan-release-candidates.ts",

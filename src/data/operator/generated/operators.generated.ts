@@ -140,7 +140,10 @@ export type GeneratedSkillMasteryMaterials = {
 
 export type GeneratedSkillUpgradeMaterials = {
   common: GeneratedCommonSkillUpgradeMaterials;
-} & Record<string, GeneratedCommonSkillUpgradeMaterials | GeneratedSkillMasteryMaterials>;
+} & Record<
+  string,
+  GeneratedCommonSkillUpgradeMaterials | GeneratedSkillMasteryMaterials
+>;
 
 export type GeneratedModuleInfo = {
   type: string;
@@ -199,9 +202,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 425,
 
     name: "안젤리나 더 멜로우 위시",
-    nicknameList: [
-      "날리",
-    ],
+    nicknameList: ["날리"],
 
     imageFilename: "angelina-the-mellow-wish",
 
@@ -249,14 +250,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "초고속 배송",
-      "중력 커스터마이징",
-      "라임의 속마음",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["초고속 배송", "중력 커스터마이징", "라임의 속마음"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -517,14 +512,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'안 가고 뭐 해?'",
-      "'천천히 가~'",
-      "'가지 마!'",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["'안 가고 뭐 해?'", "'천천히 가~'", "'가지 마!'"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -851,10 +840,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "기술과 전통 의식",
-    ],
+    skillList: ["공격 강화 γ", "기술과 전통 의식"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -1123,10 +1109,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지원지령γ",
-      "양산 아래의 그늘",
-    ],
+    skillList: ["지원지령γ", "양산 아래의 그늘"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -1190,7 +1173,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "지원지령γ": {
+      지원지령γ: {
         "8": [
           {
             material: skillSummary3,
@@ -1346,14 +1329,14 @@ export const generatedOperatorList: GeneratedOperator[] = [
   {
     id: "char_4230_mcnist",
 
-    name: "机械师",
+    name: "메커니스트",
 
     imageFilename: "mechanist",
 
     class: "Defender",
     rarity: 6,
 
-    growthType: "normal",
+    growthType: "roguelike",
     server: "future",
     releaseInfo: {
       eventId: "dis_rogue_6",
@@ -1394,11 +1377,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "聚类分析",
-      "协防术式",
-      "工程学十字星",
-    ],
+    skillList: ["군집 분석", "협동방어 술식", "공학 유성우"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -1470,7 +1449,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "聚类分析": {
+      "군집 분석": {
         "8": [
           {
             material: skillSummary3,
@@ -1514,7 +1493,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "协防术式": {
+      "협동방어 술식": {
         "8": [
           {
             material: skillSummary3,
@@ -1558,7 +1537,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "工程学十字星": {
+      "공학 유성우": {
         "8": [
           {
             material: skillSummary3,
@@ -1607,7 +1586,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "SO-α",
-        name: "机械师特勤证章",
+        name: "메커니스트의 특근 배지",
         charEquipOrder: 4,
         server: "future",
       },
@@ -1666,14 +1645,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "연속 투영",
-      "임계 순폭",
-      "혼돈의 본질",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["연속 투영", "임계 순폭", "혼돈의 본질"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -2000,10 +1973,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "표식 사격",
-      "교대 철수",
-    ],
+    skillList: ["표식 사격", "교대 철수"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -2165,9 +2135,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 418,
 
     name: "음양인 오키드",
-    nicknameList: [
-      "활키드",
-    ],
+    nicknameList: ["활키드"],
 
     imageFilename: "violet-mizutsune-orchid",
 
@@ -2215,14 +2183,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강사",
-      "비상 노려쏘기",
-      "용화살",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["강사", "비상 노려쏘기", "용화살"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -2294,7 +2256,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "강사": {
+      강사: {
         "8": [
           {
             material: skillSummary3,
@@ -2382,7 +2344,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "용화살": {
+      용화살: {
         "8": [
           {
             material: skillSummary3,
@@ -2549,10 +2511,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고압회전베기",
-      "초고출력 속성해방베기",
-    ],
+    skillList: ["고압회전베기", "초고출력 속성해방베기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -2616,7 +2575,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "고압회전베기": {
+      고압회전베기: {
         "8": [
           {
             material: skillSummary3,
@@ -2861,15 +2820,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "응급 교정 방어선",
-      "보호성 차단",
-      "자유로운 환생",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["응급 교정 방어선", "보호성 차단", "자유로운 환생"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -3130,10 +3082,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "세척",
-      "붕괴",
-    ],
+    skillList: ["세척", "붕괴"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -3197,7 +3146,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "세척": {
+      세척: {
         "8": [
           {
             material: skillSummary3,
@@ -3241,7 +3190,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "붕괴": {
+      붕괴: {
         "8": [
           {
             material: skillSummary3,
@@ -3767,15 +3716,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "재귀함수",
-      "모델 확장",
-      "Q.E.D.",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["재귀함수", "모델 확장", "Q.E.D."],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -3847,7 +3789,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "재귀함수": {
+      재귀함수: {
         "8": [
           {
             material: skillSummary3,
@@ -4107,10 +4049,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "결코 멈추지 않으리",
       "막을 수 없는 행진",
     ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -4437,10 +4376,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고조파 파괴",
-      "정역의 메아리",
-    ],
+    skillList: ["고조파 파괴", "정역의 메아리"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -4709,10 +4645,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "화검의 비주",
-      "'숨바꼭질!'",
-    ],
+    skillList: ["화검의 비주", "'숨바꼭질!'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -4981,10 +4914,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "합주의 시작",
-      "피날레까지",
-    ],
+    skillList: ["합주의 시작", "피날레까지"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -5092,7 +5022,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "피날레까지": {
+      피날레까지: {
         "8": [
           {
             material: skillSummary3,
@@ -5253,14 +5183,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "가주의 여유",
-      "군사의 수단",
-      "청산",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["가주의 여유", "군사의 수단", "청산"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -5420,7 +5344,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "청산": {
+      청산: {
         "8": [
           {
             material: skillSummary3,
@@ -5540,9 +5464,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 404,
 
     name: "첸 더 던스트릭",
-    nicknameList: [
-      "삼첸",
-    ],
+    nicknameList: ["삼첸"],
 
     imageFilename: "chen-the-dawnstreak",
 
@@ -5590,14 +5512,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "적소·분야",
-      "적소·절영-치",
-      "적소·천위",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["적소·분야", "적소·절영-치", "적소·천위"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -5924,14 +5840,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "기세",
-      "삼연성",
-      "천하겁",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["기세", "삼연성", "천하겁"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -6003,7 +5913,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "기세": {
+      기세: {
         "8": [
           {
             material: skillSummary3,
@@ -6047,7 +5957,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "삼연성": {
+      삼연성: {
         "8": [
           {
             material: skillSummary3,
@@ -6091,7 +6001,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "천하겁": {
+      천하겁: {
         "8": [
           {
             material: skillSummary3,
@@ -6258,10 +6168,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "당기기 어려운 활",
-      "타기 어려운 날개",
-    ],
+    skillList: ["당기기 어려운 활", "타기 어려운 날개"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -6530,10 +6437,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "닿을 곳 없는 마음",
-      "바람 끝에 올라",
-    ],
+    skillList: ["닿을 곳 없는 마음", "바람 끝에 올라"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -6742,10 +6646,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'산속의 기쁨'",
-      "'신전의 잔불'",
-    ],
+    skillList: ["'산속의 기쁨'", "'신전의 잔불'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -7014,14 +6915,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "부식 지연",
-      "밀봉 보호",
-      "지난날의 만개",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["부식 지연", "밀봉 보호", "지난날의 만개"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -7348,10 +7243,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "급류",
-      "동포의 의지",
-    ],
+    skillList: ["급류", "동포의 의지"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -7415,7 +7307,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "급류": {
+      급류: {
         "8": [
           {
             material: skillSummary3,
@@ -7620,14 +7512,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'호위'",
-      "'집행'",
-      "보금자리",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["'호위'", "'집행'", "보금자리"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -7787,7 +7673,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "보금자리": {
+      보금자리: {
         "8": [
           {
             material: skillSummary3,
@@ -7954,10 +7840,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "오리지늄 화약의 행차",
-      "전자 펄스의 은총",
-    ],
+    skillList: ["오리지늄 화약의 행차", "전자 펄스의 은총"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -8166,10 +8049,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전면 휴업",
-      "충격형 안내",
-    ],
+    skillList: ["전면 휴업", "충격형 안내"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -8391,9 +8271,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 395,
 
     name: "실버애쉬 더 레인프로스트",
-    nicknameList: [
-      "레재",
-    ],
+    nicknameList: ["레재"],
 
     imageFilename: "silverash-the-reignfrost",
 
@@ -8441,15 +8319,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "대응 계책",
-      "적을 막는 예봉",
-      "변혁의 도래",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["대응 계책", "적을 막는 예봉", "변혁의 도래"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -8710,15 +8581,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "눈을 부르는 종소리",
-      "산을 뒤덮는 서리",
-      "뭇산의 순종",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["눈을 부르는 종소리", "산을 뒤덮는 서리", "뭇산의 순종"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -9045,14 +8909,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "반짝이는 항성도",
-      "별무리 인력",
-      "병렬 사슬",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["반짝이는 항성도", "별무리 인력", "병렬 사슬"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -9373,10 +9231,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "사막 전술 개량",
-      "카른사이프의 칼날",
-    ],
+    skillList: ["사막 전술 개량", "카른사이프의 칼날"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -9585,10 +9440,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "역박의 울림",
-      "진폭 조율",
-    ],
+    skillList: ["역박의 울림", "진폭 조율"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -9853,10 +9705,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "눈보라 쇠뇌",
-    ],
+    skillList: ["강타 β", "눈보라 쇠뇌"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -10125,14 +9974,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공명붕괴",
-      "의식 연계",
-      "침묵이 곧 진실",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["공명붕괴", "의식 연계", "침묵이 곧 진실"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -10204,7 +10047,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "공명붕괴": {
+      공명붕괴: {
         "8": [
           {
             material: skillSummary3,
@@ -10459,10 +10302,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "절경을 향한 저항",
-      "생존 의지",
-    ],
+    skillList: ["절경을 향한 저항", "생존 의지"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -10731,10 +10571,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "데이터 분석",
-      "합리적인 원인 분석",
-    ],
+    skillList: ["데이터 분석", "합리적인 원인 분석"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -10952,9 +10789,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 386,
 
     name: "토가와 사키코",
-    nicknameList: [
-      "사키코",
-    ],
+    nicknameList: ["사키코"],
 
     imageFilename: "togawa-sakiko",
 
@@ -11002,16 +10837,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "초승달의 각성",
-      "보름달의 무도회",
-      "그믐달의 여운",
-    ],
-    preferSkillIndexes: [
-      0,
-      1,
-      2,
-    ],
+    skillList: ["초승달의 각성", "보름달의 무도회", "그믐달의 여운"],
+    preferSkillIndexes: [0, 1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -11291,9 +11118,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 382,
 
     name: "와카바 무츠미",
-    nicknameList: [
-      "무츠미",
-    ],
+    nicknameList: ["무츠미"],
 
     imageFilename: "wakaba-mutsumi",
 
@@ -11341,13 +11166,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "다두의 괴수",
-      "파괴와 재생",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["다두의 괴수", "파괴와 재생"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -11575,9 +11395,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 384,
 
     name: "미스미 우이카",
-    nicknameList: [
-      "우이카",
-    ],
+    nicknameList: ["우이카"],
 
     imageFilename: "misumi-uika",
 
@@ -11625,13 +11443,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "내가 그리워하는 것",
-      "내가 슬퍼하는 것",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["내가 그리워하는 것", "내가 슬퍼하는 것"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -11859,9 +11672,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 385,
 
     name: "유텐지 냐무",
-    nicknameList: [
-      "냐무",
-    ],
+    nicknameList: ["냐무"],
 
     imageFilename: "y-tenji-nyamu",
 
@@ -11909,13 +11720,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "불처럼 뜨겁게",
-      "보리처럼 굳세게",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["불처럼 뜨겁게", "보리처럼 굳세게"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -12143,9 +11949,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 383,
 
     name: "야하타 우미리",
-    nicknameList: [
-      "우미리",
-    ],
+    nicknameList: ["우미리"],
 
     imageFilename: "yahata-umiri",
 
@@ -12193,13 +11997,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전율의 현",
-      "머물 곳 없는 자",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["전율의 현", "머물 곳 없는 자"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -12427,9 +12226,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 380,
 
     name: "호시구마 더 브리처",
-    nicknameList: [
-      "수구마",
-    ],
+    nicknameList: ["수구마"],
 
     imageFilename: "hoshiguma-the-breacher",
 
@@ -12477,15 +12274,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "악업과보",
-      "무시무명",
-      "지옥변상",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["악업과보", "무시무명", "지옥변상"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -12557,7 +12347,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "악업과보": {
+      악업과보: {
         "8": [
           {
             material: skillSummary3,
@@ -12601,7 +12391,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "무시무명": {
+      무시무명: {
         "8": [
           {
             material: skillSummary3,
@@ -12645,7 +12435,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "지옥변상": {
+      지옥변상: {
         "8": [
           {
             material: skillSummary3,
@@ -12812,10 +12602,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "입장 배치",
-      "만수성국",
-    ],
+    skillList: ["입장 배치", "만수성국"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -12923,7 +12710,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "만수성국": {
+      만수성국: {
         "8": [
           {
             material: skillSummary3,
@@ -13024,15 +12811,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "밤의 파울비스트",
-      "틈새의 반딧불",
-      "늦여름의 린수",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["밤의 파울비스트", "틈새의 반딧불", "늦여름의 린수"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -13359,10 +13139,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "어서 오세요!",
-      "운수대통!",
-    ],
+    skillList: ["어서 오세요!", "운수대통!"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -13584,9 +13361,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 376,
 
     name: "레이즈 더 썬더브링어",
-    nicknameList: [
-      "근첩",
-    ],
+    nicknameList: ["근첩"],
 
     imageFilename: "leizi-the-thunderbringer",
 
@@ -13634,16 +13409,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "호기장존",
-      "천뢰지위",
-      "천지통명",
-    ],
-    preferSkillIndexes: [
-      0,
-      1,
-      2,
-    ],
+    skillList: ["호기장존", "천뢰지위", "천지통명"],
+    preferSkillIndexes: [0, 1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -13715,7 +13482,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "호기장존": {
+      호기장존: {
         "8": [
           {
             material: skillSummary3,
@@ -13759,7 +13526,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "천뢰지위": {
+      천뢰지위: {
         "8": [
           {
             material: skillSummary3,
@@ -13803,7 +13570,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "천지통명": {
+      천지통명: {
         "8": [
           {
             material: skillSummary3,
@@ -13970,10 +13737,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "문일지십",
-      "약간의 요령",
-    ],
+    skillList: ["문일지십", "약간의 요령"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -14037,7 +13801,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "문일지십": {
+      문일지십: {
         "8": [
           {
             material: skillSummary3,
@@ -14195,9 +13959,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 374,
 
     name: "트라고디아",
-    nicknameList: [
-      "보텀",
-    ],
+    nicknameList: ["보텀"],
 
     imageFilename: "tragodia",
 
@@ -14245,15 +14007,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "밤의 메아리",
-      "집단적 섬망",
-      "빈 극장",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["밤의 메아리", "집단적 섬망", "빈 극장"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -14580,10 +14335,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전문 페인팅 기술",
-      "긴급 이동 안내",
-    ],
+    skillList: ["전문 페인팅 기술", "긴급 이동 안내"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -14792,10 +14544,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "식사 에티켓",
-      "과음의 연회",
-    ],
+    skillList: ["식사 에티켓", "과음의 연회"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -15017,9 +14766,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 370,
 
     name: "엑시아 더 뉴 커버넌트",
-    nicknameList: [
-      "신시아",
-    ],
+    nicknameList: ["신시아"],
 
     imageFilename: "exusiai-the-new-covenant",
 
@@ -15067,15 +14814,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "하늘 대청소",
-      "발포 중독증",
-      "신속배달!",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["하늘 대청소", "발포 중독증", "신속배달!"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -15402,10 +15142,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "두개골 파열 엘레지",
-      "가슴을 가르는 미사",
-    ],
+    skillList: ["두개골 파열 엘레지", "가슴을 가르는 미사"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -15654,15 +15391,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "재회 인사",
-      "귀향의 약속",
-      "예포 - 강제적인 추모",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["재회 인사", "귀향의 약속", "예포 - 강제적인 추모"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -15989,11 +15719,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "총기사 시험관",
-      "여덟팔 전기톱맨",
-      "은퇴 전 포교",
-    ],
+    skillList: ["총기사 시험관", "여덟팔 전기톱맨", "은퇴 전 포교"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -16372,10 +16098,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "에어 부스터",
-      "'만근추'",
-    ],
+    skillList: ["에어 부스터", "'만근추'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -16597,9 +16320,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 366,
 
     name: "Mon3tr",
-    nicknameList: [
-      "몬삼터",
-    ],
+    nicknameList: ["몬삼터"],
 
     imageFilename: "mon3tr",
 
@@ -16647,15 +16368,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "책략: 초연결",
-      "책략: 과부하",
-      "책략: 용해",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["책략: 초연결", "책략: 과부하", "책략: 용해"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -16982,10 +16696,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격으로 방어",
-      "무허발",
-    ],
+    skillList: ["공격으로 방어", "무허발"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -17089,7 +16800,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "무허발": {
+      무허발: {
         "8": [
           {
             material: skillSummary3,
@@ -17250,10 +16961,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'짐승 퇴치 전용'",
-      "'견석 전용'",
-    ],
+    skillList: ["'짐승 퇴치 전용'", "'견석 전용'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -17522,10 +17230,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "익숙한 것",
-      "조련 가능한 것",
-    ],
+    skillList: ["익숙한 것", "조련 가능한 것"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -17794,14 +17499,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "저주받은 염원",
-      "무너지는 부패",
-      "왕관으로 빛나는 죽음",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["저주받은 염원", "무너지는 부패", "왕관으로 빛나는 죽음"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -18128,15 +17827,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "장미의 흔적",
-      "진홍빛 장벽",
-      "영혼과 욕망의 이별",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["장미의 흔적", "진홍빛 장벽", "영혼과 욕망의 이별"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -18521,10 +18213,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "멈추지 않는 걸음",
-      "끊기지 않는 생명",
-    ],
+    skillList: ["멈추지 않는 걸음", "끊기지 않는 생명"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -18746,9 +18435,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 358,
 
     name: "블레이즈 디 이그나이팅 스파크",
-    nicknameList: [
-      "술무라",
-    ],
+    nicknameList: ["술무라"],
 
     imageFilename: "blaze-the-igniting-spark",
 
@@ -18796,14 +18483,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "화끈한 지원",
-      "끓어오르는 피의 불꽃",
-      "만악의 소각장",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["화끈한 지원", "끓어오르는 피의 불꽃", "만악의 소각장"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -19188,15 +18869,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "오늘의 주인공",
-      "귀빈 대접",
-      "부엌 속 세상",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["오늘의 주인공", "귀빈 대접", "부엌 속 세상"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -19523,13 +19197,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "탐색",
-      "통찰",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["탐색", "통찰"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -19593,7 +19262,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "탐색": {
+      탐색: {
         "8": [
           {
             material: skillSummary3,
@@ -19637,7 +19306,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "통찰": {
+      통찰: {
         "8": [
           {
             material: skillSummary3,
@@ -19804,10 +19473,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "수많은 저서",
-      "정성이 담긴 음식",
-    ],
+    skillList: ["수많은 저서", "정성이 담긴 음식"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -20029,9 +19695,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 354,
 
     name: "쏜즈 더 로드스타",
-    nicknameList: [
-      "쏜별",
-    ],
+    nicknameList: ["쏜별"],
 
     imageFilename: "thorns-the-lodestar",
 
@@ -20079,16 +19743,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "파도 측정",
-      "해일 분해",
-      "'나의 바다'",
-    ],
-    preferSkillIndexes: [
-      0,
-      1,
-      2,
-    ],
+    skillList: ["파도 측정", "해일 분해", "'나의 바다'"],
+    preferSkillIndexes: [0, 1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -20409,13 +20065,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "최상의 응급약",
-      "절묘한 장기효과약",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["최상의 응급약", "절묘한 장기효과약"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -20690,10 +20341,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "관절 고정",
-      "자유로운 표현",
-    ],
+    skillList: ["관절 고정", "자유로운 표현"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -20915,9 +20563,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 350,
 
     name: "라플란드 더 데카덴차",
-    nicknameList: [
-      "꼬술이",
-    ],
+    nicknameList: ["꼬술이"],
 
     imageFilename: "lappland-the-decadenza",
 
@@ -20965,14 +20611,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "나태한 자의 비명",
-      "사냥의 질주",
-      "종막 - 재난",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["나태한 자의 비명", "사냥의 질주", "종막 - 재난"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -21299,14 +20939,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "시야 차단 연막",
-      "포연과 진폭",
-      "봉화 처형장",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["시야 차단 연막", "포연과 진폭", "봉화 처형장"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -21644,9 +21278,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 351,
 
     name: "불피스폴리아",
-    nicknameList: [
-      "스즈맘",
-    ],
+    nicknameList: ["스즈맘"],
 
     imageFilename: "vulpisfoglia",
 
@@ -21694,14 +21326,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "가벼운 징계",
-      "칼날 낙하 고문",
-      "은밀한 여우의 예술",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["가벼운 징계", "칼날 낙하 고문", "은밀한 여우의 예술"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -22086,10 +21712,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "영혼의 강의 보호",
-      "죽음의 강의 저주",
-    ],
+    skillList: ["영혼의 강의 보호", "죽음의 강의 저주"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -22358,10 +21981,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "재단용 자",
-      "재봉실 속박",
-    ],
+    skillList: ["재단용 자", "재봉실 속박"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -22630,13 +22250,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "긴급 이륙",
-      "하늘을 가르는 비행",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["긴급 이륙", "하늘을 가르는 비행"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -22841,14 +22456,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "영광을 되찾아",
-      "고향을 향해",
-      "모두 내 이름으로",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["영광을 되찾아", "고향을 향해", "모두 내 이름으로"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -23233,10 +22842,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "세월의 단련",
-      "전화의 담금질",
-    ],
+    skillList: ["세월의 단련", "전화의 담금질"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -23505,10 +23111,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "비평화적 설득",
-      "'통행금지'",
-    ],
+    skillList: ["비평화적 설득", "'통행금지'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -23777,14 +23380,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "수재의 실력",
-      "사역마 소환",
-      "폭파 마법",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["수재의 실력", "사역마 소환", "폭파 마법"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -24111,10 +23708,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "겁쟁이 검돌이",
-      "위협 전법",
-    ],
+    skillList: ["겁쟁이 검돌이", "위협 전법"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -24383,10 +23977,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "1인분 요리",
-      "연회용 마물 요리",
-    ],
+    skillList: ["1인분 요리", "연회용 마물 요리"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -24655,13 +24246,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "피킹 툴",
-      "임기응변",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["피킹 툴", "임기응변"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -24769,7 +24355,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "임기응변": {
+      임기응변: {
         "8": [
           {
             material: skillSummary3,
@@ -24936,14 +24522,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "도장!",
-      "혼돈 제압 망치",
-      "시간의 진동",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["도장!", "혼돈 제압 망치", "시간의 진동"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -25296,14 +24876,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "회전 칼날",
-      "악몽",
-      "탄일",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["회전 칼날", "악몽", "탄일"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -25419,7 +24993,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "악몽": {
+      악몽: {
         "8": [
           {
             material: skillSummary3,
@@ -25463,7 +25037,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "탄일": {
+      탄일: {
         "8": [
           {
             material: skillSummary3,
@@ -25688,10 +25262,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "번뜩이는 생각",
-      "벼락치기",
-    ],
+    skillList: ["번뜩이는 생각", "벼락치기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -25799,7 +25370,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "벼락치기": {
+      벼락치기: {
         "8": [
           {
             material: skillSummary3,
@@ -25960,10 +25531,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "태엽감기",
-      "현권이동",
-    ],
+    skillList: ["태엽감기", "현권이동"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -26027,7 +25595,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "태엽감기": {
+      태엽감기: {
         "8": [
           {
             material: skillSummary3,
@@ -26071,7 +25639,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "현권이동": {
+      현권이동: {
         "8": [
           {
             material: skillSummary3,
@@ -26232,13 +25800,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'올드 켈리'",
-      "'빅 래리'",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["'올드 켈리'", "'빅 래리'"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -26507,15 +26070,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "디얄 일격",
-      "공포의 폭파",
-      "마음의 붕괴",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["디얄 일격", "공포의 폭파", "마음의 붕괴"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -26900,10 +26456,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "원격 해체",
-      "내압 출력",
-    ],
+    skillList: ["원격 해체", "내압 출력"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -27172,10 +26725,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "현혹성 해류도",
-      "저지성 현색제",
-    ],
+    skillList: ["현혹성 해류도", "저지성 현색제"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -27444,10 +26994,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "침입파괴 대응",
-      "행동능력 박탈",
-    ],
+    skillList: ["침입파괴 대응", "행동능력 박탈"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -27716,15 +27263,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "이뤄져야 할 만남",
-      "지켜야 할 선",
-      "개척해야 할 길",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["이뤄져야 할 만남", "지켜야 할 선", "개척해야 할 길"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -28051,14 +27591,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "국부적 청산",
-      "가득한 복수심",
-      "작열하는 여명",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["국부적 청산", "가득한 복수심", "작열하는 여명"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -28385,10 +27919,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "적을 뚫는 창",
-      "전선 사수",
-    ],
+    skillList: ["적을 뚫는 창", "전선 사수"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -28657,15 +28188,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "몰망",
-      "제유",
-      "확장 시야",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["몰망", "제유", "확장 시야"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -28737,7 +28261,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "몰망": {
+      몰망: {
         "8": [
           {
             material: skillSummary3,
@@ -28781,7 +28305,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "제유": {
+      제유: {
         "8": [
           {
             material: skillSummary3,
@@ -29003,9 +28527,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 326,
 
     name: "시빌라이트 에테르나",
-    nicknameList: [
-      "마왕",
-    ],
+    nicknameList: ["마왕"],
 
     imageFilename: "civilight-eterna",
 
@@ -29053,14 +28575,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "과거의 여운",
-      "아득한 미래",
-      "재구성된 현재",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["과거의 여운", "아득한 미래", "재구성된 현재"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -29427,10 +28943,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "마그네틱 디펜스",
-    ],
+    skillList: ["강타 β", "마그네틱 디펜스"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -29695,10 +29208,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "작렬하는 불꽃",
-      "주조 망치의 힘",
-    ],
+    skillList: ["작렬하는 불꽃", "주조 망치의 힘"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -29967,14 +29477,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "추격",
-      "은총",
-      "강림",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["추격", "은총", "강림"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -30046,7 +29550,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "추격": {
+      추격: {
         "8": [
           {
             material: skillSummary3,
@@ -30090,7 +29594,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "은총": {
+      은총: {
         "8": [
           {
             material: skillSummary3,
@@ -30134,7 +29638,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "강림": {
+      강림: {
         "8": [
           {
             material: skillSummary3,
@@ -30359,10 +29863,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "파워 클리닝",
-      "미끄럼 주의",
-    ],
+    skillList: ["파워 클리닝", "미끄럼 주의"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -30584,9 +30085,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 319,
 
     name: "Ela",
-    nicknameList: [
-      "엘라",
-    ],
+    nicknameList: ["엘라"],
 
     imageFilename: "ela",
 
@@ -30634,14 +30133,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "옵티컬 인터퍼런스",
-      "쇼크 디펜스",
-      "'보삭 템페스트'",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["옵티컬 인터퍼런스", "쇼크 디펜스", "'보삭 템페스트'"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -30921,9 +30414,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 317,
 
     name: "Iana",
-    nicknameList: [
-      "야나",
-    ],
+    nicknameList: ["야나"],
 
     imageFilename: "iana",
 
@@ -30971,10 +30462,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "홀로그램 트랩",
-      "전지자의 전술",
-    ],
+    skillList: ["홀로그램 트랩", "전지자의 전술"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -31196,9 +30684,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 318,
 
     name: "Doc",
-    nicknameList: [
-      "닥",
-    ],
+    nicknameList: ["닥"],
 
     imageFilename: "doc",
 
@@ -31246,10 +30732,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "폭력 대응",
-      "자극제 권총",
-    ],
+    skillList: ["폭력 대응", "자극제 권총"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -31471,9 +30954,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 316,
 
     name: "Fuze",
-    nicknameList: [
-      "퓨즈",
-    ],
+    nicknameList: ["퓨즈"],
 
     imageFilename: "fuze",
 
@@ -31521,10 +31002,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "화력 정찰",
-      "접착식 집속탄",
-    ],
+    skillList: ["화력 정찰", "접착식 집속탄"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -31793,10 +31271,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "취인난무",
-    ],
+    skillList: ["돌격 지령 γ", "취인난무"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -31904,7 +31379,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "취인난무": {
+      취인난무: {
         "8": [
           {
             material: skillSummary3,
@@ -32065,14 +31540,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "은택 받은 초목",
-      "가득 쌓인 곡식",
-      "우거진 성쇠",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["은택 받은 초목", "가득 쌓인 곡식", "우거진 성쇠"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -32399,10 +31868,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지원 지령 γ",
-      "동풍에 응답",
-    ],
+    skillList: ["지원 지령 γ", "동풍에 응답"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -32671,15 +32137,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "파로",
-      "위험 감수",
-      "염국 보우",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["파로", "위험 감수", "염국 보우"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -32751,7 +32210,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "파로": {
+      파로: {
         "8": [
           {
             material: skillSummary3,
@@ -33064,10 +32523,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "대나무 피리 소리",
-      "정겨운 고향 소리",
-    ],
+    skillList: ["대나무 피리 소리", "정겨운 고향 소리"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -33336,10 +32792,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "버닝 플레임",
-      "스코칭 스트림",
-    ],
+    skillList: ["버닝 플레임", "스코칭 스트림"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -33608,14 +33061,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "쏜살",
-      "광역 경계",
-      "'빛을 보았다'",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["쏜살", "광역 경계", "'빛을 보았다'"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -33687,7 +33134,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "쏜살": {
+      쏜살: {
         "8": [
           {
             material: skillSummary3,
@@ -34000,10 +33447,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "일호백응",
-    ],
+    skillList: ["신속 공격 γ", "일호백응"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -34111,7 +33555,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "일호백응": {
+      일호백응: {
         "8": [
           {
             material: skillSummary3,
@@ -34272,10 +33716,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치료 강화 γ",
-      "중증 우선",
-    ],
+    skillList: ["치료 강화 γ", "중증 우선"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -34544,14 +33985,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "순수한 무력",
-      "침묵의 비웃음",
-      "조용한 마무리",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["순수한 무력", "침묵의 비웃음", "조용한 마무리"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -34889,9 +34324,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 305,
 
     name: "비르투오사",
-    nicknameList: [
-      "아르투리아",
-    ],
+    nicknameList: ["아르투리아"],
 
     imageFilename: "virtuosa",
 
@@ -34939,15 +34372,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'골든 엑스터시'",
-      "'레퀴엠 매스'",
-      "'리버럴 탱고'",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["'골든 엑스터시'", "'레퀴엠 매스'", "'리버럴 탱고'"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -35332,11 +34758,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 γ",
-      "신념의 충돌",
-      "서약 파기",
-    ],
+    skillList: ["강타 γ", "신념의 충돌", "서약 파기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -35715,14 +35137,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "찰나의 그림자 칼날",
-      "촛불의 그림자",
-      "'명멸'",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["찰나의 그림자 칼날", "촛불의 그림자", "'명멸'"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -36107,13 +35523,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "두 배의 즐거움",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["강타 β", "두 배의 즐거움"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -36384,10 +35795,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "응급처치",
-      "차분한 베이스",
-    ],
+    skillList: ["응급처치", "차분한 베이스"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -36451,7 +35859,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "응급처치": {
+      응급처치: {
         "8": [
           {
             material: skillSummary3,
@@ -36656,10 +36064,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "레이저 관통",
-      "열처리 변색",
-    ],
+    skillList: ["레이저 관통", "열처리 변색"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -36928,15 +36333,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "꺼지지 않는 칼날의 불",
-      "잿불의 중임",
-      "죽음의 연기",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["꺼지지 않는 칼날의 불", "잿불의 중임", "죽음의 연기"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -37325,10 +36723,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "청록의 장벽",
-      "양날의 독넝쿨",
-    ],
+    skillList: ["청록의 장벽", "양날의 독넝쿨"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -37593,10 +36988,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'집중'",
-      "'선공'",
-    ],
+    skillList: ["'집중'", "'선공'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -37865,10 +37257,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전술 영창 γ",
-      "가시덤불의 보우",
-    ],
+    skillList: ["전술 영창 γ", "가시덤불의 보우"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -38090,9 +37479,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 294,
 
     name: "제시카 더 리버레이티드",
-    nicknameList: [
-      "빵시카",
-    ],
+    nicknameList: ["빵시카"],
 
     imageFilename: "jessica-the-liberated",
 
@@ -38140,14 +37527,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전선 고수",
-      "엄폐 호위",
-      "집중 사격",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["전선 고수", "엄폐 호위", "집중 사격"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -38532,10 +37913,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "파티 나이트",
-    ],
+    skillList: ["공격 강화 γ", "파티 나이트"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -38804,10 +38182,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "마그네틱 그랩",
-      "파워 트렉션",
-    ],
+    skillList: ["마그네틱 그랩", "파워 트렉션"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -39029,9 +38404,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 288,
 
     name: "에이야퍄들라 더 크비트 아스카",
-    nicknameList: [
-      "힐이야",
-    ],
+    nicknameList: ["힐이야"],
 
     imageFilename: "eyjafjalla-the-hv-t-aska",
 
@@ -39079,15 +38452,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "소리 없는 윤택",
-      "구름 안개의 보우",
-      "화산의 메아리",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["소리 없는 윤택", "구름 안개의 보우", "화산의 메아리"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -39425,9 +38791,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 287,
 
     name: "스와이어 디 엘리건트 위트",
-    nicknameList: [
-      "수와이어",
-    ],
+    nicknameList: ["수와이어"],
 
     imageFilename: "swire-the-elegant-wit",
 
@@ -39475,15 +38839,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "재물보다 의리",
-      "'웰컴 드링크'",
-      "거금 쾌척",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["재물보다 의리", "'웰컴 드링크'", "거금 쾌척"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -39898,10 +39255,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "흙과 바위의 뚝심",
-    ],
+    skillList: ["강타 β", "흙과 바위의 뚝심"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -40170,10 +39524,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "공사자의 소원",
-    ],
+    skillList: ["돌격 지령 γ", "공사자의 소원"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -40442,10 +39793,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "붕괴 전을 예견",
-      "마른 후를 예견",
-    ],
+    skillList: ["붕괴 전을 예견", "마른 후를 예견"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -40714,15 +40062,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "빙원의 질서",
-      "'영원한 사냥'",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["신속 공격 γ", "빙원의 질서", "'영원한 사냥'"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -41137,10 +40478,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "'마녀의 눈물'",
-    ],
+    skillList: ["신속 공격 γ", "'마녀의 눈물'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -41362,9 +40700,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 284,
 
     name: "이그제큐터 디 엑스 포에데레",
-    nicknameList: [
-      "십게이",
-    ],
+    nicknameList: ["십게이"],
 
     imageFilename: "executor-the-ex-foedere",
 
@@ -41412,14 +40748,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "유언 집행",
-      "근접 전투",
-      "언약 심판",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["유언 집행", "근접 전투", "언약 심판"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -41804,10 +41134,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "임기응변",
-      "즉석 총기 개조",
-    ],
+    skillList: ["임기응변", "즉석 총기 개조"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -41871,7 +41198,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "임기응변": {
+      임기응변: {
         "8": [
           {
             material: skillSummary3,
@@ -42076,10 +41403,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'트러블 차단'",
-      "'트러블 해결'",
-    ],
+    skillList: ["'트러블 차단'", "'트러블 해결'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -42388,14 +41712,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "진취심",
-      "부감 시야",
-      "드레드노트 협약",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["진취심", "부감 시야", "드레드노트 협약"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -42467,7 +41785,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "진취심": {
+      진취심: {
         "8": [
           {
             material: skillSummary3,
@@ -42774,15 +42092,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "점진적 습윤화",
-      "생태학적 상호작용",
-      "표면적 비엔트로피 적응",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["점진적 습윤화", "생태학적 상호작용", "표면적 비엔트로피 적응"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -43167,10 +42478,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "포화 펄스",
-      "임계 폭발",
-    ],
+    skillList: ["포화 펄스", "임계 폭발"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -43439,14 +42747,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "탐구를 위해",
-      "굽이쳐 흐르는 별들",
-      "박식한 자의 광언",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["탐구를 위해", "굽이쳐 흐르는 별들", "박식한 자의 광언"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -43857,10 +43159,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "프로 스트리트 파이터",
-      "불굴의 저항",
-    ],
+    skillList: ["프로 스트리트 파이터", "불굴의 저항"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -44129,14 +43428,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "그림자 습격",
-      "어두운 밤",
-      "고독한 귀환",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["그림자 습격", "어두운 밤", "고독한 귀환"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -44463,10 +43756,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지층 분쇄",
-      "구조 보강",
-    ],
+    skillList: ["지층 분쇄", "구조 보강"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -44735,10 +44025,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고형 폐기물 절단",
-      "고효율 처리",
-    ],
+    skillList: ["고형 폐기물 절단", "고효율 처리"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -44996,9 +44283,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 272,
 
     name: "키린R 야토",
-    nicknameList: [
-      "특토",
-    ],
+    nicknameList: ["특토"],
 
     imageFilename: "kirin-r-yato",
 
@@ -45046,15 +44331,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "귀인화",
-      "난무",
-      "공중 회전난무",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["귀인화", "난무", "공중 회전난무"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -45126,7 +44404,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "귀인화": {
+      귀인화: {
         "8": [
           {
             material: skillSummary3,
@@ -45170,7 +44448,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "난무": {
+      난무: {
         "8": [
           {
             material: skillSummary3,
@@ -45438,10 +44716,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "앉아발도 기인베기",
-      "기인 투구 깨기",
-    ],
+    skillList: ["앉아발도 기인베기", "기인 투구 깨기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -45703,9 +44978,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 269,
 
     name: "치우바이",
-    nicknameList: [
-      "구백",
-    ],
+    nicknameList: ["구백"],
 
     imageFilename: "qiubai",
 
@@ -45753,14 +45026,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "깃털을 남기다",
-      "그림자를 잡다",
-      "눈에 묻다",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["깃털을 남기다", "그림자를 잡다", "눈에 묻다"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -46086,10 +45353,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "고향의 그리움",
-    ],
+    skillList: ["공격 강화 γ", "고향의 그리움"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -46358,14 +45622,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "가득 차오르다",
-      "먼지를 털어내다",
-      "나는 '무'일지어다",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["가득 차오르다", "먼지를 털어내다", "나는 '무'일지어다"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -46749,10 +46007,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "앞길 탐색",
-      "과거의 먼지",
-    ],
+    skillList: ["앞길 탐색", "과거의 먼지"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -47021,14 +46276,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "영롱",
-      "비호",
-      "유광 작렬",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["영롱", "비호", "유광 작렬"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -47100,7 +46349,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "영롱": {
+      영롱: {
         "8": [
           {
             material: skillSummary3,
@@ -47144,7 +46393,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "비호": {
+      비호: {
         "8": [
           {
             material: skillSummary3,
@@ -47412,10 +46661,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "들불",
-      "초토",
-    ],
+    skillList: ["들불", "초토"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -47479,7 +46725,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "들불": {
+      들불: {
         "8": [
           {
             material: skillSummary3,
@@ -47523,7 +46769,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "초토": {
+      초토: {
         "8": [
           {
             material: skillSummary3,
@@ -47637,9 +46883,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 263,
 
     name: "리드 더 플레임 섀도우",
-    nicknameList: [
-      "힐리드",
-    ],
+    nicknameList: ["힐리드"],
 
     imageFilename: "reed-the-flame-shadow",
 
@@ -47687,15 +46931,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "번성과 쇠약",
-      "생명의 불씨",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["신속 공격 γ", "번성과 쇠약", "생명의 불씨"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -48079,10 +47316,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "경쾌한 스텝",
-      "침닉의 재난",
-    ],
+    skillList: ["경쾌한 스텝", "침닉의 재난"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -48350,10 +47584,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "결정적인 단서",
-      "의문점 추적",
-    ],
+    skillList: ["결정적인 단서", "의문점 추적"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -48575,9 +47806,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 257,
 
     name: "텍사스 디 오메르토사",
-    nicknameList: [
-      "특사스",
-    ],
+    nicknameList: ["특사스"],
 
     imageFilename: "texas-the-omertosa",
 
@@ -48625,15 +47854,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고요한 이슬비",
-      "끊임없는 소나기",
-      "맹렬한 검의 비",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["고요한 이슬비", "끊임없는 소나기", "맹렬한 검의 비"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -49017,10 +48239,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "사냥의 시간",
-      "매복의 그림자",
-    ],
+    skillList: ["사냥의 시간", "매복의 그림자"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -49288,10 +48507,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "전면 충돌",
-    ],
+    skillList: ["공격 강화 β", "전면 충돌"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -49556,14 +48772,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "최종 판결",
-      "결의에 찬 고행",
-      "고난 극복",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["최종 판결", "결의에 찬 고행", "고난 극복"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -49948,11 +49158,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "두목의 부름",
-      "두목의 선물",
-      "두목의 위엄",
-    ],
+    skillList: ["두목의 부름", "두목의 선물", "두목의 위엄"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -50330,10 +49536,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "프리지드 윈드",
-      "폴링 스노우",
-    ],
+    skillList: ["프리지드 윈드", "폴링 스노우"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -50601,10 +49804,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "대응 기술",
-      "정밀 파괴",
-    ],
+    skillList: ["대응 기술", "정밀 파괴"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -50872,10 +50072,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "선 피어서",
-      "프리즘 브레이크",
-    ],
+    skillList: ["선 피어서", "프리즘 브레이크"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -51139,10 +50336,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "엄호 작전 γ",
-      "동료 의식",
-    ],
+    skillList: ["엄호 작전 γ", "동료 의식"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -51364,9 +50558,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 253,
 
     name: "스테인리스",
-    nicknameList: [
-      "스뎅",
-    ],
+    nicknameList: ["스뎅"],
 
     imageFilename: "stainless",
 
@@ -51414,14 +50606,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "극한 화력",
-      "고효율 보급",
-      "글룸핀서호 - 프로토타입",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["극한 화력", "고효율 보급", "글룸핀서호 - 프로토타입"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -51805,10 +50991,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "회상, 단념",
-      "환상, 소멸",
-    ],
+    skillList: ["회상, 단념", "환상, 소멸"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -52076,10 +51259,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "꼬리의 잔상",
-      "부러진 칼날",
-    ],
+    skillList: ["꼬리의 잔상", "부러진 칼날"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -52343,10 +51523,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "분쟁 소송",
-      "승소 입론",
-    ],
+    skillList: ["분쟁 소송", "승소 입론"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -52620,9 +51797,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "해소하지 않은 슬픔",
       "눈부시지 않은 영광",
     ],
-    preferSkillIndexes: [
-      2,
-    ],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -52902,9 +52077,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 242,
 
     name: "가비알 디 인빈서블",
-    nicknameList: [
-      "수비알",
-    ],
+    nicknameList: ["수비알"],
 
     imageFilename: "gavial-the-invincible",
 
@@ -52952,14 +52125,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "정밀 통격",
-      "체인톱 강습",
-      "정글의 영혼",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["정밀 통격", "체인톱 강습", "정글의 영혼"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -53373,10 +52540,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "신의 경지",
-    ],
+    skillList: ["신속 공격 γ", "신의 경지"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -53645,14 +52809,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "약강격",
-      "요약",
-      "날카로운 스케치",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["약강격", "요약", "날카로운 스케치"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -53724,7 +52882,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "약강격": {
+      약강격: {
         "8": [
           {
             material: skillSummary3,
@@ -53768,7 +52926,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "요약": {
+      요약: {
         "8": [
           {
             material: skillSummary3,
@@ -54036,10 +53194,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "관화",
-      "부광",
-    ],
+    skillList: ["관화", "부광"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -54103,7 +53258,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "관화": {
+      관화: {
         "8": [
           {
             material: skillSummary3,
@@ -54147,7 +53302,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "부광": {
+      부광: {
         "8": [
           {
             material: skillSummary3,
@@ -54307,10 +53462,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "햇살의 지표",
-    ],
+    skillList: ["신속 공격 γ", "햇살의 지표"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -54578,10 +53730,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "양단 유도",
-      "별무리 집결",
-    ],
+    skillList: ["양단 유도", "별무리 집결"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -54850,14 +53999,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "위험 목표 제거",
-      "유사 지형 생성",
-      "고속 공진 제거",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["위험 목표 제거", "유사 지형 생성", "고속 공진 제거"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -55241,10 +54384,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "어루만짐",
-    ],
+    skillList: ["공격 강화 γ", "어루만짐"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -55352,7 +54492,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "어루만짐": {
+      어루만짐: {
         "8": [
           {
             material: skillSummary3,
@@ -55466,9 +54606,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 239,
 
     name: "에벤홀츠",
-    nicknameList: [
-      "흑건",
-    ],
+    nicknameList: ["흑건"],
 
     imageFilename: "ebenholz",
 
@@ -55516,14 +54654,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "급속 변주",
-      "황량한 메아리",
-      "침묵의 소리",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["급속 변주", "황량한 메아리", "침묵의 소리"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -55965,10 +55097,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "흩날리는 손가락",
-      "청중 압도",
-    ],
+    skillList: ["흩날리는 손가락", "청중 압도"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -56236,10 +55365,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "단잠의 멜로디",
-      "영웅의 찬가",
-    ],
+    skillList: ["단잠의 멜로디", "영웅의 찬가"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -56461,9 +55587,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 233,
 
     name: "스펙터 디 언체인드",
-    nicknameList: [
-      "언펙터",
-    ],
+    nicknameList: ["언펙터"],
 
     imageFilename: "specter-the-unchained",
 
@@ -56511,15 +55635,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "생존의 기술",
-      "생존의 열망",
-      "생존의 중압",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["생존의 기술", "생존의 열망", "생존의 중압"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -56938,14 +56055,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "불어오는 바람",
-      "갈라지는 파도",
-      "판결",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["불어오는 바람", "갈라지는 파도", "판결"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -57105,7 +56216,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "판결": {
+      판결: {
         "8": [
           {
             material: skillSummary3,
@@ -57356,14 +56467,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "가랑비",
-      "장맛비",
-      "꺼지지 않는 등불",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["가랑비", "장맛비", "꺼지지 않는 등불"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -57435,7 +56540,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "가랑비": {
+      가랑비: {
         "8": [
           {
             material: skillSummary3,
@@ -57479,7 +56584,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "장맛비": {
+      장맛비: {
         "8": [
           {
             material: skillSummary3,
@@ -57747,10 +56852,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "이 몸을 만들어",
-      "이 몸을 근원으로",
-    ],
+    skillList: ["이 몸을 만들어", "이 몸을 근원으로"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -58019,14 +57121,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "조명 유탄",
-      "폭풍의 호령",
-      "최종 방어선",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["조명 유탄", "폭풍의 호령", "최종 방어선"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -58410,10 +57506,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전술 영창 γ",
-      "스스로 진 멍에",
-    ],
+    skillList: ["전술 영창 γ", "스스로 진 멍에"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -58681,10 +57774,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "적미성저",
-      "후토분출",
-    ],
+    skillList: ["적미성저", "후토분출"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -58744,7 +57834,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "적미성저": {
+      적미성저: {
         "8": [
           {
             material: skillSummary3,
@@ -58788,7 +57878,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "후토분출": {
+      후토분출: {
         "8": [
           {
             material: skillSummary3,
@@ -58948,10 +58038,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "픽션 - 분노한 병사",
-      "픽션 - 녹슨 도시",
-    ],
+    skillList: ["픽션 - 분노한 병사", "픽션 - 녹슨 도시"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -59225,9 +58312,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "'너는 후회해야 한다'",
       "'너는 갚아야 한다'",
     ],
-    preferSkillIndexes: [
-      2,
-    ],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -59641,10 +58726,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "종이 공예 속공",
-      "종이 공예 쌍영",
-    ],
+    skillList: ["종이 공예 속공", "종이 공예 쌍영"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -59912,10 +58994,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "호신 사격",
-      "폭발 사격",
-    ],
+    skillList: ["호신 사격", "폭발 사격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -60137,9 +59216,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 224,
 
     name: "골든글로우",
-    nicknameList: [
-      "핑댕이",
-    ],
+    nicknameList: ["핑댕이"],
 
     imageFilename: "goldenglow",
 
@@ -60187,14 +59264,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "불꽃 스파크",
-      "일렁이는 전류",
-      "맑고 깨끗한 반짝임",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["불꽃 스파크", "일렁이는 전류", "맑고 깨끗한 반짝임"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -60578,10 +59649,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "대지의 자비",
-      "생령의 울림",
-    ],
+    skillList: ["대지의 자비", "생령의 울림"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -60849,10 +59917,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "무흔",
-      "봉후",
-    ],
+    skillList: ["무흔", "봉후"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -60916,7 +59981,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "무흔": {
+      무흔: {
         "8": [
           {
             material: skillSummary3,
@@ -60960,7 +60025,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "봉후": {
+      봉후: {
         "8": [
           {
             material: skillSummary3,
@@ -61121,14 +60186,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "다시 술을 권하다",
-      "웃으며 슬을 켜다",
-      "나 자신이 되다",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["다시 술을 권하다", "웃으며 슬을 켜다", "나 자신이 되다"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -61455,14 +60514,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "일벌백계",
-      "축귀벽사",
-      "귀빈내방",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["일벌백계", "축귀벽사", "귀빈내방"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -61534,7 +60587,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "일벌백계": {
+      일벌백계: {
         "8": [
           {
             material: skillSummary3,
@@ -61578,7 +60631,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "축귀벽사": {
+      축귀벽사: {
         "8": [
           {
             material: skillSummary3,
@@ -61622,7 +60675,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "귀빈내방": {
+      귀빈내방: {
         "8": [
           {
             material: skillSummary3,
@@ -61846,10 +60899,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "비몽사몽",
-      "숙면",
-    ],
+    skillList: ["비몽사몽", "숙면"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -61913,7 +60963,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "비몽사몽": {
+      비몽사몽: {
         "8": [
           {
             material: skillSummary3,
@@ -61957,7 +61007,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "숙면": {
+      숙면: {
         "8": [
           {
             material: skillSummary3,
@@ -62117,10 +61167,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "속세에 내려온 길함",
-      "멀어져가는 선산",
-    ],
+    skillList: ["속세에 내려온 길함", "멀어져가는 선산"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -62388,10 +61435,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "속전속결",
-      "희생의 광란",
-    ],
+    skillList: ["속전속결", "희생의 광란"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -62455,7 +61499,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "속전속결": {
+      속전속결: {
         "8": [
           {
             material: skillSummary3,
@@ -62660,14 +61704,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "빠른 사고",
-      "영도 폭발",
-      "저체온증",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["빠른 사고", "영도 폭발", "저체온증"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -62827,7 +61865,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "저체온증": {
+      저체온증: {
         "8": [
           {
             material: skillSummary3,
@@ -63081,10 +62119,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "마음 가는 대로",
-    ],
+    skillList: ["공격 강화 γ", "마음 가는 대로"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -63352,10 +62387,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "터전 고수",
-      "인공 강설",
-    ],
+    skillList: ["터전 고수", "인공 강설"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -63577,9 +62609,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 212,
 
     name: "니어 더 래디언트 나이트",
-    nicknameList: [
-      "창니어",
-    ],
+    nicknameList: ["창니어"],
 
     imageFilename: "nearl-the-radiant-knight",
 
@@ -63627,15 +62657,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "찬란한 불꽃의 장검",
-      "밤의 광채",
-      "눈부신 태양의 승인",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["찬란한 불꽃의 장검", "밤의 광채", "눈부신 태양의 승인"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -64059,10 +63082,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전술 영창 β",
-      "전류 확산",
-    ],
+    skillList: ["전술 영창 β", "전류 확산"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -64280,9 +63300,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 213,
 
     name: "플레임테일",
-    nicknameList: [
-      "불꼬리",
-    ],
+    nicknameList: ["불꼬리"],
 
     imageFilename: "flametail",
 
@@ -64330,14 +63348,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "예리한 직감",
-      "'피누스 실베스트리스'",
-      "불꽃의 마음",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["예리한 직감", "'피누스 실베스트리스'", "불꽃의 마음"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -64721,10 +63733,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "스피리추얼 케어",
-      "분발",
-    ],
+    skillList: ["스피리추얼 케어", "분발"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -64832,7 +63841,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "분발": {
+      분발: {
         "8": [
           {
             material: skillSummary3,
@@ -64992,10 +64001,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집중력 과부하",
-      "전도성 부식탄",
-    ],
+    skillList: ["집중력 과부하", "전도성 부식탄"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -65263,10 +64269,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "스태빙 랜스",
-      "랜스 차지",
-    ],
+    skillList: ["스태빙 랜스", "랜스 차지"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -65535,14 +64538,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "동맹 지원",
-      "페더샤인 애로우",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["신속 공격 γ", "동맹 지원", "페더샤인 애로우"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -65920,10 +64917,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "집중 폭격",
-    ],
+    skillList: ["공격 강화 γ", "집중 폭격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -66191,10 +65185,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "힐링 헤이즈",
-      "안전지대",
-    ],
+    skillList: ["힐링 헤이즈", "안전지대"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -66302,7 +65293,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "안전지대": {
+      안전지대: {
         "8": [
           {
             material: skillSummary3,
@@ -66416,9 +65407,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 204,
 
     name: "사일라흐",
-    nicknameList: [
-      "젖틀",
-    ],
+    nicknameList: ["젖틀"],
 
     imageFilename: "saileach",
 
@@ -66466,15 +65455,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지원 지령 γ",
-      "신앙의 전승",
-      "찬란한 깃발",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["지원 지령 γ", "신앙의 전승", "찬란한 깃발"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -66858,10 +65840,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "시라쿠사식 화장",
-      "전자동 스타일러",
-    ],
+    skillList: ["시라쿠사식 화장", "전자동 스타일러"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -67079,9 +66058,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 200,
 
     name: "첸 더 홀룽데이",
-    nicknameList: [
-      "수첸",
-    ],
+    nicknameList: ["수첸"],
 
     imageFilename: "chen-the-holungday",
 
@@ -67129,14 +66106,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고압 충격",
-      "'나이트 오브 바이올렛'",
-      "'홀리데이 스톰'",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["고압 충격", "'나이트 오브 바이올렛'", "'홀리데이 스톰'"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -67520,10 +66491,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고속절단",
-      "수확",
-    ],
+    skillList: ["고속절단", "수확"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -67587,7 +66555,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "고속절단": {
+      고속절단: {
         "8": [
           {
             material: skillSummary3,
@@ -67631,7 +66599,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "수확": {
+      수확: {
         "8": [
           {
             material: skillSummary3,
@@ -67792,14 +66760,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "일깨움",
-      "죄수의 딜레마",
-      "경화수월",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["일깨움", "죄수의 딜레마", "경화수월"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -67871,7 +66833,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "일깨움": {
+      일깨움: {
         "8": [
           {
             material: skillSummary3,
@@ -67959,7 +66921,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "경화수월": {
+      경화수월: {
         "8": [
           {
             material: skillSummary3,
@@ -68209,10 +67171,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "즉시 결단",
-      "기상천외",
-    ],
+    skillList: ["즉시 결단", "기상천외"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -68320,7 +67279,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "기상천외": {
+      기상천외: {
         "8": [
           {
             material: skillSummary3,
@@ -68481,14 +67440,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "승리의 연타",
-      "신념의 채찍",
-      "용감의 축복",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["승리의 연타", "신념의 채찍", "용감의 축복"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -68866,10 +67819,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전력 가지치기",
-      "빠른 가지치기",
-    ],
+    skillList: ["전력 가지치기", "빠른 가지치기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -69138,14 +68088,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "모래폭풍 수비",
-      "모래속박 족쇄",
-      "식서의 인장",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["모래폭풍 수비", "모래속박 족쇄", "식서의 인장"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -69523,10 +68467,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "등대지기",
-      "그림자 미로",
-    ],
+    skillList: ["등대지기", "그림자 미로"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -69586,7 +68527,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "등대지기": {
+      등대지기: {
         "8": [
           {
             material: skillSummary3,
@@ -69790,10 +68731,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "닻 휘두르기",
-      "닻 지점 포획",
-    ],
+    skillList: ["닻 휘두르기", "닻 지점 포획"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -70062,14 +69000,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "명령: 구조 보강",
-      "명령: 전술 협동",
-      "명령: 용해",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["명령: 구조 보강", "명령: 전술 협동", "명령: 용해"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -70437,9 +69369,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 190,
 
     name: "스카디 더 커럽팅 하트",
-    nicknameList: [
-      "보카디",
-    ],
+    nicknameList: ["보카디"],
 
     imageFilename: "skadi-the-corrupting-heart",
 
@@ -70487,14 +69417,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "수도동귀의 노래",
-      "함께 묻히길 바라는 마음",
-      "'밀물, 썰물'",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["수도동귀의 노래", "함께 묻히길 바라는 마음", "'밀물, 썰물'"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -70879,14 +69803,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "갈증의 대양 절단",
-      "갈증의 노해 장악",
-      "갈증의 소용돌이",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["갈증의 대양 절단", "갈증의 노해 장악", "갈증의 소용돌이"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -71270,10 +70188,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "노부카게류·뇌도지세",
-      "노부카게류·십문자승",
-    ],
+    skillList: ["노부카게류·뇌도지세", "노부카게류·십문자승"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -71541,10 +70456,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "응급 위장",
-      "단체 위장",
-    ],
+    skillList: ["응급 위장", "단체 위장"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -71812,10 +70724,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신호 화살",
-      "휴대용 공성 화살",
-    ],
+    skillList: ["신호 화살", "휴대용 공성 화살"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -72084,14 +70993,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전기 에너지 접촉",
-      "집중 명령",
-      "찬란히 찢어진 조각",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["전기 에너지 접촉", "집중 명령", "찬란히 찢어진 조각"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -72459,9 +71362,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 185,
 
     name: "Ash",
-    nicknameList: [
-      "애쉬",
-    ],
+    nicknameList: ["애쉬"],
 
     imageFilename: "ash",
 
@@ -72509,14 +71410,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지원 사격",
-      "강습 전술",
-      "파괴탄",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["지원 사격", "강습 전술", "파괴탄"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -72676,7 +71571,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "파괴탄": {
+      파괴탄: {
         "8": [
           {
             material: skillSummary3,
@@ -72900,10 +71795,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "섬광 방패",
-      "방어선 돌파",
-    ],
+    skillList: ["섬광 방패", "방어선 돌파"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -73171,10 +72063,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "함정 설치",
-      "사냥감 무력화",
-    ],
+    skillList: ["함정 설치", "사냥감 무력화"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -73442,10 +72331,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "중형 폭발 수류탄",
-      "난사",
-    ],
+    skillList: ["중형 폭발 수류탄", "난사"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -73553,7 +72439,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "난사": {
+      난사: {
         "8": [
           {
             material: skillSummary3,
@@ -73713,10 +72599,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "불에 담근 비수",
-      "지옥불 고리",
-    ],
+    skillList: ["불에 담근 비수", "지옥불 고리"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -73985,15 +72868,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "경지에 다다른 세밀화법",
-      "거침없는 발묵",
-      "사의승형",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["경지에 다다른 세밀화법", "거침없는 발묵", "사의승형"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -74153,7 +73029,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "사의승형": {
+      사의승형: {
         "8": [
           {
             material: skillSummary3,
@@ -74404,15 +73280,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "제악",
-      "격노의 눈",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["돌격 지령 γ", "제악", "격노의 눈"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -74528,7 +73397,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "제악": {
+      제악: {
         "8": [
           {
             material: skillSummary3,
@@ -74790,10 +73659,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지난이퇴",
-      "음청원결",
-    ],
+    skillList: ["지난이퇴", "음청원결"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -74857,7 +73723,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "지난이퇴": {
+      지난이퇴: {
         "8": [
           {
             material: skillSummary3,
@@ -74901,7 +73767,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "음청원결": {
+      음청원결: {
         "8": [
           {
             material: skillSummary3,
@@ -75061,10 +73927,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "물줄기",
-      "강심제",
-    ],
+    skillList: ["물줄기", "강심제"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -75128,7 +73991,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "물줄기": {
+      물줄기: {
         "8": [
           {
             material: skillSummary3,
@@ -75172,7 +74035,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "강심제": {
+      강심제: {
         "8": [
           {
             material: skillSummary3,
@@ -75286,9 +74149,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 176,
 
     name: "아르케토",
-    nicknameList: [
-      "알게또",
-    ],
+    nicknameList: ["알게또"],
 
     imageFilename: "archetto",
 
@@ -75336,14 +74197,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "화살·산개",
-      "화살·추적 사냥",
-      "화살·폭풍",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["화살·산개", "화살·추적 사냥", "화살·폭풍"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -75753,10 +74608,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "동화의 파수꾼",
-      "꿈나라의 요람",
-    ],
+    skillList: ["동화의 파수꾼", "꿈나라의 요람"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -76024,10 +74876,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "핀포인트 커맨드",
-      "\"다 같이 가자\"",
-    ],
+    skillList: ["핀포인트 커맨드", '"다 같이 가자"'],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -76131,7 +74980,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "\"다 같이 가자\"": {
+      '"다 같이 가자"': {
         "8": [
           {
             material: skillSummary3,
@@ -76291,10 +75140,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "기이한 루빅큐브",
-      "요상한 가위",
-    ],
+    skillList: ["기이한 루빅큐브", "요상한 가위"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -76516,9 +75362,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 173,
 
     name: "마운틴",
-    nicknameList: [
-      "산",
-    ],
+    nicknameList: ["산"],
 
     imageFilename: "mountain",
 
@@ -76566,14 +75410,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "레프트 훅",
-      "스탠스 스위칭",
-      "지진쇄암격",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["레프트 훅", "스탠스 스위칭", "지진쇄암격"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -76733,7 +75571,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "지진쇄암격": {
+      지진쇄암격: {
         "8": [
           {
             material: skillSummary3,
@@ -76957,10 +75795,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "RMA 스파이크",
-      "전기 에너지 과부하",
-    ],
+    skillList: ["RMA 스파이크", "전기 에너지 과부하"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -77224,10 +76059,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "속박 '클립'",
-      "사출 '클립'",
-    ],
+    skillList: ["속박 '클립'", "사출 '클립'"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -77496,14 +76328,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "방어 강화 γ",
-      "바위를 깨는 망치",
-      "더러운 대지의 핏줄",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["방어 강화 γ", "바위를 깨는 망치", "더러운 대지의 핏줄"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -77887,10 +76713,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "한 방 먹여주마!",
-      "정신 집중!",
-    ],
+    skillList: ["한 방 먹여주마!", "정신 집중!"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -78108,9 +76931,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 167,
 
     name: "로즈몬티스",
-    nicknameList: [
-      "쪽냥이",
-    ],
+    nicknameList: ["쪽냥이"],
 
     imageFilename: "rosmontis",
 
@@ -78158,14 +76979,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "사고 팽창",
-      "말초 차단",
-      "\"네가 원하는 대로\"",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["사고 팽창", "말초 차단", '"네가 원하는 대로"'],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -78325,7 +77140,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "\"네가 원하는 대로\"": {
+      '"네가 원하는 대로"': {
         "8": [
           {
             material: skillSummary3,
@@ -78517,10 +77332,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "방향성 진단",
-      "통각 억제",
-    ],
+    skillList: ["방향성 진단", "통각 억제"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -78788,10 +77600,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "격려의 기술",
-      "사복검",
-    ],
+    skillList: ["격려의 기술", "사복검"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -78899,7 +77708,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "사복검": {
+      사복검: {
         "8": [
           {
             material: skillSummary3,
@@ -79059,10 +77868,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "그림자 못",
-    ],
+    skillList: ["신속 공격 γ", "그림자 못"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -79330,10 +78136,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "방어 강화 β",
-      "얻어맞기",
-    ],
+    skillList: ["방어 강화 β", "얻어맞기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -79437,7 +78240,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "얻어맞기": {
+      얻어맞기: {
         "8": [
           {
             material: skillSummary3,
@@ -79598,14 +78401,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "용솟음치는 빛",
-      "압도적인 빛",
-      "선현의 화신",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["용솟음치는 빛", "압도적인 빛", "선현의 화신"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -79989,10 +78786,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "농담",
-      "치명적인 장난",
-    ],
+    skillList: ["농담", "치명적인 장난"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -80052,7 +78846,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "농담": {
+      농담: {
         "8": [
           {
             material: skillSummary3,
@@ -80257,14 +79051,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "열화의 마검",
-      "몰튼 코어의 거대한 그림자",
-      "황혼",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["열화의 마검", "몰튼 코어의 거대한 그림자", "황혼"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -80424,7 +79212,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "황혼": {
+      황혼: {
         "8": [
           {
             material: skillSummary3,
@@ -80648,10 +79436,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "정밀 사격",
-      "재빠른 위장",
-    ],
+    skillList: ["정밀 사격", "재빠른 위장"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -80919,10 +79704,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "바람의 언어",
-      "커뮬레이티브 볼텍스",
-    ],
+    skillList: ["바람의 언어", "커뮬레이티브 볼텍스"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -81190,10 +79972,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "버트 점사",
-      "트리거 모멘트",
-    ],
+    skillList: ["버트 점사", "트리거 모멘트"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -81457,10 +80236,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "부족의 아츠",
-      "가비알 보호 방안",
-    ],
+    skillList: ["부족의 아츠", "가비알 보호 방안"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -81728,10 +80504,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "불식",
-      "실력 과시",
-    ],
+    skillList: ["불식", "실력 과시"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -81795,7 +80568,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "불식": {
+      불식: {
         "8": [
           {
             material: skillSummary3,
@@ -82000,14 +80773,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "경량형 도끼",
-      "위압적인 내려찍기",
-      "강철의 의지",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["경량형 도끼", "위압적인 내려찍기", "강철의 의지"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -82417,10 +81184,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "차단 사격 전술",
-    ],
+    skillList: ["공격 강화 γ", "차단 사격 전술"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -82688,10 +81452,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집게 자르기",
-      "모듬 회",
-    ],
+    skillList: ["집게 자르기", "모듬 회"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -82956,14 +81717,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "호신용 가시",
-      "데스트레자",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["공격 강화 γ", "호신용 가시", "데스트레자"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -83123,7 +81878,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "데스트레자": {
+      데스트레자: {
         "8": [
           {
             material: skillSummary3,
@@ -83347,10 +82102,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "보호색 은폐",
-      "파노라마 오버로드 촬영",
-    ],
+    skillList: ["보호색 은폐", "파노라마 오버로드 촬영"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -83618,10 +82370,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "모래 폭풍 확산",
-      "수호의 오벨리스크",
-    ],
+    skillList: ["모래 폭풍 확산", "수호의 오벨리스크"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -83889,10 +82638,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "플레임 필링",
-    ],
+    skillList: ["돌격 지령 γ", "플레임 필링"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -84160,10 +82906,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "다중 유도 분산 탄환",
-      "부유 칼날 기동",
-    ],
+    skillList: ["다중 유도 분산 탄환", "부유 칼날 기동"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -84431,10 +83174,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "동기화 색적 공격",
-    ],
+    skillList: ["공격 강화 β", "동기화 색적 공격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -84698,10 +83438,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "최대 약제량 투여",
-      "복합형 약물 파편",
-    ],
+    skillList: ["최대 약제량 투여", "복합형 약물 파편"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -84970,14 +83707,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전력투구",
-      "어린 시절의 무용",
-      "희미한 여우불",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["전력투구", "어린 시절의 무용", "희미한 여우불"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -85049,7 +83780,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "전력투구": {
+      전력투구: {
         "8": [
           {
             material: skillSummary3,
@@ -85362,15 +84093,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "분열 사격",
-      "눈사태 사격",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["공격 강화 γ", "분열 사격", "눈사태 사격"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -85754,10 +84478,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "아로마 치료",
-      "포자 확산",
-    ],
+    skillList: ["아로마 치료", "포자 확산"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -86021,10 +84742,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "해체와 폭파",
-    ],
+    skillList: ["공격 강화 γ", "해체와 폭파"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -86292,10 +85010,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집행 모드",
-      "종언의 연사",
-    ],
+    skillList: ["집행 모드", "종언의 연사"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -86563,10 +85278,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "역무",
-      "삼회",
-    ],
+    skillList: ["역무", "삼회"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -86630,7 +85342,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "역무": {
+      역무: {
         "8": [
           {
             material: skillSummary3,
@@ -86674,7 +85386,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "삼회": {
+      삼회: {
         "8": [
           {
             material: skillSummary3,
@@ -86834,10 +85546,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "인트렌치 모드",
-      "서멀 모드",
-    ],
+    skillList: ["인트렌치 모드", "서멀 모드"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -87106,14 +85815,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "하트 K",
-      "깜짝 상자",
-      "D12",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["하트 K", "깜짝 상자", "D12"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -87273,7 +85976,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "D12": {
+      D12: {
         "8": [
           {
             material: skillSummary3,
@@ -87538,15 +86241,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "포관 타격",
-      "물대포 모드",
-      "액체 질소 대포",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["포관 타격", "물대포 모드", "액체 질소 대포"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -87930,10 +86626,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지원 지령 γ",
-      "경청",
-    ],
+    skillList: ["지원 지령 γ", "경청"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -88041,7 +86734,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "경청": {
+      경청: {
         "8": [
           {
             material: skillSummary3,
@@ -88202,14 +86895,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "어두운 밤의 유령",
-      "핏빛 악장",
-      "밤의 장막의 기습",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["어두운 밤의 유령", "핏빛 악장", "밤의 장막의 기습"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -88619,10 +87306,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "악화되는 병세",
-      "저주인형",
-    ],
+    skillList: ["악화되는 병세", "저주인형"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -88730,7 +87414,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "저주인형": {
+      저주인형: {
         "8": [
           {
             material: skillSummary3,
@@ -88890,10 +87574,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "레드 무브",
-      "크림슨 커터",
-    ],
+    skillList: ["레드 무브", "크림슨 커터"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -89157,10 +87838,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "HP 회복 γ",
-      "파도 가르기",
-    ],
+    skillList: ["HP 회복 γ", "파도 가르기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -89428,10 +88106,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "단죄",
-      "창세기",
-    ],
+    skillList: ["단죄", "창세기"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -89491,7 +88166,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "단죄": {
+      단죄: {
         "8": [
           {
             material: skillSummary3,
@@ -89535,7 +88210,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "창세기": {
+      창세기: {
         "8": [
           {
             material: skillSummary3,
@@ -89696,15 +88371,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "고효율 충격",
-      "클로즈드 볼트 연발",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["신속 공격 γ", "고효율 충격", "클로즈드 볼트 연발"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -90088,10 +88756,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "깃털 칼날",
-      "갈라지는 칼날",
-    ],
+    skillList: ["깃털 칼날", "갈라지는 칼날"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -90359,10 +89024,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "한눈팔기",
-      "낙지참·파문",
-    ],
+    skillList: ["한눈팔기", "낙지참·파문"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -90422,7 +89084,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "한눈팔기": {
+      한눈팔기: {
         "8": [
           {
             material: skillSummary3,
@@ -90626,10 +89288,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "딜레이 진탕 부품",
-    ],
+    skillList: ["공격 강화 γ", "딜레이 진탕 부품"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -90897,10 +89556,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치유의 물의 파동",
-      "용솟는 샘물",
-    ],
+    skillList: ["치유의 물의 파동", "용솟는 샘물"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -91165,14 +89821,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "'엄청 차가운' 도끼",
-      "'엄청 뜨거운' 칼",
-      "'엄청 무거운' 창",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["'엄청 차가운' 도끼", "'엄청 뜨거운' 칼", "'엄청 무거운' 창"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -91556,10 +90206,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "초뢰",
-    ],
+    skillList: ["공격 강화 γ", "초뢰"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -91667,7 +90314,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "초뢰": {
+      초뢰: {
         "8": [
           {
             material: skillSummary3,
@@ -91828,14 +90475,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "달아오른 주석",
-      "동의 인장",
-      "철의 방어",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["달아오른 주석", "동의 인장", "철의 방어"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -92220,14 +90861,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "쾌속사격",
-      "폭발제 γ",
-      "폭발제 (두리안맛) ",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["쾌속사격", "폭발제 γ", "폭발제 (두리안맛) "],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -92299,7 +90934,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "쾌속사격": {
+      쾌속사격: {
         "8": [
           {
             material: skillSummary3,
@@ -92611,10 +91246,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "반격 치료",
-      "반격 의료 모드",
-    ],
+    skillList: ["반격 치료", "반격 의료 모드"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -92882,10 +91514,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "갈고리 후크",
-      "신축성 전기 포획망",
-    ],
+    skillList: ["갈고리 후크", "신축성 전기 포획망"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -93154,14 +91783,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 γ",
-      "전기톱 연장 모듈",
-      "끓어오르는 폭발",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["강타 γ", "전기톱 연장 모듈", "끓어오르는 폭발"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -93545,10 +92168,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "저지탄",
-      "레이더 위치 추적",
-    ],
+    skillList: ["저지탄", "레이더 위치 추적"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -93608,7 +92228,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "저지탄": {
+      저지탄: {
         "8": [
           {
             material: skillSummary3,
@@ -93812,10 +92432,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "날개깃",
-      "역류",
-    ],
+    skillList: ["날개깃", "역류"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -93879,7 +92496,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "날개깃": {
+      날개깃: {
         "8": [
           {
             material: skillSummary3,
@@ -93923,7 +92540,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "역류": {
+      역류: {
         "8": [
           {
             material: skillSummary3,
@@ -94083,10 +92700,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "생령의 불꽃",
-    ],
+    skillList: ["신속 공격 γ", "생령의 불꽃"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -94354,10 +92968,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "에너자이즈",
-      "고압전류",
-    ],
+    skillList: ["에너자이즈", "고압전류"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -94421,7 +93032,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "에너자이즈": {
+      에너자이즈: {
         "8": [
           {
             material: skillSummary3,
@@ -94465,7 +93076,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "고압전류": {
+      고압전류: {
         "8": [
           {
             material: skillSummary3,
@@ -94625,10 +93236,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "마비탄",
-      "속박 전격",
-    ],
+    skillList: ["마비탄", "속박 전격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -94688,7 +93296,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "마비탄": {
+      마비탄: {
         "8": [
           {
             material: skillSummary3,
@@ -94893,14 +93501,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "혼돈의 시간의 자물쇠",
-      "질서의 시간의 열쇠",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["공격 강화 γ", "혼돈의 시간의 자물쇠", "질서의 시간의 열쇠"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -95284,10 +93886,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "촌경",
-      "칠무약진각",
-    ],
+    skillList: ["촌경", "칠무약진각"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -95351,7 +93950,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "촌경": {
+      촌경: {
         "8": [
           {
             material: skillSummary3,
@@ -95395,7 +93994,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "칠무약진각": {
+      칠무약진각: {
         "8": [
           {
             material: skillSummary3,
@@ -95555,10 +94154,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "방어 강화 γ",
-      "방어선 강화",
-    ],
+    skillList: ["방어 강화 γ", "방어선 강화"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -95826,10 +94422,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "흡혈",
-      "인귀",
-    ],
+    skillList: ["흡혈", "인귀"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -95893,7 +94486,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "흡혈": {
+      흡혈: {
         "8": [
           {
             material: skillSummary3,
@@ -95937,7 +94530,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "인귀": {
+      인귀: {
         "8": [
           {
             material: skillSummary3,
@@ -96097,10 +94690,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "더블 샷",
-    ],
+    skillList: ["공격 강화 β", "더블 샷"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -96365,15 +94955,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "고효율 냉각 모드",
-      "레이저 채굴 모드",
-      "무장 타격 모드",
-    ],
-    preferSkillIndexes: [
-      0,
-      2,
-    ],
+    skillList: ["고효율 냉각 모드", "레이저 채굴 모드", "무장 타격 모드"],
+    preferSkillIndexes: [0, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -96757,10 +95340,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "총구정리",
-      "최후의 여로",
-    ],
+    skillList: ["총구정리", "최후의 여로"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -96824,7 +95404,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "총구정리": {
+      총구정리: {
         "8": [
           {
             material: skillSummary3,
@@ -97028,10 +95608,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "방패 반격",
-    ],
+    skillList: ["공격 강화 β", "방패 반격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -97295,10 +95872,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집중식 치료",
-      "확산식 치료",
-    ],
+    skillList: ["집중식 치료", "확산식 치료"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -97566,10 +96140,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "요요",
-      "크로스 훅",
-    ],
+    skillList: ["요요", "크로스 훅"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -97629,7 +96200,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "요요": {
+      요요: {
         "8": [
           {
             material: skillSummary3,
@@ -97834,13 +96405,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "지원 지령 β",
-      "치유의 날개",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["지원 지령 β", "치유의 날개"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -98105,14 +96671,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "초승달",
-      "그믐달",
-      "보름달",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["초승달", "그믐달", "보름달"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -98184,7 +96744,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "초승달": {
+      초승달: {
         "8": [
           {
             material: skillSummary3,
@@ -98228,7 +96788,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "그믐달": {
+      그믐달: {
         "8": [
           {
             material: skillSummary3,
@@ -98272,7 +96832,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "보름달": {
+      보름달: {
         "8": [
           {
             material: skillSummary3,
@@ -98490,10 +97050,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "성좌의 수호자",
-      "빛나는 별의 검",
-    ],
+    skillList: ["성좌의 수호자", "빛나는 별의 검"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -98761,10 +97318,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치료 강화 β",
-      "심화 치료",
-    ],
+    skillList: ["치료 강화 β", "심화 치료"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -99028,10 +97582,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "복선 장전",
-      "펄스 반격",
-    ],
+    skillList: ["복선 장전", "펄스 반격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -99300,14 +97851,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강노",
-      "황혼의 눈동자",
-      "최후의 전술",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["강노", "황혼의 눈동자", "최후의 전술"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -99379,7 +97924,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "강노": {
+      강노: {
         "8": [
           {
             material: skillSummary3,
@@ -99691,10 +98236,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집중식 수치료",
-      "물의 정령의 가호",
-    ],
+    skillList: ["집중식 수치료", "물의 정령의 가호"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -99963,15 +98505,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "칼집 공격",
-      "적소·발도",
-      "적소·절영",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["칼집 공격", "적소·발도", "적소·절영"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -100355,10 +98890,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전술 영창 β",
-      "정전기 방출",
-    ],
+    skillList: ["전술 영창 β", "정전기 방출"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -100596,9 +99128,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "공격 강화 α",
-    ],
+    skillList: ["공격 강화 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -100688,9 +99218,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "2급 치료 모드",
-    ],
+    skillList: ["2급 치료 모드"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -100806,10 +99334,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "총괄 지휘",
-      "협동 작전",
-    ],
+    skillList: ["총괄 지휘", "협동 작전"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -101077,10 +99602,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "풋워크",
-      "재빠른 주먹",
-    ],
+    skillList: ["풋워크", "재빠른 주먹"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -101140,7 +99662,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "풋워크": {
+      풋워크: {
         "8": [
           {
             material: skillSummary3,
@@ -101344,10 +99866,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "영혼 착취",
-      "악몽의 그림자",
-    ],
+    skillList: ["영혼 착취", "악몽의 그림자"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -101615,10 +100134,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "방어 강화 γ",
-      "임전무퇴!",
-    ],
+    skillList: ["방어 강화 γ", "임전무퇴!"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -101887,15 +100403,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "파도타기",
-      "파도의 만가",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["신속 공격 γ", "파도타기", "파도의 만가"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -102011,7 +100520,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "파도타기": {
+      파도타기: {
         "8": [
           {
             material: skillSummary3,
@@ -102257,9 +100766,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "폭발범위확대 α",
-    ],
+    skillList: ["폭발범위확대 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -102349,9 +100856,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "무기 인챈트 α",
-    ],
+    skillList: ["무기 인챈트 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -102467,11 +100972,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전술 영창 γ",
-      "스피릿 버스트",
-      "키메라",
-    ],
+    skillList: ["전술 영창 γ", "스피릿 버스트", "키메라"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -102623,7 +101124,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "키메라": {
+      키메라: {
         "8": [
           {
             material: skillSummary3,
@@ -102832,10 +101333,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "영소·분야",
-      "영소·절영",
-    ],
+    skillList: ["영소·분야", "영소·절영"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -103103,10 +101601,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "자장가",
-      "전투의 노래",
-    ],
+    skillList: ["자장가", "전투의 노래"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -103170,7 +101665,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "자장가": {
+      자장가: {
         "8": [
           {
             material: skillSummary3,
@@ -103374,10 +101869,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "검의 비",
-    ],
+    skillList: ["돌격 지령 γ", "검의 비"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -103646,14 +102138,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "어설트 모드",
-      "슈팅 모드",
-      "과부하 모드",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["어설트 모드", "슈팅 모드", "과부하 모드"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -103985,10 +102471,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 75.2,
 
     name: "아미야 (메딕)",
-    nicknameList: [
-      "힐미야",
-      "힐당끼",
-    ],
+    nicknameList: ["힐미야", "힐당끼"],
 
     imageFilename: "amiya-medic",
 
@@ -104044,13 +102527,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "슬픔의 공감",
-      "자비의 비전",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["슬픔의 공감", "자비의 비전"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -104318,10 +102796,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신속 공격 γ",
-      "예리함의 극치",
-    ],
+    skillList: ["신속 공격 γ", "예리함의 극치"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -104589,10 +103064,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "차지 디펜스",
-      "카운터 아크",
-    ],
+    skillList: ["차지 디펜스", "카운터 아크"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -104860,10 +103332,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치료 강화 γ",
-      "치료 드론",
-    ],
+    skillList: ["치료 강화 γ", "치료 드론"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -105131,10 +103600,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전술 영창 β",
-      "운명",
-    ],
+    skillList: ["전술 영창 β", "운명"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -105238,7 +103704,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "운명": {
+      운명: {
         "8": [
           {
             material: skillSummary3,
@@ -105398,10 +103864,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "광암 촉수",
-      "트롱프뢰유",
-    ],
+    skillList: ["광암 촉수", "트롱프뢰유"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -105505,7 +103968,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "트롱프뢰유": {
+      트롱프뢰유: {
         "8": [
           {
             material: skillSummary3,
@@ -105666,14 +104129,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "점핑 해머",
-      "스컬 크래시",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["돌격 지령 γ", "점핑 해머", "스컬 크래시"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -106057,10 +104514,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 γ",
-      "우르수스의 포효",
-    ],
+    skillList: ["돌격 지령 γ", "우르수스의 포효"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -106328,10 +104782,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "이중 치료",
-      "치료 역장",
-    ],
+    skillList: ["이중 치료", "치료 역장"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -106595,10 +105046,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "눈보라",
-      "풍차",
-    ],
+    skillList: ["눈보라", "풍차"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -106658,7 +105106,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "눈보라": {
+      눈보라: {
         "8": [
           {
             material: skillSummary3,
@@ -106702,7 +105150,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "풍차": {
+      풍차: {
         "8": [
           {
             material: skillSummary3,
@@ -106837,12 +105285,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "치료 강화 α",
-    ],
-    preferSkillIndexes: [
-      0,
-    ],
+    skillList: ["치료 강화 α"],
+    preferSkillIndexes: [0],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -106932,9 +105376,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "전술 영창 α",
-    ],
+    skillList: ["전술 영창 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107024,9 +105466,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "방어 강화 α",
-    ],
+    skillList: ["방어 강화 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107116,9 +105556,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "돌격 지령 α",
-    ],
+    skillList: ["돌격 지령 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107208,9 +105646,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "2연사 - 자동",
-    ],
+    skillList: ["2연사 - 자동"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107326,10 +105762,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "쇄갑격",
-      "쇄갑격 - 확산",
-    ],
+    skillList: ["쇄갑격", "쇄갑격 - 확산"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107389,7 +105822,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "쇄갑격": {
+      쇄갑격: {
         "8": [
           {
             material: skillSummary3,
@@ -107593,10 +106026,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "결사돌격",
-    ],
+    skillList: ["공격 강화 β", "결사돌격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107700,7 +106130,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "결사돌격": {
+      결사돌격: {
         "8": [
           {
             material: skillSummary3,
@@ -107860,10 +106290,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치료 강화 γ",
-      "엔도르핀",
-    ],
+    skillList: ["치료 강화 γ", "엔도르핀"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -107971,7 +106398,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "엔도르핀": {
+      엔도르핀: {
         "8": [
           {
             material: skillSummary3,
@@ -108131,10 +106558,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "이중사격 - 자동",
-      "독액 살포",
-    ],
+    skillList: ["이중사격 - 자동", "독액 살포"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -108402,10 +106826,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "채찍질",
-    ],
+    skillList: ["강타 β", "채찍질"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -108509,7 +106930,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "채찍질": {
+      채찍질: {
         "8": [
           {
             material: skillSummary3,
@@ -108670,14 +107091,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "열광",
-      "화염 폭발",
-      "불타는 땅",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["열광", "화염 폭발", "불타는 땅"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -108749,7 +107164,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "열광": {
+      열광: {
         "8": [
           {
             material: skillSummary3,
@@ -109066,14 +107481,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전의 고양",
-      "가시덤불",
-      "반야회전참",
-    ],
-    preferSkillIndexes: [
-      1,
-    ],
+    skillList: ["전의 고양", "가시덤불", "반야회전참"],
+    preferSkillIndexes: [1],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -109189,7 +107598,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "가시덤불": {
+      가시덤불: {
         "8": [
           {
             material: skillSummary3,
@@ -109233,7 +107642,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "반야회전참": {
+      반야회전참: {
         "8": [
           {
             material: skillSummary3,
@@ -109457,10 +107866,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "해시계",
-      "늑대의 혼",
-    ],
+    skillList: ["해시계", "늑대의 혼"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -109524,7 +107930,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "해시계": {
+      해시계: {
         "8": [
           {
             material: skillSummary3,
@@ -109728,10 +108134,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "붉은 눈동자",
-    ],
+    skillList: ["공격 강화 β", "붉은 눈동자"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -109995,10 +108398,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "육참골단",
-    ],
+    skillList: ["공격 강화 γ", "육참골단"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -110106,7 +108506,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "육참골단": {
+      육참골단: {
         "8": [
           {
             material: skillSummary3,
@@ -110266,10 +108666,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "처형 모드",
-      "이리 떼",
-    ],
+    skillList: ["처형 모드", "이리 떼"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -110537,10 +108934,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "늑대의 눈",
-      "먹이 사냥",
-    ],
+    skillList: ["늑대의 눈", "먹이 사냥"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -110809,14 +109203,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "신조",
-      "자동 엄호",
-      "신조의 역장",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["신조", "자동 엄호", "신조의 역장"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -110888,7 +109276,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "신조": {
+      신조: {
         "8": [
           {
             material: skillSummary3,
@@ -111194,10 +109582,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "응급처치",
-      "응급 모드",
-    ],
+    skillList: ["응급처치", "응급 모드"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -111261,7 +109646,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "응급처치": {
+      응급처치: {
         "8": [
           {
             material: skillSummary3,
@@ -111465,10 +109850,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 β",
-      "돌격지령 - 공격",
-    ],
+    skillList: ["돌격 지령 β", "돌격지령 - 공격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -111732,10 +110114,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "방어 강화 β",
-      "쉘 디펜스",
-    ],
+    skillList: ["방어 강화 β", "쉘 디펜스"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -111999,10 +110378,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "쇄갑권",
-      "열혼",
-    ],
+    skillList: ["쇄갑권", "열혼"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -112066,7 +110442,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "쇄갑권": {
+      쇄갑권: {
         "8": [
           {
             material: skillSummary3,
@@ -112110,7 +110486,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "열혼": {
+      열혼: {
         "8": [
           {
             material: skillSummary3,
@@ -112270,10 +110646,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "카모플라쥬",
-      "전술 무전",
-    ],
+    skillList: ["카모플라쥬", "전술 무전"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -112337,7 +110710,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "카모플라쥬": {
+      카모플라쥬: {
         "8": [
           {
             material: skillSummary3,
@@ -112541,10 +110914,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "디펜스 모드",
-      "어택 모드",
-    ],
+    skillList: ["디펜스 모드", "어택 모드"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -112812,10 +111182,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "메테오 플레임",
-    ],
+    skillList: ["공격 강화 γ", "메테오 플레임"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -113083,10 +111450,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "응급처치용 밴드",
-      "불안정 혈장",
-    ],
+    skillList: ["응급처치용 밴드", "불안정 혈장"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -113308,9 +111672,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 80,
 
     name: "실버애쉬",
-    nicknameList: [
-      "은재",
-    ],
+    nicknameList: ["은재"],
 
     imageFilename: "silverash",
 
@@ -113358,14 +111720,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 γ",
-      "히라 생존 법칙",
-      "진은참",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["강타 γ", "히라 생존 법칙", "진은참"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -113525,7 +111881,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "진은참": {
+      진은참: {
         "8": [
           {
             material: skillSummary3,
@@ -113691,10 +112047,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "체인 훅",
-      "바인딩 체인",
-    ],
+    skillList: ["체인 훅", "바인딩 체인"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -113962,10 +112315,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "메아리",
-      "자연의 위엄",
-    ],
+    skillList: ["메아리", "자연의 위엄"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -114029,7 +112379,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "메아리": {
+      메아리: {
         "8": [
           {
             material: skillSummary3,
@@ -114187,9 +112537,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 79,
 
     name: "나이팅게일",
-    nicknameList: [
-      "팅게",
-    ],
+    nicknameList: ["팅게"],
 
     imageFilename: "nightingale",
 
@@ -114237,14 +112585,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치료 강화 γ",
-      "아츠 실드",
-      "성역",
-    ],
-    preferSkillIndexes: [
-      2,
-    ],
+    skillList: ["치료 강화 γ", "아츠 실드", "성역"],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -114404,7 +112746,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "성역": {
+      성역: {
         "8": [
           {
             material: skillSummary3,
@@ -114629,15 +112971,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "듀엣 아리아",
-      "이그니션",
-      "볼케이노",
-    ],
-    preferSkillIndexes: [
-      1,
-      2,
-    ],
+    skillList: ["듀엣 아리아", "이그니션", "볼케이노"],
+    preferSkillIndexes: [1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -114753,7 +113088,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "이그니션": {
+      이그니션: {
         "8": [
           {
             material: skillSummary3,
@@ -114797,7 +113132,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "볼케이노": {
+      볼케이노: {
         "8": [
           {
             material: skillSummary3,
@@ -115021,10 +113356,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "치료 강화 β",
-      "블렌딩",
-    ],
+    skillList: ["치료 강화 β", "블렌딩"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -115128,7 +113460,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "블렌딩": {
+      블렌딩: {
         "8": [
           {
             material: skillSummary3,
@@ -115288,10 +113620,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "모래 늪",
-    ],
+    skillList: ["공격 강화 β", "모래 늪"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -115555,10 +113884,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "할퀴기!",
-      "고양이의 분노",
-    ],
+    skillList: ["할퀴기!", "고양이의 분노"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -115822,10 +114148,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "활력회복",
-      "활력회복 - 광역",
-    ],
+    skillList: ["활력회복", "활력회복 - 광역"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -115885,7 +114208,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "활력회복": {
+      활력회복: {
         "8": [
           {
             material: skillSummary3,
@@ -116063,9 +114386,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "신속 공격 α",
-    ],
+    skillList: ["신속 공격 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -116181,10 +114502,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "서리창",
-      "빙결창",
-    ],
+    skillList: ["서리창", "빙결창"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -116244,7 +114562,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "서리창": {
+      서리창: {
         "8": [
           {
             material: skillSummary3,
@@ -116288,7 +114606,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "빙결창": {
+      빙결창: {
         "8": [
           {
             material: skillSummary3,
@@ -116448,10 +114766,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집중력 강화",
-      "문학의 폭풍",
-    ],
+    skillList: ["집중력 강화", "문학의 폭풍"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -116719,10 +115034,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전투 식량",
-      "야외 취사",
-    ],
+    skillList: ["전투 식량", "야외 취사"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -116986,10 +115298,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "돌격 지령 β",
-      "돌격지령 - 방어",
-    ],
+    skillList: ["돌격 지령 β", "돌격지령 - 방어"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -117253,10 +115562,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "체력 강화",
-      "내한 체질",
-    ],
+    skillList: ["체력 강화", "내한 체질"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -117520,10 +115826,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "자동 방어",
-      "마그네틱 해머",
-    ],
+    skillList: ["자동 방어", "마그네틱 해머"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -117792,16 +116095,8 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "응급처치",
-      "약제 배급",
-      "칼슘화",
-    ],
-    preferSkillIndexes: [
-      0,
-      1,
-      2,
-    ],
+    skillList: ["응급처치", "약제 배급", "칼슘화"],
+    preferSkillIndexes: [0, 1, 2],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -117873,7 +116168,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "응급처치": {
+      응급처치: {
         "8": [
           {
             material: skillSummary3,
@@ -117961,7 +116256,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "칼슘화": {
+      칼슘화: {
         "8": [
           {
             material: skillSummary3,
@@ -118185,10 +116480,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 γ",
-      "페가수스의 눈",
-    ],
+    skillList: ["공격 강화 γ", "페가수스의 눈"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -118430,9 +116722,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "공격 강화 α",
-    ],
+    skillList: ["공격 강화 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -118522,9 +116812,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "HP 회복 α",
-    ],
+    skillList: ["HP 회복 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -118614,9 +116902,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "강타 α",
-    ],
+    skillList: ["강타 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -118706,9 +116992,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "공격 강화 α",
-    ],
+    skillList: ["공격 강화 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -118798,9 +117082,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "치료 범위 강화",
-    ],
+    skillList: ["치료 범위 강화"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -118916,10 +117198,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "전갈 독",
-      "스콜피온 테일",
-    ],
+    skillList: ["전갈 독", "스콜피온 테일"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -119187,10 +117466,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "집속탄 장전",
-      "유탄 장전",
-    ],
+    skillList: ["집속탄 장전", "유탄 장전"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -119458,10 +117734,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "정밀 타격",
-    ],
+    skillList: ["강타 β", "정밀 타격"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -119729,10 +118002,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "강타 β",
-      "연막 전개",
-    ],
+    skillList: ["강타 β", "연막 전개"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -119996,10 +118266,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "갈고리 발사",
-      "다중 갈고리 발사",
-    ],
+    skillList: ["갈고리 발사", "다중 갈고리 발사"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -120263,10 +118530,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "그림자 방패",
-      "쥐 떼",
-    ],
+    skillList: ["그림자 방패", "쥐 떼"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -120504,9 +118768,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "돌격지령 - 원군",
-    ],
+    skillList: ["돌격지령 - 원군"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -120622,10 +118884,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "철의육합",
-      "붕권식",
-    ],
+    skillList: ["철의육합", "붕권식"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -120689,7 +118948,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "철의육합": {
+      철의육합: {
         "8": [
           {
             material: skillSummary3,
@@ -120733,7 +118992,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "붕권식": {
+      붕권식: {
         "8": [
           {
             material: skillSummary3,
@@ -120893,10 +119152,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "교란 장치",
-      "폭파&회수",
-    ],
+    skillList: ["교란 장치", "폭파&회수"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -121164,10 +119420,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "스팀 펌프",
-      "하이드로캐논",
-    ],
+    skillList: ["스팀 펌프", "하이드로캐논"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -121271,7 +119524,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "하이드로캐논": {
+      하이드로캐논: {
         "8": [
           {
             material: skillSummary3,
@@ -121405,9 +119658,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "2": [],
     },
 
-    skillList: [
-      "신속 공격 α",
-    ],
+    skillList: ["신속 공격 α"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -121603,10 +119854,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "HP 회복 β",
-      "악귀의 힘",
-    ],
+    skillList: ["HP 회복 β", "악귀의 힘"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -121870,10 +120118,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       ],
     },
 
-    skillList: [
-      "공격 강화 β",
-      "해머온",
-    ],
+    skillList: ["공격 강화 β", "해머온"],
     skillUpgradeMaterials: {
       common: {
         "2": [
@@ -121977,7 +120222,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "해머온": {
+      해머온: {
         "8": [
           {
             material: skillSummary3,
@@ -122091,9 +120336,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     legacyId: 76,
 
     name: "안젤리나",
-    nicknameList: [
-      "젤리",
-    ],
+    nicknameList: ["젤리"],
 
     imageFilename: "angelina",
 
@@ -122146,9 +120389,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       "아케인스태프 - 미립자",
       "아케인스태프 - 반중력",
     ],
-    preferSkillIndexes: [
-      2,
-    ],
+    preferSkillIndexes: [2],
     skillUpgradeMaterials: {
       common: {
         "2": [
