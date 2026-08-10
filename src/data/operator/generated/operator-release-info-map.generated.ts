@@ -32,6 +32,30 @@ export const operatorReleaseInfoByCharId: Record<
   string,
   GeneratedOperatorReleaseInfo
 > = {
+  char_1015_aglna2: {
+    eventId: "act53side",
+    eventName: "대지가 오렌지 한 알이 될 때까지",
+    category: "side_story",
+    order: 112,
+  },
+  char_4235_thumpy: {
+    eventId: "act53side",
+    eventName: "대지가 오렌지 한 알이 될 때까지",
+    category: "side_story",
+    order: 112,
+  },
+  char_4236_tmslot: {
+    eventId: "act53side",
+    eventName: "대지가 오렌지 한 알이 될 때까지",
+    category: "side_story",
+    order: 112,
+  },
+  char_4237_jcinta: {
+    eventId: "act53side",
+    eventName: "대지가 오렌지 한 알이 될 때까지",
+    category: "side_story",
+    order: 112,
+  },
   char_4230_mcnist: {
     eventId: "dis_rogue_6",
     eventName: "침몰자의 블랙 플로우",

@@ -195,16 +195,1165 @@ export type GeneratedOperator = {
  */
 export const generatedOperatorList: GeneratedOperator[] = [
   {
+    id: "char_1015_aglna2",
+    legacyId: 425,
+
+    name: "안젤리나 더 멜로우 위시",
+    nicknameList: [
+      "날리",
+    ],
+
+    imageFilename: "angelina-the-mellow-wish",
+
+    class: "Specialist",
+    rarity: 6,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act53side",
+      eventName: "대지가 오렌지 한 알이 될 때까지",
+      category: "side_story",
+      order: 112,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: specialistChip,
+          count: 5,
+        },
+        {
+          material: sugar,
+          count: 8,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+      ],
+      "2": [
+        {
+          material: specialistDualchip,
+          count: 4,
+        },
+        {
+          material: crystallineElectronicUnit,
+          count: 4,
+        },
+        {
+          material: chiralRefractor,
+          count: 2,
+        },
+      ],
+    },
+
+    skillList: [
+      "초고속 배송",
+      "중력 커스터마이징",
+      "라임의 속마음",
+    ],
+    preferSkillIndexes: [
+      2,
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+          {
+            material: orironShard,
+            count: 5,
+          },
+          {
+            material: sugarSubstitute,
+            count: 4,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: polyketon,
+            count: 4,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: device,
+            count: 3,
+          },
+          {
+            material: polyester,
+            count: 3,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: sugarPack,
+            count: 7,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: liquefiedHighEnergyGas,
+            count: 5,
+          },
+          {
+            material: orironCluster,
+            count: 2,
+          },
+        ],
+      },
+      "초고속 배송": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 4,
+          },
+          {
+            material: semiSyntheticSolvent,
+            count: 6,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 4,
+          },
+          {
+            material: orirockConcentration,
+            count: 10,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 6,
+          },
+          {
+            material: refinedSolvent,
+            count: 1,
+          },
+        ],
+      },
+      "중력 커스터마이징": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 4,
+          },
+          {
+            material: sugarPack,
+            count: 7,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: polymerizedGel,
+            count: 4,
+          },
+          {
+            material: crystallineCircuit,
+            count: 7,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 6,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 6,
+          },
+        ],
+      },
+      "라임의 속마음": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: chiralRefractor,
+            count: 4,
+          },
+          {
+            material: liquefiedHighEnergyGas,
+            count: 6,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 4,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 9,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 6,
+          },
+          {
+            material: polymerizedGel,
+            count: 2,
+          },
+        ],
+      },
+    },
+
+    moduleList: [],
+    moduleMaterials: null,
+  },
+  {
+    id: "char_4235_thumpy",
+    legacyId: 424,
+
+    name: "섬피",
+
+    imageFilename: "thumpy",
+
+    class: "Defender",
+    rarity: 6,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act53side",
+      eventName: "대지가 오렌지 한 알이 될 때까지",
+      category: "side_story",
+      order: 112,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: defenderChip,
+          count: 5,
+        },
+        {
+          material: orirockCube,
+          count: 12,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+      ],
+      "2": [
+        {
+          material: defenderDualchip,
+          count: 4,
+        },
+        {
+          material: nucleicCrystalSinter,
+          count: 4,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 2,
+        },
+      ],
+    },
+
+    skillList: [
+      "'안 가고 뭐 해?'",
+      "'천천히 가~'",
+      "'가지 마!'",
+    ],
+    preferSkillIndexes: [
+      2,
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+          {
+            material: ester,
+            count: 6,
+          },
+          {
+            material: orironShard,
+            count: 4,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: oriron,
+            count: 4,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: polyketon,
+            count: 4,
+          },
+          {
+            material: orirockCube,
+            count: 5,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: semiSyntheticSolvent,
+            count: 5,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: sugarPack,
+            count: 5,
+          },
+          {
+            material: fuscousFiber,
+            count: 4,
+          },
+        ],
+      },
+      "'안 가고 뭐 해?'": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: crystallineCircuit,
+            count: 4,
+          },
+          {
+            material: polyesterPack,
+            count: 4,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: ketonColloid,
+            count: 4,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 8,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 6,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 6,
+          },
+        ],
+      },
+      "'천천히 가~'": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 4,
+          },
+          {
+            material: transmutedSalt,
+            count: 6,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 4,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 8,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 6,
+          },
+          {
+            material: ketonColloid,
+            count: 2,
+          },
+        ],
+      },
+      "'가지 마!'": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: orironBlock,
+            count: 4,
+          },
+          {
+            material: RMA7012,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: refinedSolvent,
+            count: 4,
+          },
+          {
+            material: chiralRefractor,
+            count: 9,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 6,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 1,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "PRP-X",
+        name: "출발할 용기",
+        charEquipOrder: 1,
+        server: "future",
+      },
+    ],
+    preferModules: [
+      {
+        type: "PRP-X",
+        level: 3,
+      },
+    ],
+    moduleMaterials: {
+      "PRP-X": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 2,
+          },
+          {
+            material: LMD,
+            count: 80000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementStick,
+            count: 60,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 100000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 20,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 120000,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: "char_4236_tmslot",
+    legacyId: 422,
+
+    name: "타임슬롯",
+
+    imageFilename: "timeslot",
+
+    class: "Caster",
+    rarity: 5,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act53side",
+      eventName: "대지가 오렌지 한 알이 될 때까지",
+      category: "side_story",
+      order: 112,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: casterChip,
+          count: 4,
+        },
+        {
+          material: polyester,
+          count: 5,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "2": [
+        {
+          material: casterDualchip,
+          count: 3,
+        },
+        {
+          material: orironBlock,
+          count: 7,
+        },
+        {
+          material: integratedDevice,
+          count: 9,
+        },
+      ],
+    },
+
+    skillList: [
+      "공격 강화 γ",
+      "기술과 전통 의식",
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+          {
+            material: diketon,
+            count: 5,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: device,
+            count: 2,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: orirockCube,
+            count: 8,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: aketon,
+            count: 4,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: transmutedSalt,
+            count: 3,
+          },
+          {
+            material: fuscousFiber,
+            count: 2,
+          },
+        ],
+      },
+      "공격 강화 γ": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: ketonColloid,
+            count: 3,
+          },
+          {
+            material: coagulatingGel,
+            count: 2,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 3,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 6,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 4,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 1,
+          },
+        ],
+      },
+      "기술과 전통 의식": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 3,
+          },
+          {
+            material: pseudocondensationNucleus,
+            count: 2,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 3,
+          },
+          {
+            material: orironBlock,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 4,
+          },
+          {
+            material: chiralRefractor,
+            count: 1,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "FUN-X",
+        name: "돌발성 창의적 생각",
+        charEquipOrder: 1,
+        server: "future",
+      },
+    ],
+    moduleMaterials: {
+      "FUN-X": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: orirockConcentration,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 40000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementStick,
+            count: 20,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 50000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 8,
+          },
+          {
+            material: crystallineCircuit,
+            count: 5,
+          },
+          {
+            material: LMD,
+            count: 60000,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: "char_4237_jcinta",
+    legacyId: 423,
+
+    name: "재신타",
+
+    imageFilename: "jacinta",
+
+    class: "Vanguard",
+    rarity: 5,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act53side",
+      eventName: "대지가 오렌지 한 알이 될 때까지",
+      category: "side_story",
+      order: 112,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: vanguardChip,
+          count: 4,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 3,
+        },
+      ],
+      "2": [
+        {
+          material: vanguardDualchip,
+          count: 3,
+        },
+        {
+          material: refinedSolvent,
+          count: 7,
+        },
+        {
+          material: loxicKohl,
+          count: 20,
+        },
+      ],
+    },
+
+    skillList: [
+      "지원지령γ",
+      "양산 아래의 그늘",
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+          {
+            material: damagedDevice,
+            count: 4,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: orirockCube,
+            count: 4,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: sugar,
+            count: 5,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: coagulatingGel,
+            count: 4,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: RMA7012,
+            count: 3,
+          },
+          {
+            material: orironCluster,
+            count: 1,
+          },
+        ],
+      },
+      "지원지령γ": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: refinedSolvent,
+            count: 3,
+          },
+          {
+            material: electrodeUnit,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: ketonColloid,
+            count: 3,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 4,
+          },
+          {
+            material: orirockConcentration,
+            count: 1,
+          },
+        ],
+      },
+      "양산 아래의 그늘": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 3,
+          },
+          {
+            material: compoundCuttingFluid,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 3,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 4,
+          },
+          {
+            material: crystallineCircuit,
+            count: 3,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "BEA-X",
+        name: "런치 컨트롤",
+        charEquipOrder: 1,
+        server: "future",
+      },
+    ],
+    moduleMaterials: {
+      "BEA-X": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: polymerizedGel,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 40000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementStick,
+            count: 20,
+          },
+          {
+            material: chiralRefractor,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 50000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 8,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 5,
+          },
+          {
+            material: LMD,
+            count: 60000,
+          },
+        ],
+      },
+    },
+  },
+  {
     id: "char_4230_mcnist",
 
-    name: "메커니스트",
+    name: "机械师",
 
     imageFilename: "mechanist",
 
     class: "Defender",
     rarity: 6,
 
-    growthType: "roguelike",
+    growthType: "normal",
     server: "future",
     releaseInfo: {
       eventId: "dis_rogue_6",
@@ -246,12 +1395,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "군집 분석",
-      "협동방어 술식",
-      "공학 유성우",
-    ],
-    preferSkillIndexes: [
-      2,
+      "聚类分析",
+      "协防术式",
+      "工程学十字星",
     ],
     skillUpgradeMaterials: {
       common: {
@@ -324,7 +1470,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "군집 분석": {
+      "聚类分析": {
         "8": [
           {
             material: skillSummary3,
@@ -368,7 +1514,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "협동방어 술식": {
+      "协防术式": {
         "8": [
           {
             material: skillSummary3,
@@ -412,7 +1558,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "공학 유성우": {
+      "工程学十字星": {
         "8": [
           {
             material: skillSummary3,
@@ -461,15 +1607,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "SO-α",
-        name: "메커니스트의 특근 배지",
+        name: "机械师特勤证章",
         charEquipOrder: 4,
         server: "future",
-      },
-    ],
-    preferModules: [
-      {
-        type: "SO-α",
-        level: 3,
       },
     ],
     moduleMaterials: null,
@@ -24025,7 +25165,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "RA-A",
+        type: "RA-α",
         level: 3,
       },
     ],
@@ -27747,7 +28887,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "CCR-D",
+        type: "CCR-Δ",
         level: 3,
       },
     ],
@@ -29717,7 +30857,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "TRP-D",
+        type: "TRP-Δ",
         level: 3,
       },
     ],
@@ -34804,7 +35944,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "AFT-D",
+        type: "AFT-Δ",
         level: 3,
       },
     ],
@@ -38575,7 +39715,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         level: 1,
       },
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -39803,7 +40943,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       },
       {
         type: "ISW-α",
-        name: "提丰特限证章",
+        name: "티폰의 특별 한정 배지",
         charEquipOrder: 4,
         server: "future",
       },
@@ -39811,6 +40951,10 @@ export const generatedOperatorList: GeneratedOperator[] = [
     preferModules: [
       {
         type: "SIE-Y",
+        level: 3,
+      },
+      {
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -42530,7 +43674,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -52034,11 +53178,21 @@ export const generatedOperatorList: GeneratedOperator[] = [
         charEquipOrder: 2,
         server: "global",
       },
+      {
+        type: "RA-α",
+        name: "가비알 디 인빈서블의 특별 한정 배지",
+        charEquipOrder: 4,
+        server: "future",
+      },
     ],
     preferModules: [
       {
         type: "CEN-Y",
         level: 1,
+      },
+      {
+        type: "RA-α",
+        level: 3,
       },
     ],
     moduleMaterials: {
@@ -52143,6 +53297,26 @@ export const generatedOperatorList: GeneratedOperator[] = [
           {
             material: LMD,
             count: 120000,
+          },
+        ],
+      },
+      "RA-α": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 1,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 1,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 1,
           },
         ],
       },
@@ -54577,7 +55751,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "MSC-D",
+        type: "MSC-Δ",
         level: 3,
       },
     ],
@@ -55566,7 +56740,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
       },
       {
         type: "ISW-α",
-        name: "归溟幽灵鲨特限证章",
+        name: "스펙터 디 언체인드의 특별 한정 배지",
         charEquipOrder: 4,
         server: "future",
       },
@@ -55578,6 +56752,10 @@ export const generatedOperatorList: GeneratedOperator[] = [
       },
       {
         type: "PUM-Y",
+        level: 3,
+      },
+      {
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -55995,7 +57173,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -58268,11 +59446,21 @@ export const generatedOperatorList: GeneratedOperator[] = [
         charEquipOrder: 2,
         server: "global",
       },
+      {
+        type: "ISW-α",
+        name: "피아메타의 특별 한정 배지",
+        charEquipOrder: 4,
+        server: "future",
+      },
     ],
     preferModules: [
       {
         type: "ART-Y",
         level: 2,
+      },
+      {
+        type: "ISW-α",
+        level: 3,
       },
     ],
     moduleMaterials: {
@@ -58377,6 +59565,26 @@ export const generatedOperatorList: GeneratedOperator[] = [
           {
             material: LMD,
             count: 120000,
+          },
+        ],
+      },
+      "ISW-α": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 1,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 1,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 1,
           },
         ],
       },
@@ -61691,7 +62899,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         level: 3,
       },
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -66819,7 +68027,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -69093,7 +70301,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         level: 3,
       },
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -71115,7 +72323,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         level: 3,
       },
       {
-        type: "RA-A",
+        type: "RA-α",
         level: 3,
       },
     ],
@@ -73013,7 +74221,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -74363,7 +75571,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -77179,7 +78387,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -81027,7 +82235,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "RA-A",
+        type: "RA-α",
         level: 3,
       },
     ],
@@ -87229,7 +88437,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],
@@ -107695,7 +108903,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         level: 3,
       },
       {
-        type: "BLA-D",
+        type: "BLA-Δ",
         level: 3,
       },
     ],
@@ -121168,7 +122376,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     ],
     preferModules: [
       {
-        type: "ISW-A",
+        type: "ISW-α",
         level: 3,
       },
     ],

@@ -223,6 +223,10 @@ export const OPERATOR_ID_MIGRATION_MAP: Record<string, string> = {
   "418": "char_1048_orchd2",
   "419": "char_4234_pedro",
   "420": "char_4229_aphris",
+  "422": "char_4236_tmslot",
+  "423": "char_4237_jcinta",
+  "424": "char_4235_thumpy",
+  "425": "char_1015_aglna2",
   "75.1": "char_1001_amiya2",
   "75.2": "char_1037_amiya3"
 };

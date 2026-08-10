@@ -8,6 +8,150 @@ import { CnReleaseCandidate } from "../../../../scripts/operator-release/cn-rele
 export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
   {
     "kind": "cn_release_candidate",
+    "commitHash": "81c6d458a1778a9ba878a95c4e6fe48fb4254041",
+    "commitDate": "2026-08-01T19:32:07+08:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4237_jcinta",
+        "cnName": "嘉辛塔",
+        "globalName": null,
+        "profession": "PIONEER",
+        "server": "future"
+      },
+      {
+        "charId": "char_4236_tmslot",
+        "cnName": "时隙",
+        "globalName": null,
+        "profession": "CASTER",
+        "server": "future"
+      },
+      {
+        "charId": "char_1015_aglna2",
+        "cnName": "予愿安洁莉娜",
+        "globalName": null,
+        "profession": "SPECIAL",
+        "server": "future"
+      },
+      {
+        "charId": "char_4235_thumpy",
+        "cnName": "珊比",
+        "globalName": null,
+        "profession": "TANK",
+        "server": "future"
+      }
+    ],
+    "addedActivityList": [
+      {
+        "id": "act53side",
+        "cnName": "直到大地变成一颗酸橙",
+        "globalName": null,
+        "type": "TYPE_ACT53SIDE",
+        "firstSeenType": "TYPE_ACT53SIDE",
+        "displayType": "NONE",
+        "category": "side_story",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": true,
+        "templateShopId": "shop_act53side",
+        "cnStartTime": 1785538800,
+        "cnEndTime": 1787342399,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act60sign",
+        "cnName": "透明信笺签到活动",
+        "globalName": null,
+        "type": "CHECKIN_ONLY",
+        "firstSeenType": "CHECKIN_ONLY",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1785538800,
+        "cnEndTime": 1786737599,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act5unique",
+        "cnName": "夏日嘉年华特别活动",
+        "globalName": null,
+        "type": "UNIQUE_ONLY",
+        "firstSeenType": "UNIQUE_ONLY",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1785538800,
+        "cnEndTime": 1788983999,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act28login",
+        "cnName": "登录领取奖励",
+        "globalName": null,
+        "type": "LOGIN_ONLY",
+        "firstSeenType": "LOGIN_ONLY",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1785538800,
+        "cnEndTime": 1786737599,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act16pray",
+        "cnName": "幸运墙登录活动",
+        "globalName": null,
+        "type": "PRAY_ONLY",
+        "firstSeenType": "PRAY_ONLY",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1785538800,
+        "cnEndTime": 1786737599,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "LIMITED_76_0_1",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_76_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "high",
+    "reasons": [
+      "4 operator(s) added",
+      "4 operator(s) are future",
+      "5 activity(s) added in same commit",
+      "2 gacha(s) added in same commit"
+    ]
+  },
+  {
+    "kind": "cn_release_candidate",
     "commitHash": "30bf3692d676ce27c79e8ce95745f1523eae1519",
     "commitDate": "2026-07-17T16:14:56+08:00",
     "addedOperatorList": [
@@ -502,47 +646,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     ]
   },
   {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "a24a8ad150e1dd7a9c2e2944e48997145eccac11",
-    "commitDate": "2026-04-08T08:23:08+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act51side",
-        "cnName": "人们，我们",
-        "globalName": null,
-        "type": "TYPE_ACT9D0",
-        "firstSeenType": "TYPE_ACT9D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": true,
-        "templateShopId": "shop_act51side",
-        "cnStartTime": 1775516400,
-        "cnEndTime": 1776715199,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "SINGLE_72_0_1",
-        "name": ""
-      },
-      {
-        "id": "DOUBLE_72_0_2",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
     "kind": "cn_release_candidate",
     "commitHash": "e4b550fc2b9304dbfa071b7b0cbb0bc26a1d03e7",
     "commitDate": "2026-04-07T06:15:30+08:00",
@@ -763,7 +866,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "id": "act3unique",
         "cnName": "鸣羽颂新签到活动",
-        "globalName": null,
+        "globalName": "부활의 찬가 출석 이벤트",
         "type": "UNIQUE_ONLY",
         "firstSeenType": "UNIQUE_ONLY",
         "displayType": "NONE",
@@ -774,9 +877,9 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": null,
         "cnStartTime": 1770382800,
         "cnEndTime": 1773086399,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1785394800,
+        "globalEndTime": 1788116399,
+        "hasGlobalMatch": true
       }
     ],
     "addedGachaList": [
@@ -1425,7 +1528,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     ],
     "confidence": "low",
     "reasons": [
-      "release-like activity added without primary operator mapping",
+      "release-like activity added without mapped operator",
       "side_story activity needs manual operator mapping"
     ]
   },
@@ -2205,7 +2308,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     ],
     "confidence": "low",
     "reasons": [
-      "release-like activity added without primary operator mapping",
+      "release-like activity added without mapped operator",
       "side_story activity needs manual operator mapping"
     ]
   },
@@ -5041,294 +5144,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       "1 operator(s) matched global",
       "1 activity(s) added in same commit",
       "4 gacha(s) added in same commit"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "1stact",
-        "cnName": "骑兵与猎人",
-        "globalName": "기병과 사냥꾼",
-        "type": "DEFAULT",
-        "firstSeenType": "DEFAULT",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1559181600,
-        "cnEndTime": 1560369599,
-        "globalStartTime": 1580886000,
-        "globalEndTime": 1582052399,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act3d0",
-        "cnName": "火蓝之心",
-        "globalName": "파란 불꽃의 마음",
-        "type": "TYPE_ACT3D0",
-        "firstSeenType": "TYPE_ACT3D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1566892800,
-        "cnEndTime": 1568059199,
-        "globalStartTime": 1588136400,
-        "globalEndTime": 1589309999,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act4d0",
-        "cnName": "战地秘闻",
-        "globalName": "전장의 비화",
-        "type": "TYPE_ACT4D0",
-        "firstSeenType": "TYPE_ACT4D0",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1571126400,
-        "cnEndTime": 1571687999,
-        "globalStartTime": 1585119600,
-        "globalEndTime": 1586285999,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act5d0",
-        "cnName": "喧闹法则",
-        "globalName": "소란의 법칙",
-        "type": "TYPE_ACT5D0",
-        "firstSeenType": "TYPE_ACT5D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1574150400,
-        "cnEndTime": 1575316799,
-        "globalStartTime": 1590544800,
-        "globalEndTime": 1591729199,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act12d6",
-        "cnName": "刻俄柏的灰蕈迷境",
-        "globalName": "케오베의 버섯 안개 미궁",
-        "type": "ROGUELIKE",
-        "firstSeenType": "ROGUELIKE",
-        "displayType": "NONE",
-        "category": "roguelike",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1598328000,
-        "cnEndTime": 1600113599,
-        "globalStartTime": 1614229200,
-        "globalEndTime": 1616007599,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "roguelike activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act8mini",
-        "cnName": "如我所见",
-        "globalName": "비질로",
-        "type": "MINISTORY",
-        "firstSeenType": "MINISTORY",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": true,
-        "templateShopId": "shop_act8mini",
-        "cnStartTime": 1626163200,
-        "cnEndTime": 1626724799,
-        "globalStartTime": 1645074000,
-        "globalEndTime": 1645642799,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act11mini",
-        "cnName": "未尽篇章",
-        "globalName": "투 비 컨티뉴",
-        "type": "MINISTORY",
-        "firstSeenType": "MINISTORY",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": true,
-        "templateShopId": "shop_act11mini",
-        "cnStartTime": 1658217600,
-        "cnEndTime": 1658779199,
-        "globalStartTime": 1676617200,
-        "globalEndTime": 1677178799,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act1sandbox",
-        "cnName": "生息演算：沙中之火",
-        "globalName": "생존 연산: 모래 속의 불",
-        "type": "DEFAULT",
-        "firstSeenType": "SANDBOX",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1674979200,
-        "cnEndTime": 1677959999,
-        "globalStartTime": 1694052000,
-        "globalEndTime": 1697050799,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "39dcfaf8ccdf4ceb809fac9205b5e1283827ad66",
-    "commitDate": "2023-05-06T15:05:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act25side",
-        "cnName": "孤星",
-        "globalName": "론 트레일",
-        "type": "TYPE_ACT25SIDE",
-        "firstSeenType": "TYPE_ACT25SIDE",
-        "displayType": "NONE",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": true,
-        "templateShopId": "shop_act25side",
-        "cnStartTime": 1682913600,
-        "cnEndTime": 1684699199,
-        "globalStartTime": 1699340400,
-        "globalEndTime": 1701111599,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
     ]
   },
   {
@@ -10197,43 +10012,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     ]
   },
   {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "7c3f2b5769414d488e7261890bcc49fbcc67e598",
-    "commitDate": "2023-01-29T16:01:15+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act1sandbox",
-        "cnName": "生息演算：沙中之火",
-        "globalName": "생존 연산: 모래 속의 불",
-        "type": "DEFAULT",
-        "firstSeenType": "SANDBOX",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1674979200,
-        "cnEndTime": 1677959999,
-        "globalStartTime": 1694052000,
-        "globalEndTime": 1697050799,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_35_0_3",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
     "kind": "cn_release_candidate",
     "commitHash": "22c3b4f995c01db14d06a62e3f568a012caa1a90",
     "commitDate": "2023-01-17T10:11:17+08:00",
@@ -11110,43 +10888,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       "4 operator(s) matched global",
       "6 activity(s) added in same commit",
       "4 gacha(s) added in same commit"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "2acbab3a9371f165b265195b7fe57a6a8cd8d1ea",
-    "commitDate": "2022-07-19T16:11:32+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act11mini",
-        "cnName": "未尽篇章",
-        "globalName": "투 비 컨티뉴",
-        "type": "MINISTORY",
-        "firstSeenType": "MINISTORY",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": true,
-        "templateShopId": "shop_act11mini",
-        "cnStartTime": 1658217600,
-        "cnEndTime": 1658779199,
-        "globalStartTime": 1676617200,
-        "globalEndTime": 1677178799,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_29_0_3",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
     ]
   },
   {
@@ -12500,43 +12241,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     ]
   },
   {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "370c4c62987765e892235632261177381998a684",
-    "commitDate": "2021-07-13T16:00:39+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act8mini",
-        "cnName": "如我所见",
-        "globalName": "비질로",
-        "type": "MINISTORY",
-        "firstSeenType": "MINISTORY",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": true,
-        "templateShopId": "shop_act8mini",
-        "cnStartTime": 1626163200,
-        "cnEndTime": 1626724799,
-        "globalStartTime": 1645074000,
-        "globalEndTime": 1645642799,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_20_0_2",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
-    ]
-  },
-  {
     "kind": "cn_release_candidate",
     "commitHash": "a0a4b8555bfcd07bdbc30c7da688229d6d52a096",
     "commitDate": "2021-07-02T10:11:00+08:00",
@@ -13559,47 +13263,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     ]
   },
   {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "d6ccbc84529755429fd58d75d6d82df76c974efb",
-    "commitDate": "2020-08-25T10:10:52+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act12d6",
-        "cnName": "刻俄柏的灰蕈迷境",
-        "globalName": "케오베의 버섯 안개 미궁",
-        "type": "ROGUELIKE",
-        "firstSeenType": "ROGUELIKE",
-        "displayType": "NONE",
-        "category": "roguelike",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1598328000,
-        "cnEndTime": 1600113599,
-        "globalStartTime": 1614229200,
-        "globalEndTime": 1616007599,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_11_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_12_0_1",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "roguelike activity needs manual operator mapping"
-    ]
-  },
-  {
     "kind": "cn_release_candidate",
     "commitHash": "d6ccbc84529755429fd58d75d6d82df76c974efb",
     "commitDate": "2020-08-25T10:10:52+08:00",
@@ -14193,810 +13856,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       "1 operator(s) matched global",
       "1 activity(s) added in same commit",
       "1 gacha(s) added in same commit"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "08f96ea653a43821834617be1527603443bba510",
-    "commitDate": "2020-04-21T11:14:59+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "1stact",
-        "cnName": "骑兵与猎人",
-        "globalName": "기병과 사냥꾼",
-        "type": "DEFAULT",
-        "firstSeenType": "DEFAULT",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1559181600,
-        "cnEndTime": 1560369599,
-        "globalStartTime": 1580886000,
-        "globalEndTime": 1582052399,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_7",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_9_0_1",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "08f96ea653a43821834617be1527603443bba510",
-    "commitDate": "2020-04-21T11:14:59+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act3d0",
-        "cnName": "火蓝之心",
-        "globalName": "파란 불꽃의 마음",
-        "type": "TYPE_ACT3D0",
-        "firstSeenType": "TYPE_ACT3D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1566892800,
-        "cnEndTime": 1568059199,
-        "globalStartTime": 1588136400,
-        "globalEndTime": 1589309999,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_7",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_9_0_1",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "08f96ea653a43821834617be1527603443bba510",
-    "commitDate": "2020-04-21T11:14:59+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act4d0",
-        "cnName": "战地秘闻",
-        "globalName": "전장의 비화",
-        "type": "TYPE_ACT4D0",
-        "firstSeenType": "TYPE_ACT4D0",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1571126400,
-        "cnEndTime": 1571687999,
-        "globalStartTime": 1585119600,
-        "globalEndTime": 1586285999,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_7",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_9_0_1",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "08f96ea653a43821834617be1527603443bba510",
-    "commitDate": "2020-04-21T11:14:59+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act5d0",
-        "cnName": "喧闹法则",
-        "globalName": "소란의 법칙",
-        "type": "TYPE_ACT5D0",
-        "firstSeenType": "TYPE_ACT5D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1574150400,
-        "cnEndTime": 1575316799,
-        "globalStartTime": 1590544800,
-        "globalEndTime": 1591729199,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_7",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_7_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_8_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_9_0_1",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
     ]
   },
   {
@@ -17023,618 +15882,6 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       "1 operator(s) matched global",
       "1 activity(s) added in same commit",
       "1 gacha(s) added in same commit"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "c16b3f554e2e866dae87c1e919fb431e313ece2a",
-    "commitDate": "2019-12-31T21:46:09+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "1stact",
-        "cnName": "骑兵与猎人",
-        "globalName": "기병과 사냥꾼",
-        "type": "DEFAULT",
-        "firstSeenType": "DEFAULT",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1559181600,
-        "cnEndTime": 1560369599,
-        "globalStartTime": 1580886000,
-        "globalEndTime": 1582052399,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "c16b3f554e2e866dae87c1e919fb431e313ece2a",
-    "commitDate": "2019-12-31T21:46:09+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act3d0",
-        "cnName": "火蓝之心",
-        "globalName": "파란 불꽃의 마음",
-        "type": "TYPE_ACT3D0",
-        "firstSeenType": "TYPE_ACT3D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1566892800,
-        "cnEndTime": 1568059199,
-        "globalStartTime": 1588136400,
-        "globalEndTime": 1589309999,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "c16b3f554e2e866dae87c1e919fb431e313ece2a",
-    "commitDate": "2019-12-31T21:46:09+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act4d0",
-        "cnName": "战地秘闻",
-        "globalName": "전장의 비화",
-        "type": "TYPE_ACT4D0",
-        "firstSeenType": "TYPE_ACT4D0",
-        "displayType": "MINISTORY",
-        "category": "mini_event",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1571126400,
-        "cnEndTime": 1571687999,
-        "globalStartTime": 1585119600,
-        "globalEndTime": 1586285999,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "mini_event activity needs manual operator mapping"
-    ]
-  },
-  {
-    "kind": "cn_unmapped_release_activity",
-    "commitHash": "c16b3f554e2e866dae87c1e919fb431e313ece2a",
-    "commitDate": "2019-12-31T21:46:09+08:00",
-    "addedOperatorList": [],
-    "addedActivityList": [
-      {
-        "id": "act5d0",
-        "cnName": "喧闹法则",
-        "globalName": "소란의 법칙",
-        "type": "TYPE_ACT5D0",
-        "firstSeenType": "TYPE_ACT5D0",
-        "displayType": "SIDESTORY",
-        "category": "side_story",
-        "isRerun": false,
-        "isReplicate": false,
-        "hasEventShop": false,
-        "templateShopId": null,
-        "cnStartTime": 1574150400,
-        "cnEndTime": 1575316799,
-        "globalStartTime": 1590544800,
-        "globalEndTime": 1591729199,
-        "hasGlobalMatch": true
-      }
-    ],
-    "addedGachaList": [
-      {
-        "id": "NORM_0_1_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_0_1_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_1_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_2_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_3_0_6",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_4_0_5",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_2",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_3",
-        "name": ""
-      },
-      {
-        "id": "NORM_5_0_4",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_1",
-        "name": ""
-      },
-      {
-        "id": "NORM_6_0_2",
-        "name": ""
-      }
-    ],
-    "confidence": "low",
-    "reasons": [
-      "release-like activity added without primary operator mapping",
-      "side_story activity needs manual operator mapping"
     ]
   },
   {

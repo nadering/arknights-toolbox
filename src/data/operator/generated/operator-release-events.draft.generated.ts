@@ -11,6 +11,19 @@ import { OperatorReleaseEvent } from "../manual/operator-release-types";
  */
 export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   {
+    "id": "act53side",
+    "name": "直到大地变成一颗酸橙",
+    "category": "side_story",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": [
+      "char_4237_jcinta",
+      "char_4236_tmslot",
+      "char_1015_aglna2",
+      "char_4235_thumpy"
+    ]
+  },
+  {
     "id": "cn_20260717_char_4230_mcnist",
     "name": "2026-07-17 출시 후보: 机械师",
     "category": "other",
@@ -56,14 +69,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
       "char_4226_veen",
       "char_1052_kalts2"
     ]
-  },
-  {
-    "id": "act51side",
-    "name": "人们，我们",
-    "category": "side_story",
-    "server": "future",
-    "source": "cn_git_history",
-    "operatorIds": []
   },
   {
     "id": "cn_20260407_char_4224_turdus",
@@ -598,78 +603,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "1stact",
-    "name": "기병과 사냥꾼",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act3d0",
-    "name": "파란 불꽃의 마음",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act4d0",
-    "name": "전장의 비화",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act5d0",
-    "name": "소란의 법칙",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act12d6",
-    "name": "케오베의 버섯 안개 미궁",
-    "category": "roguelike",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act8mini",
-    "name": "비질로",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act11mini",
-    "name": "투 비 컨티뉴",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act1sandbox",
-    "name": "생존 연산: 모래 속의 불",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act25side",
-    "name": "론 트레일",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
     "id": "cn_20230501_char_4006_melnte",
     "name": "2023-05-01 출시 후보: 멜라나이트, 뮤엘시스, 오올헤약, 사일런스 더 패러디그매틱",
     "category": "other",
@@ -727,14 +660,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
       "char_4083_chimes",
       "char_4082_qiubai"
     ]
-  },
-  {
-    "id": "act1sandbox",
-    "name": "생존 연산: 모래 속의 불",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
   },
   {
     "id": "act23side",
@@ -834,14 +759,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
       "char_4055_bgsnow",
       "char_1026_gvial2"
     ]
-  },
-  {
-    "id": "act11mini",
-    "name": "투 비 컨티뉴",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
   },
   {
     "id": "act19side",
@@ -1025,14 +942,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "act8mini",
-    "name": "비질로",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
     "id": "cn_20210702_char_485_pallas",
     "name": "2021-07-02 출시 후보: 팔라스",
     "category": "other",
@@ -1181,14 +1090,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "act12d6",
-    "name": "케오베의 버섯 안개 미궁",
-    "category": "roguelike",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
     "id": "act12d0",
     "name": "위대한 족장 가비알 리턴즈",
     "category": "side_story",
@@ -1293,38 +1194,6 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "1stact",
-    "name": "기병과 사냥꾼",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act3d0",
-    "name": "파란 불꽃의 마음",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act4d0",
-    "name": "전장의 비화",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act5d0",
-    "name": "소란의 법칙",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
     "id": "cn_20200401_char_159_peacok",
     "name": "2020-04-01 출시 후보: 컨빅션",
     "category": "other",
@@ -1425,37 +1294,5 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     "operatorIds": [
       "char_383_snsant"
     ]
-  },
-  {
-    "id": "1stact",
-    "name": "기병과 사냥꾼",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act3d0",
-    "name": "파란 불꽃의 마음",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act4d0",
-    "name": "전장의 비화",
-    "category": "mini_event",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
-  },
-  {
-    "id": "act5d0",
-    "name": "소란의 법칙",
-    "category": "side_story",
-    "server": "global",
-    "source": "cn_git_history",
-    "operatorIds": []
   }
 ];

@@ -104,6 +104,19 @@ export const operatorOverrideDraftList: OperatorOverride[] = [
     ]
   },
   {
+    "charId": "char_1015_aglna2",
+    "legacyId": 425,
+    "preferSkillIndexes": [
+      2
+    ],
+    "translatedName": "안젤리나 더 멜로우 위시",
+    "translatedSkillNames": {
+      "skchr_aglna2_1": "초고속 배송",
+      "skchr_aglna2_2": "중력 커스터마이징",
+      "skchr_aglna2_3": "라임의 속마음"
+    }
+  },
+  {
     "charId": "char_1016_agoat2",
     "legacyId": 288,
     "nicknameList": [
@@ -201,8 +214,15 @@ export const operatorOverrideDraftList: OperatorOverride[] = [
       {
         "type": "CEN-Y",
         "level": 1
+      },
+      {
+        "type": "RA-α",
+        "level": 3
       }
-    ]
+    ],
+    "translatedModuleNames": {
+      "RA-α": "가비알 디 인빈서블의 특별 한정 배지"
+    }
   },
   {
     "charId": "char_1028_texas2",
@@ -1067,8 +1087,15 @@ export const operatorOverrideDraftList: OperatorOverride[] = [
       {
         "type": "ART-Y",
         "level": 2
+      },
+      {
+        "type": "ISW-α",
+        "level": 3
       }
-    ]
+    ],
+    "translatedModuleNames": {
+      "ISW-α": "피아메타의 특별 한정 배지"
+    }
   },
   {
     "charId": "char_311_mudrok",
@@ -2262,6 +2289,52 @@ export const operatorOverrideDraftList: OperatorOverride[] = [
     "translatedSkillNames": {
       "skchr_pedro_1": "표식 사격",
       "skchr_pedro_2": "교대 철수"
+    }
+  },
+  {
+    "charId": "char_4235_thumpy",
+    "legacyId": 424,
+    "preferSkillIndexes": [
+      2
+    ],
+    "preferModules": [
+      {
+        "type": "PRP-X",
+        "level": 3
+      }
+    ],
+    "translatedName": "섬피",
+    "translatedSkillNames": {
+      "skchr_thumpy_1": "'안 가고 뭐 해?'",
+      "skchr_thumpy_2": "'천천히 가~'",
+      "skchr_thumpy_3": "'가지 마!'"
+    },
+    "translatedModuleNames": {
+      "PRP-X": "출발할 용기"
+    }
+  },
+  {
+    "charId": "char_4236_tmslot",
+    "legacyId": 422,
+    "translatedName": "타임슬롯",
+    "translatedSkillNames": {
+      "skcom_atk_up[3]": "공격 강화 γ",
+      "skchr_tmslot_2": "기술과 전통 의식"
+    },
+    "translatedModuleNames": {
+      "FUN-X": "돌발성 창의적 생각"
+    }
+  },
+  {
+    "charId": "char_4237_jcinta",
+    "legacyId": 423,
+    "translatedName": "재신타",
+    "translatedSkillNames": {
+      "skcom_assist_cost[3]": "지원지령γ",
+      "skchr_jcinta_2": "양산 아래의 그늘"
+    },
+    "translatedModuleNames": {
+      "BEA-X": "런치 컨트롤"
     }
   },
   {
