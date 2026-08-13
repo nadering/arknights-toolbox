@@ -1346,14 +1346,14 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
   {
     id: "char_4230_mcnist",
 
-    name: "机械师",
+    name: "메커니스트",
 
     imageFilename: "mechanist",
 
     class: "Defender",
     rarity: 6,
 
-    growthType: "normal",
+    growthType: "roguelike",
     server: "future",
     releaseInfo: {
       eventId: "dis_rogue_6",
@@ -1395,9 +1395,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "聚类分析",
-      "协防术式",
-      "工程学十字星",
+      "군집 분석",
+      "협동방어 술식",
+      "공학 유성우",
     ],
     skillUpgradeMaterials: {
       common: {
@@ -1470,7 +1470,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "聚类分析": {
+      "군집 분석": {
         "8": [
           {
             material: skillSummary3,
@@ -1514,7 +1514,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "协防术式": {
+      "협동방어 술식": {
         "8": [
           {
             material: skillSummary3,
@@ -1558,7 +1558,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "工程学十字星": {
+      "공학 유성우": {
         "8": [
           {
             material: skillSummary3,
@@ -1607,7 +1607,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "SO-α",
-        name: "机械师特勤证章",
+        name: "메커니스트의 특근 배지",
         charEquipOrder: 4,
         server: "future",
       },
@@ -4941,10 +4941,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 5,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act20mini",
-      eventName: "교차로",
+      eventName: "교차지점",
       category: "mini_event",
       order: 106,
     },
@@ -4982,7 +4982,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "합주의 시작",
+      "합주 개시",
       "피날레까지",
     ],
     skillUpgradeMaterials: {
@@ -5048,7 +5048,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "합주의 시작": {
+      "합주 개시": {
         "8": [
           {
             material: skillSummary3,
@@ -5141,9 +5141,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "SPC-Y",
-        name: "'황혼의 약속'",
+        name: "'황혼의 언약'",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -5213,10 +5213,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 6,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act20mini",
-      eventName: "교차로",
+      eventName: "교차지점",
       category: "mini_event",
       order: 106,
     },
@@ -5255,7 +5255,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     skillList: [
       "가주의 여유",
-      "군사의 수단",
+      "참모의 수단",
       "청산",
     ],
     preferSkillIndexes: [
@@ -5376,7 +5376,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "군사의 수단": {
+      "참모의 수단": {
         "8": [
           {
             material: skillSummary3,
@@ -5471,7 +5471,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         type: "FGT-Y",
         name: "실용적인 도구",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -38362,9 +38362,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       },
       {
         type: "SPT-Y",
-        name: "풍화되지 않은 것",
+        name: "풍화되지 않은",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -39304,7 +39304,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         type: "WDM-Y",
         name: "남기고 싶은 생명",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -44965,7 +44965,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act4fun",
-      eventName: "2023 만우절",
+      eventName: "만우절 이벤트",
       category: "other",
       order: 65,
     },
@@ -62080,7 +62080,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act24sign",
-      eventName: "상서로운 길조",
+      eventName: "한정 누적 출석 체크",
       category: "other",
       order: 44,
     },
@@ -90860,7 +90860,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act7d1",
-      eventName: "만물과 함께",
+      eventName: "한정 누적 출석 체크",
       category: "other",
       order: 13,
     },
@@ -92442,9 +92442,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       },
       {
         type: "GEE-Y",
-        name: "독극물 전문의가 남긴 것",
+        name: "독극물 의사의 유산",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -98724,7 +98724,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act3d0",
-      eventName: "파란 불꽃의 마음 Part.1",
+      eventName: "파란 불꽃의 마음",
       category: "side_story",
       order: 4,
     },
@@ -98991,7 +98991,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act3d0",
-      eventName: "파란 불꽃의 마음 Part.1",
+      eventName: "파란 불꽃의 마음",
       category: "side_story",
       order: 4,
     },
@@ -99263,7 +99263,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act3d0",
-      eventName: "파란 불꽃의 마음 Part.1",
+      eventName: "파란 불꽃의 마음",
       category: "side_story",
       order: 4,
     },
@@ -99654,7 +99654,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     server: "global",
     releaseInfo: {
       eventId: "act3d0",
-      eventName: "파란 불꽃의 마음 Part.1",
+      eventName: "파란 불꽃의 마음",
       category: "side_story",
       order: 4,
     },

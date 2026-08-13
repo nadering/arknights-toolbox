@@ -7,6 +7,42 @@ import { OperatorReleaseCandidate } from "../../../../scripts/operator-release/r
  */
 export const operatorReleaseCandidateList: OperatorReleaseCandidate[] = [
   {
+    "commitHash": "7e5e0fe76dd3bc3bd3415e04d24a35cd4a8d4698",
+    "commitDate": "2026-08-13T02:41:54+00:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4031_liesel",
+        "name": "리프레사",
+        "profession": "CASTER"
+      },
+      {
+        "charId": "char_4037_demetr",
+        "name": "벨로네",
+        "profession": "WARRIOR"
+      }
+    ],
+    "addedActivityList": [],
+    "addedGachaList": [
+      {
+        "id": "SINGLE_KR_41_0_1",
+        "name": ""
+      },
+      {
+        "id": "DOUBLE_KR_41_0_2",
+        "name": ""
+      },
+      {
+        "id": "RETURN_KR_41_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "medium",
+    "reasons": [
+      "2 operator(s) added",
+      "3 gacha(s) added in same commit"
+    ]
+  },
+  {
     "commitHash": "b0894e2f204da58c6d8f60e24752721a0dc66c00",
     "commitDate": "2026-07-16T09:09:00+00:00",
     "addedOperatorList": [

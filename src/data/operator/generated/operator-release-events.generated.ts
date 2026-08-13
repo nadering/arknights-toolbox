@@ -30,8 +30,9 @@ export type GeneratedLatestOperatorReleaseEvent = {
  * manual/operator-release-events.ts와 activity_table.json을 기반으로
  * 자동 생성된 출시 이벤트 목록입니다.
  *
- * - 이벤트명과 오퍼레이터 매핑은 manual/operator-release-events.ts를 따릅니다.
- * - startTime/startDate는 각 서버의 activity_table.json에서 가져옵니다.
+ * - 이벤트 id / category / operatorIds는 manual/operator-release-events.ts를 따릅니다.
+ * - server / name / startTime / startDate는 activity_table.json을 우선 사용합니다.
+ * - global activity_table에 같은 id가 있으면 global 이벤트로 처리합니다.
  * - 배열 순서는 manual/operator-release-events.ts와 동일하게 최신 이벤트 → 오래된 이벤트입니다.
  *
  * 직접 수정하지 말고 `npm run generate:operator-release-info`로 재생성하세요.
@@ -129,13 +130,13 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
   },
   {
     "id": "act20mini",
-    "name": "교차로",
+    "name": "교차지점",
     "category": "mini_event",
-    "server": "future",
+    "server": "global",
     "source": "cn_git_history",
     "order": 106,
-    "startTime": 1773097200,
-    "startDate": "2026-03-10",
+    "startTime": 1786586400,
+    "startDate": "2026-08-13",
     "operatorIds": [
       "char_4031_liesel",
       "char_4037_demetr"
@@ -755,7 +756,7 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
   },
   {
     "id": "act4fun",
-    "name": "2023 만우절",
+    "name": "만우절 이벤트",
     "category": "other",
     "server": "global",
     "source": "cn_git_history",
@@ -1060,7 +1061,7 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
   },
   {
     "id": "act24sign",
-    "name": "상서로운 길조",
+    "name": "한정 누적 출석 체크",
     "category": "other",
     "server": "global",
     "source": "cn_git_history",
@@ -1524,7 +1525,7 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
   },
   {
     "id": "act7d1",
-    "name": "만물과 함께",
+    "name": "한정 누적 출석 체크",
     "category": "other",
     "server": "global",
     "source": "cn_git_history",
@@ -1658,7 +1659,7 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
   },
   {
     "id": "act3d0",
-    "name": "파란 불꽃의 마음 Part.1",
+    "name": "파란 불꽃의 마음",
     "category": "side_story",
     "server": "global",
     "source": "cn_git_history",
@@ -1725,12 +1726,12 @@ export const latestOperatorReleaseEventByServer: Record<Server, GeneratedLatestO
     "startDate": "2026-08-01"
   },
   "global": {
-    "id": "act49side",
-    "name": "사세행",
+    "id": "act20mini",
+    "name": "교차지점",
     "server": "global",
     "serverLabel": "글로벌 서버",
-    "order": 105,
-    "startTime": 1784185200,
-    "startDate": "2026-07-16"
+    "order": 106,
+    "startTime": 1786586400,
+    "startDate": "2026-08-13"
   }
 };

@@ -139,13 +139,13 @@ export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleas
   },
   "char_4031_liesel": {
     "eventId": "act20mini",
-    "eventName": "교차로",
+    "eventName": "교차지점",
     "category": "mini_event",
     "order": 106
   },
   "char_4037_demetr": {
     "eventId": "act20mini",
-    "eventName": "교차로",
+    "eventName": "교차지점",
     "category": "mini_event",
     "order": 106
   },
@@ -943,7 +943,7 @@ export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleas
   },
   "char_4091_ulika": {
     "eventId": "act4fun",
-    "eventName": "2023 만우절",
+    "eventName": "만우절 이벤트",
     "category": "other",
     "order": 65
   },
@@ -1273,7 +1273,7 @@ export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleas
   },
   "char_4019_ncdeer": {
     "eventId": "act24sign",
-    "eventName": "상서로운 길조",
+    "eventName": "한정 누적 출석 체크",
     "category": "other",
     "order": 44
   },
@@ -1837,7 +1837,7 @@ export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleas
   },
   "char_385_finlpp": {
     "eventId": "act7d1",
-    "eventName": "만물과 함께",
+    "eventName": "한정 누적 출석 체크",
     "category": "other",
     "order": 13
   },
@@ -1993,25 +1993,25 @@ export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleas
   },
   "char_298_susuro": {
     "eventId": "act3d0",
-    "eventName": "파란 불꽃의 마음 Part.1",
+    "eventName": "파란 불꽃의 마음",
     "category": "side_story",
     "order": 4
   },
   "char_326_glacus": {
     "eventId": "act3d0",
-    "eventName": "파란 불꽃의 마음 Part.1",
+    "eventName": "파란 불꽃의 마음",
     "category": "side_story",
     "order": 4
   },
   "char_340_shwaz": {
     "eventId": "act3d0",
-    "eventName": "파란 불꽃의 마음 Part.1",
+    "eventName": "파란 불꽃의 마음",
     "category": "side_story",
     "order": 4
   },
   "char_348_ceylon": {
     "eventId": "act3d0",
-    "eventName": "파란 불꽃의 마음 Part.1",
+    "eventName": "파란 불꽃의 마음",
     "category": "side_story",
     "order": 4
   },
