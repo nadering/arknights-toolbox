@@ -116,11 +116,20 @@ const pushWarning = (
   warningList.push(warning);
 };
 
+const shouldUseTranslatedInfo = (server: BuiltOperatorServer) => {
+  return server === "future";
+};
+
 const getSkillDisplayName = (
   skillId: string,
   defaultSkillName: string,
   operatorOverride: OperatorOverride | undefined,
+  server: BuiltOperatorServer,
 ) => {
+  if (!shouldUseTranslatedInfo(server)) {
+    return defaultSkillName;
+  }
+
   return operatorOverride?.translatedSkillNames?.[skillId] ?? defaultSkillName;
 };
 
@@ -130,12 +139,18 @@ const createSkillNameBySkillId = (
     name: string;
   }[],
   operatorOverride: OperatorOverride | undefined,
+  server: BuiltOperatorServer,
 ) => {
   return Object.fromEntries(
     skillList.map((skill) => {
       return [
         skill.skillId,
-        getSkillDisplayName(skill.skillId, skill.name, operatorOverride),
+        getSkillDisplayName(
+          skill.skillId,
+          skill.name,
+          operatorOverride,
+          server,
+        ),
       ];
     }),
   );
@@ -147,9 +162,15 @@ const createFinalSkillList = (
     name: string;
   }[],
   operatorOverride: OperatorOverride | undefined,
+  server: BuiltOperatorServer,
 ) => {
   return skillList.map((skill) => {
-    return getSkillDisplayName(skill.skillId, skill.name, operatorOverride);
+    return getSkillDisplayName(
+      skill.skillId,
+      skill.name,
+      operatorOverride,
+      server,
+    );
   });
 };
 
@@ -200,7 +221,12 @@ const createSkillUpgradeMaterials = (params: {
 const createModuleDisplayName = (
   module: ParsedModuleInfo,
   operatorOverride: OperatorOverride | undefined,
+  server: BuiltOperatorServer,
 ) => {
+  if (!shouldUseTranslatedInfo(server)) {
+    return module.name;
+  }
+
   return operatorOverride?.translatedModuleNames?.[module.type] ?? module.name;
 };
 
@@ -212,7 +238,7 @@ const createBuiltModuleList = (
   return moduleList.map((module) => {
     return {
       type: module.type,
-      name: createModuleDisplayName(module, operatorOverride),
+      name: createModuleDisplayName(module, operatorOverride, server),
       charEquipOrder: module.charEquipOrder,
       server,
     };
@@ -259,7 +285,9 @@ export const buildOperator = ({
   const parsedSkillInfo = parseCharacterSkillInfo(character, skillInfoById);
   const parsedModuleInfo = parseCharacterModuleInfo(charId, uniequipTable);
 
-  const operatorName = operatorOverride?.translatedName ?? parsedCharacter.name;
+  const operatorName = shouldUseTranslatedInfo(server)
+    ? (operatorOverride?.translatedName ?? parsedCharacter.name)
+    : parsedCharacter.name;
 
   pushMissingSkillWarnings({
     charId,
@@ -283,6 +311,7 @@ export const buildOperator = ({
   const skillNameBySkillId = createSkillNameBySkillId(
     parsedSkillInfo.skillList,
     operatorOverride,
+    server,
   );
 
   const convertedModuleMaterialsByType = convertModuleMaterialsByType(
@@ -317,6 +346,7 @@ export const buildOperator = ({
     skillList: createFinalSkillList(
       parsedSkillInfo.skillList,
       operatorOverride,
+      server,
     ),
     ...(operatorOverride?.preferSkillIndexes !== undefined
       ? { preferSkillIndexes: operatorOverride.preferSkillIndexes }

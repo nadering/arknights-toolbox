@@ -148,6 +148,7 @@ type GenerateReleaseInfoResult = {
 
 type GenerateReleaseEventResult = {
   releaseEventList: GeneratedOperatorReleaseEvent[];
+  releaseEventById: Record<string, GeneratedOperatorReleaseEvent>;
   latestReleaseEventByServer: Record<
     Server,
     GeneratedLatestOperatorReleaseEvent
@@ -441,17 +442,68 @@ const getActivityInfoRecord = (
   );
 };
 
+const getActivityInfo = (
+  activityInfoRecord: Record<string, UnknownRecord>,
+  activityId: string,
+) => {
+  return activityInfoRecord[activityId];
+};
+
+const getActivityName = (
+  activityInfoRecord: Record<string, UnknownRecord>,
+  activityId: string,
+) => {
+  const activityInfo = getActivityInfo(activityInfoRecord, activityId);
+
+  if (activityInfo === undefined) {
+    return "";
+  }
+
+  return (
+    getStringValue(activityInfo.name) ||
+    getStringValue(activityInfo.displayName) ||
+    getStringValue(activityInfo.activityName)
+  );
+};
+
 const getActivityStartTime = (
   activityInfoRecord: Record<string, UnknownRecord>,
   activityId: string,
 ) => {
-  const activityInfo = activityInfoRecord[activityId];
+  const activityInfo = getActivityInfo(activityInfoRecord, activityId);
 
   if (activityInfo === undefined) {
     return null;
   }
 
   return getNumberValue(activityInfo.startTime);
+};
+
+const resolveReleaseEventServer = (
+  releaseEvent: OperatorReleaseEvent,
+  activityInfoRecordByServer: Record<Server, Record<string, UnknownRecord>>,
+): Server => {
+  if (getActivityInfo(activityInfoRecordByServer.global, releaseEvent.id)) {
+    return "global";
+  }
+
+  if (getActivityInfo(activityInfoRecordByServer.future, releaseEvent.id)) {
+    return "future";
+  }
+
+  return releaseEvent.server;
+};
+
+const resolveReleaseEventName = (
+  releaseEvent: OperatorReleaseEvent,
+  activityInfoRecordByServer: Record<Server, Record<string, UnknownRecord>>,
+) => {
+  return (
+    getActivityName(activityInfoRecordByServer.global, releaseEvent.id) ||
+    releaseEvent.name ||
+    getActivityName(activityInfoRecordByServer.future, releaseEvent.id) ||
+    releaseEvent.id
+  );
 };
 
 const formatDate = (timestamp: number, timeZone: string) => {
@@ -487,23 +539,31 @@ const createGeneratedReleaseEvent = (
   activityInfoRecordByServer: Record<Server, Record<string, UnknownRecord>>,
 ): GeneratedOperatorReleaseEvent => {
   const order = createManualReleaseOrder(eventIndex);
+  const server = resolveReleaseEventServer(
+    releaseEvent,
+    activityInfoRecordByServer,
+  );
+  const name = resolveReleaseEventName(
+    releaseEvent,
+    activityInfoRecordByServer,
+  );
   const startTime = getActivityStartTime(
-    activityInfoRecordByServer[releaseEvent.server],
+    activityInfoRecordByServer[server],
     releaseEvent.id,
   );
 
   return {
     id: releaseEvent.id,
-    name: releaseEvent.name,
+    name,
     category: releaseEvent.category,
-    server: releaseEvent.server,
+    server,
     source: releaseEvent.source,
     order,
     startTime,
     startDate:
       startTime === null
         ? null
-        : formatDate(startTime, TIME_ZONE_BY_SERVER[releaseEvent.server]),
+        : formatDate(startTime, TIME_ZONE_BY_SERVER[server]),
     operatorIds: releaseEvent.operatorIds,
   };
 };
@@ -561,6 +621,12 @@ const createGeneratedReleaseEventList = (
     },
   );
 
+  const releaseEventById = Object.fromEntries(
+    releaseEventList.map((releaseEvent) => {
+      return [releaseEvent.id, releaseEvent];
+    }),
+  );
+
   const missingReleaseEventStartTimeList = releaseEventList
     .filter((releaseEvent) => {
       return releaseEvent.startTime === null;
@@ -576,6 +642,7 @@ const createGeneratedReleaseEventList = (
 
   return {
     releaseEventList,
+    releaseEventById,
     latestReleaseEventByServer:
       createLatestReleaseEventByServer(releaseEventList),
     missingReleaseEventStartTimeList,
@@ -595,6 +662,7 @@ const createGeneratedReleaseEventList = (
 const applyManualReleaseEvents = (
   releaseInfoByCharId: Record<string, GeneratedOperatorReleaseInfo>,
   allOperatorInfoByCharId: Record<string, OperatorBasicInfo>,
+  releaseEventById: Record<string, GeneratedOperatorReleaseEvent>,
 ): ApplyManualReleaseEventsResult => {
   const duplicateOperatorMappings: DuplicateOperatorMapping[] = [];
   const unknownManualOperatorMappings: UnknownManualOperatorMapping[] = [];
@@ -602,11 +670,13 @@ const applyManualReleaseEvents = (
 
   operatorReleaseEventList.forEach((releaseEvent, eventIndex) => {
     const order = createManualReleaseOrder(eventIndex);
+    const generatedReleaseEvent = releaseEventById[releaseEvent.id];
+    const eventName = generatedReleaseEvent?.name ?? releaseEvent.name;
 
     if (releaseEvent.operatorIds.length === 0) {
       emptyReleaseEvents.push({
         id: releaseEvent.id,
-        name: releaseEvent.name,
+        name: eventName,
         category: releaseEvent.category,
         order,
       });
@@ -619,7 +689,7 @@ const applyManualReleaseEvents = (
         unknownManualOperatorMappings.push({
           charId,
           eventId: releaseEvent.id,
-          eventName: releaseEvent.name,
+          eventName,
           order,
         });
 
@@ -640,7 +710,7 @@ const applyManualReleaseEvents = (
 
       releaseInfoByCharId[charId] = {
         eventId: releaseEvent.id,
-        eventName: releaseEvent.name,
+        eventName,
         category: releaseEvent.category,
         order,
       };
@@ -716,6 +786,7 @@ const createOperatorReleaseInfoMap = (
   allOperatorInfoByCharId: Record<string, OperatorBasicInfo>,
   excludedOperatorList: ExcludedOperatorWithSource[],
   manualIncludedOperatorList: OperatorBasicInfo[],
+  releaseEventById: Record<string, GeneratedOperatorReleaseEvent>,
 ): GenerateReleaseInfoResult => {
   const releaseInfoByCharId: Record<string, GeneratedOperatorReleaseInfo> = {};
 
@@ -723,7 +794,11 @@ const createOperatorReleaseInfoMap = (
     duplicateOperatorMappings,
     unknownManualOperatorMappings,
     emptyReleaseEvents,
-  } = applyManualReleaseEvents(releaseInfoByCharId, allOperatorInfoByCharId);
+  } = applyManualReleaseEvents(
+    releaseInfoByCharId,
+    allOperatorInfoByCharId,
+    releaseEventById,
+  );
 
   const { serverOpenOperatorList, unmappedFutureOperatorList } =
     splitUnmappedOperators(releaseInfoByCharId, allOperatorInfoList);
@@ -851,8 +926,9 @@ export type GeneratedLatestOperatorReleaseEvent = {
  * manual/operator-release-events.ts와 activity_table.json을 기반으로
  * 자동 생성된 출시 이벤트 목록입니다.
  *
- * - 이벤트명과 오퍼레이터 매핑은 manual/operator-release-events.ts를 따릅니다.
- * - startTime/startDate는 각 서버의 activity_table.json에서 가져옵니다.
+ * - 이벤트 id / category / operatorIds는 manual/operator-release-events.ts를 따릅니다.
+ * - server / name / startTime / startDate는 activity_table.json을 우선 사용합니다.
+ * - global activity_table에 같은 id가 있으면 global 이벤트로 처리합니다.
  * - 배열 순서는 manual/operator-release-events.ts와 동일하게 최신 이벤트 → 오래된 이벤트입니다.
  *
  * 직접 수정하지 말고 \`npm run generate:operator-release-info\`로 재생성하세요.
@@ -1183,6 +1259,7 @@ const main = () => {
     allOperatorInfoByCharId,
     excludedOperatorList,
     manualIncludedOperatorList,
+    releaseEventResult.releaseEventById,
   );
 
   writeGeneratedFile(
