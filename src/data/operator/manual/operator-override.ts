@@ -1280,6 +1280,9 @@ export const operatorOverrideList: OperatorOverride[] = [
         level: 3,
       },
     ],
+    translatedModuleNames: {
+      "LOR-Y": "눈이 내리려 할 때",
+    },
   },
   {
     charId: "char_4087_ines",
@@ -1809,6 +1812,53 @@ export const operatorOverrideList: OperatorOverride[] = [
   {
     charId: "char_4214_cairn",
     legacyId: 397,
+  },
+  {
+    charId: "char_4217_makoto",
+    preferSkillIndexes: [2],
+    preferModules: [
+      {
+        type: "PUM-Y",
+        level: 3,
+      },
+    ],
+    nicknameList: ["3주", "마코토"],
+    translatedName: "유키 마코토",
+    translatedSkillNames: {
+      skchr_makoto_1: "오르페우스의 하프",
+      skchr_makoto_2: "타나토스의 사슬",
+      skchr_makoto_3: "내일을 개척하는 칼날",
+    },
+    translatedModuleNames: {
+      "PUM-Y": "서로의 목소리",
+    },
+  },
+  {
+    charId: "char_4218_aigis",
+    translatedName: "아이기스",
+    translatedSkillNames: {
+      skchr_aigis_1: "오르기아 모드 기동",
+      skchr_aigis_2: "전탄 전개",
+    },
+    translatedModuleNames: {
+      "BRK-X": "약속의 증표",
+    },
+  },
+  {
+    charId: "char_4219_yukari",
+    nicknameList: ["유카리"],
+    translatedName: "타케바 유카리",
+    translatedSkillNames: {
+      skchr_yukari_1: "사이클론 애로",
+      skchr_yukari_2: "명경지수",
+    },
+    translatedModuleNames: {
+      "RAN-X": "운명의 보상",
+    },
+  },
+  {
+    charId: "char_4220_kormr",
+    translatedName: "코로마루",
   },
   {
     charId: "char_4221_ju",

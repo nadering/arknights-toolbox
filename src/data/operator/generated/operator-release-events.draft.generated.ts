@@ -11,6 +11,19 @@ import { OperatorReleaseEvent } from "../manual/operator-release-types";
  */
 export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   {
+    "id": "act54side",
+    "name": "月行水上",
+    "category": "side_story",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": [
+      "char_4220_kormr",
+      "char_4218_aigis",
+      "char_4219_yukari",
+      "char_4217_makoto"
+    ]
+  },
+  {
     "id": "act53side",
     "name": "直到大地变成一颗酸橙",
     "category": "side_story",
@@ -84,9 +97,9 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   },
   {
     "id": "act20mini",
-    "name": "十字路口",
+    "name": "교차지점",
     "category": "mini_event",
-    "server": "future",
+    "server": "global",
     "source": "cn_git_history",
     "operatorIds": [
       "char_4031_liesel",
@@ -320,7 +333,7 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   },
   {
     "id": "cn_20241115_char_604_ccast",
-    "name": "2024-11-15 출시 후보: 예비 인원 - 캐스터, 예비 인원 - 스나이퍼, 예비 오퍼레이터 - 뱅가드, 예비 오퍼레이터 - 가드, 예비 오퍼레이터 - 스페셜리스트, 예비 오퍼레이터 - 메딕, 예비 인원 - 디펜더, 예비 오퍼레이터 - 서포터, 스톰아이, 튤립, 피스, 라이디언, 미저리, 터치, 메커니스트, 샤프",
+    "name": "2024-11-15 출시 후보: 예비 인원 - 캐스터, 예비 인원 - 스나이퍼, 예비 오퍼레이터-뱅가드, 예비 오퍼레이터-가드, 예비 오퍼레이터-스페셜리스트, 예비 오퍼레이터-메딕, 예비 인원 - 디펜더, 예비 오퍼레이터-서포터, 스톰아이, 튤립, 피스, 라이디언, 미저리, 터치, 메커니스트, 샤프",
     "category": "other",
     "server": "global",
     "source": "cn_git_history",

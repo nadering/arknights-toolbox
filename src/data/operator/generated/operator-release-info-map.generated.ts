@@ -29,6 +29,30 @@ export type GeneratedReleaseOperatorInfo = {
  * 직접 수정하지 말고 `npm run generate:operator-release-info`로 재생성하세요.
  */
 export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleaseInfo> = {
+  "char_4217_makoto": {
+    "eventId": "act54side",
+    "eventName": "물 위를 걷는 달",
+    "category": "side_story",
+    "order": 113
+  },
+  "char_4218_aigis": {
+    "eventId": "act54side",
+    "eventName": "물 위를 걷는 달",
+    "category": "side_story",
+    "order": 113
+  },
+  "char_4219_yukari": {
+    "eventId": "act54side",
+    "eventName": "물 위를 걷는 달",
+    "category": "side_story",
+    "order": 113
+  },
+  "char_4220_kormr": {
+    "eventId": "act54side",
+    "eventName": "물 위를 걷는 달",
+    "category": "side_story",
+    "order": 113
+  },
   "char_1015_aglna2": {
     "eventId": "act53side",
     "eventName": "대지가 오렌지 한 알이 될 때까지",

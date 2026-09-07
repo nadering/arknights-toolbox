@@ -195,6 +195,928 @@ export type GeneratedOperator = {
  */
 export const generatedOperatorList: GeneratedOperator[] = [
   {
+    id: "char_4217_makoto",
+
+    name: "유키 마코토",
+    nicknameList: [
+      "3주",
+      "마코토",
+    ],
+
+    imageFilename: "makoto-yuki",
+
+    class: "Specialist",
+    rarity: 6,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act54side",
+      eventName: "물 위를 걷는 달",
+      category: "side_story",
+      order: 113,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: specialistChip,
+          count: 5,
+        },
+        {
+          material: polyester,
+          count: 8,
+        },
+        {
+          material: oriron,
+          count: 4,
+        },
+      ],
+      "2": [
+        {
+          material: specialistDualchip,
+          count: 4,
+        },
+        {
+          material: biphasicEnantiomorphicMedium,
+          count: 4,
+        },
+        {
+          material: energyConcentratingPowerUnit,
+          count: 2,
+        },
+      ],
+    },
+
+    skillList: [
+      "오르페우스의 하프",
+      "타나토스의 사슬",
+      "내일을 개척하는 칼날",
+    ],
+    preferSkillIndexes: [
+      2,
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+          {
+            material: diketon,
+            count: 6,
+          },
+          {
+            material: orirock,
+            count: 4,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: device,
+            count: 3,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: orirockCube,
+            count: 5,
+          },
+          {
+            material: device,
+            count: 3,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: liquefiedHighEnergyGas,
+            count: 5,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: crystallineComponent,
+            count: 5,
+          },
+          {
+            material: orirockCluster,
+            count: 5,
+          },
+        ],
+      },
+      "오르페우스의 하프": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: orirockConcentration,
+            count: 4,
+          },
+          {
+            material: crystallineComponent,
+            count: 9,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 4,
+          },
+          {
+            material: orironBlock,
+            count: 7,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 6,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 1,
+          },
+        ],
+      },
+      "타나토스의 사슬": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: crystallineCircuit,
+            count: 4,
+          },
+          {
+            material: aketon,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: ketonColloid,
+            count: 4,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 8,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 6,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 1,
+          },
+        ],
+      },
+      "내일을 개척하는 칼날": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 4,
+          },
+          {
+            material: coagulatingGel,
+            count: 7,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 4,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 8,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 6,
+          },
+          {
+            material: ketonColloid,
+            count: 5,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "PUM-Y",
+        name: "서로의 목소리",
+        charEquipOrder: 2,
+        server: "future",
+      },
+    ],
+    preferModules: [
+      {
+        type: "PUM-Y",
+        level: 3,
+      },
+    ],
+    moduleMaterials: {
+      "PUM-Y": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 2,
+          },
+          {
+            material: LMD,
+            count: 80000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementStick,
+            count: 60,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 100000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 20,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 120000,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: "char_4218_aigis",
+
+    name: "아이기스",
+
+    imageFilename: "aegis",
+
+    class: "Sniper",
+    rarity: 5,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act54side",
+      eventName: "물 위를 걷는 달",
+      category: "side_story",
+      order: 113,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: sniperChip,
+          count: 4,
+        },
+        {
+          material: polyketon,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 2,
+        },
+      ],
+      "2": [
+        {
+          material: sniperDualchip,
+          count: 3,
+        },
+        {
+          material: liquefiedEtherAggregate,
+          count: 9,
+        },
+        {
+          material: aggregateCyclicene,
+          count: 8,
+        },
+      ],
+    },
+
+    skillList: [
+      "오르기아 모드 기동",
+      "전탄 전개",
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+          {
+            material: orirock,
+            count: 10,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: sugar,
+            count: 3,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: polyester,
+            count: 5,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: pseudocondensationNucleus,
+            count: 4,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: semiSyntheticSolvent,
+            count: 3,
+          },
+          {
+            material: orirockCluster,
+            count: 3,
+          },
+        ],
+      },
+      "오르기아 모드 기동": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: polymerizedGel,
+            count: 3,
+          },
+          {
+            material: integratedDevice,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: refinedSolvent,
+            count: 3,
+          },
+          {
+            material: chiralRefractor,
+            count: 6,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 4,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 1,
+          },
+        ],
+      },
+      "전탄 전개": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 3,
+          },
+          {
+            material: loxicKohl,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 3,
+          },
+          {
+            material: orirockConcentration,
+            count: 7,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 4,
+          },
+          {
+            material: orironBlock,
+            count: 1,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "BRK-X",
+        name: "약속의 증표",
+        charEquipOrder: 1,
+        server: "future",
+      },
+    ],
+    moduleMaterials: {
+      "BRK-X": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: ketonColloid,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 40000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementStick,
+            count: 20,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 50000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 8,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 5,
+          },
+          {
+            material: LMD,
+            count: 60000,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: "char_4219_yukari",
+
+    name: "타케바 유카리",
+    nicknameList: [
+      "유카리",
+    ],
+
+    imageFilename: "yukari-takeba",
+
+    class: "Supporter",
+    rarity: 5,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act54side",
+      eventName: "물 위를 걷는 달",
+      category: "side_story",
+      order: 113,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: supporterChip,
+          count: 4,
+        },
+        {
+          material: device,
+          count: 3,
+        },
+        {
+          material: polyester,
+          count: 3,
+        },
+      ],
+      "2": [
+        {
+          material: supporterDualchip,
+          count: 3,
+        },
+        {
+          material: cuttingFluidSolution,
+          count: 8,
+        },
+        {
+          material: manganeseOre,
+          count: 14,
+        },
+      ],
+    },
+
+    skillList: [
+      "사이클론 애로",
+      "명경지수",
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+          {
+            material: sugarSubstitute,
+            count: 7,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: polyester,
+            count: 3,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: oriron,
+            count: 4,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: electrodeUnit,
+            count: 4,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: sugarPack,
+            count: 3,
+          },
+          {
+            material: grindstone,
+            count: 3,
+          },
+        ],
+      },
+      "사이클론 애로": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 3,
+          },
+          {
+            material: aggregateCyclicene,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: polymerizedGel,
+            count: 3,
+          },
+          {
+            material: crystallineCircuit,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 4,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 1,
+          },
+        ],
+      },
+      "명경지수": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: ketonColloid,
+            count: 3,
+          },
+          {
+            material: manganeseOre,
+            count: 2,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 3,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 6,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 4,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 4,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "RAN-X",
+        name: "운명의 보상",
+        charEquipOrder: 1,
+        server: "future",
+      },
+    ],
+    moduleMaterials: {
+      "RAN-X": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: orironBlock,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 40000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementStick,
+            count: 20,
+          },
+          {
+            material: refinedSolvent,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 50000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 8,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 5,
+          },
+          {
+            material: LMD,
+            count: 60000,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: "char_4220_kormr",
+
+    name: "코로마루",
+
+    imageFilename: "koromaru",
+
+    class: "Guard",
+    rarity: 1,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act54side",
+      eventName: "물 위를 걷는 달",
+      category: "side_story",
+      order: 113,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [],
+      "2": [],
+    },
+
+    skillList: [],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+      },
+    },
+
+    moduleList: [],
+    moduleMaterials: null,
+  },
+  {
     id: "char_1015_aglna2",
     legacyId: 425,
 
@@ -45973,6 +46895,12 @@ export const generatedOperatorList: GeneratedOperator[] = [
         charEquipOrder: 1,
         server: "global",
       },
+      {
+        type: "LOR-Y",
+        name: "눈이 내리려 할 때",
+        charEquipOrder: 2,
+        server: "future",
+      },
     ],
     preferModules: [
       {
@@ -46025,6 +46953,58 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
           {
             material: nucleicCrystalSinter,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 120000,
+          },
+        ],
+      },
+      "LOR-Y": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 2,
+          },
+          {
+            material: LMD,
+            count: 80000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementStick,
+            count: 60,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 100000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 20,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
             count: 4,
           },
           {

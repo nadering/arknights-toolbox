@@ -8,6 +8,19 @@ import { OperatorReleaseEvent } from "./operator-release-types";
  */
 export const operatorReleaseEventList: OperatorReleaseEvent[] = [
   {
+    id: "act54side",
+    name: "물 위를 걷는 달",
+    category: "side_story",
+    server: "future",
+    source: "cn_git_history",
+    operatorIds: [
+      "char_4220_kormr",
+      "char_4218_aigis",
+      "char_4219_yukari",
+      "char_4217_makoto",
+    ],
+  },
+  {
     id: "act53side",
     name: "대지가 오렌지 한 알이 될 때까지",
     category: "side_story",

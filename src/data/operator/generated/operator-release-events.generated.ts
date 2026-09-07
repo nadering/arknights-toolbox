@@ -39,6 +39,22 @@ export type GeneratedLatestOperatorReleaseEvent = {
  */
 export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleaseEvent[] = [
   {
+    "id": "act54side",
+    "name": "물 위를 걷는 달",
+    "category": "side_story",
+    "server": "future",
+    "source": "cn_git_history",
+    "order": 113,
+    "startTime": 1788476400,
+    "startDate": "2026-09-04",
+    "operatorIds": [
+      "char_4220_kormr",
+      "char_4218_aigis",
+      "char_4219_yukari",
+      "char_4217_makoto"
+    ]
+  },
+  {
     "id": "act53side",
     "name": "대지가 오렌지 한 알이 될 때까지",
     "category": "side_story",
@@ -1717,13 +1733,13 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
  */
 export const latestOperatorReleaseEventByServer: Record<Server, GeneratedLatestOperatorReleaseEvent> = {
   "future": {
-    "id": "act53side",
-    "name": "대지가 오렌지 한 알이 될 때까지",
+    "id": "act54side",
+    "name": "물 위를 걷는 달",
     "server": "future",
     "serverLabel": "중국 서버",
-    "order": 112,
-    "startTime": 1785538800,
-    "startDate": "2026-08-01"
+    "order": 113,
+    "startTime": 1788476400,
+    "startDate": "2026-09-04"
   },
   "global": {
     "id": "act20mini",

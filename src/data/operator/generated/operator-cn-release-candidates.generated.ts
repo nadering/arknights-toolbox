@@ -8,6 +8,130 @@ import { CnReleaseCandidate } from "../../../../scripts/operator-release/cn-rele
 export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
   {
     "kind": "cn_release_candidate",
+    "commitHash": "cc5bf84b0e6d552d9c13619e2683ff25c5bbeecb",
+    "commitDate": "2026-09-04T13:03:17+08:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4220_kormr",
+        "cnName": "虎狼丸",
+        "globalName": null,
+        "profession": "WARRIOR",
+        "server": "future"
+      },
+      {
+        "charId": "char_4218_aigis",
+        "cnName": "埃癸斯",
+        "globalName": null,
+        "profession": "SNIPER",
+        "server": "future"
+      },
+      {
+        "charId": "char_4219_yukari",
+        "cnName": "岳羽由加莉",
+        "globalName": null,
+        "profession": "SUPPORT",
+        "server": "future"
+      },
+      {
+        "charId": "char_4217_makoto",
+        "cnName": "结城理",
+        "globalName": null,
+        "profession": "SPECIAL",
+        "server": "future"
+      }
+    ],
+    "addedActivityList": [
+      {
+        "id": "act54side",
+        "cnName": "月行水上",
+        "globalName": null,
+        "type": "TYPE_ACT54SIDE",
+        "firstSeenType": "TYPE_ACT54SIDE",
+        "displayType": "NONE",
+        "category": "side_story",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": true,
+        "templateShopId": "shop_act54side",
+        "cnStartTime": 1788476400,
+        "cnEndTime": 1789675199,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act61sign",
+        "cnName": "此夜同行签到活动",
+        "globalName": null,
+        "type": "CHECKIN_ONLY",
+        "firstSeenType": "CHECKIN_ONLY",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1788476400,
+        "cnEndTime": 1789675199,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act44sre",
+        "cnName": "墟·复刻",
+        "globalName": null,
+        "type": "TYPE_ACT44SIDE",
+        "firstSeenType": "TYPE_ACT44SIDE",
+        "displayType": "NONE",
+        "category": "side_story",
+        "isRerun": true,
+        "isReplicate": true,
+        "hasEventShop": true,
+        "templateShopId": "shop_act44sre",
+        "cnStartTime": 1787342400,
+        "cnEndTime": 1788206399,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "NORM_76_0_3",
+        "name": ""
+      },
+      {
+        "id": "DOUBLE_76_0_4",
+        "name": ""
+      },
+      {
+        "id": "DOUBLE_77_0_2",
+        "name": ""
+      },
+      {
+        "id": "LINKAGE_77_0_1",
+        "name": ""
+      },
+      {
+        "id": "FESCLASSIC_76_0_2",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_76_0_3",
+        "name": ""
+      }
+    ],
+    "confidence": "high",
+    "reasons": [
+      "4 operator(s) added",
+      "4 operator(s) are future",
+      "3 activity(s) added in same commit",
+      "6 gacha(s) added in same commit"
+    ]
+  },
+  {
+    "kind": "cn_release_candidate",
     "commitHash": "81c6d458a1778a9ba878a95c4e6fe48fb4254041",
     "commitDate": "2026-08-01T19:32:07+08:00",
     "addedOperatorList": [
@@ -698,23 +822,23 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_4031_liesel",
         "cnName": "复奏",
-        "globalName": null,
+        "globalName": "리프레사",
         "profession": "CASTER",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_4037_demetr",
         "cnName": "贝洛内",
-        "globalName": null,
+        "globalName": "벨로네",
         "profession": "WARRIOR",
-        "server": "future"
+        "server": "global"
       }
     ],
     "addedActivityList": [
       {
         "id": "act20mini",
         "cnName": "十字路口",
-        "globalName": null,
+        "globalName": "교차지점",
         "type": "MINISTORY",
         "firstSeenType": "MINISTORY",
         "displayType": "MINISTORY",
@@ -725,9 +849,9 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": "shop_act20mini",
         "cnStartTime": 1773097200,
         "cnEndTime": 1773691199,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1786586400,
+        "globalEndTime": 1787165999,
+        "hasGlobalMatch": true
       }
     ],
     "addedGachaList": [
@@ -751,7 +875,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     "confidence": "high",
     "reasons": [
       "2 operator(s) added",
-      "2 operator(s) are future",
+      "2 operator(s) matched global",
       "1 activity(s) added in same commit",
       "4 gacha(s) added in same commit"
     ]
@@ -2730,28 +2854,28 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_600_cpione",
         "cnName": "预备干员-先锋",
-        "globalName": "예비 오퍼레이터 - 뱅가드",
+        "globalName": "예비 오퍼레이터-뱅가드",
         "profession": "PIONEER",
         "server": "global"
       },
       {
         "charId": "char_601_cguard",
         "cnName": "预备干员-近卫",
-        "globalName": "예비 오퍼레이터 - 가드",
+        "globalName": "예비 오퍼레이터-가드",
         "profession": "WARRIOR",
         "server": "global"
       },
       {
         "charId": "char_607_cspec",
         "cnName": "预备干员-特种",
-        "globalName": "예비 오퍼레이터 - 스페셜리스트",
+        "globalName": "예비 오퍼레이터-스페셜리스트",
         "profession": "SPECIAL",
         "server": "global"
       },
       {
         "charId": "char_605_cmedic",
         "cnName": "预备干员-医疗",
-        "globalName": "예비 오퍼레이터 - 메딕",
+        "globalName": "예비 오퍼레이터-메딕",
         "profession": "MEDIC",
         "server": "global"
       },
@@ -2765,7 +2889,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_606_csuppo",
         "cnName": "预备干员-辅助",
-        "globalName": "예비 오퍼레이터 - 서포터",
+        "globalName": "예비 오퍼레이터-서포터",
         "profession": "SUPPORT",
         "server": "global"
       },
