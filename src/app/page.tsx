@@ -33,7 +33,7 @@ export default function Home() {
           {latestOperatorReleaseEventByServer.global.startDate})
         </p>
         <p className="leading-tight font-light text-lg text-gray-400 text-center break-keep select-none">
-          사이트 업데이트 (2026-08-11)
+          사이트 업데이트 (2026-09-16)
         </p>
       </div>
     </div>

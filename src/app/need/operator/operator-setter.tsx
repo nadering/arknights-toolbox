@@ -1,5 +1,8 @@
+// 육성할 오퍼레이터를 설정하는 영역
+
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useAtom, useSetAtom } from "jotai";
 import {
@@ -12,6 +15,7 @@ import {
   userNeedInitializedAtom,
 } from "@/store";
 import OperatorAdder from "./operator-adder";
+import OperatorListModal from "./operator-list-modal";
 import SelectedOperators from "./selected-operators";
 
 /** 육성할 오퍼레이터 설정 */
@@ -36,6 +40,9 @@ export default function OperatorSetter() {
   // 미래시 여부
   const setShowFuture = useSetAtom(showFutureAtom);
 
+  // 전체 오퍼레이터 모달
+  const [operatorListModalOpen, setOperatorListModalOpen] = useState(false);
+
   /** 필요 재료 설정 초기화 */
   const resetNeed = () => {
     setSelectedOperators([]);
@@ -43,7 +50,7 @@ export default function OperatorSetter() {
     setUserNeed(makeEmptyDepot());
     setUserNeedInitialized(false);
 
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       localStorage.removeItem("selectedOperators");
       localStorage.removeItem("selectedOperatorsMaterial");
       localStorage.removeItem("userNeed");
@@ -56,8 +63,11 @@ export default function OperatorSetter() {
         <p className="pl-1 font-bold text-3xl text-white break-keep">
           필요 재료 설정
         </p>
+
         <div className="flex flex-row justify-start items-center gap-3 translate-y-[2px]">
+          {/* 현재 이벤트 및 미래시 */}
           <button
+            type="button"
             className="group relative w-6 aspect-square selection:bg-transparent"
             onClick={() => {
               setShowFuture(true);
@@ -65,31 +75,61 @@ export default function OperatorSetter() {
           >
             <Image
               className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
-            hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
               src="/images/others/future.png"
               alt="show-future-operator"
               fill
               sizes="10vw"
               draggable={false}
             />
+
             <p
-              className={`hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-            rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block`}
+              className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+              rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
             >
               현재 이벤트 & 미래시 오퍼레이터 보기
             </p>
           </button>
+
+          {/* 전체 오퍼레이터 */}
           <button
-            className={`${
-              userNeedInitialized ? "" : "hidden"
-            } group relative w-6 aspect-square selection:bg-transparent`}
+            type="button"
+            className="group relative w-6 aspect-square selection:bg-transparent"
             onClick={() => {
-              setOperatorCollapsed((prev) => !prev);
+              setOperatorListModalOpen(true);
             }}
           >
             <Image
               className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
-            hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              src="/images/others/grid.png"
+              alt="show-all-operators"
+              fill
+              sizes="10vw"
+              draggable={false}
+            />
+
+            <p
+              className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+              rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
+            >
+              전체 오퍼레이터 보기
+            </p>
+          </button>
+
+          {/* 접기 / 펼치기 */}
+          <button
+            type="button"
+            className={`${
+              userNeedInitialized ? "" : "hidden"
+            } group relative w-6 aspect-square selection:bg-transparent`}
+            onClick={() => {
+              setOperatorCollapsed((previousValue) => !previousValue);
+            }}
+          >
+            <Image
+              className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
+              hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
               src={
                 operatorCollapsed
                   ? "/images/others/expand.png"
@@ -100,43 +140,56 @@ export default function OperatorSetter() {
               sizes="10vw"
               draggable={false}
             />
+
             <p
-              className={`hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-            rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block`}
+              className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
+              rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
             >
               {operatorCollapsed
                 ? "오퍼레이터 정보 펼치기"
                 : "오퍼레이터 정보 접기"}
             </p>
           </button>
+
+          {/* 초기화 */}
           <button
+            type="button"
             className={`${
               userNeedInitialized ? "" : "hidden"
             } group relative w-6 aspect-square selection:bg-transparent`}
-            onClick={() => resetNeed()}
+            onClick={resetNeed}
           >
             <Image
               className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
-            hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
+              hover:[filter:invert(98%)_sepia(2%)_saturate(548%)_hue-rotate(357deg)_brightness(114%)_contrast(75%)]"
               src="/images/others/trashcan-new.png"
               alt="clear-data"
               fill
               sizes="10vw"
               draggable={false}
             />
+
             <p
               className="hidden absolute inset-x-auto top-0 left-[50%] z-10 px-3 py-[2px] bg-gray-900 text-gray-200 text-center text-nowrap
-            rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
+              rounded-lg translate-x-[-50%] translate-y-[-135%] group-hover:block"
             >
               초기화
             </p>
           </button>
         </div>
       </div>
+
       <div className="grow flex flex-col gap-4 p-2 border-none rounded-xl">
         <OperatorAdder />
         <SelectedOperators />
       </div>
+
+      <OperatorListModal
+        isOpen={operatorListModalOpen}
+        onClose={() => {
+          setOperatorListModalOpen(false);
+        }}
+      />
     </div>
   );
 }

@@ -1814,6 +1814,10 @@ export const operatorOverrideList: OperatorOverride[] = [
     legacyId: 397,
   },
   {
+    charId: "char_4215_buddy",
+    translatedName: "로도스 아일랜드 정찰대",
+  },
+  {
     charId: "char_4217_makoto",
     preferSkillIndexes: [2],
     preferModules: [

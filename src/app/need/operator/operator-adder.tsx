@@ -1,3 +1,5 @@
+// 오퍼레이터 검색 및 추가 컴포넌트
+
 "use client";
 
 import {
@@ -12,6 +14,7 @@ import { useAtom } from "jotai";
 import { type Operator, operatorList } from "@/data/operator";
 import { selectedOperatorsAtom, showFutureAtom } from "@/store";
 import { useModal } from "@/hooks";
+import { getOperatorSearchMatch } from "./operator-search";
 
 /** 검색 결과 최대 개수 */
 const MAX_DATA_COUNT = 5;
@@ -86,13 +89,10 @@ export default function OperatorAdder() {
         .sort(sortOperatorsByReleaseOrderAsc);
     }
 
-    const lowerSearchText = searchText.trim().toLowerCase();
-
-    if (!lowerSearchText) {
+    if (!searchText.trim()) {
       return [];
     }
 
-    const firstSearchCharacter = lowerSearchText.at(0);
     const searchedOperatorList: Operator[] = [];
     let matchedOperator: Operator | undefined;
 
@@ -104,10 +104,14 @@ export default function OperatorAdder() {
         continue;
       }
 
-      const lowerOperatorName = operator.name.toLowerCase();
+      const searchMatch = getOperatorSearchMatch(operator, searchText);
+
+      if (!searchMatch) {
+        continue;
+      }
 
       // 이름이 완전히 일치하는 오퍼레이터는 검색 결과 최상단에 배치
-      if (lowerOperatorName === lowerSearchText) {
+      if (searchMatch.exactName) {
         matchedOperator = operator;
         continue;
       }
@@ -116,30 +120,16 @@ export default function OperatorAdder() {
         continue;
       }
 
-      const nameMatches =
-        lowerOperatorName.startsWith(firstSearchCharacter ?? "") &&
-        lowerOperatorName.includes(lowerSearchText);
+      if (searchMatch.matchedNickname) {
+        searchedOperatorList.push({
+          ...operator,
+          name: `${operator.name} (${searchMatch.matchedNickname})`,
+        });
 
-      if (nameMatches) {
-        searchedOperatorList.push(operator);
         continue;
       }
 
-      const matchedNickname = operator.nicknameList?.find((nickname) => {
-        const lowerNickname = nickname.toLowerCase();
-
-        return (
-          lowerNickname.startsWith(firstSearchCharacter ?? "") &&
-          lowerNickname.includes(lowerSearchText)
-        );
-      });
-
-      if (matchedNickname) {
-        searchedOperatorList.push({
-          ...operator,
-          name: `${operator.name} (${matchedNickname})`,
-        });
-      }
+      searchedOperatorList.push(operator);
     }
 
     if (matchedOperator) {

@@ -3694,7 +3694,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
   {
     id: "char_4215_buddy",
 
-    name: "罗德岛隐秘队",
+    name: "로도스 아일랜드 정찰대",
 
     imageFilename: "rhodes-island-recon",
 
