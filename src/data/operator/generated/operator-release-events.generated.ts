@@ -133,11 +133,11 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
     "id": "act51side",
     "name": "사람들, 우리들",
     "category": "side_story",
-    "server": "future",
+    "server": "global",
     "source": "cn_git_history",
     "order": 107,
-    "startTime": 1775516400,
-    "startDate": "2026-04-07",
+    "startTime": 1789542000,
+    "startDate": "2026-09-16",
     "operatorIds": [
       "char_4224_turdus",
       "char_4223_botany",
@@ -1742,12 +1742,12 @@ export const latestOperatorReleaseEventByServer: Record<Server, GeneratedLatestO
     "startDate": "2026-09-04"
   },
   "global": {
-    "id": "act20mini",
-    "name": "교차지점",
+    "id": "act51side",
+    "name": "사람들, 우리들",
     "server": "global",
     "serverLabel": "글로벌 서버",
-    "order": 106,
-    "startTime": 1786586400,
-    "startDate": "2026-08-13"
+    "order": 107,
+    "startTime": 1789542000,
+    "startDate": "2026-09-16"
   }
 };

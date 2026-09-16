@@ -4984,7 +4984,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 6,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act51side",
       eventName: "사람들, 우리들",
@@ -5025,9 +5025,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "고개 숙이지 않으리",
-      "결코 멈추지 않으리",
-      "막을 수 없는 행진",
+      "굽힘 없는 긍지",
+      "꺾임 없는 집념",
+      "거침없는 기세",
     ],
     preferSkillIndexes: [
       1,
@@ -5104,7 +5104,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "고개 숙이지 않으리": {
+      "굽힘 없는 긍지": {
         "8": [
           {
             material: skillSummary3,
@@ -5148,7 +5148,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "결코 멈추지 않으리": {
+      "꺾임 없는 집념": {
         "8": [
           {
             material: skillSummary3,
@@ -5192,7 +5192,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "막을 수 없는 행진": {
+      "거침없는 기세": {
         "8": [
           {
             material: skillSummary3,
@@ -5241,9 +5241,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "HAM-X",
-        name: "때 늦은 훈장",
+        name: "언이슈드 메달",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -5319,7 +5319,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 5,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act51side",
       eventName: "사람들, 우리들",
@@ -5361,7 +5361,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     skillList: [
       "고조파 파괴",
-      "정역의 메아리",
+      "정적의 메아리",
     ],
     skillUpgradeMaterials: {
       common: {
@@ -5470,7 +5470,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "정역의 메아리": {
+      "정적의 메아리": {
         "8": [
           {
             material: skillSummary3,
@@ -5519,9 +5519,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "RIT-X",
-        name: "어제, 오늘, 내일",
+        name: "어제, 오늘, 그리고 내일",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -5591,7 +5591,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 5,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act51side",
       eventName: "사람들, 우리들",
@@ -5632,8 +5632,8 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "화검의 비주",
-      "'숨바꼭질!'",
+      "불집게 주문",
+      "'까꿍!'",
     ],
     skillUpgradeMaterials: {
       common: {
@@ -5698,7 +5698,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "화검의 비주": {
+      "불집게 주문": {
         "8": [
           {
             material: skillSummary3,
@@ -5742,7 +5742,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
           },
         ],
       },
-      "'숨바꼭질!'": {
+      "'까꿍!'": {
         "8": [
           {
             material: skillSummary3,
@@ -5791,9 +5791,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "XAH-X",
-        name: "'잠들기 전 이야기'",
+        name: "'자기 전 이야기'",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -27652,9 +27652,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       },
       {
         type: "PRI-Y",
-        name: "상담용 장비",
+        name: "상담 도구함",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -71689,9 +71689,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       },
       {
         type: "BAR-Y",
-        name: "신생대",
+        name: "신세대",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -81459,9 +81459,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       },
       {
         type: "AFT-Y",
-        name: "여행자의 필수품",
+        name: "여행 필수품",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
