@@ -529,7 +529,7 @@ export default function OperatorListModal({
           [&::-webkit-scrollbar-thumb]:bg-gray-700
           [&::-webkit-scrollbar-thumb:hover]:bg-gray-600"
         >
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(92px,104px))] justify-start gap-2">
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-[repeat(auto-fill,minmax(92px,104px))] sm:justify-start">
             {filteredOperatorList.map((operator) => {
               const isSelected = isOperatorSelected(operator.id);
               const isDisabled = operator.growthType === "roguelike";
