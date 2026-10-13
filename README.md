@@ -1,4 +1,9 @@
 # Arknights-Toolbox
+
+## 테스트
+
+`npm test`로 초기 회귀 테스트를 실행하고, 배포 전에는 `npm run check:release`로 테스트·타입 검사·린트·프로덕션 빌드를 확인합니다. 스카디 기준 데이터, 생성 스크립트의 핵심 파이프라인, `/depot` 입력 및 저장/복원을 검증합니다. 실행 방법과 기준점 갱신 절차는 [테스트 가이드](docs/testing.md)를 참고하세요.
+
 ## 프론트엔드 스택
 - React 19, Next.js 16, TypeScript, TailwindCSS 3+, Jotai
 

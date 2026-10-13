@@ -53,11 +53,19 @@ export const makeDepotWithJSON = (JSONString: string) => {
     // JSON 형식의 문자열을 JSON 형태로 파싱
     const json = JSON.parse(JSONString);
 
-    for (const materialId in json) {
+    if (typeof json !== "object" || json === null || Array.isArray(json)) {
+      throw new SyntaxError("창고 JSON은 재료 ID와 수량으로 이루어진 객체여야 합니다.");
+    }
+
+    for (const materialId of Object.keys(json)) {
       // {"materialId": quantity, ...} 형태로 이루어진 JSON 객체를 순회하며, 사용자의 재료 정보를 하나씩 확인함
       // 재료 아이디 및 수량
       const id: string = materialId;
       const quantity: number = json[materialId];
+
+      if (!Number.isSafeInteger(quantity) || quantity < 0) {
+        throw new SyntaxError(`잘못된 재료 수량: ${id} - ${quantity}`);
+      }
 
       // ID를 기반으로 창고 수정
       setDepotMaterialById(id, quantity, result);

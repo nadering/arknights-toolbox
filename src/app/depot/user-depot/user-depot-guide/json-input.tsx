@@ -111,6 +111,7 @@ export default function JsonInput() {
               [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-track]:rounded-r-lg
               [&::-webkit-scrollbar-thumb]:cursor-default [&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-thumb]:rounded-r-lg"
             id="json"
+            aria-label="창고 JSON 데이터"
             placeholder={`"Arkntools로 내보내기"로 복사한 JSON을 입력해주세요.`}
             value={jsonString}
             onChange={(event) => handleJsonStringValue(event)}

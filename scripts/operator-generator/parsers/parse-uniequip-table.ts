@@ -41,7 +41,7 @@ type UniequipInfoForParser = {
 
   type?: string;
   typeName1?: string;
-  typeName2?: string;
+  typeName2?: string | null;
 
   charId?: string;
   tmplId?: string | null;
