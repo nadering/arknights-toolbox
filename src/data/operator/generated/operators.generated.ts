@@ -195,6 +195,816 @@ export type GeneratedOperator = {
  */
 export const generatedOperatorList: GeneratedOperator[] = [
   {
+    id: "char_393_toledo",
+
+    name: "데 톨레도",
+
+    imageFilename: "de-toledo",
+
+    class: "Supporter",
+    rarity: 5,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act52side",
+      eventName: "어제의 바다",
+      category: "side_story",
+      order: 114,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: supporterChip,
+          count: 4,
+        },
+        {
+          material: sugar,
+          count: 5,
+        },
+        {
+          material: orirockCube,
+          count: 3,
+        },
+      ],
+      "2": [
+        {
+          material: supporterDualchip,
+          count: 3,
+        },
+        {
+          material: polymerizedGel,
+          count: 9,
+        },
+        {
+          material: orironCluster,
+          count: 13,
+        },
+      ],
+    },
+
+    skillList: [
+      "거짓으로 숨긴 진실",
+      "놀라운 허세",
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+          {
+            material: orironShard,
+            count: 5,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: polyketon,
+            count: 3,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: device,
+            count: 3,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: integratedDevice,
+            count: 3,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: crystallineComponent,
+            count: 3,
+          },
+          {
+            material: polyesterPack,
+            count: 3,
+          },
+        ],
+      },
+      "거짓으로 숨긴 진실": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 3,
+          },
+          {
+            material: orirockCluster,
+            count: 5,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 3,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 4,
+          },
+          {
+            material: crystallineCircuit,
+            count: 1,
+          },
+        ],
+      },
+      "놀라운 허세": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: polymerizedGel,
+            count: 3,
+          },
+          {
+            material: grindstone,
+            count: 4,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: refinedSolvent,
+            count: 3,
+          },
+          {
+            material: chiralRefractor,
+            count: 6,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 4,
+          },
+          {
+            material: transmutedSaltAgglomerate,
+            count: 4,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "UMD-Y",
+        name: "고귀한 의무",
+        charEquipOrder: 2,
+        server: "future",
+      },
+    ],
+    moduleMaterials: {
+      "UMD-Y": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 40000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementStick,
+            count: 20,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 50000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 8,
+          },
+          {
+            material: polymerizedGel,
+            count: 5,
+          },
+          {
+            material: LMD,
+            count: 60000,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: "char_4231_clemnt",
+
+    name: "클레멘티아",
+
+    imageFilename: "clementia",
+
+    class: "Guard",
+    rarity: 6,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act52side",
+      eventName: "어제의 바다",
+      category: "side_story",
+      order: 114,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: guardChip,
+          count: 5,
+        },
+        {
+          material: oriron,
+          count: 8,
+        },
+        {
+          material: polyketon,
+          count: 3,
+        },
+      ],
+      "2": [
+        {
+          material: guardDualchip,
+          count: 4,
+        },
+        {
+          material: polymerizationPreparation,
+          count: 4,
+        },
+        {
+          material: orirockConcentration,
+          count: 9,
+        },
+      ],
+    },
+
+    skillList: [
+      "부식",
+      "폭풍 해일",
+      "바다에 맞서서",
+    ],
+    preferSkillIndexes: [
+      1,
+      2,
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 5,
+          },
+          {
+            material: damagedDevice,
+            count: 4,
+          },
+          {
+            material: ester,
+            count: 4,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: orirockCube,
+            count: 7,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: sugar,
+            count: 4,
+          },
+          {
+            material: polyketon,
+            count: 4,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 8,
+          },
+          {
+            material: crystallineComponent,
+            count: 6,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: aketon,
+            count: 5,
+          },
+          {
+            material: grindstone,
+            count: 3,
+          },
+        ],
+      },
+      "부식": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: orironBlock,
+            count: 4,
+          },
+          {
+            material: pseudocondensationNucleus,
+            count: 3,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: refinedSolvent,
+            count: 4,
+          },
+          {
+            material: chiralRefractor,
+            count: 9,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 6,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 2,
+          },
+        ],
+      },
+      "폭풍 해일": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 4,
+          },
+          {
+            material: electrodeUnit,
+            count: 6,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 4,
+          },
+          {
+            material: orirockConcentration,
+            count: 10,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 6,
+          },
+          {
+            material: refinedSolvent,
+            count: 1,
+          },
+        ],
+      },
+      "바다에 맞서서": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 8,
+          },
+          {
+            material: solidifiedFiberBoard,
+            count: 4,
+          },
+          {
+            material: compoundCuttingFluid,
+            count: 5,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 12,
+          },
+          {
+            material: polymerizedGel,
+            count: 4,
+          },
+          {
+            material: crystallineCircuit,
+            count: 7,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 15,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 6,
+          },
+          {
+            material: cuttingFluidSolution,
+            count: 1,
+          },
+        ],
+      },
+    },
+
+    moduleList: [],
+    moduleMaterials: null,
+  },
+  {
+    id: "char_4232_hbound",
+
+    name: "홈바운드",
+
+    imageFilename: "homebound",
+
+    class: "Specialist",
+    rarity: 5,
+
+    growthType: "normal",
+    server: "future",
+    releaseInfo: {
+      eventId: "act52side",
+      eventName: "어제의 바다",
+      category: "side_story",
+      order: 114,
+    },
+
+    eliteMaterials: {
+      "0": [],
+      "1": [
+        {
+          material: specialistChip,
+          count: 4,
+        },
+        {
+          material: orirockCube,
+          count: 7,
+        },
+        {
+          material: device,
+          count: 2,
+        },
+      ],
+      "2": [
+        {
+          material: specialistDualchip,
+          count: 3,
+        },
+        {
+          material: solidifiedFiberBoard,
+          count: 7,
+        },
+        {
+          material: fuscousFiber,
+          count: 13,
+        },
+      ],
+    },
+
+    skillList: [
+      "좌초",
+      "착저",
+    ],
+    skillUpgradeMaterials: {
+      common: {
+        "2": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+        ],
+        "3": [
+          {
+            material: skillSummary1,
+            count: 4,
+          },
+          {
+            material: ester,
+            count: 7,
+          },
+        ],
+        "4": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: oriron,
+            count: 3,
+          },
+        ],
+        "5": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: polyketon,
+            count: 4,
+          },
+        ],
+        "6": [
+          {
+            material: skillSummary2,
+            count: 6,
+          },
+          {
+            material: compoundCuttingFluid,
+            count: 4,
+          },
+        ],
+        "7": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: liquefiedHighEnergyGas,
+            count: 3,
+          },
+          {
+            material: incandescentAlloy,
+            count: 2,
+          },
+        ],
+      },
+      "좌초": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: cyclicenePrefab,
+            count: 3,
+          },
+          {
+            material: fuscousFiber,
+            count: 2,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: incandescentAlloyBlock,
+            count: 3,
+          },
+          {
+            material: orironBlock,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 4,
+          },
+          {
+            material: chiralRefractor,
+            count: 1,
+          },
+        ],
+      },
+      "착저": {
+        "8": [
+          {
+            material: skillSummary3,
+            count: 5,
+          },
+          {
+            material: refinedSolvent,
+            count: 3,
+          },
+          {
+            material: orironCluster,
+            count: 4,
+          },
+        ],
+        "9": [
+          {
+            material: skillSummary3,
+            count: 6,
+          },
+          {
+            material: ketonColloid,
+            count: 3,
+          },
+          {
+            material: liquefiedEtherAggregate,
+            count: 5,
+          },
+        ],
+        "10": [
+          {
+            material: skillSummary3,
+            count: 10,
+          },
+          {
+            material: crystallineElectronicUnit,
+            count: 4,
+          },
+          {
+            material: orirockConcentration,
+            count: 1,
+          },
+        ],
+      },
+    },
+
+    moduleList: [
+      {
+        type: "ALC-X",
+        name: "보이지 않는 대양",
+        charEquipOrder: 1,
+        server: "future",
+      },
+    ],
+    moduleMaterials: {
+      "ALC-X": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: chiralRefractor,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 40000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementStick,
+            count: 20,
+          },
+          {
+            material: energyConcentratingPowerUnit,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 50000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 2,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 8,
+          },
+          {
+            material: orirockConcentration,
+            count: 5,
+          },
+          {
+            material: LMD,
+            count: 60000,
+          },
+        ],
+      },
+    },
+  },
+  {
     id: "char_4217_makoto",
 
     name: "유키 마코토",
@@ -28859,10 +29669,16 @@ export const generatedOperatorList: GeneratedOperator[] = [
         charEquipOrder: 1,
         server: "global",
       },
+      {
+        type: "CRU-Y",
+        name: "'앞길'",
+        charEquipOrder: 2,
+        server: "future",
+      },
     ],
     preferModules: [
       {
-        type: "CRU-X",
+        type: "CRU-Y",
         level: 3,
       },
     ],
@@ -28893,6 +29709,58 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
           {
             material: bipolarNanoflake,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 100000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 20,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 120000,
+          },
+        ],
+      },
+      "CRU-Y": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: biphasicEnantiomorphicMedium,
+            count: 2,
+          },
+          {
+            material: LMD,
+            count: 80000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementStick,
+            count: 60,
+          },
+          {
+            material: polymerizationPreparation,
             count: 3,
           },
           {
@@ -33207,6 +34075,12 @@ export const generatedOperatorList: GeneratedOperator[] = [
         charEquipOrder: 1,
         server: "global",
       },
+      {
+        type: "GUA-Y",
+        name: "좋은 계절",
+        charEquipOrder: 2,
+        server: "future",
+      },
     ],
     preferModules: [
       {
@@ -33259,6 +34133,58 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
           {
             material: polymerizationPreparation,
+            count: 4,
+          },
+          {
+            material: LMD,
+            count: 120000,
+          },
+        ],
+      },
+      "GUA-Y": {
+        "1": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: polymerizationPreparation,
+            count: 2,
+          },
+          {
+            material: LMD,
+            count: 80000,
+          },
+        ],
+        "2": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementStick,
+            count: 60,
+          },
+          {
+            material: nucleicCrystalSinter,
+            count: 3,
+          },
+          {
+            material: LMD,
+            count: 100000,
+          },
+        ],
+        "3": [
+          {
+            material: moduleDataBlock,
+            count: 4,
+          },
+          {
+            material: dataSupplementInstrument,
+            count: 20,
+          },
+          {
+            material: crystallineElectronicUnit,
             count: 4,
           },
           {

@@ -722,6 +722,9 @@ export const operatorOverrideList: OperatorOverride[] = [
         level: 3,
       },
     ],
+    translatedModuleNames: {
+      "GUA-Y": "좋은 계절",
+    },
   },
   {
     charId: "char_2026_yu",
@@ -1011,6 +1014,17 @@ export const operatorOverrideList: OperatorOverride[] = [
         level: 3,
       },
     ],
+  },
+  {
+    charId: "char_393_toledo",
+    translatedName: "데 톨레도",
+    translatedSkillNames: {
+      skchr_toledo_1: "거짓으로 숨긴 진실",
+      skchr_toledo_2: "놀라운 허세",
+    },
+    translatedModuleNames: {
+      "UMD-Y": "고귀한 의무",
+    },
   },
   {
     charId: "char_394_hadiya",
@@ -1539,10 +1553,13 @@ export const operatorOverrideList: OperatorOverride[] = [
     preferSkillIndexes: [1, 2],
     preferModules: [
       {
-        type: "CRU-X",
+        type: "CRU-Y",
         level: 3,
       },
     ],
+    translatedModuleNames: {
+      "CRU-Y": "'앞길'",
+    },
   },
   {
     charId: "char_4146_nymph",
@@ -1984,6 +2001,27 @@ export const operatorOverrideList: OperatorOverride[] = [
       "SO-α": "메커니스트의 특근 배지",
     },
     growthType: "roguelike",
+  },
+  {
+    charId: "char_4231_clemnt",
+    preferSkillIndexes: [1, 2],
+    translatedName: "클레멘티아",
+    translatedSkillNames: {
+      skchr_clemnt_1: "부식",
+      skchr_clemnt_2: "폭풍 해일",
+      skchr_clemnt_3: "바다에 맞서서",
+    },
+  },
+  {
+    charId: "char_4232_hbound",
+    translatedName: "홈바운드",
+    translatedSkillNames: {
+      skchr_hbound_1: "좌초",
+      skchr_hbound_2: "착저",
+    },
+    translatedModuleNames: {
+      "ALC-X": "보이지 않는 대양",
+    },
   },
   {
     charId: "char_4234_pedro",

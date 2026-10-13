@@ -11,6 +11,26 @@ import { OperatorReleaseEvent } from "../manual/operator-release-types";
  */
 export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   {
+    "id": "act52side",
+    "name": "昨日海",
+    "category": "side_story",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": []
+  },
+  {
+    "id": "cn_20261009_char_393_toledo",
+    "name": "2026-10-09 출시 후보: 德·托莱多, 旅骨, 克莱门莎",
+    "category": "other",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": [
+      "char_393_toledo",
+      "char_4232_hbound",
+      "char_4231_clemnt"
+    ]
+  },
+  {
     "id": "act54side",
     "name": "月行水上",
     "category": "side_story",
@@ -70,9 +90,9 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "act4mainss",
-    "name": "相变临界",
-    "category": "main_story",
+    "id": "act51side",
+    "name": "사람들, 우리들",
+    "category": "side_story",
     "server": "future",
     "source": "cn_git_history",
     "operatorIds": [
@@ -85,9 +105,9 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   },
   {
     "id": "cn_20260407_char_4224_turdus",
-    "name": "2026-04-07 출시 후보: 乌啾, 伯塔尼, 怒潮凛冬",
+    "name": "2026-04-07 출시 후보: 우쿠시크, 보타니, 지마 더 레이징 타이드",
     "category": "other",
-    "server": "future",
+    "server": "global",
     "source": "cn_git_history",
     "operatorIds": [
       "char_4224_turdus",

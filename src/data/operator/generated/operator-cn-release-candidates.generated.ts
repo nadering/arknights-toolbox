@@ -7,6 +7,92 @@ import { CnReleaseCandidate } from "../../../../scripts/operator-release/cn-rele
  */
 export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
   {
+    "kind": "cn_unmapped_release_activity",
+    "commitHash": "17759cc8cdf37388414145d16262a3a06f3ab25e",
+    "commitDate": "2026-10-09T07:46:48+08:00",
+    "addedOperatorList": [],
+    "addedActivityList": [
+      {
+        "id": "act52side",
+        "cnName": "昨日海",
+        "globalName": null,
+        "type": "TYPE_ACT9D0",
+        "firstSeenType": "TYPE_ACT9D0",
+        "displayType": "SIDESTORY",
+        "category": "side_story",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": true,
+        "templateShopId": "shop_act52side",
+        "cnStartTime": 1791500400,
+        "cnEndTime": 1792699199,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "SINGLE_78_0_1",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_78_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "low",
+    "reasons": [
+      "release-like activity added without mapped operator",
+      "side_story activity needs manual operator mapping"
+    ]
+  },
+  {
+    "kind": "cn_release_candidate",
+    "commitHash": "e8588a82074bf695aa3849959037dd2de7e6e5cf",
+    "commitDate": "2026-10-09T06:22:21+08:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_393_toledo",
+        "cnName": "德·托莱多",
+        "globalName": null,
+        "profession": "SUPPORT",
+        "server": "future"
+      },
+      {
+        "charId": "char_4232_hbound",
+        "cnName": "旅骨",
+        "globalName": null,
+        "profession": "SPECIAL",
+        "server": "future"
+      },
+      {
+        "charId": "char_4231_clemnt",
+        "cnName": "克莱门莎",
+        "globalName": null,
+        "profession": "WARRIOR",
+        "server": "future"
+      }
+    ],
+    "addedActivityList": [],
+    "addedGachaList": [
+      {
+        "id": "SINGLE_78_0_1",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_78_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "medium",
+    "reasons": [
+      "3 operator(s) added",
+      "3 operator(s) are future",
+      "2 gacha(s) added in same commit"
+    ]
+  },
+  {
     "kind": "cn_release_candidate",
     "commitHash": "cc5bf84b0e6d552d9c13619e2683ff25c5bbeecb",
     "commitDate": "2026-09-04T13:03:17+08:00",
@@ -723,7 +809,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "id": "act51side",
         "cnName": "人们，我们",
-        "globalName": null,
+        "globalName": "사람들, 우리들",
         "type": "TYPE_ACT9D0",
         "firstSeenType": "TYPE_ACT9D0",
         "displayType": "SIDESTORY",
@@ -734,9 +820,9 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": "shop_act51side",
         "cnStartTime": 1775516400,
         "cnEndTime": 1776715199,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1789542000,
+        "globalEndTime": 1790708399,
+        "hasGlobalMatch": true
       }
     ],
     "addedGachaList": [
@@ -777,23 +863,23 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_4224_turdus",
         "cnName": "乌啾",
-        "globalName": null,
+        "globalName": "우쿠시크",
         "profession": "MEDIC",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_4223_botany",
         "cnName": "伯塔尼",
-        "globalName": null,
+        "globalName": "보타니",
         "profession": "SUPPORT",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_1051_headb2",
         "cnName": "怒潮凛冬",
-        "globalName": null,
+        "globalName": "지마 더 레이징 타이드",
         "profession": "WARRIOR",
-        "server": "future"
+        "server": "global"
       }
     ],
     "addedActivityList": [],
@@ -810,7 +896,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     "confidence": "medium",
     "reasons": [
       "3 operator(s) added",
-      "3 operator(s) are future",
+      "3 operator(s) matched global",
       "2 gacha(s) added in same commit"
     ]
   },
