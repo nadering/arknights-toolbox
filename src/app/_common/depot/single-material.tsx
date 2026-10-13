@@ -164,6 +164,7 @@ export default function SingleMaterial({
           sm:w-full sm:rounded-none sm:px-4
         `}
         id={materialId}
+        aria-label={`${material.name} 보유량`}
         type="number"
         min={0}
         step={1}

@@ -1,0 +1,600 @@
+{
+  "charId": "char_263_skadi",
+  "character": {
+    "name": "스카디",
+    "appellation": "Skadi",
+    "displayNumber": "AA01",
+    "profession": "WARRIOR",
+    "rarity": "TIER_6",
+    "isNotObtainable": false,
+    "phases": [
+      {
+        "evolveCost": null
+      },
+      {
+        "evolveCost": [
+          {
+            "id": "3221",
+            "count": 5,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30062",
+            "count": 5,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30032",
+            "count": 5,
+            "type": "MATERIAL"
+          }
+        ]
+      },
+      {
+        "evolveCost": [
+          {
+            "id": "3223",
+            "count": 4,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30135",
+            "count": 4,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30014",
+            "count": 9,
+            "type": "MATERIAL"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "skillId": "skcom_quickattack[3]",
+        "levelUpCostCond": [
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 6,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30074",
+                "count": 4,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30053",
+                "count": 8,
+                "type": "MATERIAL"
+              }
+            ]
+          },
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 12,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30104",
+                "count": 4,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30084",
+                "count": 7,
+                "type": "MATERIAL"
+              }
+            ]
+          },
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 15,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30135",
+                "count": 6,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30014",
+                "count": 7,
+                "type": "MATERIAL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "skillId": "skchr_skadi_2",
+        "levelUpCostCond": [
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 6,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30084",
+                "count": 4,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30063",
+                "count": 4,
+                "type": "MATERIAL"
+              }
+            ]
+          },
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 12,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30014",
+                "count": 4,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30094",
+                "count": 9,
+                "type": "MATERIAL"
+              }
+            ]
+          },
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 15,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30125",
+                "count": 6,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30014",
+                "count": 6,
+                "type": "MATERIAL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "skillId": "skchr_skadi_3",
+        "levelUpCostCond": [
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 6,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30094",
+                "count": 4,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30073",
+                "count": 7,
+                "type": "MATERIAL"
+              }
+            ]
+          },
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 12,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30024",
+                "count": 4,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30104",
+                "count": 8,
+                "type": "MATERIAL"
+              }
+            ]
+          },
+          {
+            "levelUpCost": [
+              {
+                "id": "3303",
+                "count": 15,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30125",
+                "count": 6,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "30034",
+                "count": 5,
+                "type": "MATERIAL"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "allSkillLvlup": [
+      {
+        "lvlUpCost": [
+          {
+            "id": "3301",
+            "count": 5,
+            "type": "MATERIAL"
+          }
+        ]
+      },
+      {
+        "lvlUpCost": [
+          {
+            "id": "3301",
+            "count": 4,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30061",
+            "count": 4,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30031",
+            "count": 4,
+            "type": "MATERIAL"
+          }
+        ]
+      },
+      {
+        "lvlUpCost": [
+          {
+            "id": "3302",
+            "count": 8,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30012",
+            "count": 7,
+            "type": "MATERIAL"
+          }
+        ]
+      },
+      {
+        "lvlUpCost": [
+          {
+            "id": "3302",
+            "count": 8,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30022",
+            "count": 4,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30052",
+            "count": 4,
+            "type": "MATERIAL"
+          }
+        ]
+      },
+      {
+        "lvlUpCost": [
+          {
+            "id": "3302",
+            "count": 8,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30053",
+            "count": 6,
+            "type": "MATERIAL"
+          }
+        ]
+      },
+      {
+        "lvlUpCost": [
+          {
+            "id": "3303",
+            "count": 8,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30063",
+            "count": 3,
+            "type": "MATERIAL"
+          },
+          {
+            "id": "30023",
+            "count": 5,
+            "type": "MATERIAL"
+          }
+        ]
+      }
+    ]
+  },
+  "skillTable": {
+    "skcom_quickattack[3]": {
+      "levels": [
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        },
+        {
+          "name": "신속 공격 γ"
+        }
+      ]
+    },
+    "skchr_skadi_2": {
+      "levels": [
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        },
+        {
+          "name": "파도타기"
+        }
+      ]
+    },
+    "skchr_skadi_3": {
+      "levels": [
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        },
+        {
+          "name": "파도의 만가"
+        }
+      ]
+    }
+  },
+  "uniequipTable": {
+    "equipDict": {
+      "uniequip_001_skadi": {
+        "uniEquipId": "uniequip_001_skadi",
+        "uniEquipName": "스카디의 배지",
+        "type": "INITIAL",
+        "typeName1": "ORIGINAL",
+        "typeName2": null,
+        "charId": "char_263_skadi",
+        "charEquipOrder": 0,
+        "itemCost": null
+      },
+      "uniequip_002_skadi": {
+        "uniEquipId": "uniequip_002_skadi",
+        "uniEquipName": "축축한 대검 케이스",
+        "type": "ADVANCED",
+        "typeName1": "DRE",
+        "typeName2": "Y",
+        "charId": "char_263_skadi",
+        "charEquipOrder": 2,
+        "itemCost": {
+          "1": [
+            {
+              "id": "mod_unlock_token",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30125",
+              "count": 2,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 80000,
+              "type": "GOLD"
+            }
+          ],
+          "2": [
+            {
+              "id": "mod_unlock_token",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "mod_update_token_1",
+              "count": 60,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30135",
+              "count": 3,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 100000,
+              "type": "GOLD"
+            }
+          ],
+          "3": [
+            {
+              "id": "mod_unlock_token",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "mod_update_token_2",
+              "count": 20,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30145",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 120000,
+              "type": "GOLD"
+            }
+          ]
+        }
+      },
+      "uniequip_003_skadi": {
+        "uniEquipId": "uniequip_003_skadi",
+        "uniEquipName": "지난 날의 불완전한 꿈",
+        "type": "ADVANCED",
+        "typeName1": "DRE",
+        "typeName2": "X",
+        "charId": "char_263_skadi",
+        "charEquipOrder": 1,
+        "itemCost": {
+          "1": [
+            {
+              "id": "mod_unlock_token",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30135",
+              "count": 2,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 80000,
+              "type": "GOLD"
+            }
+          ],
+          "2": [
+            {
+              "id": "mod_unlock_token",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "mod_update_token_1",
+              "count": 60,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30125",
+              "count": 3,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 100000,
+              "type": "GOLD"
+            }
+          ],
+          "3": [
+            {
+              "id": "mod_unlock_token",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "mod_update_token_2",
+              "count": 20,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30145",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 120000,
+              "type": "GOLD"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

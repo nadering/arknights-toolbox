@@ -83,6 +83,7 @@ export default function UserDepotSetter() {
               userDepotInitialized ? "" : "hidden"
             } group relative w-6 selection:bg-transparent aspect-square`}
             onClick={() => resetDepot()}
+            aria-label="창고 데이터 초기화"
           >
             <Image
               className="transition:[filter_0s] [filter:invert(56%)_sepia(1%)_saturate(0%)_hue-rotate(46deg)_brightness(96%)_contrast(88%)]
