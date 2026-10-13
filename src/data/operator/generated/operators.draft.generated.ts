@@ -217,6 +217,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -230,6 +234,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -488,6 +496,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -501,6 +513,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -756,6 +772,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -769,6 +789,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -1031,6 +1055,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -1044,6 +1072,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -1364,6 +1396,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -1377,6 +1413,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -1638,6 +1678,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -1651,6 +1695,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -1953,6 +2001,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -1966,6 +2018,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -2221,6 +2277,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -2234,6 +2294,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -2555,6 +2619,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -2568,6 +2636,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -2827,6 +2899,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -2840,6 +2916,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -3098,6 +3178,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -3111,6 +3195,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -3370,6 +3458,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -3383,6 +3475,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -3704,6 +3800,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -3717,6 +3817,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -3919,6 +4023,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -3932,6 +4040,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -4253,6 +4365,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -4266,6 +4382,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -4565,6 +4685,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -4578,6 +4702,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -4834,6 +4962,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -4847,6 +4979,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -5106,6 +5242,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -5119,6 +5259,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -5471,6 +5615,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -5484,6 +5632,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -5806,6 +5958,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -5819,6 +5975,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -6141,6 +6301,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -6154,6 +6318,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -6413,6 +6581,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -6426,6 +6598,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -6685,6 +6861,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -6698,6 +6878,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -6957,6 +7141,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -6970,6 +7158,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -7294,6 +7486,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -7307,6 +7503,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -7628,6 +7828,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -7641,6 +7845,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -7962,6 +8170,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -7975,6 +8187,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -8234,6 +8450,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -8247,6 +8467,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -8446,6 +8670,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -8459,6 +8687,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -8718,6 +8950,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -8731,6 +8967,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -9052,6 +9292,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -9065,6 +9309,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -9324,6 +9572,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -9337,6 +9589,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -9658,6 +9914,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -9671,6 +9931,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -9870,6 +10134,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -9883,6 +10151,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -10145,6 +10417,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -10158,6 +10434,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -10414,6 +10694,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -10427,6 +10711,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -10749,6 +11037,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -10762,6 +11054,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -11077,6 +11373,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -11090,6 +11390,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -11289,6 +11593,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -11302,6 +11610,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -11557,6 +11869,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -11570,6 +11886,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -11829,6 +12149,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -11842,6 +12166,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -12163,6 +12491,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -12176,6 +12508,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -12435,6 +12771,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: vanguardChip,
           count: 3,
         },
@@ -12448,6 +12788,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: vanguardChipPack,
           count: 5,
@@ -12706,6 +13050,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -12719,6 +13067,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -13045,6 +13397,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -13058,6 +13414,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -13329,6 +13689,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -13342,6 +13706,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -13613,6 +13981,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -13626,6 +13998,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -13897,6 +14273,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -13910,6 +14290,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -14181,6 +14565,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -14194,6 +14582,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -14516,6 +14908,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -14529,6 +14925,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -14728,6 +15128,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -14741,6 +15145,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -15063,6 +15471,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -15076,6 +15488,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -15338,6 +15754,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -15351,6 +15771,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -15674,6 +16098,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -15687,6 +16115,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -15949,6 +16381,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -15962,6 +16398,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -16284,6 +16724,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -16297,6 +16741,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -16496,6 +16944,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -16509,6 +16961,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -16771,6 +17227,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -16784,6 +17244,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -17106,6 +17570,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -17119,6 +17587,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -17358,6 +17830,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -17371,6 +17847,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -17693,6 +18173,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -17706,6 +18190,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -18076,6 +18564,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -18089,6 +18581,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -18351,6 +18847,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -18364,6 +18864,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -18686,6 +19190,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -18699,6 +19207,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -18954,6 +19466,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -18967,6 +19483,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -19226,6 +19746,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -19239,6 +19763,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -19498,6 +20026,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -19511,6 +20043,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -19832,6 +20368,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -19845,6 +20385,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -20225,6 +20769,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -20238,6 +20786,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -20500,6 +21052,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -20513,6 +21069,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -20892,6 +21452,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -20905,6 +21469,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -21227,6 +21795,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -21240,6 +21812,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -21508,6 +22084,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -21521,6 +22101,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -21783,6 +22367,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -21796,6 +22384,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -22113,6 +22705,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -22126,6 +22722,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -22394,6 +22994,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -22407,6 +23011,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -22669,6 +23277,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -22682,6 +23294,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -23003,6 +23619,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -23016,6 +23636,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -23398,6 +24022,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -23411,6 +24039,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -23790,6 +24422,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -23803,6 +24439,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -24062,6 +24702,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -24075,6 +24719,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -24334,6 +24982,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -24347,6 +24999,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -24545,6 +25201,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -24558,6 +25218,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -24937,6 +25601,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -24950,6 +25618,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -25209,6 +25881,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -25222,6 +25898,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -25481,6 +26161,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -25494,6 +26178,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -25815,6 +26503,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -25828,6 +26520,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -26087,6 +26783,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -26100,6 +26800,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -26359,6 +27063,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -26372,6 +27080,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -26640,6 +27352,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -26653,6 +27369,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -27000,6 +27720,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -27013,6 +27737,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -27392,6 +28120,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -27405,6 +28137,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -27664,6 +28400,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -27677,6 +28417,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -27936,6 +28680,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -27949,6 +28697,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -28211,6 +28963,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -28224,6 +28980,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -28604,6 +29364,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -28617,6 +29381,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -28876,6 +29644,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -28889,6 +29661,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -29148,6 +29924,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -29161,6 +29941,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -29420,6 +30204,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -29433,6 +30221,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -29813,6 +30605,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -29826,6 +30622,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -30147,6 +30947,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -30160,6 +30964,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -30419,6 +31227,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -30432,6 +31244,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -30815,6 +31631,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -30828,6 +31648,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -31189,6 +32013,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: defenderChip,
           count: 3,
         },
@@ -31202,6 +32030,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: defenderChipPack,
           count: 5,
@@ -31457,6 +32289,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -31470,6 +32306,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -31729,6 +32569,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -31742,6 +32586,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -32121,6 +32969,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -32134,6 +32986,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -32396,6 +33252,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -32409,6 +33269,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -32733,6 +33597,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -32746,6 +33614,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -33008,6 +33880,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -33021,6 +33897,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -33283,6 +34163,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -33296,6 +34180,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -33555,6 +34443,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -33568,6 +34460,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -33827,6 +34723,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -33840,6 +34740,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -34219,6 +35123,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -34232,6 +35140,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -34491,6 +35403,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -34504,6 +35420,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -34884,6 +35804,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -34897,6 +35821,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -35156,6 +36084,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -35169,6 +36101,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -35428,6 +36364,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -35441,6 +36381,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -35820,6 +36764,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -35833,6 +36781,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -36092,6 +37044,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -36105,6 +37061,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -36364,6 +37324,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -36377,6 +37341,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -36759,6 +37727,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -36772,6 +37744,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -37152,6 +38128,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -37165,6 +38145,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -37535,6 +38519,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -37548,6 +38536,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -37927,6 +38919,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -37940,6 +38936,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -38204,6 +39204,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -38217,6 +39221,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -38476,6 +39484,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -38489,6 +39501,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -38748,6 +39764,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -38761,6 +39781,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -39145,6 +40169,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -39158,6 +40186,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -39413,6 +40445,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -39426,6 +40462,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -39685,6 +40725,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -39698,6 +40742,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -39960,6 +41008,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -39973,6 +41025,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -40352,6 +41408,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -40365,6 +41425,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -40624,6 +41688,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -40637,6 +41705,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -40899,6 +41971,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -40912,6 +41988,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -41295,6 +42375,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -41308,6 +42392,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -41718,6 +42806,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -41731,6 +42823,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -41990,6 +43086,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -42003,6 +43103,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -42262,6 +43366,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -42275,6 +43383,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -42534,6 +43646,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -42547,6 +43663,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -42957,6 +44077,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -42970,6 +44094,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -43232,6 +44360,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -43245,6 +44377,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -43624,6 +44760,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -43637,6 +44777,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -43896,6 +45040,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -43909,6 +45057,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -44208,6 +45360,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -44221,6 +45377,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -44594,6 +45754,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -44607,6 +45771,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -44987,6 +46155,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -45000,6 +46172,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -45259,6 +46435,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -45272,6 +46452,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -45677,6 +46861,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -45690,6 +46878,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -45949,6 +47141,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -45962,6 +47158,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -46283,6 +47483,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -46296,6 +47500,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -46555,6 +47763,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -46568,6 +47780,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -46866,6 +48082,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -46879,6 +48099,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -47258,6 +48482,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -47271,6 +48499,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -47573,6 +48805,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -47586,6 +48822,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -47964,6 +49204,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -47977,6 +49221,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -48236,6 +49484,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -48249,6 +49501,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -48627,6 +49883,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -48640,6 +49900,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -48899,6 +50163,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -48912,6 +50180,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -49290,6 +50562,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -49303,6 +50579,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -49565,6 +50845,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -49578,6 +50862,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -49957,6 +51245,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -49970,6 +51262,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -50228,6 +51524,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -50241,6 +51541,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -50503,6 +51807,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -50516,6 +51824,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -50895,6 +52207,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -50908,6 +52224,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -51166,6 +52486,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -51179,6 +52503,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -51434,6 +52762,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -51447,6 +52779,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -51826,6 +53162,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -51839,6 +53179,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -52208,6 +53552,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -52221,6 +53569,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -52479,6 +53831,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -52492,6 +53848,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -52750,6 +54110,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -52763,6 +54127,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -53017,6 +54385,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -53030,6 +54402,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -53292,6 +54668,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -53305,6 +54685,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -53683,6 +55067,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -53696,6 +55084,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -53954,6 +55346,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -53967,6 +55363,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -54221,6 +55621,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -54234,6 +55638,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -54493,6 +55901,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -54506,6 +55918,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -54830,6 +56246,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -54843,6 +56263,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -55251,6 +56675,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -55264,6 +56692,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -55523,6 +56955,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -55536,6 +56972,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -55914,6 +57354,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -55927,6 +57371,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -56185,6 +57633,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -56198,6 +57650,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -56456,6 +57912,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -56469,6 +57929,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -56728,6 +58192,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -56741,6 +58209,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -57119,6 +58591,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -57132,6 +58608,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -57394,6 +58874,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -57407,6 +58891,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -57843,6 +59331,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -57856,6 +59348,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -58114,6 +59610,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -58127,6 +59627,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -58389,6 +59893,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -58402,6 +59910,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -58816,6 +60328,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -58829,6 +60345,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -59234,6 +60754,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -59247,6 +60771,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -59625,6 +61153,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -59638,6 +61170,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -59897,6 +61433,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -59910,6 +61450,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -60288,6 +61832,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -60301,6 +61849,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -60559,6 +62111,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: medicChip,
           count: 3,
         },
@@ -60572,6 +62128,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: medicChipPack,
           count: 5,
@@ -60826,6 +62386,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -60839,6 +62403,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -61098,6 +62666,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -61111,6 +62683,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -61519,6 +63095,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -61532,6 +63112,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -61790,6 +63374,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -61803,6 +63391,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -62065,6 +63657,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -62078,6 +63674,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -62456,6 +64056,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -62469,6 +64073,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -62727,6 +64335,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -62740,6 +64352,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -62999,6 +64615,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -63012,6 +64632,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -63333,6 +64957,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -63346,6 +64974,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -63724,6 +65356,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -63737,6 +65373,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -63995,6 +65635,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -64008,6 +65652,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -64266,6 +65914,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -64279,6 +65931,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -64538,6 +66194,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -64551,6 +66211,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -64959,6 +66623,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -64972,6 +66640,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -65230,6 +66902,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -65243,6 +66919,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -65505,6 +67185,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -65518,6 +67202,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -65937,6 +67625,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -65950,6 +67642,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -66208,6 +67904,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -66221,6 +67921,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -66599,6 +68303,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -66612,6 +68320,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -66870,6 +68582,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -66883,6 +68599,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -67141,6 +68861,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -67154,6 +68878,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -67413,6 +69141,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -67426,6 +69158,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -67798,6 +69534,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -67811,6 +69551,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -68069,6 +69813,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -68082,6 +69830,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -68344,6 +70096,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -68357,6 +70113,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -68736,6 +70496,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: supporterChip,
           count: 3,
         },
@@ -68749,6 +70513,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: supporterChipPack,
           count: 5,
@@ -69007,6 +70775,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -69020,6 +70792,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -69398,6 +71174,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -69411,6 +71191,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -69670,6 +71454,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -69683,6 +71471,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -70087,6 +71879,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -70100,6 +71896,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -70359,6 +72159,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -70372,6 +72176,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -70744,6 +72552,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -70757,6 +72569,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -71016,6 +72832,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -71029,6 +72849,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -71401,6 +73225,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -71414,6 +73242,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -71668,6 +73500,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -71681,6 +73517,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -71940,6 +73780,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -71953,6 +73797,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -72365,6 +74213,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -72378,6 +74230,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -72757,6 +74613,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -72770,6 +74630,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -73148,6 +75012,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -73161,6 +75029,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -73419,6 +75291,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -73432,6 +75308,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -73690,6 +75570,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -73703,6 +75587,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -73962,6 +75850,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -73975,6 +75867,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -74387,6 +76283,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -74400,6 +76300,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -74778,6 +76682,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -74791,6 +76699,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -75049,6 +76961,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -75062,6 +76978,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -75320,6 +77240,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -75333,6 +77257,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -75591,6 +77519,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -75604,6 +77536,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -75863,6 +77799,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -75876,6 +77816,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -76282,6 +78226,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -76295,6 +78243,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -76668,6 +78620,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -76681,6 +78637,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -76939,6 +78899,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -76952,6 +78916,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -77214,6 +79182,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -77227,6 +79199,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -77631,6 +79607,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -77644,6 +79624,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -77902,6 +79886,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: vanguardChip,
           count: 3,
         },
@@ -77915,6 +79903,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: vanguardChipPack,
           count: 5,
@@ -78169,6 +80161,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -78182,6 +80178,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -78444,6 +80444,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -78457,6 +80461,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -78835,6 +80843,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -78848,6 +80860,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -79102,6 +81118,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -79115,6 +81135,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -79374,6 +81398,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -79387,6 +81415,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -79765,6 +81797,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -79778,6 +81814,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -80036,6 +82076,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -80049,6 +82093,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -80395,6 +82443,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -80408,6 +82460,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -80666,6 +82722,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -80679,6 +82739,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -80937,6 +83001,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -80950,6 +83018,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -81208,6 +83280,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: defenderChip,
           count: 3,
         },
@@ -81221,6 +83297,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: defenderChipPack,
           count: 5,
@@ -81476,6 +83556,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -81489,6 +83573,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -81867,6 +83955,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -81880,6 +83972,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -82135,6 +84231,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -82148,6 +84248,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -82526,6 +84630,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -82539,6 +84647,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -82797,6 +84909,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -82810,6 +84926,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -83068,6 +85188,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -83081,6 +85205,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -83335,6 +85463,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -83348,6 +85480,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -83606,6 +85742,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -83619,6 +85759,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -83878,6 +86022,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -83891,6 +86039,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -84295,6 +86447,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -84308,6 +86464,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -84566,6 +86726,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -84579,6 +86743,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -84834,6 +87002,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -84847,6 +87019,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -85225,6 +87401,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -85238,6 +87418,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -85496,6 +87680,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -85509,6 +87697,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -85767,6 +87959,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -85780,6 +87976,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -86038,6 +88238,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -86051,6 +88255,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -86309,6 +88517,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -86322,6 +88534,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -86576,6 +88792,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -86589,6 +88809,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -86848,6 +89072,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -86861,6 +89089,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -87240,6 +89472,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -87253,6 +89489,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -87632,6 +89872,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: supporterChip,
           count: 3,
         },
@@ -87645,6 +89889,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: supporterChipPack,
           count: 5,
@@ -87899,6 +90147,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -87912,6 +90164,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -88170,6 +90426,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -88183,6 +90443,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -88441,6 +90705,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -88454,6 +90722,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -88712,6 +90984,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -88725,6 +91001,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -88984,6 +91264,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -88997,6 +91281,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -89416,6 +91704,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -89429,6 +91721,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -89808,6 +92104,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -89821,6 +92121,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -90080,6 +92384,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -90093,6 +92401,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -90497,6 +92809,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -90510,6 +92826,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -90768,6 +93088,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -90781,6 +93105,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -91035,6 +93363,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -91048,6 +93380,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -91306,6 +93642,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -91319,6 +93659,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -91574,6 +93918,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -91587,6 +93935,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -91966,6 +94318,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -91979,6 +94335,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -92237,6 +94597,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -92250,6 +94614,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -92504,6 +94872,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -92517,6 +94889,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -92775,6 +95151,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: medicChip,
           count: 3,
         },
@@ -92788,6 +95168,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: medicChipPack,
           count: 5,
@@ -93043,6 +95427,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -93056,6 +95444,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -93434,6 +95826,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -93447,6 +95843,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -93706,6 +96106,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -93719,6 +96123,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -94098,6 +96506,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: specialistChip,
           count: 5,
         },
@@ -94111,6 +96523,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: specialistDualchip,
           count: 4,
@@ -94489,6 +96905,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -94502,6 +96922,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -94760,6 +97184,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -94773,6 +97201,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -95032,6 +97464,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -95045,6 +97481,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -95423,6 +97863,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -95436,6 +97880,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -95690,6 +98138,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -95703,6 +98155,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -95961,6 +98417,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -95974,6 +98434,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -96232,6 +98696,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -96245,6 +98713,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -96503,6 +98975,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -96516,6 +98992,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -96771,6 +99251,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -96784,6 +99268,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -97162,6 +99650,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -97175,6 +99667,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -97433,6 +99929,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -97446,6 +99946,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -97704,6 +100208,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -97717,6 +100225,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -97975,6 +100487,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -97988,6 +100504,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -98243,6 +100763,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -98256,6 +100780,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,
@@ -98635,6 +101163,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -98648,6 +101180,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -98906,6 +101442,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: defenderChip,
           count: 3,
         },
@@ -98919,6 +101459,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: defenderChipPack,
           count: 5,
@@ -99173,6 +101717,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -99186,6 +101734,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -99444,6 +101996,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -99457,6 +102013,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -99712,6 +102272,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: vanguardChip,
           count: 3,
         },
@@ -99725,6 +102289,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: vanguardChipPack,
           count: 5,
@@ -99983,6 +102551,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -99996,6 +102568,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -100368,6 +102944,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -100381,6 +102961,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -100639,6 +103223,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: medicChip,
           count: 3,
         },
@@ -100652,6 +103240,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: medicChipPack,
           count: 5,
@@ -100906,6 +103498,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -100919,6 +103515,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -101178,6 +103778,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -101191,6 +103795,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -101569,6 +104177,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -101582,6 +104194,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -101841,6 +104457,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -101854,6 +104474,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -102233,6 +104857,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -102246,6 +104874,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -102498,7 +105130,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -102590,7 +105227,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -102684,6 +105326,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -102697,6 +105343,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -102955,6 +105605,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -102968,6 +105622,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -103222,6 +105880,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -103235,6 +105897,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -103493,6 +106159,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -103506,6 +106176,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -103765,6 +106439,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -103778,6 +106456,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -104159,7 +106841,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -104251,7 +106938,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -104345,6 +107037,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -104358,6 +107054,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -104981,6 +107681,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -104994,6 +107698,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -105252,6 +107960,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -105265,6 +107977,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -105524,6 +108240,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: sniperChip,
           count: 5,
         },
@@ -105537,6 +108257,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: sniperDualchip,
           count: 4,
@@ -106196,6 +108920,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -106209,6 +108937,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -106467,6 +109199,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -106480,6 +109216,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -106738,6 +109478,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -106751,6 +109495,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -107009,6 +109757,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -107022,6 +109774,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -107276,6 +110032,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: supporterChip,
           count: 3,
         },
@@ -107289,6 +110049,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: supporterChipPack,
           count: 5,
@@ -107544,6 +110308,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: vanguardChip,
           count: 5,
         },
@@ -107557,6 +110325,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: vanguardDualchip,
           count: 4,
@@ -107935,6 +110707,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: vanguardChip,
           count: 4,
         },
@@ -107948,6 +110724,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: vanguardDualchip,
           count: 3,
@@ -108206,6 +110986,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: medicChip,
           count: 3,
         },
@@ -108219,6 +111003,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: medicChipPack,
           count: 5,
@@ -108473,6 +111261,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -108486,6 +111278,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -108739,7 +111535,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -108834,7 +111635,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -108926,7 +111732,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -109018,7 +111829,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -109110,7 +111926,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -109204,6 +112025,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -109217,6 +112042,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -109471,6 +112300,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -109484,6 +112317,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -109738,6 +112575,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -109751,6 +112592,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -110009,6 +112854,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -110022,6 +112871,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -110280,6 +113133,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -110293,6 +113150,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -110548,6 +113409,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -110561,6 +113426,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -110944,6 +113813,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -110957,6 +113830,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -111335,6 +114212,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -111348,6 +114229,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -111606,6 +114491,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: casterChip,
           count: 3,
         },
@@ -111619,6 +114508,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: casterChipPack,
           count: 5,
@@ -111873,6 +114766,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -111886,6 +114783,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -112144,6 +115045,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -112157,6 +115062,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -112415,6 +115324,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -112428,6 +115341,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -112687,6 +115604,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -112700,6 +115621,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -113072,6 +115997,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -113085,6 +116014,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -113343,6 +116276,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: vanguardChip,
           count: 3,
         },
@@ -113356,6 +116293,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: vanguardChipPack,
           count: 5,
@@ -113610,6 +116551,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: defenderChip,
           count: 3,
         },
@@ -113623,6 +116568,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: defenderChipPack,
           count: 5,
@@ -113877,6 +116826,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -113890,6 +116843,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -114148,6 +117105,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -114161,6 +117122,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -114419,6 +117384,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -114432,6 +117401,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -114690,6 +117663,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: casterChip,
           count: 4,
         },
@@ -114703,6 +117680,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: casterDualchip,
           count: 3,
@@ -114961,6 +117942,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: medicChip,
           count: 4,
         },
@@ -114974,6 +117959,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: medicDualchip,
           count: 3,
@@ -115236,6 +118225,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: guardChip,
           count: 5,
         },
@@ -115249,6 +118242,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: guardDualchip,
           count: 4,
@@ -115569,6 +118566,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -115582,6 +118583,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -115840,6 +118845,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -115853,6 +118862,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -116115,6 +119128,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: medicChip,
           count: 5,
         },
@@ -116128,6 +119145,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: medicDualchip,
           count: 4,
@@ -116507,6 +119528,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: casterChip,
           count: 5,
         },
@@ -116520,6 +119545,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: casterDualchip,
           count: 4,
@@ -116899,6 +119928,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: medicChip,
           count: 3,
         },
@@ -116912,6 +119945,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: medicChipPack,
           count: 5,
@@ -117166,6 +120203,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: supporterChip,
           count: 3,
         },
@@ -117179,6 +120220,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: supporterChipPack,
           count: 5,
@@ -117433,6 +120478,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -117446,6 +120495,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -117700,6 +120753,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: medicChip,
           count: 3,
         },
@@ -117713,6 +120770,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: medicChipPack,
           count: 5,
@@ -117965,7 +121026,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -118059,6 +121125,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -118072,6 +121142,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -118326,6 +121400,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -118339,6 +121417,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -118597,6 +121679,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: defenderChip,
           count: 3,
         },
@@ -118610,6 +121696,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: defenderChipPack,
           count: 5,
@@ -118864,6 +121954,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: vanguardChip,
           count: 3,
         },
@@ -118877,6 +121971,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: vanguardChipPack,
           count: 5,
@@ -119131,6 +122229,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: defenderChip,
           count: 3,
         },
@@ -119144,6 +122246,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: defenderChipPack,
           count: 5,
@@ -119398,6 +122504,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: defenderChip,
           count: 4,
         },
@@ -119411,6 +122521,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: defenderDualchip,
           count: 3,
@@ -119670,6 +122784,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: defenderChip,
           count: 5,
         },
@@ -119683,6 +122801,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: defenderDualchip,
           count: 4,
@@ -120063,6 +123185,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -120076,6 +123202,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -120332,7 +123462,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -120424,7 +123559,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -120516,7 +123656,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -120608,7 +123753,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -120700,7 +123850,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -120794,6 +123949,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -120807,6 +123966,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -121065,6 +124228,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: sniperChip,
           count: 4,
         },
@@ -121078,6 +124245,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: sniperDualchip,
           count: 3,
@@ -121336,6 +124507,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: guardChip,
           count: 4,
         },
@@ -121349,6 +124524,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: guardDualchip,
           count: 3,
@@ -121607,6 +124786,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: sniperChip,
           count: 3,
         },
@@ -121620,6 +124803,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: sniperChipPack,
           count: 5,
@@ -121874,6 +125061,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -121887,6 +125078,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -122141,6 +125336,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -122154,6 +125353,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -122406,7 +125609,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -122500,6 +125708,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: specialistChip,
           count: 4,
         },
@@ -122513,6 +125725,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: specialistDualchip,
           count: 3,
@@ -122771,6 +125987,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 20000,
+        },
+        {
           material: supporterChip,
           count: 4,
         },
@@ -122784,6 +126004,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 120000,
+        },
         {
           material: supporterDualchip,
           count: 3,
@@ -123042,6 +126266,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: specialistChip,
           count: 3,
         },
@@ -123055,6 +126283,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: specialistChipPack,
           count: 5,
@@ -123307,7 +126539,12 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
 
     eliteMaterials: {
       "0": [],
-      "1": [],
+      "1": [
+        {
+          material: LMD,
+          count: 10000,
+        },
+      ],
       "2": [],
     },
 
@@ -123481,6 +126718,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: guardChip,
           count: 3,
         },
@@ -123494,6 +126735,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: guardChipPack,
           count: 5,
@@ -123748,6 +126993,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 15000,
+        },
+        {
           material: vanguardChip,
           count: 3,
         },
@@ -123761,6 +127010,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 60000,
+        },
         {
           material: vanguardChipPack,
           count: 5,
@@ -124019,6 +127272,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       "0": [],
       "1": [
         {
+          material: LMD,
+          count: 30000,
+        },
+        {
           material: supporterChip,
           count: 5,
         },
@@ -124032,6 +127289,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         },
       ],
       "2": [
+        {
+          material: LMD,
+          count: 180000,
+        },
         {
           material: supporterDualchip,
           count: 4,

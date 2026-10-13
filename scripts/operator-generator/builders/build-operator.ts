@@ -341,6 +341,7 @@ export const buildOperator = ({
     eliteMaterials: convertEliteMaterials(
       materialConversionContext,
       parsedCharacter.eliteMaterials,
+      parsedCharacter.rarity,
     ),
 
     skillList: createFinalSkillList(

@@ -1,6 +1,11 @@
-import { materialMap, type CountableMaterial } from "@/data/material";
+import { LMD, materialMap, type CountableMaterial } from "@/data/material";
+import {
+  ELITE_ONE_LMD_TABLE,
+  ELITE_TWO_LMD_TABLE,
+} from "@/data/operator/table";
 import {
   type ParsedEliteMaterials,
+  type ParsedRarityNumber,
   type ParsedMaterialCost,
 } from "../parsers/parse-character-table";
 import {
@@ -44,6 +49,17 @@ export type ConvertedModuleMaterials = {
   "1": CountableMaterial[];
   "2": CountableMaterial[];
   "3": CountableMaterial[];
+};
+
+const withEliteLmd = (
+  materials: CountableMaterial[],
+  count: number,
+): CountableMaterial[] => {
+  if (count <= 0 || materials.some(({ material }) => material.id === LMD.id)) {
+    return materials;
+  }
+
+  return [{ material: LMD, count }, ...materials];
 };
 
 export const createMaterialConversionContext =
@@ -91,11 +107,18 @@ export const convertMaterialCostList = (
 export const convertEliteMaterials = (
   context: MaterialConversionContext,
   eliteMaterials: ParsedEliteMaterials,
+  rarity: ParsedRarityNumber,
 ): ConvertedEliteMaterials => {
   return {
     "0": convertMaterialCostList(context, eliteMaterials["0"]),
-    "1": convertMaterialCostList(context, eliteMaterials["1"]),
-    "2": convertMaterialCostList(context, eliteMaterials["2"]),
+    "1": withEliteLmd(
+      convertMaterialCostList(context, eliteMaterials["1"]),
+      ELITE_ONE_LMD_TABLE[rarity],
+    ),
+    "2": withEliteLmd(
+      convertMaterialCostList(context, eliteMaterials["2"]),
+      ELITE_TWO_LMD_TABLE[rarity],
+    ),
   };
 };
 
