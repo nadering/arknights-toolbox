@@ -4665,7 +4665,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     id: "char_1052_kalts2",
     legacyId: 413,
 
-    name: "켈시·에스페란타",
+    name: "켈시 에스페란타",
 
     imageFilename: "kaltsit-esperanta",
 
@@ -4673,7 +4673,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     rarity: 6,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act4mainss",
       eventName: "임계 상전이",
@@ -4722,9 +4722,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "응급 교정 방어선",
+      "긴급 숙정 방어선",
       "보호성 차단",
-      "자유로운 환생",
+      "굴레를 벗어난 부활",
     ],
     preferSkillIndexes: [
       1,
@@ -4801,7 +4801,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "응급 교정 방어선": {
+      "긴급 숙정 방어선": {
         "8": [
           {
             material: skillSummary3,
@@ -4889,7 +4889,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "자유로운 환생": {
+      "굴레를 벗어난 부활": {
         "8": [
           {
             material: skillSummary3,
@@ -4950,7 +4950,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     rarity: 5,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act4mainss",
       eventName: "임계 상전이",
@@ -4999,7 +4999,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "세척",
+      "정화",
       "붕괴",
     ],
     skillUpgradeMaterials: {
@@ -5065,7 +5065,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "세척": {
+      "정화": {
         "8": [
           {
             material: skillSummary3,
@@ -5158,9 +5158,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "PRP-X",
-        name: "'헹굼'",
+        name: "'세탁'",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -5230,7 +5230,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     rarity: 6,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act4mainss",
       eventName: "임계 상전이",
@@ -5279,9 +5279,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "'스스로 외쳐 피어나리라'",
-      "'선혈로 씻어내리라'",
-      "'붉은 철로 새기리라'",
+      "'부르짖음에서 탄생하라'",
+      "'선혈로 정화하라'",
+      "'적철에 새겨라'",
     ],
     skillUpgradeMaterials: {
       common: {
@@ -5354,7 +5354,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "'스스로 외쳐 피어나리라'": {
+      "'부르짖음에서 탄생하라'": {
         "8": [
           {
             material: skillSummary3,
@@ -5398,7 +5398,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "'선혈로 씻어내리라'": {
+      "'선혈로 정화하라'": {
         "8": [
           {
             material: skillSummary3,
@@ -5442,7 +5442,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "'붉은 철로 새기리라'": {
+      "'적철에 새겨라'": {
         "8": [
           {
             material: skillSummary3,
@@ -5493,7 +5493,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         type: "MSC-Y",
         name: "무기고",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -5562,7 +5562,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     rarity: 1,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act4mainss",
       eventName: "임계 상전이",
@@ -5603,7 +5603,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     rarity: 6,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act4mainss",
       eventName: "임계 상전이",
@@ -5652,7 +5652,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
     },
 
     skillList: [
-      "재귀함수",
+      "재귀 전략",
       "모델 확장",
       "Q.E.D.",
     ],
@@ -5731,7 +5731,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
           },
         ],
       },
-      "재귀함수": {
+      "재귀 전략": {
         "8": [
           {
             material: skillSummary3,
@@ -5868,9 +5868,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "TAC-X",
-        name: "나만의 작은 트로피",
+        name: "자신에게 주는 작은 트로피",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -18430,7 +18430,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         type: "SPT-Y",
         name: "'오랜 친구'",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -37584,7 +37584,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         type: "SWO-Y",
         name: "새로운 계약",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -43913,7 +43913,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         type: "ISW-α",
         name: "티폰의 특별 한정 배지",
         charEquipOrder: 4,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -52060,9 +52060,9 @@ export const generatedOperatorList: GeneratedOperator[] = [
     moduleList: [
       {
         type: "EXE-X",
-        name: "'새 차와 새로운 삶'",
+        name: "'새로운 차와 새로운 삶'",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
       {
         type: "EXE-Y",
@@ -60160,7 +60160,7 @@ export const generatedOperatorList: GeneratedOperator[] = [
         type: "ISW-α",
         name: "스펙터 디 언체인드의 특별 한정 배지",
         charEquipOrder: 4,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [

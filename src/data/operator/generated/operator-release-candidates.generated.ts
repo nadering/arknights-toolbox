@@ -7,6 +7,150 @@ import { OperatorReleaseCandidate } from "../../../../scripts/operator-release/r
  */
 export const operatorReleaseCandidateList: OperatorReleaseCandidate[] = [
   {
+    "commitHash": "c03d5f1bc2e87b32c978e74ba5955dca67975660",
+    "commitDate": "2026-10-14T04:48:56+00:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4227_gallus",
+        "name": "GALLUS²",
+        "profession": "CASTER"
+      },
+      {
+        "charId": "char_4225_tanya",
+        "name": "크랙본",
+        "profession": "TANK"
+      },
+      {
+        "charId": "char_4228_closur",
+        "name": "클로저",
+        "profession": "PIONEER"
+      },
+      {
+        "charId": "char_4226_veen",
+        "name": "비이",
+        "profession": "CASTER"
+      },
+      {
+        "charId": "char_1052_kalts2",
+        "name": "켈시 에스페란타",
+        "profession": "MEDIC"
+      }
+    ],
+    "addedActivityList": [
+      {
+        "id": "act3video",
+        "name": "테라 회고록 한정 로그인 이벤트",
+        "type": "CHECKIN_VIDEO",
+        "firstSeenType": "CHECKIN_VIDEO",
+        "displayType": "NONE",
+        "isReplicate": false
+      },
+      {
+        "id": "act3enemyduel",
+        "name": "듀얼 채널: 아이비바인",
+        "type": "ENEMY_DUEL",
+        "firstSeenType": "ENEMY_DUEL",
+        "displayType": "NONE",
+        "isReplicate": false
+      },
+      {
+        "id": "act3access",
+        "name": "스페셜 이벤트",
+        "type": "CHECKIN_ACCESS",
+        "firstSeenType": "CHECKIN_ACCESS",
+        "displayType": "NONE",
+        "isReplicate": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "DOUBLE_KR_41_0_8",
+        "name": ""
+      },
+      {
+        "id": "DOUBLE_KR_41_0_9",
+        "name": ""
+      },
+      {
+        "id": "DOUBLE_KR_42_0_2",
+        "name": ""
+      },
+      {
+        "id": "LIMITED_KR_42_0_1",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_KR_41_0_4",
+        "name": ""
+      },
+      {
+        "id": "FESCLASSIC_KR_42_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "high",
+    "reasons": [
+      "5 operator(s) added",
+      "3 activity(s) added in same commit",
+      "6 gacha(s) added in same commit"
+    ]
+  },
+  {
+    "commitHash": "77f77310ffe45e0fe252495a27217e66019bb39e",
+    "commitDate": "2026-09-16T10:10:48+00:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4224_turdus",
+        "name": "우쿠시크",
+        "profession": "MEDIC"
+      },
+      {
+        "charId": "char_4223_botany",
+        "name": "보타니",
+        "profession": "SUPPORT"
+      },
+      {
+        "charId": "char_1051_headb2",
+        "name": "지마 더 레이징 타이드",
+        "profession": "WARRIOR"
+      }
+    ],
+    "addedActivityList": [
+      {
+        "id": "act51side",
+        "name": "사람들, 우리들",
+        "type": "TYPE_ACT9D0",
+        "firstSeenType": "TYPE_ACT9D0",
+        "displayType": "SIDESTORY",
+        "isReplicate": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "DOUBLE_KR_41_0_6",
+        "name": ""
+      },
+      {
+        "id": "SINGLE_KR_41_0_7",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_KR_41_0_2",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_KR_41_0_3",
+        "name": ""
+      }
+    ],
+    "confidence": "high",
+    "reasons": [
+      "3 operator(s) added",
+      "1 activity(s) added in same commit",
+      "4 gacha(s) added in same commit"
+    ]
+  },
+  {
     "commitHash": "7e5e0fe76dd3bc3bd3415e04d24a35cd4a8d4698",
     "commitDate": "2026-08-13T02:41:54+00:00",
     "addedOperatorList": [

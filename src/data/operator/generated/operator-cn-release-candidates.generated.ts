@@ -664,37 +664,37 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_4227_gallus",
         "cnName": "GALLUS²",
-        "globalName": null,
+        "globalName": "GALLUS²",
         "profession": "CASTER",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_4225_tanya",
         "cnName": "裂响",
-        "globalName": null,
+        "globalName": "크랙본",
         "profession": "TANK",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_4228_closur",
         "cnName": "可露希尔",
-        "globalName": null,
+        "globalName": "클로저",
         "profession": "PIONEER",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_4226_veen",
         "cnName": "维伊",
-        "globalName": null,
+        "globalName": "비이",
         "profession": "CASTER",
-        "server": "future"
+        "server": "global"
       },
       {
         "charId": "char_1052_kalts2",
         "cnName": "凯尔希·思衡托",
-        "globalName": null,
+        "globalName": "켈시 에스페란타",
         "profession": "MEDIC",
-        "server": "future"
+        "server": "global"
       }
     ],
     "addedActivityList": [
@@ -755,7 +755,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "id": "act3video",
         "cnName": "回望泰拉限时登录活动",
-        "globalName": null,
+        "globalName": "테라 회고록 한정 로그인 이벤트",
         "type": "CHECKIN_VIDEO",
         "firstSeenType": "CHECKIN_VIDEO",
         "displayType": "NONE",
@@ -766,14 +766,14 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": null,
         "cnStartTime": 1777123800,
         "cnEndTime": 1780257599,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1791399600,
+        "globalEndTime": 1794769199,
+        "hasGlobalMatch": true
       },
       {
         "id": "act3enemyduel",
         "cnName": "争锋频道：绿藤城",
-        "globalName": null,
+        "globalName": "듀얼 채널: 아이비바인",
         "type": "ENEMY_DUEL",
         "firstSeenType": "ENEMY_DUEL",
         "displayType": "NONE",
@@ -784,14 +784,14 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": null,
         "cnStartTime": 1777123800,
         "cnEndTime": 1778270399,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1790146800,
+        "globalEndTime": 1791313199,
+        "hasGlobalMatch": true
       },
       {
         "id": "act3access",
         "cnName": "七周年专享活动",
-        "globalName": null,
+        "globalName": "스페셜 이벤트",
         "type": "CHECKIN_ACCESS",
         "firstSeenType": "CHECKIN_ACCESS",
         "displayType": "NONE",
@@ -802,9 +802,9 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": null,
         "cnStartTime": 1777123800,
         "cnEndTime": 1780257599,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1791399600,
+        "globalEndTime": 1794769199,
+        "hasGlobalMatch": true
       },
       {
         "id": "act51side",
@@ -850,7 +850,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
     "confidence": "high",
     "reasons": [
       "5 operator(s) added",
-      "5 operator(s) are future",
+      "5 operator(s) matched global",
       "7 activity(s) added in same commit",
       "5 gacha(s) added in same commit"
     ]
@@ -2926,56 +2926,56 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_604_ccast",
         "cnName": "预备干员-术师",
-        "globalName": "예비 인원 - 캐스터",
+        "globalName": "예비 오퍼레이터 - 캐스터",
         "profession": "CASTER",
         "server": "global"
       },
       {
         "charId": "char_603_csnipe",
         "cnName": "预备干员-狙击",
-        "globalName": "예비 인원 - 스나이퍼",
+        "globalName": "예비 오퍼레이터 - 스나이퍼",
         "profession": "SNIPER",
         "server": "global"
       },
       {
         "charId": "char_600_cpione",
         "cnName": "预备干员-先锋",
-        "globalName": "예비 오퍼레이터-뱅가드",
+        "globalName": "예비 오퍼레이터 - 뱅가드",
         "profession": "PIONEER",
         "server": "global"
       },
       {
         "charId": "char_601_cguard",
         "cnName": "预备干员-近卫",
-        "globalName": "예비 오퍼레이터-가드",
+        "globalName": "예비 오퍼레이터 - 가드",
         "profession": "WARRIOR",
         "server": "global"
       },
       {
         "charId": "char_607_cspec",
         "cnName": "预备干员-特种",
-        "globalName": "예비 오퍼레이터-스페셜리스트",
+        "globalName": "예비 오퍼레이터 - 스페셜리스트",
         "profession": "SPECIAL",
         "server": "global"
       },
       {
         "charId": "char_605_cmedic",
         "cnName": "预备干员-医疗",
-        "globalName": "예비 오퍼레이터-메딕",
+        "globalName": "예비 오퍼레이터 - 메딕",
         "profession": "MEDIC",
         "server": "global"
       },
       {
         "charId": "char_602_cdfend",
         "cnName": "预备干员-重装",
-        "globalName": "예비 인원 - 디펜더",
+        "globalName": "예비 오퍼레이터 - 디펜더",
         "profession": "TANK",
         "server": "global"
       },
       {
         "charId": "char_606_csuppo",
         "cnName": "预备干员-辅助",
-        "globalName": "예비 오퍼레이터-서포터",
+        "globalName": "예비 오퍼레이터 - 서포터",
         "profession": "SUPPORT",
         "server": "global"
       },
@@ -5455,7 +5455,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_504_rguard",
         "cnName": "预备干员-近战",
-        "globalName": "예비 인원 - 근거리",
+        "globalName": "예비 오퍼레이터 - 근거리",
         "profession": "PIONEER",
         "server": "global"
       },
@@ -5497,7 +5497,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_514_rdfend",
         "cnName": "预备干员-重装",
-        "globalName": "예비 인원 - 디펜더",
+        "globalName": "예비 오퍼레이터 - 디펜더",
         "profession": "TANK",
         "server": "global"
       },
@@ -5525,7 +5525,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_507_rsnipe",
         "cnName": "预备干员-狙击",
-        "globalName": "예비 인원 - 스나이퍼",
+        "globalName": "예비 오퍼레이터 - 스나이퍼",
         "profession": "SNIPER",
         "server": "global"
       },
@@ -5553,7 +5553,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_506_rmedic",
         "cnName": "预备干员-后勤",
-        "globalName": "예비 인원 - 지원",
+        "globalName": "예비 오퍼레이터 - 지원",
         "profession": "MEDIC",
         "server": "global"
       },
@@ -5567,7 +5567,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_505_rcast",
         "cnName": "预备干员-术师",
-        "globalName": "예비 인원 - 캐스터",
+        "globalName": "예비 오퍼레이터 - 캐스터",
         "profession": "CASTER",
         "server": "global"
       },
@@ -10730,7 +10730,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_514_rdfend",
         "cnName": "预备干员-重装",
-        "globalName": "예비 인원 - 디펜더",
+        "globalName": "예비 오퍼레이터 - 디펜더",
         "profession": "TANK",
         "server": "global"
       },
@@ -13480,28 +13480,28 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "charId": "char_504_rguard",
         "cnName": "预备干员-近战",
-        "globalName": "예비 인원 - 근거리",
+        "globalName": "예비 오퍼레이터 - 근거리",
         "profession": "PIONEER",
         "server": "global"
       },
       {
         "charId": "char_507_rsnipe",
         "cnName": "预备干员-狙击",
-        "globalName": "예비 인원 - 스나이퍼",
+        "globalName": "예비 오퍼레이터 - 스나이퍼",
         "profession": "SNIPER",
         "server": "global"
       },
       {
         "charId": "char_506_rmedic",
         "cnName": "预备干员-后勤",
-        "globalName": "예비 인원 - 지원",
+        "globalName": "예비 오퍼레이터 - 지원",
         "profession": "MEDIC",
         "server": "global"
       },
       {
         "charId": "char_505_rcast",
         "cnName": "预备干员-术师",
-        "globalName": "예비 인원 - 캐스터",
+        "globalName": "예비 오퍼레이터 - 캐스터",
         "profession": "CASTER",
         "server": "global"
       },

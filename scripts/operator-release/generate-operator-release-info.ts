@@ -483,6 +483,11 @@ const resolveReleaseEventServer = (
   releaseEvent: OperatorReleaseEvent,
   activityInfoRecordByServer: Record<Server, Record<string, UnknownRecord>>,
 ): Server => {
+  // 글로벌 activity_table에 등록되지 않은 메인 스토리 예외 (임시로 하드코딩 처리)
+  if (releaseEvent.id === "act4mainss") {
+    return "global";
+  }
+
   if (getActivityInfo(activityInfoRecordByServer.global, releaseEvent.id)) {
     return "global";
   }
