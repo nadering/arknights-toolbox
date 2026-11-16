@@ -7,6 +7,186 @@ import { CnReleaseCandidate } from "../../../../scripts/operator-release/cn-rele
  */
 export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
   {
+    "kind": "cn_release_candidate",
+    "commitHash": "6f63c14e27b847ef74b53b00fe51fc322b3cd7ff",
+    "commitDate": "2026-11-09T19:35:37+08:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_618_acrbot",
+        "cnName": "“暴躁铁皮”",
+        "globalName": null,
+        "profession": "TANK",
+        "server": "future"
+      }
+    ],
+    "addedActivityList": [
+      {
+        "id": "act66sign",
+        "cnName": "感谢庆典补给签到",
+        "globalName": null,
+        "type": "CHECKIN_ONLY",
+        "firstSeenType": "CHECKIN_ONLY",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1794427200,
+        "cnEndTime": 1795291199,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      },
+      {
+        "id": "act3autochess",
+        "cnName": "卫戍协议:规程",
+        "globalName": null,
+        "type": "AUTOCHESS",
+        "firstSeenType": "AUTOCHESS",
+        "displayType": "NONE",
+        "category": "other",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1794124800,
+        "cnEndTime": 4092580799,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "NORM_79_0_3",
+        "name": ""
+      },
+      {
+        "id": "NORM_79_0_4",
+        "name": ""
+      },
+      {
+        "id": "FESCLASSIC_79_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "high",
+    "reasons": [
+      "1 operator(s) added",
+      "1 operator(s) are future",
+      "2 activity(s) added in same commit",
+      "3 gacha(s) added in same commit"
+    ]
+  },
+  {
+    "kind": "cn_unmapped_release_activity",
+    "commitHash": "08ba2aea0e8dba88eff0ec0d2c87e24b4db626f8",
+    "commitDate": "2026-11-01T09:24:04+08:00",
+    "addedOperatorList": [],
+    "addedActivityList": [
+      {
+        "id": "act55side",
+        "cnName": "时间啊，向前！",
+        "globalName": null,
+        "type": "TYPE_ACT55SIDE",
+        "firstSeenType": "TYPE_ACT55SIDE",
+        "displayType": "NONE",
+        "category": "side_story",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": true,
+        "templateShopId": "shop_act55side",
+        "cnStartTime": 1793487600,
+        "cnEndTime": 1795291199,
+        "globalStartTime": null,
+        "globalEndTime": null,
+        "hasGlobalMatch": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "DOUBLE_79_0_2",
+        "name": ""
+      },
+      {
+        "id": "LIMITED_79_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "low",
+    "reasons": [
+      "release-like activity added without mapped operator",
+      "side_story activity needs manual operator mapping"
+    ]
+  },
+  {
+    "kind": "cn_release_candidate",
+    "commitHash": "bffe31bf66739842f99b457327066c695e2af389",
+    "commitDate": "2026-11-01T08:22:42+08:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4170_hdbell",
+        "cnName": "行铃",
+        "globalName": null,
+        "profession": "SPECIAL",
+        "server": "future"
+      },
+      {
+        "charId": "char_4245_alga",
+        "cnName": "奥尔佳",
+        "globalName": null,
+        "profession": "WARRIOR",
+        "server": "future"
+      },
+      {
+        "charId": "char_4169_caledo",
+        "cnName": "镜匠",
+        "globalName": null,
+        "profession": "TANK",
+        "server": "future"
+      },
+      {
+        "charId": "char_4244_tocka",
+        "cnName": "冻河",
+        "globalName": null,
+        "profession": "SUPPORT",
+        "server": "future"
+      },
+      {
+        "charId": "char_4246_dminon",
+        "cnName": "国度",
+        "globalName": null,
+        "profession": "SPECIAL",
+        "server": "future"
+      },
+      {
+        "charId": "char_4247_oxi",
+        "cnName": "塔露拉",
+        "globalName": null,
+        "profession": "WARRIOR",
+        "server": "future"
+      }
+    ],
+    "addedActivityList": [],
+    "addedGachaList": [
+      {
+        "id": "DOUBLE_79_0_2",
+        "name": ""
+      },
+      {
+        "id": "LIMITED_79_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "medium",
+    "reasons": [
+      "6 operator(s) added",
+      "6 operator(s) are future",
+      "2 gacha(s) added in same commit"
+    ]
+  },
+  {
     "kind": "cn_unmapped_release_activity",
     "commitHash": "17759cc8cdf37388414145d16262a3a06f3ab25e",
     "commitDate": "2026-10-09T07:46:48+08:00",
@@ -618,7 +798,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "id": "act42sre",
         "cnName": "众生行记·复刻",
-        "globalName": null,
+        "globalName": "중생의 여정 (재개방)",
         "type": "TYPE_ACT42SIDE",
         "firstSeenType": "TYPE_ACT42SIDE",
         "displayType": "NONE",
@@ -629,9 +809,9 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": "shop_act42sre",
         "cnStartTime": 1779436800,
         "cnEndTime": 1780257599,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1793862000,
+        "globalEndTime": 1794682799,
+        "hasGlobalMatch": true
       }
     ],
     "addedGachaList": [
@@ -701,7 +881,7 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       {
         "id": "act59sign",
         "cnName": "七周年庆典签到活动",
-        "globalName": null,
+        "globalName": "축전 출석 이벤트",
         "type": "CHECKIN_ONLY",
         "firstSeenType": "CHECKIN_ONLY",
         "displayType": "NONE",
@@ -712,14 +892,14 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": null,
         "cnStartTime": 1777590000,
         "cnEndTime": 1778788799,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1791943200,
+        "globalEndTime": 1793127599,
+        "hasGlobalMatch": true
       },
       {
         "id": "act15pray",
         "cnName": "幸运墙登录活动",
-        "globalName": null,
+        "globalName": "용문 복권방 로그인 이벤트",
         "type": "PRAY_ONLY",
         "firstSeenType": "PRAY_ONLY",
         "displayType": "NONE",
@@ -730,14 +910,14 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": null,
         "cnStartTime": 1777590000,
         "cnEndTime": 1778788799,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1791943200,
+        "globalEndTime": 1793127599,
+        "hasGlobalMatch": true
       },
       {
         "id": "act4mainss",
         "cnName": "相变临界",
-        "globalName": null,
+        "globalName": "임계 상전이",
         "type": "TYPE_MAINSS",
         "firstSeenType": "TYPE_MAINSS",
         "displayType": "NONE",
@@ -748,9 +928,9 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "templateShopId": "shop_act4mainss",
         "cnStartTime": 1777590000,
         "cnEndTime": 1778788799,
-        "globalStartTime": null,
-        "globalEndTime": null,
-        "hasGlobalMatch": false
+        "globalStartTime": 1791943200,
+        "globalEndTime": 1793127599,
+        "hasGlobalMatch": true
       },
       {
         "id": "act3video",
@@ -898,6 +1078,51 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
       "3 operator(s) added",
       "3 operator(s) matched global",
       "2 gacha(s) added in same commit"
+    ]
+  },
+  {
+    "kind": "cn_unmapped_release_activity",
+    "commitHash": "1457587e48fe65361f523821d24e6d14c3b91713",
+    "commitDate": "2026-03-14T16:15:03+08:00",
+    "addedOperatorList": [],
+    "addedActivityList": [
+      {
+        "id": "act2autochess",
+        "cnName": "卫戍协议:盟约",
+        "globalName": "위수 협의: 맹약",
+        "type": "DEFAULT",
+        "firstSeenType": "AUTOCHESS_SEASON",
+        "displayType": "SIDESTORY",
+        "category": "side_story",
+        "isRerun": false,
+        "isReplicate": false,
+        "hasEventShop": false,
+        "templateShopId": null,
+        "cnStartTime": 1773475200,
+        "cnEndTime": 1777060799,
+        "globalStartTime": 1787209200,
+        "globalEndTime": 1790794799,
+        "hasGlobalMatch": true
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "NORM_71_0_3",
+        "name": ""
+      },
+      {
+        "id": "DOUBLE_71_0_4",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_71_0_1",
+        "name": ""
+      }
+    ],
+    "confidence": "low",
+    "reasons": [
+      "release-like activity added without mapped operator",
+      "side_story activity needs manual operator mapping"
     ]
   },
   {
@@ -1383,10 +1608,10 @@ export const cnOperatorReleaseCandidateList: CnReleaseCandidate[] = [
         "id": "act1autochess",
         "cnName": "卫戍协议:盟约",
         "globalName": "위수 협의: 맹약",
-        "type": "AUTOCHESS_SEASON",
+        "type": "DEFAULT",
         "firstSeenType": "AUTOCHESS_SEASON",
-        "displayType": "NONE",
-        "category": "other",
+        "displayType": "SIDESTORY",
+        "category": "side_story",
         "isRerun": false,
         "isReplicate": false,
         "hasEventShop": false,

@@ -402,6 +402,15 @@ export const operatorOverrideList: OperatorOverride[] = [
     legacyId: 395,
     nicknameList: ["레재"],
     preferSkillIndexes: [1, 2],
+    preferModules: [
+      {
+        type: "CSR-X",
+        level: 3,
+      },
+    ],
+    translatedModuleNames: {
+      "CSR-X": "초대",
+    },
   },
   {
     charId: "char_1046_sbell2",
@@ -418,6 +427,9 @@ export const operatorOverrideList: OperatorOverride[] = [
     charId: "char_1047_halo2",
     legacyId: 393,
     preferSkillIndexes: [2],
+    translatedModuleNames: {
+      "DEC-X": "먼 곳에서 전하는 안부 인사",
+    },
   },
   {
     charId: "char_1048_orchd2",
@@ -832,6 +844,9 @@ export const operatorOverrideList: OperatorOverride[] = [
         level: 3,
       },
     ],
+    translatedModuleNames: {
+      "TAC-Δ": "'뮤엘시스와 친구들'",
+    },
   },
   {
     charId: "char_250_phatom",
@@ -1143,10 +1158,13 @@ export const operatorOverrideList: OperatorOverride[] = [
     preferSkillIndexes: [0],
     preferModules: [
       {
-        type: "FOR-X",
-        level: 1,
+        type: "ISW-α",
+        level: 3,
       },
     ],
+    translatedModuleNames: {
+      "ISW-α": "혼의 특별 한정 배지",
+    },
   },
   {
     charId: "char_4042_lumen",
@@ -1632,6 +1650,25 @@ export const operatorOverrideList: OperatorOverride[] = [
     legacyId: 399,
   },
   {
+    charId: "char_4169_caledo",
+    translatedName: "칼레이도",
+    translatedSkillNames: {
+      skchr_caledo_1: "초정밀 절단",
+      skchr_caledo_2: "'다면경'",
+    },
+    translatedModuleNames: {
+      "PRP-X": "'아하!'",
+    },
+  },
+  {
+    charId: "char_4170_hdbell",
+    translatedName: "허드벨스",
+    translatedSkillNames: {
+      skchr_hdbell_1: "콜리플라워의 돌풍",
+      skchr_hdbell_2: "야채 모듬 그릇",
+    },
+  },
+  {
     charId: "char_4171_wulfen",
     legacyId: 362,
   },
@@ -1760,6 +1797,9 @@ export const operatorOverrideList: OperatorOverride[] = [
   {
     charId: "char_4199_makiri",
     legacyId: 378,
+    translatedModuleNames: {
+      "CSR-X": "신명의 염려",
+    },
   },
   {
     charId: "char_420_flamtl",
@@ -2074,6 +2114,52 @@ export const operatorOverrideList: OperatorOverride[] = [
     },
     translatedModuleNames: {
       "BEA-X": "런치 컨트롤",
+    },
+  },
+  {
+    charId: "char_4244_tocka",
+    preferSkillIndexes: [1, 2],
+    nicknameList: ["황제"],
+    translatedName: "토스카",
+    translatedSkillNames: {
+      skchr_tocka_1: "가진 것 없는 자",
+      skchr_tocka_2: "포효하는 의지",
+      skchr_tocka_3: "외로이 걷는 봄",
+    },
+  },
+  {
+    charId: "char_4245_alga",
+    translatedName: "올가",
+    translatedSkillNames: {
+      skchr_alga_1: "교차압박",
+      skchr_alga_2: "나만의 해답을 위해",
+    },
+    translatedModuleNames: {
+      "INS-X": "어제로부터",
+    },
+  },
+  {
+    charId: "char_4246_dminon",
+    nicknameList: ["황칼"],
+    translatedName: "테리토리야",
+    translatedSkillNames: {
+      skchr_dminon_1: "답보",
+      skchr_dminon_2: "학살",
+      skchr_dminon_3: "주인 없는 국가",
+    },
+    translatedModuleNames: {
+      "AMB-X": "빈 병과 단지들",
+    },
+  },
+  {
+    charId: "char_4247_oxi",
+    preferSkillIndexes: [1, 2],
+    nicknameList: ["딸루"],
+    translatedName: "탈룰라",
+    translatedSkillNames: {
+      skchr_oxi_1: "찰나의 백야",
+      skchr_oxi_2: "고립의 폭설",
+      skchr_oxi_3: "맹렬한 일관",
     },
   },
   {

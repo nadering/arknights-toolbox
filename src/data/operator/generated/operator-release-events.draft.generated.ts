@@ -11,6 +11,39 @@ import { OperatorReleaseEvent } from "../manual/operator-release-types";
  */
 export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   {
+    "id": "cn_20261109_char_618_acrbot",
+    "name": "2026-11-09 출시 후보: “暴躁铁皮”",
+    "category": "other",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": [
+      "char_618_acrbot"
+    ]
+  },
+  {
+    "id": "act55side",
+    "name": "时间啊，向前！",
+    "category": "side_story",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": []
+  },
+  {
+    "id": "cn_20261101_char_4170_hdbell",
+    "name": "2026-11-01 출시 후보: 行铃, 奥尔佳, 镜匠, 冻河, 国度, 塔露拉",
+    "category": "other",
+    "server": "future",
+    "source": "cn_git_history",
+    "operatorIds": [
+      "char_4170_hdbell",
+      "char_4245_alga",
+      "char_4169_caledo",
+      "char_4244_tocka",
+      "char_4246_dminon",
+      "char_4247_oxi"
+    ]
+  },
+  {
     "id": "act52side",
     "name": "昨日海",
     "category": "side_story",
@@ -90,10 +123,10 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "act51side",
-    "name": "사람들, 우리들",
-    "category": "side_story",
-    "server": "future",
+    "id": "act4mainss",
+    "name": "임계 상전이",
+    "category": "main_story",
+    "server": "global",
     "source": "cn_git_history",
     "operatorIds": [
       "char_4227_gallus",
@@ -114,6 +147,14 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
       "char_4223_botany",
       "char_1051_headb2"
     ]
+  },
+  {
+    "id": "act2autochess",
+    "name": "위수 협의: 맹약",
+    "category": "side_story",
+    "server": "global",
+    "source": "cn_git_history",
+    "operatorIds": []
   },
   {
     "id": "act20mini",
@@ -164,9 +205,9 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
     ]
   },
   {
-    "id": "cn_20251114_char_616_pithst",
-    "name": "2025-11-14 출시 후보: 맹약·서포터 오퍼레이터, 로드·샤프",
-    "category": "other",
+    "id": "act1autochess",
+    "name": "위수 협의: 맹약",
+    "category": "side_story",
     "server": "global",
     "source": "cn_git_history",
     "operatorIds": [
@@ -353,7 +394,7 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   },
   {
     "id": "cn_20241115_char_604_ccast",
-    "name": "2024-11-15 출시 후보: 예비 인원 - 캐스터, 예비 인원 - 스나이퍼, 예비 오퍼레이터-뱅가드, 예비 오퍼레이터-가드, 예비 오퍼레이터-스페셜리스트, 예비 오퍼레이터-메딕, 예비 인원 - 디펜더, 예비 오퍼레이터-서포터, 스톰아이, 튤립, 피스, 라이디언, 미저리, 터치, 메커니스트, 샤프",
+    "name": "2024-11-15 출시 후보: 예비 오퍼레이터 - 캐스터, 예비 오퍼레이터 - 스나이퍼, 예비 오퍼레이터 - 뱅가드, 예비 오퍼레이터 - 가드, 예비 오퍼레이터 - 스페셜리스트, 예비 오퍼레이터 - 메딕, 예비 오퍼레이터 - 디펜더, 예비 오퍼레이터 - 서포터, 스톰아이, 튤립, 피스, 라이디언, 미저리, 터치, 메커니스트, 샤프",
     "category": "other",
     "server": "global",
     "source": "cn_git_history",
@@ -749,7 +790,7 @@ export const operatorReleaseEventDraftList: OperatorReleaseEvent[] = [
   },
   {
     "id": "cn_20220927_char_514_rdfend",
-    "name": "2022-09-27 출시 후보: 예비 인원 - 디펜더, 튤립, 하이모어",
+    "name": "2022-09-27 출시 후보: 예비 오퍼레이터 - 디펜더, 튤립, 하이모어",
     "category": "other",
     "server": "global",
     "source": "cn_git_history",
