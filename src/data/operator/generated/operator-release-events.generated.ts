@@ -132,13 +132,13 @@ export const generatedOperatorReleaseEventList: readonly GeneratedOperatorReleas
   },
   {
     "id": "act50side",
-    "name": "물거품에 담긴 번개",
+    "name": "포영을 뚫는 창뢰",
     "category": "side_story",
-    "server": "future",
+    "server": "global",
     "source": "cn_git_history",
     "order": 109,
-    "startTime": 1780268400,
-    "startDate": "2026-06-01",
+    "startTime": 1794812400,
+    "startDate": "2026-11-16",
     "operatorIds": [
       "char_4215_buddy",
       "char_1049_catap2",
@@ -1775,12 +1775,12 @@ export const latestOperatorReleaseEventByServer: Record<Server, GeneratedLatestO
     "startDate": "2026-11-01"
   },
   "global": {
-    "id": "act4mainss",
-    "name": "임계 상전이",
+    "id": "act50side",
+    "name": "포영을 뚫는 창뢰",
     "server": "global",
     "serverLabel": "글로벌 서버",
-    "order": 108,
-    "startTime": 1791943200,
-    "startDate": "2026-10-14"
+    "order": 109,
+    "startTime": 1794812400,
+    "startDate": "2026-11-16"
   }
 };

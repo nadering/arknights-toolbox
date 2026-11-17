@@ -5666,7 +5666,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     id: "char_1048_orchd2",
     legacyId: 418,
 
-    name: "음양인 오키드",
+    name: "염호룡 오키드",
     nicknameList: [
       "활키드",
     ],
@@ -5677,10 +5677,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 6,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act50side",
-      eventName: "물거품에 담긴 번개",
+      eventName: "포영을 뚫는 창뢰",
       category: "side_story",
       order: 109,
     },
@@ -5943,7 +5943,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         type: "ARC-X",
         name: "오키드의 특제 과녁",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -6019,10 +6019,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 5,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act50side",
-      eventName: "물거품에 담긴 번개",
+      eventName: "포영을 뚫는 창뢰",
       category: "side_story",
       order: 109,
     },
@@ -6229,7 +6229,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         type: "MCN-X",
         name: "사냥의 길",
         charEquipOrder: 1,
-        server: "future",
+        server: "global",
       },
     ],
     moduleMaterials: {
@@ -6290,7 +6290,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
   {
     id: "char_4215_buddy",
 
-    name: "로도스 아일랜드 정찰대",
+    name: "로도스 아일랜드 그림자 부대",
 
     imageFilename: "rhodes-island-recon",
 
@@ -6298,10 +6298,10 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
     rarity: 1,
 
     growthType: "normal",
-    server: "future",
+    server: "global",
     releaseInfo: {
       eventId: "act50side",
-      eventName: "물거품에 담긴 번개",
+      eventName: "포영을 뚫는 창뢰",
       category: "side_story",
       order: 109,
     },
@@ -26132,7 +26132,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         type: "SOL-Y",
         name: "검무",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -29828,9 +29828,9 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
       },
       {
         type: "LPS-Y",
-        name: "'우리의 대장에게'",
+        name: "'보스에게'",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [
@@ -50251,7 +50251,7 @@ export const generatedOperatorDraftList: GeneratedOperator[] = [
         type: "EXE-Y",
         name: "로도스 아일랜드 제식 쌍검",
         charEquipOrder: 2,
-        server: "future",
+        server: "global",
       },
     ],
     preferModules: [

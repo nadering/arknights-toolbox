@@ -151,19 +151,19 @@ export const operatorReleaseInfoByCharId: Record<string, GeneratedOperatorReleas
   },
   "char_1048_orchd2": {
     "eventId": "act50side",
-    "eventName": "물거품에 담긴 번개",
+    "eventName": "포영을 뚫는 창뢰",
     "category": "side_story",
     "order": 109
   },
   "char_1049_catap2": {
     "eventId": "act50side",
-    "eventName": "물거품에 담긴 번개",
+    "eventName": "포영을 뚫는 창뢰",
     "category": "side_story",
     "order": 109
   },
   "char_4215_buddy": {
     "eventId": "act50side",
-    "eventName": "물거품에 담긴 번개",
+    "eventName": "포영을 뚫는 창뢰",
     "category": "side_story",
     "order": 109
   },

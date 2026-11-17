@@ -7,6 +7,65 @@ import { OperatorReleaseCandidate } from "../../../../scripts/operator-release/r
  */
 export const operatorReleaseCandidateList: OperatorReleaseCandidate[] = [
   {
+    "commitHash": "270115d3ef5dc0e97530bedc168eb3ddb3d14bc6",
+    "commitDate": "2026-11-16T08:38:38+00:00",
+    "addedOperatorList": [
+      {
+        "charId": "char_4215_buddy",
+        "name": "로도스 아일랜드 그림자 부대",
+        "profession": "PIONEER"
+      },
+      {
+        "charId": "char_1049_catap2",
+        "name": "진오우S 캐터펄트",
+        "profession": "WARRIOR"
+      },
+      {
+        "charId": "char_1048_orchd2",
+        "name": "염호룡 오키드",
+        "profession": "SNIPER"
+      }
+    ],
+    "addedActivityList": [
+      {
+        "id": "act58sign",
+        "name": "사냥의 나날",
+        "type": "CHECKIN_ONLY",
+        "firstSeenType": "CHECKIN_ONLY",
+        "displayType": "NONE",
+        "isReplicate": false
+      },
+      {
+        "id": "act50side",
+        "name": "포영을 뚫는 창뢰",
+        "type": "TYPE_ACT24SIDE",
+        "firstSeenType": "TYPE_ACT24SIDE",
+        "displayType": "SIDESTORY",
+        "isReplicate": false
+      }
+    ],
+    "addedGachaList": [
+      {
+        "id": "DOUBLE_KR_42_0_6",
+        "name": ""
+      },
+      {
+        "id": "LINKAGE_KR_42_0_5",
+        "name": ""
+      },
+      {
+        "id": "CLASSIC_DOUBLE_KR_42_0_3",
+        "name": ""
+      }
+    ],
+    "confidence": "high",
+    "reasons": [
+      "3 operator(s) added",
+      "2 activity(s) added in same commit",
+      "3 gacha(s) added in same commit"
+    ]
+  },
+  {
     "commitHash": "c03d5f1bc2e87b32c978e74ba5955dca67975660",
     "commitDate": "2026-10-14T04:48:56+00:00",
     "addedOperatorList": [
